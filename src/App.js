@@ -1,12 +1,11 @@
 
 import './App.css';
-import SuperstarLogin from './Components/SuperStarAuth/Content/SuperstarLogin';
-
+import Header from './Components/Pages/Header/Header';
 
 function App() {
   return (
     <div className="App">
-    <SuperstarLogin/>
+    <Header />
     </div>
   );
 }
