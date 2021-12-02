@@ -3,9 +3,8 @@ import Logo from '../../../assets/images/helloSuperStar.png'
 import {Card,Form,Container} from 'react-bootstrap'
 import '../CSS/SuperStarHome.css'
 import '../CSS/login.css'
-import '../CSS/registration.css'
 
-const SuperStarLogin = () => {
+const SuperStarQR = () => {
 return (
 <>
     <div className="login-Super-body">
@@ -27,25 +26,25 @@ return (
                                     <Card.Body>
 
                                         <div className="d-flex justify-content-center parent-border">
-                                            <h4 className="text-center mb-4 logIn-header"> Log in</h4>
+                                            <h4 className="text-center mb-4 logIn-header"> Registration</h4>
                                         </div>
-                                        <br />
                                         <br />
 
                                         <Form className='text-center'>
 
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Email or Phone " />
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Password " />
-                                            
-                                            <div className="d-flex  justify-content-around mt-5 "> 
-                                                <button className="btn btn-warning w-25" placeholder="Next" type="submit">Login</button>
-                                            </div>
+                                            <input className="btn btn-warning btn-sp-register-ad"
+                                                placeholder="Enter QR Code Number" />
 
+                                            <div className="d-flex  justify-content-around mt-5 ">
+                                                
+                                                <button className="btn btn-warning w-25" placeholder="Next"
+                                                    type="submit">Next</button>
+                                            </div>
                                         </Form>
                                     </Card.Body>
 
                                     <div className="text-center Login_SP_Footer">
-                                       <a href="#" className="Login_SP_Footer-btn">Create an account</a>
+                                    Already have an account? <a href="#" className="Login_SP_Footer-btn">LOG IN</a>
                                     </div>
 
                                 </Card>
@@ -61,4 +60,4 @@ return (
 )
 }
 
-export default SuperStarLogin
+export default SuperStarQR

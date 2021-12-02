@@ -1,11 +1,9 @@
-
 import './App.css';
-import Header from './Components/Pages/Header/Header';
-
+import SuperStarRegistration from './Components/SuperStarAuth/Content/SuperStarRegistraion';
 function App() {
   return (
     <div className="App">
-    <Header />
+    <SuperStarRegistration/>
     </div>
   );
 }

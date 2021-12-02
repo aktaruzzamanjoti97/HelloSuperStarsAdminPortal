@@ -6,7 +6,7 @@ import '../CSS/SuperStarHome.css'
 import '../CSS/login.css'
 import '../CSS/registration.css'
 import { Link } from 'react-router-dom'
-const SuperstarRegistration = () => {
+const SuperStarRegistration = () => {
 return (
 <>
     <div className="login-Super-body">
@@ -63,4 +63,4 @@ return (
 )
 }
 
-export default SuperstarRegistration
+export default SuperStarRegistration
