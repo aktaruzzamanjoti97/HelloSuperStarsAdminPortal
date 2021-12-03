@@ -1,0 +1,102 @@
+.custom-body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #333535;
+}
+
+.left-col-box {
+    background-color: #343434;
+}
+
+.see-all-text {
+    text-align: right;
+}
+
+.profile-accordion-button-icon::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F0E25E'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.profile-accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23#000000'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.left-bottom-accorion {
+    background-color: #000000 !important;
+}
+
+.category-size {
+    font-size: 12px;
+    color: #FFAD00 !;
+}
+
+.profile-font-color {
+    color: #F0E25E;
+    
+}
+.accordion-card{
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+}
+.card-dashbord{
+    border: 2px solid #F5EA45
+    !important;
+    border-radius: 15px !important;
+}
+.imgItem{
+    height: 80px;
+    width: 80px;
+   
+}
+.loopCard{
+    width: 90%;
+  
+}
+.money-card{
+    background-color: #333535 !important;
+}
+.pending{
+    background-color: #FF602E;
+    padding: 2px;
+    border-radius: 5px;
+}
+.transferred{
+    background-color: #3BC149;
+    padding: 2px;
+    border-radius: 5px; 
+}
+@media only screen and (max-width: 600px) {
+    .accordion-card{
+       
+        width: 100%;
+     
+    }
+    .imgItem{
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        margin: 0 10px 0 10px !important;
+    }
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .imgItem{
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        margin: 0 10px 0 10px !important;
+    }
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
