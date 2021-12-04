@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Card1LeftsideBar from "./components/Card1LeftsideBar";
 import Card2LeftsideBar from "./components/Card2LeftsideBar";
 import bank1 from "../../../assets/images/RightSidebar/1.png";
 import bank2 from "../../../assets/images/RightSidebar/2.jpg";
+import bank3 from "../../../assets/images/RightSidebar/gpay.jpg";
+import bank4 from "../../../assets/images/RightSidebar/ebl.jpg";
+import bank5 from "../../../assets/images/RightSidebar/Islami.jpg";
 // import graph from "../../../assets/images/RightSidebar/canvas 1.png";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -11,7 +14,11 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./MainDashbord.css";
 import MonthCard from "./components/MonthCard";
 import HistoryCard from "./components/HistoryCard";
+import FormContent from "./components/FormContent";
 const MainDashbord = () => {
+  const [showContent, setShowContent] = useState(false);
+  const [bankName,setBankName]=useState('');
+  
   return (
     <div className="custom-body">
       <div className="container-fluid">
@@ -22,7 +29,7 @@ const MainDashbord = () => {
           </div>
 
           <div className="col-md-8 ">
-              {/* Balancea and transfer card start here */}
+            {/* Balancea and transfer card start here */}
             <div className="row">
               <div className="col-md-12 col-lg-4">
                 <div className="card bg-dark my-3 card-dashbord">
@@ -51,14 +58,16 @@ const MainDashbord = () => {
                     <h5 className="text-light">Transfer to</h5>
                     <OwlCarousel
                       className="owl-theme"
-                      loop
+                     
                       margin={0}
-                      items={6}
+                      items={5}
                       nav
+                      onClick={() => setShowContent(true)}
                     >
                       <div className="item">
                         <div className="imgItem">
                           <img
+                          onClick={()=>setBankName('Dhaka Bank')}
                             src={bank1}
                             className="img-fluid carousel-img"
                             alt=""
@@ -68,7 +77,19 @@ const MainDashbord = () => {
                       <div className="item">
                         <div className="imgItem">
                           <img
+                           onClick={()=>setBankName('City Bank')}
                             src={bank2}
+                            className="img-fluid carousel-img "
+                            alt=""
+                          />
+                        </div>
+                      </div>
+
+                      <div className="item">
+                        <div className="imgItem">
+                          <img
+                           onClick={()=>setBankName('Google pay')}
+                            src={bank3}
                             className="img-fluid carousel-img "
                             alt=""
                           />
@@ -77,8 +98,9 @@ const MainDashbord = () => {
                       <div className="item">
                         <div className="imgItem">
                           <img
-                            src={bank1}
-                            className="img-fluid carousel-img"
+                           onClick={()=>setBankName('Estern Bank')}
+                            src={bank4}
+                            className="img-fluid carousel-img "
                             alt=""
                           />
                         </div>
@@ -86,32 +108,41 @@ const MainDashbord = () => {
                       <div className="item">
                         <div className="imgItem">
                           <img
-                            src={bank2}
-                            className="img-fluid carousel-img"
+                           onClick={()=>setBankName('Islami Bank')}
+                            src={bank5}
+                            className="img-fluid carousel-img "
                             alt=""
                           />
                         </div>
                       </div>
+                    
+                     
                     </OwlCarousel>
                   </div>
                 </div>
               </div>
             </div>
-      {/* Balancea and transfer card start here */}
+            {/* Balancea and transfer card start here */}
 
- {/* graph and History card start here
-  */}
-            <div className="row my-4">
-              <div className="col-md-12 col-lg-8 mb-3">
-              <MonthCard />
-              </div>
+            
 
-              <div className="col-md-12 col-lg-4 ">
-               <HistoryCard />
+            {showContent ? (
+              <div className="row">
+                <FormContent BankName={bankName} />
               </div>
-            </div>
-             {/* graph and History card end here
-  */}
+            ) : (
+              <div className="row my-4">
+                <div className="col-md-12 col-lg-8 mb-3 ">
+                  <MonthCard />
+                </div>
+
+                <div className="col-md-12 col-lg-4 ">
+                  <HistoryCard />
+                </div>
+              </div>
+            )}
+
+          
           </div>
         </div>
       </div>
