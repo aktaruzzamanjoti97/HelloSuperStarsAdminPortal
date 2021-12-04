@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../assets/images/helloSuperStar.png'
-import './CSS/SuperStarHome.css'
+import { Link} from 'react-router-dom'
 
 function SuperStarHome () {
 return (
@@ -15,8 +15,8 @@ return (
             <div className="superStar-Auth col-md-6">
                 <ul className="Ul-super">
                     <br /><br /> <br /><br />
-                    <li className="li-super"><button className='btn-super-star'>Registration</button></li>
-                    <li className="li-super"><button className='btn-super-star'>Log in</button></li>
+                    <li className="li-super"><Link to='/superstar-admin/registration'><button className='btn-super-star'>Registration</button></Link></li>
+                    <li className="li-super"><Link to='/superstar-admin/login'><button className='btn-super-star'>Log in</button></Link></li>
                 </ul>
             </div>
         </div>

@@ -1,9 +1,7 @@
 import React from 'react'
+import { Link} from 'react-router-dom'
 import Logo from '../../../assets/images/helloSuperStar.png'
 import {Card,Form,Container} from 'react-bootstrap'
-import '../CSS/SuperStarHome.css'
-import '../CSS/login.css'
-import '../CSS/registration.css'
 
 const SuperStarLogin = () => {
 return (
@@ -19,10 +17,9 @@ return (
                     </div>
 
                     <div className="col-lg-4 header-img">
-                        <Container className="d-flex align-items-center justify-content-center login-super-right"
-                            style={{ minHeight: "100vh" }}>
+                        <Container className="d-flex align-items-center justify-content-center login-super-right">
 
-                            <div className="w-100 SP-S_long" style={{ maxWidth: "480px" ,}}>
+                            <div className="w-100 SP-S_long" >
                                 <Card className='logIn-bg-sp'>
                                     <Card.Body>
 
@@ -38,14 +35,14 @@ return (
                                             <input className="btn btn-warning btn-sp-register-ad" placeholder="Password " />
                                             
                                             <div className="d-flex  justify-content-around mt-5 "> 
-                                                <button className="btn btn-warning w-25" placeholder="Next" type="submit">Login</button>
+                                                <Link to='/superstar-admin/otp'><button className="btn btn-warning" placeholder="Next" type="submit">Login</button></Link>
                                             </div>
 
                                         </Form>
                                     </Card.Body>
 
                                     <div className="text-center Login_SP_Footer">
-                                       <a href="#" className="Login_SP_Footer-btn">Create an account</a>
+                                       <Link to='/superstar-admin/registration'><a className="Login_SP_Footer-btn">Create an account</a></Link>
                                     </div>
 
                                 </Card>
