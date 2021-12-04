@@ -1,16 +1,15 @@
 import React from "react";
 import Logo from "../../../assets/images/helloSuperStar.png";
 import { Card, Form, Container } from "react-bootstrap";
-import "../CSS/SuperStarHome.css";
-import "../CSS/login.css";
-import "../CSS/OTP.css";
 import $ from 'jquery';
+import { Link} from 'react-router-dom'
+
 const SuperstarOTP = () => {
-    $(".inputs").keyup(function () {
-        if (this.value.length === this.maxLength) {
-          $(this).next('.inputs').focus();
-        }
-    });
+$(".inputs").keyup(function () {
+if (this.value.length === this.maxLength) {
+$(this).next('.inputs').focus();
+}
+});
 return (
 <>
     <div className="login-Super-body">
@@ -24,9 +23,8 @@ return (
                     </div>
 
                     <div className="col-lg-4 header-img">
-                        <Container className="d-flex align-items-center justify-content-center login-super-right"
-                            style={{ minHeight: "100vh" }}>
-                            <div className="w-100 SP-S_long" style={{ maxWidth: "480px" }}>
+                        <Container className="d-flex align-items-center justify-content-center login-super-right">
+                            <div className="w-100 SP-S_long">
                                 <Card className="logIn-bg-sp">
                                     <Card.Body>
                                         <div className="d-flex justify-content-center parent-border">
@@ -43,14 +41,13 @@ return (
                                                 +88017*******876
                                             </button>
                                             <div className="otpS align-items-center justify-content-center">
-                                            <input type="text" className="inputs" name="otp1" maxLength="1" />
-                                            <input type="text" className="inputs" name="otp2" maxLength="1" />
-                                            <input type="text" className="inputs" name="otp3" maxLength="1" />
-                                            <input type="text" className="inputs" name="otp4" maxLength="1" />
-                                            <input type="text" className="inputs" name="otp5" maxLength="1" />
-                                            <input type="text" className="inputs" name="otp6" maxLength="1" />
+                                                <input type="text" className="inputs" name="otp1" maxLength="1" />
+                                                <input type="text" className="inputs" name="otp2" maxLength="1" />
+                                                <input type="text" className="inputs" name="otp3" maxLength="1" />
+                                                <input type="text" className="inputs" name="otp4" maxLength="1" />
+                                                <input type="text" className="inputs" name="otp5" maxLength="1" />
+                                                <input type="text" className="inputs" name="otp6" maxLength="1" />
                                             </div>
-                                            
 
                                             <br />
                                             <button className="btn  w-100 disabled OTP-time-sp-ad-e"
@@ -63,19 +60,23 @@ return (
                                             </button>
 
                                             <div className="d-flex  justify-content-around mt-5 OTP-SP-Log ">
+                                                <Link to='/'>
                                                 <button className="btn btn-warning OPT" placeholder="Next"
                                                     type="submit">
                                                     Next
                                                 </button>
+                                                </Link>
                                             </div>
                                         </Form>
                                     </Card.Body>
 
                                     <div className="text-center Login_SP_Footer">
                                         Already have an account?{" "}
+                                        <Link to='/superstar-admin/login'>
                                         <a href="#" className="Login_SP_Footer-btn">
-                                            LOG IN
+                                            Log in
                                         </a>
+                                        </Link>
                                     </div>
                                 </Card>
                             </div>
