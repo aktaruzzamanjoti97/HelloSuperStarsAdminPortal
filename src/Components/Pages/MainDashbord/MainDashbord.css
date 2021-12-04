@@ -65,6 +65,36 @@
     padding: 2px;
     border-radius: 5px; 
 }
+.money-card-form{
+    border: 2px solid #F5EA45
+    !important;
+    border-radius: 5px !important;
+}
+.account-info-form{
+    background-color: #282828 !important;
+    border: 1px solid gold !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+.carousel-img{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width: 600px) {
     .accordion-card{
        
