@@ -4,7 +4,7 @@ import './Home/Pages/LiveChatSpStar/SuperStarContent.css'
 import SideMenu from "./Header/NavSuperStar/SideMenu";
 // import { menuItems } from "./NavBar/SideMenu";
 import './Header/NavSuperStar/NavSuperStar.css'
-// import LiveChatContent from "./Home/Pages/LiveChatSpStar/LiveChatContent";
+import LiveChatContent from "./Home/Pages/LiveChatSpStar/LiveChatContent";
 import SuperStarDashboard from "./Home/SuperStarDashboard";
 
 function AdminRoute() {
@@ -39,8 +39,8 @@ return (
 
                 <Switch>
 
-                    <Route exact path='/hello-superstar-admin-panel' component={SuperStarDashboard}/>
-                    {/* <Route exact path='/hello-superstar-admin-panel/' component={LiveChatContent} /> */}
+                    <Route exact path='/hello-superstar-admin-panel/admin' component={SuperStarDashboard}/>
+                    <Route exact path='/hello-superstar-admin-panel/live-chat' component={LiveChatContent} />
                     
                 </Switch>
             </div>
