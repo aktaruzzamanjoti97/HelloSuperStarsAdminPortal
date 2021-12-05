@@ -12,8 +12,12 @@ import MenuItem from "./MenuItem";
 // added more menuItems for testing
 export const menuItems = [
   
-  { name: "Dashboard", exact: true, to: "/hello-superstar-admin-panel", iconClassName: "bi bi-speedometer2", },
+  { name: "Dashboard", exact: true, to: "/hello-superstar-admin-panel/admin", iconClassName: "bi bi-speedometer2", },
   { name: "Live Chat", to: `/hello-superstar-admin-panel/live-chat`, iconClassName: "bi bi-vector-pen" },
+  { name: "Upcoming Event", to: `/hello-superstar-admin-panel/upcoming-event`, iconClassName: "bi bi-vector-pen" },
+  { name: "Learning Session", to: `/hello-superstar-admin-panel/learning-session`, iconClassName: "bi bi-vector-pen" },
+  { name: "Wallet", to: `/hello-superstar-admin-panel/wallet`, iconClassName: "bi bi-vector-pen" },
+
   {
     name: "Content 2",
     exact: true,
