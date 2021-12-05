@@ -38,10 +38,9 @@ return (
                 </>
                 ))} */}
                 <Switch>
-
                     <Route exact path='/superstar' component={SuperStarDashboard}/>
                     <Route exact path='/superstar/live-chat' component={LiveChatContent} />
-
+                    
                 </Switch>
 
             </div>

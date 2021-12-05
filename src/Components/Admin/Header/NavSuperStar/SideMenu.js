@@ -12,16 +12,16 @@ import MenuItem from "./MenuItem";
 // added more menuItems for testing
 export const menuItems = [
   
-  { name: "Dashboard", exact: true, to: "/admin", iconClassName: "bi bi-speedometer2", },
-  { name: "Live Chat", to: `/admin/live-chat`, iconClassName: "bi bi-vector-pen" },
+  { name: "Dashboard", exact: true, to: "/hello-superstar-admin-panel", iconClassName: "bi bi-speedometer2", },
+  { name: "Live Chat", to: `/hello-superstar-admin-panel/live-chat`, iconClassName: "bi bi-vector-pen" },
   {
     name: "Content 2",
     exact: true,
-    to: `/admin/content-2`,
+    to: `/hello-superstar-admin-panel/content-2`,
     iconClassName: "bi bi-speedometer2",
     subMenus: [
-      { name: "Courses", to: "/admin/content-2/courses" },
-      { name: "Videos", to: "/admin/content-2/videos" },
+      { name: "Courses", to: "/hello-superstar-admin-panel/content-2/courses" },
+      { name: "Videos", to: "/hello-superstar-admin-panel/content-2/videos" },
     ],
   },
   
@@ -68,7 +68,7 @@ const SideMenu = (props) => {
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
         <div className="SuperStar-head-text-c">
-         Admin Panel
+         hello-superstar-admin-panel Panel
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (

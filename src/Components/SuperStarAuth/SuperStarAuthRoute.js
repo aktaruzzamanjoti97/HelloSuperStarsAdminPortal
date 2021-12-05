@@ -6,12 +6,14 @@ import SuperStarLogin from './Content/SuperStarLogin'
 import SuperStarRegistration from './Content/SuperStarRegistration'
 import SuperStarOTP from './Content/SuperStarOTP'
 import SuperStarQR from './Content/SuperStarQR'
+import Header from '../Pages/Header/Header'
 
 const SuperStarRoute = () => {
     return (
         <>
             <BrowserRouter>
                 <Switch>
+                    <Route exact path='/' component={Header}/>
                     <Route exact path='/superstar-admin' component={SuperStarHome}/>
                     <Route exact path='/superstar-admin/login' component={SuperStarLogin}/>
                     <Route exact path='/superstar-admin/registration' component={SuperStarRegistration}/>
