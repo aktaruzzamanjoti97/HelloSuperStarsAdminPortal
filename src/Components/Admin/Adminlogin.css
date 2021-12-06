@@ -1,0 +1,226 @@
+.login-Super-body{
+    background-color: rgba(12, 12, 12, 0.911);
+    padding: 40px;
+    height: 100vh;
+}
+.Login-Super-Left{
+
+    background-image: url('../../assets//images/starbgauth.png');
+    height:90vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-color: 2px solid rgb(250, 172, 4) ;
+    background-color: rgb(8, 8, 8);
+
+}
+.login-super-logo{
+    width: 20%;
+}
+
+.logIn-bg-left-img{
+    width: 20%;
+    margin-top: 100px;
+}
+
+.logIn-header{
+    color: rgb(236, 174, 1);
+}
+.login-super-right{
+    background-color: rgba(12, 12, 12, 0.911);
+    border: 2px solid goldenrod;
+}
+
+.SP-S_long{
+    height: 90vh;
+}
+.logIn-bg-sp{
+    height: 85vh;
+    margin-top: 20px;
+    background-color: rgba(12, 12, 12, 0.911) !important;
+}
+.Login_SP_Footer{
+    color: rgb(248, 184, 8);
+    margin-bottom: 10px;
+}
+
+.Login_SP_Footer-btn{
+    color: rgb(248, 184, 8);
+    
+}
+.Login_SP_Footer-btn:hover{
+    color: rgb(248, 224, 8);
+}
+
+.btn-sp-register-ad{
+    margin-top: 20px;
+    width: 75%;
+    border-color: 1px solid goldenrod !important;
+    color: white !important;
+    background-color: rgba(12, 12, 12, 0.911) !important;
+}
+
+.btn-sp-register-ad::placeholder{
+    color: rgb(245, 188, 3) !important;
+}
+
+
+
+
+
+/* Registration */
+
+.btn-sp-register-ad{
+    margin-top: 20px;
+    width: 75%;
+    border-color: 1px solid goldenrod !important;
+    color: white !important;
+    background-color: rgba(12, 12, 12, 0.911) !important;
+}
+
+.btn-sp-register-ad::placeholder{
+    color: rgb(245, 188, 3) !important;
+}
+
+
+
+
+/* OTP */
+
+.OTP-SP-Log{
+    margin-top: 100px;
+}
+
+.OTP-time-sp-ad-e{
+    margin-left: -100px;
+    margin-top: 20px;
+}
+
+.btn-sp-register-ad-otp{
+    margin-top: 20px;
+    width: 15%;
+    border-color: 1px solid goldenrod !important;
+    color: rgb(245, 188, 3) !important;
+    background-color: rgba(12, 12, 12, 0.911) !important;
+}
+
+.otpS input{
+    width: 35px;
+    margin: 5px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #ffc107;
+    background-color: rgba(12, 12, 12, 0.911);
+    color:white;
+    font-size: 20px;
+    padding-left: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+
+/* SUperStar Auth */
+
+.SuperStarAuth{
+    position: fixed;
+    width: 100%;
+    height: 100vw;
+    background-image: url('../../assets/images/starbgauth.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*-webkit-filter: blur(10px);
+    *//*-moz-filter:blur(10px);
+    */background-color: black;
+}
+.Super-body{
+    margin-top: 200px;
+}
+.Super-star-img{
+    width: 50%;
+    margin-top: 50px;
+    float: right;
+}
+
+.Ul-super{
+    text-decoration: none;
+    list-style: none;
+    margin-top: 100px;
+}
+.li-super{
+    padding: 5px;
+}
+.btn-super-star{
+    width: 30%;
+    height: 40px;
+    border: none;
+    background-color: rgb(218, 168, 32);
+    font-weight: 600;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.btn-super-star:hover{
+    background-color: rgb(241, 226, 7);
+}
+
+@media only screen and (max-width: 600px) {
+    .SuperStarAuth{
+        position: fixed;
+        width: 100%;
+        height: 0 auto;
+        background-image: url('../../assets/images/starbgauth.png');
+     background-color: black;
+    }
+    .Super-star-img{
+        width: 50%;
+        margin-top: 50px;
+        float: left;
+        margin-left: 90px;
+    }
+    .btn-super-star{
+        width: 90%;
+        height: 40px;
+        margin-left: 0px;
+    }
+    .superStar-Auth{
+        background-color: black;
+        height: fit-content;
+    }
+    .Ul-super{
+        margin-bottom: 240px;
+    }
+  }
+/* sm */
+@media only screen and (max-width: 800px) {
+    .Login-Super-Left{
+        height:20vh;
+        border-color: 2px solid rgb(250, 172, 4) ;
+        background-color: rgb(8, 8, 8);
+        
+        margin-top: 20px;
+    
+    }
+    .logIn-bg-sp{
+        height: 60vh;
+        margin-top: 20px;
+        background-color: rgba(12, 12, 12, 0.911) !important;
+    }
+    .SP-S_long{
+        height: 70vh;
+    }
+    .logIn-bg-left-img{
+        width: 40%;
+        margin-top: 20px;
+    }
+  }
+
+

@@ -12,20 +12,20 @@ import MenuItem from "./MenuItem";
 // added more menuItems for testing
 export const menuItems = [
   
-  { name: "Dashboard", exact: true, to: "/hello-superstar-admin-panel/admin", iconClassName: "bi bi-speedometer2", },
-  { name: "Live Chat", to: `/hello-superstar-admin-panel/live-chat`, iconClassName: "bi bi-vector-pen" },
-  { name: "Upcoming Event", to: `/hello-superstar-admin-panel/upcoming-event`, iconClassName: "bi bi-vector-pen" },
-  { name: "Learning Session", to: `/hello-superstar-admin-panel/learning-session`, iconClassName: "bi bi-vector-pen" },
-  { name: "Wallet", to: `/hello-superstar-admin-panel/wallet`, iconClassName: "bi bi-vector-pen" },
+  { name: "Dashboard", exact: true, to: "/superstar-admin/dashboard", iconClassName: "bi bi-speedometer2", },
+  { name: "Live Chat", to: `/superstar-admin/live-chat`, iconClassName: "bi bi-vector-pen" },
+  { name: "Upcoming Event", to: `/superstar-admin/upcoming-event`, iconClassName: "bi bi-vector-pen" },
+  { name: "Learning Session", to: `/superstar-admin/learning-session`, iconClassName: "bi bi-vector-pen" },
+  { name: "Wallet", to: `/superstar-admin/wallet`, iconClassName: "bi bi-vector-pen" },
 
   {
     name: "Content 2",
     exact: true,
-    to: `/hello-superstar-admin-panel/content-2`,
+    to: `/superstar-admin/content-2`,
     iconClassName: "bi bi-speedometer2",
     subMenus: [
-      { name: "Courses", to: "/hello-superstar-admin-panel/content-2/courses" },
-      { name: "Videos", to: "/hello-superstar-admin-panel/content-2/videos" },
+      { name: "Courses", to: "/superstar-admin/content-2/courses" },
+      { name: "Videos", to: "/superstar-admin/content-2/videos" },
     ],
   },
   
@@ -72,7 +72,7 @@ const SideMenu = (props) => {
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
         <div className="SuperStar-head-text-c">
-         hello-superstar-admin-panel Panel
+         Admin Panel
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (

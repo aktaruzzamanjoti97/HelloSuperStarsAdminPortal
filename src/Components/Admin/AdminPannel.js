@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from '../../assets/images/helloSuperStar.png'
 import { Link} from 'react-router-dom'
 
-function AdminHelloSuperStarAdminPannel () {
+function AdminPannel () {
 return (
 <>
     <div className="Container SuperStarAuth justify-content-center aligns-items-center">
@@ -15,7 +15,7 @@ return (
             <div className="superStar-Auth col-md-6">
                 <ul className="Ul-super">
                     <br /><br /> <br /><br />
-                    <li className="li-super"><Link to='/admin/login'><button className='btn-super-star'>Log in</button></Link></li>
+                    <li className="li-super"><Link to='/superstar-admin/login'><button className='btn-super-star'>Log in</button></Link></li>
                 </ul>
             </div>
         </div>
@@ -25,4 +25,4 @@ return (
 )
 }
 
-export default AdminHelloSuperStarAdminPannel;
+export default AdminPannel;
