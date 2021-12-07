@@ -85,7 +85,7 @@ const SideMenu = (props) => {
 
       <div className="search-controller">
         <button className="search-btn">
-          <i class="bi bi-search"></i>
+          <i class="fas fa-search"></i>
         </button>
 
         <input type="text" placeholder="search" />
@@ -94,7 +94,7 @@ const SideMenu = (props) => {
       <div className="divider"></div>
 
       <div className="main-menu">
-        <ul>
+        <ul >
 
 
 
@@ -131,6 +131,60 @@ const SideMenu = (props) => {
           </li> 
           </Link>
 
+          <Link to='/superstar-admin/progressbar'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Progress bar</span>
+            </a>
+          </li> 
+          </Link>
+          <Link to='/superstar-admin/audition'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Audition</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/learning-session'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Learning Session</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/live-video'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Live Video</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/meetup-events'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Meetup Events</span>
+            </a>
+          </li> 
+          </Link>
+
           <Link to='/superstar-admin/live-chat'> 
           <li>
             <a className="menu-item">
@@ -148,7 +202,51 @@ const SideMenu = (props) => {
               <div className="menu-icon">
                 <i class="bi bi-speedometer2"></i>
               </div>
-              <span>Upcoming-event</span>
+              <span>Upcoming Event</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/greetings'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Greetings</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/souvenir'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Souvenir</span>
+            </a>
+          </li> 
+          </Link>
+
+           <Link to='/superstar-admin/wallet'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Wallet</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/settings'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Settings</span>
             </a>
           </li> 
           </Link>
