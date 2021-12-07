@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from '../../../assets/images/helloSuperStar.png'
-import {Card,Form,Container} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import Logo from '../../assets/images/helloSuperStar.png'
+import {Card,Form,Container} from 'react-bootstrap' 
+import { Link} from 'react-router-dom'
 
-const SuperStarRegistration = () => {
+const SuperStarQR = () => {
 return (
 <>
     <div className="login-Super-body">
@@ -22,28 +22,26 @@ return (
                             <div className="w-100 SP-S_long" >
                                 <Card className='logIn-bg-sp'>
                                     <Card.Body>
-
                                         <div className="d-flex justify-content-center parent-border">
                                             <h4 className="text-center mb-4 logIn-header"> Registration</h4>
                                         </div>
                                         <br />
-                                        <br />
 
                                         <Form className='text-center'>
 
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Email or Phone " />
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Password " />
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Confirm Password" />
-                                            
-                                            <div className="d-flex  justify-content-around mt-5 "> 
-                                                <Link to='/superstar-admin/otp'><button className="btn btn-warning " placeholder="Next" type="submit">Next</button></Link>
-                                            </div>
+                                            <input className="btn btn-warning btn-sp-register-ad"
+                                                placeholder="Enter QR Code Number" />
 
+                                            <div className="d-flex  justify-content-around mt-5 ">
+                                                
+                                                <Link to='/superstar/registration'><button className="btn btn-warning " placeholder="Next"
+                                                    type="submit">Next</button></Link>
+                                            </div>
                                         </Form>
                                     </Card.Body>
 
                                     <div className="text-center Login_SP_Footer">
-                                        Already have an account? <Link to='/superstar-admin/login'><a className="Login_SP_Footer-btn">Log in</a></Link>
+                                    Already have an account? <Link to='/superstar/login'><a className="Login_SP_Footer-btn">Log in</a></Link>
                                     </div>
 
                                 </Card>
@@ -59,4 +57,4 @@ return (
 )
 }
 
-export default SuperStarRegistration
+export default SuperStarQR

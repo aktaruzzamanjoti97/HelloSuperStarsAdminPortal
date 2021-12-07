@@ -14,7 +14,8 @@ return (
 
             <div className="superStar-Auth col-md-6">
                 <ul className="Ul-super">
-                    <br /><br /> <br /><br />
+                    <br /><br /> <br />
+                    <li className="li-super"><Link to='/superstar/qr'><button className='btn-super-star'>Registration</button></Link></li>
                     <li className="li-super"><Link to='/superstar-admin/login'><button className='btn-super-star'>Log in</button></Link></li>
                 </ul>
             </div>

@@ -5,9 +5,17 @@ import AdminRoute from './Components/Admin/AdminRoute';
 import Header from './Components/Pages/Header/Header';
 
 import AdminLogin from "./Components/Admin/AdminLogin";
+import AdminRegistration from './Components/Admin/AdminRegistratoin';
 import AdminOTP from "./Components/Admin/AdminOTP";
 import AdminPannel from './Components/Admin/AdminPannel';
-import AdminRegistration from './Components/Admin/AdminRegistratoin';
+
+
+import SuperStarQR from './Components/SuperStar/SuperStarQR';
+import SuperStarRegistration from './Components/SuperStar/SuperStarRegistration';
+
+
+
+
 
 function App() {
 return (
@@ -23,8 +31,16 @@ return (
       <Route exact path='/superstar-admin/registration' component={AdminRegistration} />
       <Route exact path='/superstar-admin/otp' component={AdminOTP} />
       
-      <Route><AdminRoute/></Route>
 
+      {/* Superstar Route - Star| Route  */}
+      <Route exact path='/superstar/registration' component={SuperStarRegistration} />
+      <Route exact path='/superstar/qr' component={SuperStarQR} />
+      <Route exact path='/superstar/congratulations' component={SuperStarQR} />
+
+
+
+      <Route exact ><AdminRoute/></Route>
+     
       
     </Switch>
   </Router>

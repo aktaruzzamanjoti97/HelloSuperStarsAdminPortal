@@ -88,6 +88,17 @@ const SideMenu = (props) => {
             />
           ))} */}
 
+        <Link to='/superstar-admin/superstars'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Superstars</span>
+            </a>
+          </li> 
+          </Link>
+
          <Link to='/superstar-admin/dashboard'> 
          <li>
             <a className="menu-item">
@@ -99,16 +110,6 @@ const SideMenu = (props) => {
           </li> 
           </Link>
 
-          <Link to='/superstar-admin/superstar-registration'> 
-         <li>
-            <a className="menu-item">
-              <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
-              </div>
-              <span>SuperStar Registration</span>
-            </a>
-          </li> 
-          </Link>
 
           <Link to='/superstar-admin/progressbar'> 
          <li>

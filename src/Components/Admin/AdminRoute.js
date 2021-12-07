@@ -31,6 +31,7 @@ return (
                     <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
                     <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
+                    <Route exact path='/superstar-admin/superstars' component={UpcomingEvent} />
                     
                 </Switch>
             </div>
