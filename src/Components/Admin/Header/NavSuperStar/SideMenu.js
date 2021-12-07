@@ -9,27 +9,6 @@ import MenuItem from "./MenuItem";
  * @function SideMenu
  **/
 
-// added more menuItems for testing
-// export const menuItems = [
-  
-//   { name: "Dashboard", exact: true, to: "/superstar-admin/dashboard", iconClassName: "bi bi-speedometer2", },
-//   { name: "Live Chat", to: `/superstar-admin/live-chat`, iconClassName: "bi bi-vector-pen" },
-//   { name: "Upcoming Event", to: `/superstar-admin/upcoming-event`, iconClassName: "bi bi-vector-pen" },
-//   { name: "Learning Session", to: `/superstar-admin/learning-session`, iconClassName: "bi bi-vector-pen" },
-//   { name: "Wallet", to: `/superstar-admin/wallet`, iconClassName: "bi bi-vector-pen" },
-
-//   {
-//     name: "Content 2",
-//     exact: true,
-//     to: `/superstar-admin/content-2`,
-//     iconClassName: "bi bi-speedometer2",
-//     subMenus: [
-//       { name: "Courses", to: "/superstar-admin/content-2/courses" },
-//       { name: "Videos", to: "/superstar-admin/content-2/videos" },
-//     ],
-//   },
-  
-// ];
 
 const SideMenu = (props) => {
   const [inactive, setInactive] = useState(false);
