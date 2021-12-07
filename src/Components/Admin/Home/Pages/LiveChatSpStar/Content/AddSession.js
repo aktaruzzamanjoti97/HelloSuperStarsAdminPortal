@@ -1,93 +1,88 @@
-import React from 'react'
-import { useHistory } from "react-router-dom";
-import frame from '../../../../../../assets/images/Normal-User/frame.png';
-import AddSessionBanner from '../../../../../../assets/images/SimpleBanner.jpeg';
-import './AddSession.css'
-
-const AddSession = () => {
-let history = useHistory();
-
-function handleClick() {
-history.push("/admin/live-chat");
-}
+import React from 'react';
+import { Link } from 'react-router-dom';
+export default function AddSession(props) {
 return (
-<>
-    <div className="card ad-card Card-sp-ds-x">
+<div {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+  
+  <div className="Modal-js-body">
+    <div className="container">
+      <form className="p-3">
 
-        <div className="p-2 m-2">
-            <div className="text-center image-middle">
-                <img className="singleFrame-style" src={frame} alt="" />
-                <h3 className="centered">Add Session</h3>
-            </div>
-
-            <div>
-                <img className="img-fluid rounded mt-2" src={AddSessionBanner} alt="" />
-            </div>
-
-            <form>
-                <div className="row my-5">
-                    {/* <div> */}
-                        <div className="form-group mb-3">
-                            <big className="text-white">Live Banner</big>
-                            <input type="file" className="form-control input-overlay" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" />
-                            {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                anyone else.</small> */}
-                        </div>
-                        <div className="form-group my-3">
-                            <big className="text-white">Star Name</big>
-                            <input type="email" className="form-control input-overlay" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" />
-                            {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                anyone else.</small> */}
-                        </div>
-                        <div className="form-group my-3">
-                            <big className="text-white">Purpose of live: </big>
-                            <input type="password" className="form-control input-overlay" id="exampleInputPassword1" />
-                        </div>
-
-                        <div className="form-group my-3">
-                            <big className="text-white">Duration </big>
-                            <div className="form-group row my-1">
-                                <label for="colFormLabelSm"
-                                    className="col-sm-2 col-form-label col-form-label-sm text-light">
-                                    Time
-                                </label>
-                                <div className="col-md-9">
-                                    <input type="time" className="form-control form-control-sm account-input-style" />
-                                </div>-
-
-                            </div>
-
-                        </div>
-
-                        <div className="form-group my-3">
-                            <big className="text-white">Schedule </big>
-
-                            <div className="form-group row my-1">
-                                <label for="colFormLabelSm"
-                                    className="col-sm-2 col-form-label col-form-label-sm text-light">
-                                    Date
-                                </label>
-                                <div className="col-md-9">
-                                    <input type="date" className="form-control form-control-sm account-input-style"
-                                        placeholder="John Doe" />
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div className="text-center">
-                        <button onClick={handleClick} type="submit" className="my-3 btn-gold-primary">Submit</button>
-                    </div>
-
-            </form>
+        <div className="form-group row my-4">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            Purpose of live
+          </label>
+          <div className="col-sm-3">
+            <input type="text" className="form-control form-control-sm input-in-lv-ch"
+              placeholder="write here.." />
+          </div>
         </div>
-    </div>
-</>
-)
-}
 
-export default AddSession
+        <div className="form-group row my-4">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            Instruction
+          </label>
+          <div className="col-sm-3">
+            <textarea type="text" className="form-control form-control-sm input-in-lv-ch"
+              placeholder="instruction write here.." />
+          </div>
+        </div>
+
+        
+        <div className="form-group row my-3">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            Banner
+          </label>
+          <div className="col-sm-3">
+            <input type="file" className="form-control form-control-sm input-in-lv-ch" />
+          </div>
+        </div> 
+
+        <div className="form-group row my-4">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            Date
+          </label>
+          <div className="col-sm-3">
+            <input type="date" className="form-control form-control-sm input-in-lv-ch"
+              placeholder="John Doe" />
+          </div>
+        </div>
+
+        <div className="form-group row my-3">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            Time
+          </label>
+          <div className="col-sm-3">
+            <input type="time" className="form-control form-control-sm input-in-lv-ch" />
+          </div> to
+          <div className="col-sm-3">
+            <input type="time" className="form-control form-control-sm input-in-lv-ch" />
+          </div>
+        </div>
+
+        <div className="form-group row my-3">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            Per mnt
+          </label>
+          <div className="col-sm-3">
+            <input type="text" className="form-control form-control-sm input-in-lv-ch"
+              placeholder="1200 BDT" />
+          </div>
+        </div>
+
+        <div className="form-group row my-3">
+          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+            <Link to='/admin/live-chat/confirm'><button className="btn btn-warning w-100 text-dark con-text-bfo">
+            Confirm
+          </button></Link>
+          
+          </label>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+);
+}
