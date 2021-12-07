@@ -60,7 +60,7 @@ return (
                                             </button>
 
                                             <div className="d-flex  justify-content-around mt-5 OTP-SP-Log ">
-                                                <Link to='/hello-superstar-admin-panel/admin'>
+                                                <Link to='/superstar-admin/dashboard'>
                                                 <button className="btn btn-warning OPT" placeholder="Next"
                                                     type="submit">
                                                     Next

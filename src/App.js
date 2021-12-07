@@ -1,30 +1,46 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import './Components/Admin/Adminlogin.css'
 import AdminRoute from './Components/Admin/AdminRoute';
-import SuperStarAdminRoute from './Components/SuperStar/SuperStarAdminRoute'
-import SuperStarAuthRoute from './Components/SuperStarAuth/SuperStarAuthRoute'
 import Header from './Components/Pages/Header/Header';
 
-import AdminHelloSuperStarAdminPannel from "./Components/Admin/AdminHelloSuperStarAdminPannel";
 import AdminLogin from "./Components/Admin/AdminLogin";
+import AdminRegistration from './Components/Admin/AdminRegistratoin';
 import AdminOTP from "./Components/Admin/AdminOTP";
+import AdminPannel from './Components/Admin/AdminPannel';
 
-// import SuperStarLogin from './Components/SuperStarAuth/Content/SuperStarLogin';
-// import SuperStarRoute from './Components/SuperStarAuth/SuperStarAuthRoute';
-// import SuperStarHome from './Components/SuperStarAuth/SuperStarHome';
+
+import SuperStarQR from './Components/SuperStar/SuperStarQR';
+import SuperStarRegistration from './Components/SuperStar/SuperStarRegistration';
+
+
+
+
+
 function App() {
 return (
 <>
   <Router>
     <Switch>
-      <Route exact path='/AdminHelloSuperStarAdminPannel'component={AdminHelloSuperStarAdminPannel} />
-      <Route exact path='/Admin/login'component={AdminLogin} />
-      <Route exact path='/Admin/otp'component={AdminOTP} />
 
       <Route exact path='/'component={Header} />
-      <Route exact path='/hello-superstar-admin-panel/admin' component={AdminRoute} />
-      <Route exact path='/hello-superstar-star-panel' component={SuperStarAdminRoute} />
-      <Route exact path='/superstar-admin' component={SuperStarAuthRoute} />
+
+      {/* Superstar Route - Admin | Route  */}
+      <Route exact path='/superstar-admin' component={AdminPannel} />
+      <Route exact path='/superstar-admin/login' component={AdminLogin} />
+      <Route exact path='/superstar-admin/registration' component={AdminRegistration} />
+      <Route exact path='/superstar-admin/otp' component={AdminOTP} />
+      
+
+      {/* Superstar Route - Star| Route  */}
+      <Route exact path='/superstar/registration' component={SuperStarRegistration} />
+      <Route exact path='/superstar/qr' component={SuperStarQR} />
+      <Route exact path='/superstar/congratulations' component={SuperStarQR} />
+
+
+
+      <Route exact ><AdminRoute/></Route>
+     
       
     </Switch>
   </Router>

@@ -4,7 +4,10 @@ import './Home/Pages/LiveChatSpStar/SuperStarContent.css'
 import SideMenu from "./Header/NavSuperStar/SideMenu";
 // import { menuItems } from "./NavBar/SideMenu";
 import './Header/NavSuperStar/NavSuperStar.css'
+
+import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
 import LiveChatContent from "./Home/Pages/LiveChatSpStar/LiveChatContent";
+import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import SuperStarDashboard from "./Home/SuperStarDashboard";
 
 function AdminRoute() {
@@ -21,26 +24,14 @@ return (
             />
 
             <div className={`Admincontainer ${inactive ? "inactive" : "" }`}>
-
-                {/* {menuItems.map((menu, index) => (
-                <>
-                    <Route key={menu.name} exact={menu.exact} path={menu.to}>
-                        <h1>{menu.name}</h1>
-                    </Route>
-                    {menu.subMenus && menu.subMenus.length > 0
-                    ? menu.subMenus.map((subMenu, i) => (
-                    <Route key={subMenu.name} path={subMenu.to}>
-                        <h1>{subMenu.name}</h1>
-                    </Route>
-                    ))
-                    : null}
-                </>
-                ))} */}
-
+             {/* <div className='Admincontainer'> */}
                 <Switch>
 
-                    <Route exact path='/hello-superstar-admin-panel/admin' component={SuperStarDashboard}/>
-                    <Route exact path='/hello-superstar-admin-panel/live-chat' component={LiveChatContent} />
+                    <Route exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
+                    <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
+                    <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
+                    <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
+                    <Route exact path='/superstar-admin/superstars' component={UpcomingEvent} />
                     
                 </Switch>
             </div>

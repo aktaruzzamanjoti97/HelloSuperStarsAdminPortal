@@ -3,7 +3,7 @@ import { Link} from 'react-router-dom'
 import Logo from '../../assets/images/helloSuperStar.png'
 import {Card,Form,Container} from 'react-bootstrap'
 
-const AdminLogin = () => {
+const SuperStarLogin = () => {
 return (
 <>
     <div className="login-Super-body">
@@ -58,4 +58,4 @@ return (
 )
 }
 
-export default AdminLogin;
+export default SuperStarLogin;

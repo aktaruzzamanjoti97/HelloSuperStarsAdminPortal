@@ -1,9 +1,16 @@
-import React from 'react'
-import { Link} from 'react-router-dom'
-import Logo from '../../assets/images/helloSuperStar.png'
+import React, { useRef, useState } from 'react';
+import Logo from '../../../../../assets/images/helloSuperStar.png'
 import {Card,Form,Container} from 'react-bootstrap'
+import { Link, useHistory } from 'react-router-dom';
 
-const AdminLogin = () => {
+import OTPModalsp from './OTPModalsp'
+export default function (props) {
+
+    const [modalShow, setModalShow] = React.useState(false);
+    function handleClickModal(e){
+        e.preventDefault();
+        setModalShow(true);
+    }
 return (
 <>
     <div className="login-Super-body">
@@ -24,25 +31,33 @@ return (
                                     <Card.Body>
 
                                         <div className="d-flex justify-content-center parent-border">
-                                            <h4 className="text-center mb-4 logIn-header"> Log in</h4>
+                                            <h4 className="text-center mb-4 logIn-header"> Registration</h4>
                                         </div>
                                         <br />
                                         <br />
 
                                         <Form className='text-center'>
 
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Email or Phone " />
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Password " />
+                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Email"name='email' />
+
+                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Phone" name='phone' />
+
+                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Password" name='password' />
+                                            
+                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Confirm Password" />
                                             
                                             <div className="d-flex  justify-content-around mt-5 "> 
-                                                <Link to='/superstar-admin/otp'><button className="btn btn-warning" placeholder="Next" type="submit">Login</button></Link>
+                                                <button className="btn btn-warning " placeholder="Next" type="submit" onClick={handleClickModal} >Next</button>
+                                                <OTPModalsp show={modalShow} onHide={() => setModalShow(false)} />
                                             </div>
 
                                         </Form>
+                     
                                     </Card.Body>
 
+
                                     <div className="text-center Login_SP_Footer">
-                                       <Link to='/superstar-admin/registration'><a className="Login_SP_Footer-btn">Create an account</a></Link>
+                                       
                                     </div>
 
                                 </Card>
@@ -57,5 +72,3 @@ return (
 </>
 )
 }
-
-export default AdminLogin;

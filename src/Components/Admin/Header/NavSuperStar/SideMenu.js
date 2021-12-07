@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import user from "../../../../assets/images/Profile/profile.jpg";
-
+import {Link} from 'react-router-dom'
 import MenuItem from "./MenuItem";
 
 /**
@@ -9,27 +9,6 @@ import MenuItem from "./MenuItem";
  * @function SideMenu
  **/
 
-// added more menuItems for testing
-export const menuItems = [
-  
-  { name: "Dashboard", exact: true, to: "/hello-superstar-admin-panel/admin", iconClassName: "bi bi-speedometer2", },
-  { name: "Live Chat", to: `/hello-superstar-admin-panel/live-chat`, iconClassName: "bi bi-vector-pen" },
-  { name: "Upcoming Event", to: `/hello-superstar-admin-panel/upcoming-event`, iconClassName: "bi bi-vector-pen" },
-  { name: "Learning Session", to: `/hello-superstar-admin-panel/learning-session`, iconClassName: "bi bi-vector-pen" },
-  { name: "Wallet", to: `/hello-superstar-admin-panel/wallet`, iconClassName: "bi bi-vector-pen" },
-
-  {
-    name: "Content 2",
-    exact: true,
-    to: `/hello-superstar-admin-panel/content-2`,
-    iconClassName: "bi bi-speedometer2",
-    subMenus: [
-      { name: "Courses", to: "/hello-superstar-admin-panel/content-2/courses" },
-      { name: "Videos", to: "/hello-superstar-admin-panel/content-2/videos" },
-    ],
-  },
-  
-];
 
 const SideMenu = (props) => {
   const [inactive, setInactive] = useState(false);
@@ -72,7 +51,7 @@ const SideMenu = (props) => {
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
         <div className="SuperStar-head-text-c">
-         hello-superstar-admin-panel Panel
+         Admin Panel
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (
@@ -85,7 +64,7 @@ const SideMenu = (props) => {
 
       <div className="search-controller">
         <button className="search-btn">
-          <i class="bi bi-search"></i>
+          <i class="fas fa-search"></i>
         </button>
 
         <input type="text" placeholder="search" />
@@ -94,43 +73,164 @@ const SideMenu = (props) => {
       <div className="divider"></div>
 
       <div className="main-menu">
-        <ul>
-          {menuItems.map((menuItem, index) => (
+        <ul >
+
+
+
+        
+          {/* {menuItems.map((menuItem) => (
             <MenuItem
-              key={index}
               name={menuItem.name}
               exact={menuItem.exact}
               to={menuItem.to}
               subMenus={menuItem.subMenus || []}
               iconClassName={menuItem.iconClassName}
-              onClick={(e) => {
-                if (inactive) {
-                  setInactive(false);
-                }
-              }}
             />
-          ))}
+          ))} */}
 
-          {/* <li>
+        <Link to='/superstar-admin/superstars'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Superstars</span>
+            </a>
+          </li> 
+          </Link>
+
+         <Link to='/superstar-admin/dashboard'> 
+         <li>
             <a className="menu-item">
               <div className="menu-icon">
                 <i class="bi bi-speedometer2"></i>
               </div>
               <span>Dashboard</span>
             </a>
-          </li>
-          <MenuItem
-            name={"Content"}
-            subMenus={[{ name: "Courses" }, { name: "Videos" }]}
-          />
+          </li> 
+          </Link>
+
+
+          <Link to='/superstar-admin/progressbar'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Progress bar</span>
+            </a>
+          </li> 
+          </Link>
+          <Link to='/superstar-admin/audition'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Audition</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/learning-session'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Learning Session</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/live-video'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Live Video</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/meetup-events'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Meetup Events</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/live-chat'> 
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-vector-pen"></i>
+                <i class="bi bi-speedometer2"></i>
               </div>
-              <span>Design</span>
+              <span>Live Chat</span>
             </a>
-          </li> */}
+          </li>
+          </Link>
+
+          <Link to='/superstar-admin/upcoming-event'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Upcoming Event</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/greetings'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Greetings</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/souvenir'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Souvenir</span>
+            </a>
+          </li> 
+          </Link>
+
+           <Link to='/superstar-admin/wallet'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Wallet</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/settings'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Settings</span>
+            </a>
+          </li> 
+          </Link>
+
         </ul>
       </div>
 
