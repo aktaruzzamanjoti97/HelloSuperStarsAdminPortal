@@ -4,6 +4,8 @@ import './Home/Pages/LiveChatSpStar/SuperStarContent.css'
 import SideMenu from "./Header/NavSuperStar/SideMenu";
 // import { menuItems } from "./NavBar/SideMenu";
 import './Header/NavSuperStar/NavSuperStar.css'
+
+import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
 import LiveChatContent from "./Home/Pages/LiveChatSpStar/LiveChatContent";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import SuperStarDashboard from "./Home/SuperStarDashboard";
@@ -22,9 +24,11 @@ return (
             />
 
             <div className={`Admincontainer ${inactive ? "inactive" : "" }`}>
+             {/* <div className='Admincontainer'> */}
                 <Switch>
 
                     <Route exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
+                    <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
                     <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
                     

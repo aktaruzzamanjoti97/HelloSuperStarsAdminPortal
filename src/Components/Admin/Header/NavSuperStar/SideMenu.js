@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import user from "../../../../assets/images/Profile/profile.jpg";
-
+import {Link} from 'react-router-dom'
 import MenuItem from "./MenuItem";
 
 /**
@@ -10,26 +10,26 @@ import MenuItem from "./MenuItem";
  **/
 
 // added more menuItems for testing
-export const menuItems = [
+// export const menuItems = [
   
-  { name: "Dashboard", exact: true, to: "/superstar-admin/dashboard", iconClassName: "bi bi-speedometer2", },
-  { name: "Live Chat", to: `/superstar-admin/live-chat`, iconClassName: "bi bi-vector-pen" },
-  { name: "Upcoming Event", to: `/superstar-admin/upcoming-event`, iconClassName: "bi bi-vector-pen" },
-  { name: "Learning Session", to: `/superstar-admin/learning-session`, iconClassName: "bi bi-vector-pen" },
-  { name: "Wallet", to: `/superstar-admin/wallet`, iconClassName: "bi bi-vector-pen" },
+//   { name: "Dashboard", exact: true, to: "/superstar-admin/dashboard", iconClassName: "bi bi-speedometer2", },
+//   { name: "Live Chat", to: `/superstar-admin/live-chat`, iconClassName: "bi bi-vector-pen" },
+//   { name: "Upcoming Event", to: `/superstar-admin/upcoming-event`, iconClassName: "bi bi-vector-pen" },
+//   { name: "Learning Session", to: `/superstar-admin/learning-session`, iconClassName: "bi bi-vector-pen" },
+//   { name: "Wallet", to: `/superstar-admin/wallet`, iconClassName: "bi bi-vector-pen" },
 
-  {
-    name: "Content 2",
-    exact: true,
-    to: `/superstar-admin/content-2`,
-    iconClassName: "bi bi-speedometer2",
-    subMenus: [
-      { name: "Courses", to: "/superstar-admin/content-2/courses" },
-      { name: "Videos", to: "/superstar-admin/content-2/videos" },
-    ],
-  },
+//   {
+//     name: "Content 2",
+//     exact: true,
+//     to: `/superstar-admin/content-2`,
+//     iconClassName: "bi bi-speedometer2",
+//     subMenus: [
+//       { name: "Courses", to: "/superstar-admin/content-2/courses" },
+//       { name: "Videos", to: "/superstar-admin/content-2/videos" },
+//     ],
+//   },
   
-];
+// ];
 
 const SideMenu = (props) => {
   const [inactive, setInactive] = useState(false);
@@ -95,42 +95,64 @@ const SideMenu = (props) => {
 
       <div className="main-menu">
         <ul>
-          {menuItems.map((menuItem, index) => (
+
+
+
+        
+          {/* {menuItems.map((menuItem) => (
             <MenuItem
-              key={index}
               name={menuItem.name}
               exact={menuItem.exact}
               to={menuItem.to}
               subMenus={menuItem.subMenus || []}
               iconClassName={menuItem.iconClassName}
-              onClick={(e) => {
-                if (inactive) {
-                  setInactive(false);
-                }
-              }}
             />
-          ))}
+          ))} */}
 
-          {/* <li>
+         <Link to='/superstar-admin/dashboard'> 
+         <li>
             <a className="menu-item">
               <div className="menu-icon">
                 <i class="bi bi-speedometer2"></i>
               </div>
               <span>Dashboard</span>
             </a>
-          </li>
-          <MenuItem
-            name={"Content"}
-            subMenus={[{ name: "Courses" }, { name: "Videos" }]}
-          />
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/superstar-registration'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>SuperStar Registration</span>
+            </a>
+          </li> 
+          </Link>
+
+          <Link to='/superstar-admin/live-chat'> 
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-vector-pen"></i>
+                <i class="bi bi-speedometer2"></i>
               </div>
-              <span>Design</span>
+              <span>Live Chat</span>
             </a>
-          </li> */}
+          </li>
+          </Link>
+
+          <Link to='/superstar-admin/upcoming-event'> 
+          <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <span>Upcoming-event</span>
+            </a>
+          </li> 
+          </Link>
+
         </ul>
       </div>
 

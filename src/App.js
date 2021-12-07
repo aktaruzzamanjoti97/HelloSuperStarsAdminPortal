@@ -22,7 +22,8 @@ return (
       <Route exact path='/superstar-admin/login' component={AdminLogin} />
       <Route exact path='/superstar-admin/registration' component={AdminRegistration} />
       <Route exact path='/superstar-admin/otp' component={AdminOTP} />
-      <Route exact path='/superstar-admin/dashboard' component={AdminRoute} />
+      
+      <Route><AdminRoute/></Route>
 
       
     </Switch>
