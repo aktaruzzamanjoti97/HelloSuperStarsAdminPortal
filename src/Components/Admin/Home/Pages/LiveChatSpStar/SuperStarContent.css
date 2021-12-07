@@ -40,6 +40,12 @@
 .con-text-bfo{
   font-weight: 600 !important;
 }
+
+/* .file-x-i input[type=file]{
+  opacity: 0;
+  border: 1px solide goldenrod !important;
+} */
+
 .RightSlotBtn{
     float: right;
     color: brown;

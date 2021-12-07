@@ -1,9 +1,14 @@
 
 import React from 'react'
 import { Modal} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 export default function UpComingLiveModal(props) {
+    let history = useHistory();
+    function handleClick(e){
+e.preventDefault();
+history.push("/superstar-admin/live-chat/registeruser");
+    }
 return (
 <>
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -32,7 +37,7 @@ return (
                         </div>
 
                         <div className="col-sm-2 view-li-up">
-                            <Link to='/admin/live-chat/schedule'><button className="form-control form-control-sm account-input-style ">View</button></Link>
+                            <button onClick={handleClick} className="form-control form-control-sm account-input-style ">View</button>
                         </div>
 
                     </div>
