@@ -35,7 +35,7 @@ return (
 
                 <Switch>
 
-                    <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
+                    <Route exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
                     <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
                     <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
                      <Route exact path='/superstar-admin/live-chat/registeruser' component={RegistertUser} />

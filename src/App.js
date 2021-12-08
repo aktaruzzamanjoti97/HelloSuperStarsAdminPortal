@@ -16,7 +16,7 @@ import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/
 import SuperStarOTP from './Components/SuperStar/SuperStarOtp';
 
 //Private Route
-import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
+// import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
 
 
 import axios from "axios";
@@ -68,11 +68,6 @@ return (
       <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
 
       <Route exact path='/superstar/dashboard' component={Header} />
-
-
-
-
-      
      
       
     </Switch>
