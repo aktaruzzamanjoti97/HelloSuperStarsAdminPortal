@@ -1,6 +1,15 @@
 import React from "react";
+import MasterPassword from "./MasterPassword/MasterPassword";
 
-const FormContent = ({BankName}) => {
+const FormContent = ({ BankName }) => {
+
+  const [modalShow, setModalShow] = React.useState(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setModalShow(true);
+  }
+
   return (
     <>
       <div className="col-12 my-4">
@@ -42,7 +51,12 @@ const FormContent = ({BankName}) => {
               </div>
 
               <div className=" my-3">
-                <button className="btn btn-warning px-5">Next</button>
+                <button onClick={(e) => handleClick(e)} className="btn btn-warning px-5">Next</button>
+              </div>
+
+              <div>
+                <MasterPassword show={modalShow}
+                  onHide={() => setModalShow(false)} />
               </div>
             </form>
           </div>

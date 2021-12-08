@@ -12,6 +12,7 @@ import AdminPannel from './Components/Admin/AdminPannel';
 
 import SuperStarQR from './Components/SuperStar/SuperStarQR';
 import SuperStarRegistration from './Components/SuperStar/SuperStarRegistration';
+import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/HelloSuperStarShakib';
 
 
 
@@ -35,7 +36,7 @@ return (
       {/* Superstar Route - Star| Route  */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
       <Route exact path='/superstar/qr' component={SuperStarQR} />
-      <Route exact path='/superstar/congratulations' component={SuperStarQR} />
+      <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
 
 
 
