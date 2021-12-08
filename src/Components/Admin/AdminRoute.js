@@ -9,6 +9,10 @@ import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration"
 import LiveChatContent from "./Home/Pages/LiveChatSpStar/LiveChatContent";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import SuperStarDashboard from "./Home/SuperStarDashboard";
+import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";
+import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
+import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
+// import RegisterUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegisterUser";
 
 function AdminRoute() {
 const [inactive, setInactive] = useState(false);
@@ -24,16 +28,22 @@ return (
             />
 
             <div className={`Admincontainer ${inactive ? "inactive" : "" }`}>
-             {/* <div className='Admincontainer'> */}
+
                 <Switch>
 
                     <Route exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
                     <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
                     <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
+                    {/* <Route exact path='/superstar-admin/live-chat/register-user' component={RegisterUser} /> */}
+                     <Route exact path='/superstar-admin/live-chat/registeruser' component={RegistertUser} />
+                    <Route exact path='/superstar-admin/live-chat/add-session' component={AddSessionContent} />
+                    <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
+
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
                     <Route exact path='/superstar-admin/superstars' component={UpcomingEvent} />
                     
                 </Switch>
+                
             </div>
     </Router>
 </div>

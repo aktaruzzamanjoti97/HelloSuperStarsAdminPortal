@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import LiveNow from './Content/LiveNow'
+import AddSession from './Content/AddSession'
 import Star from '../../../../../assets/images/star.png'
 
-const LiveChatContent = () => {
+const AddSessionContent = () => {
 return (
 <>
     <div className="AS">
@@ -27,7 +27,7 @@ return (
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Now
                     </button></Link>
                 </div>
-            </div><br/>
+            </div> <br/>
             <div title="Live Now" className="col-md-3 align-items-center justify-content-center ">
                 <div className="card ad-card SH-CARD-TSX">
                     <div className="card-body  align-items-center">
@@ -48,10 +48,10 @@ return (
                 </div>
             </div>
         </div>
-        <LiveNow />
+        <AddSession/>
     </div>
 </>
 )
 }
 
-export default LiveChatContent
+export default AddSessionContent
