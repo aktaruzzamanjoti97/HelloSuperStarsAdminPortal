@@ -13,6 +13,10 @@ import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";
 import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
 import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
+import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
+import AdminPrivateRoute from "../PrivateRoute/AdminPrivateRoute";
+//Private Route
+
 
 function AdminRoute() {
 const [inactive, setInactive] = useState(false);
@@ -39,6 +43,9 @@ return (
                     <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
                     <Route exact path='/superstar-admin/superstars' component={AddSuperStar} />
+                    <Route exact path='/superstar-admin/superstars/details' component={WelcomeSuperStarPrint} />
+
+                    
                     
                 </Switch>
                 

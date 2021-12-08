@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 import user from "../../../../assets/images/Profile/profile.jpg";
-import {Link} from 'react-router-dom'
-import MenuItem from "./MenuItem";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+import swal from 'sweetalert';
 
 /**
  * @author
@@ -11,6 +12,28 @@ import MenuItem from "./MenuItem";
 
 
 const SideMenu = (props) => {
+
+  const history = useHistory();
+
+  const logoutSubmit = (e) => {
+    e.preventDefault();
+    
+    axios.post(`/api/logout`).then(res => {
+      if(res.data.status === 200)
+      {
+        localStorage.removeItem('auth_token');
+        localStorage.removeItem('auth_name');
+        swal("Success",res.data.message,"success");
+        history.push('/login');
+      }
+      else
+      {
+        swal("Warning",res.data.message,"Warning");
+        //history.push('/');
+      }
+    });
+  }
+
   const [inactive, setInactive] = useState(false);
 
   useEffect(() => {
@@ -240,7 +263,7 @@ const SideMenu = (props) => {
         </div>
         <div className="user-info">
           <h5>Rizwan Khan</h5>
-          <p>rizwankhan@gmail.com</p>
+          <button className="btn btn-sm btn-warning" onClick={logoutSubmit}> Log Out </button>
         </div>
       </div>
     </div>

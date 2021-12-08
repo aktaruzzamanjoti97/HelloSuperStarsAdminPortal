@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 import avatarImage from '../../../../../../assets/images/profileAvatar/Avater.png';
 import './AddSuperStarModal.css';
+import axios from "axios";
+import swal from 'sweetalert';
 
 
 const AddSuperStarModal = (props) => {
@@ -14,6 +17,75 @@ const AddSuperStarModal = (props) => {
 
     const handleClick =(e)=>{
         e.preventDefault()
+    }
+
+
+    // const [loading, setLoading] = useState(false);
+    const loading=false;
+    const [changeIcon, setChange] = useState(false);
+    const [changIcon1, setChangeIcon1] = useState(false);
+
+
+
+    function handleChangeIcon() {
+        setChange(!(changeIcon));
+
+    }
+
+    function handleChangeIcon1() {
+        setChangeIcon1(!(changIcon1));
+    }
+
+
+    const history = useHistory();
+    const [registerInput, setRegister] = useState({
+        first_name: '',
+        last_name: '',
+        error_list: []
+    });
+    //const [regvalue,setRegValue]=useState('');
+
+    const handleInput = (e) => {
+        const {name,value}=e.target;
+        setRegister((prev)=>{
+            return({...prev,[name]:value});
+        })
+        // e.persist();
+        // setRegister({...registerInput, [e.target.name]: e.target.value});
+    }
+
+    const registerSubmit = (e) => {
+        e.preventDefault();
+
+        const data = {
+            first_name: registerInput.first_name,
+            last_name: registerInput.last_name,
+        }
+
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`/api/star_register`, data).then(res => {
+                if(res.data.status === 200)
+                {
+                    document.getElementById('input_form').reset();
+                  
+                    swal("Success",res.data.message,"success");
+                    // setModalShow(false);
+                
+                }
+                else{
+                    //setModalShow(true);
+                    setRegister({ ...registerInput,error_list: res.data.validation_errors });
+                }
+            });
+        });
+      
+    }
+
+    const [modalShow, setModalShow] = React.useState(false);
+    function handleClickModal(e){
+        e.preventDefault();
+        setModalShow(true);
     }
 
     return (
@@ -33,30 +105,32 @@ const AddSuperStarModal = (props) => {
                     <h1 className="text-center text-white">Star Profile Registration</h1>
                 </div>
                 <div className="">
-                    <form>
+
+
+                    <form onSubmit={registerSubmit} id="input_form">
                         <div className="row">
                             <div className="form-group mb-3">
+
+                            
                                 <div className="row mx-auto mb-3">
                                     <div className="d-flex justify-content-center">
-                                        <div className="col-md-8">
+                                        <div className="col-md-10">
                                             <div className="row">
-                                                <div className="col-md-9">
-                                                    <div>
-                                                        <big style={{ color: '#f5e445' }} htmlFor="">Star Name</big>
-                                                        <input type="text" className="form-control reply-control input-overlay" />
-                                                    </div>
+                                                <div className="col-md-6">
                                                     <div className="my-2">
-                                                        <big style={{ color: '#f5e445' }} htmlFor="">Description</big>
-                                                        <textarea type="text" className="form-control reply-control input-overlay" />
+                                                        <big style={{ color: '#f5e445' }} htmlFor="">First Name</big>
+                                                        <input type="text" className="form-control reply-control input-overlay" onChange={handleInput} name='first_name' value={registerInput.first_name}/>
                                                     </div>
+
+                                                    <div className="my-2">
+                                                        <big style={{ color: '#f5e445' }} htmlFor="">Last Name</big>
+                                                        <input type="text" className="form-control reply-control input-overlay" onChange={handleInput} name='last_name' value={registerInput.last_name}/>
+                                                    </div>
+
                                                 </div>
-                                                <div className="col-md-3">
+                                                <div className="col-md-6">
                                                     <div className="avatar-img my-3 text-center">
-                                                        <img
-                                                            src={file === "" ? avatarImage : file}
-                                                            className="img-fluid avatar-img-src"
-                                                            alt="profile-pic"
-                                                        />
+                                                        <img src={ file === "" ? avatarImage : file} className="img-fluid avatar-img-src" alt="profile-pic"/>
                                                     </div>
                                                     <div className="upload-input text-center my-2">
                                                         <div className="parent-div">
@@ -67,6 +141,7 @@ const AddSuperStarModal = (props) => {
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -74,35 +149,8 @@ const AddSuperStarModal = (props) => {
 
 
                                 <div className="row mx-auto my-3">
-
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <div>
-                                            <big style={{ color: '#f5e445' }}>Preferable Time</big>
-                                            <div className="col-md-6 mt-1">
-                                                <div className="d-flex text-white">
-                                                    <div className="mx-1">
-                                                        <label htmlFor="date">Date</label>
-                                                        <input type="date" name="date" className="form-control reply-control input-overlay" />
-                                                    </div>
-                                                    <div className="mx-1">
-                                                        <label htmlFor="from">From</label>
-                                                        <input type="time" name="date" className="form-control reply-control input-overlay" />
-                                                    </div>
-                                                    <div className="mx-1">
-                                                        <label htmlFor="to">To</label>
-                                                        <input type="time" name="date" className="form-control reply-control input-overlay" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div className="row mx-auto my-3">
-                                    <div className="d-flex justify-content-center align-items-center">
-                                        <div className="col-md-8">
+                                        <div className="col-md-10">
                                             <big style={{ color: '#f5e445' }} htmlFor="">Terms and Conditions</big>
                                             <textarea type="text" className="form-control reply-control input-overlay" />
                                         </div>
@@ -111,144 +159,35 @@ const AddSuperStarModal = (props) => {
 
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <div className="col-md-8">
+                                        <div className="col-md-10">
                                             <big style={{ color: '#f5e445' }} htmlFor="">Star Profile File</big>
                                             <input type="file" className="form-control reply-control input-overlay" />
                                         </div>
                                     </div>
-
                                 </div>
 
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
-                                        <div className="col-md-8">
+                                        <div className="col-md-10">
                                             <big style={{ color: '#f5e445' }} htmlFor="">Star Profile File</big>
                                             <input type="file" className="form-control reply-control input-overlay" />
                                         </div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
+
                         <div className="text-center">
-                            <button onClick={(e) => handleClick(e)} type="submit" className=" btn btn-warning w-25">Save</button>
+                            <button  type="submit" className=" btn btn-warning w-25">Save</button>
                         </div>
 
                     </form>
                 </div>
             </Modal.Body>
 
-            {/* <Modal.Body className="addSuperStar-modal">
-                <h1>This is Joti</h1>
-                <div className="starRegistration">
-                    <div className="d-flex justify-content-end">
-                        <Button onClick={props.onHide}>Close</Button>
-                    </div>
-                    <h1 className="text-center">Star Profile Registration</h1>
-                    <div className="starRegistrationBorder">
-                        <form>
-                            <div className="row">
-                                <div className="form-group mb-3">
-                                    <div className="row mx-auto mb-3">
-                                        <div className="d-flex justify-content-center">
-                                            <div className="col-md-6">
-                                                <div className="row">
-                                                    <div className="col-md-9">
-                                                        <div>
-                                                            <big style={{ color: '#f5e445' }} htmlFor="">Star Name</big>
-                                                            <input type="text" className="form-control reply-control input-overlay" />
-                                                        </div>
-                                                        <div className="my-2">
-                                                            <big style={{ color: '#f5e445' }} htmlFor="">Description</big>
-                                                            <textarea type="text" className="form-control reply-control input-overlay" />
-                                                        </div>
-                                                    </div>
-                                                    <div className="col-md-3">
-                                                        <div className="avatar-img my-3 text-center">
-                                                            <img
-                                                                src={file === "" ? avatarImage : file}
-                                                                className="img-fluid avatar-img-src"
-                                                                alt="profile-pic"
-                                                            />
-                                                        </div>
-                                                        <div className="upload-input text-center my-2">
-                                                            <div className="parent-div">
-                                                                <button className="btn btn-dark btn-upload">
-                                                                    Upload Profile Picture
-                                                                </button>
-                                                                <input type="file" className="btn" onChange={handleChange} />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div className="row mx-auto my-3">
-
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <div>
-                                                <big style={{ color: '#f5e445' }}>Preferable Time</big>
-                                                <div className="col-md-4 mt-1">
-                                                    <div className="d-flex">
-                                                        <div className="mx-1">
-                                                            <label htmlFor="date">Date</label>
-                                                            <input type="date" name="date" className="form-control reply-control input-overlay" />
-                                                        </div>
-                                                        <div className="mx-1">
-                                                            <label htmlFor="from">From</label>
-                                                            <input type="time" name="date" className="form-control reply-control input-overlay" />
-                                                        </div>
-                                                        <div className="mx-1">
-                                                            <label htmlFor="to">To</label>
-                                                            <input type="time" name="date" className="form-control reply-control input-overlay" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div className="row mx-auto my-3">
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <div className="col-md-6">
-                                                <big style={{ color: '#f5e445' }} htmlFor="">Terms and Conditions</big>
-                                                <textarea type="text" className="form-control reply-control input-overlay" />
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="row mx-auto my-3">
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <div className="col-md-6">
-                                                <big style={{ color: '#f5e445' }} htmlFor="">Star Profile File</big>
-                                                <input type="file" className="form-control reply-control input-overlay" />
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div className="row mx-auto my-3">
-                                        <div className="d-flex justify-content-center align-items-center">
-                                            <div className="col-md-6">
-                                                <big style={{ color: '#f5e445' }} htmlFor="">Star Profile File</big>
-                                                <input type="file" className="form-control reply-control input-overlay" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-center">
-                                <button type="submit" className=" btn btn-warning w-25">Save</button>
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </Modal.Body> */}
+            
         </Modal>
     );
 };
