@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 import group228 from '../../../../../../assets/images/Group 228.png';
 import './CongratulationModal.css';
@@ -9,8 +10,8 @@ const CongratulationModal = (props) => {
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
+            centered >
+            
             <Modal.Body style={{ backgroundColor: '#000000', border: '1px solid #DDA336' }}>
                 <div className="d-flex justify-content-end">
                     <Button className="continue-button" onClick={props.onHide}>X</Button>
@@ -28,7 +29,7 @@ const CongratulationModal = (props) => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-5">
-                    <Button className="w-25 continue-button"><b className="text-black">Continue</b></Button>
+                    <Link to='/'><Button className=" continue-button"><b className="text-black">Continue</b></Button></Link>
                 </div>
             </Modal.Body>
 

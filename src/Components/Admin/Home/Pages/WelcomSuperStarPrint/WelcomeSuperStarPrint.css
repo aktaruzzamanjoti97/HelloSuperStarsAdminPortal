@@ -1,0 +1,11 @@
+.superStarPrint {
+  border: 2px solid goldenrod !important;
+}
+
+.overFlowHidden {
+  overflow: hidden;
+}
+
+.bottom-cross {
+    margin-bottom: 100vh;
+}

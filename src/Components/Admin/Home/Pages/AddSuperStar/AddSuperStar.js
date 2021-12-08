@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import './AddSuperStar.css';
+import { Link } from 'react-router-dom';
 import AddUser from '../../../../../assets/images/AddUser/AddUser.png'
 import './AddSuperStar.css'
 // import { dummyData } from '../../../../../dummyData/dummyData';
@@ -72,10 +73,10 @@ const AddSuperStar = () => {
                                 <h5 className="text-white">Purnima</h5>
                                 <p className="text-white">Actress</p>
                                 <div className="parent-div">
-                                    <button className="btn btn-warning btn-upload">
+                                    <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
                                         <i class="fas fa-calendar-day mx-2"></i>
                                         Details
-                                    </button>
+                                    </button></Link>
                                    
                                 </div>
                             </div>
@@ -94,10 +95,10 @@ const AddSuperStar = () => {
                                 <h5 className="text-white">Purnima</h5>
                                 <p className="text-white">Actress</p>
                                 <div className="parent-div">
-                                    <button className="btn btn-warning btn-upload">
+                                    <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
                                         <i class="fas fa-calendar-day mx-2"></i>
                                         Details
-                                    </button>
+                                    </button></Link>
                                     
                                 </div>
                             </div>
@@ -116,10 +117,10 @@ const AddSuperStar = () => {
                                 <h5 className="text-white">Mukesh Ambani</h5>
                                 <p className="text-white">Bussinessman</p>
                                 <div className="parent-div">
-                                    <button className="btn btn-warning btn-upload">
+                                    <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
                                         <i class="fas fa-calendar-day mx-2"></i>
                                         Details
-                                    </button>
+                                    </button></Link>
                                    
                                 </div>
                             </div>

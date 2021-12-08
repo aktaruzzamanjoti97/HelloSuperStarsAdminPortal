@@ -36,7 +36,7 @@ return (
                                             <input className="btn btn-warning btn-sp-register-ad" placeholder="Confirm Password" />
                                             
                                             <div className="d-flex  justify-content-around mt-5 "> 
-                                                <Link to='/superstar/congratulations'><button className="btn btn-warning " placeholder="Next" type="submit">Next</button></Link>
+                                                <Link to='/superstar/otp'><button className="btn btn-warning " placeholder="Next" type="submit">Next</button></Link>
                                             </div>
 
                                         </Form>
