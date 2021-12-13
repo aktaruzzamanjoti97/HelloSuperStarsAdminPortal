@@ -7,7 +7,7 @@ export default function UpComingLiveModal(props) {
     let history = useHistory();
     function handleClick(e){
 e.preventDefault();
-history.push("/superstar-admin/live-chat/view");
+history.push("/superstar/live-chat/view");
     }
 return (
 <>
