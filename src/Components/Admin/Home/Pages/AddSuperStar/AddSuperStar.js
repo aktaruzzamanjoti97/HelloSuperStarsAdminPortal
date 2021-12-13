@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card } from 'react-bootstrap';
 import './AddSuperStar.css';
 import { Link } from 'react-router-dom';
@@ -10,17 +10,42 @@ import purnima from '../../../../../assets/images/SuperStar/purnima.jpg'
 import ferdous from '../../../../../assets/images/SuperStar/ferdous.jpg'
 import mukesh from '../../../../../assets/images/SuperStar/mukesh-ambani.jpg'
 import AddSuperStarModal from './AddSuperStarModal/AddSuperStarModal';
+import axios from "axios";
+import swal from 'sweetalert';
+
 
 
 const AddSuperStar = () => {
 
+    const [loading, setLoading] = useState(true);
     const [file, setFile] = useState('');
+    const [starList, setStarList] = useState([]);
 
     const [modalShow, setModalShow] = useState(false);
 
     const handleChange = (e) => {
         setFile(URL.createObjectURL(e.target.files[0]))
     };
+
+    // Fetch Dtars Added By Admin
+    useEffect(() => {
+        let id = 3;
+
+        axios.get(`/api/star_list/${id}`).then(res =>{
+
+          if(res.status === 200)
+          {
+            setStarList(res.data.category);
+            //console.log(res.data.star);
+          }
+          setLoading(false);
+        });
+    }, []);
+
+    if(loading)
+    {
+        return <h1>...</h1>
+    }
 
 
 
@@ -53,71 +78,34 @@ const AddSuperStar = () => {
                     onHide={() => setModalShow(false)} />
             </div>
 
-            <div style={{ background: '#343434' }} className="border border-warning mt-4">
+            <div style={{ background: '#343434' }} className="border border-warning mt-4 row">
                 {/* <div className="row">
                    {
                        dummyData.map(star => <SuperstarList star={star}/>)d
                    }
                </div> */}
-                <div className="d-flex p-4">
-                    <Card className="border border-warning mx-3" style={{ width: '12rem', background: '#000000' }}>
-                        <Card.Body>
+                <div className="p-4 row col-12">
+                    
+
+
+                    {starList.map((star, index) => (
+                        <span className="col-md-2" >
+                        <Card.Body className="border border-warning mb-2" style={{ background: '#000000', borderRadius: '10px' }}>
                             <div className="avatar-img my-3 text-center">
                                 <img
-                                    src={purnima}
+                                    src={`http://localhost:8000/${star.image}`}
                                     className="img-fluid avatar-img-src"
                                     alt="profile-pic"
+                                    style={{ borderRadius: '50%' }}
                                 />
                             </div>
                             <div className="text-center my-2">
-                                <h5 className="text-white">Purnima</h5>
+                                <h5 className="text-white text-center" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{star.first_name} {star.last_name}</h5>
                                 <p className="text-white">Actress</p>
                                 <div className="parent-div">
-                                    <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
-                                        <i class="fas fa-calendar-day mx-2"></i>
-                                        Details
-                                    </button></Link>
-                                   
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card className="border border-warning mx-3" style={{ width: '12rem', background: '#000000' }}>
-                        <Card.Body>
-                            <div className="avatar-img my-3 text-center">
-                                <img
-                                    src={purnima}
-                                    className="img-fluid avatar-img-src"
-                                    alt="profile-pic"
-                                />
-                            </div>
-                            <div className="text-center my-2">
-                                <h5 className="text-white">Purnima</h5>
-                                <p className="text-white">Actress</p>
-                                <div className="parent-div">
-                                    <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
-                                        <i class="fas fa-calendar-day mx-2"></i>
-                                        Details
-                                    </button></Link>
                                     
-                                </div>
-                            </div>
-                        </Card.Body>
-                    </Card>
-                    <Card className="border border-warning mx-3" style={{ width: '12rem', background: '#000000' }}>
-                        <Card.Body>
-                            <div className="avatar-img my-3 text-center">
-                                <img
-                                    src={mukesh}
-                                    className="img-fluid avatar-img-src"
-                                    alt="profile-pic"
-                                />
-                            </div>
-                            <div className="text-center my-2">
-                                <h5 className="text-white">Mukesh Ambani</h5>
-                                <p className="text-white">Bussinessman</p>
-                                <div className="parent-div">
-                                    <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
+
+                                    <Link to={`/superstar-admin/agreement-paper/${star.id}`}><button className="btn btn-warning btn-upload">
                                         <i class="fas fa-calendar-day mx-2"></i>
                                         Details
                                     </button></Link>
@@ -125,7 +113,10 @@ const AddSuperStar = () => {
                                 </div>
                             </div>
                         </Card.Body>
-                    </Card>
+                        </span>
+                    ))}
+
+
                 </div>
             </div>
         </>

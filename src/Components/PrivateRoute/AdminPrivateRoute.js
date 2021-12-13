@@ -16,7 +16,7 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
         axios.get(`/api/checkingAdmin`).then( res => {
             if(res.status === 200)
             {
-                setAuthenticated(true);
+                //setAuthenticated(true);
                 if(localStorage.auth_otp == 'yes')
                 {
                     setAuthenticated(true);

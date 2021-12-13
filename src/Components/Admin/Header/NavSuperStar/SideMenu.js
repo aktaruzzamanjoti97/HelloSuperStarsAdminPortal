@@ -23,8 +23,10 @@ const SideMenu = (props) => {
       {
         localStorage.removeItem('auth_token');
         localStorage.removeItem('auth_name');
+        localStorage.removeItem('auth_otp');
+        
         swal("Success",res.data.message,"success");
-        history.push('/login');
+        history.push('/superstar-admin/login');
       }
       else
       {

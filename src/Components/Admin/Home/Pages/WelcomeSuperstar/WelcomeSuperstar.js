@@ -6,6 +6,8 @@ import footerPhoto from '../../../../../assets/images/24783.jpg';
 
 import qrCode from '../../../../../assets/images/qrCode.png'
 
+
+
 const WelcomeSuperStar = () => {
     return (
         <div className="my-3 superStarBackground">
@@ -45,6 +47,8 @@ const WelcomeSuperStar = () => {
                     <img width="140" src={qrCode} alt="" />
                    
                 </div>
+
+                
 
                 <div>
                     <img className="img-fluid footerImage w-100" src={footerPhoto} alt="" />

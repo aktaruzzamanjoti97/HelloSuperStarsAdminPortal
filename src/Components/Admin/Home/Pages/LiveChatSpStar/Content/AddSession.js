@@ -1,12 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect  } from 'react';
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import swal from 'sweetalert';
+
+
+
 export default function AddSession(props) {
+
+  const [imagedata, setImagedata] = useState('');
+
+  const [registerInput, setRegister] = useState({
+    title: '',
+    description: '',
+    fees: '',
+    error_list: []
+});
+
+  const handleInput = (e) => {
+    const {name,value}=e.target;
+    setRegister((prev)=>{
+        return({...prev,[name]:value});
+    })
+    // e.persist();
+    // setRegister({...registerInput, [e.target.name]: e.target.value});
+}
+
+
+const handleChange = (file) => {
+    //setFile(URL.createObjectURL(file[0]));
+    setImagedata(file[0]);
+}
+
+  const registerSubmit = (e) => {
+    e.preventDefault();
+
+    //alert(registerInput.first_name);
+
+    const fData = new FormData();
+
+    fData.append('image', imagedata);
+    fData.append('title', registerInput.title);
+    fData.append('description', registerInput.description);
+    fData.append('fees', registerInput.fees);
+
+
+    axios.get('/sanctum/csrf-cookie').then(response => {
+        axios.post(`/api/add_live_session`, fData).then(res => {
+            if(res.data.status === 200)
+            {
+                //history.push('/superstar-admin/superstars');
+
+
+                // document.getElementById('input_form').reset();   
+                swal("Success",res.data.message,"success");
+
+            }
+            else{
+                //setModalShow(true);
+                setRegister({ ...registerInput,error_list: res.data.validation_errors });
+            }
+        });
+    });
+
+    
+}
+
+
+
 return (
 <div {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
   
   <div className="Modal-js-body">
     <div className="container">
-      <form className="p-3">
+      <form className="p-3" onSubmit={registerSubmit} id="input_form" encType="multipart/form-data">
 
         <div className="form-group row my-4">
           <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
@@ -14,7 +80,7 @@ return (
           </label>
           <div className="col-sm-3">
             <input type="text" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="write here.." />
+              placeholder="write here.." onChange={handleInput} name='title' value={registerInput.title}/>
           </div>
         </div>
 
@@ -24,7 +90,7 @@ return (
           </label>
           <div className="col-sm-3">
             <textarea type="text" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="instruction write here.." />
+              placeholder="instruction write here.." onChange={handleInput} name='details' value={registerInput.details}/>
           </div>
         </div>
 
@@ -34,7 +100,7 @@ return (
             Banner
           </label>
           <div className="col-sm-3 file-x-i">
-            <input type="file" className="form-control form-control-sm input-in-lv-ch" />
+            <input type="file" className="form-control form-control-sm input-in-lv-ch" onChange={(e) => handleChange(e.target.files)} id="image" name="image"/>
           </div>
         </div> 
 
@@ -44,7 +110,7 @@ return (
           </label>
           <div className="col-sm-3">
             <input type="date" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="John Doe" />
+               onChange={handleInput} name='date' value={registerInput.date}/>
           </div>
         </div>
 
@@ -66,7 +132,7 @@ return (
           </label>
           <div className="col-sm-3">
             <input type="text" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="1200 BDT" />
+              placeholder="1200 BDT" onChange={handleInput} name='fees' value={registerInput.fees}/>
           </div>
         </div>
 
@@ -75,6 +141,10 @@ return (
             <Link to='/superstar-admin/live-chat/chat-star-profile'><button className="btn btn-warning w-100 text-dark con-text-bfo">
             Confirm
           </button></Link>
+
+          <button className="btn btn-warning w-100 text-dark con-text-bfo" type="submit">
+            Confirm
+          </button>
           
           </label>
         </div>

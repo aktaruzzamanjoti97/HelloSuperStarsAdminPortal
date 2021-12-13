@@ -19,7 +19,7 @@ const HelloSuperStarShakib = () => {
                                 <div>
                                     <div className="mb-4">
                                         <h2 style={{ color: '#e7a725', fontWeight: 'bold' }}>Hello</h2>
-                                        <h1 className="superStarName">Shakib Al Hasan</h1>
+                                        <h1 className="superStarName">{localStorage.auth_name}</h1>
                                     </div>
                                     <div className="d-flex">
                                         <div style={{ color: '#FFCB5E' }} className="list-unstyled mx-2">

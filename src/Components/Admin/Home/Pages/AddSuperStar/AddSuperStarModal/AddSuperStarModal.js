@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect  } from 'react';
 import { Button, Modal } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Route, Redirect, useHistory} from 'react-router-dom';
 import avatarImage from '../../../../../../assets/images/profileAvatar/Avater.png';
 import './AddSuperStarModal.css';
 import axios from "axios";
@@ -9,42 +9,56 @@ import swal from 'sweetalert';
 
 const AddSuperStarModal = (props) => {
 
-    const [file, setFile] = useState('');
+  const [loading, setLoading] = useState(true);
+  const history = useHistory();
 
-    const handleChange = (e) => {
-        setFile(URL.createObjectURL(e.target.files[0]))
-    }
+  const [users, setUser] = useState([]);
+  
+  const [subcategory, setSubcategory] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [file, setFile] = useState('');
+  const [imagedata, setImagedata] = useState('');
 
-    const handleClick =(e)=>{
-        e.preventDefault()
-    }
-
-
-    // const [loading, setLoading] = useState(false);
-    const loading=false;
-    const [changeIcon, setChange] = useState(false);
-    const [changIcon1, setChangeIcon1] = useState(false);
-
-
-
-    function handleChangeIcon() {
-        setChange(!(changeIcon));
-
-    }
-
-    function handleChangeIcon1() {
-        setChangeIcon1(!(changIcon1));
-    }
-
-
-    const history = useHistory();
-    const [registerInput, setRegister] = useState({
+  const [registerInput, setRegister] = useState({
         first_name: '',
         last_name: '',
+        subcategory_id: '',
         error_list: []
     });
-    //const [regvalue,setRegValue]=useState('');
 
+    // Fetch Category In Options
+  useEffect(() => {
+    axios.get(`/api/view-category`).then(res =>{
+      console.log(res.data.category);
+      if(res.status === 200)
+      {
+        setUser(res.data.category)
+      }
+      setLoading(false);
+    });
+    }, []);
+
+    
+
+
+    // Code for Select city on State click
+    const selectState =  (e) => {
+        let value = e.target.value;
+        var data = value;
+    
+        axios.get(`/api/fetch-subcategory/${data}`).then(res =>{
+            console.log(res.data.category);
+            if(res.status === 200)
+            {
+                setSubcategory(res.data.category)
+            }
+            setLoading(false);
+          });
+
+        setCategory(data);
+    };
+
+    
     const handleInput = (e) => {
         const {name,value}=e.target;
         setRegister((prev)=>{
@@ -54,24 +68,37 @@ const AddSuperStarModal = (props) => {
         // setRegister({...registerInput, [e.target.name]: e.target.value});
     }
 
+
+    const handleChange = (file) => {
+        setFile(URL.createObjectURL(file[0]));
+        setImagedata(file[0]);
+    }
+
+
     const registerSubmit = (e) => {
         e.preventDefault();
 
-        const data = {
-            first_name: registerInput.first_name,
-            last_name: registerInput.last_name,
-        }
+        //alert(registerInput.first_name);
+
+        const fData = new FormData();
+
+        fData.append('image', imagedata);
+        fData.append('first_name', registerInput.first_name);
+        fData.append('last_name', registerInput.last_name);
+        fData.append('category_id', category);
+        fData.append('subcategory_id', registerInput.subcategory_id);
 
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.post(`/api/star_register`, data).then(res => {
+            axios.post(`/api/star_register`, fData).then(res => {
                 if(res.data.status === 200)
                 {
-                    document.getElementById('input_form').reset();
-                  
+                    //history.push('/superstar-admin/superstars');
+
+
+                    // document.getElementById('input_form').reset();   
                     swal("Success",res.data.message,"success");
-                    // setModalShow(false);
-                
+
                 }
                 else{
                     //setModalShow(true);
@@ -79,10 +106,13 @@ const AddSuperStarModal = (props) => {
                 }
             });
         });
-      
+
+        
     }
 
+
     const [modalShow, setModalShow] = React.useState(false);
+
     function handleClickModal(e){
         e.preventDefault();
         setModalShow(true);
@@ -107,7 +137,7 @@ const AddSuperStarModal = (props) => {
                 <div className="">
 
 
-                    <form onSubmit={registerSubmit} id="input_form">
+                    <form onSubmit={registerSubmit} id="input_form" encType="multipart/form-data">
                         <div className="row">
                             <div className="form-group mb-3">
 
@@ -116,6 +146,7 @@ const AddSuperStarModal = (props) => {
                                     <div className="d-flex justify-content-center">
                                         <div className="col-md-10">
                                             <div className="row">
+
                                                 <div className="col-md-6">
                                                     <div className="my-2">
                                                         <big style={{ color: '#f5e445' }} htmlFor="">First Name</big>
@@ -126,18 +157,18 @@ const AddSuperStarModal = (props) => {
                                                         <big style={{ color: '#f5e445' }} htmlFor="">Last Name</big>
                                                         <input type="text" className="form-control reply-control input-overlay" onChange={handleInput} name='last_name' value={registerInput.last_name}/>
                                                     </div>
-
                                                 </div>
+
                                                 <div className="col-md-6">
                                                     <div className="avatar-img my-3 text-center">
-                                                        <img src={ file === "" ? avatarImage : file} className="img-fluid avatar-img-src" alt="profile-pic"/>
+                                                        <img src={ file === "" ? avatarImage : file}  className="img-fluid avatar-img-src" alt="profile-pic"/>
                                                     </div>
                                                     <div className="upload-input text-center my-2">
                                                         <div className="parent-div">
                                                             <button className="btn btn-dark btn-upload">
                                                                 Upload Profile Picture
                                                             </button>
-                                                            <input type="file" className="btn" onChange={handleChange} />
+                                                            <input type="file" className="btn" onChange={(e) => handleChange(e.target.files)} id="image" name="image"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -147,6 +178,39 @@ const AddSuperStarModal = (props) => {
                                     </div>
                                 </div>
 
+                                <div className="row mx-auto mb-3">
+                                    <div className="d-flex justify-content-center">
+                                        <div className="col-md-10">
+                                            <div className="row">
+                                                <div className="col-md-6">
+                                                    <big style={{ color: '#f5e445' }} htmlFor="">Select Category</big>
+                                                    
+                                                    <select onChange={selectState} name="stateName" className="form-control reply-control input-overlay" id='category_id' name='category_id' value={registerInput.category_id}>
+                                                        <option className="text-whaite" value="">Choose One</option>
+                                                        {users.map((user, index) => (
+                                                        <option className="text-whaite" value={user.id}>{user.name}</option>
+                                                        ))}
+                                                    </select>
+
+                                                </div>
+
+                                                <div className="col-md-6">
+                                                    <big style={{ color: '#f5e445' }} htmlFor="">Select Sub Category</big>
+                                                            
+                                                    <select onChange={handleInput} name="cityName" className="form-control reply-control input-overlay" name='subcategory_id' name='subcategory_id' value={registerInput.subcategory_id}>
+                                                    <option className="text-whaite" value="">Choose One</option>
+                                                    {subcategory.map((user, index) => (
+                                                        <option className="text-white" value={user.id}>{user.name}</option>
+                                                        ))}
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
 
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
@@ -156,6 +220,11 @@ const AddSuperStarModal = (props) => {
                                         </div>
                                     </div>
                                 </div>
+
+                                
+
+
+                                
 
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
@@ -193,3 +262,6 @@ const AddSuperStarModal = (props) => {
 };
 
 export default AddSuperStarModal;
+
+
+
