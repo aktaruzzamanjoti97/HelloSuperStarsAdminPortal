@@ -14,7 +14,7 @@ export default function AddSession(props) {
             <form className="p-3">
               <div className="form-group row my-4">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   Purpose of live
@@ -30,7 +30,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-4">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   Instruction
@@ -46,7 +46,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-3">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   Banner
@@ -61,7 +61,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-4">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   Date
@@ -77,7 +77,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-3 text-warning">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   Time
@@ -99,7 +99,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-3">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   Per mnt
@@ -115,7 +115,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-3">
                 <label
-                  for="colFormLabelSm"
+                  
                   className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch "
                 >
                   <Link to="/superstar/live-chat/chat-star-profile">

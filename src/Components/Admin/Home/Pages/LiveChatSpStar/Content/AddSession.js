@@ -75,7 +75,7 @@ return (
       <form className="p-3" onSubmit={registerSubmit} id="input_form" encType="multipart/form-data">
 
         <div className="form-group row my-4">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Purpose of live
           </label>
           <div className="col-sm-3">
@@ -85,7 +85,7 @@ return (
         </div>
 
         <div className="form-group row my-4">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Instruction
           </label>
           <div className="col-sm-3">
@@ -96,7 +96,7 @@ return (
 
         
         <div className="form-group row my-3">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Banner
           </label>
           <div className="col-sm-3 file-x-i">
@@ -105,7 +105,7 @@ return (
         </div> 
 
         <div className="form-group row my-4">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Date
           </label>
           <div className="col-sm-3">
@@ -115,7 +115,7 @@ return (
         </div>
 
         <div className="form-group row my-3 text-warning">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Time
           </label>
           <div className="col-sm-3">
@@ -127,7 +127,7 @@ return (
         </div>
 
         <div className="form-group row my-3">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Per mnt
           </label>
           <div className="col-sm-3">
@@ -137,7 +137,7 @@ return (
         </div>
 
         <div className="form-group row my-3">
-          <label for="colFormLabelSm" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             <Link to='/superstar-admin/live-chat/chat-star-profile'><button className="btn btn-warning w-100 text-dark con-text-bfo">
             Confirm
           </button></Link>

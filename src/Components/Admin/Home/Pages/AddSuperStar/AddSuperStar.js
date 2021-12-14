@@ -106,7 +106,7 @@ const AddSuperStar = () => {
                                     
 
                                     <Link to={`/superstar-admin/agreement-paper/${star.id}`}><button className="btn btn-warning btn-upload">
-                                        <i class="fas fa-calendar-day mx-2"></i>
+                                        <i className="fas fa-calendar-day mx-2"></i>
                                         Details
                                     </button></Link>
                                    

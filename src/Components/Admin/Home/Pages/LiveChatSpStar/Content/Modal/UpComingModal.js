@@ -22,14 +22,14 @@ return (
             <div className="container">
                 <form className="p-3">
                     <div className="form-group row my-3">
-                        <label for="colFormLabelSm" className="col-sm-1 col-form-label col-form-label-sm text-light">
+                        <label  className="col-sm-1 col-form-label col-form-label-sm text-light">
                             Date
                         </label>
                         <div className="col-sm-3">
                             <input type="date" className="form-control form-control-sm account-input-style" />
                         </div> 
 
-                        {/* <label for="colFormLabelSm" className="col-sm-1 col-form-label col-form-label-sm text-light">
+                        {/* <label  className="col-sm-1 col-form-label col-form-label-sm text-light">
                             Time
                         </label>
                         <div className="col-sm-3">

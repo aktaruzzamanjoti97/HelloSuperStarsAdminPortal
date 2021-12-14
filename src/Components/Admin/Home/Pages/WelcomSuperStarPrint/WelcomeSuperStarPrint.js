@@ -114,13 +114,13 @@ const WelcomeSuperStarPrint = (props) => {
 
                     <div className="me-3">
                         <button className="btn btn-warning mb-4 w-100">
-                            <i class="fas fa-print mx-1"></i>
+                            <i className="fas fa-print mx-1"></i>
                             Print
                         </button> <br />
 
                         <button className="btn btn-success w-100 mb-3">
                             <a href="/images/myw3schoolsimage.jpg" download></a>
-                        {/* <i class="fas fa-download"></i> */}
+                        {/* <i className="fas fa-download"></i> */}
                             Download
                         </button>
                     </div>

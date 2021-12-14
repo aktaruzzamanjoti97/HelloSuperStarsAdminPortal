@@ -13,8 +13,8 @@ const FormContent = ({ BankName }) => {
   return (
     <>
       <div className="col-12 my-4">
-        <div class="card money-card-form bg-dark">
-          <div class="card-body">
+        <div className="card money-card-form bg-dark">
+          <div className="card-body">
             <h6 className="text-light">Transfer Money</h6>
             <h2 className="my-3 text-light">Requesting Money Transfer</h2>
             <h5 className="text-light">
@@ -22,31 +22,31 @@ const FormContent = ({ BankName }) => {
             </h5>
 
             <form>
-              <div class="row">
-                <div class="col-5 mt-4">
-                  <label className="text-warning " htmlFor="accountName">
+              <div className="row">
+                <div className="col-5 mt-4">
+                  <label className="text-warning " >
                     Account No.
                   </label>
-                  <input type="text" class="form-control account-info-form" />
+                  <input type="text" className="form-control account-info-form" />
                 </div>
-                <div class="col-5 mt-4">
-                  <label className="text-warning" htmlFor="Branch">
+                <div className="col-5 mt-4">
+                  <label className="text-warning" >
                     Branch
                   </label>
-                  <input type="text" class="form-control account-info-form" />
+                  <input type="text" className="form-control account-info-form" />
                 </div>
 
-                <div class="col-5 my-4">
-                  <label className="text-warning" htmlFor="accountName">
+                <div className="col-5 my-4">
+                  <label className="text-warning" >
                     Acc. Name
                   </label>
-                  <input type="text" class="form-control account-info-form" />
+                  <input type="text" className="form-control account-info-form" />
                 </div>
-                <div class="col-5 my-4">
-                  <label className="text-warning" htmlFor="Branch">
+                <div className="col-5 my-4">
+                  <label className="text-warning" >
                     Ammount
                   </label>
-                  <input type="text" class="form-control account-info-form" />
+                  <input type="text" className="form-control account-info-form" />
                 </div>
               </div>
 

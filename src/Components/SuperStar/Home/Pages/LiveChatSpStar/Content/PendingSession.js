@@ -8,17 +8,17 @@ const PendingSessions = () => {
       
             <div className="row">
               <div className="col-md-4" >
-                <div class="card p-3 bg-dark shadow" style={{ border:'1px solid yellow' }}>
+                <div className="card p-3 bg-dark shadow" style={{ border:'1px solid yellow' }}>
                   <div className="text-center">
                     <img
                       src={azhari}
-                      class="card-img-top img-fluid rounded-circle"
+                      className="card-img-top img-fluid rounded-circle"
                       style={{ height: "100px", width: "100px" }}
                       alt="..."
                     />
                   </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-center text-light">
+                  <div className="card-body">
+                    <h5 className="card-title text-center text-light">
                       Mizanur Rahman Azhari
                     </h5>
                   </div>
@@ -34,17 +34,17 @@ const PendingSessions = () => {
 
 
               <div className="col-md-4" >
-                <div class="card p-3 bg-dark shadow" style={{ border:'1px solid yellow' }}>
+                <div className="card p-3 bg-dark shadow" style={{ border:'1px solid yellow' }}>
                   <div className="text-center">
                     <img
                       src={azhari}
-                      class="card-img-top img-fluid rounded-circle"
+                      className="card-img-top img-fluid rounded-circle"
                       style={{ height: "100px", width: "100px" }}
                       alt="..."
                     />
                   </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-center text-light">
+                  <div className="card-body">
+                    <h5 className="card-title text-center text-light">
                       Mizanur Rahman Azhari
                     </h5>
                   </div>
@@ -61,17 +61,17 @@ const PendingSessions = () => {
 
 
               <div className="col-md-4" >
-                <div class="card p-3 bg-dark shadow" style={{ border:'1px solid yellow' }}>
+                <div className="card p-3 bg-dark shadow" style={{ border:'1px solid yellow' }}>
                   <div className="text-center">
                     <img
                       src={azhari}
-                      class="card-img-top img-fluid rounded-circle"
+                      className="card-img-top img-fluid rounded-circle"
                       style={{ height: "100px", width: "100px" }}
                       alt="..."
                     />
                   </div>
-                  <div class="card-body">
-                    <h5 class="card-title text-center text-light">
+                  <div className="card-body">
+                    <h5 className="card-title text-center text-light">
                       Mizanur Rahman Azhari
                     </h5>
                   </div>

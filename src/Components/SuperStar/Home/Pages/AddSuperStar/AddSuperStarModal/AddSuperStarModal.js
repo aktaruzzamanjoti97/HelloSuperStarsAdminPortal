@@ -118,12 +118,12 @@ const AddSuperStarModal = (props) => {
                                             <div className="row">
                                                 <div className="col-md-6">
                                                     <div className="my-2">
-                                                        <big style={{ color: '#f5e445' }} htmlFor="">First Name</big>
+                                                        <big style={{ color: '#f5e445' }} >First Name</big>
                                                         <input type="text" className="form-control reply-control input-overlay" onChange={handleInput} name='first_name' value={registerInput.first_name}/>
                                                     </div>
 
                                                     <div className="my-2">
-                                                        <big style={{ color: '#f5e445' }} htmlFor="">Last Name</big>
+                                                        <big style={{ color: '#f5e445' }} >Last Name</big>
                                                         <input type="text" className="form-control reply-control input-overlay" onChange={handleInput} name='last_name' value={registerInput.last_name}/>
                                                     </div>
 
@@ -151,7 +151,7 @@ const AddSuperStarModal = (props) => {
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div className="col-md-10">
-                                            <big style={{ color: '#f5e445' }} htmlFor="">Terms and Conditions</big>
+                                            <big style={{ color: '#f5e445' }} >Terms and Conditions</big>
                                             <textarea type="text" className="form-control reply-control input-overlay" />
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@ const AddSuperStarModal = (props) => {
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div className="col-md-10">
-                                            <big style={{ color: '#f5e445' }} htmlFor="">Star Profile File</big>
+                                            <big style={{ color: '#f5e445' }} >Star Profile File</big>
                                             <input type="file" className="form-control reply-control input-overlay" />
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@ const AddSuperStarModal = (props) => {
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div className="col-md-10">
-                                            <big style={{ color: '#f5e445' }} htmlFor="">Star Profile File</big>
+                                            <big style={{ color: '#f5e445' }} >Star Profile File</big>
                                             <input type="file" className="form-control reply-control input-overlay" />
                                         </div>
                                     </div>

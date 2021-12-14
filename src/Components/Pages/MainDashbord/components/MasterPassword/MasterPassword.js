@@ -18,7 +18,7 @@ const MasterPasswordModal = (props) => {
                     <form className="p-3">
                         
                         <div className="form-group row my-3">
-                            <h5 for="colFormLabelSm" className="col-sm-3 col-form-label col-form-label-sm text-light">
+                            <h5  className="col-sm-3 col-form-label col-form-label-sm text-light">
                                 Enter Master Password
                             </h5>
                             <div className="col-sm-4">

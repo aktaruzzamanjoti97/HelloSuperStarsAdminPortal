@@ -11,8 +11,8 @@ import '../../../../../assets/CSS/LiveChatProfie.css'
 const PendingView = () => {
   return (
     <div>
-      <div class="card liveChatCard m-4 ">
-        <div class="card-body">
+      <div className="card liveChatCard m-4 ">
+        <div className="card-body">
           <div className="card-title text-light">
             <img src={live} alt="" className="img-fluid mx-2" />
 

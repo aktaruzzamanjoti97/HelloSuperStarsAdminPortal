@@ -80,16 +80,16 @@ const SideMenu = (props) => {
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           ) : (
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           )}
         </div>
       </div>
 
       <div className="search-controller">
         <button className="search-btn">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </button>
 
         <input type="text" placeholder="search" />
@@ -117,7 +117,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Superstars</span>
             </a>
@@ -128,7 +128,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Dashboard</span>
             </a>
@@ -140,7 +140,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Progress bar</span>
             </a>
@@ -150,7 +150,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Audition</span>
             </a>
@@ -161,7 +161,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Learning Session</span>
             </a>
@@ -172,7 +172,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Live Video</span>
             </a>
@@ -183,7 +183,7 @@ const SideMenu = (props) => {
          <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Meetup Events</span>
             </a>
@@ -194,7 +194,7 @@ const SideMenu = (props) => {
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Live Chat</span>
             </a>
@@ -205,7 +205,7 @@ const SideMenu = (props) => {
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Upcoming Event</span>
             </a>
@@ -216,7 +216,7 @@ const SideMenu = (props) => {
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Greetings</span>
             </a>
@@ -227,7 +227,7 @@ const SideMenu = (props) => {
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Souvenir</span>
             </a>
@@ -238,7 +238,7 @@ const SideMenu = (props) => {
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Wallet</span>
             </a>
@@ -249,7 +249,7 @@ const SideMenu = (props) => {
           <li>
             <a className="menu-item">
               <div className="menu-icon">
-                <i class="bi bi-speedometer2"></i>
+                <i className="bi bi-speedometer2"></i>
               </div>
               <span>Settings</span>
             </a>

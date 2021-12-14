@@ -74,6 +74,7 @@ return (
       {/* Superstar Route - Star| Sub Route  */}
       <Route exact path='/superstar/dashboard' component={SuperstarRoute}/>
       <Route exact path='/superstar/Live-chat' component={SuperstarRoute}/>
+      <Route exact path='/superstar/Live-chat/view' component={SuperstarRoute}/>
       <Route exact path='/superstar/Live-chat/registeruser' component={SuperstarRoute}/>
       <Route exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
       <Route exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>

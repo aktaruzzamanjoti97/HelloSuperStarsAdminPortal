@@ -74,7 +74,7 @@ const AddSuperStar = () => {
                                 <p className="text-white">Actress</p>
                                 <div className="parent-div">
                                     <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
-                                        <i class="fas fa-calendar-day mx-2"></i>
+                                        <i className="fas fa-calendar-day mx-2"></i>
                                         Details
                                     </button></Link>
                                    
@@ -96,7 +96,7 @@ const AddSuperStar = () => {
                                 <p className="text-white">Actress</p>
                                 <div className="parent-div">
                                     <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
-                                        <i class="fas fa-calendar-day mx-2"></i>
+                                        <i className="fas fa-calendar-day mx-2"></i>
                                         Details
                                     </button></Link>
                                     
@@ -118,7 +118,7 @@ const AddSuperStar = () => {
                                 <p className="text-white">Bussinessman</p>
                                 <div className="parent-div">
                                     <Link to='/superstar-admin/superstars/details'><button className="btn btn-warning btn-upload">
-                                        <i class="fas fa-calendar-day mx-2"></i>
+                                        <i className="fas fa-calendar-day mx-2"></i>
                                         Details
                                     </button></Link>
                                    
