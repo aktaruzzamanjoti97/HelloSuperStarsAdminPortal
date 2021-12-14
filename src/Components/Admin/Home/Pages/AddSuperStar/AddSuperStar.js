@@ -29,9 +29,8 @@ const AddSuperStar = () => {
 
     // Fetch Dtars Added By Admin
     useEffect(() => {
-        let id = 3;
 
-        axios.get(`/api/star_list/${id}`).then(res =>{
+        axios.get(`/api/star_list`).then(res =>{
 
           if(res.status === 200)
           {

@@ -19,12 +19,19 @@ export default function AddSession(props) {
       setEditorState(editorState);
   }
 
+
   const [imagedata, setImagedata] = useState('');
+  const [starList, setStarList] = useState([]);
+
 
   const [registerInput, setRegister] = useState({
     title: '',
     description: '',
-    fees: '',
+    date: '',
+    start_time: '',
+    end_time: '',
+    fee: '',
+    star_id: '',
     error_list: []
 });
 
@@ -38,6 +45,21 @@ export default function AddSession(props) {
 }
 
 
+ // Fetch Dtars Added By Admin
+ useEffect(() => {
+
+  axios.get(`/api/star_list/`).then(res =>{
+
+    if(res.status === 200)
+    {
+      setStarList(res.data.category);
+      console.log(res.data.category);
+    }
+  });
+}, []);
+
+
+
 const handleChange = (file) => {
     //setFile(URL.createObjectURL(file[0]));
     setImagedata(file[0]);
@@ -46,14 +68,18 @@ const handleChange = (file) => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
-    //alert(registerInput.first_name);
+    console.log(registerInput.description);
+
 
     const fData = new FormData();
 
     fData.append('image', imagedata);
     fData.append('title', registerInput.title);
     fData.append('description', registerInput.description);
-    fData.append('fees', registerInput.fees);
+    fData.append('date', registerInput.date);
+    fData.append('start_time', registerInput.start_time);
+    fData.append('end_time', registerInput.end_time);
+    fData.append('fee', registerInput.fee);
 
 
     axios.get('/sanctum/csrf-cookie').then(response => {
@@ -95,19 +121,38 @@ return (
               placeholder="write here.." onChange={handleInput} name='title' value={registerInput.title}/>
           </div>
         </div>
+        
+        <div className="form-group row my-4">
+          <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+          Select Stars
+          </label>
+          <div className="col-sm-7">
+            <select onChange={handleInput} name="star_id" className="form-control reply-control input-overlay" value={registerInput.star_id}>
+                <option className="text-whaite" value="">Choose One</option>
+                {starList.map((user, index) => (
+                <option className="text-whaite" value={user.id}>{user.first_name} {user.last_name}</option>
+                ))}
+            </select>
+          </div>
+        </div>
+        
 
         <div className="form-group row my-4">
           <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Instruction
           </label>
           <div className="col-sm-7">
-          <Editor
-                    editorState={editorState}
+         {/* <Editor
+                    //editorState={editorState}
                     toolbarClassName="toolbarClassName"
                     wrapperClassName="wrapperClassName"
                     editorClassName="editorClassName"
-                    onEditorStateChange={onEditorStateChange}
+                    // onEditorStateChange={onEditorStateChange}
+                    
                   />
+         */}
+         <textarea type="text" className="form-control form-control-sm input-in-lv-ch"
+         placeholder="instruction write here.." onChange={handleInput} name='description' value={registerInput.description}/>
           </div>
         </div>
 
@@ -136,10 +181,10 @@ return (
             Time
           </label>
           <div className="col-sm-3">
-            <input type="time" className="form-control form-control-sm input-in-lv-ch" />
-          </div> to
+            <input type="time" className="form-control form-control-sm input-in-lv-ch" onChange={handleInput} name='start_time' value={registerInput.start_time}/>
+          </div> To
           <div className="col-sm-3">
-            <input type="time" className="form-control form-control-sm input-in-lv-ch" />
+            <input type="time" className="form-control form-control-sm input-in-lv-ch" onChange={handleInput} name='end_time' value={registerInput.end_time}/>
           </div>
         </div>
 
@@ -149,15 +194,15 @@ return (
           </label>
           <div className="col-sm-3">
             <input type="text" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="1200 BDT" onChange={handleInput} name='fees' value={registerInput.fees}/>
+              placeholder="1200 BDT" onChange={handleInput} name='fee' value={registerInput.fee}/>
           </div>
         </div>
 
         <div className="form-group row my-3">
           <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-            <Link to='/superstar-admin/live-chat/chat-star-profile'><button className="btn btn-warning w-100 text-dark con-text-bfo">
+            <button className="btn btn-warning w-100 text-dark con-text-bfo" type="submit">
             Confirm
-          </button></Link>
+          </button>
 
           
           
