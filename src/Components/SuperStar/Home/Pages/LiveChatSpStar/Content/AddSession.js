@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import './AddSessionTextEditor.css';
+
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState, convertToRaw } from "draft-js";
+
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 export default function AddSession(props) {
+
+  const [editorState, setEditorState] = useState(EditorState.createEmpty())
+
+  function onEditorStateChange(editorState) {
+      setEditorState(editorState);
+  }
+
   return (
     <>
       <div
@@ -19,7 +33,7 @@ export default function AddSession(props) {
                 >
                   Purpose of live
                 </label>
-                <div className="col-sm-3">
+                <div className="col-sm-7">
                   <input
                     type="text"
                     className="form-control form-control-sm input-in-lv-ch"
@@ -35,11 +49,14 @@ export default function AddSession(props) {
                 >
                   Instruction
                 </label>
-                <div className="col-sm-3">
-                  <textarea
-                    type="text"
-                    className="form-control form-control-sm input-in-lv-ch"
-                    placeholder="instruction write here.."
+                <div className="col-sm-7">
+                <Editor
+                    editorState={editorState}
+                    className="editorTextArea"
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
+                    onEditorStateChange={onEditorStateChange}
                   />
                 </div>
               </div>

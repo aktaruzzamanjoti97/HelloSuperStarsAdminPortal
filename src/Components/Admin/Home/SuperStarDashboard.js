@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import AdminMainDashboard from "../../Pages/MainDashbord/AdminMainDashboard";
 
 const SuperStarDashboard = () => {
-    return (
-        <>
-             <h1 style={{ color:"tomato" }}>Admin DashBoard</h1>
-        </>
-    )
-}
+  return (
+    <>
+      <AdminMainDashboard />
+    </>
+  );
+};
 
-export default SuperStarDashboard
+export default SuperStarDashboard;

@@ -2,10 +2,22 @@ import React, { useState, useEffect  } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import swal from 'sweetalert';
+import './AddSessionTextEditor.css';
+
+import { Editor } from "react-draft-wysiwyg";
+import { EditorState, convertToRaw } from "draft-js";
+
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 
 
 export default function AddSession(props) {
+
+  const [editorState, setEditorState] = useState(EditorState.createEmpty())
+
+  function onEditorStateChange(editorState) {
+      setEditorState(editorState);
+  }
 
   const [imagedata, setImagedata] = useState('');
 
@@ -78,7 +90,7 @@ return (
           <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Purpose of live
           </label>
-          <div className="col-sm-3">
+          <div className="col-sm-7">
             <input type="text" className="form-control form-control-sm input-in-lv-ch"
               placeholder="write here.." onChange={handleInput} name='title' value={registerInput.title}/>
           </div>
@@ -88,9 +100,14 @@ return (
           <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
             Instruction
           </label>
-          <div className="col-sm-3">
-            <textarea type="text" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="instruction write here.." onChange={handleInput} name='details' value={registerInput.details}/>
+          <div className="col-sm-7">
+          <Editor
+                    editorState={editorState}
+                    toolbarClassName="toolbarClassName"
+                    wrapperClassName="wrapperClassName"
+                    editorClassName="editorClassName"
+                    onEditorStateChange={onEditorStateChange}
+                  />
           </div>
         </div>
 
@@ -142,9 +159,7 @@ return (
             Confirm
           </button></Link>
 
-          <button className="btn btn-warning w-100 text-dark con-text-bfo" type="submit">
-            Confirm
-          </button>
+          
           
           </label>
         </div>
