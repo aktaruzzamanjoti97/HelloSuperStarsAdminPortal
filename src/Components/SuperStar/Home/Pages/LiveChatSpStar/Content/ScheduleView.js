@@ -49,7 +49,7 @@ var txt=false;
           <div className="card-body">
             <h5 className="card-title text-center text-light">
               {item.title}
-              <br/><small style={{ color: 'goldenrod',fontSize:'12px'  }}> {moment(item.start_time).format('LT')} - {moment(item.end_time).format('LT ps')}</small>
+              <br/><small style={{ color: 'goldenrod',fontSize:'12px'  }}> {moment(item.start_time).format('LT')} - {moment(item.end_time).format('LT')}</small>
             </h5>
             <p>{item.banner}</p>
             
