@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@400;900&display=swap");
+
+.footerImage {
+  max-height: 100px;
+}
+
+.superStar-container {
+  background-color: azure;
+  padding: 25px;
+  margin: 0 35vh;
+  font-family: "Elsie Swash Caps", cursive;
+}
+
+.superStarLogo2 {
+  margin-top: -80px;
+}
+
+.superStarHeadingStyle {
+  background: linear-gradient(
+    102.45deg,
+    #e3c110 28.52%,
+    #dda336 52.38%,
+    #e7a725 72.31%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

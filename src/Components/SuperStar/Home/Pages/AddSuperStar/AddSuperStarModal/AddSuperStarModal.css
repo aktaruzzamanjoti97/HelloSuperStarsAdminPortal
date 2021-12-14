@@ -1,0 +1,57 @@
+.addSuperStar-modal {
+  background-color: #343434;
+  /* width: 90%; */
+  /* max-width: none !important; */
+}
+
+.modal-90w {
+  width: 90%;
+  max-width: none !important;
+  /* background-color: #343434; */
+}
+
+.starRegistration {
+  background-color: #232323;
+  /* min-height: 100vh; */
+  color: #fff;
+}
+
+.starRegistrationBorder {
+  border: 2px solid #f5ea45;
+  padding: 50px 15px;
+  margin: 25px 50px;
+  min-width: 90%;
+  position: relative;
+}
+
+.avatar-img-src {
+  height: 100px;
+  width: 100px;
+}
+.upload-input button {
+  font-size: 12px !important;
+}
+.parent-div {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.parent-div input[type="file"] {
+  left: 0;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+  font-size: 90px;
+}
+
+/* .addSuperStarModalWidth {
+  width: 60vw !important;
+} */
+
+.modalBg{
+    background-color: #343434;
+}
+
+.modal-90w{
+    background-color: #343434;
+}

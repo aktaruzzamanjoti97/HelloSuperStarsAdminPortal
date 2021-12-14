@@ -21,6 +21,7 @@ import SuperStarRoute from "./Components/PrivateRoute/SuperStarRoute";
 
 
 import axios from "axios";
+import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
 
 
 axios.defaults.withCredentials = true;
@@ -66,9 +67,23 @@ return (
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
       <Route exact path='/superstar/qr' component={SuperStarQR} />
       <Route exact path='/superstar/otp' component={SuperStarOTP} />
+
       <SuperStarRoute exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
 
-      <SuperStarRoute exact path='/superstar/dashboard' component={Header} />
+     
+      {/* Superstar Route - Star| Sub Route  */}
+      <Route exact path='/superstar/dashboard' component={SuperstarRoute}/>
+      <Route exact path='/superstar/Live-chat' component={SuperstarRoute}/>
+      <Route exact path='/superstar/Live-chat/registeruser' component={SuperstarRoute}/>
+      <Route exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
+      <Route exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
+      <Route exact path='/superstar/Live-chat/pedning-session/view' component={SuperstarRoute}/>
+                    
+
+
+      {/* Superstar Route - Star Home | Route  */}
+      <Route exact path='/superstar' component={Header} />
+
      
       
     </Switch>
