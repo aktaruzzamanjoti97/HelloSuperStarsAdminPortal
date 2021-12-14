@@ -30,9 +30,6 @@ var txt=false;
 
   var viewLiveChats = null
 
-  if(liveChats){
-    
-  }
   viewLiveChats = 
   liveChats.map( (item, index) => {
     return ( 

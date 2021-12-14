@@ -41,7 +41,7 @@ return (
                     <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
 
                     <Route exact path='/superstar-admin/live-chat/view' component={SCheduleViewAdmin} />
-                    <Route exact path='/superstar-admin/live-chat/registeruser' component={RegistertUser} />
+                    <Route exact path='/superstar-admin/live-chat/registeruser/:live_chat_id' component={RegistertUser} />
                     <Route exact path='/superstar-admin/live-chat/add-session' component={AddSessionContent} />
                     <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />

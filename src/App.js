@@ -38,6 +38,8 @@ axios.interceptors.request.use(function (config)
 
 
 
+
+
 function App() {
 return (
 <>
@@ -56,12 +58,15 @@ return (
       <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={AdminRoute}/>
       <AdminPrivateRoute exact path='/superstar-admin/superstar-registration' component={AdminRoute} />
       <AdminPrivateRoute exact path='/superstar-admin/live-chat' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/live-chat/registeruser' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/registeruser/:live_chat_id' component={AdminRoute} />
       <AdminPrivateRoute exact path='/superstar-admin/live-chat/add-session' component={AdminRoute} />
       <AdminPrivateRoute exact path='/superstar-admin/live-chat/chat-star-profile' component={AdminRoute} />
       <AdminPrivateRoute exact path='/superstar-admin/upcoming-event' component={AdminRoute} />
       <AdminPrivateRoute exact path='/superstar-admin/superstars' component={AdminRoute} />
       <AdminPrivateRoute exact path='/superstar-admin/agreement-paper/:star_id' component={AdminRoute} />
+
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/view' component={AdminRoute} />
+            
 
       {/* Superstar Route - Star| Route  */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
