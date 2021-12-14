@@ -38,6 +38,7 @@ export default function UpComingLiveModal(props) {
                                 date: modalInput.date,
                                 liveChats: res.data.livechats
                             }
+                        });
                         // if(res.data.role == 'admin')
                         // {
                         //     swal("Welcome",res.data.message,"success");
