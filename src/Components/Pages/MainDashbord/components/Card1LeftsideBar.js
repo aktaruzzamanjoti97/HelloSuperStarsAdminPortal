@@ -103,7 +103,7 @@ const Card1LeftsideBar = () => {
                     aria-controls="collapseTwo"
                   >
                     <span>
-                      <i class="fas fa-user-cog mx-2 profile-font-color fa-2x"></i>
+                      <i className="fas fa-user-cog mx-2 profile-font-color fa-2x"></i>
                     </span>{" "}
                     <span className="mx-2 profile-font-color fw-bold">
                       Setting

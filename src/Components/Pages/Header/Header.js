@@ -9,14 +9,14 @@ import "./Header.css";
 const Header = () => {
   return (
     <>
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light NavigationHead">
-        <div class="container-fluid container-custom">
-          <a class="navbar-brand" href="/">
+      <nav className="navbar sticky-top navbar-expand-lg navbar-light NavigationHead">
+        <div className="container-fluid container-custom">
+          <a className="navbar-brand" href="/">
             <img src={navicon} alt="" height="32px" width="32px" />
             <span className="text-warning mx-1">Hello Superstar - Star</span>
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -24,42 +24,42 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/">
                   <img src={menubar} alt="" height="32px" width="32px" />
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
                   <img src={menubar} alt="" height="32px" width="32px" />
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
                   <img src={menubar} alt="" height="32px" width="32px" />
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
                   <img src={menubar} alt="" height="32px" width="32px" />
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
                   <img src={menubar} alt="" height="32px" width="32px" />
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link p-1" href="/">
+              <li className="nav-item">
+                <a className="nav-link p-1" href="/">
                   <button className="btn btn-style">
                  
                     <span>
-                      <i class="fas fa-cog"></i>
+                      <i className="fas fa-cog"></i>
                     </span>
                   <span className="fw-bold mx-1">
                   Creator Studio
@@ -68,8 +68,8 @@ const Header = () => {
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="/">
+              <li className="nav-item">
+                <a className="nav-link" href="/">
                   <img src={profile} alt="" height="32px" width="32px" />
                 </a>
               </li>

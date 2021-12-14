@@ -1,11 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import LiveNow from './Content/LiveNow'
 import Live from '../../../../../assets/images/instagram-live 1.png'
 import Pending from '../../../../../assets/images/pending 2.png'
 import Add from '../../../../../assets/images/UpcomingEvent/add 1.png'
+import axios from "axios";
 
 const LiveChatContent = () => {
+    const [loading, setLoading] = useState(true);
+    const [pendingLiveChatNumber, setPendingLiveChatNumber] = useState([]);
+
+    useEffect(() => {
+    
+
+        axios.get(`/api/livechat`).then(res =>{
+
+          if(res.status === 200)
+          {
+            setPendingLiveChatNumber(res.data.pendingLiveChatNumber);
+          }
+          setLoading(false);
+        });
+    }, []);
+
+
 return (
 <>
     <div className="AS">
@@ -39,7 +57,7 @@ return (
                                     <img src={Pending} className="ad-card-img-top" alt="..." />
                                 </td>
                                 <td className="ad-card-td">
-                                    <small className="ad-card-small">01</small>
+                                    <small className="ad-card-small">{pendingLiveChatNumber}</small>
                                 </td>
                             </tr>
                         </center>

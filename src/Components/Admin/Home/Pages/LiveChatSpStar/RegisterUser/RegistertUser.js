@@ -142,12 +142,12 @@ const RegisterUser = () => {
       <div className="col-md-4 ">
         {showItem ? (
 // video work start here
-<div class="card right-live-card-bg my-2 w-75 mx-auto bg-dark">
+<div className="card right-live-card-bg my-2 w-75 mx-auto bg-dark">
   <div className="content">
     <img src={enjoy} alt="" className='img-fluid icons-videos' />
     <button className='btn'> <i className="fas fa-clock"></i>4:40</button>
   </div>
-<div class="card-body">
+<div className="card-body">
  <div className="container text-center bg-dark p-2 icons-videos">
    <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-microphone fa-2x"></i></button>
    <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i className="fas fa-video fa-2x"></i></button>
