@@ -4,6 +4,7 @@ import fatema from "../../../../../../assets/images/AdminLiveProfile/cx.webp";
 import enjoy from '../../../../../../assets/images/AdminLiveProfile/abc.jpg';
 import axios from "axios";
 import { useHistory} from 'react-router-dom';
+import moment from 'moment'
 
 import swal from 'sweetalert';
 
@@ -32,7 +33,7 @@ const RegisterUser = (props) => {
             if(res.data.status === 200)
             {
               setRegisteredLiveChat(res.data.registeredLiveChats);
-              console.log(res.data.registeredLiveChats);
+              // console.log(res.data.registeredLiveChats);
             }
         }           
     });
@@ -44,11 +45,11 @@ var viewRegisteredUserList = null
 
 viewRegisteredUserList = 
 registeredLiveChat.map( (item, index) => {
-    if(item.user.image) {
-      img_src = "http://localhost:8000/"+item.user.image
-    }else{
+    // if(item.user.image) {
+    //   img_src = "http://localhost:8000/"+item.user.image
+    // }else{
       img_src = fatema
-    }
+    // }
   return ( 
   
     <tr>
@@ -56,8 +57,8 @@ registeredLiveChat.map( (item, index) => {
         <img src={img_src} alt="imgBaseURL" className="rounded-circle register-user-img" />
         <span> {item.user.first_name} {item.user.last_name}</span>
       </th>
-      <th></th>
-      <th>5 minute</th>
+      <th>{moment(item.live_chat_start_time).format('h:mm A')}</th>
+      <th>{Math.abs(new Date(item.live_chat_end_time)  - new Date(item.live_chat_start_time)) / 60000} Minute(s)</th>
       <th>
         <button className="btn call-btn" onClick={handleClick}>
           <span>
@@ -86,22 +87,22 @@ registeredLiveChat.map( (item, index) => {
 
       <div className="col-md-4 ">
         {showItem ? (
-// video work start here
-<div className="card right-live-card-bg my-2 w-75 mx-auto bg-dark">
-  <div className="content">
-    <img src={enjoy} alt="" className='img-fluid icons-videos' />
-    <button className='btn'> <i className="fas fa-clock"></i>4:40</button>
-  </div>
-<div className="card-body">
- <div className="container text-center bg-dark p-2 icons-videos">
-   <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-microphone fa-2x"></i></button>
-   <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i className="fas fa-video fa-2x"></i></button>
-   <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-times fa-2x"></i></button>
- </div>
-</div>
-</div>
+        // video work start here
+        <div className="card right-live-card-bg my-2 w-75 mx-auto bg-dark">
+          <div className="content">
+            <img src={enjoy} alt="" className='img-fluid icons-videos' />
+            <button className='btn'> <i className="fas fa-clock"></i>4:40</button>
+          </div>
+        <div className="card-body">
+        <div className="container text-center bg-dark p-2 icons-videos">
+          <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-microphone fa-2x"></i></button>
+          <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i className="fas fa-video fa-2x"></i></button>
+          <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-times fa-2x"></i></button>
+        </div>
+        </div>
+        </div>
         ) : (
-          <RegisterLeftCard />
+          <RegisterLeftCard data={props.match.params.live_chat_id} />
         )}
       </div>
     </div>
