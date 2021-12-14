@@ -29,7 +29,7 @@ const CongratulationModal = (props) => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-5">
-                    <Link to='/'><Button className=" continue-button"><b className="text-black">Continue</b></Button></Link>
+                    <Link to='/superstar/dashboard'><Button className=" continue-button"><b className="text-black">Continue</b></Button></Link>
                 </div>
             </Modal.Body>
 

@@ -16,7 +16,15 @@ const SuperStarRoute = ({ component: Component, ...rest })=> {
         axios.get(`/api/checkingSuperStar`).then( res => {
             if(res.status === 200)
             {
-                setAuthenticated(true);
+                if(localStorage.auth_otp == 'yes')
+                {
+                    setAuthenticated(true);
+                }
+                else
+                {
+                    swal("Forbidden","Verify Your Phone Number","warning");
+                    history.push('/superstar/otp');
+                }
             }
             setloading(false);
         });

@@ -51,7 +51,7 @@ $(".inputs").keyup(function () {
                         localStorage.setItem('auth_otp', 'yes');
 
                         swal("Success",res.data.message,"success");
-                        history.push('/hello-superstar-admin-panel');
+                        history.push('/superstar-admin/dashboard');
                     }
                     else if(res.data.status === 401)
                     {

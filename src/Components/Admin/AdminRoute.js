@@ -36,21 +36,18 @@ return (
 
                 <Switch>
 
-                    <Route exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
+                    <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
                     <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
                     <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
+
                     <Route exact path='/superstar-admin/live-chat/view' component={SCheduleViewAdmin} />
-                     <Route exact path='/superstar-admin/live-chat/registeruser' component={RegistertUser} />
+                    <Route exact path='/superstar-admin/live-chat/registeruser' component={RegistertUser} />
                     <Route exact path='/superstar-admin/live-chat/add-session' component={AddSessionContent} />
                     <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
                     <Route exact path='/superstar-admin/superstars' component={AddSuperStar} />
-                    <Route exact path='/superstar-admin/superstars/details' component={WelcomeSuperStarPrint} />
-
-                    
-                    
+                    <Route exact path='/superstar-admin/agreement-paper/:star_id' component={WelcomeSuperStarPrint} />   
                 </Switch>
-                
             </div>
     </Router>
 </div>

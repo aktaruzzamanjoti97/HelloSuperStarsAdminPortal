@@ -16,7 +16,8 @@ import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/
 import SuperStarOTP from './Components/SuperStar/SuperStarOtp';
 
 //Private Route
-// import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
+import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
+import SuperStarRoute from "./Components/PrivateRoute/SuperStarRoute";
 
 
 import axios from "axios";
@@ -52,23 +53,24 @@ return (
       <Route exact path='/superstar-admin/otp' component={AdminOTP} />
       
       {/* Superstar Route - Admin | Sub Route  */}
-      <Route exact path='/superstar-admin/dashboard' component={AdminRoute}/>
-      <Route exact path='/superstar-admin/superstar-registration' component={AdminRoute} />
-      <Route exact path='/superstar-admin/live-chat' component={AdminRoute} />
-      <Route exact path='/superstar-admin/live-chat/registeruser' component={AdminRoute} />
-      <Route exact path='/superstar-admin/live-chat/add-session' component={AdminRoute} />
-      <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={AdminRoute} />
-      <Route exact path='/superstar-admin/upcoming-event' component={AdminRoute} />
-      <Route exact path='/superstar-admin/superstars' component={AdminRoute} />
-      <Route exact path='/superstar-admin/superstars/details' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={AdminRoute}/>
+      <AdminPrivateRoute exact path='/superstar-admin/superstar-registration' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/registeruser' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/add-session' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/chat-star-profile' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/upcoming-event' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/superstars' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/agreement-paper/:star_id' component={AdminRoute} />
 
       {/* Superstar Route - Star| Route  */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
       <Route exact path='/superstar/qr' component={SuperStarQR} />
       <Route exact path='/superstar/otp' component={SuperStarOTP} />
-      <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
-      
 
+      <SuperStarRoute exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
+
+     
       {/* Superstar Route - Star| Sub Route  */}
       <Route exact path='/superstar/dashboard' component={SuperstarRoute}/>
       <Route exact path='/superstar/Live-chat' component={SuperstarRoute}/>
@@ -81,6 +83,7 @@ return (
 
       {/* Superstar Route - Star Home | Route  */}
       <Route exact path='/superstar' component={Header} />
+
      
       
     </Switch>

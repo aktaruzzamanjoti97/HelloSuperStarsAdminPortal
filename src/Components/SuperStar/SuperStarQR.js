@@ -1,9 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Logo from '../../assets/images/helloSuperStar.png'
 import {Card,Form,Container} from 'react-bootstrap' 
-import { Link} from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import axios from "axios";
+import swal from 'sweetalert';
 
 const SuperStarQR = () => {
+
+    const history = useHistory();
+    const [loginInput, setLogin] = useState({
+        qr_code: '',
+        error_list: []
+    });
+
+    const handleInput = (e) => {
+        e.persist();
+        setLogin({...loginInput, [e.target.name]: e.target.value});
+    }
+
+
+    const qrSubmit = (e) => {
+        e.preventDefault();
+        const data = {
+            qr_code: loginInput.qr_code,
+        }
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`/api/star_qr_verify`, data).then(res => {
+                if(res.data.status === 200)
+                    {
+                        localStorage.setItem('auth_id', res.data.star_id);
+
+                        swal("Success",res.data.message,"success");
+                        history.push('/superstar/registration');
+                    }
+                    else if(res.data.status === 401)
+                    {
+                        swal("Warning",res.data.message,"warning");
+                    }
+                    else{
+                        setLogin({ ...loginInput,error_list: res.data.validation_errors });
+                    }
+            });
+        });
+        
+    }
+
+
 return (
 <>
     <div className="login-Super-body">
@@ -27,15 +70,16 @@ return (
                                         </div>
                                         <br />
 
-                                        <Form className='text-center'>
+                                        <Form onSubmit={qrSubmit} className='text-center'>
 
-                                            <input className="btn btn-warning btn-sp-register-ad"
-                                                placeholder="Enter QR Code Number" />
+                                            
+
+                                            <input type="text" className="btn btn-warning btn-sp-register-ad" name="qr_code" onChange={handleInput} value={loginInput.qr_code} placeholder="Enter QR Code Number"/>
+                                            <br/><span className="text-light">{loginInput.error_list.qr_code}</span>
 
                                             <div className="d-flex  justify-content-around mt-5 ">
                                                 
-                                                <Link to='/superstar/registration'><button className="btn btn-warning " placeholder="Next"
-                                                    type="submit">Next</button></Link>
+                                                <button className="btn btn-warning " placeholder="Next" type="submit">Next</button>
                                             </div>
                                         </Form>
                                     </Card.Body>

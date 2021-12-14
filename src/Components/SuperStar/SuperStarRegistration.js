@@ -1,9 +1,80 @@
-import React from 'react'
+import React, { useRef, useState } from 'react';
 import Logo from '../../assets/images/helloSuperStar.png'
 import {Card,Form,Container} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import axios from "axios";
+import swal from 'sweetalert';
 
 const SuperStarRegistration = () => {
+
+    const ConfirmPasswordRef = useRef();
+    //const { signup } = useAuth();
+
+    // const [loading, setLoading] = useState(false);
+    const loading=false;
+    const [changeIcon, setChange] = useState(false);
+    const [changIcon1, setChangeIcon1] = useState(false);
+
+
+
+    function handleChangeIcon() {
+        setChange(!(changeIcon));
+
+    }
+
+    function handleChangeIcon1() {
+        setChangeIcon1(!(changIcon1));
+    }
+
+
+    const history = useHistory();
+    const [registerInput, setRegister] = useState({
+        email: '',
+        phone: '',
+        password: '',
+        error_list: []
+    });
+    //const [regvalue,setRegValue]=useState('');
+
+    const handleInput = (e) => {
+        const {name,value}=e.target;
+        setRegister((prev)=>{
+            return({...prev,[name]:value});
+        })
+        // e.persist();
+        // setRegister({...registerInput, [e.target.name]: e.target.value});
+    }
+
+    const registerSubmit = (e) => {
+        e.preventDefault();
+
+        const data = {
+            id: localStorage.auth_id,
+            email: registerInput.email,
+            phone: registerInput.phone,
+            password: registerInput.password,
+        }
+
+
+        axios.get('/sanctum/csrf-cookie').then(response => {
+            axios.post(`/api/superStar/register`, data).then(res => {
+                if(res.data.status === 200)
+                {
+                    localStorage.setItem('auth_token', res.data.token);
+                    localStorage.setItem('auth_name', res.data.name);
+                    localStorage.setItem('auth_id', res.data.id);
+
+                    swal("Success",res.data.message,"success");
+                    history.push('/superstar/otp');
+                }
+                else{
+                    setRegister({ ...registerInput,error_list: res.data.validation_errors });
+                }
+            });
+        });
+    }
+
+
 return (
 <>
     <div className="login-Super-body">
@@ -29,14 +100,19 @@ return (
                                         <br />
                                         <br />
 
-                                        <Form className='text-center'>
+                                        <Form onSubmit={registerSubmit} className='text-center'>
 
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Email or Phone " />
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Password " />
-                                            <input className="btn btn-warning btn-sp-register-ad" placeholder="Confirm Password" />
+                                            <input className="btn btn-warning btn-sp-register-ad" onChange={handleInput} name='email' value={registerInput.email} placeholder="Email" required/>
+                                            <span>{registerInput.error_list.email}</span>
+                                            <input className="btn btn-warning btn-sp-register-ad" onChange={handleInput} name='phone' value={registerInput.phone} placeholder="Phone" required/>
+                                            <span>{registerInput.error_list.phone}</span>
+                                            <input type="password" className="btn btn-warning btn-sp-register-ad" placeholder="Password" onChange={handleInput}  name='password' value={registerInput.password} required/>
+                                            <span>{registerInput.error_list.password}</span>
+                                            
+                                            <input type="password" className="btn btn-warning btn-sp-register-ad" placeholder="Confirm Password" required/>
                                             
                                             <div className="d-flex  justify-content-around mt-5 "> 
-                                                <Link to='/superstar/otp'><button className="btn btn-warning " placeholder="Next" type="submit">Next</button></Link>
+                                                <button className="btn btn-warning " placeholder="Next" type="submit">Next</button>
                                             </div>
 
                                         </Form>
