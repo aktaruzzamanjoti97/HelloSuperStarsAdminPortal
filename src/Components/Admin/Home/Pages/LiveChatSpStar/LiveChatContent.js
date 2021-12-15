@@ -49,7 +49,7 @@ return (
             </button></Link>
         </div>
     </div><br/>
-   
+
     <div title="Live Now" className="col-md-3 align-items-center justify-content-center ">
         <div className="card ad-card SH-CARD-TSX">
             <div className="card-body  align-items-center">
