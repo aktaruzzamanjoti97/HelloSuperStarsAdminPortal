@@ -68,6 +68,8 @@ const handleChange = (file) => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
+    alert(registerInput.star_id);
+
     console.log(registerInput.description);
 
 
@@ -75,6 +77,7 @@ const handleChange = (file) => {
 
     fData.append('image', imagedata);
     fData.append('title', registerInput.title);
+    fData.append('star_id', registerInput.star_id);
     fData.append('description', registerInput.description);
     fData.append('date', registerInput.date);
     fData.append('start_time', registerInput.start_time);

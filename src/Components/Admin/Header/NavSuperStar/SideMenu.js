@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import logo from '../../../../assets/images/helloSuperStar.png'
 import user from "../../../../assets/images/Profile/profile.jpg";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
@@ -77,7 +77,7 @@ const SideMenu = (props) => {
     <div className={`side-menu ${inactive ? "inactive" : ""}`}>
       <div className="top-section">
         <div className="SuperStar-head-text-c">
-         Admin Panel
+        <img src={logo} alt="sdhfhsd" className="logo-ad"/> <span className="starName"> Admin Pannel</span>
         </div>
         <div onClick={() => setInactive(!inactive)} className="toggle-menu-btn">
           {inactive ? (
@@ -114,6 +114,17 @@ const SideMenu = (props) => {
             />
           ))} */}
 
+          <Link to='/superstar-admin/dashboard'> 
+         <li>
+            <a className="menu-item">
+              <div className="menu-icon">
+                <i className="bi bi-speedometer2"></i>
+              </div>
+              <span>Dashboard</span>
+            </a>
+          </li> 
+          </Link>
+
         <Link to='/superstar-admin/superstars'> 
          <li>
             <a className="menu-item">
@@ -125,16 +136,18 @@ const SideMenu = (props) => {
           </li> 
           </Link>
 
-         <Link to='/superstar-admin/dashboard'> 
-         <li>
+          <Link to='/superstar-admin/live-chat'> 
+          <li>
             <a className="menu-item">
               <div className="menu-icon">
                 <i className="bi bi-speedometer2"></i>
               </div>
-              <span>Dashboard</span>
+              <span>Live Chat</span>
             </a>
-          </li> 
+          </li>
           </Link>
+
+         
 
 
           <Link to='/superstar-admin/progressbar'> 
@@ -191,16 +204,7 @@ const SideMenu = (props) => {
           </li> 
           </Link>
 
-          <Link to='/superstar-admin/live-chat'> 
-          <li>
-            <a className="menu-item">
-              <div className="menu-icon">
-                <i className="bi bi-speedometer2"></i>
-              </div>
-              <span>Live Chat</span>
-            </a>
-          </li>
-          </Link>
+          
 
           <Link to='/superstar-admin/upcoming-event'> 
           <li>
@@ -265,7 +269,7 @@ const SideMenu = (props) => {
           <img src={user} alt="user" />
         </div>
         <div className="user-info">
-          <h5>Rizwan Khan</h5>
+          <h5>{localStorage.auth_name}</h5>
           <button className="btn btn-sm btn-warning" onClick={logoutSubmit}> Log Out </button>
         </div>
       </div>

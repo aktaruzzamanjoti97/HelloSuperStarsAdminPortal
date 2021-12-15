@@ -49,7 +49,7 @@ return (
             </button></Link>
         </div>
     </div><br/>
-    
+
     <div title="Live Now" className="col-md-3 align-items-center justify-content-center ">
         <div className="card ad-card SH-CARD-TSX">
             <div className="card-body  align-items-center">
@@ -64,7 +64,7 @@ return (
                     </tr>
                 </center>
             </div>
-            <Link to='/superstar/live-chat/add-session' className="ad-card-footer"><button className="card-footer ad-card-footer" data-bs-toggle="collapse"
+            <Link to='/superstar-admin/live-chat/add-session' className="ad-card-footer"><button className="card-footer ad-card-footer" data-bs-toggle="collapse"
                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Add Session
             </button></Link>
         </div>

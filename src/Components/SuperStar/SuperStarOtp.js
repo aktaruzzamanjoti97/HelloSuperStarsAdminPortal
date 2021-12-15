@@ -48,7 +48,7 @@ const SuperStarOTP = () => {
                         localStorage.setItem('auth_otp', 'yes');
 
                         swal("Success",res.data.message,"success");
-                        history.push('/superstar/live-chat');
+                        history.push('/superstar/dashboard');
                     }
                     else if(res.data.status === 401)
                     {

@@ -6,7 +6,7 @@ import SideMenu from "./Header/NavSuperStar/SideMenu";
 import './Header/NavSuperStar/NavSuperStar.css'
 
 import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
-import LiveChatContent from "./Home/Pages/LiveChatSpStar/LiveChatContent";
+import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import SuperStarDashboard from "./Home/SuperStarDashboard";
 import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";

@@ -64,7 +64,7 @@ export default function RegisterLeftCard(props) {
             <div className="other mx-1 p-2">
               <span className="text-light">Time</span>
               <br></br>
-              <span className="text-warning date-font">{moment(liveChat.live_chat_end_time).format('h:mm A')}-{moment(liveChat.live_chat_start_time).format('h:mm A')}</span>
+              <span className="text-warning date-font">{moment(liveChat.start_time).format('h:mm A')}-{moment(liveChat.end_time).format('h:mm A')}</span>
             </div>
           </div>
 
