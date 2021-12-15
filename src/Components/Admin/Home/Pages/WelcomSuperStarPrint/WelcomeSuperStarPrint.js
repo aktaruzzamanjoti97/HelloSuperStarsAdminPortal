@@ -40,7 +40,6 @@ const WelcomeSuperStarPrint = (props) => {
                 }
 
                 //setLoading(false);
-
             }
                 
         });

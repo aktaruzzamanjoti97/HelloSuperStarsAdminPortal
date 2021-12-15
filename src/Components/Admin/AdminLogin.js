@@ -33,7 +33,8 @@ const AdminLogin = () => {
                     if(res.data.status === 200)
                     {
                         localStorage.setItem('auth_token', res.data.token);
-                        localStorage.setItem('auth_name', res.data.email);
+                        localStorage.setItem('auth_name', res.data.name);
+                        localStorage.setItem('auth_id', res.data.id);
                          
                         if(res.data.role == 'admin')
                         {
