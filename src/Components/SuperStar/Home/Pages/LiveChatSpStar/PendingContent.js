@@ -40,7 +40,7 @@ return (
                                     <img src={Pending} className="ad-card-img-top" alt="..." />
                                 </td>
                                 <td className="ad-card-td">
-                                    <small className="ad-card-small">01</small>
+                                    <small className="ad-card-small"></small>
                                 </td>
                             </tr>
                         </center>
