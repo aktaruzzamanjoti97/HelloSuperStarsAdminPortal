@@ -33,11 +33,12 @@ return (
                     <Route exact path='/superstar/dashboard' component={SuperStarDashboard}/>
                     <Route exact path='/superstar/Live-chat' component={LiveChatContent}/>
                     <Route exact path='/superstar/Live-chat/view' component={ScheduleView}/>
-                    <Route exact path='/superstar/Live-chat/registeruser' component={RegisterUser}/>
+                    <Route exact path='/superstar/live-chat/registeruser/:live_chat_id' component={RegisterUser} />
+
                     <Route exact path='/superstar/Live-chat/add-session' component={AddSessionContent}/>
                     <Route exact path='/superstar/live-chat/chat-star-profile' component={LiveChatProfile}/>
                     <Route exact path='/superstar/Live-chat/pedning-session' component={PendingContent}/>
-                    <Route exact path='/superstar/Live-chat/pedning-session/view' component={PendingView}/>
+                    <Route exact path='/superstar/Live-chat/pedning-session/view/:id' component={PendingView}/>
                     
                 </Switch>
                 

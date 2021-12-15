@@ -77,13 +77,13 @@ return (
 
      
       {/* Superstar Route - Star| Sub Route  */}
-      <Route exact path='/superstar/dashboard' component={SuperstarRoute}/>
-      <Route exact path='/superstar/Live-chat' component={SuperstarRoute}/>
-      <Route exact path='/superstar/Live-chat/view' component={SuperstarRoute}/>
-      <Route exact path='/superstar/Live-chat/registeruser' component={SuperstarRoute}/>
-      <Route exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
-      <Route exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
-      <Route exact path='/superstar/Live-chat/pedning-session/view' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/view' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/registeruser/:live_chat_id' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
                     
 
 
