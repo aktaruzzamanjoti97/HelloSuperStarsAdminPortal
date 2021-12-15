@@ -53,7 +53,7 @@ var txt=false;
           </div>
       
           <div className="text-center">
-            <Link to='registeruser'><button className=" btn-primary">View</button></Link>
+            <Link to={`/superstar/Live-chat/registeruser/${item.id}`}><button className=" btn-primary">View</button></Link>
             {/*<button className=" btn-primary" onClick={check}>View</button>*/}
           </div> 
         </div>
