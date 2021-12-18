@@ -68,8 +68,6 @@ const handleChange = (file) => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
-    alert(registerInput.star_id);
-
     console.log(registerInput.description);
 
 

@@ -77,9 +77,6 @@ const AddSuperStarModal = (props) => {
 
     const registerSubmit = (e) => {
         e.preventDefault();
-
-        //alert(registerInput.first_name);
-
         const fData = new FormData();
 
         fData.append('image', imagedata);
