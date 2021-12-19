@@ -15,9 +15,12 @@ import SuperStarRegistration from './Components/SuperStar/SuperStarRegistration'
 import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/HelloSuperStarShakib';
 import SuperStarOTP from './Components/SuperStar/SuperStarOtp';
 
+
 //Private Route
 import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
 import SuperStarRoute from "./Components/PrivateRoute/SuperStarRoute";
+
+import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/RegisterUser/component/RegisterLeftCard';
 
 
 import axios from "axios";
@@ -84,6 +87,7 @@ return (
       <SuperStarRoute  exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>
                     
 
 
