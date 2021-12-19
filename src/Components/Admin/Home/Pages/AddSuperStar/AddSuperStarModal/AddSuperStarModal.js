@@ -91,20 +91,15 @@ const AddSuperStarModal = (props) => {
                 if(res.data.status === 200)
                 {
                     //history.push('/superstar-admin/superstars');
-
-
                     // document.getElementById('input_form').reset();   
                     swal("Success",res.data.message,"success");
-
                 }
                 else{
                     //setModalShow(true);
                     setRegister({ ...registerInput,error_list: res.data.validation_errors });
                 }
             });
-        });
-
-        
+        });      
     }
 
 
@@ -206,9 +201,6 @@ const AddSuperStarModal = (props) => {
                                         </div>
                                     </div>
                                 </div>
-
-                                
-
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div className="col-md-10">
@@ -216,13 +208,7 @@ const AddSuperStarModal = (props) => {
                                             <textarea type="text" className="form-control reply-control input-overlay" />
                                         </div>
                                     </div>
-                                </div>
-
-                                
-
-
-                                
-
+                                </div>                             
                                 <div className="row mx-auto my-3">
                                     <div className="d-flex justify-content-center align-items-center">
                                         <div className="col-md-10">
@@ -240,25 +226,17 @@ const AddSuperStarModal = (props) => {
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
 
                         <div className="text-center">
                             <button  type="submit" className=" btn btn-warning w-25">Save</button>
                         </div>
-
                     </form>
                 </div>
             </Modal.Body>
-
-            
         </Modal>
     );
 };
 
 export default AddSuperStarModal;
-
-
-
