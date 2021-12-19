@@ -93,7 +93,7 @@ const handleChange = (file) => {
 
                 // document.getElementById('input_form').reset();   
                 swal("Success",res.data.message,"success");
-                 history.push('/superstar-admin/superstars');
+                 history.push('/superstar-admin/live-chat');
 
             }
             else{
