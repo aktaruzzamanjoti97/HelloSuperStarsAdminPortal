@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom'
 import axios from "axios";
 import swal from 'sweetalert';
 import './AddSessionTextEditor.css';
@@ -12,6 +12,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 
 export default function AddSession(props) {
+  const history = useHistory();
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty())
 
