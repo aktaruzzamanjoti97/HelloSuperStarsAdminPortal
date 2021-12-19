@@ -69,7 +69,7 @@ const handleChange = (file) => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
-    console.log(registerInput.description);
+    // console.log(registerInput.description);
 
 
     const fData = new FormData();
@@ -88,22 +88,16 @@ const handleChange = (file) => {
         axios.post(`/api/admin/add_live_session`, fData).then(res => {
             if(res.data.status === 200)
             {
-               
-
-
-                // document.getElementById('input_form').reset();   
-                swal("Success",res.data.message,"success");
-                 history.push('/superstar-admin/live-chat');
-
+              // document.getElementById('input_form').reset();   
+              swal("Success",res.data.message,"success");
+              history.push('/superstar-admin/live-chat');
             }
             else{
-                //setModalShow(true);
-                setRegister({ ...registerInput,error_list: res.data.validation_errors });
+              //setModalShow(true);
+              setRegister({ ...registerInput,error_list: res.data.validation_errors });
             }
         });
-    });
-
-    
+    });   
 }
 
 
