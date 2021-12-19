@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom'
 import axios from "axios";
 import swal from 'sweetalert';
 import './AddSessionTextEditor.css';
@@ -12,6 +12,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 
 export default function AddSession(props) {
+  const history = useHistory();
 
   const [editorState, setEditorState] = useState(EditorState.createEmpty())
 
@@ -68,7 +69,7 @@ const handleChange = (file) => {
   const registerSubmit = (e) => {
     e.preventDefault();
 
-    console.log(registerInput.description);
+    // console.log(registerInput.description);
 
 
     const fData = new FormData();
@@ -87,21 +88,16 @@ const handleChange = (file) => {
         axios.post(`/api/admin/add_live_session`, fData).then(res => {
             if(res.data.status === 200)
             {
-                //history.push('/superstar-admin/superstars');
-
-
-                // document.getElementById('input_form').reset();   
-                swal("Success",res.data.message,"success");
-
+              // document.getElementById('input_form').reset();   
+              swal("Success",res.data.message,"success");
+              history.push('/superstar-admin/live-chat');
             }
             else{
-                //setModalShow(true);
-                setRegister({ ...registerInput,error_list: res.data.validation_errors });
+              //setModalShow(true);
+              setRegister({ ...registerInput,error_list: res.data.validation_errors });
             }
         });
-    });
-
-    
+    });   
 }
 
 
