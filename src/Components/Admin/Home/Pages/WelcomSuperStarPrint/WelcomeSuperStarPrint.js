@@ -29,7 +29,7 @@ const WelcomeSuperStarPrint = (props) => {
 
         const star_id = props.match.params.star_id;
 
-        axios.get(`/api/agreement_paper/${star_id}`).then(res =>{
+        axios.get(`/api/admin/agreement_paper/${star_id}`).then(res =>{
         
             if(isMounted)
             {

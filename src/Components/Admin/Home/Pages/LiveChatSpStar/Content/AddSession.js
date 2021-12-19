@@ -45,10 +45,10 @@ export default function AddSession(props) {
 }
 
 
- // Fetch Dtars Added By Admin
+ // Fetch Stars Added By Admin
  useEffect(() => {
 
-  axios.get(`/api/star_list/`).then(res =>{
+  axios.get(`/api/admin/star_list/`).then(res =>{
 
     if(res.status === 200)
     {
@@ -84,7 +84,7 @@ const handleChange = (file) => {
 
 
     axios.get('/sanctum/csrf-cookie').then(response => {
-        axios.post(`/api/add_live_session`, fData).then(res => {
+        axios.post(`/api/admin/add_live_session`, fData).then(res => {
             if(res.data.status === 200)
             {
                 //history.push('/superstar-admin/superstars');
