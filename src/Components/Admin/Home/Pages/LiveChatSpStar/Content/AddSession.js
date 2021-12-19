@@ -87,11 +87,12 @@ const handleChange = (file) => {
         axios.post(`/api/admin/add_live_session`, fData).then(res => {
             if(res.data.status === 200)
             {
-                //history.push('/superstar-admin/superstars');
+               
 
 
                 // document.getElementById('input_form').reset();   
                 swal("Success",res.data.message,"success");
+                 history.push('/superstar-admin/superstars');
 
             }
             else{
