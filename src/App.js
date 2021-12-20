@@ -16,6 +16,14 @@ import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/
 import SuperStarOTP from './Components/SuperStar/SuperStarOtp';
 
 
+import DashboardStar from './Components/SuperStar/StarHader/DashboardStar'
+import StarLiveChatContent from './Components/SuperStar/StarHader/StarNave'
+import StarPendingContent from './Components/SuperStar/StarHader/StarNave'
+import StarAddSessionContent from './Components/SuperStar/StarHader/StarNave'
+import StarScheduleView from './Components/SuperStar/StarHader/StarNave'
+import StarUpcomingEvent from './Components/SuperStar/StarHader/StarNave'
+
+
 //Private Route
 import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
 import SuperStarRoute from "./Components/PrivateRoute/SuperStarRoute";
@@ -78,7 +86,18 @@ return (
 
       <SuperStarRoute exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
 
-     
+
+      {/* Superstar Route - Star New | Sub Route  */}
+      <Route exact path="/super-star" component={DashboardStar}/>
+      <Route exact path="/super-star/dashboard" component={DashboardStar}/>
+      <Route exact path="/super-star/live-chat" component={StarLiveChatContent}/>
+      <Route exact path='/super-star/Live-chat/view' component={StarScheduleView}/>
+      <Route exact path="/super-star/live-chat/pending-session" component={StarPendingContent}/>
+      <Route exact path="/super-star/live-chat/pending-session/view/:id" component={StarAddSessionContent}/>
+      <Route exact path="/super-star/live-chat/add-session" component={StarAddSessionContent}/>
+      <Route exact path="/super-star/upcoming-event" component={StarUpcomingEvent}/>
+      
+
       {/* Superstar Route - Star| Sub Route  */}
       <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat' component={SuperstarRoute}/>
