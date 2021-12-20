@@ -88,25 +88,25 @@ return (
 
 
       {/* Superstar Route - Star New | Sub Route  */}
-      <Route exact path="/super-star" component={DashboardStar}/>
-      <Route exact path="/super-star/dashboard" component={DashboardStar}/>
-      <Route exact path="/super-star/live-chat" component={StarLiveChatContent}/>
-      <Route exact path='/super-star/Live-chat/view' component={StarScheduleView}/>
-      <Route exact path="/super-star/live-chat/pending-session" component={StarPendingContent}/>
-      <Route exact path="/super-star/live-chat/pending-session/view/:id" component={StarAddSessionContent}/>
-      <Route exact path="/super-star/live-chat/add-session" component={StarAddSessionContent}/>
-      <Route exact path="/super-star/upcoming-event" component={StarUpcomingEvent}/>
+      <Route exact path="/superstar" component={DashboardStar}/>
+      <Route exact path="/superstar/dashboard" component={DashboardStar}/>
+      <Route exact path="/superstar/live-chat" component={StarLiveChatContent}/>
+      <Route exact path='/superstar/Live-chat/view' component={StarScheduleView}/>
+      <Route exact path="/superstar/live-chat/pending-session" component={StarPendingContent}/>
+      <Route exact path="/superstar/live-chat/pending-session/view/:id" component={StarAddSessionContent}/>
+      <Route exact path="/superstar/live-chat/add-session" component={StarAddSessionContent}/>
+      <Route exact path="/superstar/upcoming-event" component={StarUpcomingEvent}/>
       
 
       {/* Superstar Route - Star| Sub Route  */}
-      <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>
+      {/* <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/view' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/registeruser/:live_chat_id' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>
+      <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/> */}
                     
 
 

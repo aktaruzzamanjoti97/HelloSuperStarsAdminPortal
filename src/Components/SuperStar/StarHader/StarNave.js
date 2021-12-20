@@ -1,6 +1,8 @@
-import React from 'react'
- 
-import {BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import swal from 'sweetalert';
+
+import {BrowserRouter, Link, Route, Switch,useHistory } from "react-router-dom";
 import './StarNave.css'
 import '../../SuperStar/Home/Pages/LiveChatSpStar/SuperStarContent.css'
 import Logo from '../../../assets/images/helloSuperStar.png'
@@ -15,6 +17,27 @@ import StarScheduleView from '../Pages/StarLiveChat/Content/StarScheduleView';
 import StarUpcomingEvent from '../Pages/StarUpcomingEvent/StarUpcomingEvent';
  
 const StarNave = () => {
+    const history = useHistory();
+
+    const logoutSubmit = (e) => {
+      e.preventDefault();
+      
+      axios.post(`/api/logout`).then(res => {
+        if(res.data.status === 200)
+        {
+          localStorage.removeItem('auth_token');
+          localStorage.removeItem('auth_name');
+          swal("Success",res.data.message,"success");
+          history.push('/superstar-admin/login');
+        }
+        else
+        {
+          swal("Warning",res.data.message,"Warning");
+          //history.push('/');
+        }
+      });
+    }
+  
 return (
 <>
  <BrowserRouter>
@@ -22,7 +45,7 @@ return (
  
             <div className="top_navbar">
  
-                <Link to='/super-star' className="text-decoration-none">
+                <Link to='/superstar' className="text-decoration-none">
                 <div className="logo">
  
                     <span className="Text-de-adm"><img src={Logo} className="Admin-Logo-h" alt={Logo} />SuperStar - Star
@@ -55,7 +78,7 @@ return (
                     <div className="inner__sidebar_menu">
  
                         <ul className="Scroll-admin-nave">
-                            <Link to='/super-star/dashboard' className="text-decoration-none">
+                            <Link to='/superstar/dashboard' className="text-decoration-none">
                             <li>
                                 <a className="Text-de-adm">
                                     <span className="icon">
@@ -65,7 +88,7 @@ return (
                             </li>
                             </Link>
  
-                            {/* <Link to='/super-star/superstars'>
+                            {/* <Link to='/superstar/superstars'>
                             <li>
                                 <a className="Text-de-adm">
                                     <span className="icon">
@@ -75,7 +98,7 @@ return (
                             </li>
                             </Link> */}
  
-                            <Link to='/super-star/live-chat' className="text-decoration-none">
+                            <Link to='/superstar/live-chat' className="text-decoration-none">
                             <li>
                                 <a className="Text-de-adm">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -84,7 +107,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/progressbar'>
+                            <Link to='/superstar/progressbar'>
                             <li>
                                 <a className="Text-de-adm">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -93,7 +116,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/audition'>
+                            <Link to='/superstar/audition'>
                             <li>
                                 <a className="Text-de-adm">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -102,7 +125,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/learning-session'>
+                            <Link to='/superstar/learning-session'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -111,7 +134,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/live-video'>
+                            <Link to='/superstar/live-video'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -120,7 +143,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/meetup-events'>
+                            <Link to='/superstar/meetup-events'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -129,7 +152,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/upcoming-event'>
+                            <Link to='/superstar/upcoming-event'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -138,7 +161,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/greetings'>
+                            <Link to='/superstar/greetings'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -147,7 +170,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/souvenir'>
+                            <Link to='/superstar/souvenir'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -156,7 +179,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/wallet'>
+                            <Link to='/superstar/wallet'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -165,7 +188,7 @@ return (
                             </li>
                             </Link>
  
-                            <Link to='/super-star/settings'>
+                            <Link to='/superstar/settings'>
                             <li>
                                 <a className="menu-item">
                                     <span className="icon"><i className="fas fa-chart-pie"></i></span>
@@ -173,7 +196,11 @@ return (
                                 </a>
                             </li>
                             </Link>
+
+                            <h5>{localStorage.auth_name}</h5>
+          <button className="btn btn-sm btn-warning" onClick={logoutSubmit}> Log Out </button>
                         </ul>
+
  
                         <div className="hamburger">
                             <div className="inner_hamburger">
@@ -195,14 +222,14 @@ return (
                         
                             <Switch>
  
-                                <Route exact path="/super-star" component={StarDashboard}/>
-                                <Route exact path="/super-star/dashboard" component={StarDashboard}/>
-                                <Route exact path="/super-star/live-chat" component={StarLiveChatContent}/>
-                                <Route exact path='/super-star/Live-chat/view' component={StarScheduleView}/>
-                                <Route exact path="/super-star/live-chat/pending-session" component={StarPendingContent}/>
-                                <Route exact path="/super-star/live-chat/pending-session/view/:id" component={StarPendingView}/>
-                                <Route exact path="/super-star/live-chat/add-session" component={StarAddSessionContent}/>
-                                <Route exact path="/super-star/upcoming-event" component={StarUpcomingEvent}/>
+                                <Route exact path="/superstar" component={StarDashboard}/>
+                                <Route exact path="/superstar/dashboard" component={StarDashboard}/>
+                                <Route exact path="/superstar/live-chat" component={StarLiveChatContent}/>
+                                <Route exact path='/superstar/Live-chat/view' component={StarScheduleView}/>
+                                <Route exact path="/superstar/live-chat/pending-session" component={StarPendingContent}/>
+                                <Route exact path="/superstar/live-chat/pending-session/view/:id" component={StarPendingView}/>
+                                <Route exact path="/superstar/live-chat/add-session" component={StarAddSessionContent}/>
+                                <Route exact path="/superstar/upcoming-event" component={StarUpcomingEvent}/>
  
                             </Switch>
                         </div>

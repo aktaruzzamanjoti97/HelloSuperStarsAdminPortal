@@ -25,7 +25,7 @@ return (
                             </tr>
                         </center>
                     </div>
-                    <Link to='/super-star/live-chat/' className="card-footer ad-card-footer"><button className="ad-card-footer" data-bs-toggle="collapse"
+                    <Link to='/superstar/live-chat/' className="card-footer ad-card-footer"><button className="ad-card-footer" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Now
                     </button></Link>
                 </div>
@@ -44,7 +44,7 @@ return (
                             </tr>
                         </center>
                     </div>
-                    <Link to='/super-star/live-chat/pending-session' className="ad-card-footer"><button className="card-footer ad-card-footer" data-bs-toggle="collapse"
+                    <Link to='/superstar/live-chat/pending-session' className="ad-card-footer"><button className="card-footer ad-card-footer" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Pending
                     </button></Link>
                 </div>
@@ -63,7 +63,7 @@ return (
                             </tr>
                         </center>
                     </div>
-                    <Link to='/super-star/live-chat/add-session' className="ad-card-footer"><button className="card-footer ad-card-footer" data-bs-toggle="collapse"
+                    <Link to='/superstar/live-chat/add-session' className="ad-card-footer"><button className="card-footer ad-card-footer" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Add Session
                     </button></Link>
                 </div>
