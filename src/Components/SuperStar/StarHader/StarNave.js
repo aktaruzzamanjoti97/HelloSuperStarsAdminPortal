@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import swal from 'sweetalert';
 
-import {BrowserRouter, Link, Route, Switch,useHistory } from "react-router-dom";
+import {BrowserRouter, Link, Route, Switch,useHistory, Redirect } from "react-router-dom";
 import './StarNave.css'
 import '../../SuperStar/Home/Pages/LiveChatSpStar/SuperStarContent.css'
 import Logo from '../../../assets/images/helloSuperStar.png'
@@ -222,7 +222,9 @@ return (
                         
                             <Switch>
  
-                                <Route exact path="/superstar" component={StarDashboard}/>
+                                <Route exact path="/superstar">
+                                    <Redirect exact path="/superstar/dashboard" />
+                                </Route>
                                 <Route exact path="/superstar/dashboard" component={StarDashboard}/>
                                 <Route exact path="/superstar/live-chat" component={StarLiveChatContent}/>
                                 <Route exact path='/superstar/Live-chat/view' component={StarScheduleView}/>
