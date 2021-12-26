@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './SuperstarGreetings.css';
 
 const SuperstarGreetings = () => {
@@ -17,7 +18,8 @@ const SuperstarGreetings = () => {
                             understand and apply  for greeting videos</small></p>
                     </div>
 
-                    <button className="btn btn-warning mt-2 w-50">Create New</button>
+                    <Link to="/superstar-admin/greetings/greetingsForm"><button className="btn btn-warning mt-2 w-50">Create New</button></Link>
+
                 </div>
             </div>
         </div>
