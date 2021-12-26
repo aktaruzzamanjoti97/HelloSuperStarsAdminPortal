@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import './Components/Admin/Adminlogin.css'
 import AdminRoute from './Components/Admin/AdminRoute';
 import Header from './Components/Pages/Header/Header';
@@ -9,19 +9,39 @@ import AdminRegistration from './Components/Admin/AdminRegistratoin';
 import AdminOTP from "./Components/Admin/AdminOTP";
 import AdminPannel from './Components/Admin/AdminPannel';
 
+// ----------> Starting of the Added for Admin Routing <---------------
+import LiveChatContent from "./Components/Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
+import UpcomingEvent from "./Components/Admin/Home/Pages/UpcomingEvent/UpcomingEvent";
+import SuperStarDashboard from "./Components/Admin/Home/SuperStarDashboard";
+import AddSessionContent from "./Components/Admin/Home/Pages/LiveChatSpStar/AddSessionContent";
+import LiveChatProfile from "./Components/Admin/Home/Pages/LiveChatSpStar/LiveChatProfile";
+import RegistertUser from "./Components/Admin/Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
+import AddSuperStar from "./Components/Admin/Home/Pages/AddSuperStar/AddSuperStar";
+import WelcomeSuperStarPrint from "./Components/Admin/Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
+import SCheduleViewAdmin from "./Components/Admin/Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
+// ----------> End of the Added for Admin  Routing <---------------
+
 
 import SuperStarQR from './Components/SuperStar/SuperStarQR';
 import SuperStarRegistration from './Components/SuperStar/SuperStarRegistration';
 import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/HelloSuperStarShakib';
 import SuperStarOTP from './Components/SuperStar/SuperStarOtp';
 
-
 import DashboardStar from './Components/SuperStar/StarHader/DashboardStar'
-import StarLiveChatContent from './Components/SuperStar/StarHader/StarNave'
-import StarPendingContent from './Components/SuperStar/StarHader/StarNave'
-import StarAddSessionContent from './Components/SuperStar/StarHader/StarNave'
-import StarScheduleView from './Components/SuperStar/StarHader/StarNave'
-import StarUpcomingEvent from './Components/SuperStar/StarHader/StarNave'
+
+// ----------> Newly Added for SuperStar Routing <---------------
+import StarLiveChatContent from './Components/SuperStar/Pages/StarLiveChat/StarLiveChatContent'
+import StarPendingContent from './Components/SuperStar/Pages/StarLiveChat/StarPendingContent'
+import StarAddSessionContent from './Components/SuperStar/Pages/StarLiveChat/StarAddSessionContent'
+// import StarPendingView from '../Pages/StarLiveChat/StarPendingView';
+import StarScheduleView from './Components/SuperStar/Pages/StarLiveChat/Content/StarScheduleView';
+import StarUpcomingEvent from './Components/SuperStar/Pages/StarUpcomingEvent/StarUpcomingEvent';
+
+// import StarLiveChatContent from './Components/SuperStar/StarHader/StarNave'
+// import StarPendingContent from './Components/SuperStar/StarHader/StarNave'
+// import StarAddSessionContent from './Components/SuperStar/StarHader/StarNave'
+// import StarScheduleView from './Components/SuperStar/StarHader/StarNave'
+// import StarUpcomingEvent from './Components/SuperStar/StarHader/StarNave'
 
 
 //Private Route
@@ -50,7 +70,6 @@ axios.interceptors.request.use(function (config)
 
 
 
-
 function App() {
 return (
 <>
@@ -67,16 +86,17 @@ return (
       
       {/* Superstar Route - Admin | Sub Route  */}
       <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={AdminRoute}/>
-      <AdminPrivateRoute exact path='/superstar-admin/superstar-registration' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/live-chat' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/live-chat/registeruser/:live_chat_id' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/live-chat/add-session' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/live-chat/chat-star-profile' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/upcoming-event' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/superstars' component={AdminRoute} />
-      <AdminPrivateRoute exact path='/superstar-admin/agreement-paper/:star_id' component={AdminRoute} />
+      <AdminPrivateRoute exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat' component={LiveChatContent} />
+      <Route exact path='/superstar-admin/live-chat/view' component={SCheduleViewAdmin} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/registeruser/:live_chat_id' component={RegistertUser} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/add-session' component={AddSessionContent} />
+      <AdminPrivateRoute exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
+      <AdminPrivateRoute exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
+      <AdminPrivateRoute exact path='/superstar-admin/superstars' component={AddSuperStar} />
+      <AdminPrivateRoute exact path='/superstar-admin/agreement-paper/:star_id' component={WelcomeSuperStarPrint} />
 
-      <AdminPrivateRoute exact path='/superstar-admin/live-chat/view' component={AdminRoute} />
+   
             
 
       {/* Superstar Route - Star| Route  */}
@@ -88,7 +108,9 @@ return (
 
 
       {/* Superstar Route - Star New | Sub Route  */}
-      <Route exact path="/superstar" component={DashboardStar}/>
+      <Route exact path="/superstar">
+        <Redirect exact path="/superstar/dashboard"/>
+      </Route>
       <Route exact path="/superstar/dashboard" component={DashboardStar}/>
       <Route exact path="/superstar/live-chat" component={StarLiveChatContent}/>
       <Route exact path='/superstar/Live-chat/view' component={StarScheduleView}/>
