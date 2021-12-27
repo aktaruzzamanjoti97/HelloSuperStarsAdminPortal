@@ -54,6 +54,8 @@ import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/Regis
 
 import axios from "axios";
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
+import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
+import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
 
 // add By Sonet
 import AdminLayout from './Components/Admin/MasterLayout';
@@ -103,7 +105,11 @@ return (
       */}
 
       {/* Add By Sonet */}
-      <Route path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
+      <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
+
+      <AdminPrivateRoute exact path='/superstar-admin/greetings' component={SuperstarGreetings} />
+      <AdminPrivateRoute exact path='/superstar-admin/greetings/greetingsForm' component={SuperstarGreetingsForm} />
+
 
 
       {/* Superstar Route - Star| Route  */}
@@ -126,6 +132,7 @@ return (
       <Route exact path="/superstar/live-chat/pending-session/view/:id" component={StarAddSessionContent}/>
       <Route exact path="/superstar/live-chat/add-session" component={StarAddSessionContent}/>
       <Route exact path="/superstar/upcoming-event" component={StarUpcomingEvent}/>
+    
       
 
       {/* Superstar Route - Star| Sub Route  */}

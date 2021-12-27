@@ -1,0 +1,49 @@
+.greetingsFormBorder {
+  /* min-height: 90vh; */
+  border: 2px solid goldenrod;
+  border-radius: 15px;
+}
+
+.greetingsPadding {
+  padding: 2.5rem;
+}
+
+.addIconGreetings {
+  font-size: 2rem;
+  margin-top: -0.5rem;
+}
+
+.input-gray {
+  background-color: #737373 !important;
+  border: none !important;
+}
+
+.inputfile + label {
+  font-size: 1em;
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  color: rgb(58, 182, 219);
+  background-color: #f0f0f0;
+  display: inline-block;
+  border-radius: 0.5rem;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: golden;
+}
+
+.save-greetings-button{
+    width: 10vw;
+}
+
+

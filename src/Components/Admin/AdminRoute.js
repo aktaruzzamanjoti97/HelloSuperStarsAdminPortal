@@ -16,6 +16,8 @@ import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
 import AdminPrivateRoute from "../PrivateRoute/AdminPrivateRoute";
 import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
+import SuperstarGreetings from "./Home/Pages/SuperstarGreetings/SuperstarGreetings";
+import SuperstarGreetingsForm from "./Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm";
 //Private Route
 
 
