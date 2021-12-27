@@ -122,7 +122,7 @@ return (
                                         <button className="btn  w-100 disabled" style={{ color: "goldenrod" }}
                                             placeholder="Next ">
                                             We have sent an SMS to your Phone Number
-                                            +88017*******876
+                                            {localStorage.auth_phone}
                                         </button>
                                         <div className="otpS align-items-center justify-content-center">
                                                             <input type="text" className="inputs" name="otp1"  maxLength="1" onChange={handleInput} value={loginInput.otp1}/>

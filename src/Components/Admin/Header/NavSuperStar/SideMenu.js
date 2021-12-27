@@ -4,6 +4,7 @@ import user from "../../../../assets/images/Profile/profile.jpg";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import swal from 'sweetalert';
+import {browserHistory} from "react-router";
 
 /**
  * @author
@@ -27,7 +28,9 @@ const SideMenu = (props) => {
         localStorage.removeItem('auth_id');
         
         swal("Success",res.data.message,"success");
-        history.push('/superstar-admin/login');
+        //history.push('/superstar-admin/login');
+        //browserHistory.push("/path-to-link");
+        window.location.href = "/";
       }
       else
       {

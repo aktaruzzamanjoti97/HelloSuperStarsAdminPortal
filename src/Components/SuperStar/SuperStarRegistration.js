@@ -65,7 +65,7 @@ const SuperStarRegistration = () => {
                     localStorage.setItem('auth_id', res.data.id);
 
                     swal("Success",res.data.message,"success");
-                    history.push('/superstar/otp');
+                    history.push('/superstar_registration/otp');
                 }
                 else{
                     setRegister({ ...registerInput,error_list: res.data.validation_errors });
