@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 import axios from "axios";
 import swal from 'sweetalert';
 
-const SuperStarOTP = () => {
+const SuperStarRegistrationOTP = () => {
     
     $(".inputs").keyup(function () {
         if (this.value.length === this.maxLength) {
@@ -49,7 +49,7 @@ const SuperStarOTP = () => {
 
                         swal("Success",res.data.message,"success");
                         //history.push('/superstar/dashboard');
-                        history.push('/superstar/dashboard');
+                        history.push('/superstar/congratulations');
                     }
                     else if(res.data.status === 401)
                     {
@@ -175,4 +175,4 @@ return (
 );
 };
 
-export default SuperStarOTP;
+export default SuperStarRegistrationOTP;

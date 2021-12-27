@@ -93,6 +93,7 @@ const AddSuperStarModal = (props) => {
                     //history.push('/superstar-admin/superstars');
                     // document.getElementById('input_form').reset();   
                     swal("Success",res.data.message,"success");
+                    window.location.href = "/superstar-admin/superstars";
                 }
                 else{
                     //setModalShow(true);

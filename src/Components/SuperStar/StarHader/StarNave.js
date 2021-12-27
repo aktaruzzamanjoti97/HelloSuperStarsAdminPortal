@@ -20,23 +20,28 @@ const StarNave = () => {
     const history = useHistory();
 
     const logoutSubmit = (e) => {
-      e.preventDefault();
-      
-      axios.post(`/api/logout`).then(res => {
-        if(res.data.status === 200)
-        {
-          localStorage.removeItem('auth_token');
-          localStorage.removeItem('auth_name');
-          swal("Success",res.data.message,"success");
-          history.push('/superstar-admin/login');
-        }
-        else
-        {
-          swal("Warning",res.data.message,"Warning");
-          //history.push('/');
-        }
-      });
-    }
+        e.preventDefault();
+        
+        axios.post(`/api/logout`).then(res => {
+          if(res.data.status === 200)
+          {
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('auth_name');
+            localStorage.removeItem('auth_otp');
+            localStorage.removeItem('auth_id');
+            
+            swal("Success",res.data.message,"success");
+            //history.push('/superstar-admin/login');
+            //browserHistory.push("/path-to-link");
+            window.location.href = "/";
+          }
+          else
+          {
+            swal("Warning",res.data.message,"Warning");
+            //history.push('/');
+          }
+        });
+      }
   
 return (
 <>
