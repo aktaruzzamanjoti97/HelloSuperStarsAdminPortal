@@ -19,40 +19,19 @@ import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewA
 //Private Route
 
 
-function AdminRoute() {
-const [inactive, setInactive] = useState(false);
 
-return (
-    
-<div className="SuperStarRoute">
-    <Router>
-        <SideMenu onCollapse={(inactive)=> {
-            console.log(inactive);
-            setInactive(inactive);
-            }}
-            />
+const AdminRoute = [
+    { path: '/superstar-admin', exact: true, name: 'Admin' },
+    { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: SuperStarDashboard },
+    { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
+    { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
+    { path: '/superstar-admin/live-chat/view', exact: true, name: 'LiveChat', component: SCheduleViewAdmin },
+    { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
+    { path: '/superstar-admin/live-chat/add-session', exact: true, name: 'LiveChat', component: AddSessionContent },
+    { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
+    { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
+    { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
+    { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint },
+];
 
-            <div className={`Admincontainer ${inactive ? "inactive" : "" }`}>
-
-                <Switch>
-
-                    <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={SuperStarDashboard}/>
-                    <Route exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
-                    <Route exact path='/superstar-admin/live-chat' component={LiveChatContent} />
-
-                    <Route exact path='/superstar-admin/live-chat/view' component={SCheduleViewAdmin} />
-                    <Route exact path='/superstar-admin/live-chat/registeruser/:live_chat_id' component={RegistertUser} />
-                    <Route exact path='/superstar-admin/live-chat/add-session' component={AddSessionContent} />
-                    <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
-                    <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
-                    <Route exact path='/superstar-admin/superstars' component={AddSuperStar} />
-                    <Route exact path='/superstar-admin/agreement-paper/:star_id' component={WelcomeSuperStarPrint} />   
-                </Switch>
-            </div>
-    </Router>
-</div>
-
-);
-}
-
-export default AdminRoute
+export default AdminRoute;

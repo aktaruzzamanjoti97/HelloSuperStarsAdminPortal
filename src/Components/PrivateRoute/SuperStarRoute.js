@@ -71,7 +71,7 @@ const SuperStarRoute = ({ component: Component, ...rest })=> {
         <Route {...rest}
             render={({props}) => {
                 return Authenticated  ?
-                (<Component {...props} />) : (<Redirect to='/login' />)
+                (<Component {...props} />) : (<Redirect to='/' />)
                 // ( <HomePage {...props} /> ) : 
                 // ( <Redirect to= {{pathname: "/login", state: {from: location} }} /> )
             }}
