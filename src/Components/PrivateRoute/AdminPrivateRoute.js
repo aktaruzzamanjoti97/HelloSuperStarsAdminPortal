@@ -2,8 +2,11 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { Route, Redirect, useHistory} from 'react-router-dom';
 import swal from 'sweetalert';
+import AdminRegistration from '../Admin/Home/Pages/AdminRegistration/AdminRegistration';
 // import MasterLayout from './layouts/admin/MasterLayout';
 // import HomePage from "../Pages/Home/HomePages";
+
+import AdminLayout from "../Admin/MasterLayout";
 
 const AdminPrivateRoute = ({ component: Component, ...rest })=> {
 
@@ -16,17 +19,15 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
         axios.get(`/api/checkingAdmin`).then( res => {
             if(res.status === 200)
             {
-                //setAuthenticated(true);
-                if(localStorage.auth_otp == 'yes')
+                if(localStorage.auth_otp === 'yes')
                 {
                     setAuthenticated(true);
                 }
                 else
                 {
                     swal("Forbidden","Verify Your Phone Number","warning");
-                    history.push('/Admin/otp');
+                    history.push('/superstar/otp');
                 }
-
             }
             setloading(false);
         });
@@ -40,8 +41,8 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
         if(err.response.status === 401)
         {
             setloading(false);
-            //swal("Unauthorized",err.response.data.message,"warning");
-            history.push('/superstar-admin/login');
+            swal("Unauthorized",err.response.data.message,"warning");
+            history.push('/');
         }
         return Promise.reject(err);
     });
@@ -52,7 +53,7 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
             if(error.response.status === 403)
             {
                 swal("Forbidden",error.response.data.message,"warning");
-                history.push('/superstar-admin/login');
+                history.push('/');
             }
             else if(error.response.status === 404)
             {
@@ -66,18 +67,22 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
 
     if(loading)
     {
-        return <h1></h1>
+        return <h1>Loading...</h1>
     }
 
     return (
         <Route {...rest}
-            render={({props}) => {
-                return Authenticated  ?
-                (<Component {...props} />) : (<Redirect to='/login' />)
-                // ( <HomePage {...props} /> ) : 
-                // ( <Redirect to= {{pathname: "/login", state: {from: location} }} /> )
-            }}
+            render={ ({props, location}) =>  
+                Authenticated ?
+                ( <AdminLayout {...props} /> ) : 
+                ( <Redirect to= {{pathname: "/", state: {from: location} }} /> )
+                
+            } 
         />
+
+
+        
+        
     );
 }
 

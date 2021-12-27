@@ -46,7 +46,7 @@ import StarUpcomingEvent from './Components/SuperStar/Pages/StarUpcomingEvent/St
 
 
 //Private Route
-import AdminPrivateRoute from "./Components/PrivateRoute/AdminPrivateRoute";
+
 import SuperStarRoute from "./Components/PrivateRoute/SuperStarRoute";
 
 import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/RegisterUser/component/RegisterLeftCard';
@@ -56,6 +56,10 @@ import axios from "axios";
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
 import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
 import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
+
+// add By Sonet
+import AdminLayout from './Components/Admin/MasterLayout';
+import AdminPrivateRoute from './Components/PrivateRoute/AdminPrivateRoute';
 
 
 axios.defaults.withCredentials = true;
@@ -87,7 +91,7 @@ return (
       <Route exact path='/superstar-admin/registration' component={AdminRegistration} />
       <Route exact path='/superstar-admin/otp' component={AdminOTP} />
       
-      {/* Superstar Route - Admin | Sub Route  */}
+      {/* Superstar Route - Admin | Sub Route  
       <AdminPrivateRoute exact path='/superstar-admin/dashboard' component={AdminRoute}/>
       <AdminPrivateRoute exact path='/superstar-admin/superstar-registration' component={AdminRegistration} />
       <AdminPrivateRoute exact path='/superstar-admin/live-chat' component={LiveChatContent} />
@@ -98,12 +102,15 @@ return (
       <AdminPrivateRoute exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
       <AdminPrivateRoute exact path='/superstar-admin/superstars' component={AddSuperStar} />
       <AdminPrivateRoute exact path='/superstar-admin/agreement-paper/:star_id' component={WelcomeSuperStarPrint} />
+      */}
+
+      {/* Add By Sonet */}
+      <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
+
       <AdminPrivateRoute exact path='/superstar-admin/greetings' component={SuperstarGreetings} />
       <AdminPrivateRoute exact path='/superstar-admin/greetings/greetingsForm' component={SuperstarGreetingsForm} />
 
 
-   
-            
 
       {/* Superstar Route - Star| Route  */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
