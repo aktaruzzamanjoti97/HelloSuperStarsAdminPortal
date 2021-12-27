@@ -54,6 +54,8 @@ import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/Regis
 
 import axios from "axios";
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
+import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
+import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
 
 
 axios.defaults.withCredentials = true;
@@ -96,6 +98,9 @@ return (
       <AdminPrivateRoute exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
       <AdminPrivateRoute exact path='/superstar-admin/superstars' component={AddSuperStar} />
       <AdminPrivateRoute exact path='/superstar-admin/agreement-paper/:star_id' component={WelcomeSuperStarPrint} />
+      <AdminPrivateRoute exact path='/superstar-admin/greetings' component={SuperstarGreetings} />
+      <AdminPrivateRoute exact path='/superstar-admin/greetings/greetingsForm' component={SuperstarGreetingsForm} />
+
 
    
             
@@ -120,6 +125,7 @@ return (
       <Route exact path="/superstar/live-chat/pending-session/view/:id" component={StarAddSessionContent}/>
       <Route exact path="/superstar/live-chat/add-session" component={StarAddSessionContent}/>
       <Route exact path="/superstar/upcoming-event" component={StarUpcomingEvent}/>
+    
       
 
       {/* Superstar Route - Star| Sub Route  */}

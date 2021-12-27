@@ -16,6 +16,8 @@ import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
 import AdminPrivateRoute from "../PrivateRoute/AdminPrivateRoute";
 import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
+import SuperstarGreetings from "./Home/Pages/SuperstarGreetings/SuperstarGreetings";
+import SuperstarGreetingsForm from "./Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm";
 //Private Route
 
 
@@ -45,6 +47,8 @@ return (
                     <Route exact path='/superstar-admin/live-chat/add-session' component={AddSessionContent} />
                     <Route exact path='/superstar-admin/live-chat/chat-star-profile' component={LiveChatProfile} />
                     <Route exact path='/superstar-admin/upcoming-event' component={UpcomingEvent} />
+                    <Route exact path='/superstar-admin/greetings' component={SuperstarGreetings} />
+                    <Route exact path='/superstar-admin/greetings/greetingsForm' component={SuperstarGreetingsForm} />
                     <Route exact path='/superstar-admin/superstars' component={AddSuperStar} />
                     <Route exact path='/superstar-admin/agreement-paper/:star_id' component={WelcomeSuperStarPrint} />   
                 </Switch>
