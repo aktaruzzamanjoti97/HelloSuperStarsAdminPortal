@@ -9,11 +9,14 @@ import Sidebar from "./Header/Sidebar";
 
 
 import './assets/css/styles.css'
-import './assets/js/scripts.js'
+//import './assets/js/scripts.js'
 
 
 
 const MasterLayout = () => {
+
+    
+
 
     return (
         <div className="sb-nav-fixed">
