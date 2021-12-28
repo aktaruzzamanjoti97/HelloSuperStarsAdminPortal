@@ -4,6 +4,8 @@ import { Route, Redirect, useHistory} from 'react-router-dom';
 import swal from 'sweetalert';
 // import MasterLayout from './layouts/admin/MasterLayout';
 // import HomePage from "../Pages/Home/HomePages";
+import StarLayout from '../SuperStar/MasterLayout'
+import logo from '../../assets/images/helloSuperStar.png'
 
 const SuperStarRoute = ({ component: Component, ...rest })=> {
 
@@ -64,18 +66,18 @@ const SuperStarRoute = ({ component: Component, ...rest })=> {
 
     if(loading)
     {
-        return <h1>...</h1>
+        return <h1 className='text-center'>...</h1>
     }
 
     return (
         <Route {...rest}
-            render={({props}) => {
-                return Authenticated  ?
-                (<Component {...props} />) : (<Redirect to='/' />)
-                // ( <HomePage {...props} /> ) : 
-                // ( <Redirect to= {{pathname: "/login", state: {from: location} }} /> )
-            }}
-        />
+            render={ ({props, location}) =>  
+                Authenticated ?
+                ( <StarLayout {...props} /> ) : 
+                ( <Redirect to= {{pathname: "/", state: {from: location} }} /> )
+                
+            } 
+        /> 
     );
 }
 

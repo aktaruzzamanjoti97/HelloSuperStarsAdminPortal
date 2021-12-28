@@ -1,7 +1,8 @@
 import React from 'react';
-import './SuperstarGreetingsForm.css'
+import { Link } from 'react-router-dom';
+import './AdminGreetingsForm.css'
 
-const SuperstarGreetingsForm = () => {
+const AdminGreetingsForm = () => {
     return (
         <div className="greetingsFormBorder">
             <div className="greetingsPadding">
@@ -58,7 +59,10 @@ const SuperstarGreetingsForm = () => {
                     </div>
 
                     <div className="my-3">
+                    <Link to="/superstar-admin/greetings/details">
                         <button className="btn btn-warning save-greetings-button">Save</button>
+                    </Link>
+                        
                     </div>
                 </form>
             </div>
@@ -66,4 +70,4 @@ const SuperstarGreetingsForm = () => {
     );
 };
 
-export default SuperstarGreetingsForm;
+export default AdminGreetingsForm;

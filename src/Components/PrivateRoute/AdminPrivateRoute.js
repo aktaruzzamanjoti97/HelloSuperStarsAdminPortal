@@ -78,11 +78,7 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
                 ( <Redirect to= {{pathname: "/", state: {from: location} }} /> )
                 
             } 
-        />
-
-
-        
-        
+        /> 
     );
 }
 

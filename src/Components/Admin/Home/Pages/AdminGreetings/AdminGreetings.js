@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './SuperstarGreetings.css';
+import './AdminGreetings.css';
 
-const SuperstarGreetings = () => {
+const AdminGreetings = () => {
     return (
         <div className="">
             <div className="greetingsHeight d-flex justify-content-center align-items-center">
@@ -26,4 +26,4 @@ const SuperstarGreetings = () => {
     );
 };
 
-export default SuperstarGreetings;
+export default AdminGreetings;

@@ -1,51 +1,22 @@
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { useState } from "react";
-// import './Home/Pages/LiveChatSpStar/SuperStarContent.css'
-// import SideMenu from "./Header/NavSuperStar/SideMenu";
-// import './Header/NavSuperStar/NavSuperStar.css'
-// import SuperStarDashboard from "../SuperStar/Home/SuperStarDashboard";
-// import LiveChatContent from "../SuperStar/Home/Pages/LiveChatSpStar/LiveChatContent";
-// import AddSessionContent from "../SuperStar/Home/Pages/LiveChatSpStar/AddSessionContent";
-// import PendingContent from "../SuperStar/Home/Pages/LiveChatSpStar/PendingContent";
-// import LiveChatProfile from "../SuperStar/Home/Pages/LiveChatSpStar/LiveChatProfile";
-// import PendingView from "../SuperStar/Home/Pages/LiveChatSpStar/PendingView";
-// import RegisterUser from "../SuperStar/Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
-// import ScheduleView from "./Home/Pages/LiveChatSpStar/Content/ScheduleView";
+import DashboardStar from './StarHader/DashboardStar'
+import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent'
+import StarPendingContent from './Pages/StarLiveChat/StarPendingContent'
+import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent'
+import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
+import StarUpcomingEvent from './Pages/StarUpcomingEvent/StarUpcomingEvent';
 
 
-// function SuperstarRoute() {
-// const [inactive, setInactive] = useState(false);
 
-// return (
-    
-// <div className="SuperStarRoute">
-//     <Router>
-//         <SideMenu onCollapse={(inactive)=> {
-//             console.log(inactive);
-//             setInactive(inactive);
-//             }}
-//             />
 
-//             <div className={`Admincontainer ${inactive ? "inactive" : "" }`}>
+const SuperstarRoute = [
+    { path: '/superstar', exact: true, name: 'SuperStar' },
+    { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: DashboardStar },
+    { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
+    { path: '/superstar/Live-chat/view', exact: true, name: 'LiveChat_view', component: StarScheduleView },
+    { path: '/superstar/live-chat/pending-session', exact: true, name: 'LiveChat_pending_session', component: StarPendingContent },
+    { path: '/superstar/live-chat/pending-session/view/:id', exact: true, name: 'LiveChat_pending_session', component: StarAddSessionContent },
+    { path: '/superstar/live-chat/add-session', exact: true, name: 'add_session', component: StarAddSessionContent },
+    { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
+];
 
-//                 <Switch>
-
-//                     <Route exact path='/superstar/dashboard' component={SuperStarDashboard}/>
-//                     <Route exact path='/superstar/Live-chat' component={LiveChatContent}/>
-//                     <Route exact path='/superstar/Live-chat/view' component={ScheduleView}/>
-//                     <Route exact path='/superstar/live-chat/registeruser/:live_chat_id' component={RegisterUser} />
-
-//                     <Route exact path='/superstar/Live-chat/add-session' component={AddSessionContent}/>
-//                     <Route exact path='/superstar/live-chat/chat-star-profile' component={LiveChatProfile}/>
-//                     <Route exact path='/superstar/Live-chat/pedning-session' component={PendingContent}/>
-//                     <Route exact path='/superstar/Live-chat/pedning-session/view/:id' component={PendingView}/>
-                    
-//                 </Switch>
-                
-//             </div>
-//     </Router>
-// </div>
-// );
-// }
-
-// export default SuperstarRoute
+export default SuperstarRoute

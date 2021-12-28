@@ -1,12 +1,17 @@
-import React from 'react'
-import StarNav from './StarNave'
+import AdminMainDashboard from './../../Pages/MainDashbord/AdminMainDashboard';
 
 const DashboardAdmin = () => {
-    return (
-        <>
-            <StarNav/>
-        </>
-    )
-}
+  
+  
+  return (
+    <>
+      <AdminMainDashboard />
+    </>
+  );
+};
+
+
+
 
 export default DashboardAdmin
+

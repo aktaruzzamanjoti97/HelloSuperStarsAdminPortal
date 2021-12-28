@@ -1,11 +1,11 @@
 import React from "react";
 import {Switch, Route, Redirect} from 'react-router-dom';
-import routes from "./AdminRoute";
+import routes from "./SuperstarRoute";
 
 
-import Navbar from "./Header/Navbar";
-import Footer from "./Header/Footer";
-import Sidebar from "./Header/Sidebar";
+import Navbar from "./Layouts/Navbar";
+import Footer from "./Layouts/Footer";
+import Sidebar from "./Layouts/Sidebar";
 
 
 import './assets/css/styles.css'
@@ -28,7 +28,7 @@ const MasterLayout = () => {
                 </div>
 
                 <div id="layoutSidenav_content">
-                    <main className="p-3 h-100" style={{ background: '#151515' }}>
+                    <main className="p-3">
                         <Switch>
                             {
                                 routes.map( (route, idx) => {
@@ -47,11 +47,11 @@ const MasterLayout = () => {
                                     )
                                 })
                             }
-                            <Redirect from="/superstar-admin" to="/superstar-admin/dashboard" />
+                            <Redirect from="/superstar" to="/superstar/dashboard" />
                         </Switch>
                     </main>
                     
-                    {/*<Footer></Footer>*/}
+                    <Footer></Footer>
                 </div>
 
             </div>
