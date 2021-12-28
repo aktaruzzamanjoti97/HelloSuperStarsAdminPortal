@@ -1,5 +1,8 @@
 import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
+import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetUp";
+import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp";
+import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp";
 import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
 import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
 import GreetingsDetails from "./Home/Pages/AdminGreetings/GreetingsReadyPage/GreetingsReadyPage";
@@ -15,7 +18,6 @@ import SuperStarDashboard from "./Home/SuperStarDashboard";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
-
 
 
 
@@ -37,6 +39,11 @@ const AdminRoute = [
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
+
+
+    { path: '/superstar-admin/meetup-events', exact: true, name: 'meetup-events', component: LiveMeetUp },
+    { path: '/superstar-admin/pending-meetup', exact: true, name: 'pending-meetup', component: PendingMeetUp },
+    { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
     
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
