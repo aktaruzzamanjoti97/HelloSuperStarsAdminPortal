@@ -1,10 +1,3 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState } from "react";
-import './Home/Pages/LiveChatSpStar/SuperStarContent.css'
-import SideMenu from "./Header/NavSuperStar/SideMenu";
-// import { menuItems } from "./NavBar/SideMenu";
-import './Header/NavSuperStar/NavSuperStar.css'
-
 import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
 import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
@@ -14,11 +7,7 @@ import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
 import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
-import AdminPrivateRoute from "../PrivateRoute/AdminPrivateRoute";
 import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
-import SuperstarGreetings from "./Home/Pages/SuperstarGreetings/SuperstarGreetings";
-import SuperstarGreetingsForm from "./Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm";
-//Private Route
 
 
 
