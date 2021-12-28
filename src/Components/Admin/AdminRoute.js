@@ -1,20 +1,20 @@
-import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
 import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
-import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
-import SuperStarDashboard from "./Home/SuperStarDashboard";
+import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
+import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
+import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
+import GreetingsDetails from "./Home/Pages/AdminGreetings/GreetingsReadyPage/GreetingsReadyPage";
+import Notify from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsContent";
+import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
 import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";
+import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
 import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
 import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
-import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
+import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
-import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
+import SuperStarDashboard from "./Home/SuperStarDashboard";
 
-import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings"
-import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm"
-import GreetingsDetails from "./Home/Pages/AdminGreetings/GreetingsReadyPage/GreetingsReadyPage"
 
-import Notify from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsContent"
-import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
+// import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
 
 
@@ -44,7 +44,7 @@ const AdminRoute = [
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
-    { path: '/superstar-admin/notify/record', exact: true, name: 'notify', component: NotifyRecord },
+    
 
 
 

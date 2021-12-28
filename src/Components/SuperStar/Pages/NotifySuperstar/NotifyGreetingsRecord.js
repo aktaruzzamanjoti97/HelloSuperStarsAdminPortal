@@ -1,9 +1,10 @@
 import React from 'react'
-import './NotifyGreetings.css'
+// import './NotifyGreetings.css'
 import ReactPlayer from 'react-player'
-import Banner from '../../../../../../assets/images/SakibBanner.PNG'
-import Star from '../../../../../../assets/images/profileAvatar/Avater.png'
-import PriceTag from '../../../../../../assets/images/tagPrice.PNG'
+import { Link } from 'react-router-dom'
+import Star from '../../../../assets/images/profileAvatar/Avater.png'
+import Banner from '../../../../assets/images/SakibBanner.PNG'
+import PriceTag from '../../../../assets/images/tagPrice.PNG'
 
 const NotifyGreetingsRecord = () => {
     
@@ -21,7 +22,10 @@ return (
                         <tr className='mx-3'>
                             <td className='Notifytdx letfNotRe text-light'> <img src={Star} className='NotifyAimg' alt="" />Shakib All Hasan</td>
                             <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> 21/12/1998  09:00 pm</span></td>
-                            <td className='Notifytdx rightNotRe '><button className='btn btnRecNot active'><i class="fas fa-video"></i> Rec</button></td>
+                            <td className='Notifytdx rightNotRe '>
+                                <Link to="/superstar/greetings/video-record"><button className='btn btnRecNot active'><i class="fas fa-video"></i> Rec</button></Link>
+                            </td>
+                        
                         </tr>
                     </table>
                     <table className='w-100 my-3 NotifyTabletdRec '>
