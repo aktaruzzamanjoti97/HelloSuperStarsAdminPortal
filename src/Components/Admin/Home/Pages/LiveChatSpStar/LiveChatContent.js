@@ -5,6 +5,7 @@ import Live from '../../../../../assets/images/instagram-live 1.png'
 import Pending from '../../../../../assets/images/pending 2.png'
 import Add from '../../../../../assets/images/UpcomingEvent/add 1.png'
 import axios from "axios";
+import './SuperStarContent.css'
 
 const LiveChatContent = () => {
 
