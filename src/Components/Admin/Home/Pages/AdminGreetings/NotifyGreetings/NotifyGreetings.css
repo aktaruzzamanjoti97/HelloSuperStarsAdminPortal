@@ -1,0 +1,164 @@
+
+.BannerAGN{
+    border: 3px solid rgb(255, 174, 0);
+    height: 260px;
+}
+
+
+.NotifyTable{
+    color: white;
+}
+.LeftGNA{
+    background-color: #252525;
+    padding-left: 5px;
+    border-radius: 5px;
+    padding-right: 10px;
+    margin-right: 20px !important;
+}
+
+.letfNotRe{
+    border-radius: 10px 0px 0px 10px;
+}
+.rightNotRe{
+    border-radius: 0px 10px 10px 0px;
+}
+.btnRecNot{
+    background-color: #7A7A7A !important;
+    color: white !important;
+}
+.active{
+    background-color: goldenrod !important; 
+    color: white !important;
+}
+.clockNOte{
+    background-color: rgb(29, 29, 29);
+    font-size: 15px;
+    font-weight: 100;
+
+}
+.NotifyTabletdRec{
+    border-radius: 5px !important;
+}
+
+.datNotify{
+    background-color: grey;
+}
+
+.Notifytdx{
+    background-color: #3A3A3A;
+}
+.lNTS{
+    border-radius: 10px 0px 0px 10px;
+}
+.rNTS{
+    border-radius: 0px 10px 10px 0;
+}
+
+/* .Notifytdx:hover, .lNTS:hover, .rNTS:hover{
+ background-color: rgb(255, 153, 0);
+} */
+
+
+
+.NotifyTabletd{
+    padding: 8px;
+
+}
+
+.NotifyOver{
+    overflow-x:auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 5px;
+    padding-left: 10px;
+  }
+
+  .NotifyAimg{
+      width: 40px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      margin-right: 5px;
+}
+
+
+
+.rightGNA{
+    background-color:#252525 !important;
+    margin-right: 10px;
+    border-radius: 10px;
+    width: 90%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.ReactNAv{
+    border: 2px solid rgb(255, 187, 0);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.SpBannera{
+    width: 100%;
+}
+
+.NotifyTp{
+    
+    font-family: Arial;
+    margin-top: 15px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+
+.NotifyTpx{
+    color: white;
+    font-family: Arial;
+    font-weight: 500;
+}
+
+.PriceTage{
+    width: 35px;
+}
+.buTon-a{
+    background-color: rgb(85, 83, 81);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.buTon-a:hover{
+    background-color: goldenrod;
+}
+.buTon-ab{
+   font-size: 11px;
+}
+
+.buTon-abc{
+    font-size: 13px;
+ }
+.NotiBtnts{
+    background-color: rgb(131, 130, 130) !important ;
+    color: black;
+}
+
+.NotiBtnts:hover{
+    background-color: rgb(6, 118, 247) !important ;
+    color: white !important;
+}

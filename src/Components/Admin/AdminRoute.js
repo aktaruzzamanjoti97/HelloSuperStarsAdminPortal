@@ -9,6 +9,20 @@ import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
 import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
 
+import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings"
+import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm"
+import GreetingsDetails from "./Home/Pages/AdminGreetings/GreetingsReadyPage/GreetingsReadyPage"
+
+import Notify from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsContent"
+import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
+
+
+
+
+
+// import StarVidoRecord from './Home/Pages/SuperstarGreetings/VidoUploadPage/VidoUpload';
+// import StarVidoUpload from './Home/Pages/SuperstarGreetings/VidoUploadPage2.js/VidoUploadPage2';
+
 
 
 const AdminRoute = [
@@ -22,7 +36,21 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
-    { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint },
+    { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
+    
+    { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
+    { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
+    { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
+
+
+    { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
+    { path: '/superstar-admin/notify/record', exact: true, name: 'notify', component: NotifyRecord },
+
+
+
+    // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
+    // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
+    
 ];
 
 export default AdminRoute;

@@ -33,8 +33,8 @@ import SuperStarRegistrationOTP from './Components/SuperStar/SuperStarRegistrati
 // Extra New Route
 import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/RegisterUser/component/RegisterLeftCard';
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
-import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
-import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
+// import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
+// import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
 
 
 
@@ -67,9 +67,11 @@ return (
       <Route exact path='/superstar-admin/login' component={AdminLogin} />
       <Route exact path='/superstar-admin/registration' component={AdminRegistration} />
       <Route exact path='/superstar-admin/otp' component={AdminOTP} />
+
+      {/*
       <Route exact path='/superstar-admin/greetings' component={SuperstarGreetings} />
       <Route exact path='/superstar-admin/greetings/greetingsForm' component={SuperstarGreetingsForm} />
-      
+      */}
 
       {/* Indevidual SuperStar Route */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
