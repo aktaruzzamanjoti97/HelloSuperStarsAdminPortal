@@ -70,27 +70,34 @@ $(".inputs").keyup(function () {
 
 
     // otp countdown start
-    const [counter, setCounter] =useState(10);
+    const [counter, setCounter] = useState(30);
+
+    const [maskingNumber, setMaskingNumber] = useState();
 
     useEffect(() => {
+
+        const number = localStorage.auth_phone;
+        const musking_num = `${number.substring(0, 3)} ${'****'} ${number.substring(6, number.length)}`;
+
+        setMaskingNumber(musking_num);
+
         const timer =
         counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
         return () => clearInterval(timer);
+
     }, [counter]);
 
 
     function handleResend(){
         axios.get(`/api/resend_otp`).then(res => {
             if(res.data.status === 200)
-                {
-                    swal("Success",res.data.message,"success");
-                    setCounter(20);
-                }
-                else{
-                    setLogin({ ...loginInput,error_list: res.data.validation_errors });
-                }
+            {
+                setCounter(30);
+            }
         });
     }
+
+    
 
 
 
@@ -118,11 +125,12 @@ return (
                                     </div>
                                     <br />
 
-                                    <Form className="text-center">
+                                    <Form className="text-center" onSubmit={loginSubmit}>
+                                    
                                         <button className="btn  w-100 disabled" style={{ color: "goldenrod" }}
                                             placeholder="Next ">
-                                            We have sent an SMS to your Phone Number
-                                            {localStorage.auth_phone}
+                                            <p>We have sent an SMS to your Phone Number  {maskingNumber}</p>
+                                            <b>Time left {counter}s</b> <br /><br />
                                         </button>
                                         <div className="otpS align-items-center justify-content-center">
                                                             <input type="text" className="inputs" name="otp1"  maxLength="1" onChange={handleInput} value={loginInput.otp1}/>
@@ -134,23 +142,19 @@ return (
                                                         </div>
 
                                         <br />
-                                        <button className="btn  w-100 disabled OTP-time-sp-ad-e"
-                                            style={{ color: "goldenrod" }} placeholder="Next ">
-                                            Time remaining: 0:45
-                                        </button>
-                                        <button className="btn  w-100 disabled OTP-time-sp-ad"
-                                            style={{ color: "goldenrod" }} placeholder="Next ">
-                                            Resend
-                                        </button>
 
                                         <div className="d-flex  justify-content-around mt-5 OTP-SP-Log ">
-                                            <Link to='/'>
-                                            <button className="btn btn-warning OPT" placeholder="Next" onClick={loginSubmit}
+                                             
+                                            {counter===0 ? ( <span className='btn btn-warning OPT' onClick={handleResend}>Resend</span> ) 
+                                            : (
+                                                <button className="btn btn-warning OPT" placeholder="Next" 
                                                 type="submit">
                                                 Next
-                                            </button>
-                                            </Link>
+                                                </button> 
+                                            ) }  
                                         </div>
+
+
                                     </Form>
                                 </Card.Body>
 
