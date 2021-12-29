@@ -1,40 +1,93 @@
-import React from 'react';
+import React, { useRef, useState } from "react";
+import styles from "./style.module.css";
+import { FileDrop } from "react-file-drop";
+import { AiOutlineUpload } from 'react-icons/ai';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 import PersonImg from "../../../../assets/images/VidoUpload/unsplash_ChylazdaLkU.png";
-import Video from "../../../../assets/images/VidoUpload/ymneq71z 1.png";
-import './VidoUploadPage2.css';
 
 const VidoUploadPage2 = () => {
+  const [selectFile, setSelectFile] = useState(null);
+
+  const fileInputRef = useRef(null);
+
+  const onFileInputChange = async (event) => {
+    const file = event.target.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    setSelectFile(file);
+    if (
+      file.type === "image/jpeg" ||
+      file.type === "image/png" ||
+      file.type === "image/jpg"
+    ) {
+    } else if (file.type === "text/plain") {
+      const text = await file.text();
+      console.log(text);
+    }
+  };
+
+  const onTargetClick = () => {
+    fileInputRef.current.click();
+  };
+
     return (
         <div>
                 <div>
       <div className="container-fluid mt-5 mb-3">
         <div className="row">
-          <div className="col-md-8">
-            <div className="card video-style">
-              <div className="text-center vido_img">
-                <img src={Video} alt="" className="img-fluid" />
-                <div className="centerVideo">
-                  <button className="btn btn-warning">
-                    <i className="fas fa-redo-alt video-icons"></i>
-                  </button>
-                  <button className="btn btn-warning mx-4">
-                    <i className="fas fa-pause-circle video-icons"></i>
-                  </button>
-
-                  <button className="btn btn-warning">
-                    <i className="fas fa-exchange-alt video-icons"></i>
-                  </button>
-                </div>
-
-                <div class="center-upload">
-                    <button className="btn btn-dark"><i class="fas fa-cloud-upload-alt fa-3x text-warning"></i></button>
-                </div>
-              </div>
-            </div>
+          <div className="col-md-7 ">
             
+          <div className={styles.CardBorder}>
+
+            <div className={styles.fileUploadCard}>
+
+            <input
+                onChange={onFileInputChange}
+                ref={fileInputRef}
+                type="file"
+                className={styles.hidden}
+              />
+              <div className={styles.text}>
+                <button onClick={onTargetClick} className={styles.uploadBtn}>
+                  Upload File
+                </button>
+                <p className="text-center">
+                  {selectFile !== null ? (
+                    <>
+                      {selectFile.name}
+                      <span className={styles.x} onClick={() => setSelectFile(null)}>
+                      <AiOutlineCloseCircle className="icon" />
+                      </span>
+                    </>
+                  ) : (
+                    "Choose file..."
+                  )}
+                </p>
+              </div>
+              <FileDrop
+                onDrop={(files, event) => setSelectFile(files[0])}
+                onTargetClick={onTargetClick}
+                targetClassName={styles.target}
+                className={styles.filedrop}
+                draggingOverFrameClassName={styles.filedropDrag}
+              >
+                <div className="p-5">
+               <div className="text-center">
+               <AiOutlineUpload className="icon " />
+               </div>
+                 <p> Click or Drag and drop file</p>
+                </div>
+              </FileDrop>
+            </div>
+
+
+            </div>
           </div>
 
-          <div className="col-md-4 ">
+          <div className="col-md-5 ">
             <div className="card right-video-card">
               <div className="card-body">
                 <div className="container my-3">
