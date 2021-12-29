@@ -7,9 +7,11 @@ const MonthCard = () => {
                     <h5 className="text-light">Monthly Earning</h5>
                     <div className="text-center">
                       <img src={graph} className="img-fluid" alt="" />
-                      <button className="btn btn-warning my-3 fw-bold px-4">
+                     <div>
+                     <button className="btn btn-warning my-3 fw-bold px-4">
                         Details
                       </button>
+                     </div>
                     </div>
                   </div>
                 </div>
