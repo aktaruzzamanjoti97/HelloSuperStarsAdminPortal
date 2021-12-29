@@ -1,42 +1,69 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import PersonImg from "../../../../assets/images/VidoUpload/unsplash_ChylazdaLkU.png";
-import Video from "../../../../assets/images/VidoUpload/ymneq71z 1.png";
+// import Video from "../../../../assets/images/VidoUpload/ymneq71z 1.png";
+import { ReactMediaRecorder } from "react-media-recorder";
+import Webcam from "react-webcam";
 import "./VidoUpload.css";
+
+
+
+
+
 const VidoUpload = () => {
+
+  const [stopShowData, setStopShowData] = useState(false);
+  const webcamRef = React.useRef(null);
+
   return (
     <div>
       <div className="container-fluid mt-5 mb-3">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-7">
             <div className="card video-style">
               <div className="text-center vido_img">
-                <img src={Video} alt="" className="img-fluid w-100" />
-                <div className="centerVideo">
-                  <button className="btn btn-warning">
-                    <i className="fas fa-redo-alt video-icons"></i>
-                  </button>
-                  <button className="btn btn-warning mx-4">
-                    <i className="fas fa-pause-circle video-icons"></i>
-                  </button>
+              
+              
+              <ReactMediaRecorder
+                  video
+                  render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
+                    <div>
+                      {/* <p>{status}</p> */}
+                      {stopShowData ? null : <Webcam style={{width: "100%", height: "100%"}} audio={true} ref={webcamRef} />}
 
-                  <button className="btn btn-warning">
-                    <i className="fas fa-exchange-alt video-icons"></i>
-                  </button>
-                </div>
-                <div class="bottomleft-video ">
-                  <p className="bg-dark text-light px-3 py-1">
-                    <span>
-                      <i class="fas fa-record-vinyl text-danger mx-2"></i>
-                    </span>
-                    1:50
-                  </p>
-                </div>
+                      {/* thakbe na button click a */}
+                      {stopShowData ? (
+                        <video style={{width: "100%", height: "100%"}} src={mediaBlobUrl} autoPlay controls loop />
+                      ) : null}
+
+                      {/* thakbe  */}
+                      <div className="p-1 m-1">
+                        <button
+                          className="btn btn-success p-1 m-1 starRecord"
+                          onClick={startRecording}
+                        >
+                          <i class="fas fa-record-vinyl mx-1"></i> Record
+                        </button>
+                        <button
+                          className="btn btn-info p-1 m-1 starRecord"
+                          onClick={() => {
+                            setStopShowData(true);
+                            stopRecording();
+                          }}
+                        >
+                          {" "}
+                          🛑 Stop
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                />
+
               </div>
             </div>
           </div>
 
-          <div className="col-md-4 ">
+          <div className="col-md-5 ">
             <div className="card right-video-card">
               <div className="card-body">
                 <div className="container my-3">
