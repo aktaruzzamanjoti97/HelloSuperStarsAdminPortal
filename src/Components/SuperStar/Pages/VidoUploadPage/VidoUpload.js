@@ -29,11 +29,11 @@ const VidoUpload = () => {
                   render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
                       {/* <p>{status}</p> */}
-                      {stopShowData ? null : <Webcam style={{width: "100%", height: "80%"}} audio={true} ref={webcamRef} />}
+                      {stopShowData ? null : <Webcam style={{width: "100%", height: "100%"}} audio={true} ref={webcamRef} />}
 
                       {/* thakbe na button click a */}
                       {stopShowData ? (
-                        <video style={{width: "100%", height: "80%"}} src={mediaBlobUrl} autoPlay controls loop />
+                        <video style={{width: "100%", height: "100%"}} src={mediaBlobUrl} autoPlay controls loop />
                       ) : null}
 
                       {/* thakbe  */}
