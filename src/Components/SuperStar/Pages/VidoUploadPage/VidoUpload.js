@@ -19,7 +19,7 @@ const VidoUpload = () => {
     <div>
       <div className="container-fluid mt-5 mb-3">
         <div className="row">
-          <div className="col-md-8">
+          <div className="col-md-7">
             <div className="card video-style">
               <div className="text-center vido_img">
               
@@ -29,11 +29,11 @@ const VidoUpload = () => {
                   render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
                     <div>
                       {/* <p>{status}</p> */}
-                      {stopShowData ? null : <Webcam style={{width: "100%", height: "100%"}} audio={true} ref={webcamRef} />}
+                      {stopShowData ? null : <Webcam style={{width: "100%", height: "80%"}} audio={true} ref={webcamRef} />}
 
                       {/* thakbe na button click a */}
                       {stopShowData ? (
-                        <video style={{width: "100%", height: "100%"}} src={mediaBlobUrl} autoPlay controls loop />
+                        <video style={{width: "100%", height: "80%"}} src={mediaBlobUrl} autoPlay controls loop />
                       ) : null}
 
                       {/* thakbe  */}
@@ -63,7 +63,7 @@ const VidoUpload = () => {
             </div>
           </div>
 
-          <div className="col-md-4 ">
+          <div className="col-md-5 ">
             <div className="card right-video-card">
               <div className="card-body">
                 <div className="container my-3">
