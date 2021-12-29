@@ -16,6 +16,7 @@ import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
 import SuperStarDashboard from "./Home/SuperStarDashboard";
 import EventDetails from "./Home/Pages/AdminMeeupEvents/EventDetails/EventDetails";
+import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -45,8 +46,10 @@ const AdminRoute = [
     { path: '/superstar-admin/meetup-events', exact: true, name: 'meetup-events', component: LiveMeetUp },
     { path: '/superstar-admin/pending-meetup', exact: true, name: 'pending-meetup', component: PendingMeetUp },
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
+
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },
-    
+     { path: '/superstar-admin/eventSlot', exact: true, name: 'eventSlot', component: EventSlot },
+
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
