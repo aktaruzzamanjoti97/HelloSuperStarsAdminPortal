@@ -3,7 +3,7 @@ import Banner from '../../../../../../assets/images/meetupEvent/unsplash_smgTvep
 import './JoinNowMeetUp.css'
 import calendar from '../../../../../../assets/images/meetupEvent/calendar.png'
 import Clock from '../../../../../../assets/images/meetupEvent/clock-icon.png'
-
+import { Link } from 'react-router-dom'
 const JoinNoWMeetUp = () => {
 return (
 <>
@@ -59,7 +59,9 @@ return (
         </div>
     </div>
     <div className="m-3">
+        <Link to='star-video-chat'>
         <button className='btn text-warning  MEN-Join fw-bold'>Join Now</button>
+        </Link>
     </div>
 
 </>
