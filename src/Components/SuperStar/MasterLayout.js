@@ -28,7 +28,7 @@ const MasterLayout = () => {
                 </div>
 
                 <div id="layoutSidenav_content">
-                    <main className="p-3">
+                    <main className="p-3" style={{ background: '#151515' }}>
                         <Switch>
                             {
                                 routes.map( (route, idx) => {
@@ -51,7 +51,7 @@ const MasterLayout = () => {
                         </Switch>
                     </main>
                     
-                    <Footer></Footer>
+                    {/*<Footer></Footer>*/}
                 </div>
 
             </div>

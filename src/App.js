@@ -79,7 +79,7 @@ return (
       <Route exact path='/superstar/otp' component={SuperStarOTP} />
       <Route exact path='/superstar_registration/otp' component={SuperStarRegistrationOTP} />
 
-      <SuperStarRoute exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
+      <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>

@@ -27,7 +27,11 @@
     color: white !important;
 }
 .active{
+<<<<<<< Updated upstream
     /* background-color: goldenrod !important;  */
+=======
+    /*background-color: goldenrod !important; */
+>>>>>>> Stashed changes
     color: white !important;
 }
 .clockNOte{
