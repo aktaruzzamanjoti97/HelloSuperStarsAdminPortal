@@ -31,9 +31,8 @@ const StarNave = () => {
             localStorage.removeItem('auth_id');
             
             swal("Success",res.data.message,"success");
-            //history.push('/superstar-admin/login');
+            history.push('/');
             //browserHistory.push("/path-to-link");
-            window.location.href = "/";
           }
           else
           {

@@ -21,12 +21,13 @@ const [modalInput, setModalInput] = useState({
 const handleInput = (e) => {
     e.persist();
     setModalInput({...modalInput, [e.target.name]: e.target.value});
-    console.log(modalInput.date);
+    //console.log(modalInput.date);
 }
 
 
 const modalSubmit = (e) => {
     e.preventDefault();
+
     const data = {
         date: modalInput.date,
     }
@@ -36,7 +37,8 @@ const modalSubmit = (e) => {
         axios.get(`/api/admin/livechatListByDate/${modalInput.date}`).then(res => {
                 if(res.data.status === 200)
                 {
-                    
+
+                    console.log(res.data.livechats);
                     history.push({
                         pathname: '/superstar-admin/live-chat/view',
                         state: { 
