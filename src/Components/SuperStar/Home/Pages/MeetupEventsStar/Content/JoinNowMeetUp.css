@@ -1,0 +1,62 @@
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .MENbtn{
+      background-color: rgba(172, 172, 172, 0.651);
+      border-radius: 5px;
+      width: 100%;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 1px solid rgba(255, 217, 0, 0.158);
+}
+
+.MENbtn-text{
+    width: 50px;
+}
+
+.None-Btn{
+    border: none !important;
+    background: none !important;
+    color: white;
+    font-size: larger;
+}
+.MEN-Join{
+    background-color: rgb(132, 134, 132) !important;
+}
+
+.buTon-EMN{
+    background-color: rgb(67, 70, 67) ;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+.buTon-EMN:hover{
+    background-color: rgba(248, 182, 2, 0.473) ;
+}
+.BtnTextNMP:hover{
+    color: white !important;
+}
+.BTN-x-P{
+    display: flex;
+
+}
+
+.MEN-Join:hover{
+    background-color: goldenrod !important;
+    color: white !important;
+}
+@media only screen and (max-width: 600px) {
+    .BTN-x-P{
+        display: inline;
+    }
+  }
