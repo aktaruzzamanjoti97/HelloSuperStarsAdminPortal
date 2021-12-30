@@ -1,0 +1,18 @@
+.eventType {
+  width: 8rem;
+}
+
+.eventType
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding-right: 32px;
+  background-color: #737373;
+  color: #fff;
+}
+
+.selectActivity {
+  margin-left: 2rem !important;
+}
+
+.addMeetUpPadding {
+  padding: 5rem !important;
+}
