@@ -56,7 +56,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5 className="text-white">Friday Evening with SAH75</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
@@ -72,7 +72,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5 className='text-white'>Raddusson Blue</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
@@ -88,7 +88,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5 className='text-white'>Le Merridian 11.11</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
@@ -104,7 +104,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5 className='text-white'>Friday Evening with SAH75</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
@@ -120,7 +120,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5>Session Moneyheist</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
@@ -136,7 +136,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5>Friday Evening with SAH75</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
@@ -152,7 +152,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5>Friday Evening with SAH75</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
@@ -168,7 +168,7 @@ const CompletedEventSliders = () => {
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
                                     <h5 className="text-white">Friday Evening with SAH75</h5>
-                                    <img src={EnterImage} alt="" />
+                                    <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
                                 <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
