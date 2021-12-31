@@ -1,0 +1,11 @@
+.solt-card {
+    border: 3px solid yellow !important;
+}
+
+.sold-small-card {
+    background: linear-gradient(102.45deg, #F5EA45 28.52%, #DDA336 52.38%, #E7A725 72.31%);
+    border-radius: 5px;
+}
+.uncomplete{
+ background: #616161 !important;
+}

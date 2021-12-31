@@ -1,0 +1,40 @@
+/* body{
+    background-color: #151515 !important;
+} */
+.main-div-star{
+    min-height: 100vh;
+    background-color: #151515 !important;
+ 
+}
+.balCard{
+    border: 3px solid yellow !important;
+    position: relative !important;
+}
+.bottomleft-balhasan {
+    position: absolute;
+    bottom: 1px;
+    height: 200px;
+    width: 200px;
+ 
+  }
+  .chat-person-name{
+      cursor: pointer;
+  }
+  .chatting-card{
+      background-color: #2D2D2D !important;
+  }
+  #maincontainer {
+   
+ 
+    height:520px;
+    overflow:hidden;
+}
+#childcontainer {
+  
+    position: relative;
+ 
+    height:520px;
+    top:20px;
+    left:20px;
+    overflow:auto;
+}
