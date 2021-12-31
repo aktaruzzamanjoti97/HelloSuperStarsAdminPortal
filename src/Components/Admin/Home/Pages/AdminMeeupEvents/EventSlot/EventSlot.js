@@ -1,7 +1,12 @@
 import React from "react";
 import "./EventSlot.css";
+import vector from "../../../../../../assets/images/meetupEvent/Vector.png";
 import hotel from "../../../../../../assets/images/meetupEvent/unsplash_MXbM1NrRqtI.png";
 import clock from "../../../../../../assets/images/meetupEvent/clock-icon.png";
+import first from "../../../../../../assets/images/meetupEvent/1.png";
+import second from "../../../../../../assets/images/meetupEvent/2.png";
+import third from "../../../../../../assets/images/meetupEvent/3.png";
+
 const EventSlot = () => {
   return (
     <div className="container-fluid">
@@ -46,34 +51,168 @@ const EventSlot = () => {
         </div>
       </div>
 
-
       <div className="row my-3">
-          <div className="col-md-12">
-              <div className="card bg-dark">
-             <div className="card-body">
-             <div className="row">
-                    <div className="col-2 ">
-                       <p className="bg-warning">1</p>
-                    </div>
-                    <div className="col-2 ">
-                    <p className="bg-warning">1</p>
-                    </div>
-                    <div className="col-2 ">
-                    <p className="bg-warning">1</p>
-                    </div>
-                    <div className="col-2 ">
-                    <p className="bg-warning">1</p>
-                    </div>
-                    <div className="col-2">
-                    <p className="bg-warning">1</p>
-                    </div>
-                    <div className="col-2">
-                    <p className="bg-warning">1</p>
-                    </div>
+        <div className="col-md-12">
+          <div className="card bg-dark solt-card">
+            <div className="card-body">
+              <h3 className="text-warning">
+                <img src={vector} alt="clock" className="mx-2"></img>
+                Slots <sub>(03/100)</sub>
+              </h3>
+              <div className="row my-3">
+                <div className="col-md-2 col-sm-3 ">
+                  <p className="sold-small-card fw-bold">
+                    <img src={first} className="img-fluid mx-2 p-1" alt="" />
+                    Mahfuzul Alom
+                  </p>
                 </div>
-             </div>
+                <div className="col-md-2 col-sm-3 ">
+                  <p className="sold-small-card fw-bold">
+                    <img src={second} className="img-fluid mx-2 p-1" alt="" />
+                    Asfia Hossain
+                  </p>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                  <p className="sold-small-card fw-bold">
+                    <img src={third} className="img-fluid mx-2 p-1" alt="" />
+                    Saddam Hossain
+                  </p>
+                </div>
+                <div className="col-md-2 col-sm-3 ">
+                  <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 mb-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
+
+                <div className="col-md-2 col-sm-3">
+                   <div className="card py-3 my-2 uncomplete ">
+                    <div className="card-body"></div>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
+
+        <div className="btns my-3">
+          <button className="btn uncomplete text-black fw-bold py-2">Meetup Successful</button>
+          <button  className="btn uncomplete text-black mx-4 fw-bold py-2">Report Issue</button>
+        </div>
       </div>
     </div>
   );
