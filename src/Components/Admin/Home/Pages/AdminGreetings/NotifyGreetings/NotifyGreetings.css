@@ -26,14 +26,6 @@
     background-color: #7A7A7A !important;
     color: white !important;
 }
-.active{
-<<<<<<< Updated upstream
-    /* background-color: goldenrod !important;  */
-=======
-    /*background-color: goldenrod !important; */
->>>>>>> Stashed changes
-    color: white !important;
-}
 .clockNOte{
     background-color: rgb(29, 29, 29);
     font-size: 15px;
