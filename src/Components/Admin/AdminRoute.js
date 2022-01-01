@@ -19,6 +19,7 @@ import EventDetails from "./Home/Pages/AdminMeeupEvents/EventDetails/EventDetail
 import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
 import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSuccess";
 import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
+import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -52,7 +53,8 @@ const AdminRoute = [
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },
      { path: '/superstar-admin/eventSlot', exact: true, name: 'eventSlot', component: EventSlot },
      { path: '/superstar-admin/eventsuccess', exact: true, name: 'eventsuccess', component: EventSuccess },
-     { path: '/superstar-admin/admin-video-chat', exact: true, name: 'admin-video-chat', component: AdminVideoChat },
+     { path: '/superstar-admin/video-chat', exact: true, name: 'video-chat', component: AdminVideoChatIcon },
+     { path: '/superstar-admin/video-chat-message', exact: true, name: 'video-chat-message', component: AdminVideoChat },
 
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
