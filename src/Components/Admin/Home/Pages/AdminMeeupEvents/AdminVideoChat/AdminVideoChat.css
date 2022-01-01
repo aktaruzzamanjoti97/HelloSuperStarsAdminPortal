@@ -7,3 +7,10 @@
 .slick-list:focus {
     outline: none;
 }
+
+.MSGIcon-VC {
+    position: absolute;
+    bottom: 1px;
+    height: 50px;
+    width: 50px;
+}
