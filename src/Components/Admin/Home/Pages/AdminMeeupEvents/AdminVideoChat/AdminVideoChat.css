@@ -1,0 +1,9 @@
+.messsage-card{
+    background: #2D2D2D !important;
+}
+.custom-chat-container{
+    width: 90% !important;
+}
+.slick-list:focus {
+    outline: none;
+}
