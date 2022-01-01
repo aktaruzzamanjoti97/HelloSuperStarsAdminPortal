@@ -27,7 +27,7 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/meetup-events/join', exact: true, name: 'join', component: JoinNoWMeetUp },
 
-    { path: '/superstar/greetings', exact: true, name: 'greetings', component: SuperstarGreetings }
+    { path: '/superstar/greetings', exact: true, name: 'greetings', component: SuperstarGreetings },
 
     { path: '/superstar/star-video-chat', exact: true, name: 'star-video-chat', component: StarVideoChat },
 

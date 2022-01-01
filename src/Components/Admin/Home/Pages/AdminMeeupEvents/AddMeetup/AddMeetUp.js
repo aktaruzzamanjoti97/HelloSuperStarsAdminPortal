@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MeetUpEventNave from '../MeetUpEventNave';
+// import MeetUpEventNave from '../MeetUpEventNave';
 import './AddMeetUp.css';
 
 
