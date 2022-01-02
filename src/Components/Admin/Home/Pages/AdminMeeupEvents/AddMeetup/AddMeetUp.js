@@ -5,9 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import MeetUpEventNave from '../MeetUpEventNave';
+import MeetUpEventNave from '../MeetUpEventNave';
 import './AddMeetUp.css';
-
+import { Editor } from "react-draft-wysiwyg";
+import Form from "react-vanilla-form";
+import draftToHtml from "draftjs-to-html";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 
 const AddMeetUp = () => {
@@ -16,10 +19,16 @@ const AddMeetUp = () => {
 
     const handleChange = (event) => {
         setActivity(event.target.value);
-
-
-
     };
+
+    function CustomInput(props) {
+        return (
+            <>
+                <input hidden {...props} />
+                <Editor {...props} />
+            </>
+        );
+    }
 
     return (
         <>
@@ -105,7 +114,20 @@ const AddMeetUp = () => {
                                     <p><big>Description</big></p>
                                 </div>
                                 <div className="col-md-11">
-                                    <textarea className="form-control input-gray me-4" type="text" />
+                                    {/* <textarea className="form-control input-gray me-4" type="text" /> */}
+                                    <Form
+                                        data={{ editor: "" }}
+                                        onChange={(data, errors) => {
+                                            try {
+                                                console.log(draftToHtml(data.editor));
+                                            } catch (e) {
+                                                console.error(e);
+                                            }
+                                        }}
+                                    >
+                                        <CustomInput name="editor" />
+
+                                    </Form>
                                 </div>
                             </div>
 
@@ -120,6 +142,7 @@ const AddMeetUp = () => {
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div className="col-md-8">
                                     <div className="row">
                                         <div className="col-md-6">
@@ -174,64 +197,64 @@ const AddMeetUp = () => {
                             {
                                 activity === 10 ? (
                                     <>
-                                                            <div className="row my-4">
-                        <div className="col-md-2 text-white">
-                            <p><big>Upload Banner</big></p>
-                        </div>
-                        <div className="col-md-10">
-                            <input type="file" name="file" id="file" className="inputfile" />
-                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                        <div className="row my-4">
+                                            <div className="col-md-2 text-white">
+                                                <p><big>Upload Banner</big></p>
+                                            </div>
+                                            <div className="col-md-10">
+                                                <input type="file" name="file" id="file" className="inputfile" />
+                                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
 
-                        </div>
-                    </div>
-                    <div className="row my-4">
-                        <div className="col-md-2 text-white">
-                            <p><big>Upload Video</big></p>
-                        </div>
-                        <div className="col-md-10">
-                            <input type="file" name="file" id="file" className="inputfile" />
-                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                        </div>
-                    </div>
+                                            </div>
+                                        </div>
+                                        <div className="row my-4">
+                                            <div className="col-md-2 text-white">
+                                                <p><big>Upload Video</big></p>
+                                            </div>
+                                            <div className="col-md-10">
+                                                <input type="file" name="file" id="file" className="inputfile" />
+                                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                            </div>
+                                        </div>
                                     </>
-                                ) : 
-                                (
-                                    <div className="row my-4">
-                                <div className="col-md-4">
-                                    <div className="row">
-                                        <div className="col-md-4 text-white">
-                                            <p><big>Upload Banner</big></p>
-                                        </div>
-                                        <div className="col-md-5">
-                                            <input type="file" name="file" id="file" className="inputfile" />
-                                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                ) :
+                                    (
+                                        <div className="row my-4">
+                                            <div className="col-md-4">
+                                                <div className="row">
+                                                    <div className="col-md-4 text-white">
+                                                        <p><big>Upload Banner</big></p>
+                                                    </div>
+                                                    <div className="col-md-5">
+                                                        <input type="file" name="file" id="file" className="inputfile" />
+                                                        <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div className="col-md-4">
+                                                <div className="row">
+                                                    <div className="col-md-4 text-white">
+                                                        <p><big>Upload Video</big></p>
+                                                    </div>
+                                                    <div className="col-md-5">
+                                                        <input type="file" name="file" id="file" className="inputfile" />
+                                                        <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
 
                                         </div>
-                                    </div>
-
-                                </div>
-                                <div className="col-md-4">
-                                    <div className="row">
-                                        <div className="col-md-4 text-white">
-                                            <p><big>Upload Video</big></p>
-                                        </div>
-                                        <div className="col-md-5">
-                                            <input type="file" name="file" id="file" className="inputfile" />
-                                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                                )
+                                    )
                             }
 
-                          
 
 
-                            
+
+
 
                             <div className="my-3">
                                 <Link to="/superstar-admin/meetup-events">
