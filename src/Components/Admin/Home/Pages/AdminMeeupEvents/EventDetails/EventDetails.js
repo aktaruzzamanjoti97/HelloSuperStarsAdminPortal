@@ -44,7 +44,7 @@ const EventDetails = () => {
          <div>
          <h2 className='text-warning'>Event Details submitted</h2>
             <p className='text-light'>Waiting for <span className="fw-bold">
-            Manager Approval</span></p>
+           SuperStar Approval</span></p>
          </div>
              </div>
            </div>

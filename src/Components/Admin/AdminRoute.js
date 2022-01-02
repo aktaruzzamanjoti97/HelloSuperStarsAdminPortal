@@ -51,7 +51,7 @@ const AdminRoute = [
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
 
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },
-     { path: '/superstar-admin/eventSlot', exact: true, name: 'eventSlot', component: EventSlot },
+     { path: '/superstar-admin/meetup-event-slot', exact: true, name: 'meetup-event-slot', component: EventSlot },
      { path: '/superstar-admin/eventsuccess', exact: true, name: 'eventsuccess', component: EventSuccess },
      { path: '/superstar-admin/video-chat', exact: true, name: 'video-chat', component: AdminVideoChatIcon },
      { path: '/superstar-admin/video-chat-message', exact: true, name: 'video-chat-message', component: AdminVideoChat },

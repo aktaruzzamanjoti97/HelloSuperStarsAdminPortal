@@ -6,6 +6,7 @@ import clock from "../../../../../../assets/images/meetupEvent/clock-icon.png";
 import first from "../../../../../../assets/images/meetupEvent/1.png";
 import second from "../../../../../../assets/images/meetupEvent/2.png";
 import third from "../../../../../../assets/images/meetupEvent/3.png";
+import { Link } from 'react-router-dom';
 const EventSuccess = () => {
     return (
         <div className="container-fluid">
@@ -226,7 +227,8 @@ const EventSuccess = () => {
           </div>
   
           <div className="btns my-3">
-            <button className="btn btn-warning text-black fw-bold py-2">Meetup Successful</button>
+            <Link to='/superstar-admin/meetup-events'> <button className="btn btn-warning text-black fw-bold py-2">Meetup Successful</button></Link>
+           
             <button  className="btn uncomplete text-black mx-4 fw-bold py-2">Report Issue</button>
           </div>
         </div>

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 // import Live from '../../../../../assets/images/instagram-live 1.png'
 // import Pending from '../../../../../assets/images/pending 2.png'
 // import Add from '../../../../../assets/images/UpcomingEvent/add 1.png'
+import EventDetails from '../EventDetails/EventDetails'
 import MeetUpEventNave from '../MeetUpEventNave';
 
 const PendingMeetUp = () => {
@@ -12,7 +13,7 @@ const PendingMeetUp = () => {
             <div className="AS">
                 <MeetUpEventNave />
 
-                <h1 style={{ color: 'white' }}>Pending Meet Up</h1>
+                <EventDetails />
 
             </div>
         </>

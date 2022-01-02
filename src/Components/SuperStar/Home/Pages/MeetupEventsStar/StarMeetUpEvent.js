@@ -51,7 +51,7 @@ return (
         </div>
     </div>
     <div className="m-3">
-        <Link to='/'>
+        <Link to='/superstar/dashboard'>
         <button className='btn MEN-X fw-bold'>Approve </button>
         </Link>
         <button className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>

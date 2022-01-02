@@ -7,6 +7,7 @@ import LeMerridian from '../../../../../../../assets/images/MeetupImages/unsplas
 import Session from '../../../../../../../assets/images/MeetupImages/unsplash_YC8qqp50BdA.png'
 import EnterImage from '../../../../../../../assets/images/enter 1.png'
 import './CompletedEventSliders.css';
+import { Link } from 'react-router-dom';
 
 const CompletedEventSliders = () => {
 
@@ -50,6 +51,7 @@ const CompletedEventSliders = () => {
 
             <div className="slick-parent d-flex justify-content-center">
                 <Slider className="slider-width" {...settings}>
+                    <Link to='/superstar-admin/meetup-event-slot'>
                     <div className="p-3">
                         <div className="completedMeetupBlack">
                             <img src={MeetupImage1} className="img-fluid" alt="" />
@@ -65,7 +67,7 @@ const CompletedEventSliders = () => {
 
                         </div>
                     </div>
-
+                    </Link>
                     <div className="p-3">
                         <div className=" completedMeetupBlack">
                             <img src={Session} className="img-fluid" alt="" />
