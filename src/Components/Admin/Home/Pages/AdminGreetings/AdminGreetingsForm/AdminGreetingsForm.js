@@ -1,8 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AdminGreetingsForm.css'
+import { Editor } from "react-draft-wysiwyg";
+import Form from "react-vanilla-form";
+import draftToHtml from "draftjs-to-html";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 
 const AdminGreetingsForm = () => {
+
+    function CustomInput(props) {
+        return (
+            <>
+                <input hidden {...props} />
+                <Editor {...props} />
+            </>
+        );
+    }
+
     return (
         <div className="greetingsFormBorder">
             <div className="greetingsPadding">
@@ -27,7 +41,20 @@ const AdminGreetingsForm = () => {
                             <p><big>Description</big></p>
                         </div>
                         <div className="col-md-10">
-                            <textarea className="form-control input-gray" type="text" />
+                            {/* <textarea className="form-control input-gray" type="text" /> */}
+                            <Form
+                                data={{ editor: "" }}
+                                onChange={(data, errors) => {
+                                    try {
+                                        console.log(draftToHtml(data.editor));
+                                    } catch (e) {
+                                        console.error(e);
+                                    }
+                                }}
+                            >
+                                <CustomInput name="editor" />
+
+                            </Form>
                         </div>
                     </div>
                     <div className="row my-4">
@@ -59,10 +86,10 @@ const AdminGreetingsForm = () => {
                     </div>
 
                     <div className="my-3">
-                    <Link to="/superstar-admin/greetings/details">
-                        <button className="btn btn-warning save-greetings-button">Save</button>
-                    </Link>
-                        
+                        <Link to="/superstar-admin/greetings/details">
+                            <button className="btn btn-warning save-greetings-button">Save</button>
+                        </Link>
+
                     </div>
                 </form>
             </div>
