@@ -59,7 +59,8 @@ return (
         </div>
     </div>
     <div className="m-3">
-        <Link to='star-video-chat'>
+        <Link to='/superstar/star-video-chat'>
+
         <button className='btn text-warning  MEN-Join fw-bold'>Join Now</button>
         </Link>
     </div>

@@ -6,6 +6,7 @@ import clock from "../../../../../../assets/images/meetupEvent/clock-icon.png";
 import first from "../../../../../../assets/images/meetupEvent/1.png";
 import second from "../../../../../../assets/images/meetupEvent/2.png";
 import third from "../../../../../../assets/images/meetupEvent/3.png";
+import { Link } from "react-router-dom";
 
 const EventSlot = () => {
   return (
@@ -210,7 +211,10 @@ const EventSlot = () => {
         </div>
 
         <div className="btns my-3">
+          <Link to='/superstar-admin/eventsuccess'>
           <button className="btn uncomplete text-black fw-bold py-2">Meetup Successful</button>
+          </Link>
+          
           <button  className="btn uncomplete text-black mx-4 fw-bold py-2">Report Issue</button>
         </div>
       </div>
