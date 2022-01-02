@@ -35,15 +35,47 @@ const AddSuperStar = () => {
           if(res.status === 200)
           {
             setStarList(res.data.category);
-            //console.log(res.data.star);
+            //console.log(res.data.category);
           }
           setLoading(false);
         });
-    }, []);
+    }, [starList]);
+
+    var stars = "";
 
     if(loading)
     {
         return <h1>...</h1>
+    }
+    else{
+        stars = 
+        starList.map((star, index) => (
+            <span className="col-md-2" >
+            <Card.Body className="border border-warning mb-2" style={{ background: '#000000', borderRadius: '10px' }}>
+                <div className="avatar-img my-3 text-center">
+                    <img
+                        src={`http://localhost:8000/${star.image}`}
+                        className="img-fluid avatar-img-src"
+                        alt="profile-pic"
+                        style={{ borderRadius: '50%' }}
+                    />
+                </div>
+                <div className="text-center my-2">
+                    <h5 className="text-white text-center" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{star.first_name} {star.last_name}</h5>
+                    <p className="text-white">Actress</p>
+                    <div className="parent-div">
+                        
+
+                        <Link to={`/superstar-admin/agreement-paper/${star.id}`}><button className="btn btn-warning btn-upload">
+                            <i className="fas fa-calendar-day mx-2"></i>
+                            Details
+                        </button></Link>
+                       
+                    </div>
+                </div>
+            </Card.Body>
+            </span>
+        ))
     }
 
 
@@ -87,33 +119,7 @@ const AddSuperStar = () => {
                     
 
 
-                    {starList.map((star, index) => (
-                        <span className="col-md-2" >
-                        <Card.Body className="border border-warning mb-2" style={{ background: '#000000', borderRadius: '10px' }}>
-                            <div className="avatar-img my-3 text-center">
-                                <img
-                                    src={`http://localhost:8000/${star.image}`}
-                                    className="img-fluid avatar-img-src"
-                                    alt="profile-pic"
-                                    style={{ borderRadius: '50%' }}
-                                />
-                            </div>
-                            <div className="text-center my-2">
-                                <h5 className="text-white text-center" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{star.first_name} {star.last_name}</h5>
-                                <p className="text-white">Actress</p>
-                                <div className="parent-div">
-                                    
-
-                                    <Link to={`/superstar-admin/agreement-paper/${star.id}`}><button className="btn btn-warning btn-upload">
-                                        <i className="fas fa-calendar-day mx-2"></i>
-                                        Details
-                                    </button></Link>
-                                   
-                                </div>
-                            </div>
-                        </Card.Body>
-                        </span>
-                    ))}
+                    {stars}
 
 
                 </div>
