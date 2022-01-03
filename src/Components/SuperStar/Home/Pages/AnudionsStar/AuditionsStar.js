@@ -67,32 +67,32 @@ return (
         <div className="mt-4 col-md-3  AN-Adx ">
             <div className="d-flex">
                 <div className="d-flex  AuditionSR-r p-2 fw-bolder  w-100">
-                    <div className=" mx-3 mt-2">
-                        <img src={Spotlight} alt="" className='PriceTage' />
+                    <div className=" mx-4 mt-2">
+                        <img src={Spotlight} alt="" className='SpotLightI' />
                     </div>
-                    <div className=" mx-3 mt-2 text-warning">
+                    <div className=" mt-2 mb-2 text-warning">
                         Judgement panel
                     </div>
                 </div>
             </div>
             <div className="d-flex  py-2 AuditionSR-p ">
-                <div className=" mx-3 mt-2">
-                    <span className="mx-3 mt-2"> <img src={Unsplash} alt="" className='PriceTage' /></span>
+                <div className=" mx-4 mt-2">
+                    <span className="mt-2"> <img src={Unsplash} alt="" className='AuditionsStrImg' /></span>
                 </div>
-                <div className=" mx-1">
-                    <span className="text-light">Superstar Name</span>
+                <div className="mt-2">
+                    <span className="text-light Star-text-Au">Superstar Name</span>
                     <br></br>
-                    <span className="text-warning">Music</span>
+                    <span className="text-warning music-text">Music</span>
                 </div>
             </div>
             <div className="d-flex  py-2 AuditionSR-p ">
-                <div className=" mx-3 mt-2">
-                    <span className="mx-3 mt-2"> <img src={Unsplash} alt="" className='PriceTage' /></span>
+                <div className=" mx-4 mt-2">
+                    <span className="mt-2"> <img src={Unsplash} alt="" className='AuditionsStrImg' /></span>
                 </div>
-                <div className=" mx-1">
-                    <span className="text-light">Superstar Name</span>
+                <div className="mt-2">
+                    <span className="text-light Star-text-Au">Superstar Name</span>
                     <br></br>
-                    <span className="text-warning">Music</span>
+                    <span className="text-warning music-text">Music</span>
                 </div>
             </div>
         </div>
