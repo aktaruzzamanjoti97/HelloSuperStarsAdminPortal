@@ -14,7 +14,7 @@ const AuditionsStar = () => {
 return (
 <>
     <div className="card m-3">
-        <img src={Banner} alt="" className='Banner-SME' />
+        <img src={Banner} alt="" className='Banner-Auditions' />
     </div>
 
     <div className='row m-3 d-flex Audition-Main'>
