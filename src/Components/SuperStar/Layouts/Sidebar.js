@@ -22,7 +22,7 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Progress Bar
                             </Link>
-                            <Link className="nav-link" to="/superstar/audition">
+                            <Link className="nav-link" to="/superstar/auditions">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Audition
                             </Link>
