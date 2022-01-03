@@ -1,0 +1,15 @@
+.AuditionSR-p{
+    background-color: #2D2D2D;
+}
+.AuditionSR-r{
+    background-color:  #252525;
+    border-radius: 5px 5px 0px 0px !important;
+}
+
+
+@media only screen and (max-width: 375px) {
+    .Audition-Main{
+        display: inline !important;
+    }
+
+  }
