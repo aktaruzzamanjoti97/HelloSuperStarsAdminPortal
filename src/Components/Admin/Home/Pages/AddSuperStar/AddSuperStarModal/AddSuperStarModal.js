@@ -76,6 +76,8 @@ const AddSuperStarModal = (props) => {
     const handleChange = (file) => {
         setFile(URL.createObjectURL(file[0]));
         setImagedata(file[0]);
+
+        console.log(imagedata);
     }
 
 
@@ -116,7 +118,7 @@ const AddSuperStarModal = (props) => {
 
         const fData = new FormData();
 
-        fData.append('image', imagedata);
+        fData.append('image', 'hh');
         fData.append('first_name', registerInput.first_name);
         fData.append('last_name', registerInput.last_name);
         fData.append('category_id', category);
@@ -128,10 +130,10 @@ const AddSuperStarModal = (props) => {
             axios.post(`/api/star_register`, fData).then(res => {
                 if(res.data.status === 200)
                 {
-                    history.push('/superstar-admin/superstars');
+                    //history.push('/superstar-admin/superstars');
                     //document.getElementById('input_form').reset();  
                     swal("Success",res.data.message,"success");
-                    //window.location.href = "/superstar-admin/superstars";
+                    window.location.href = "/superstar-admin/superstars";
                     //setModalShow(false);
                     
                 }

@@ -4,11 +4,6 @@ import './AddSuperStar.css';
 import { Link } from 'react-router-dom';
 import AddUser from '../../../../../assets/images/AddUser/AddUser.png'
 import './AddSuperStar.css'
-// import { dummyData } from '../../../../../dummyData/dummyData';
-// import SuperstarList from './SupestarList/SuperstarList';
-import purnima from '../../../../../assets/images/SuperStar/purnima.jpg'
-import ferdous from '../../../../../assets/images/SuperStar/ferdous.jpg'
-import mukesh from '../../../../../assets/images/SuperStar/mukesh-ambani.jpg'
 import AddSuperStarModal from './AddSuperStarModal/AddSuperStarModal';
 import axios from "axios";
 import swal from 'sweetalert';
@@ -39,7 +34,7 @@ const AddSuperStar = () => {
           }
           setLoading(false);
         });
-    }, [starList]);
+    }, []);
 
     var stars = "";
 
