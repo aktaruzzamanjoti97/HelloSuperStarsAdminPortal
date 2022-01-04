@@ -20,6 +20,7 @@ import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
 import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSuccess";
 import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
 import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
+import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -62,6 +63,10 @@ const AdminRoute = [
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
+
+    { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
+
+
     
 
 
