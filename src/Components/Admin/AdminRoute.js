@@ -22,6 +22,7 @@ import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVi
 import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
 import { Route } from "react-router-dom";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
+import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -46,6 +47,7 @@ const AdminRoute = [
 
     // Auditions Route
     { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
+    { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
 
     
 
