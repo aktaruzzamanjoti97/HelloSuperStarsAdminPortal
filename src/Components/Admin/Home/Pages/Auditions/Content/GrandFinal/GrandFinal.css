@@ -1,0 +1,40 @@
+
+.Grand-btn-p {
+    background: linear-gradient(102.45deg, #F5EA45 28.52%, #DDA336 52.38%, #E7A725 72.31%);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.GrandF{
+    color: #F8EE00;
+
+}
+.Grand-p-Img{
+    width: 25px;
+    padding-right: 5px;
+}
+.Grand-Img-x{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.BT-NAme{
+    font-size: 20px;
+}
+.Grand-Fi-btn{
+    font-size: 23px;
+}
+.Grand-Span{
+    font-size: 13px;
+    line-height: 1 !important;
+}
+
+.Grand-btn-e {
+    background-color: #252525;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border: 1px solid rgb(255, 196, 0);
+}

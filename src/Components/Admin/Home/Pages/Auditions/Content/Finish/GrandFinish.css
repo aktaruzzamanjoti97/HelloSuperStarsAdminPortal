@@ -1,0 +1,38 @@
+.Banner-SME-x {
+    border: 3px solid rgb(250, 213, 7);
+    height: 260px;
+    object-fit: cover;
+}
+
+.Finish-Grand{
+    border: none !important;
+    background: #2D2D2D;
+    border-radius: 5px;
+}
+
+.Banner-SME-finish {
+    padding-left: 5vw;
+    object-fit: cover !important;
+}
+
+.Finish-btn-bos{
+    float: center;
+}
+.Finish-btn-grand{
+    background: linear-gradient(102.45deg, #F5EA45 28.52%, #DDA336 52.38%, #E7A725 72.31%);
+    border-radius: 5px;
+    padding: 10px;
+    border: none !important;
+    margin-top: 350px;
+    margin-bottom: 20px;
+    width: 150px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .Finish-btn-grand{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        margin-left: 25% !important;
+    }
+  }
