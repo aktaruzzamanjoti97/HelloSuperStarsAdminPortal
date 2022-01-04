@@ -68,7 +68,7 @@ return (
                         <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
                     </div>
                     <div className=" mx-1">
-                        <span className="text-light">The name</span>
+                        <span className="text-light BT-NAme">The name</span>
                         <br></br>
                         <span className="text-light Grand-Span ">Age: 24</span> <br />
                         <span className="text-light Grand-Span ">Some description goes here</span>
@@ -77,7 +77,7 @@ return (
             </div>
             
             <div className="p-3 ">
-                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center">
+                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center ">
                     <div className="Grand-Img-F">
                         <img src={GrandImg} alt="" className='Grand-p-Img ' />
                     </div>
@@ -89,7 +89,28 @@ return (
                         <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
                     </div>
                     <div className=" mx-1">
-                        <span className="text-light">The name</span>
+                        <span className="text-light BT-NAme">The name</span>
+                        <br></br>
+                        <span className="text-light Grand-Span ">Age: 24</span> <br />
+                        <span className="text-light Grand-Span ">Some description goes here</span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="p-3 ">
+                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center ">
+                    <div className="Grand-Img-F">
+                        <img src={GrandImg} alt="" className='Grand-p-Img ' />
+                    </div>
+                    <div className="Grand-Fi-btn text-black fw-bolder">Winner</div>
+                </div>
+
+                <div className="d-flex p-2 Grand-btn-e pb-4 pt-4">
+                    <div className=" mx-3 mt-2">
+                        <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
+                    </div>
+                    <div className=" mx-1">
+                        <span className="text-light BT-NAme">The name</span>
                         <br></br>
                         <span className="text-light Grand-Span ">Age: 24</span> <br />
                         <span className="text-light Grand-Span ">Some description goes here</span>
@@ -97,7 +118,7 @@ return (
                 </div>
             </div>
             <div className="p-3 ">
-                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center">
+                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center ">
                     <div className="Grand-Img-F">
                         <img src={GrandImg} alt="" className='Grand-p-Img ' />
                     </div>
@@ -109,7 +130,7 @@ return (
                         <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
                     </div>
                     <div className=" mx-1">
-                        <span className="text-light">The name</span>
+                        <span className="text-light BT-NAme">The name</span>
                         <br></br>
                         <span className="text-light Grand-Span ">Age: 24</span> <br />
                         <span className="text-light Grand-Span ">Some description goes here</span>
@@ -117,7 +138,7 @@ return (
                 </div>
             </div>
             <div className="p-3 ">
-                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center">
+                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center ">
                     <div className="Grand-Img-F">
                         <img src={GrandImg} alt="" className='Grand-p-Img ' />
                     </div>
@@ -129,7 +150,7 @@ return (
                         <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
                     </div>
                     <div className=" mx-1">
-                        <span className="text-light">The name</span>
+                        <span className="text-light BT-NAme">The name</span>
                         <br></br>
                         <span className="text-light Grand-Span ">Age: 24</span> <br />
                         <span className="text-light Grand-Span ">Some description goes here</span>
@@ -137,7 +158,7 @@ return (
                 </div>
             </div>
             <div className="p-3 ">
-                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center">
+                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center ">
                     <div className="Grand-Img-F">
                         <img src={GrandImg} alt="" className='Grand-p-Img ' />
                     </div>
@@ -149,7 +170,7 @@ return (
                         <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
                     </div>
                     <div className=" mx-1">
-                        <span className="text-light">The name</span>
+                        <span className="text-light BT-NAme">The name</span>
                         <br></br>
                         <span className="text-light Grand-Span ">Age: 24</span> <br />
                         <span className="text-light Grand-Span ">Some description goes here</span>
@@ -157,7 +178,7 @@ return (
                 </div>
             </div>
             <div className="p-3 ">
-                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center">
+                <div className="p-2 Grand-btn-p d-flex justify-content-center align-items-center ">
                     <div className="Grand-Img-F">
                         <img src={GrandImg} alt="" className='Grand-p-Img ' />
                     </div>
@@ -169,14 +190,13 @@ return (
                         <span className="text-light"> <img src={ProPic} alt="" className='Grand-Img-x' /></span>
                     </div>
                     <div className=" mx-1">
-                        <span className="text-light">The name</span>
+                        <span className="text-light BT-NAme">The name</span>
                         <br></br>
                         <span className="text-light Grand-Span ">Age: 24</span> <br />
                         <span className="text-light Grand-Span ">Some description goes here</span>
                     </div>
                 </div>
             </div>
-
 
 
         </Slider>

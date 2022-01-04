@@ -20,12 +20,14 @@
     object-fit: cover;
     border-radius: 50%;
 }
-
-.Grand-Fi-btn{
+.BT-NAme{
     font-size: 20px;
 }
+.Grand-Fi-btn{
+    font-size: 23px;
+}
 .Grand-Span{
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1 !important;
 }
 
