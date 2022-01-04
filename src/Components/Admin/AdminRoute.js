@@ -20,6 +20,8 @@ import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
 import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSuccess";
 import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
 import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
+import { Route } from "react-router-dom";
+import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -41,6 +43,12 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
     { path: '/superstar-admin/live-chat/add-session', exact: true, name: 'LiveChat', component: AddSessionContent },
     { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
+
+    // Auditions Route
+    { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
+
+    
+
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
