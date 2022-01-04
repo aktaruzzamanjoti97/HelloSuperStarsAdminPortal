@@ -21,10 +21,10 @@ return (
     </div>
 
     <div className='m-3 mt-4 mb-3'>
-        <h4 className='GrandF fw-bold  mb-2 '>
+        <h4 className='GrandF fw-bold  mb-3 '>
             Guitar for the beginners - Grand Final
         </h4>
-        <p className=' '>
+        <p className='text-warning mb-3 '>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy
             text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
@@ -32,7 +32,9 @@ return (
         </p>
     </div>
 
-    <div className='m-3  mb-2'>
+    <hr className='bg-warning m-3'/>
+
+    <div className='m-3  mb-2 '>
        <GrandFinalCarosuel/>
     </div>
     
