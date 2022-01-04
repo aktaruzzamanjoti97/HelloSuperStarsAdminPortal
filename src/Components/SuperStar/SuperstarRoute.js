@@ -1,3 +1,4 @@
+import AuditionsStar from './Home/Pages/AnudionsStar/AuditionsStar';
 import JoinNoWMeetUp from './Home/Pages/MeetupEventsStar/Content/JoinNoWMeetUp';
 import StarMeetUpEvent from './Home/Pages/MeetupEventsStar/StarMeetUpEvent';
 import NotifyRecord from './Pages/NotifySuperstar/NotifyGreetingsRecord';
@@ -22,8 +23,10 @@ const SuperstarRoute = [
     { path: '/superstar/live-chat/pending-session', exact: true, name: 'LiveChat_pending_session', component: StarPendingContent },
     { path: '/superstar/live-chat/pending-session/view/:id', exact: true, name: 'LiveChat_pending_session', component: StarAddSessionContent },
     { path: '/superstar/live-chat/add-session', exact: true, name: 'add_session', component: StarAddSessionContent },
-    { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
 
+    { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
+
+    { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
     { path: '/superstar/meetup-events', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/meetup-events/join', exact: true, name: 'join', component: JoinNoWMeetUp },
 
