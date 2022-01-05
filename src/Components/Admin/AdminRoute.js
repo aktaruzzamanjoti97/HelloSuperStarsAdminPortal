@@ -24,6 +24,7 @@ import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 import { Route } from "react-router-dom";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
+import AdminGreetingsEditForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsEditForm";
 
 
 
@@ -70,6 +71,7 @@ const AdminRoute = [
 
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
+    { path: '/superstar-admin/greetings/greetingsForm/edit/:greeting_id', exact: true, name: 'greetingsEditForm', component: AdminGreetingsEditForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
