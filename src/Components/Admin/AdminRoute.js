@@ -21,9 +21,9 @@ import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSu
 import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
 import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
-import { Route } from "react-router-dom";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
+import SouvenirNav from "./Home/Pages/AdminSouvenir/SouvenirNav";
 
 
 
@@ -50,7 +50,7 @@ const AdminRoute = [
     // Auditions Route
     { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
-
+    { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
     
 
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
@@ -63,20 +63,24 @@ const AdminRoute = [
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
 
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },
-     { path: '/superstar-admin/meetup-event-slot', exact: true, name: 'meetup-event-slot', component: EventSlot },
-     { path: '/superstar-admin/eventsuccess', exact: true, name: 'eventsuccess', component: EventSuccess },
-     { path: '/superstar-admin/video-chat', exact: true, name: 'video-chat', component: AdminVideoChatIcon },
-     { path: '/superstar-admin/video-chat-message', exact: true, name: 'video-chat-message', component: AdminVideoChat },
+    { path: '/superstar-admin/meetup-event-slot', exact: true, name: 'meetup-event-slot', component: EventSlot },
+    { path: '/superstar-admin/eventsuccess', exact: true, name: 'eventsuccess', component: EventSuccess },
+    { path: '/superstar-admin/video-chat', exact: true, name: 'video-chat', component: AdminVideoChatIcon },
+    { path: '/superstar-admin/video-chat-message', exact: true, name: 'video-chat-message', component: AdminVideoChat },
 
+    // Greetings Route
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
+    // Souvenir Route
+    { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirNav },
+
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
 
-    { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
+    
 
 
     
