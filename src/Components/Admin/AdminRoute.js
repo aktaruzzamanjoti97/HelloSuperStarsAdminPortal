@@ -21,6 +21,10 @@ import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSu
 import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
 import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
+import { Route } from "react-router-dom";
+import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
+import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
+
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -42,6 +46,13 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
     { path: '/superstar-admin/live-chat/add-session', exact: true, name: 'LiveChat', component: AddSessionContent },
     { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
+
+    // Auditions Route
+    { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
+    { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
+
+    
+
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
@@ -60,6 +71,7 @@ const AdminRoute = [
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
+    { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
@@ -68,7 +80,6 @@ const AdminRoute = [
 
 
     
-
 
 
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },

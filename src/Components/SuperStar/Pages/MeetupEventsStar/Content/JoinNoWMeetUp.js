@@ -1,20 +1,28 @@
 import React from 'react'
-import Banner from '../../../../../assets/images/meetupEvent/BannerMeet.png'
-
+import Banner from '../../../../../assets/images/meetupEvent/unsplash_smgTvepind4.png'
+import './JoinNowMeetUp.css'
 import calendar from '../../../../../assets/images/meetupEvent/calendar.png'
 import Clock from '../../../../../assets/images/meetupEvent/clock-icon.png'
 import { Link } from 'react-router-dom'
-import './StarMeetUpE.css'
-const StarMeetUpEvent = () => {
+const JoinNoWMeetUp = () => {
 return (
 <>
     <div className="card m-3">
-        <img src={Banner} alt="" className='Banner-SME' />
+        <img src={Banner} alt="" className='Banner-SME-b' />
+        <div class="centered ">
+            <div className="MENbtn d-flex ">
+                <div className="btn-l-1"><button className='btn btn-light mx-2 MENbtn-text fw-bold'>2</button> <br />
+                    <span className='mx-2 text-light'>hours</span></div>
+                <div className="btn-l-1"><button className='None-Btn'>-</button></div>
+                <div className="btn-l-1"><button className='btn btn-light mx-2 MENbtn-text fw-bold'>30</button> <br />
+                    <span className='mx-2 text-light'>minutes</span></div>
+            </div>
+        </div>
     </div>
 
-    <div className='m-3 mt-4 mb-5 Mde-Nt'>
+    <div className='m-3 mt-4 mb-5'>
         <h4 className='text-light fw-bold  mb-4 '>
-            Le Meridian with SAK 75 <small className='text-warning Small-EV '>(offline)</small>
+            Friday Night with SAK 75
         </h4>
         <p className='text-light '>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -51,15 +59,14 @@ return (
         </div>
     </div>
     <div className="m-3">
-        <Link to='/superstar/dashboard'>
-        <button className='btn MEN-X fw-bold'>Approve </button>
-        </Link>
-        <button className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>
+        <Link to='/superstar/star-video-chat'>
 
+        <button className='btn text-warning  MEN-Join fw-bold'>Join Now</button>
+        </Link>
     </div>
 
 </>
 )
 }
 
-export default StarMeetUpEvent
+export default JoinNoWMeetUp

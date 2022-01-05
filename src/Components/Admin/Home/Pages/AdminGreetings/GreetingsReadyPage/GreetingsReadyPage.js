@@ -1,10 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import ShakibBanner from '../../../../../../assets/images/SakibBanner.PNG';
 import ShakibPlayVideoGreetings from '../../../../../../assets/images/ShakibPlayVideoGreetings.png';
 import './GreetingsReadyPage.css';
+import axios from "axios";
+import { Markup } from 'interweave';
 
-const GreetingsReadyPage = () => {
+const GreetingsReadyPage = (props) => {
+
+    const history = useHistory();
+    const [greeting, setGreeting] = useState('');
+
+
+    useEffect(() => {
+
+        const greeting_id = props.match.params.greeting_id;
+
+        axios.get(`/api/admin/greeting/${greeting_id}`).then(res =>{
+        
+            if(res.data.status === 200)
+            {
+                setGreeting(res.data.greeting);
+            }
+                
+        });
+
+        
+
+    }, [props.match.params.greeting_id, history]);
+
+
+
     return (
         <div>
             <div className="row">
@@ -17,8 +43,9 @@ const GreetingsReadyPage = () => {
             <div className="row">
                 <div className="col-md-8 greetingMessages">
                     <div className="wishfulMessages text-white my-4 mx-3">
-                        <h3>Get a wishful message from Sakib al hasan</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <h3>{greeting.title}</h3>
+                        
+                        <Markup content= {greeting.description}/>
                     </div>
 
                     <div className="row my-4 mx-3">
@@ -28,7 +55,7 @@ const GreetingsReadyPage = () => {
                             </div>
                             <div className="mx-2 text-white">
                                 <span className="costParaTag"><big>Cost</big></span>
-                                <h5 style={{ color: '#ffeb7f' }}><span className="mx-1">200</span>BDT</h5>
+                                <h5 style={{ color: '#ffeb7f' }}><span className="mx-1">{greeting.cost}</span>BDT</h5>
                             </div>
                         </div>
                     </div>

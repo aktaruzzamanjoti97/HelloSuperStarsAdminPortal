@@ -1,12 +1,12 @@
 import React from 'react'
 import './AudtionsStar.css'
-import Banner from '../../../../../assets/images/Auditions/unsplash_IeTLKtzbLNo.png'
+import Banner from '../../../../assets/images/Auditions/unsplash_IeTLKtzbLNo.png'
 
-import calendar from '../../../../../assets/images/Auditions/flag.png'
-import Clock from '../../../../../assets/images/Auditions/finish.png'
+import calendar from '../../../../assets/images/Auditions/flag.png'
+import Clock from '../../../../assets/images/Auditions/finish.png'
 
-import Spotlight from '../../../../../assets/images/Auditions/spotlight.png'
-import Unsplash from '../../../../../assets/images/Auditions/unsplash.png'
+import Spotlight from '../../../../assets/images/Auditions/spotlight.png'
+import Unsplash from '../../../../assets/images/Auditions/unsplash.png'
 
 import { Link } from 'react-router-dom'
 
