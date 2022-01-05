@@ -33,7 +33,7 @@ const AddMeetUp = () => {
     return (
         <>
             <div className="AS">
-                {/* <MeetUpEventNave /> */}
+                <MeetUpEventNave />
 
                 <div className="greetingsFormBorder">
                     <div className="greetingsPadding addMeetUpPadding">
