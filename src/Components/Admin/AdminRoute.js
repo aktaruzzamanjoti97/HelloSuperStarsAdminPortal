@@ -25,6 +25,7 @@ import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/Audit
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
+import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
 
 
 
@@ -76,6 +77,8 @@ const AdminRoute = [
     // Souvenir Route
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: LiveNowSouvenir },
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
+
+    { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
