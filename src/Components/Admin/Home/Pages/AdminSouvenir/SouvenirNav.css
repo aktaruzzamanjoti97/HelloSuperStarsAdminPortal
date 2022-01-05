@@ -1,0 +1,26 @@
+
+.Souvenir-bt{
+    margin-bottom: 20px;
+}
+.Sigma{
+    color: rgba(6, 218, 255, 0.863);
+    font-size: 25px !important;
+}
+
+.Sold{
+    color: rgba(255, 97, 6, 0.904);
+    font-size: 25px !important;
+}
+
+.Unsold{
+    color: rgba(255, 176, 6, 0.863);
+    font-size: 25px !important;
+}
+
+.Souvenir-button{
+    border: none !important;
+    color: white;
+    font-weight: 600;
+    background-color: rgba(5, 4, 7, 0.541) !important;
+    border-radius: 0px 0px 10px 10px !important;
+}
