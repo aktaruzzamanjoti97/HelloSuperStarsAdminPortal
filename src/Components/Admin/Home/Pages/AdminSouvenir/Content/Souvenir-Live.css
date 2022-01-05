@@ -1,0 +1,28 @@
+.Souvenir-Live{
+    border: 2px solid rgb(235, 219, 0);
+    border-radius: 1px;
+    -webkit-border-radius: 10px;
+}
+
+.SouvenirIcon{
+    width: 35px !important;
+    height: 35px !important;
+}
+.VX-S{
+    object-fit: cover !important;
+}
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    .Souvenir-Live{
+        width: 90% !important;
+    }
+  }
+
+@media only screen and (max-width: 599.99px) {
+    .Souvenir-Live{
+        width: 100% !important;
+        display: inline !important; 
+    }
+    .VX-S{
+        width: 100% !important;
+    }
+  }

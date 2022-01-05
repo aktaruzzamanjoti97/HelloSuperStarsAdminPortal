@@ -23,13 +23,11 @@ import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/Adm
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
-import SouvenirNav from "./Home/Pages/AdminSouvenir/SouvenirNav";
+import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
-
-
 
 
 // import StarVidoRecord from './Home/Pages/SuperstarGreetings/VidoUploadPage/VidoUpload';
@@ -75,7 +73,7 @@ const AdminRoute = [
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
     // Souvenir Route
-    { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirNav },
+    { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: LiveNowSouvenir },
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
