@@ -9,9 +9,10 @@ import React, { useState } from 'react';
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from 'react-router-dom';
-import './AddProduct.css';
+import SouvenirNav from '../../SouvenirNav';
+import './AddProductS.css';
 
-const AddProduct = () => {
+const AddProductSouvenir = () => {
 
     const [convertedContent, setConvertedContent] = useState(null);
 
@@ -37,8 +38,8 @@ const AddProduct = () => {
     };
 
     return (
-        <div className="AS">
-            {/* <MeetUpEventNave /> */}
+        <div className="AS m-3">
+            <SouvenirNav />
 
             <div className="greetingsFormBorder">
                 <div className="greetingsPadding addMeetUpPadding">
@@ -202,4 +203,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default AddProductSouvenir;

@@ -9,7 +9,7 @@ const MeetUpEventNave = () => {
 
 return (
 <>
-    <div className="mb-3 row">
+    <div className=" row ">
 
         <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
             <div className="card meetupCard">
