@@ -23,9 +23,13 @@ import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/Adm
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
+
+import AdminGreetingsEditForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsEditForm";
+
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
+
 
 
 
@@ -71,6 +75,7 @@ const AdminRoute = [
     // Greetings Route
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
+    { path: '/superstar-admin/greetings/greetingsForm/edit/:greeting_id', exact: true, name: 'greetingsEditForm', component: AdminGreetingsEditForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
