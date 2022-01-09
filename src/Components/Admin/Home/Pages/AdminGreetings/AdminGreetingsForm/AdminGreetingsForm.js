@@ -260,7 +260,7 @@ const AdminGreetingsForm = () => {
                 <i class="fas fa-cloud-upload-alt"></i> Upload
                 </label> */}
 
-                <img src={file}  className="img-fluid avatar-img-src" alt="profile-pic"/>
+                <img src={file}  className="img-fluid avatar-img-src" alt=""/>
                 <input type="file" className="btn" onChange={(e) => handleChange(e.target.files)} id="image" name="image"/>
 
             </div>
