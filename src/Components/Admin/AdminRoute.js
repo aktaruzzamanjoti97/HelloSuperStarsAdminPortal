@@ -2,6 +2,7 @@ import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent"
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetup/AddMeetUp";
 import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/LiveMeetUp";
+import PendingMeetupList from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/PendingMeetupList";
 import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp/PendingMeetUp";
 import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
 import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
@@ -63,7 +64,8 @@ const AdminRoute = [
 
 
     { path: '/superstar-admin/meetup-events', exact: true, name: 'meetup-events', component: LiveMeetUp },
-    { path: '/superstar-admin/pending-meetup', exact: true, name: 'pending-meetup', component: PendingMeetUp },
+    { path: '/superstar-admin/pending-meetup-list', exact: true, name: 'pending-meetup', component: PendingMeetupList },
+    { path: '/superstar-admin/pending-meetup/:id', exact: true, name: 'pending-meetup', component: PendingMeetUp },
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
 
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },

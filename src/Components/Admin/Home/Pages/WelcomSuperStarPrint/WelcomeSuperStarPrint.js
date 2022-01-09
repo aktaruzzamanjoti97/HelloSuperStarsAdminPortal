@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef  } from 'react';
-import { Link, Route, Redirect, useHistory} from 'react-router-dom';
-import WelcomeSuperStar from '../WelcomeSuperstar/WelcomeSuperstar';
+import { Link, useHistory} from 'react-router-dom';
 import './WelcomeSuperStarPrint.css'
 import axios from "axios";
-import swal from 'sweetalert';
 
 import ReactToPrint from 'react-to-print';
 
@@ -12,9 +10,6 @@ import backgroundBanner from '../../../../../assets/images/backGroundBanner.png'
 import helloSuperStarLogo from '../../../../../assets/images/helloSuperStar.png';
 import footerPhoto from '../../../../../assets/images/24783.jpg';
 import qrCode from '../../../../../assets/images/qrCode.png'
-import ComponentToPrint from './ComponentToPrint';
-import DOMPurify from 'dompurify';
-import Interweave from 'interweave';
 import { Markup } from 'interweave';
 
 
@@ -22,13 +17,10 @@ const WelcomeSuperStarPrint = (props) => {
 
     const history = useHistory();
 
-    const componentRef = useRef();
 
     const [loading, setLoading] = useState(true);
-    const [file, setFile] = useState('');
     const [star, setStar] = useState([]);
     
-    const [termsCondition, setTermsCondition] = useState(star.terms_and_condition);
 
     useEffect(() => {
         let isMounted = true;
