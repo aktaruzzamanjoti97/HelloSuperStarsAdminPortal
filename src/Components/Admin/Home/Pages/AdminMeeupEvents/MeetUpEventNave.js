@@ -46,7 +46,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/pending-meetup'>
+                <Link to='/superstar-admin/pending-meetup-list'>
                     <button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Pending Meet Up

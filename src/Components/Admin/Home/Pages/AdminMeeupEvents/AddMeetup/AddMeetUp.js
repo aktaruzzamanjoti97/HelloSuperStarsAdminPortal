@@ -1,25 +1,69 @@
+import React, { useState, useEffect } from "react";
+import { useHistory} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import MeetUpEventNave from '../MeetUpEventNave';
 import './AddMeetUp.css';
 import { Editor } from "react-draft-wysiwyg";
-import Form from "react-vanilla-form";
-import draftToHtml from "draftjs-to-html";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { EditorState } from "draft-js";
+import { convertToHTML } from "draft-convert";
+import axios from "axios";
+import swal from "sweetalert";
 
 
 const AddMeetUp = () => {
+    const history = useHistory();
+    const [starList, setStarList] = useState([]);
+    const [imagedata, setImagedata] = useState("");
+    const [file, setFile] = useState("");
+
+    const [meetupInput, setMeetup] = useState({
+        event_name: "",
+        star_id: '',
+        date: '',
+        start_time: "",
+        end_time: "",
+        venue: "",
+        slots: ""
+,        error_list: [],
+      });
 
     const [activity, setActivity] = React.useState('');
 
     const handleChange = (event) => {
         setActivity(event.target.value);
     };
+
+    const handleImageChange = (file) => {
+        setFile(URL.createObjectURL(file[0]));
+        setImagedata(file[0]);
+      };
+
+    // Editor Funtionalities //
+  const [convertedContent, setConvertedContent] = useState(null);
+
+  const [editorState, setEditorState] = useState(() =>
+    EditorState.createEmpty()
+  );
+
+  const handleEditorChange = (state) => {
+    setEditorState(state);
+    convertContentToHTML();
+  };
+
+  const convertContentToHTML = () => {
+    let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+    setConvertedContent(currentContentAsHTML);
+    //console.log(convertedContent);
+  };
+  // End Editor Functionalies //
+
+  
 
     function CustomInput(props) {
         return (
@@ -29,6 +73,65 @@ const AddMeetUp = () => {
             </>
         );
     }
+
+    // Fetch Stars Added By Admin
+    useEffect(() => {
+        axios.get(`/api/admin/star_list/`).then((res) => {
+        if (res.status === 200) {
+            setStarList(res.data.category);
+            console.log(res.data.category);
+        }
+        });
+    }, []);
+
+
+    const handleInput = (e) => {
+        e.persist();
+        setMeetup({ ...meetupInput, [e.target.name]: e.target.value });
+      };
+
+
+      const meetupSubmit = (e) => {
+        e.preventDefault();
+    
+        const fData = new FormData();
+    
+        fData.append("banner", imagedata);
+        fData.append("title", meetupInput.event_name);
+        fData.append("meetup_type", activity);
+        fData.append("star_id", meetupInput.star_id);
+        fData.append("date", meetupInput.date);
+        fData.append("start_time", meetupInput.start_time);
+        fData.append("end_time", meetupInput.end_time);
+        fData.append("description", convertedContent);
+        fData.append("venue", meetupInput.venue);
+        fData.append("slots", meetupInput.slots);
+        fData.append("fee", meetupInput.fee);
+
+        console.log(meetupInput.event_name);
+    
+    
+        axios.get("/sanctum/csrf-cookie").then((response) => {
+          axios.post(`api/admin/add_meetup`, fData).then((res) => {
+            if (res.data.status === 200) {
+              
+              
+              swal("Success", res.data.message, "success");
+              //history.push(`/superstar-admin/meetup-events/${res.data.greeting_id}`);
+              
+            } else {
+              //setModalShow(true);
+              setMeetup({
+                ...meetupInput,
+                error_list: res.data.validation_errors,
+              });
+            }
+          });
+        });
+    
+        
+      };
+    
 
     return (
         <>
@@ -43,27 +146,36 @@ const AddMeetUp = () => {
                             </div>
                             <h3 className="text-warning text-bold">Create Meetup</h3>
                         </div>
-                        <form action="">
+                        <form action="" onSubmit={meetupSubmit} id="input_form" encType="multipart/form-data">
+
+                        <div className="row my-4">
+                            <div className="col-md-1 text-white">
+                                <p><big>Select Super Star</big></p>
+                            </div>
+                                            <div className="col-md-11">
+                                            <select
+                                            onChange={handleInput}
+                                            name="star_id"
+                                            className="form-control reply-control input-overlay"
+                                            value={meetupInput.star_id}
+                                        >
+                                            <option className="text-whaite" value="">
+                                            Choose One
+                                            </option>
+                                            {starList.map((user, index) => (
+                                            <option className="text-whaite" value={user.id}>
+                                                {user.first_name} {user.last_name}
+                                            </option>
+                                            ))}
+                                        </select>
+                                            </div>
+                        </div>
+
+
+
+
                             <div className="row my-4">
                                 <div className="d-flex col-md-5 text-white eventType">
-                                    {/* <label className='eventType' for="selectOnlineOffline"><big>Event Type</big></label>
-                                    <select className="input-gray" name="online-offline" id="selectOnlineOffline">
-                                        <option value="online">Online</option>
-                                        <option value="offline">Offline</option>
-                                    </select> */}
-
-                                    {/* <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                                    <Select
-                                        labelId="demo-simple-select-label"
-                                        id="demo-simple-select"
-                                        value={age}
-                                        label="Age"
-                                        onChange={handleChange}
-                                    >
-                                        <MenuItem value={10}>Ten</MenuItem>
-                                        <MenuItem value={20}>Twenty</MenuItem>
-                                        <MenuItem value={30}>Thirty</MenuItem>
-                                    </Select> */}
 
                                     <div className="row">
                                         <div className="col-md-3">
@@ -80,34 +192,30 @@ const AddMeetUp = () => {
                                                         label="Age"
                                                         onChange={handleChange}
                                                     >
-                                                        <MenuItem value={10}>Online</MenuItem>
-                                                        <MenuItem value={20}>Offline</MenuItem>
+                                                        <MenuItem value='Online'>Online</MenuItem>
+                                                        <MenuItem value='Offline'>Offline</MenuItem>
 
                                                     </Select>
                                                 </FormControl>
                                             </Box>
                                         </div>
                                     </div>
-
-
-
-
-
-
-
                                 </div>
+
+
                                 <div className="col-md-7 px-3">
                                     <div className="d-flex">
                                         <div className="col-md-2 text-white">
                                             <p><big>Event name</big></p>
                                         </div>
-                                        <input className="form-control input-gray" type="text" />
+                                        <input className="form-control input-gray" type="text" onChange={handleInput} name="event_name" value={meetupInput.event_name}/>
                                     </div>
-
-
-
                                 </div>
+
                             </div>
+
+
+                            
 
                             <div className="row my-4">
                                 <div className="col-md-1 text-white">
@@ -115,19 +223,13 @@ const AddMeetUp = () => {
                                 </div>
                                 <div className="col-md-11">
                                     {/* <textarea className="form-control input-gray me-4" type="text" /> */}
-                                    <Form
-                                        data={{ editor: "" }}
-                                        onChange={(data, errors) => {
-                                            try {
-                                                console.log(draftToHtml(data.editor));
-                                            } catch (e) {
-                                                console.error(e);
-                                            }
-                                        }}
-                                    >
-                                        <CustomInput name="editor" />
-
-                                    </Form>
+                                    <Editor
+                                        editorState={editorState}
+                                        onEditorStateChange={handleEditorChange}
+                                        wrapperClassName="wrapper-class"
+                                        editorClassName="editor-class"
+                                        toolbarClassName="toolbar-class"
+                                    />
                                 </div>
                             </div>
 
@@ -138,7 +240,7 @@ const AddMeetUp = () => {
                                             <p className="text-white"><big>Date & Time</big></p>
                                         </div>
                                         <div className="col-md-6">
-                                            <input className="form-control input-gray text-white" type="date" />
+                                            <input className="form-control input-gray text-white" type="date" onChange={handleInput} name="date" value={meetupInput.date}/>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +253,7 @@ const AddMeetUp = () => {
                                                     <p className="text-white"><big>From</big></p>
                                                 </div>
                                                 <div className="col-md-6">
-                                                    <input className="form-control input-gray text-white" type="time" />
+                                                    <input className="form-control input-gray text-white" type="time" onChange={handleInput} name="start_time" value={meetupInput.start_time}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -161,7 +263,7 @@ const AddMeetUp = () => {
                                                     <p className="text-white"><big>To</big></p>
                                                 </div>
                                                 <div className="col-md-6">
-                                                    <input className="form-control input-gray text-white" type="time" />
+                                                    <input className="form-control input-gray text-white" type="time" onChange={handleInput} name="end_time" value={meetupInput.end_time}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -170,14 +272,14 @@ const AddMeetUp = () => {
                             </div>
 
                             {
-                                activity === 10 ? null : (
+                                activity === 'Online' ? null : (
                                     <>
                                         <div className="row my-4">
                                             <div className="col-md-1 text-white">
                                                 <p><big>Venue</big></p>
                                             </div>
                                             <div className="col-md-11">
-                                                <input className="form-control input-gray me-4" type="text" />
+                                                <input className="form-control input-gray me-4" type="text" onChange={handleInput} name="venue" value={meetupInput.venue}/>
                                             </div>
                                         </div>
 
@@ -187,7 +289,7 @@ const AddMeetUp = () => {
                                             </div>
                                             <div className="col-md-2">
                                                 {/* <textarea className="form-control input-gray me-4" type="text" /> */}
-                                                <input className="form-control input-gray" type="number" />
+                                                <input className="form-control input-gray" type="number" onChange={handleInput} name="slots" value={meetupInput.slots}/>
                                             </div>
                                         </div>
                                     </>
@@ -195,15 +297,15 @@ const AddMeetUp = () => {
                             }
 
                             {
-                                activity === 10 ? (
+                                activity === 'Online' ? (
                                     <>
                                         <div className="row my-4">
                                             <div className="col-md-2 text-white">
                                                 <p><big>Upload Banner</big></p>
                                             </div>
                                             <div className="col-md-10">
-                                                <input type="file" name="file" id="file" className="inputfile" />
-                                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                            <img src={file}  className="img-fluid avatar-img-src" alt=""/>
+                                            <input type="file" className="btn" onChange={(e) => handleImageChange(e.target.files)} id="image" name="image"/>
 
                                             </div>
                                         </div>
@@ -226,8 +328,11 @@ const AddMeetUp = () => {
                                                         <p><big>Upload Banner</big></p>
                                                     </div>
                                                     <div className="col-md-5">
-                                                        <input type="file" name="file" id="file" className="inputfile" />
-                                                        <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                                        {/* <input type="file" name="file" id="file" className="inputfile" />
+                                                        <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label> */}
+
+                                                        <img src={file}  className="img-fluid avatar-img-src" alt=""/>
+                                                        <input type="file" className="btn" onChange={(e) => handleImageChange(e.target.files)} id="image" name="image"/>
 
                                                     </div>
                                                 </div>
@@ -252,14 +357,26 @@ const AddMeetUp = () => {
                             }
 
 
+                            <div className="row my-4">
+                                            <div className="col-md-1 text-white">
+                                                <p><big>Fee</big></p>
+                                            </div>
+                                            <div className="col-md-2">
+                                                {/* <textarea className="form-control input-gray me-4" type="text" /> */}
+                                                <input className="form-control input-gray" type="number" onChange={handleInput} name="fee" value={meetupInput.fee}/>
+                                            </div>
+                                        </div>
+
+
 
 
 
 
                             <div className="my-3">
-                                <Link to="/superstar-admin/meetup-events">
+                                {/* <Link to="/superstar-admin/meetup-events">
                                     <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
-                                </Link>
+                                </Link> */}
+                                <button type="submit" className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
 
                             </div>
                         </form>
