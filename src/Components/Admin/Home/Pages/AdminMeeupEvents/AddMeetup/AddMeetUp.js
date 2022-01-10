@@ -14,16 +14,18 @@ import { EditorState } from "draft-js";
 import { convertToHTML } from "draft-convert";
 import axios from "axios";
 import swal from "sweetalert";
-
+import EventLinkCreate from './EventLinkCreate';
 
 const AddMeetUp = () => {
     const history = useHistory();
     const [starList, setStarList] = useState([]);
     const [imagedata, setImagedata] = useState("");
     const [file, setFile] = useState("");
+    const [modalShow, setModalShow] = useState("");
 
     const [meetupInput, setMeetup] = useState({
         event_name: "",
+        event_link: "",
         star_id: '',
         date: '',
         start_time: "",
@@ -76,6 +78,8 @@ const AddMeetUp = () => {
 
     // Fetch Stars Added By Admin
     useEffect(() => {
+        setActivity('Online');
+
         axios.get(`/api/admin/star_list/`).then((res) => {
         if (res.status === 200) {
             setStarList(res.data.category);
@@ -98,6 +102,7 @@ const AddMeetUp = () => {
     
         fData.append("banner", imagedata);
         fData.append("title", meetupInput.event_name);
+        fData.append("event_link", meetupInput.event_link);
         fData.append("meetup_type", activity);
         fData.append("star_id", meetupInput.star_id);
         fData.append("date", meetupInput.date);
@@ -149,10 +154,10 @@ const AddMeetUp = () => {
                         <form action="" onSubmit={meetupSubmit} id="input_form" encType="multipart/form-data">
 
                         <div className="row my-4">
-                            <div className="col-md-1 text-white">
+                            <div className="col-md-2 text-white">
                                 <p><big>Select Super Star</big></p>
                             </div>
-                                            <div className="col-md-11">
+                                 <div className="col-md-10">
                                             <select
                                             onChange={handleInput}
                                             name="star_id"
@@ -168,23 +173,23 @@ const AddMeetUp = () => {
                                             </option>
                                             ))}
                                         </select>
-                                            </div>
+                                  </div>
                         </div>
 
 
 
 
                             <div className="row my-4">
-                                <div className="d-flex col-md-5 text-white eventType">
+                                <div className="d-flex col-md-6 text-white eventType">
 
                                     <div className="row">
-                                        <div className="col-md-3">
+                                        <div className="col-md-6">
                                             <p className=""><big>Event type</big></p>
                                         </div>
                                         <div className="col-md-6">
                                             <Box className="mx-3 selectActivity" sx={{ minWidth: 300 }}>
                                                 <FormControl fullWidth>
-                                                    <InputLabel id="demo-simple-select-label text-white">Set Activity</InputLabel>
+                                                
                                                     <Select
                                                         labelId="demo-simple-select-label"
                                                         id="demo-simple-select"
@@ -200,21 +205,41 @@ const AddMeetUp = () => {
                                             </Box>
                                         </div>
                                     </div>
+
                                 </div>
 
 
-                                <div className="col-md-7 px-3">
+                                <div className="col-md-6 px-3">
                                     <div className="d-flex">
                                         <div className="col-md-2 text-white">
                                             <p><big>Event name</big></p>
                                         </div>
-                                        <input className="form-control input-gray" type="text" onChange={handleInput} name="event_name" value={meetupInput.event_name}/>
+                                        <input className="form-control input-gray" type="text" onChange={handleInput} name="event_name" value={meetupInput.event_name} />
                                     </div>
                                 </div>
 
                             </div>
 
 
+                            {activity === "Online" ? (
+                                <>
+                                  <div className='row w-50 mx-auto bg-warning createLink' onClick={() => setModalShow(true)}>
+                                  <h3 className='text-center' > Click Here to generate Meetup LiveStream Link</h3>
+                              </div>
+                              <EventLinkCreate
+                                    show={modalShow}
+                                    onHide={() => setModalShow(false)}
+                                />
+                              </>
+                            ) : null }
+
+                            {activity === "Online" ? (
+                                <>
+                                <div className="row w-50 mx-auto bg-warning pasteLink">
+                                        <input className="form-control bg-dark text-white" type="text" onChange={handleInput} name="event_link" value={meetupInput.event_link} placeholder="Paste Generated Meetup LiveStream Link Here" />
+                                    </div>
+                              </>
+                            ) : null }
                             
 
                             <div className="row my-4">

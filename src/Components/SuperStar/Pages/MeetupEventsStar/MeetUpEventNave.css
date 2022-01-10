@@ -1,0 +1,21 @@
+.meetupCard {
+    border: 2px solid gold !important;
+    border-radius: 10px !important;
+    background-color: #2d2d2d !important;
+  }
+  
+  .liveMeetUpButtonBorder {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  .liveMeetUpButton {
+    padding: 0.5rem 0;
+    border-top: 2px solid gold !important;
+    border-top-right-radius: 10px !important;
+    border-top-left-radius: 10px !important;
+    background-color: #151515 !important;
+    color: white !important;
+  }
+  
