@@ -10,6 +10,7 @@ import EventDetails from '../EventDetails/EventDetails'
 import MeetUpEventNave from '../MeetUpEventNave';
 import axios from "axios";
 import { Markup } from 'interweave';
+import moment from 'moment';
 
 const PendingMeetUp = (props) => {
 
@@ -63,7 +64,7 @@ const PendingMeetUp = (props) => {
                     <Markup content={event.description}/>
                 </p>
                 <p className="text-light fw-bold">
-                    21 September 2021 | 10:00 PM-11:00 PM
+                    {moment(event.date).format('LL')} | {moment(event.start_time, "HH:mm:ss").format("hh:mm A")}-{moment(event.end_time, "HH:mm:ss").format("hh:mm A")}
                 </p>
                      </div>
                      
@@ -82,8 +83,10 @@ const PendingMeetUp = (props) => {
              <div className="col-md-6 d-flex align-items-center">
          <div>
          <h2 className='text-warning'>Event Details submitted</h2>
-            <p className='text-light'>Waiting for <span className="fw-bold">
-           SuperStar Approval</span></p>
+            <p className='text-light'>Waiting for &nbsp;
+            { event.star_approval === 1 ? (<span className="fw-bold">Manager Admin</span>) : (<span className="fw-bold">SuperStar</span>) }
+            &nbsp; Approval
+            </p>
          </div>
              </div>
            </div>
