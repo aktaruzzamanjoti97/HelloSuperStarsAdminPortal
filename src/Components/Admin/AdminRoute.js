@@ -29,6 +29,10 @@ import AdminGreetingsEditForm from "./Home/Pages/AdminGreetings/AdminGreetingsFo
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
+import CricketJerserAdmin from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin";
+import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin2";
+import CricketJerserAdmin3 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin3";
+import SoldProducts from "./Home/Pages/Souviner-admin/SoldProducts/SoldProducts";
 
 
 
@@ -89,11 +93,11 @@ const AdminRoute = [
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
 
     
+    { path: '/superstar-admin/jersey-admin', exact: true, name: 'jersey-admin', component: CricketJerserAdmin },
 
-
-    
-
-
+    { path: '/superstar-admin/jersey-admin2', exact: true, name: 'jersey-admin2', component: CricketJerserAdmin2 },
+    { path: '/superstar-admin/jersey-admin3', exact: true, name: 'jersey-admin3', component: CricketJerserAdmin3 },
+    { path: '/superstar-admin/sold-products', exact: true, name: 'sold-products', component: SoldProducts},
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
     

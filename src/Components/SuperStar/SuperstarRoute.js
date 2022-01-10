@@ -2,6 +2,7 @@ import AuditionsStar from './Pages/AnudionsStar/AuditionsStar';
 import JoinNoWMeetUp from './Pages/MeetupEventsStar/Content/JoinNoWMeetUp';
 import StarMeetUpEvent from './Pages/MeetupEventsStar/StarMeetUpEvent';
 import NotifyRecord from './Pages/NotifySuperstar/NotifyGreetingsRecord';
+import CricketJersey from './Pages/Souvenir/CricketJersey/CricketJersey';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
 import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent';
 import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent';
@@ -34,6 +35,7 @@ const SuperstarRoute = [
 
     { path: '/superstar/star-video-chat', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
+    { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
 
 
     { path: '/superstar/notify/record', exact: true, name: 'notify', component: NotifyRecord },
