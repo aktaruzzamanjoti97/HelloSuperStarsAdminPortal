@@ -1,6 +1,8 @@
 import AuditionsStar from './Pages/AnudionsStar/AuditionsStar';
 import JoinNoWMeetUp from './Pages/MeetupEventsStar/Content/JoinNoWMeetUp';
 import StarMeetUpEvent from './Pages/MeetupEventsStar/StarMeetUpEvent';
+import StarMeetUpEventList from './Pages/MeetupEventsStar/StarMeetUpEventList';
+import StarMeetUpEventListApproved from './Pages/MeetupEventsStar/StarMeetUpEventListApproved';
 import NotifyRecord from './Pages/NotifySuperstar/NotifyGreetingsRecord';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
 import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent';
@@ -27,8 +29,16 @@ const SuperstarRoute = [
     { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
 
     { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
-    { path: '/superstar/meetup-events', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
-    { path: '/superstar/meetup-events/join', exact: true, name: 'join', component: JoinNoWMeetUp },
+
+    { path: '/superstar/meetup-events/pending', exact: true, name: 'meetup-events', component: StarMeetUpEventList },
+    { path: '/superstar/meetup-events/approved', exact: true, name: 'meetup-events', component: StarMeetUpEventListApproved },
+
+    { path: '/superstar/join-meetup-events/:id', exact: true, name: 'join', component: JoinNoWMeetUp },
+
+    { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
+
+
+    
 
     { path: '/superstar/greetings', exact: true, name: 'greetings', component: SuperstarGreetings },
 
