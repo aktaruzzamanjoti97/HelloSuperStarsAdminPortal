@@ -5,6 +5,7 @@ import StarMeetUpEventList from './Pages/MeetupEventsStar/StarMeetUpEventList';
 import StarMeetUpEventListApproved from './Pages/MeetupEventsStar/StarMeetUpEventListApproved';
 import NotifyRecord from './Pages/NotifySuperstar/NotifyGreetingsRecord';
 import CricketJersey from './Pages/Souvenir/CricketJersey/CricketJersey';
+import StarVideoLearnig from './Pages/StarLearningSession/Content/StarVideoLearnig';
 import StarLearnSessionTime from './Pages/StarLearningSession/StarLearnSessionTime';
 import StarLeranings from './Pages/StarLearningSession/StarLeranings';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
@@ -34,6 +35,7 @@ const SuperstarRoute = [
     // Learning Session
     { path: '/superstar/learning-session/test', exact: true, name: 'test', component: StarLeranings },
     { path: '/superstar/learning-session/test1', exact: true, name: 'test1', component: StarLearnSessionTime },
+    { path: '/superstar/learning-session/video', exact: true, name: 'test1', component: StarVideoLearnig },
 
 
 
