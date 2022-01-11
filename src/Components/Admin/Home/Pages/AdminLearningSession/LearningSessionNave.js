@@ -46,7 +46,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/pending-session'>
+                <Link to='/superstar-admin/learning-session/pending-session'>
                     <button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Pending Session
@@ -67,7 +67,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/add-session'> <button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar-admin/learning-session/add-session'> <button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Add Session
                 </button></Link>

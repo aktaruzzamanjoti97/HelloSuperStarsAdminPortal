@@ -27,6 +27,7 @@ import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir"
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
 import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
 
 
 
@@ -54,7 +55,8 @@ const AdminRoute = [
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
     
     // Learning Session Route
-    { path: '/superstar-admin/learning-session', exact: true, name: 'glearning-session', component: LiveSession },
+    { path: '/superstar-admin/learning-session', exact: true, name: 'learning-session', component: LiveSession },
+    {path: '/superstar-admin/learning-session/add-session', exact: true, name: 'add-session', component: LearningAddSession },
 
     // Route
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },

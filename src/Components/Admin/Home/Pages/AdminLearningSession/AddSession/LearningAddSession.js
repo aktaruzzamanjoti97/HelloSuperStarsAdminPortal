@@ -11,9 +11,9 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from 'react-router-dom';
 
 import LearningSessionNave from '../LearningSessionNave';
-import './AddProductS.css';
+// import './AddProductS.css';
 
-const AddSession = () => {
+const LearningAddSession = () => {
 
     const [convertedContent, setConvertedContent] = useState(null);
 
@@ -39,7 +39,7 @@ const AddSession = () => {
     };
 
     return (
-        <div className="AS m-3">
+        <div className="AS ">
             <LearningSessionNave/>
 
             <div className="greetingsFormBorder">
@@ -56,15 +56,6 @@ const AddSession = () => {
                         <div className="row my-4">
                             <div className="col-md-1">
                                 <p className="text-white"><big>Title</big></p>
-                            </div>
-                            <div className="col-md-11">
-                                <input className='form-control input-gray' type='text' />
-                            </div>
-                        </div>
-
-                        <div className="row my-4">
-                            <div className="col-md-1">
-                                <p className="text-white"><big>Keyword</big></p>
                             </div>
                             <div className="col-md-11">
                                 <input className='form-control input-gray' type='text' />
@@ -204,5 +195,5 @@ const AddSession = () => {
     );
 };
 
-export default AddSession;
+export default LearningAddSession;
 
