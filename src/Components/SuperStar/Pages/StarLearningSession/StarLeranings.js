@@ -57,9 +57,8 @@ return (
             </div>
             <div className="mt-3">
                 <Link to='/superstar/dashboard'>
-                    <button className='btn MEN-X fw-bold'>Approve </button>
+                    <button className='btn bg-dark text-warning fw-bold' style={{width:'100px'}}>Join </button>
                 </Link>
-                <button className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>
             </div>
         </div>
 
