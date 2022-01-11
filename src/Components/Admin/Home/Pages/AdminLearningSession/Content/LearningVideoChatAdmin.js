@@ -1,17 +1,18 @@
 import React from "react";
-// import "./LearningVideoChatIconAdmin.css";
-import balhasan from "../../../../../../assets/images/meetupEvent/balhasan.png";
-import Message from "../../../../../../assets/images/meetupEvent/message.png";
-import bubbleChat from "../../../../../../assets/images/meetupEvent/bubble-chat 1.png";
-import person from "../../../../../../assets/images/meetupEvent/picci.png";
-import person2 from "../../../../../../assets/images/meetupEvent/chulboro.png";
-import person3 from "../../../../../../assets/images/meetupEvent/mofiz.png";
-import message from "../../../../../../assets/images/meetupEvent/New folder/Vector.png";
+
+import balhasan from "../../../../../../../src/assets/images/meetupEvent/balhasan.png";
+import Chat from "../../../../../../../src/assets/images/meetupEvent/chat.png";
+import bubbleChat from "../../../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
+import person from "../../../../../../../src/assets/images/meetupEvent/picci.png";
+import person2 from "../../../../../../../src/assets/images/meetupEvent/chulboro.png";
+import person3 from "../../../../../../../src/assets/images/meetupEvent/mofiz.png";
+import message from "../../../../../../../src/assets/images/meetupEvent/New folder/Vector.png";
+
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
 
-const LearningVideoChatIconAdmin = () => {
+const LearningVideoChatAdmin = () => {
 const settings = {
 dots: true,
 infinite: true,
@@ -25,10 +26,14 @@ return (
     <div className="container-fluid">
         <div className="row">
             <div className="col-md-8">
-                <div className="card my-3 bg-warning balCard">
-                    <img src={balhasan} className="img-fluid" alt="" />
-                    <Link to='/superstar-admin/video-chat-message' ><img src={Message} alt="" className="img-fluid MSGIcon-VC mx-3 mb-2" /></Link>
-                </div>
+            <div className="card my-3 bg-warning balCard">
+              <img src={balhasan} className="img-fluid" alt="" />
+              <img
+                src={Chat}
+                alt=""
+                className="img-fluid bottomleft-balhasan"
+              />
+            </div>
             </div>
             <div className="col-md-4 ">
                 <div className="card  my-3 chatting-card text-light">
@@ -208,4 +213,4 @@ return (
 );
 };
 
-export default LearningVideoChatIconAdmin;
+export default LearningVideoChatAdmin;
