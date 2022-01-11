@@ -2,7 +2,6 @@ import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent"
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetup/AddMeetUp";
 import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/LiveMeetUp";
-import PendingMeetupList from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/PendingMeetupList";
 import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp/PendingMeetUp";
 import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
 import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
@@ -24,17 +23,10 @@ import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/Adm
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
-
-import AdminGreetingsEditForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsEditForm";
-
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
-import CricketJerserAdmin from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin";
-import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin2";
-import CricketJerserAdmin3 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin3";
-import SoldProducts from "./Home/Pages/Souviner-admin/SoldProducts/SoldProducts";
-
+import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
 
 
 
@@ -61,15 +53,17 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
     
+    // Learning Session Route
+    { path: '/superstar-admin/learning-session', exact: true, name: 'glearning-session', component: LiveSession },
 
+    // Route
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
-
+    // MeetUp Event Route
     { path: '/superstar-admin/meetup-events', exact: true, name: 'meetup-events', component: LiveMeetUp },
-    { path: '/superstar-admin/pending-meetup-list', exact: true, name: 'pending-meetup', component: PendingMeetupList },
-    { path: '/superstar-admin/pending-meetup/:id', exact: true, name: 'pending-meetup', component: PendingMeetUp },
+    { path: '/superstar-admin/pending-meetup', exact: true, name: 'pending-meetup', component: PendingMeetUp },
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
 
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },
@@ -81,7 +75,6 @@ const AdminRoute = [
     // Greetings Route
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
-    { path: '/superstar-admin/greetings/greetingsForm/edit/:greeting_id', exact: true, name: 'greetingsEditForm', component: AdminGreetingsEditForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
@@ -95,11 +88,11 @@ const AdminRoute = [
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
 
     
-    { path: '/superstar-admin/jersey-admin', exact: true, name: 'jersey-admin', component: CricketJerserAdmin },
 
-    { path: '/superstar-admin/jersey-admin2', exact: true, name: 'jersey-admin2', component: CricketJerserAdmin2 },
-    { path: '/superstar-admin/jersey-admin3', exact: true, name: 'jersey-admin3', component: CricketJerserAdmin3 },
-    { path: '/superstar-admin/sold-products', exact: true, name: 'sold-products', component: SoldProducts},
+
+    
+
+
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
     
