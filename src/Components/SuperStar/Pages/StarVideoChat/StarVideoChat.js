@@ -1,7 +1,8 @@
 import React from "react";
+import Iframe from 'react-iframe';
 import "./StarVideoChat.css";
-import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
-import Chat from "../../../../../src/assets/images/meetupEvent/chat.png";
+// import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
+// import Chat from "../../../../../src/assets/images/meetupEvent/chat.png";
 import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
 import person from "../../../../../src/assets/images/meetupEvent/picci.png";
 import person2 from "../../../../../src/assets/images/meetupEvent/chulboro.png";
@@ -14,12 +15,14 @@ const StarVideoChat = () => {
         <div className="row">
           <div className="col-md-8">
             <div className="card my-3 bg-warning balCard">
-              <img src={balhasan} className="img-fluid" alt="" />
-              <img
-                src={Chat}
-                alt=""
-                className="img-fluid bottomleft-balhasan"
-              />
+              <Iframe url="https://star-meetup.herokuapp.com?room=Shakib_Al Hasan meetup 1_pqak2pqjfam"
+                            width="100%"
+                            height="600hv"
+                            id="myId"
+                            allow="camera;microphone"
+                            className="myClassname bg-dark"
+                            display="initial"
+                            position="relative" />
             </div>
             <div className="card chatting-card">
              <div className="card-body">
