@@ -1,6 +1,7 @@
 .liveMeetupBorder {
   border: 2px solid gold;
   background-color: #2d2d2d;
+  border-radius: 10px;
 }
 
 .faTrophy {
