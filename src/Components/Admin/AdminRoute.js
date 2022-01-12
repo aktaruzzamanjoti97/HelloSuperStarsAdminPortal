@@ -32,6 +32,10 @@ import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/Learni
 import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
 
 
+import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
+import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
+import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
+
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -55,7 +59,10 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
-    
+
+    { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
+    { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
+    { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
     // Learning Session Route
     { path: '/superstar-admin/learning-session', exact: true, name: 'learning-session', component: LiveSession },
     { path: '/superstar-admin/learning-session/add-session', exact: true, name: 'add-session', component: LearningAddSession },
