@@ -27,7 +27,7 @@ return (
                 </div>
                 <Link to='/superstar-admin/meetup-events'><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne"> Live Meet Up
+                    aria-controls="collapseOne"> Approved Meet Up
                 </button></Link>
             </div>
         </div><br />

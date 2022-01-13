@@ -1,4 +1,6 @@
-import React from "react";
+
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory} from 'react-router-dom';
 import Iframe from 'react-iframe';
 import "./StarVideoChat.css";
 // import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
@@ -8,9 +10,42 @@ import person from "../../../../../src/assets/images/meetupEvent/picci.png";
 import person2 from "../../../../../src/assets/images/meetupEvent/chulboro.png";
 import person3 from "../../../../../src/assets/images/meetupEvent/mofiz.png";
 import message from "../../../../../src/assets/images/meetupEvent/message.png";
-const StarVideoChat = () => {
+import axios from "axios";
+
+
+
+const StarVideoChat = (props) => {
+
+  const history = useHistory();
+
+  const [event, setEvent] = useState('');
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const event_id = props.match.params.id;
+
+    axios.get(`/api/star/meetup_event_details/${event_id}`).then(res =>{
+    
+        if(isMounted)
+        {
+            if(res.data.status === 200)
+            {
+                setEvent(res.data.meetup);
+                console.log(res.data.meetup);
+            }
+        }
+    });
+
+}, [props.match.params.id, history]);
+
+
   return (
     <div className="main-div-star">
+
+   
+
+
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-8">
