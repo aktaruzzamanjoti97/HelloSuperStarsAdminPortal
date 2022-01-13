@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect  } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import Slider from 'react-slick';
 import MeetupImage1 from '../../../../../../../assets/images/MeetupImages/unsplash_MXbM1NrRqtI.png';
@@ -8,8 +8,11 @@ import Session from '../../../../../../../assets/images/MeetupImages/unsplash_YC
 import EnterImage from '../../../../../../../assets/images/enter 1.png'
 import './CompletedEventSliders.css';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 const CompletedEventSliders = () => {
+
+    const [meetupEvents, setMeetupEvents] = useState([]);
 
     var settings = {
         dots: true,
@@ -46,18 +49,36 @@ const CompletedEventSliders = () => {
         ]
     };
 
+    // Fetch Stars Added By Admin
+    useEffect(() => {
+
+        axios.get(`/api/admin/meetup_event/approved`).then(res =>{
+
+          if(res.status === 200)
+          {
+            setMeetupEvents(res.data.meetup);
+            //console.log(res.data.category);
+          }
+        });
+
+    }, []);
+
     return (
         <div>
 
             <div className="slick-parent d-flex justify-content-center">
                 <Slider className="slider-width" {...settings}>
-                    <Link to='/superstar-admin/meetup-event-slot'>
+
+                {meetupEvents.map((event, index) => (
+                    
                     <div className="p-3">
                         <div className="completedMeetupBlack">
-                            <img src={MeetupImage1} className="img-fluid" alt="" />
+                            <img src={`http://localhost:8000/${event.banner}`} className="img-fluid" alt="" style={{ height: '200px' }} />
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
-                                    <h5 className="text-white">Friday Evening with SAH75</h5>
+                                    <Link to={`/superstar-admin/meetup-event-slot/${event.id}`}>
+                                        <h5 className="text-white">{event.title}</h5>
+                                    </Link>
                                     <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
@@ -67,118 +88,9 @@ const CompletedEventSliders = () => {
 
                         </div>
                     </div>
-                    </Link>
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={Session} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5 className='text-white'>Raddusson Blue</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={LeMerridian} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5 className='text-white'>Le Merridian 11.11</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={Session} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5 className='text-white'>Friday Evening with SAH75</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={Session} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5>Session Moneyheist</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={MeetupImage1} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5>Friday Evening with SAH75</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={MeetupImage1} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5>Friday Evening with SAH75</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="p-3">
-                        <div className=" completedMeetupBlack">
-                            <img src={MeetupImage1} className="img-fluid" alt="" />
-                            <div className="p-3">
-                                <div className="d-flex justify-content-between">
-                                    <h5 className="text-white">Friday Evening with SAH75</h5>
-                                    <img className="img-fluid" src={EnterImage} alt="" />
-                                </div>
-
-                                <p className='text-secondary'>Lorem Ipsum is simply dummy text of the printing and
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
+                    
+                ))}
+                
 
                 </Slider>
             </div>

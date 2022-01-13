@@ -82,7 +82,7 @@ return (
         </div>
     </div>
     <div className="m-3">
-        <Link to='/superstar/star-video-chat'>
+        <Link to={`/superstar/star-video-chat/${event.id}`}>
 
         <button className='btn text-warning  MEN-Join fw-bold'>Join Now</button>
         </Link>

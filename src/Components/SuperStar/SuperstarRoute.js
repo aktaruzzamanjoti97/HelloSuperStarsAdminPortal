@@ -42,7 +42,7 @@ const SuperstarRoute = [
 
     { path: '/superstar/greetings', exact: true, name: 'greetings', component: SuperstarGreetings },
 
-    { path: '/superstar/star-video-chat', exact: true, name: 'star-video-chat', component: StarVideoChat },
+    { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
 
 
