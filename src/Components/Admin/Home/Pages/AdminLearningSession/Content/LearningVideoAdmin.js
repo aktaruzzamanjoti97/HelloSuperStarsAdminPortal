@@ -1,6 +1,5 @@
 import React from "react";
-import "./AdminVideoChat.css";
-// import balhasan from "../../../../../../assets/images/meetupEvent/balhasan.png";
+import balhasan from "../../../../../../assets/images/meetupEvent/balhasan.png";
 import Message from "../../../../../../assets/images/meetupEvent/message.png";
 import bubbleChat from "../../../../../../assets/images/meetupEvent/bubble-chat 1.png";
 import person from "../../../../../../assets/images/meetupEvent/picci.png";
@@ -9,10 +8,9 @@ import person3 from "../../../../../../assets/images/meetupEvent/mofiz.png";
 import message from "../../../../../../assets/images/meetupEvent/New folder/Vector.png";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import Iframe from 'react-iframe';
 
 
-const AdminVideoChat = () => {
+const LearningVideoAdmin = () => {
 const settings = {
 dots: true,
 infinite: true,
@@ -27,15 +25,8 @@ return (
         <div className="row">
             <div className="col-md-8">
                 <div className="card my-3 bg-warning balCard">
-                    <Iframe url="https://star-meetup.herokuapp.com?room=Shakib_Al Hasan meetup 1_pqak2pqjfam"
-                            width="100%"
-                            height="600hv"
-                            id="myId"
-                            allow="camera;microphone"
-                            className="myClassname bg-dark"
-                            display="initial"
-                            position="relative" />
-                    <Link to='/superstar-admin/video-chat-message' ><img src={Message} alt="" className="img-fluid MSGIcon-VC mx-3 mb-2" /></Link>
+                    <img src={balhasan} className="img-fluid" alt="" />
+                    <Link to='/superstar-admin/learning-session/video-chat-message' ><img src={Message} alt="" className="img-fluid MSGIcon-VC mx-3 mb-2" /></Link>
                 </div>
             </div>
             <div className="col-md-4 ">
@@ -216,4 +207,4 @@ return (
 );
 };
 
-export default AdminVideoChat;
+export default LearningVideoAdmin;

@@ -4,6 +4,10 @@ import StarMeetUpEvent from './Pages/MeetupEventsStar/StarMeetUpEvent';
 import StarMeetUpEventList from './Pages/MeetupEventsStar/StarMeetUpEventList';
 import StarMeetUpEventListApproved from './Pages/MeetupEventsStar/StarMeetUpEventListApproved';
 import NotifyRecord from './Pages/NotifySuperstar/NotifyGreetingsRecord';
+import CricketJersey from './Pages/Souvenir/CricketJersey/CricketJersey';
+import StarVideoLearnig from './Pages/StarLearningSession/Content/StarVideoLearnig';
+import StarLearnSessionTime from './Pages/StarLearningSession/StarLearnSessionTime';
+import StarLeranings from './Pages/StarLearningSession/StarLeranings';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
 import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent';
 import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent';
@@ -28,6 +32,14 @@ const SuperstarRoute = [
 
     { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
 
+    // Learning Session
+    { path: '/superstar/learning-session/test', exact: true, name: 'test', component: StarLeranings },
+    { path: '/superstar/learning-session/test1', exact: true, name: 'test1', component: StarLearnSessionTime },
+    { path: '/superstar/learning-session/video', exact: true, name: 'test1', component: StarVideoLearnig },
+
+
+
+
     { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
 
     { path: '/superstar/meetup-events/pending', exact: true, name: 'meetup-events', component: StarMeetUpEventList },
@@ -44,6 +56,7 @@ const SuperstarRoute = [
 
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
+    { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
 
 
     { path: '/superstar/notify/record', exact: true, name: 'notify', component: NotifyRecord },

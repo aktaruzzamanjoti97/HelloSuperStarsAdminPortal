@@ -2,7 +2,6 @@ import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent"
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetup/AddMeetUp";
 import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/LiveMeetUp";
-import PendingMeetupList from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/PendingMeetupList";
 import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp/PendingMeetUp";
 import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
 import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
@@ -24,14 +23,18 @@ import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/Adm
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
-
-import AdminGreetingsEditForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsEditForm";
-
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
+import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
+import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
+import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
 
 
+import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
+import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
+import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -56,16 +59,24 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition },
-    
 
+    { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
+    { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
+    { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
+    // Learning Session Route
+    { path: '/superstar-admin/learning-session', exact: true, name: 'learning-session', component: LiveSession },
+    { path: '/superstar-admin/learning-session/add-session', exact: true, name: 'add-session', component: LearningAddSession },
+    { path: '/superstar-admin/learning-session/video', exact: true, name: 'video', component: LearningVideoAdmin },
+    { path: '/superstar-admin/learning-session/video-chat-message', exact: true, name: 'video-chat-message', component: LearningVideoChatAdmin },
+
+    // Route
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
-
+    // MeetUp Event Route
     { path: '/superstar-admin/meetup-events', exact: true, name: 'meetup-events', component: LiveMeetUp },
-    { path: '/superstar-admin/pending-meetup-list', exact: true, name: 'pending-meetup', component: PendingMeetupList },
-    { path: '/superstar-admin/pending-meetup/:id', exact: true, name: 'pending-meetup', component: PendingMeetUp },
+    { path: '/superstar-admin/pending-meetup', exact: true, name: 'pending-meetup', component: PendingMeetUp },
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
 
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },
@@ -77,7 +88,6 @@ const AdminRoute = [
     // Greetings Route
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
-    { path: '/superstar-admin/greetings/greetingsForm/edit/:greeting_id', exact: true, name: 'greetingsEditForm', component: AdminGreetingsEditForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
@@ -89,11 +99,6 @@ const AdminRoute = [
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
-
-    
-
-
-    
 
 
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },

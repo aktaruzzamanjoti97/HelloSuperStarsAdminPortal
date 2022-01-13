@@ -1,0 +1,27 @@
+.jersey-div{
+background-color: #252525 !important;
+border-radius: 5px;
+}
+.card-admin-souviner{
+    background-color: #2D2D2D !important;
+}
+.left-slick .slick-dots li button::before {
+    font-size: 16px;
+    color: rgb(248, 223, 0);
+    opacity: 0.7;
+  }
+
+ .left-slick .slick-dots li.slick-active button::before {
+    color: rgb(248, 223, 0);
+    opacity: 1;
+  }
+.button-souviner{
+    background: #B4B4B4 !important;
+}
+.person-name-admin{
+    background-image:url(../../../../../../../src/assets/images/Souvenir/name.png);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position:center;
+
+}
