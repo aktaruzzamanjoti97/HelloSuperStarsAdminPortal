@@ -1,7 +1,11 @@
 import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
+import LiveChatPending from "../Admin/Home/Pages/LiveChatSpStar/LiveChatPending";
+import PendingLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatPendingDetails";
+import ApprovedLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatApprovedDetails";
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
 import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetup/AddMeetUp";
 import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/LiveMeetUp";
+import PendingMeetUpList from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/PendingMeetupList";
 import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp/PendingMeetUp";
 import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
 import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
@@ -49,7 +53,12 @@ const AdminRoute = [
     { path: '/superstar-admin', exact: true, name: 'Admin' },
     { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: SuperStarDashboard },
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
+
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
+    { path: '/superstar-admin/live-chat/pending', exact: true, name: 'LiveChat', component: LiveChatPending },
+    { path: '/superstar-admin/pending-livechat/:id', exact: true, name: 'pending-livechat-details', component: PendingLiveChat },
+    { path: '/superstar-admin/approved-livechat/:id', exact: true, name: 'pending-livechat-details', component: ApprovedLiveChat },
+
     { path: '/superstar-admin/live-chat/view', exact: true, name: 'LiveChat', component: SCheduleViewAdmin },
     { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
     { path: '/superstar-admin/live-chat/add-session', exact: true, name: 'LiveChat', component: AddSessionContent },
@@ -75,8 +84,9 @@ const AdminRoute = [
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
     // MeetUp Event Route
-    { path: '/superstar-admin/meetup-events', exact: true, name: 'meetup-events', component: LiveMeetUp },
-    { path: '/superstar-admin/pending-meetup', exact: true, name: 'pending-meetup', component: PendingMeetUp },
+    { path: '/superstar-admin/meetup-events/approved', exact: true, name: 'meetup-events', component: LiveMeetUp },
+    { path: '/superstar-admin/meetup-events/pending', exact: true, name: 'meetup-events', component: PendingMeetUpList },
+    { path: '/superstar-admin/pending-meetup/:id', exact: true, name: 'pending-meetup', component: PendingMeetUp },
     { path: '/superstar-admin/add-meetup', exact: true, name: 'add-meetup', component: AddMeetUp },
 
     { path: '/superstar-admin/eventDetails', exact: true, name: 'eventDetails', component: EventDetails },

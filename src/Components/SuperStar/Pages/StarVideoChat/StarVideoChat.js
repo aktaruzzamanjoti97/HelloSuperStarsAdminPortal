@@ -50,7 +50,7 @@ const StarVideoChat = (props) => {
         <div className="row">
           <div className="col-md-8">
             <div className="card my-3 bg-warning balCard">
-              <Iframe url="https://star-meetup.herokuapp.com?room=Shakib_Al Hasan meetup 1_pqak2pqjfam"
+              <Iframe url={event.event_link}
                             width="100%"
                             height="600hv"
                             id="myId"

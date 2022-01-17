@@ -25,7 +25,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/meetup-events'><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar-admin/meetup-events/approved'><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Approved Meet Up
                 </button></Link>
@@ -46,7 +46,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/pending-meetup-list'>
+                <Link to='/superstar-admin/meetup-events/pending'>
                     <button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Pending Meet Up

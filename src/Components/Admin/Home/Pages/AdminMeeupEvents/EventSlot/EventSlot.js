@@ -116,15 +116,14 @@ const EventSlot = (props) => {
 
                 
 
-              {console.log(emptySlot)}
 
-              {[...Array(emptySlot)].map((user, index) => (
+              {/* {[...Array(emptySlot)].map((user, index) => (
                 <div className="col-md-2 col-sm-3 ">
                   <div className="card py-3 mb-2 uncomplete ">
                     <div className="card-body"></div>
                   </div>
                 </div>
-                ))}
+              ))} */}
 
 
                 
