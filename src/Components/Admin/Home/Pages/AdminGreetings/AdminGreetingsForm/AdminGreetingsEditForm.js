@@ -46,7 +46,7 @@ const AdminGreetingsEditForm = (props) => {
 
   useEffect(() => {
 
-    axios.get(`/api/admin/star_list/`).then((res) => {
+    axios.get(`/api/admin/star_list`).then((res) => {
       if (res.status === 200) {
         setStarList(res.data.category);
       }

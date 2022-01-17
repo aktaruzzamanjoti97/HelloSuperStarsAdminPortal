@@ -80,7 +80,7 @@ const AddMeetUp = () => {
     useEffect(() => {
         setActivity('Online');
 
-        axios.get(`/api/admin/star_list/`).then((res) => {
+        axios.get(`/api/admin/star_list`).then((res) => {
         if (res.status === 200) {
             setStarList(res.data.category);
             console.log(res.data.category);
@@ -122,7 +122,7 @@ const AddMeetUp = () => {
               
               
               swal("Success", res.data.message, "success");
-              //history.push(`/superstar-admin/meetup-events/${res.data.greeting_id}`);
+              history.push(`/superstar-admin/meetup-events/pending`);
               
             } else {
               //setModalShow(true);

@@ -118,7 +118,7 @@ const AddSuperStarModal = (props) => {
 
         const fData = new FormData();
 
-        fData.append('image', 'hh');
+        fData.append('image', imagedata);
         fData.append('first_name', registerInput.first_name);
         fData.append('last_name', registerInput.last_name);
         fData.append('category_id', category);

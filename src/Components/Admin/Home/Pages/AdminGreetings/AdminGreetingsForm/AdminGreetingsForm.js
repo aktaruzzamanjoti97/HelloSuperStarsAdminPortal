@@ -44,7 +44,7 @@ const AdminGreetingsForm = () => {
 
   // Fetch Stars Added By Admin
   useEffect(() => {
-    axios.get(`/api/admin/star_list/`).then((res) => {
+    axios.get(`/api/admin/star_list`).then((res) => {
       if (res.status === 200) {
         setStarList(res.data.category);
         console.log(res.data.category);

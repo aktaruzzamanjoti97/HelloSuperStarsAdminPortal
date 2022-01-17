@@ -5,20 +5,33 @@ import swal from 'sweetalert';
 import './AddSessionTextEditor.css';
 
 import { Editor } from "react-draft-wysiwyg";
-import { EditorState, convertToRaw } from "draft-js";
-
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { EditorState } from "draft-js";
+import { convertToHTML } from "draft-convert";
 
 
 
 export default function AddSession(props) {
   const history = useHistory();
 
-  const [editorState, setEditorState] = useState(EditorState.createEmpty())
+   // Editor Funtionalities //
+   const [convertedContent, setConvertedContent] = useState(null);
 
-  function onEditorStateChange(editorState) {
-      setEditorState(editorState);
-  }
+   const [editorState, setEditorState] = useState(() =>
+     EditorState.createEmpty()
+   );
+ 
+   const handleEditorChange = (state) => {
+     setEditorState(state);
+     convertContentToHTML();
+   };
+ 
+   const convertContentToHTML = () => {
+     let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+     setConvertedContent(currentContentAsHTML);
+     //console.log(convertedContent);
+   };
+   // End Editor Functionalies //
 
 
   const [imagedata, setImagedata] = useState('');
@@ -49,7 +62,7 @@ export default function AddSession(props) {
  // Fetch Stars Added By Admin
  useEffect(() => {
 
-  axios.get(`/api/admin/star_list/`).then(res =>{
+  axios.get(`/api/admin/star_list`).then(res =>{
 
     if(res.status === 200)
     {
@@ -77,7 +90,7 @@ const handleChange = (file) => {
     fData.append('image', imagedata);
     fData.append('title', registerInput.title);
     fData.append('star_id', registerInput.star_id);
-    fData.append('description', registerInput.description);
+    fData.append("description", convertedContent);
     fData.append('date', registerInput.date);
     fData.append('start_time', registerInput.start_time);
     fData.append('end_time', registerInput.end_time);
@@ -90,7 +103,7 @@ const handleChange = (file) => {
             {
               // document.getElementById('input_form').reset();   
               swal("Success",res.data.message,"success");
-              history.push('/superstar-admin/live-chat');
+              history.push('/superstar-admin/live-chat/pending');
             }
             else{
               //setModalShow(true);
@@ -139,17 +152,15 @@ return (
             Instruction
           </label>
           <div className="col-sm-7">
-         {/* <Editor
-                    //editorState={editorState}
-                    toolbarClassName="toolbarClassName"
-                    wrapperClassName="wrapperClassName"
-                    editorClassName="editorClassName"
-                    // onEditorStateChange={onEditorStateChange}
-                    
-                  />
-         */}
-         <textarea type="text" className="form-control form-control-sm input-in-lv-ch"
-         placeholder="instruction write here.." onChange={handleInput} name='description' value={registerInput.description}/>
+
+          <Editor
+            editorState={editorState}
+            onEditorStateChange={handleEditorChange}
+            wrapperClassName="wrapper-class"
+            editorClassName="editor-class"
+            toolbarClassName="toolbar-class"
+          />
+         
           </div>
         </div>
 
@@ -187,11 +198,11 @@ return (
 
         <div className="form-group row my-3">
           <label  className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-            Per mnt
+            Fee Per Minute
           </label>
           <div className="col-sm-3">
             <input type="text" className="form-control form-control-sm input-in-lv-ch"
-              placeholder="1200 BDT" onChange={handleInput} name='fee' value={registerInput.fee}/>
+              placeholder="00" onChange={handleInput} name='fee' value={registerInput.fee}/>
           </div>
         </div>
 
