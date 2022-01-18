@@ -1,25 +1,63 @@
-import React from "react";
+
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory} from 'react-router-dom';
+import Iframe from 'react-iframe';
 import "./StarVideoChat.css";
-import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
-import Chat from "../../../../../src/assets/images/meetupEvent/chat.png";
+// import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
+// import Chat from "../../../../../src/assets/images/meetupEvent/chat.png";
 import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
 import person from "../../../../../src/assets/images/meetupEvent/picci.png";
 import person2 from "../../../../../src/assets/images/meetupEvent/chulboro.png";
 import person3 from "../../../../../src/assets/images/meetupEvent/mofiz.png";
 import message from "../../../../../src/assets/images/meetupEvent/message.png";
-const StarVideoChat = () => {
+import axios from "axios";
+
+
+
+const StarVideoChat = (props) => {
+
+  const history = useHistory();
+
+  const [event, setEvent] = useState('');
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const event_id = props.match.params.id;
+
+    axios.get(`/api/star/meetup_event_details/${event_id}`).then(res =>{
+    
+        if(isMounted)
+        {
+            if(res.data.status === 200)
+            {
+                setEvent(res.data.meetup);
+                console.log(res.data.meetup);
+            }
+        }
+    });
+
+}, [props.match.params.id, history]);
+
+
   return (
     <div className="main-div-star">
+
+   
+
+
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-8">
             <div className="card my-3 bg-warning balCard">
-              <img src={balhasan} className="img-fluid" alt="" />
-              <img
-                src={Chat}
-                alt=""
-                className="img-fluid bottomleft-balhasan"
-              />
+              <Iframe url={event.event_link}
+                            width="100%"
+                            height="600hv"
+                            id="myId"
+                            allow="camera;microphone"
+                            className="myClassname bg-dark"
+                            display="initial"
+                            position="relative" />
             </div>
             <div className="card chatting-card">
              <div className="card-body">

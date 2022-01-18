@@ -37,7 +37,7 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Live Video
                             </Link>
-                            <Link className="nav-link" to="/superstar-admin/meetup-events">
+                            <Link className="nav-link" to="/superstar-admin/meetup-events/approved">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Meetup Events
                             </Link>
@@ -51,7 +51,7 @@ const Sidebar = () => {
                             </Link>
                             <Link className="nav-link" to="/superstar-admin/souvenir">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                                Sovenir
+                                Souvenir
                             </Link>
                             <Link className="nav-link" to="/superstar-admin/wallet">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>

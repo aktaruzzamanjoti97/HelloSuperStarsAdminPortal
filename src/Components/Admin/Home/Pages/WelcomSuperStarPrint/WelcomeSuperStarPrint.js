@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef  } from 'react';
-import { Link, Route, Redirect, useHistory} from 'react-router-dom';
-import WelcomeSuperStar from '../WelcomeSuperstar/WelcomeSuperstar';
+import { Link, useHistory} from 'react-router-dom';
 import './WelcomeSuperStarPrint.css'
 import axios from "axios";
-import swal from 'sweetalert';
 
 import ReactToPrint from 'react-to-print';
 
@@ -12,9 +10,6 @@ import backgroundBanner from '../../../../../assets/images/backGroundBanner.png'
 import helloSuperStarLogo from '../../../../../assets/images/helloSuperStar.png';
 import footerPhoto from '../../../../../assets/images/24783.jpg';
 import qrCode from '../../../../../assets/images/qrCode.png'
-import ComponentToPrint from './ComponentToPrint';
-import DOMPurify from 'dompurify';
-import Interweave from 'interweave';
 import { Markup } from 'interweave';
 
 
@@ -22,13 +17,10 @@ const WelcomeSuperStarPrint = (props) => {
 
     const history = useHistory();
 
-    const componentRef = useRef();
 
     const [loading, setLoading] = useState(true);
-    const [file, setFile] = useState('');
     const [star, setStar] = useState([]);
     
-    const [termsCondition, setTermsCondition] = useState(star.terms_and_condition);
 
     useEffect(() => {
         let isMounted = true;
@@ -78,7 +70,7 @@ const WelcomeSuperStarPrint = (props) => {
                     </div>
                     <div className="text-center">
                         <div className="superStarLogo2">
-                            <img className="img-fluid" width="100" height="100" src={helloSuperStarLogo} alt="" />
+                            <img className="" width="200" height="200" src={helloSuperStarLogo} alt="" />
                         </div>
                     </div>
                     <div>
@@ -89,7 +81,7 @@ const WelcomeSuperStarPrint = (props) => {
     
                         <h4 className="my-5 text-center">Welcome to Hello Superstar</h4>
     
-                        <p className="my-4 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui natus explicabo cum repudiandae animi fuga omnis placeat sapiente quam sit dicta reiciendis, consequuntur deleniti dolorem excepturi delectus inventore vitae labore. Impedit nemo nisi tempore, labore facere, earum exercitationem consequatur nihil necessitatibus, repellendus laudantium reiciendis eveniet iure et quam? Eos incidunt, nemo doloribus sed nihil temporibus, quasi asperiores, deleniti sapiente nisi quidem! Sed, suscipit a explicabo expedita veniam ipsam blanditiis officiis.</p>
+                        
     
                         <div className="my-2 text-center">
                             <Markup content= {star.terms_and_condition} />

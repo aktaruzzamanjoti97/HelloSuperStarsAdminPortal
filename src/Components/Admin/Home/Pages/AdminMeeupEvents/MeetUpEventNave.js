@@ -9,9 +9,9 @@ const MeetUpEventNave = () => {
 
 return (
 <>
-    <div className="mb-3 row">
+    <div className=" row ">
 
-        <div title="Live Now" className="col-md-2 align-items-center justify-content-center ">
+        <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
             <div className="card meetupCard">
                 <div className="card-body  align-items-center">
                     <center>
@@ -25,14 +25,14 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/meetup-events' className="card-footer ad-card-footer liveMeetUpButtonBorder"><button
-                    className="ad-card-footer w-100 liveMeetUpButton" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne"> Live Meet Up
+                <Link to='/superstar-admin/meetup-events/approved'><button className="card-footer Souvenir-button  w-100 "
+                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne"> Approved Meet Up
                 </button></Link>
             </div>
         </div><br />
 
-        <div title="Live Now" className="col-md-2 align-items-center justify-content-center ">
+        <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
             <div className="card meetupCard">
                 <div className="card-body  align-items-center">
                     <center>
@@ -46,13 +46,14 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/pending-meetup' className="ad-card-footer liveMeetUpButtonBorder"><button
-                    className="card-footer ad-card-footer w-100 liveMeetUpButton" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne"> Pending Meet Up
+                <Link to='/superstar-admin/meetup-events/pending'>
+                    <button className="card-footer Souvenir-button  w-100 "
+                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne"> Pending Meet Up
                 </button></Link>
             </div>
         </div>
-        <div title="Live Now" className="col-md-2 align-items-center justify-content-center ">
+        <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
             <div className="card meetupCard">
                 <div className="card-body  align-items-center">
                     <center>
@@ -66,9 +67,9 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/add-meetup' className="ad-card-footer liveMeetUpButtonBorder"><button
-                    className="card-footer ad-card-footer w-100 liveMeetUpButton" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne"> Add Meet Up
+                <Link to='/superstar-admin/add-meetup'> <button className="card-footer Souvenir-button  w-100 "
+                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                    aria-controls="collapseOne"> Add Meet Up
                 </button></Link>
             </div>
         </div>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory} from 'react-router-dom';
 import "./EventSlot.css";
 import vector from "../../../../../../assets/images/meetupEvent/Vector.png";
 import hotel from "../../../../../../assets/images/meetupEvent/unsplash_MXbM1NrRqtI.png";
@@ -6,15 +7,59 @@ import clock from "../../../../../../assets/images/meetupEvent/clock-icon.png";
 import first from "../../../../../../assets/images/meetupEvent/1.png";
 import second from "../../../../../../assets/images/meetupEvent/2.png";
 import third from "../../../../../../assets/images/meetupEvent/3.png";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Markup } from 'interweave';
+import moment from 'moment'
 
-const EventSlot = () => {
+const EventSlot = (props) => {
+
+  const history = useHistory();
+
+  const [event, setEvent] = useState('');
+  const [slot, setSlot] = useState([]);
+  const [count, setCount] = useState('');
+  const [emptySlot, setEmptySlot] = useState('');
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const event_id = props.match.params.id;
+
+    axios.get(`/api/admin/meetup_event_details/${event_id}`).then(res =>{
+    
+        if(isMounted)
+        {
+            if(res.data.status === 200)
+            {
+                setEvent(res.data.meetup);
+            }
+        }
+    });
+
+    axios.get(`/api/admin/meetup_event_slots/${event_id}`).then(res =>{
+
+          if(res.data.status === 200)
+          {
+              setSlot(res.data.meetup);
+              setCount(res.data.count);
+              setEmptySlot(res.data.empty_slot);
+          }
+
+          
+
+    });
+
+    
+
+}, [props.match.params.id, event.id, history]);
+
+
   return (
     <div className="container-fluid">
       <div className="row mb-3">
         <div className="col-md-12">
           <div className="card event-card">
-            <img src={hotel} alt="" className="img-fluid" />
+            <img src={`http://localhost:8000/${event.banner}`} alt="" className="img-fluid" />
           </div>
         </div>
       </div>
@@ -24,18 +69,15 @@ const EventSlot = () => {
           <div className="card event-card2 shadow">
             <div className="card-body">
               <h5 className="text-light p-2">
-                Le Meridian with SAK 75{" "}
+                {event.title}
                 <sub className="text-warning">(offline)</sub>
               </h5>
               <p className="text-light">
-                {" "}
-                labore reiciendis natus repellendus, itaque iste. Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Placeat id odit
-                aliquam labore repellat eaque error quibusdam similique at in{" "}
+                <Markup content={event.description} />
               </p>
               <p className="text-light fw-bold">
-                21 September 2021 | 10:00 PM-11:00 PM
-              </p>
+                    {moment(event.date).format('LL')} | {moment(event.start_time, "HH:mm:ss").format("hh:mm A")}-{moment(event.end_time, "HH:mm:ss").format("hh:mm A")} 
+                </p>
             </div>
           </div>
         </div>
@@ -58,153 +100,36 @@ const EventSlot = () => {
             <div className="card-body">
               <h3 className="text-warning">
                 <img src={vector} alt="clock" className="mx-2"></img>
-                Slots <sub>(03/100)</sub>
+                Slots <sub>({count}/{event.total_seat})</sub>
               </h3>
               <div className="row my-3">
+
+              {slot.map((user, index) => (
                 <div className="col-md-2 col-sm-3 ">
                   <p className="sold-small-card fw-bold">
-                    <img src={first} className="img-fluid mx-2 p-1" alt="" />
-                    Mahfuzul Alom
+                    <img src={`http://localhost:8000/${user.user?.image}`}  className="img-fluid mx-2 p-1" alt="" style={{ height: '70px' }}/>
+                    {user.user?.first_name} {user.user?.last_name}
                   </p>
                 </div>
-                <div className="col-md-2 col-sm-3 ">
-                  <p className="sold-small-card fw-bold">
-                    <img src={second} className="img-fluid mx-2 p-1" alt="" />
-                    Asfia Hossain
-                  </p>
-                </div>
-                <div className="col-md-2 col-sm-3">
-                  <p className="sold-small-card fw-bold">
-                    <img src={third} className="img-fluid mx-2 p-1" alt="" />
-                    Saddam Hossain
-                  </p>
-                </div>
+              ))}
+
+
+                
+
+
+              {/* {[...Array(emptySlot)].map((user, index) => (
                 <div className="col-md-2 col-sm-3 ">
                   <div className="card py-3 mb-2 uncomplete ">
                     <div className="card-body"></div>
                   </div>
                 </div>
-                <div className="col-md-2 col-sm-3">
-                <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 mb-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
+              ))} */}
 
 
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
+                
 
 
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
-
-                <div className="col-md-2 col-sm-3">
-                   <div className="card py-3 my-2 uncomplete ">
-                    <div className="card-body"></div>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

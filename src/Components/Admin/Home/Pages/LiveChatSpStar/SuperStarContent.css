@@ -161,4 +161,15 @@
   }
 
 
+  .text-ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    line-height: 20px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+  }
+
+
   

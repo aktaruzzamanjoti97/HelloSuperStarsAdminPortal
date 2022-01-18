@@ -34,7 +34,7 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Live Video
                             </Link>
-                            <Link className="nav-link" to="/superstar/meetup-events">
+                            <Link className="nav-link" to="/superstar/meetup-events/approved">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Meetup Events
                             </Link>

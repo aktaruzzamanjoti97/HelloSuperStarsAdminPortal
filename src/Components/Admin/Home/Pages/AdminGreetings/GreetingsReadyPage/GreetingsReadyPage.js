@@ -36,7 +36,7 @@ const GreetingsReadyPage = (props) => {
             <div className="row">
 
                 <div className="wishfulBannerDiv ms-3">
-                    <img className="img-fluid wishfulBanner" src={ShakibBanner} alt="" />
+                    <img className="img-fluid wishfulBanner" src={`http://localhost:8000/${greeting.banner}`} alt={greeting.banner} />
                 </div>
             </div>
 
@@ -73,7 +73,9 @@ const GreetingsReadyPage = (props) => {
                     <button type="button" className='greetingsNextButton'>Next</button>
                 </Link>
                 
-                <button type="button" className='greetingsEditButton text-warning mx-2'>Edit</button>
+                <Link to={`/superstar-admin/greetings/greetingsForm/edit/${greeting.id}`}>
+                    <button type="button" className='greetingsEditButton text-warning mx-2'>Edit</button>
+                </Link>
             </div>
 
         </div>

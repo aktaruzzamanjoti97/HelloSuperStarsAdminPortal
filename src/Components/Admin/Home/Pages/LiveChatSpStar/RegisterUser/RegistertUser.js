@@ -5,6 +5,7 @@ import enjoy from '../../../../../../assets/images/AdminLiveProfile/abc.jpg';
 import axios from "axios";
 import { useHistory} from 'react-router-dom';
 import moment from 'moment'
+import Iframe from 'react-iframe';
 
 import swal from 'sweetalert';
 
@@ -73,7 +74,9 @@ registeredLiveChat.map( (item, index) => {
 
   return (
     <div className="row ">
-      <div className="col-md-8 ">
+
+
+      <div className="col-md-6 ">
         <div className="table-info ">
           <h5 className="text-warning text-center">Registered Users</h5>
           <table className="table text-light">
@@ -85,22 +88,17 @@ registeredLiveChat.map( (item, index) => {
         </div>
       </div>
 
-      <div className="col-md-4 ">
+      <div className="col-md-6 ">
         {showItem ? (
         // video work start here
-        <div className="card right-live-card-bg my-2 w-75 mx-auto bg-dark">
-          <div className="content">
-            <img src={enjoy} alt="" className='img-fluid icons-videos' />
-            <button className='btn'> <i className="fas fa-clock"></i>4:40</button>
-          </div>
-        <div className="card-body">
-        <div className="container text-center bg-dark p-2 icons-videos">
-          <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-microphone fa-2x"></i></button>
-          <button className='mx-2 btn btn-warning text-light p-2 btn-rounded'><i className="fas fa-video fa-2x"></i></button>
-          <button className='btn btn-warning text-light btn-rounded'><i className="fas fa-times fa-2x"></i></button>
-        </div>
-        </div>
-        </div>
+        <Iframe url="https://superstar-livechat.herokuapp.com/?room=SuperStarLiveConversation_algdxhxmio8"
+          width="100%"
+          height="600px"
+          id="myId"
+          allow="camera;microphone"
+          className="myClassname"
+          display="initial"
+          position="relative" />
         ) : (
           <RegisterLeftCard data={props.match.params.live_chat_id} />
         )}

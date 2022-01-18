@@ -44,7 +44,7 @@ const AdminGreetingsForm = () => {
 
   // Fetch Stars Added By Admin
   useEffect(() => {
-    axios.get(`/api/admin/star_list/`).then((res) => {
+    axios.get(`/api/admin/star_list`).then((res) => {
       if (res.status === 200) {
         setStarList(res.data.category);
         console.log(res.data.category);
@@ -260,7 +260,7 @@ const AdminGreetingsForm = () => {
                 <i class="fas fa-cloud-upload-alt"></i> Upload
                 </label> */}
 
-                <img src={file}  className="img-fluid avatar-img-src" alt="profile-pic"/>
+                <img src={file}  className="img-fluid avatar-img-src" alt=""/>
                 <input type="file" className="btn" onChange={(e) => handleChange(e.target.files)} id="image" name="image"/>
 
             </div>
