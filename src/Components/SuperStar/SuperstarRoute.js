@@ -11,7 +11,12 @@ import StarLeranings from './Pages/StarLearningSession/StarLeranings';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
 import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent';
 import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent';
+import JoinLiveChat from './Pages/StarLiveChat/RegisterUser/StarRegistertUser'
+
+
 import StarPendingContent from './Pages/StarLiveChat/StarPendingContent';
+import StarPendingContentDetails from './Pages/StarLiveChat/StarPendingContentDetails';
+import StarApprovedContentDetails from './Pages/StarLiveChat/StarApprovedContentDetails';
 import StarUpcomingEvent from './Pages/StarUpcomingEvent/StarUpcomingEvent';
 import StarVideoChat from './Pages/StarVideoChat/StarVideoChat';
 import SuperstarGreetings from './Pages/SuperstarPageGreetings/SuperstarPageGreetings';
@@ -27,6 +32,10 @@ const SuperstarRoute = [
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
     { path: '/superstar/Live-chat/view', exact: true, name: 'LiveChat_view', component: StarScheduleView },
     { path: '/superstar/live-chat/pending-session', exact: true, name: 'LiveChat_pending_session', component: StarPendingContent },
+    { path: '/superstar/live-chat/pending-session/details/:id', exact: true, name: 'LiveChat_pending_session', component: StarPendingContentDetails },
+    { path: '/superstar/live-chat/approved-session/details/:id', exact: true, name: 'LiveChat_pending_session', component: StarApprovedContentDetails },
+    { path: '/superstar/live-chat/join/:id', exact: true, name: 'LiveChat_pending_session', component: JoinLiveChat },
+
     { path: '/superstar/live-chat/pending-session/view/:id', exact: true, name: 'LiveChat_pending_session', component: StarAddSessionContent },
     { path: '/superstar/live-chat/add-session', exact: true, name: 'add_session', component: StarAddSessionContent },
 

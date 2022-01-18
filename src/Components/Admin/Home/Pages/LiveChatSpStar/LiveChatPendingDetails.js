@@ -12,6 +12,8 @@ import { Markup } from 'interweave';
 import moment from 'moment';
 import Nav from './Nav';
 
+
+
 const LiveChatPendingDetails = (props) => {
 
   const history = useHistory();

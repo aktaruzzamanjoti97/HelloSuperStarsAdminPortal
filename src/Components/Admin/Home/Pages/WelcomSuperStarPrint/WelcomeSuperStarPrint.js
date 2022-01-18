@@ -70,7 +70,7 @@ const WelcomeSuperStarPrint = (props) => {
                     </div>
                     <div className="text-center">
                         <div className="superStarLogo2">
-                            <img className="img-fluid" width="100" height="100" src={helloSuperStarLogo} alt="" />
+                            <img className="" width="200" height="200" src={helloSuperStarLogo} alt="" />
                         </div>
                     </div>
                     <div>
@@ -81,7 +81,7 @@ const WelcomeSuperStarPrint = (props) => {
     
                         <h4 className="my-5 text-center">Welcome to Hello Superstar</h4>
     
-                        <p className="my-4 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui natus explicabo cum repudiandae animi fuga omnis placeat sapiente quam sit dicta reiciendis, consequuntur deleniti dolorem excepturi delectus inventore vitae labore. Impedit nemo nisi tempore, labore facere, earum exercitationem consequatur nihil necessitatibus, repellendus laudantium reiciendis eveniet iure et quam? Eos incidunt, nemo doloribus sed nihil temporibus, quasi asperiores, deleniti sapiente nisi quidem! Sed, suscipit a explicabo expedita veniam ipsam blanditiis officiis.</p>
+                        
     
                         <div className="my-2 text-center">
                             <Markup content= {star.terms_and_condition} />
