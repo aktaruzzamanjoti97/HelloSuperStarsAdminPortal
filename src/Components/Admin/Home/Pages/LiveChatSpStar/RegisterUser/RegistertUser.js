@@ -15,6 +15,12 @@ const RegisterUser = (props) => {
   const [showItem, setShowItem] = useState(false);
   const [registeredLiveChat, setRegisteredLiveChat] = useState([]);
 
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
+  }, []);
+
   const history = useHistory();
   let img_src = '';
 
