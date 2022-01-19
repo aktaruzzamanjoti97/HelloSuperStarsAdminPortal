@@ -38,14 +38,14 @@ const LiveChatScheduleList = () => {
                 <div className="row">
                     {
                         fakeScheduleData.map(singleData => (
-                            <div onClick={() => history.push(`/superstar/live-chat/join/${params.id}`)} className="col-md-4 my-3 col-12">
+                            <div className="col-md-4 my-3 col-12">
                                 <Card className="cardBorderListSchedule">
                                     <div>
                                         <div className="img-fluid" style={{ backgroundImage: `url(${singleData.banner})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', filter: 'blur(4px)', backgroundPosition: 'center', height: '250px' }}>
                                         </div>
 
                                         <div className="bg-up-text">
-                                            <h3 className="text-center">{singleData.pOfL}</h3>
+                                            <h3 onClick={() => history.push(`/superstar/live-chat/join/${params.id}`)} className="text-center">{singleData.pOfL}</h3>
 
                                         </div>
                                     </div>
