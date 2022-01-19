@@ -24,6 +24,8 @@ import SuperstarGreetingsVideoRecord from './Pages/VidoUploadPage/VidoUpload';
 import SuperstarGreetingsVideoUpload from './Pages/VidoUploadPage2.js/VidoUploadPage2';
 import DashboardStar from './StarHader/DashboardStar';
 import LiveChatScheduleList from './Pages/StarLiveChat/Content/LiveChatScheduleList/LiveChatScheduleList';
+import StarLiveChatApprove from './Pages/StarLiveChat/StarLiveChatApprove';
+
 
 
 
@@ -31,7 +33,11 @@ const SuperstarRoute = [
     { path: '/superstar', exact: true, name: 'SuperStar' },
     { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: DashboardStar },
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
+
     {path: '/superstar/live-chat/schedule-list', name: 'Schedule_list', component: LiveChatScheduleList},
+
+    { path: '/superstar/live-chat-approve', exact: true, name: 'live-chat-approve', component: StarLiveChatApprove },
+
     { path: '/superstar/Live-chat/view', exact: true, name: 'LiveChat_view', component: StarScheduleView },
     { path: '/superstar/live-chat/pending-session', exact: true, name: 'LiveChat_pending_session', component: StarPendingContent },
     { path: '/superstar/live-chat/pending-session/details/:id', exact: true, name: 'LiveChat_pending_session', component: StarPendingContentDetails },

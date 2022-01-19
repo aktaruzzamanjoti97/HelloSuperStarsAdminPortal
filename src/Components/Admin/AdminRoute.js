@@ -39,6 +39,8 @@ import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/Le
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
 import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
 import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
+import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
+import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -55,6 +57,8 @@ const AdminRoute = [
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
 
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
+    { path: '/superstar-admin/live-chat-schedule', exact: true, name: 'live-chat-schedule', component: LiveChatSchedule },
+    { path: '/superstar-admin/live-chat-schedule2', exact: true, name: 'live-chat-schedule2', component: LiveChatSchedule2},
     { path: '/superstar-admin/live-chat/pending', exact: true, name: 'LiveChat', component: LiveChatPending },
     { path: '/superstar-admin/pending-livechat/:id', exact: true, name: 'pending-livechat-details', component: PendingLiveChat },
     { path: '/superstar-admin/approved-livechat/:id', exact: true, name: 'pending-livechat-details', component: ApprovedLiveChat },
@@ -63,6 +67,8 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
     { path: '/superstar-admin/live-chat/add-session', exact: true, name: 'LiveChat', component: AddSessionContent },
     { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
+
+    
 
     // Auditions Route
     { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
