@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const LiveChatScheduleFormCom = () => {
     const [inputFieldList, setInputFieldList] = useState([{ name: '', from: '', to: '', target: '' }])
 
@@ -52,7 +52,9 @@ const LiveChatScheduleFormCom = () => {
                                 <div className="my-3 row">
                                     <div for="inputPassword" className="col-sm-1 col-form-label "></div>
                                     <div className="col-sm-8 d-flex">
-                                        <button className="btn btn-warning px-4 ">Save</button>
+
+                                        <Link to='/superstar-admin/live-chat-schedule2'><button className="btn btn-warning px-4 ">Save</button></Link>
+
                                         <button onClick={() => handleRemoveClick(i)} className="btn btn-danger px-4 mx-4">Remove Schedule</button>
                                     </div>
                                 </div>
