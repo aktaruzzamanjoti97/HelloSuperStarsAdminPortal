@@ -34,7 +34,7 @@ const SuperstarRoute = [
     { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: DashboardStar },
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
 
-    {path: '/superstar/live-chat/schedule-list', name: 'Schedule_list', component: LiveChatScheduleList},
+    {path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList},
 
     { path: '/superstar/live-chat-approve', exact: true, name: 'live-chat-approve', component: StarLiveChatApprove },
 

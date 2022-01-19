@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { fakeScheduleData } from './fakeScheduleData';
 import './LiveChatScheduleList.css';
 
@@ -26,6 +26,7 @@ const LiveChatScheduleList = () => {
     }, []);
 
     let history = useHistory();
+    let params = useParams();
 
 
 
@@ -37,14 +38,14 @@ const LiveChatScheduleList = () => {
                 <div className="row">
                     {
                         fakeScheduleData.map(singleData => (
-                            <div className="col-md-4 my-3 col-12">
+                            <div onClick={() => history.push(`/superstar/live-chat/join/${params.id}`)} className="col-md-4 my-3 col-12">
                                 <Card className="cardBorderListSchedule">
                                     <div>
                                         <div className="img-fluid" style={{ backgroundImage: `url(${singleData.banner})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', filter: 'blur(4px)', backgroundPosition: 'center', height: '250px' }}>
                                         </div>
 
                                         <div className="bg-up-text">
-                                            <h3 onClick={() => history.push('/superstar/live-chat/join')} className="text-center">{singleData.pOfL}</h3>
+                                            <h3 className="text-center">{singleData.pOfL}</h3>
 
                                         </div>
                                     </div>
