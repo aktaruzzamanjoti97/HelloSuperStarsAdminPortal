@@ -61,9 +61,9 @@ const StarLiveChatApprove = () => {
                         </div>
                         <div className="col-md-4" style={{ borderLeft: "1px dashed yellow" }}>
                             <h5 className='text-light'>Status</h5>
-<h6 className='text-light'>Request to Approve</h6>
+                            <h6 className='text-light'>Request to Approve</h6>
                             <div>
-                               
+
 
                                 <div className="">
                                     <button className="btn btn-warning" >Approve</button>
