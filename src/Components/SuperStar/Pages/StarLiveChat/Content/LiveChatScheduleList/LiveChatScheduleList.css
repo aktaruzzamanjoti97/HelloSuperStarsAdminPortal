@@ -1,10 +1,11 @@
 .bg-up-text {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  color: goldenrod;
+  color: white;
   font-weight: 800 !important;
   border: none;
   position: absolute;
+  cursor: auto;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
