@@ -1,5 +1,9 @@
 import React from 'react';
-
+// import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import star from '../../../../../../src/assets/images/helloSuperStar.png'
+// const percentage = 66;
 const LiveChatSchedule2 = () => {
 
     return (
@@ -60,17 +64,33 @@ const LiveChatSchedule2 = () => {
                             <button className="btn btn-outline-warning px-4 py-1 ms-5">Delete</button>
                         </div>
                         <div className="col-md-4" style={{ borderLeft: "1px dashed yellow" }}>
-                            <h5 className='text-light'>Status</h5>
 
-                            <div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                                    <label class="form-check-label text-light" for="flexCheckChecked">
-                                        Superstar conformation
-                                    </label>
+                            <h5 className='text-light text-center my-3'>Status</h5>
+                            <div className='d-flex justify-content-center align-items-center '>
+                                <div style={{ width: 200, height: 200 }}>
+                                    <CircularProgressbarWithChildren value={50} styles={buildStyles({
+
+
+                                        // Colors
+                                        pathColor: `gold`,
+
+                                    })}>
+
+                                        <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" />
+                                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                                            <strong className='text-light'>50% complete</strong>
+                                        </div>
+                                    </CircularProgressbarWithChildren>
+                                    <p className='text-warning text-center my-2'>Approve by Sakib Al Hasan</p>
                                 </div>
 
-                                <div className="p-5">
+                            </div>
+
+
+                            <div>
+
+
+                                <div className="p-5 text-center">
                                     <button className="btn" style={{ background: 'gray' }}>Create Event</button>
                                 </div>
                             </div>
