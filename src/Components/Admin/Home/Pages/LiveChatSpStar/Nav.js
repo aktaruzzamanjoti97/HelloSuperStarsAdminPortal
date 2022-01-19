@@ -59,7 +59,7 @@ const Nav = () => {
                   aria-controls="collapseOne"
                 >
                   {" "}
-                  Approved
+                 Live Now
                 </button>
               </Link>
             </div>
@@ -131,7 +131,7 @@ const Nav = () => {
                   aria-controls="collapseOne"
                 >
                   {" "}
-                  Add Session
+                  Add Schedule
                 </button>
               </Link>
             </div>
