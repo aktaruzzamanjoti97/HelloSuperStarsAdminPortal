@@ -97,7 +97,7 @@ const LiveChatPendingDetails = (props) => {
             { event.star_approve_status === 1 ? (<span className="fw-bold">Manager Admin</span>) : (<span className="fw-bold">SuperStar</span>) }
             &nbsp; Approval
             </p>
-         </div>/login
+         </div>
              </div>
            </div>
      
