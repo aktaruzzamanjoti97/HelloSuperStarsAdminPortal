@@ -2,6 +2,7 @@ import React from 'react';
 // import { CircularProgressbar } from 'react-circular-progressbar';
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import { Link } from 'react-router-dom';
 import star from '../../../../../../src/assets/images/helloSuperStar.png'
 // const percentage = 66;
 const LiveChatSchedule2 = () => {
@@ -91,7 +92,10 @@ const LiveChatSchedule2 = () => {
 
 
                                 <div className="p-5 text-center">
+                                 
+                                    <Link to='/superstar-admin/live-chat/live-event-create'>
                                     <button className="btn" style={{ background: 'gray' }}>Create Event</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
