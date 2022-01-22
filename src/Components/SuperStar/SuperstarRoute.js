@@ -59,7 +59,7 @@ const SuperstarRoute = [
     // Learning Session
     { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
     { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearnSlide },
-    { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-al', component: ApprovedLearnList },
+    { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-all', component: ApprovedLearnList },
     { path: '/superstar/learning-session/approved/event', exact: true, name: 'event', component: ApprovedLearnEvent },
     { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: AppLearnSessionTime },
     { path: '/superstar/learning-session/approved/video', exact: true, name: 'video', component: VideoLearnSession },
@@ -67,7 +67,7 @@ const SuperstarRoute = [
     { path: '/superstar/learning-session/request', exact: true, name: 'request', component: RequestLearn },
     { path: '/superstar/learning-session/request-all', exact: true, name: 'request-all', component: RequestLearnList },
     { path: '/superstar/learning-session/request/event', exact: true, name: 'event', component: RequestLearnEvent },
-    { path: '/superstar/learning-session/request/approved', exact: true, name: 'event-view', component: StarLearnSessionTime },
+    { path: '/superstar/learning-session/request/approved', exact: true, name: 'approved', component: StarLearnSessionTime },
 
 
 
