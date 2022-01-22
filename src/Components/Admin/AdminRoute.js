@@ -44,6 +44,7 @@ import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
 import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
 import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
 import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
+import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -60,7 +61,7 @@ const AdminRoute = [
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
 
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
-    { path: '/superstar-admin/live-chat/live-event-create', exact: true, name: 'live-event-create', component: AddSession },
+    { path: '/superstar-admin/live-chat/live-event-create', exact: true, name: 'live-event-create', component: AddSessionForm },
     { path: '/superstar-admin/live-chat-schedule', exact: true, name: 'live-chat-schedule', component: LiveChatSchedule },
     { path: '/superstar-admin/live-chat-schedule2', exact: true, name: 'live-chat-schedule2', component: LiveChatSchedule2},
     { path: '/superstar-admin/live-chat/pending', exact: true, name: 'LiveChat', component: LiveChatPending },
