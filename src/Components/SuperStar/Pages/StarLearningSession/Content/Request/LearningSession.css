@@ -19,7 +19,7 @@
   text-decoration: none;
 }
 
-.top-left {
+.top-left-SAch {
   position: absolute;
   top: 110px;
   left: 16px;
@@ -27,6 +27,7 @@
 
 .ImgSMeet{
   width: 100%;
+  height: 120px;
   filter: blur(8px);
   -webkit-filter: blur(1px);
 }
