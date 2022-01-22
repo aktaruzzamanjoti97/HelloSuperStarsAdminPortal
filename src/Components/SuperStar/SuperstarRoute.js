@@ -67,7 +67,7 @@ const SuperstarRoute = [
     { path: '/superstar/learning-session/request', exact: true, name: 'request', component: RequestLearn },
     { path: '/superstar/learning-session/request-all', exact: true, name: 'request-all', component: RequestLearnList },
     { path: '/superstar/learning-session/request/event', exact: true, name: 'event', component: RequestLearnEvent },
-    { path: '/superstar/learning-session/request/event-view', exact: true, name: 'event-view', component: StarLearnSessionTime },
+    { path: '/superstar/learning-session/request/approved', exact: true, name: 'event-view', component: StarLearnSessionTime },
 
 
 
