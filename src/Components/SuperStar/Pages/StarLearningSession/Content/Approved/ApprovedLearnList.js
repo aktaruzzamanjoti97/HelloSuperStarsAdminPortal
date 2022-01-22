@@ -221,7 +221,7 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar/learning-session/request/event' className='LinkEventSchedule'>
+                <Link to='/superstar/learning-session/approved/event' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body mb-2 text-black">
                         <center>
@@ -243,7 +243,7 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar/learning-session/request/event' className='LinkEventSchedule'>
+                <Link to='/superstar/learning-session/approved/event' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body mb-2 text-black">
                         <center>
@@ -265,7 +265,7 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar/learning-session/request/event' className='LinkEventSchedule'>
+                <Link to='/superstar/learning-session/approved/event' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body mb-2 text-black">
                         <center>
@@ -287,7 +287,7 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar/learning-session/request/event' className='LinkEventSchedule'>
+                <Link to='/superstar/learning-session/approved/event' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body mb-2 text-black">
                         <center>
