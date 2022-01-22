@@ -31,6 +31,8 @@ import ApprovedLearnList from './Pages/StarLearningSession/Content/Approved/Appr
 import ApprovedLearnSlide from './Pages/StarLearningSession/Content/Approved/ApprovedLearnSlide';
 import ApprovedLearnEvent from './Pages/StarLearningSession/Content/Approved/ApprovedLearnEvent';
 import StarLearnSessionTime from './Pages/StarLearningSession/Content/Request/StarLearnSessionTime';
+import AppLearnSessionTime from './Pages/StarLearningSession/Content/Approved/AppLearnSessionTime';
+import VideoLearnSession from './Pages/StarLearningSession/Content/Approved/VideoLearnSession';
 
 
 
@@ -59,16 +61,13 @@ const SuperstarRoute = [
     { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearnSlide },
     { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-al', component: ApprovedLearnList },
     { path: '/superstar/learning-session/approved/event', exact: true, name: 'event', component: ApprovedLearnEvent },
+    { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: AppLearnSessionTime },
+    { path: '/superstar/learning-session/approved/video', exact: true, name: 'video', component: VideoLearnSession },
 
     { path: '/superstar/learning-session/request', exact: true, name: 'request', component: RequestLearn },
     { path: '/superstar/learning-session/request-all', exact: true, name: 'request-all', component: RequestLearnList },
     { path: '/superstar/learning-session/request/event', exact: true, name: 'event', component: RequestLearnEvent },
     { path: '/superstar/learning-session/request/event-view', exact: true, name: 'event-view', component: StarLearnSessionTime },
-
-
-    // { path: '/superstar/learning-session/request/view', exact: true, name: 'test', component: StarLeranings },
-    
-    // { path: '/superstar/learning-session/video', exact: true, name: 'test1', component: StarVideoLearnig },
 
 
 

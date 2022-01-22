@@ -24,7 +24,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddussond Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -47,7 +47,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -70,7 +70,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -93,7 +93,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -116,7 +116,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -139,7 +139,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -162,7 +162,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -185,7 +185,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -208,7 +208,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -230,7 +230,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -252,7 +252,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -274,7 +274,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>
@@ -296,7 +296,7 @@ return (
                         </center>
                         <div className="d-flex justify-content-between">
                             <img src={LeMerridian} alt="Snow" className='ImgSMeet'/>
-                           <div class="top-left">
+                           <div class="top-left-SAch">
                                <span>
                                 <h5 className="mt-2 text-warning">Raddusson Blue</h5>
                                 <p className="text-white">Lorem Ipsum is simply dummy text of the printing and</p>

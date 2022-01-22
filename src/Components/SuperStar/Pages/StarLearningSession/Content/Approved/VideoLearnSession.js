@@ -1,16 +1,16 @@
 import React from "react";
 // import "./StarVideoLearnig.css";
-import balhasan from "../../../../../assets/images/meetupEvent/balhasan.png";
-import Chat from "../../../../../assets/images/meetupEvent/chat.png";
-import bubbleChat from "../../../../../assets/images/meetupEvent/bubble-chat 1.png";
-import person from "../../../../../assets/images/meetupEvent/picci.png";
-import person2 from "../../../../../assets/images/meetupEvent/chulboro.png";
-import person3 from "../../../../../assets/images/meetupEvent/mofiz.png";
-import ChatIcon from "../../../../../assets/images/LearningSession/new-message 1.png";
+import balhasan from "../../../../../../assets/images/meetupEvent/balhasan.png";
+import Chat from "../../../../../../assets/images/meetupEvent/chat.png";
+import bubbleChat from "../../../../../../assets/images/meetupEvent/bubble-chat 1.png";
+import person from "../../../../../../assets/images/meetupEvent/picci.png";
+import person2 from "../../../../../../assets/images/meetupEvent/chulboro.png";
+import person3 from "../../../../../../assets/images/meetupEvent/mofiz.png";
+import ChatIcon from "../../../../../../assets/images/LearningSession/new-message 1.png";
 
 
 import Slider from "react-slick";
-const StarVideoLearnig = () => {
+const VideoLearnSession = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -224,4 +224,4 @@ const StarVideoLearnig = () => {
   );
 };
 
-export default StarVideoLearnig;
+export default VideoLearnSession;
