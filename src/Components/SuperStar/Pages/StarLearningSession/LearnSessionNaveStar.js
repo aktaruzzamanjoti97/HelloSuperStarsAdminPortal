@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Live from '../../../../../assets/images/instagram-live 1.png';
-import Pending from '../../../../../assets/images/pending 2.png';
-import Add from '../../../../../assets/images/UpcomingEvent/add 1.png';
+import Live from '../../../../assets/images/instagram-live 1.png';
+import Pending from '../../../../assets/images/pending 2.png';
+import Add from '../../../../assets/images/UpcomingEvent/add 1.png';
 // import './MeetUpEventNave.css';
 
-const LearningSessionNave = () => {
+const LearnSessionNaveStar = () => {
 
 return (
 <>
@@ -25,9 +25,9 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/learning-session'><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar/learning-session'><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne"> Live Session
+                    aria-controls="collapseOne"> Approved Learning Session
                 </button></Link>
             </div>
         </div><br />
@@ -46,10 +46,10 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/learning-session/pending-session'>
+                <Link to='/superstar/learning-session/request'>
                     <button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne"> Pending Session
+                    aria-controls="collapseOne"> Requested Learning Session
                 </button></Link>
             </div>
         </div>
@@ -67,7 +67,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/learning-session/schedule'> <button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar/learning-session/schedule'> <button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Add Schedule
                 </button></Link>
@@ -78,4 +78,4 @@ return (
 )
 }
 
-export default LearningSessionNave
+export default LearnSessionNaveStar

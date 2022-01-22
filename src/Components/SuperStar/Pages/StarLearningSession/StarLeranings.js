@@ -8,6 +8,7 @@ import Spotlight from '../../../../assets/images/Auditions/spotlight.png'
 import Unsplash from '../../../../assets/images/Auditions/unsplash.png'
 
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 const StarLeranings = () => {
 return (
@@ -56,8 +57,8 @@ return (
 
             </div>
             <div className="mt-3">
-                <Link to='/superstar/dashboard'>
-                    <button className='btn bg-dark text-warning fw-bold' style={{width:'100px'}}>Join </button>
+                <Link to='/superstar/learning-session'>
+                    <Button className='btn bg-dark text-warning fw-bold' style={{width:'100px'}}>Approved </Button>
                 </Link>
             </div>
         </div>

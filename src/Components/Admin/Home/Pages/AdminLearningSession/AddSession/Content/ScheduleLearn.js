@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import LiveChatScheduleFormCom from './LiveChatScheduleFormCom';
+import ScheduleLearnFrom from './ScheduleLearnFrom';
 
-const LiveChatSchedule = () => {
+const ScheduleLearn = () => {
     const [data, setData] = useState([
-        <LiveChatScheduleFormCom />
+        <ScheduleLearnFrom />
     ])
 
 
     const singleInput = (
-        <LiveChatScheduleFormCom />
+        <ScheduleLearnFrom />
     );
 
     const handleAddClick = () => {
@@ -38,4 +38,4 @@ const LiveChatSchedule = () => {
     );
 };
 
-export default LiveChatSchedule;
+export default ScheduleLearn;

@@ -42,6 +42,8 @@ import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVid
 import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
 import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
 import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
+import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
+import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -80,9 +82,13 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
     { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
+
     // Learning Session Route
     { path: '/superstar-admin/learning-session', exact: true, name: 'learning-session', component: LiveSession },
-    { path: '/superstar-admin/learning-session/add-session', exact: true, name: 'add-session', component: LearningAddSession },
+    { path: '/superstar-admin/learning-session/schedule', exact: true, name: 'schedule', component: LearningAddSession },
+    { path: '/superstar-admin/learning-session/schedule-view', exact: true, name: 'schedule-view', component: ScheduleLearnView},
+    { path: '/superstar-admin/live-chat/learning-session/event-create', exact: true, name: 'event-create', component: AdminLearningSessionEventCreate },
+
     { path: '/superstar-admin/learning-session/video', exact: true, name: 'video', component: LearningVideoAdmin },
     { path: '/superstar-admin/learning-session/video-chat-message', exact: true, name: 'video-chat-message', component: LearningVideoChatAdmin },
 
