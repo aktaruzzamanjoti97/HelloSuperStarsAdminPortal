@@ -1,11 +1,9 @@
 import React from "react";
-import Banner from "../../../../assets/images/LearningSession/LearningS.png";
+import Banner from "../../../../../../assets/images/LearningSession/LearningS.png";
+import './LearningSession.css'
+import calendar from "../../../../../../assets/images/Souvenir/calendar.png";
+import Clock from "../../../../../../assets/images/Souvenir/clock.png";
 
-import calendar from "../../../../assets/images/Souvenir/calendar.png";
-import Clock from "../../../../assets/images/Souvenir/clock.png";
-
-import Spotlight from "../../../../assets/images/Auditions/spotlight.png";
-import Unsplash from "../../../../assets/images/Auditions/unsplash.png";
 
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";

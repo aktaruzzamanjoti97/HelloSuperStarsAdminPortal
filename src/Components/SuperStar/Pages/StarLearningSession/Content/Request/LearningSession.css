@@ -30,3 +30,8 @@
   filter: blur(8px);
   -webkit-filter: blur(1px);
 }
+
+.MessageIcon{
+  width: 100px !important;
+  color: beige;
+}

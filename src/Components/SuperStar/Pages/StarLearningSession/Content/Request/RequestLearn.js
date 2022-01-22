@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import './LearningSession.css'
 import LearnSessionNaveStar from '../../LearnSessionNaveStar'
 import RequestLearnSlide from './RequestLearnSlide'
 

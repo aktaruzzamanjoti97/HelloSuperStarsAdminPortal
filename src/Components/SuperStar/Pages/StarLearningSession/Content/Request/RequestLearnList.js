@@ -1,5 +1,5 @@
 import React from 'react'
-import '../ScheduleMessage.css'
+import './LearningSession.css'
 import LeMerridian from "../../../../../../assets/images/MeetupImages/unsplash_xEaAoizNFV8.png";
 import Session from "../../../../../../assets/images/email.png";
 import { Link } from 'react-router-dom';
