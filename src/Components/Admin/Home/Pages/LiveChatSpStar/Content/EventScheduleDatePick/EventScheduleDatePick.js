@@ -21,7 +21,7 @@ const EventScheduleDatePick = () => {
 
     return (
         <>
-            <h1 className="text-warning text-center ss-text my-4">Select Schedule Dates From Here</h1>
+            <h1 className="text-warning text-center ss-text my-4">Make SuperStar Schedule</h1>
 
             <div className="my-4 eventDatePicker d-flex justify-content-center">
 
