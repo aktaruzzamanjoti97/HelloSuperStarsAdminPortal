@@ -1,0 +1,68 @@
+
+.eventDatePicked {
+    background-color: red;
+    margin: 8px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.eventDatePicker .rmdp-wrapper {
+    /* background-color: #fff; */
+    border-radius: 5px;
+    direction: ltr;
+    text-align: center;
+    width: max-content;
+    border: 3px solid white;
+    /* background-color: lightgoldenrodyellow; */
+    width: 80vh;
+    padding: 2rem 0rem;
+    /* color: red; */
+}
+
+.ss-text{
+    font-weight: 800;
+}
+
+.eventDatePicker .rmdp-calendar {
+    height: max-content;
+    padding: 4px;
+    width: 100%;
+}
+
+.eventDatePicker .rmdp-day-picker {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.eventDatePicker .rmdp-week, .rmdp-ym {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 10px;
+    margin: 10px; */
+}
+
+.eventDatePicker .rmdp-panel {
+    min-width: 0;
+    display: none !important;
+}
+
+.removeDatePick{
+    /* padding: 0; */
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    
+}
+
+.eventDatePicker .rmdp-day, .rmdp-week-day {
+    color: #000;
+    cursor: pointer;
+    height: 34px;
+    position: relative;
+    width: 34px;
+    padding: 10px;
+    margin: 15px;
+}
