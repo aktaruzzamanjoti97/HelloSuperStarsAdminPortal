@@ -45,6 +45,7 @@ import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
 import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
 import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
 import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
+import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -60,6 +61,10 @@ const AdminRoute = [
     { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: SuperStarDashboard },
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
 
+    // Schedule Create Route
+    { path: '/superstar-admin/schedule-create', exact: true, name: 'schedule-create', component: ScheduleCreate },
+
+    // Live Chat Route
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
     { path: '/superstar-admin/live-chat/live-event-create', exact: true, name: 'live-event-create', component: AddSessionForm },
     { path: '/superstar-admin/live-chat-schedule', exact: true, name: 'live-chat-schedule', component: LiveChatSchedule },
