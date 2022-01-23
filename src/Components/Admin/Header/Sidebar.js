@@ -13,6 +13,10 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </Link>
+                            <Link className="nav-link" to="/superstar-admin/schedule-create">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Schedule Create
+                            </Link>
                             <Link className="nav-link" to="/superstar-admin/superstars">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Super Stars
