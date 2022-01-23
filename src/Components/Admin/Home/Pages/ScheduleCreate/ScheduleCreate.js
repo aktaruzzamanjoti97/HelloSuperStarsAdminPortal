@@ -1,9 +1,11 @@
 import React from 'react';
+import EventScheduleDatePick from '../LiveChatSpStar/Content/EventScheduleDatePick/EventScheduleDatePick';
 
 const ScheduleCreate = () => {
 return( 
     <>
-        <h1 className='text-warning fw-bold'>This is Schedule Create Page</h1>
+        <EventScheduleDatePick />
+
     </>
 )};
 

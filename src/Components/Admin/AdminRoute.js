@@ -45,6 +45,7 @@ import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
 import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
 import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
 import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
+import EventScheduleDatePick from '../Admin/Home/Pages/LiveChatSpStar/Content/EventScheduleDatePick/EventScheduleDatePick'
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 
 
@@ -129,6 +130,9 @@ const AdminRoute = [
 
 
     { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
+    
+
+    {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick}
 
 
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
