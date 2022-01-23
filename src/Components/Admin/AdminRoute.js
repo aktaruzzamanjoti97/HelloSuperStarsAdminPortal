@@ -1,51 +1,51 @@
+import EventScheduleDatePick from '../Admin/Home/Pages/LiveChatSpStar/Content/EventScheduleDatePick/EventScheduleDatePick';
 import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
 import LiveChatPending from "../Admin/Home/Pages/LiveChatSpStar/LiveChatPending";
-import PendingLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatPendingDetails";
-import ApprovedLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatApprovedDetails";
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
-import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetup/AddMeetUp";
-import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/LiveMeetUp";
-import PendingMeetUpList from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/PendingMeetupList";
-import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp/PendingMeetUp";
+import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
+import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
+import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
+import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
 import AdminGreetings from "./Home/Pages/AdminGreetings/AdminGreetings";
 import AdminGreetingsForm from "./Home/Pages/AdminGreetings/AdminGreetingsForm/AdminGreetingsForm";
 import GreetingsDetails from "./Home/Pages/AdminGreetings/GreetingsReadyPage/GreetingsReadyPage";
 import Notify from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsContent";
-import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
-import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";
-import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
-import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
-import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
-import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
-import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
-import SuperStarDashboard from "./Home/SuperStarDashboard";
-import EventDetails from "./Home/Pages/AdminMeeupEvents/EventDetails/EventDetails";
-import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
-import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSuccess";
-import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
-import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
-import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
-import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
-import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
-import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
-import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
-import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
-import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
+import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
 import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
 import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
 import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
-
-
-import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
-import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
-import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
+import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+import AddMeetUp from "./Home/Pages/AdminMeeupEvents/AddMeetup/AddMeetUp";
+import AdminVideoChat from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChat";
+import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/AdminVideoChatIcon";
+import EventDetails from "./Home/Pages/AdminMeeupEvents/EventDetails/EventDetails";
+import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
+import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSuccess";
+import LiveMeetUp from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/LiveMeetUp";
+import PendingMeetUpList from "./Home/Pages/AdminMeeupEvents/LiveMeetUp/PendingMeetupList";
+import PendingMeetUp from "./Home/Pages/AdminMeeupEvents/PendingMeetUp/PendingMeetUp";
+import AdminRegistration from "./Home/Pages/AdminRegistration/AdminRegistration";
+import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
+import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
+import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
+import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
+import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
+import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";
+import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
+import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewAdmin";
+import ApprovedLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatApprovedDetails";
+import PendingLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatPendingDetails";
+import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
 import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
 import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
-import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
-import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
-import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
-import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
-import EventScheduleDatePick from '../Admin/Home/Pages/LiveChatSpStar/Content/EventScheduleDatePick/EventScheduleDatePick'
+import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
+import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
+import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
+import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
+import SuperStarDashboard from "./Home/SuperStarDashboard";
+
+
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -61,6 +61,10 @@ const AdminRoute = [
     { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: SuperStarDashboard },
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
 
+    // Schedule Create Route
+    { path: '/superstar-admin/schedule-create', exact: true, name: 'schedule-create', component: ScheduleCreate },
+
+    // Live Chat Route
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
     { path: '/superstar-admin/live-chat/live-event-create', exact: true, name: 'live-event-create', component: AddSessionForm },
     { path: '/superstar-admin/live-chat-schedule', exact: true, name: 'live-chat-schedule', component: LiveChatSchedule },

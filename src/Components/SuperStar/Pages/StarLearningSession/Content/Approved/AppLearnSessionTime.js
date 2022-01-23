@@ -1,16 +1,14 @@
 import React from "react";
-import Banner from "../../../../assets/images/LearningSession/LearningS.png";
+import Banner from "../../../../../../assets/images/LearningSession/LearningS.png";
 
-import calendar from "../../../../assets/images/Souvenir/calendar.png";
-import Clock from "../../../../assets/images/Souvenir/clock.png";
+import calendar from "../../../../../../assets/images/Souvenir/calendar.png";
+import Clock from "../../../../../../assets/images/Souvenir/clock.png";
 
-import Spotlight from "../../../../assets/images/Auditions/spotlight.png";
-import Unsplash from "../../../../assets/images/Auditions/unsplash.png";
 
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-const StarLearnSessionTime = () => {
+const AppLearnSessionTime = () => {
     return (
         <>
             <div className="card m-3">
@@ -86,9 +84,9 @@ const StarLearnSessionTime = () => {
                         </div>
                     </div>
                     <div className="mt-3">
-                        <Link to="/superstar/learning-session/request-learning-session">
+                        <Link to="/superstar/learning-session/approved/video">
                             <Button className="btn bg-warning text-black fw-bold" style={{ width: "100px" }}  >
-                                Approved
+                                Join
                             </Button>
                         </Link>
                     </div>
@@ -98,4 +96,4 @@ const StarLearnSessionTime = () => {
     );
 };
 
-export default StarLearnSessionTime;
+export default AppLearnSessionTime;

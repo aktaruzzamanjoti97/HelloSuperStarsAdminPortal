@@ -5,9 +5,6 @@ import StarMeetUpEventList from './Pages/MeetupEventsStar/StarMeetUpEventList';
 import StarMeetUpEventListApproved from './Pages/MeetupEventsStar/StarMeetUpEventListApproved';
 import NotifyRecord from './Pages/NotifySuperstar/NotifyGreetingsRecord';
 import CricketJersey from './Pages/Souvenir/CricketJersey/CricketJersey';
-import StarVideoLearnig from './Pages/StarLearningSession/Content/StarVideoLearnig';
-import StarLearnSessionTime from './Pages/StarLearningSession/StarLearnSessionTime';
-import StarLeranings from './Pages/StarLearningSession/StarLeranings';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
 import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent';
 import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent';
@@ -25,10 +22,17 @@ import SuperstarGreetingsVideoUpload from './Pages/VidoUploadPage2.js/VidoUpload
 import DashboardStar from './StarHader/DashboardStar';
 import LiveChatScheduleList from './Pages/StarLiveChat/Content/LiveChatScheduleList/LiveChatScheduleList';
 import StarLiveChatApprove from './Pages/StarLiveChat/StarLiveChatApprove';
-import LearnSessionNaveStar from './Pages/StarLearningSession/LearnSessionNaveStar';
-import PendingLearningStar from './Pages/StarLearningSession/Content/PendingLearningStar';
-import LiveSessionLear from './Pages/StarLearningSession/Content/LiveSessionLear';
-import ScheduleAllListRequest from './Pages/StarLearningSession/Content/ScheduleAllListRequest';
+
+import RequestLearn from './Pages/StarLearningSession/Content/Request/RequestLearn';
+import ApprovedLearn from './Pages/StarLearningSession/Content/Approved/ApprovedLearn';
+import RequestLearnList from './Pages/StarLearningSession/Content/Request/RequestLearnList';
+import RequestLearnEvent from './Pages/StarLearningSession/Content/Request/RequestLearnEvent';
+import ApprovedLearnList from './Pages/StarLearningSession/Content/Approved/ApprovedLearnList';
+import ApprovedLearnSlide from './Pages/StarLearningSession/Content/Approved/ApprovedLearnSlide';
+import ApprovedLearnEvent from './Pages/StarLearningSession/Content/Approved/ApprovedLearnEvent';
+import StarLearnSessionTime from './Pages/StarLearningSession/Content/Request/StarLearnSessionTime';
+import AppLearnSessionTime from './Pages/StarLearningSession/Content/Approved/AppLearnSessionTime';
+import VideoLearnSession from './Pages/StarLearningSession/Content/Approved/VideoLearnSession';
 
 
 
@@ -53,12 +57,17 @@ const SuperstarRoute = [
     { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session
-    { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: LiveSessionLear },
-    { path: '/superstar/learning-session/request', exact: true, name: 'request', component: PendingLearningStar },
-    { path: '/superstar/learning-session/request-all', exact: true, name: 'request-all', component: ScheduleAllListRequest },
-    { path: '/superstar/learning-session/request/view', exact: true, name: 'test', component: StarLeranings },
-    { path: '/superstar/learning-session/request-event/view', exact: true, name: 'test1', component: StarLearnSessionTime },
-    { path: '/superstar/learning-session/video', exact: true, name: 'test1', component: StarVideoLearnig },
+    { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
+    { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearnSlide },
+    { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-all', component: ApprovedLearnList },
+    { path: '/superstar/learning-session/approved/event', exact: true, name: 'event', component: ApprovedLearnEvent },
+    { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: AppLearnSessionTime },
+    { path: '/superstar/learning-session/approved/video', exact: true, name: 'video', component: VideoLearnSession },
+
+    { path: '/superstar/learning-session/request', exact: true, name: 'request', component: RequestLearn },
+    { path: '/superstar/learning-session/request-all', exact: true, name: 'request-all', component: RequestLearnList },
+    { path: '/superstar/learning-session/request/event', exact: true, name: 'event', component: RequestLearnEvent },
+    { path: '/superstar/learning-session/request/approved', exact: true, name: 'approved', component: StarLearnSessionTime },
 
 
 
