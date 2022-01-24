@@ -9,7 +9,7 @@ const format = "MM/DD/YYYY";
 const EventScheduleDatePick = () => {
 
     const [dates, setDates] = useState([]);
-    const [newSchedule, setNewSchedule] = useState(false)
+    const [newSchedule, setNewSchedule] = useState([])
 
     console.log(dates);
 
@@ -20,8 +20,11 @@ const EventScheduleDatePick = () => {
         setDates(list);
     }
 
-    const handleNewSchedule = () => {
-        setNewSchedule(true)
+    const handleNewSchedule = (index) => {
+        
+        if(!newSchedule.includes(dates[index])){
+            setNewSchedule([...newSchedule, dates[index]])
+        }
     }
 
     return (
@@ -77,7 +80,7 @@ const EventScheduleDatePick = () => {
                                                 </div>
                                             </div>
 
-                                            <button onClick={() => handleNewSchedule()} >Create Schedule</button>
+                                            <button onClick={() => handleNewSchedule(i)} >Create Schedule</button>
                                         </div>
                                     </div>
                                 </div>
@@ -89,14 +92,10 @@ const EventScheduleDatePick = () => {
             </div>
 
 
-            {dates.map((date, i) => {
+            {newSchedule.map((schedule, i) => {
                 return (
-                    <>
-                        {
-                            newSchedule ? (
-                                <NewSchedule date={date} i={i} />
-                            ) : null
-                        }
+                    <>  
+                      <NewSchedule schedule={schedule}  />
                     </>
                 )
             })}

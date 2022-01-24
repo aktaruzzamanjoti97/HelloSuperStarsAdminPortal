@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NewScheduleForm from './NewScheduleForm';
 
-const NewSchedule = ({date}) => {
+const NewSchedule = ({schedule}) => {
 const [data, setData] = useState([
 <NewScheduleForm />
 ])
@@ -17,7 +17,7 @@ setData([...data, singleInput]);
 return (
 <div className='container-fluid my-2 bg-dark SN-ce'>
     <div className="d-flex justify-content-between">
-        <h5 className='text-light mt-4 mx-4'>{date.day} {date.month.name} {date.year}</h5>
+        <h5 className='text-light mt-4 mx-4'>{schedule.day} {schedule.month.name} {schedule.year}</h5>
         <hr/>
     </div>
     {data.map((single, i) => {
