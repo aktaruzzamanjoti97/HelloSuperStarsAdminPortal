@@ -72,7 +72,7 @@ const EventScheduleDatePick = () => {
                                                 </div>
                                             </div>
                                            
-                                            <a href="#">Details</a>
+                                            <a href="#">Create Schedule</a>
                                         </div>
                                     </div>
 
