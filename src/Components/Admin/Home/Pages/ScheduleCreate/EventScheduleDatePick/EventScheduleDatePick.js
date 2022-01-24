@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar } from "react-multi-date-picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
+import NewSchedule from '../NewSchedule';
 import './EventScheduleDatePick.css';
 
 const format = "MM/DD/YYYY";
@@ -8,15 +9,19 @@ const format = "MM/DD/YYYY";
 const EventScheduleDatePick = () => {
 
     const [dates, setDates] = useState([]);
+    const [newSchedule, setNewSchedule] = useState(false)
 
     console.log(dates);
 
     const handleRemoveClick = (index) => {
-        // console.log(index);
         const list = [...dates];
         list.splice(index, 1);
         console.log(list);
         setDates(list);
+    }
+
+    const handleNewSchedule = () => {
+        setNewSchedule(true)
     }
 
     return (
@@ -71,32 +76,33 @@ const EventScheduleDatePick = () => {
                                                     5.00 pm
                                                 </div>
                                             </div>
-                                           
-                                            <a href="#">Create Schedule</a>
+
+                                            <button onClick={() => handleNewSchedule()} >Create Schedule</button>
                                         </div>
                                     </div>
-
-                                    {/* <div class="face face3">
-                                        <div class="content">
-                                            <h5 className="text-white"><i className="fas fa-calendar-week mx-1 schedule-icon"></i> <span className="mx-3">Schedule</span></h5>
-                                            <p>No Schedule Here</p>
-                                           
-                                            <a href="#">Add New</a>
-                                        </div>
-                                    </div> */}
                                 </div>
                             </div>
                         )
                     }
                     )}
                 </div>
-
-                {/* <ul>
-                    {dates.map((date, index) => (
-                        <li key={index}>{date.format()}</li>
-                    ))}
-                </ul> */}
             </div>
+
+
+            {dates.map((date, i) => {
+                return (
+                    <>
+                        {
+                            newSchedule ? (
+                                <NewSchedule date={date} i={i} />
+                            ) : null
+                        }
+                    </>
+                )
+            })}
+
+
+
         </>
     );
 };
