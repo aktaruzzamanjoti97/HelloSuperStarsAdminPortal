@@ -120,7 +120,7 @@ const Nav = () => {
                 </center>
               </div>
               <Link
-                to="/superstar-admin/live-chat/add-session"
+                to="/superstar-admin/live-chat/add-schedule"
                 className="ad-card-footer"
               >
                 <button
