@@ -80,7 +80,7 @@ const EventScheduleDatePick = () => {
                                                 </div>
                                             </div>
 
-                                            <button onClick={() => handleNewSchedule(i)} >Create Schedule</button>
+                                            <button type="button" className="mt-2" onClick={() => handleNewSchedule(i)} >Create Schedule</button>
                                         </div>
                                     </div>
                                 </div>
