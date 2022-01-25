@@ -130,6 +130,7 @@ const AddSuperStarModal = (props) => {
             axios.post(`/api/star_register`, fData).then(res => {
                 if(res.data.status === 200)
                 {
+                    console.log(res.data.result)
                     //history.push('/superstar-admin/superstars');
                     //document.getElementById('input_form').reset();  
                     swal("Success",res.data.message,"success");
