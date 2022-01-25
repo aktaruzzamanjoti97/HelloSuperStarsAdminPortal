@@ -8,11 +8,13 @@ const format = "MM/DD/YYYY";
 
 const EventScheduleDatePick = () => {
 
+    const [selectElement, setSelectElement] = useState(0);
     const [dates, setDates] = useState([]);
     const [newSchedule, setNewSchedule] = useState([])
-    const [pending,setPending]=useState(true)
+    const [pending,setPending]=useState(true);
+   
 
- 
+   
 
     const handleRemoveClick = (index) => {
         const list = [...dates];
@@ -27,9 +29,11 @@ const EventScheduleDatePick = () => {
             setNewSchedule([...newSchedule, dates[index]])
         }
     }
- function handleCheck(event){
+ function handleCheck(event,day){
+    setSelectElement(day);
 setPending(event)
  }
+
     return (
         <>
             <h1 className="text-warning text-center ss-text my-4">Make SuperStar Schedule</h1>
@@ -37,6 +41,7 @@ setPending(event)
             <div className="my-4 eventDatePicker d-flex justify-content-center">
 
                 <Calendar
+                arrow={false}
                     value={dates}
                     onChange={setDates}
                     multiple
@@ -58,11 +63,15 @@ setPending(event)
                             <div className="m-2">
                                 <div className="cardContainer">
                                     <div className="face face1">
-                                        <div key={i} className={pending?"eventDatePicked d-flex bg-danger":"eventDatePicked d-flex bg-warning"}>
+                                        <div key={i} className="eventDatePicked d-flex"  style={
+                        selectElement === date.day
+                          ? { background: "linear-gradient(90deg, rgb(233, 138, 29) 0%, rgb(153, 108, 50) 35%, rgb(202, 238, 245) 100%)" }
+                          : { background: "linear-gradient(90deg, rgb(144, 154, 236) 0%, rgb(101, 80, 197) 35%, rgb(18, 15, 167) 100%)" }
+                      }>
                                             {/* {console.log(date)} */}
                                             {/* <div className="d-flex"> */}
                                             <div>
-                                               
+                                             
                                                 {date.day} {date.month.shortName}
                                                
                                             </div>
@@ -99,7 +108,7 @@ setPending(event)
             {newSchedule.map((schedule, i) => {
                 return (
                     <>  
-                      <NewSchedule schedule={schedule} onClick={handleCheck}  />
+                      <NewSchedule schedule={schedule} id={i} onClick={handleCheck}  />
                     </>
                 )
             })}
