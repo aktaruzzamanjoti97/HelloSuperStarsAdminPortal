@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import EventScheduleDatePick from './Content/EventScheduleDatePick/EventScheduleDatePick';
+import EventScheduleDatePick from '../ScheduleCreate/EventScheduleDatePick/EventScheduleDatePick';
 const LiveChatScheduleFormCom = () => {
     const [inputFieldList, setInputFieldList] = useState([{ name: '', from: '', to: '', target: '' }])
 

@@ -45,7 +45,7 @@ import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
 import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
 import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
 import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
-import EventScheduleDatePick from '../Admin/Home/Pages/LiveChatSpStar/Content/EventScheduleDatePick/EventScheduleDatePick'
+import EventScheduleDatePick from '../Admin/Home/Pages/ScheduleCreate/EventScheduleDatePick/EventScheduleDatePick'
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 
 
