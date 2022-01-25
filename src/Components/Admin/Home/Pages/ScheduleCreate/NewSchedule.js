@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import NewScheduleForm from './NewScheduleForm';
 
-const NewSchedule = ({schedule}) => {
+const NewSchedule = (props) => {
+  
+    const {schedule}=props;
 const [data, setData] = useState([
 <NewScheduleForm />
 ])
@@ -37,8 +39,12 @@ return (
 
     )}
         <div className="d-flex mt-4 mb-5 pb-4 justify-content-center">
-            <button type="button" className="btn btn-primary  bntTSC">Save</button>
-            <button onClick={handleAddClick} type="button" className="btn btn-success mx-3 bntTSC "><i class="fas fa-plus"></i> &nbsp;New Schedule</button>
+            <button type="button" className="btn btn-primary  bntTSC"
+            onClick={() => props.onClick(false)}
+          
+            >Save</button>
+            <button onClick={handleAddClick} type="button" className="btn btn-success mx-3 bntTSC "
+            ><i class="fas fa-plus"></i> &nbsp;New Schedule</button>
         </div>
 
 </div>

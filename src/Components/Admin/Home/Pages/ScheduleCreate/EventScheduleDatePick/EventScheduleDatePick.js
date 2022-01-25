@@ -10,13 +10,14 @@ const EventScheduleDatePick = () => {
 
     const [dates, setDates] = useState([]);
     const [newSchedule, setNewSchedule] = useState([])
+    const [pending,setPending]=useState(true)
 
-    console.log(dates);
+ 
 
     const handleRemoveClick = (index) => {
         const list = [...dates];
         list.splice(index, 1);
-        console.log(list);
+      
         setDates(list);
     }
 
@@ -26,7 +27,9 @@ const EventScheduleDatePick = () => {
             setNewSchedule([...newSchedule, dates[index]])
         }
     }
-
+ function handleCheck(event){
+setPending(event)
+ }
     return (
         <>
             <h1 className="text-warning text-center ss-text my-4">Make SuperStar Schedule</h1>
@@ -55,12 +58,13 @@ const EventScheduleDatePick = () => {
                             <div className="m-2">
                                 <div className="cardContainer">
                                     <div className="face face1">
-                                        <div key={i} className="eventDatePicked d-flex">
+                                        <div key={i} className={pending?"eventDatePicked d-flex bg-danger":"eventDatePicked d-flex bg-warning"}>
                                             {/* {console.log(date)} */}
                                             {/* <div className="d-flex"> */}
                                             <div>
+                                               
                                                 {date.day} {date.month.shortName}
-                                                {console.log(i)}
+                                               
                                             </div>
                                             <button className="removeDatePick ms-3" onClick={() => handleRemoveClick(i)} type="button"><i className="fas fa-times"></i></button>
                                             {/* </div> */}
@@ -95,7 +99,7 @@ const EventScheduleDatePick = () => {
             {newSchedule.map((schedule, i) => {
                 return (
                     <>  
-                      <NewSchedule schedule={schedule}  />
+                      <NewSchedule schedule={schedule} onClick={handleCheck}  />
                     </>
                 )
             })}
