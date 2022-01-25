@@ -3,6 +3,7 @@ import NewScheduleForm from './NewScheduleForm';
 
 const NewSchedule = ({schedule}) => {
 
+
 //console.log('schedule', schedule);
 
 
@@ -15,6 +16,7 @@ return (
         <hr/>
     </div>
 
+
     
     <NewScheduleForm schedule={schedule}/>
 
@@ -22,6 +24,7 @@ return (
             <button type="button" className="btn btn-primary  bntTSC">Save</button>
             <button onClick={handleAddClick} type="button" className="btn btn-success mx-3 bntTSC "><i class="fas fa-plus"></i> &nbsp;New Schedule</button>
         </div> */}
+
 
 </div>
 );
