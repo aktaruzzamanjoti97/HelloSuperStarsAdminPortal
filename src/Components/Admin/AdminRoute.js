@@ -18,7 +18,7 @@ import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
 import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
-import SuperStarDashboard from "./Home/SuperStarDashboard";
+import AdminMainDashboard from "./Dashboard/AdminMainDashboard";
 import EventDetails from "./Home/Pages/AdminMeeupEvents/EventDetails/EventDetails";
 import EventSlot from "./Home/Pages/AdminMeeupEvents/EventSlot/EventSlot";
 import EventSuccess from "./Home/Pages/AdminMeeupEvents/EventSlotSuccess/EventSuccess";
@@ -47,7 +47,6 @@ import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/A
 import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 
-
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
 
@@ -58,7 +57,7 @@ import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 
 const AdminRoute = [
     { path: '/superstar-admin', exact: true, name: 'Admin' },
-    { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: SuperStarDashboard },
+    { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
 
     // Schedule Create Route
