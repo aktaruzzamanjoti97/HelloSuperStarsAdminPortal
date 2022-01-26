@@ -1,8 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
-import LeMerridian from "../../../assets/images/MeetupImages/unsplash_xEaAoizNFV8.png";
 import Session from "../../../assets/images/email.png";
 
 const AdminDashSchedule = () => {
@@ -50,7 +48,7 @@ return (
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -66,7 +64,7 @@ return (
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -81,7 +79,7 @@ return (
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -96,7 +94,7 @@ return (
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -112,7 +110,7 @@ return (
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>

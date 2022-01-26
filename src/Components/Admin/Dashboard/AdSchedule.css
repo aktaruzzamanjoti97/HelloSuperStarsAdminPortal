@@ -1,150 +1,118 @@
 .squareAScheApp{
-    color: rgb(16,4,184);
+  color: rgb(16,4,184);
 }
 
 .squareASchePen{
-    background: linear-gradient(90deg, rgb(233, 138, 29) 0%, rgb(153, 108, 50) 35%, rgb(202, 238, 245) 100%);
+  color:rgb(243, 130, 0);
 }
 
 .PendingAdSchedule{
-    background: linear-gradient(90deg, rgb(233, 138, 29) 0%, rgb(153, 108, 50) 35%, rgb(202, 238, 245) 100%);
-    border-radius: 0px 0px 12px 12px;
-    height: 80px;
-    color: black;
+  background: linear-gradient(90deg, 
+  rgb(233, 138, 29) 0%,
+  rgb(153, 108, 50) 35%,       
+  rgb(202, 238,  245) 100%);
+  border-radius: 0px 0px 12px 12px;
 }
 
 .ApprovedAdSchedule{
-    background: linear-gradient(90deg, rgb(144, 154, 236) 0%, rgb(101, 80, 197) 35%, rgb(18, 15, 167) 100%);
-    border-radius: 0px 0px 12px 12px;
-    height: 80px;
-    color: white;
+  background: linear-gradient(90deg, 
+  rgb(144, 154, 236) 0%, 
+  rgb(101, 80, 197) 35%, 
+  rgb(18, 15, 167) 100%);
+  border-radius: 0px 0px 12px 12px;
+  color: white;
 }
-.PendingAS{
-    background: linear-gradient(90deg, rgb(233, 138, 29) 0%, rgb(153, 108, 50) 35%, rgb(202, 238, 245) 100%);
-    border-radius: 10px;
-}
-.PendingASp{
-    background: linear-gradient(90deg, rgb(144, 154, 236) 0%, rgb(101, 80, 197) 35%, rgb(18, 15, 167) 100%);
-    border-radius: 10px;
-}
-.ADImgSched{
-    width: 45%;
+.ADImgSchedule{
+  width: 45%;
 }
 
 .AdSh{
-    padding-right: 10px;
+  padding-right: 10px;
 }
 
-.CardAdShe{
-    filter: grayscale(100%);
+
+
+/* _____________________________________________ */
+
+.containerSa {
+  position: relative;
+  width: 45%;
+}
+
+.overlayASchedule {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+.ApprovedS:hover {
+  border: 2px solid rgb(0, 110, 255);
+}
+.PendingS:hover {
+  border: 2px solid gold;
+}
+
+.containerSa:hover .overlayASchedule {
+  width: 95%;
+}
+
+.ClassHeadC {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.ClassHeadPen{
+    height: 180px;
+    background: linear-gradient(90deg, 
+    rgb(233, 138, 29) 0%,
+    rgb(153, 108, 50) 35%,       
+    rgb(202, 238,  245) 100%);
     border-radius: 10px;
-    -webkit-filter: grayscale(100%);
-    transition: 1s;
-    padding-right: 5px;
 }
-.CardAdShe_S{
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: 1s;
-    padding-right: 5px;
-}
-.CardAdShe:hover{
-    filter: blur(0px);
+.Pending-C{
+  color: rgb(252, 143, 1);
 }
 
-.CardAdSheApp{
-    filter: grayscale(100%);
-    -webkit-filter:contrast(0%);
-    transition: 1s;
-    padding-right: 5px;
+.ClassHeadApp{
+  height: 180px;
+  background: linear-gradient(90deg, 
+  rgb(144, 154, 236) 0%, 
+  rgb(101, 80, 197) 35%, 
+  rgb(18, 15, 167) 100%);
+  border-radius: 10px;
 }
-.CardAdSheApp:hover{
-    filter: blur(0px);
+.Approved-C{
+  color: rgb(1, 252, 156);
 }
 
 
-.containerADS {
-    position: relative;
-    text-align: center;
-    color: white;
-  }
-
-.top-left-AD_S {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-    text-align: left;
-  }
-
-  .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .Tex_tileAS{
-    font-size: 20px;
-}
-.Tex_tileASS{
-    font-size: 15px;
-    padding-right: 10px;
+.Img-Sch-Event{
+  object-fit: cover;
+  width:100%;
+  height: 120px;
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
 }
 
-
-  @media only screen and (min-width: 1025px) and (max-width: 1400px) {
-    .Tex_tileAS{
-        font-size: 15px;
-    }
-    .Tex_tileASS{
-        font-size: 10px;
-        padding-right: 10px;
-    }
-  }
-
-
-
-
-  .containerASD {
-    position: relative;
-    width: 50%;
-  }
-  
-  .imageText-s {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-  }
-  
-  .containerASD:hover .overlay {
-    opacity: 1;
-  }
-  .DIsplay{
-      display: none !important;
-  }
-  .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    border-radius: 10px;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+.LeftTopScA {
+  position: absolute;
+  top:57.8px;
+  width:100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 180px;
 }
-
-
+.LeftTopSc {
+  position: absolute;
+  top:55px;
+  width:90%;
+  height: 100px;
+  left: 16px;
+}
