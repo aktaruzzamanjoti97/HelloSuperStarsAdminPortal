@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { fakeScheduleData } from './fakeScheduleData';
 
 const AdminEventCategory = () => {
@@ -39,12 +39,13 @@ const AdminEventCategory = () => {
                         fakeScheduleData.map(singleData => (
                             <div className="col-md-4 my-3 col-12">
                                 <Card className="cardBorderListSchedule">
+                                    <Link to='/superstar-admin/event-category' className='Link'>
                                     <div>
-                                        <div className="img-fluid" style={{ backgroundImage: `url(${singleData.banner})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', filter: 'blur(4px)', backgroundPosition: 'center', height: '250px' }}>
+                                        <div className="img-fluid" style={{ backgroundImage: `url(${singleData.banner})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', filter: 'blur(2px)', backgroundPosition: 'center', height: '250px' }}>
                                         </div>
 
                                         <div className="bg-up-text">
-                                            <h3 onClick={() => history.push(`/superstar/live-chat/join/${params.id}`)} className="text-center">{singleData.pOfL}</h3>
+                                            <h3  className="text-center">{singleData.pOfL}</h3>
 
                                         </div>
                                     </div>
@@ -95,6 +96,7 @@ const AdminEventCategory = () => {
                                             </div>
                                         </div>
                                     </Card.Body>
+                                    </Link>
                                 </Card>
                             </div>
                         ))

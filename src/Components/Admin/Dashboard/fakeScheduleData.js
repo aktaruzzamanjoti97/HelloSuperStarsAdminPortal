@@ -1,32 +1,27 @@
 export const fakeScheduleData = [
     {
-        "pOfL": "Morning Meet with Mizanur Rahman Azhari",
+        "pOfL": "Live Chat",
         banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
         total: 15
     },
     {
-        "pOfL": "Dinner Meet with Shakib Al Hasan",
+        "pOfL": "Learning Session",
+        banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
+        total: 15
+    },
+    {
+        "pOfL": "Meetup Events",
         banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
         total: 14
     },
     {
-        "pOfL": "Dinner Meet with Shahrukh Khan",
+        "pOfL": "Audition",
         banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
         total: 13
     },
     {
-        "pOfL": "Dinner Meet with Amitav ",
+        "pOfL": "Greetings",
         banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
         total: 12
-    },
-    {
-        "pOfL": "Dinner Meet with Amitav ",
-        banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
-        total: 11
-    },
-    {
-        "pOfL": "Dinner Meet with Amitav ",
-        banner: "https://superstarcommunicator.com/wp-content/uploads/2013/12/business-people-on-a-table.jpg",
-        total: 10
     },
 ]
