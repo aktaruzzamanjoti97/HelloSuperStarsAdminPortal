@@ -1,4 +1,4 @@
-import AdminMainDashboard from './../../Pages/MainDashbord/AdminMainDashboard';
+import AdminMainDashboard from '../../Admin/Dashboard/AdminMainDashboard';
 
 const DashboardAdmin = () => {
   
