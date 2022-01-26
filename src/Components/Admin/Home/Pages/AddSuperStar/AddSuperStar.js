@@ -178,6 +178,8 @@ const convertContentToHTML = () => {
             axios.post(`/api/star_register`, fData).then(res => {
                 if(res.data.status === 200)
                 {
+        
+
                     swal("Success",res.data.message,"success");
                     setModalShow(false);
                     setRegister([]);

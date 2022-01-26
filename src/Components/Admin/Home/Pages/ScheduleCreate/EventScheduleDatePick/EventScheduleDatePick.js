@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar } from "react-multi-date-picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import NewSchedule from '../NewSchedule';
 import './EventScheduleDatePick.css';
 
-const format = "MM/DD/YYYY";
+const format = "YYYY/MM/DD";
 
 const EventScheduleDatePick = () => {
 
@@ -14,7 +14,6 @@ const EventScheduleDatePick = () => {
     const [pending,setPending]=useState(true);
    
 
-   
 
     const handleRemoveClick = (index) => {
         const list = [...dates];
@@ -33,6 +32,10 @@ const EventScheduleDatePick = () => {
     setSelectElement(day);
 setPending(event)
  }
+
+    useEffect(() => {
+        console.log(dates.day);
+    }, []);
 
     return (
         <>
