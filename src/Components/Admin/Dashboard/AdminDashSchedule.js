@@ -44,7 +44,7 @@ return (
         <Slider className="slider-width" {...settings}>
 
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
@@ -60,7 +60,7 @@ return (
             </div>
 
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
@@ -75,7 +75,7 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
@@ -90,7 +90,7 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
@@ -106,7 +106,7 @@ return (
             </div>
 
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>

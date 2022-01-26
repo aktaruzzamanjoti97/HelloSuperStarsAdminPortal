@@ -42,7 +42,7 @@ import StarDashEvent from './Dashboard/StarDashEvent';
 const SuperstarRoute = [
     { path: '/superstar', exact: true, name: 'SuperStar' },
     { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: StarMainDashboard },
-    { path: '/superstar/dashboard/event-list', exact: true, name: 'Dashboard', component: StarDashEvent },
+    { path: '/superstar/event-date', exact: true, name: 'Dashboard', component: StarDashEvent },
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
     { path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList},

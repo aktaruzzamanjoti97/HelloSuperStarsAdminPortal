@@ -48,6 +48,7 @@ import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
 import EventScheduleDatePick from '../Admin/Home/Pages/ScheduleCreate/EventScheduleDatePick/EventScheduleDatePick'
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 import AdminDashEvent from "./Dashboard/AdminDashEvent";
+import AdminEventCategory from "./Dashboard/AdminEventCategory";
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -58,10 +59,14 @@ import AdminDashEvent from "./Dashboard/AdminDashEvent";
 
 
 const AdminRoute = [
-    { path: '/superstar-admin', exact: true, name: 'Admin' },
-    { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
-    { path: '/superstar-admin/dashboard/event-list', exact: true, name: 'Dashboard', component: AdminDashEvent },
+    
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
+
+    { path: '/superstar-admin', exact: true, name: 'Admin' },
+
+    { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
+    { path: '/superstar-admin/event-date', exact: true, name: 'Dashboard', component: AdminDashEvent },
+    { path: '/superstar-admin/event-category', exact: true, name: 'Dashboard', component: AdminEventCategory },
 
     // Schedule Create Route
     { path: '/superstar-admin/schedule-create', exact: true, name: 'schedule-create', component: ScheduleCreate },
