@@ -3,23 +3,43 @@ import { Calendar } from "react-multi-date-picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import NewSchedule from '../NewSchedule';
 import './EventScheduleDatePick.css';
+import axios from "axios";
+import swal from 'sweetalert';
 
-const format = "YYYY/MM/DD";
+const format = "YYYY-MM-DD";
 
 const EventScheduleDatePick = () => {
 
     const [selectElement, setSelectElement] = useState(0);
     const [dates, setDates] = useState([]);
     const [newSchedule, setNewSchedule] = useState([])
+    const [selectedSchedule, setSelectedSchedule] = useState([])
     const [pending,setPending]=useState(true);
    
 
 
-    const handleRemoveClick = (index) => {
+    const handleRemoveClick = (date) => {
+
+
         const list = [...dates];
-        list.splice(index, 1);
-      
-        setDates(list);
+        const ar = list.filter(item => !(item === date));
+        setDates(ar);
+
+        // const list = [...dates];
+        // list.splice(index, 1);
+        // setDates(list);
+
+        // console.log(dates);
+
+       
+        const scheduleList = [...newSchedule];
+        const ar2 = scheduleList.filter(item => !(item === date));
+        setNewSchedule(ar2)
+
+        // schedule.splice(index, 1);
+        // setNewSchedule(schedule);
+
+        // console.log(schedule);
     }
 
     const handleNewSchedule = (index) => {
@@ -28,14 +48,40 @@ const EventScheduleDatePick = () => {
             setNewSchedule([...newSchedule, dates[index]])
         }
     }
+
  function handleCheck(event,day){
     setSelectElement(day);
 setPending(event)
  }
 
-    useEffect(() => {
-        console.log(dates.day);
-    }, []);
+ useEffect(() => {
+
+    axios.get(`/api/admin/schedule`).then(res =>{
+  
+      if(res.status === 200)
+      {
+        
+        setSelectedSchedule(res.data.schedule);
+        
+        // console.log(res.data.schedule);
+     
+      }
+    });
+
+
+
+    const list = [...selectedSchedule];
+    const ar3 = list.filter((x) => dates.includes(x))
+    console.log(ar3);
+    setSelectedSchedule(ar3)
+
+
+    
+
+
+  }, []);
+
+  console.log(dates)
 
     return (
         <>
@@ -55,7 +101,18 @@ setPending(event)
                     plugins={[<DatePanel />]}
                 />
 
+{/* <Calendar
+        multiple
+        
+        onlyShowInRangeDates={true}
+       
+        value={dates}
+                    onChange={setDates}
+      /> */}
 
+
+                
+                
 
             </div>
 
@@ -67,24 +124,24 @@ setPending(event)
                                 <div className="cardContainer">
                                     <div className="face face1">
                                         <div key={i} className="eventDatePicked d-flex"  style={
-                        selectElement === date.day
-                          ? { background: "linear-gradient(90deg, rgb(233, 138, 29) 0%, rgb(153, 108, 50) 35%, rgb(202, 238, 245) 100%)" }
-                          : { background: "linear-gradient(90deg, rgb(144, 154, 236) 0%, rgb(101, 80, 197) 35%, rgb(18, 15, 167) 100%)" }
-                      }>
-                                            {/* {console.log(date)} */}
+                                                selectElement === date.day
+                                                ? { background: "linear-gradient(90deg, rgb(233, 138, 29) 0%, rgb(153, 108, 50) 35%, rgb(202, 238, 245) 100%)" }
+                                                : { background: "linear-gradient(90deg, rgb(144, 154, 236) 0%, rgb(101, 80, 197) 35%, rgb(18, 15, 167) 100%)" }
+                                            }>
+                                          
                                             {/* <div className="d-flex"> */}
                                             <div>
-                                             
                                                 {date.day} {date.month.shortName}
-                                               
                                             </div>
-                                            <button className="removeDatePick ms-3" onClick={() => handleRemoveClick(i)} type="button"><i className="fas fa-times"></i></button>
+                                            <button className="removeDatePick ms-3" onClick={() => handleRemoveClick(date)} type="button"><i className="fas fa-times"></i></button>
                                             {/* </div> */}
                                         </div>
                                     </div>
 
-                                    <div class="face face2">
-                                        <div class="content">
+
+
+                                    <div className="face face2">
+                                        <div className="content">
                                             <h5 className="text-white"><i className="fas fa-calendar-week mx-1"></i> <span className="mx-3">Schedule</span></h5>
                                             <div className="d-flex">
                                                 <div className="schedule-start-time">
@@ -99,6 +156,7 @@ setPending(event)
                                             <button type="button" className="mt-2" onClick={() => handleNewSchedule(i)} >Create Schedule</button>
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </div>
                         )
