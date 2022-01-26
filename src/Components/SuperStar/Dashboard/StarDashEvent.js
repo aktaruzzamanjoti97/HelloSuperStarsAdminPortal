@@ -14,6 +14,7 @@ return (
 <div className="row">
 
     <div className="containerSa col-md-3 mb-3">
+    <Link to='/superstar/event-category'>
         <div className="ClassHeadApp">
             <div class="container">
                 <div class="ClassHeadC">
@@ -39,9 +40,12 @@ return (
                 </div>
             </div>
         </div>
+        
+    </Link>
     </div>
 
     <div className="containerSa col-md-3 mb-3">
+    <Link to='/superstar/event-category'>
         <div className="ClassHeadPen">
             <div class="container">
                 <div class="ClassHeadC">
@@ -67,6 +71,7 @@ return (
                 </div>
             </div>
         </div>
+        </Link>
     </div>
 
 </div>
