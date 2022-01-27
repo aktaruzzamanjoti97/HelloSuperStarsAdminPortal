@@ -1,8 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-
-import LeMerridian from "../../../assets/images/MeetupImages/unsplash_xEaAoizNFV8.png";
 import Session from "../../../assets/images/email.png";
 
 const AdminDashSchedule = () => {
@@ -46,11 +44,11 @@ return (
         <Slider className="slider-width" {...settings}>
 
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -62,11 +60,11 @@ return (
             </div>
 
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -77,11 +75,11 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -92,11 +90,11 @@ return (
                 </Link>
             </div>
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>
@@ -108,11 +106,11 @@ return (
             </div>
 
             <div className="col-md-3">
-                <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
+                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
-                            <img src={Session} className="img-fluid ADImgSched" alt="" />
+                            <img src={Session} className="img-fluid ADImgSchedule" alt="" />
                             <div class="centeredImgC fw-bold  mt-2">23</div>
                         </center>
                     </div>

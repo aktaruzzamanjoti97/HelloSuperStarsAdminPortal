@@ -116,7 +116,7 @@ return (
         {/* Schedule */}
         <div className="liveMeetupBorder my-5">
           <div className="d-flex px-4 pt-3">
-            <div className="faTrophy"><i class="fas fa-trophy"></i></div>
+            <div className="faTrophy"><i class="far fa-calendar-alt"></i></div>
             <h4 className="mx-3 text-white p-2">Schedule</h4>
             <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareAScheApp"></i> &nbsp; Approved</span>
             <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareASchePen"></i> &nbsp; Pending</span>
@@ -125,10 +125,10 @@ return (
           <div className="pb-3">
             <AdminDashSchedule/>
           </div>
-          <center>
+          {/* <center>
             <Link to='/superstar-admin/dashboard'><Button
               className='btn bg-warning mt-3 mb-3 fw-bold text-dark '> View All</Button></Link>
-          </center>
+          </center> */}
 
         </div>
         {/* Schedule End*/}

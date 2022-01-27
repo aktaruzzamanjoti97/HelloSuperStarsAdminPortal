@@ -35,6 +35,8 @@ import AppLearnSessionTime from './Pages/StarLearningSession/Content/Approved/Ap
 import VideoLearnSession from './Pages/StarLearningSession/Content/Approved/VideoLearnSession';
 import StarMainDashboard from './Dashboard/StarMainDashboard';
 import StarDashEvent from './Dashboard/StarDashEvent';
+import StarEventCategory from './Dashboard/StarEventCategory';
+import StarVideoJoin from './Dashboard/Content/StarVideoJoin';
 
 
 
@@ -42,7 +44,10 @@ import StarDashEvent from './Dashboard/StarDashEvent';
 const SuperstarRoute = [
     { path: '/superstar', exact: true, name: 'SuperStar' },
     { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: StarMainDashboard },
-    { path: '/superstar/dashboard/event-list', exact: true, name: 'Dashboard', component: StarDashEvent },
+    { path: '/superstar/event-date', exact: true, name: 'Dashboard', component: StarDashEvent },
+    { path: '/superstar/event-category', exact: true, name: 'Dashboard', component: StarEventCategory },
+    { path: '/superstar/event-category/join', exact: true, name: 'Dashboard', component: StarVideoJoin },
+
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
     { path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList},
