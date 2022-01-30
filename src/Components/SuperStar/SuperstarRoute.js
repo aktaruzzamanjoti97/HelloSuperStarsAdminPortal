@@ -37,6 +37,8 @@ import StarMainDashboard from './Dashboard/StarMainDashboard';
 import StarDashEvent from './Dashboard/StarDashEvent';
 import StarEventCategory from './Dashboard/StarEventCategory';
 import StarVideoJoin from './Dashboard/Content/StarVideoJoin';
+import StarNotifySchedule from '../Admin/Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule';
+import StartNotifyScheduleView from './Pages/NotifySuperstar/Content/StartNotifyScheduleView';
 
 
 
@@ -77,6 +79,13 @@ const SuperstarRoute = [
     { path: '/superstar/learning-session/request/approved', exact: true, name: 'approved', component: StarLearnSessionTime },
 
 
+    // Greetings Route
+    { path: '/superstar/greetings', exact: true, name: 'greetings', component: SuperstarGreetings },
+    { path: '/superstar/notify/record', exact: true, name: 'notify', component: NotifyRecord },
+    { path: '/superstar/notify-schedule', exact: true, name: 'notify-schedule', component: StarNotifySchedule },
+    { path: '/superstar/notify-schedule/view', exact: true, name: 'view', component: StartNotifyScheduleView },
+    { path: '/superstar/greetings/video-record', exact: true, name: 'greetings', component: SuperstarGreetingsVideoRecord },
+    { path: '/superstar/greetings/video-upload', exact: true, name: 'greetings', component: SuperstarGreetingsVideoUpload },
 
 
     { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
@@ -89,16 +98,12 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     
 
-    { path: '/superstar/greetings', exact: true, name: 'greetings', component: SuperstarGreetings },
+   
 
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
     { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
-
-    { path: '/superstar/notify/record', exact: true, name: 'notify', component: NotifyRecord },
-    { path: '/superstar/greetings/video-record', exact: true, name: 'greetings', component: SuperstarGreetingsVideoRecord },
-    { path: '/superstar/greetings/video-upload', exact: true, name: 'greetings', component: SuperstarGreetingsVideoUpload },
-
+    
     
 ];
 

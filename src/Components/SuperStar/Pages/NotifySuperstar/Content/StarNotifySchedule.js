@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import NotifyScheduleForm from './NotifyScheduleForm';
+import StarNotifyScheduleForm from './StarNotifyScheduleForm';
 
-const StarNotifySchedule = () => {
+const NotifySchedule = () => {
     const [data, setData] = useState([
-        <NotifyScheduleForm />
+        <StarNotifyScheduleForm />
     ])
 
 
     const singleInput = (
-        <NotifyScheduleForm />
+        <StarNotifyScheduleForm />
     );
 
     const handleAddClick = () => {
@@ -38,4 +38,4 @@ const StarNotifySchedule = () => {
     );
 };
 
-export default StarNotifySchedule;
+export default NotifySchedule;

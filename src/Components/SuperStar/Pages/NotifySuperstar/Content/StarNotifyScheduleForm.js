@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-const NotifyScheduleForm = () => {
+const StarNotifyScheduleForm = () => {
     const [inputFieldList, setInputFieldList] = useState([{ name: '', from: '', to: '', target: '' }])
 
     const handleRemoveClick = (index) => {
@@ -53,7 +53,7 @@ const NotifyScheduleForm = () => {
                                     <div for="inputPassword" className="col-sm-1 col-form-label "></div>
                                     <div className="col-sm-8 d-flex">
 
-                                        <Link to='/superstar/notify-schedule/view'><button className="btn btn-warning px-4 ">Save</button></Link>
+                                        <Link to='/superstar-admin/notify-schedule/view'><button className="btn btn-warning px-4 ">Save</button></Link>
 
                                         <button onClick={() => handleRemoveClick(i)} className="btn btn-danger px-4 mx-4">Remove Schedule</button>
                                     </div>
@@ -72,4 +72,4 @@ const NotifyScheduleForm = () => {
     );
 };
 
-export default NotifyScheduleForm;
+export default StarNotifyScheduleForm;
