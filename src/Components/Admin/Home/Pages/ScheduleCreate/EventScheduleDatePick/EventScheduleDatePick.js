@@ -62,18 +62,9 @@ setPending(event)
       {
         
         setSelectedSchedule(res.data.schedule);
-        
-        // console.log(res.data.schedule);
-     
+        // setDates(res.data.schedule)
       }
     });
-
-
-
-    const list = [...selectedSchedule];
-    const ar3 = list.filter((x) => dates.includes(x))
-    console.log(ar3);
-    setSelectedSchedule(ar3)
 
 
     
@@ -81,7 +72,7 @@ setPending(event)
 
   }, []);
 
-  console.log(dates)
+  console.log('from database',dates);
 
     return (
         <>
@@ -90,29 +81,37 @@ setPending(event)
             <div className="my-4 eventDatePicker d-flex justify-content-center">
 
                 <Calendar
-                arrow={false}
+                //arrow={false}
                     value={dates}
                     onChange={setDates}
+                    format="YYYY-MM-DD"
                     multiple
                     sort
-                    format={format}
+                    //format={format}
                     // onChange={selected}
                     calendarPosition="bottom-center"
-                    plugins={[<DatePanel />]}
+                    //plugins={[<DatePanel markFocused />]}
                 />
 
-{/* <Calendar
-        multiple
-        
-        onlyShowInRangeDates={true}
-       
-        value={dates}
-                    onChange={setDates}
-      /> */}
 
+                    {/* <DatePicker
+                    multiple
+                    sort
+                    onFocusedDateChange={setFocusedDate}
+                    onClose={() => setFocusedDate(undefined)}
+                    plugins={[
+                        <DatePanel markFocused focusedClassName="bg-red" />
+                    ]}
+                    mapDays={({ date, isSameDate }) => {
+                        let props = {}
+                        
+                        if (!isSameDate(date, focusedDate)) return
 
-                
-                
+                        props.style = { backgroundColor: "red" }
+                        
+                        return props
+                    }}
+                    /> */}
 
             </div>
 
@@ -131,7 +130,9 @@ setPending(event)
                                           
                                             {/* <div className="d-flex"> */}
                                             <div>
-                                                {date.day} {date.month.shortName}
+                                                {date.day} {date.month.shortName}, {date.year}
+                                                {/* {date.format()} */}
+
                                             </div>
                                             <button className="removeDatePick ms-3" onClick={() => handleRemoveClick(date)} type="button"><i className="fas fa-times"></i></button>
                                             {/* </div> */}

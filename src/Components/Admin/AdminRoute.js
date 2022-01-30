@@ -1,5 +1,6 @@
 import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent";
 import LiveChatPending from "../Admin/Home/Pages/LiveChatSpStar/LiveChatPending";
+import LiveChatProfileCreate from "../Admin/Home/Pages/LiveChatSpStar/LiveChatProfileCreate";
 import PendingLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatPendingDetails";
 import ApprovedLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatApprovedDetails";
 import AddSuperStar from "./Home/Pages/AddSuperStar/AddSuperStar";
@@ -75,6 +76,7 @@ const AdminRoute = [
 
     // Live Chat Route
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
+    { path: '/superstar-admin/live-chat/profile/create', exact: true, name: 'LiveChat', component: LiveChatProfileCreate },
     { path: '/superstar-admin/live-chat/live-event-create', exact: true, name: 'live-event-create', component: AddSessionForm },
     { path: '/superstar-admin/live-chat-schedule', exact: true, name: 'live-chat-schedule', component: LiveChatSchedule },
     { path: '/superstar-admin/live-chat-schedule2', exact: true, name: 'live-chat-schedule2', component: LiveChatSchedule2},

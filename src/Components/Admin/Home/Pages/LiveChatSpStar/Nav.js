@@ -11,16 +11,22 @@ import "./SuperStarContent.css";
 
 const Nav = () => {
 
-  // Fetch Approved LiveChat
-//   useEffect(() => {
-//     axios.get(`/api/admin/live_chat/approved`).then((res) => {
-//       if (res.status === 200) {
-//         setEvents(res.data.event);
-//       }
-//     });
+  const [approved,setApproved]=useState('');
+  const [pending,setPeding]=useState('');
 
-//     console.log();
-//   }, []);
+  //Fetch Approved LiveChat
+  useEffect(() => {
+    axios.get(`/api/admin/live_chat/count`).then((res) => {
+      if (res.status === 200) {
+        setApproved(res.data.approved);
+        setPeding(res.data.pending);
+
+        console.log(res.data.pending)
+      }
+    });
+
+    console.log();
+  }, []);
 
   return (
     <>
@@ -42,7 +48,7 @@ const Nav = () => {
                       />
                     </td>
                     <td className="ad-card-td">
-                      <small className="ad-card-small">01</small>
+                      <small className="ad-card-small">{approved}</small>
                     </td>
                   </tr>
                 </center>
@@ -78,7 +84,7 @@ const Nav = () => {
                       <img src={Pending} className="ad-card-img-top" alt="..." />
                     </td>
                     <td className="ad-card-td">
-                      <small className="ad-card-small">01</small>
+                      <small className="ad-card-small">{pending}</small>
                     </td>
                   </tr>
                 </center>
@@ -120,7 +126,7 @@ const Nav = () => {
                 </center>
               </div>
               <Link
-                to="/superstar-admin/live-chat/add-schedule"
+                to="/superstar-admin/live-chat/live-event-create"
                 className="ad-card-footer"
               >
                 <button
@@ -131,7 +137,7 @@ const Nav = () => {
                   aria-controls="collapseOne"
                 >
                   {" "}
-                  Add Schedule
+                  Create Live Chat Event
                 </button>
               </Link>
             </div>

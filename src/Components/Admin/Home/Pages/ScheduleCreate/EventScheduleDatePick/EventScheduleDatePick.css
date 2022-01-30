@@ -46,8 +46,8 @@
 }
 
 .eventDatePicker .rmdp-panel {
-  min-width: 0;
-  display: none !important;
+  min-width: 125px;
+  /* display: none !important; */
 }
 
 .removeDatePick {

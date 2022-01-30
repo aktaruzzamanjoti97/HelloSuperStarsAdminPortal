@@ -53,7 +53,7 @@ const LiveChatPendingDetails = (props) => {
 
         <div className="container-fluid">
             <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-6">
                     <div className="card event-card">
                      <img src={`http://localhost:8000/${event.banner}`} alt="" className="img-fluid" />
                      
