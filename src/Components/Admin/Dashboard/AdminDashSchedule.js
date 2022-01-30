@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Slider from "react-slick";
-<<<<<<< Updated upstream
-import { Link } from "react-router-dom";
-=======
 import { Link, useHistory } from 'react-router-dom'
->>>>>>> Stashed changes
 import Session from "../../../assets/images/email.png";
 import axios from "axios";
 import swal from 'sweetalert';
@@ -75,11 +71,7 @@ return (
 
         {schedule.map((schedule, index) => (
             <div className="col-md-3">
-<<<<<<< Updated upstream
-                <Link to='/superstar-admin/event-date' className='LinkEventSchedule'>
-=======
                 
->>>>>>> Stashed changes
                 <div className="card bg-dark my-3 card-dashbord">
                     <div className="card-body">
                         <center>
