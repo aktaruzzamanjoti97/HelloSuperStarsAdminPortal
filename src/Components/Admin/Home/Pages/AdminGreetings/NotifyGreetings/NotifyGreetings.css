@@ -155,12 +155,13 @@ table {
 .buTon-abc{
     font-size: 13px;
  }
-.NotiBtnts{
+.NotifyBtn{
     background-color: rgb(131, 130, 130) !important ;
     color: black;
+    width: 100px;
 }
 
-.NotiBtnts:hover{
-    background-color: rgb(6, 118, 247) !important ;
+.NotifyBtn:hover{
+    background-color: rgb(74, 247, 6) !important ;
     color: white !important;
 }

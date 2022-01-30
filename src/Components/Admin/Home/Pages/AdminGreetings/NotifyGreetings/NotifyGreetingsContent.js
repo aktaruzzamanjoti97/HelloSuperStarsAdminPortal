@@ -57,7 +57,7 @@ return (
                     </table>
 
                     <div className="button mx-5">
-                    <button className='btn btn-warning bg-warning mt-3  NotiBtnts'variant="primary" onClick={()=>
+                    <button className='btn btn-warning bg-warning mt-3  NotifyBtn' variant="primary" onClick={()=>
                             setModalShowl(true)}><i className="fas fa-bell"></i> Notify</button>
                     <NotifyModalAdmin show={modalShowl} onHide={()=> setModalShowl(false)} />
                 </div>
@@ -89,10 +89,15 @@ return (
                     </div>
                 </div>
 
+                <div className="d-flex">
                 <div className="button">
-                    <button className='btn  w-25 mt-3  NotiBtnts'>Edit</button>
+                    <button className='btn bg-success fw-bold text-light mt-3 NotifyBtn' >Edit</button>
+                </div>
+                <div className="button">
+                    <button className='btn bg-warning fw-bold mt-3 mx-2 NotifyBtn' >Schedule</button>
                 </div>
 
+                </div>
                 </div>
 
             </div>
