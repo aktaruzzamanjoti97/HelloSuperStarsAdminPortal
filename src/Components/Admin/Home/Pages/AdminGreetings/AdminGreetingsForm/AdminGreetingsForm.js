@@ -208,7 +208,7 @@ const AdminGreetingsForm = () => {
             </div>
           </div>
 
-          <div className="row my-4">
+          {/* <div className="row my-4">
             <div className="col-md-2 text-white">
               <p>
                 <big>Registration Time</big>
@@ -240,7 +240,7 @@ const AdminGreetingsForm = () => {
               </LocalizationProvider>
             </div>
 
-          </div>
+          </div> */}
 
           <div className="row my-4">
             <div className="col-md-2 text-white">

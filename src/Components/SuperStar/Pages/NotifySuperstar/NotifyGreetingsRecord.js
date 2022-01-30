@@ -1,18 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // import './NotifyGreetings.css'
 import ReactPlayer from 'react-player'
-import { Link } from 'react-router-dom'
+import { Link , useHistory} from 'react-router-dom'
 import Star from '../../../../assets/images/profileAvatar/Avater.png'
 import Banner from '../../../../assets/images/SakibBanner.PNG'
 import PriceTag from '../../../../assets/images/tagPrice.PNG'
+import { Markup } from 'interweave';
 
 const NotifyGreetingsRecord = () => {
+    const history = useHistory();
+    const [greetingDetail, setGreeting] = useState([]);
+
+
+    useEffect(() => {
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios.get('/api/star/greetings').then((res) => {
+        if (res.status === 200) {
+            setGreeting(res.data.greeting);
+            // console.log(res.data.greeting);
+        }
+        });
+    });
+
+    }, []);
     
 return (
 <>
     <>
         <div className="card m-3 ">
-            <img src={Banner} alt="" className='BannerAGN' />
+            <img src={`http://localhost:8000/${greetingDetail.banner}`} alt="" className='BannerAGN' />
         </div>
         <div className="NotifyGreetings d-flex">
 
@@ -57,14 +75,11 @@ return (
             <div className="rightGNA col-3 mx-3 mt-4">
 
                 <div className='p-4'>
-                <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing width="100%" height="100%"
-                    controls={false} />
-                <p className='NotifyTp'>Get a wishful message from  Sakib al hasan</p>
-                
-                <p className='NotifyTpx'>Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been  the
-                    industry's standard.
-                </p>
+                <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing width="100%" height="100%" controls={false} />
+                    <h3 className='NotifyTp'>{greetingDetail.title}</h3>
+                    <p className='NotifyTpx'>
+                        <Markup content={greetingDetail.description}/>
+                    </p>
 
                 <div className="d-flex p-2 w-50 buTon-a ">
                     <span>
@@ -73,7 +88,7 @@ return (
                     <div className=" mx-2 ">
                         <span className="text-light buTon-ab ">Cost</span>
                         <br></br>
-                        <span className="text-light buTon-abc">1200 BDT</span>
+                                <span className="text-light buTon-abc">{ greetingDetail.cost} BDT</span>
                     </div>
                 </div>
 
