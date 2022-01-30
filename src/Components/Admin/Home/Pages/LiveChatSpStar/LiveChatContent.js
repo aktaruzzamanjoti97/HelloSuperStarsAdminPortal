@@ -69,7 +69,7 @@ const LiveChatContent = () => {
   useEffect(() => {
     axios.get(`/api/admin/live_chat/approved`).then((res) => {
       if (res.status === 200) {
-        setEvents(res.data.event);
+        //setEvents(res.data.event);
       }
     });
 
@@ -80,8 +80,6 @@ const LiveChatContent = () => {
     <>
       <div className="AS">
         <Nav></Nav>
-
-
 
 
 
@@ -136,7 +134,11 @@ const LiveChatContent = () => {
                 <h2 className="fw-bold text-light">No Data here</h2>
                 <h5 className="text-light my-3">Create Default LiveChat Profile Now!</h5>
                 <p className=" my-2 text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <Link to="/superstar-admin/live-chat/profile/create">
                 <button className="btn btn-warning px-5 py-2 mb-5">Create Now</button>
+                </Link>
+                
+
               </div>
             </div>
           </div>
