@@ -5,10 +5,11 @@ import Banner from '../../../../../../assets/images/SakibBanner.PNG'
 import Star from '../../../../../../assets/images/profileAvatar/Avater.png'
 import PriceTag from '../../../../../../assets/images/tagPrice.PNG'
 import NotifyModalAdmin from './NotifyModalAdmin'
+import { Link } from 'react-router-dom'
 
 const NotifyGreetingsContent = () => {
-    const [modalShowl, setModalShowl] = React.useState(false);
-    
+const [modalShowl, setModalShowl] = React.useState(false);
+
 return (
 <>
     <>
@@ -57,11 +58,11 @@ return (
                     </table>
 
                     <div className="button mx-5">
-                    <button className='btn btn-warning bg-warning mt-3  NotifyBtn' variant="primary" onClick={()=>
+                        <button className='btn btn-warning bg-warning mt-3  NotifyBtn' variant="primary" onClick={()=>
                             setModalShowl(true)}><i className="fas fa-bell"></i> Notify</button>
-                    <NotifyModalAdmin show={modalShowl} onHide={()=> setModalShowl(false)} />
-                </div>
-                
+                        <NotifyModalAdmin show={modalShowl} onHide={()=> setModalShowl(false)} />
+                    </div>
+
                 </div>
 
             </div>
@@ -69,35 +70,36 @@ return (
             <div className="rightGNA col-3 mx-3 mt-4">
 
                 <div className='p-4'>
-                <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing width="100%" height="100%"
-                    controls={false} />
-                <p className='NotifyTp'>Get a wishful message from  Sakib al hasan</p>
-                
-                <p className='NotifyTpx'>Lorem Ipsum is simply dummy text of the printing and 
-                    typesetting industry. Lorem Ipsum has been  the
-                    industry's standard.
-                </p>
+                    <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing
+                        width="100%" height="100%" controls={false} />
+                    <p className='NotifyTp'>Get a wishful message from Sakib al hasan</p>
 
-                <div className="d-flex p-2 w-50 buTon-a ">
-                    <span>
-                        <img src={PriceTag} alt="" className='PriceTage'/>
-                    </span>
-                    <div className=" mx-2 ">
-                        <span className="text-light buTon-ab ">Cost</span>
-                        <br></br>
-                        <span className="text-light buTon-abc">1200 BDT</span>
+                    <p className='NotifyTpx'>Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard.
+                    </p>
+
+                    <div className="d-flex p-2 w-50 buTon-a ">
+                        <span>
+                            <img src={PriceTag} alt="" className='PriceTage' />
+                        </span>
+                        <div className=" mx-2 ">
+                            <span className="text-light buTon-ab ">Cost</span>
+                            <br></br>
+                            <span className="text-light buTon-abc">1200 BDT</span>
+                        </div>
                     </div>
-                </div>
 
-                <div className="d-flex">
-                <div className="button">
-                    <button className='btn bg-success fw-bold text-light mt-3 NotifyBtn' >Edit</button>
-                </div>
-                <div className="button">
-                    <button className='btn bg-warning fw-bold mt-3 mx-2 NotifyBtn' >Schedule</button>
-                </div>
+                    <div className="d-flex">
+                        <div className="button">
+                            <button className='btn bg-success fw-bold text-light mt-3 NotifyBtn'>Edit</button>
+                        </div>
+                        <div className="button">
+                            <Link to='/superstar-admin/notify-schedule'><button
+                                className='btn bg-warning fw-bold mt-3 mx-2 NotifyBtn'>Schedule</button></Link>
+                        </div>
 
-                </div>
+                    </div>
                 </div>
 
             </div>
