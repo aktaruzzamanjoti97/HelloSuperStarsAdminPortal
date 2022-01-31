@@ -1,7 +1,8 @@
 
 .BannerAGN{
     border: 3px solid rgb(255, 174, 0);
-    height: 260px;
+    object-fit: cover;
+    max-height: 330px;
 }
 
 
@@ -165,3 +166,20 @@ table {
     background-color: rgb(247, 211, 6) !important ;
     color: white !important;
 }
+
+.CostWith{
+    width: 170px !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .LeftGNA{
+        flex: 0 0 auto;
+        width: 90% !important;
+    }
+
+    .rightGNA{
+        flex: 0 0 auto;
+        width: 90% !important;
+    }
+  }
