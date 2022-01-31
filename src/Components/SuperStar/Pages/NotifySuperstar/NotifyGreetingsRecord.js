@@ -77,10 +77,16 @@ return (
                     </div>
                 </div>
 
-                <div className="button">
-                    <button className='btn  w-25 mt-3  NotiBtnts'>Edit</button>
-                </div>
+                <div className="d-flex">
+                        <div className="button">
+                            <button className='btn bg-success fw-bold text-light mt-3 NotifyBtn'>Edit</button>
+                        </div>
+                        <div className="button">
+                            <Link to='/superstar/notify-schedule/view'><button
+                                className='btn bg-warning fw-bold mt-3 mx-2 NotifyBtn'>Schedule</button></Link>
+                        </div>
 
+                    </div>
                 </div>
 
             </div>
