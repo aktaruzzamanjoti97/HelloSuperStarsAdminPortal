@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import Approve from '../../../../assets/images/approved.png'
 import Pending from '../../../../assets/images/pending 2.png'
 import Add from '../../../../assets/images/UpcomingEvent/add 1.png'
+import axios from "axios";
 
 export default function Nav() {
+
+    const [approved,setApproved]=useState('');
+  const [pending,setPeding]=useState('');
+
+  //Fetch Approved LiveChat
+  useEffect(() => {
+    axios.get(`/api/star/live_chat/count`).then((res) => {
+      if (res.status === 200) {
+        setApproved(res.data.approved);
+        setPeding(res.data.pending);
+
+        console.log(res.data.pending)
+      }
+    });
+
+    console.log();
+  }, []);
+
+
     return (
         <>
 
@@ -19,7 +39,7 @@ export default function Nav() {
                         <img src={Approve} className="ad-card-img-top" alt="..." />
                     </td>
                     <td className="ad-card-td">
-                        <small className="ad-card-small">01</small>
+                        <small className="ad-card-small">{approved}</small>
                     </td>
                 </tr>
             </center>
@@ -38,7 +58,7 @@ export default function Nav() {
                         <img src={Pending} className="ad-card-img-top" alt="..." />
                     </td>
                     <td className="ad-card-td">
-                        <small className="ad-card-small"></small>
+                        <small className="ad-card-small">{pending}</small>
                     </td>
                 </tr>
             </center>

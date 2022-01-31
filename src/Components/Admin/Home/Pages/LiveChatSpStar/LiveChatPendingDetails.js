@@ -6,6 +6,7 @@ import clock from '../../../../../assets/images/meetupEvent/clock.png'
 import Approved from "../../../../../assets/images/approved.png";
 import Pending from "../../../../../assets/images/pending 2.png";
 import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import axios from "axios";
 import "./SuperStarContent.css";
 import { Markup } from 'interweave';
@@ -85,20 +86,52 @@ const LiveChatPendingDetails = (props) => {
 
 
 
-       <div className="card event-card2">
+            <div className="card event-card2">
            <div className="row">
-           <div className="col-md-6 d-flex justify-content-center align-items-center">
+           <div className="col-md-4 d-flex justify-content-center align-items-center">
                 <img src={clock} className="img-fluid p-3" alt="" />
              </div>
-             <div className="col-md-6 d-flex align-items-center">
+             <div className="col-md-4 d-flex align-items-center">
          <div>
          <h2 className='text-warning'>Event Details submitted</h2>
             <p className='text-light'>Waiting for &nbsp;
-            { event.star_approve_status === 1 ? (<span className="fw-bold">Manager Admin</span>) : (<span className="fw-bold">SuperStar</span>) }
+            { event.star_approval === 1 ? (<span className="fw-bold">Manager Admin</span>) : (<span className="fw-bold">SuperStar</span>) }
             &nbsp; Approval
             </p>
          </div>
              </div>
+
+             <div className="col-md-4" style={{ borderLeft: "1px dashed yellow" }}>
+
+                            <h5 className='text-light text-center my-3'>Status</h5>
+                            <div className='d-flex justify-content-center align-items-center '>
+                                <div style={{ width: 150, height: 150 }}>
+                                {event.star_approval === 1 ? 
+                                (
+                                    <CircularProgressbarWithChildren value={50} styles={buildStyles({pathColor: `gold`})}>
+
+                                        {/* <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" /> */}
+                                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                                            <strong className='text-light'>50% complete</strong>
+                                        </div>
+                                    </CircularProgressbarWithChildren>
+                                ):
+                                <CircularProgressbarWithChildren value={0} styles={buildStyles({pathColor: `gold`})}>
+
+                                        {/* <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" /> */}
+                                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                                            <strong className='text-light'>0% complete</strong>
+                                        </div>
+                                    </CircularProgressbarWithChildren>
+                                }
+                                </div>
+
+                            </div>
+
+
+                          
+                        </div>
+
            </div>
      
        </div>

@@ -89,7 +89,7 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/view', exact: true, name: 'LiveChat', component: SCheduleViewAdmin },
     { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
     { path: '/superstar-admin/live-chat/add-schedule', exact: true, name: 'LiveChat', component: AddSessionContent },
-    { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
+    { path: '/superstar-admin/live-chat/profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
 
     
 

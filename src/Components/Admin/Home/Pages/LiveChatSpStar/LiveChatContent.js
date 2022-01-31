@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
 import Nav from "./Nav";
 import Live from "../../../../../assets/images/instagram-live 1.png";
@@ -53,6 +53,8 @@ const LiveChatContent = () => {
     ],
   };
 
+  const history = useHistory();
+
   // useEffect(() => {
 
   //     axios.get(`/api/admin/livechat`).then(res =>{
@@ -67,14 +69,35 @@ const LiveChatContent = () => {
 
   // Fetch Approved LiveChat
   useEffect(() => {
+
     axios.get(`/api/admin/live_chat/approved`).then((res) => {
+
       if (res.status === 200) {
         //setEvents(res.data.event);
+        if(res.data.event_count > 0)
+        {
+          setEvents(res.data.event);
+        }
+        else{
+          axios.get(`/api/admin/livechat_event_profile`).then(res =>{
+    
+            if(res.data.status === 200)
+            {
+                history.push('/superstar-admin/live-chat/profile');
+            }
+          });
+        }
       }
+      
     });
+
+   
 
     console.log();
   }, []);
+
+ 
+
 
   return (
     <>
@@ -106,11 +129,15 @@ const LiveChatContent = () => {
                       />
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
-                          <Link
+                          {/* <Link
                             to={`/superstar-admin/approved-livechat/${event.id}`} style={{ textDecoration: 'none' }}
                           >
                             <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </Link>
+                          </Link> */}
+
+                          <a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2" style={{ textDecoration: 'none' }}>
+                          <h5 className="text-white text-ellipsis">{event.title}</h5>
+                          </a>
                         </div>
 
                         <p className="text-secondary">
