@@ -58,9 +58,24 @@
     }
     
   }
+
+
+
+
 .TabUsers{
-    border-radius: 5px;
+    padding-bottom: 10px;
 }
+
+.TabUsers1{
+    border-radius: 5px;
+    height: 80vh;
+    overflow: scroll;
+}
+
+.TabUsers1::-webkit-scrollbar {
+    width: 0px;
+  }
+  
 /* Container holding the image and the text */
   .container-Tab-User {
     position: relative;
