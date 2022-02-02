@@ -105,18 +105,8 @@ return (
               fewtrret
             </Tab.Pane>
             <Tab.Pane eventKey="second">
-              eterter
-            </Tab.Pane>
-          </Tab.Content>
-
-        </Tab.Container>
-
-        <div className="card  my-3 chatting-card text-light">
+            <div className="card  my-3 chatting-card text-light">
           <div className="card-body ">
-            <h4>
-              <img src={bubbleChat} className="img-fluid mx-1" alt="" />
-              Comments
-            </h4>
             <div id="maincontainer">
               <div id="childcontainer">
                 <div className="d-flex mb-3">
@@ -239,6 +229,12 @@ return (
             </div>
           </div>
         </div>
+            </Tab.Pane>
+          </Tab.Content>
+
+        </Tab.Container>
+
+        
       </div>
     </div>
 
