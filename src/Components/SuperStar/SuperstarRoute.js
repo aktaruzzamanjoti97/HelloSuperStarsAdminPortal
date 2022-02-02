@@ -8,6 +8,7 @@ import CricketJersey from './Pages/Souvenir/CricketJersey/CricketJersey';
 import StarScheduleView from './Pages/StarLiveChat/Content/StarScheduleView';
 import StarAddSessionContent from './Pages/StarLiveChat/StarAddSessionContent';
 import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent';
+import StarLiveChatEdit from './Pages/StarLiveChat/StarEditSession';
 import JoinLiveChat from './Pages/StarLiveChat/RegisterUser/StarRegistertUser'
 
 
@@ -59,6 +60,7 @@ const SuperstarRoute = [
     { path: '/superstar/live-chat/join/:id', exact: true, name: 'LiveChat_pending_session', component: JoinLiveChat },
     { path: '/superstar/live-chat/pending-session/view/:id', exact: true, name: 'LiveChat_pending_session', component: StarAddSessionContent },
     { path: '/superstar/live-chat/add-session', exact: true, name: 'add_session', component: StarAddSessionContent },
+    { path: '/superstar/live-chat/edit-session/:id', exact: true, name: 'edit_session', component: StarLiveChatEdit },
 
     // Audition
     { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
