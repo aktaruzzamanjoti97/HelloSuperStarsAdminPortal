@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory} from 'react-router-dom';
+
 import Iframe from 'react-iframe';
 import { Nav, Tab } from 'react-bootstrap';
 import StarComments from './StarComments';
@@ -8,11 +9,13 @@ import "./StarVideoChat.css";
 import User from "../../../../assets/images/user1.png";
 import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
 import message from "../../../../../src/assets/images/meetupEvent/message.png";
+import Clock from "../../../../assets/images/clock.png";
 
 import axios from "axios";
 import StarUserPortal from './StarUserPortal';
 
 const StarVideoChat = (props) => {
+  
 
 const history = useHistory();
 
@@ -49,30 +52,41 @@ return (
         </div>
 
         <div className="card bg-dark">
-          <div className="card-body">
+          <div className="mx-2 my-2">
             <div className="row">
 
-              <div className="col-4 d-flex align-items-center">
-                <img src={message} alt="" height="60px" width="60px" />
-              </div>
+              {/* <div className="col-4 d-flex align-items-center">
+                <img src={message} alt="" className='btn ' />
+              </div> */}
 
-              <div className="col-4 d-flex justify-content-center align-items-center ">
+              <div className="col-4 d-flex align-items-center">
                 <div className="text-center">
-                  <div className="btn btn-warning">
-                    <i class="fas fa-microphone fa-2x"></i>
-                  </div>
-                  <div className="btn btn-warning mx-2">
-                    <i class="fa fa-video-camera fa-2x" aria-hidden="true"></i>
-                  </div>
-                  <div className="btn btn-warning">
-                    <i class="fas fa-times-circle fa-2x"></i>
+                  <div className="btn ">
+                  <img src={message} alt="" className='' width={40} />
                   </div>
                 </div>
               </div>
+
               <div className="col-4 d-flex justify-content-center align-items-center ">
                 <div className="text-center">
                   <div className="btn btn-warning">
-                    <span><i class="fas fa-times-circle fa-2x"></i></span><span>00:58:34</span>
+                    <i class="fas fa-microphone"></i>
+                  </div>
+                  <div className="btn btn-warning mx-2">
+                    <i class="fa fa-video-camera" aria-hidden="true"></i>
+                  </div>
+                  <div className="btn btn-warning">
+                    <i class="fas fa-times-circle"></i>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="col-4 d-flex justify-content-end align-items-center ">
+                <div className="text-center">
+                  <div className="btn text-warning ">
+                  <span><img src={Clock} alt="" className='' width={25} /></span>&nbsp; &nbsp;
+                  <span className='fw-bold'>01:03:59</span>
+
                   </div>
                 </div>
               </div>
@@ -81,6 +95,9 @@ return (
           </div>
         </div>
       </div>
+
+
+
 
       <div className="col-md-4  my-3">
 
