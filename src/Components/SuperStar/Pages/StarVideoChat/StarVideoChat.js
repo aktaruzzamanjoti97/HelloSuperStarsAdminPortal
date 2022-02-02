@@ -3,7 +3,7 @@ import { Link, useHistory} from 'react-router-dom';
 import Iframe from 'react-iframe';
 import "./StarVideoChat.css";
 // import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
-// import Chat from "../../../../../src/assets/images/meetupEvent/chat.png";
+import User from "../../../../assets/images/user1.png";
 import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
 import person from "../../../../../src/assets/images/meetupEvent/picci.png";
 import person2 from "../../../../../src/assets/images/meetupEvent/chulboro.png";
@@ -11,6 +11,7 @@ import person3 from "../../../../../src/assets/images/meetupEvent/mofiz.png";
 import message from "../../../../../src/assets/images/meetupEvent/message.png";
 import axios from "axios";
 import { Col, Nav, Row, Tab } from 'react-bootstrap';
+import StarComments from './StarComments';
 
 const StarVideoChat = (props) => {
 
@@ -88,7 +89,7 @@ return (
           <div className="d-flex TabCom ">
             <div className="TabBtn1 w-100 px-2">
               <Nav.Link eventKey="first" className='btn fw-bold text-dark bg-warning'>
-                <span> <img src={bubbleChat} className="img-fluid-Tab mx-2" alt="" /></span>
+                <span> <img src={User} className="img-fluid-Tab mx-2" alt="" /></span>
                 <span>User Portal</span>
               </Nav.Link>
             </div>
@@ -105,136 +106,12 @@ return (
               fewtrret
             </Tab.Pane>
             <Tab.Pane eventKey="second">
-            <div className="card  my-3 chatting-card text-light">
-          <div className="card-body ">
-            <div id="maincontainer">
-              <div id="childcontainer">
-                <div className="d-flex mb-3">
-                  <img src={person} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samsul Haque
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Vai swing er beper tah abar bolen!
-                    </small>
-                  </div>
-                </div>
-                <div className="d-flex mb-3">
-                  <img src={person2} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samshu alom
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Kops vai! wish me luck
-                    </small>
-                  </div>
-                </div>
-
-                <div className="d-flex mb-3">
-                  <img src={person3} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Asaduzzaman
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      How are you bro!{" "}
-                    </small>
-                  </div>
-                </div>
-
-                <div className="d-flex mb-3">
-                  <img src={person2} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samshu alom
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Kops vai! wish me luck
-                    </small>
-                  </div>
-                </div>
-
-                <div className="d-flex mb-3">
-                  <img src={person} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samsul Haque
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Vai swing er beper tah abar bolen!
-                    </small>
-                  </div>
-                </div>
-                <div className="d-flex mb-3">
-                  <img src={person2} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samshu alom
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Kops vai! wish me luck
-                    </small>
-                  </div>
-                </div>
-
-                <div className="d-flex mb-3">
-                  <img src={person3} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Asaduzzaman
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      How are you bro!{" "}
-                    </small>
-                  </div>
-                </div>
-
-                <div className="d-flex mb-3">
-                  <img src={person2} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samshu alom
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Kops vai! wish me luck
-                    </small>
-                  </div>
-                </div>
-                <div className="d-flex mb-3">
-                  <img src={person} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samsul Haque
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Vai swing er beper tah abar bolen!
-                    </small>
-                  </div>
-                </div>
-                <div className="d-flex mb-3">
-                  <img src={person2} alt="" height="40px" width="40px" className="chat-person-name" />
-                  <div className="live-info">
-                    <h6 className="mx-2 my-0  p-0 chat-person-name">
-                      Samshu alom
-                    </h6>
-                    <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                      Kops vai! wish me luck
-                    </small>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
+             <StarComments/>
             </Tab.Pane>
           </Tab.Content>
 
         </Tab.Container>
 
-        
       </div>
     </div>
 
