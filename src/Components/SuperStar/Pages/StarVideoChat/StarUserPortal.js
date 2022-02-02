@@ -1,30 +1,55 @@
 import React from 'react'
-import person from "../../../../../src/assets/images/meetupEvent/picci.png";
+import person from "../../../../assets/images/srabanti.jpg";
 
 const StarUserPortal = () => {
-  return (
-    <>
-       <div className="card  my-3 chatting-card text-light">
-        <div className="card-body ">
-            <div id="maincontainer">
-                <div id="childcontainer">
-                    <div className="d-flex mb-3">
-                        <img src={person} alt="" height="40px" width="40px" className="chat-person-name" />
-                        <div className="live-info">
-                            <h6 className="mx-2 my-0  p-0 chat-person-name">
-                                Samsul Haque
-                            </h6>
-                            <small className="mx-2 my-0 p-0 text-muted fw-bold">
-                                Vai swing er beper tah abar bolen!
-                            </small>
-                        </div>
-                    </div>
+return (
+<>
+
+    <div className="my-3 ">
+        <div className="bg-dark TabUsers">
+            <div className='row mx-2 '>
+
+                <div className="col-md-6 mt-3">
+                    <div className="container-Tab-User d-flex">
+                        <img src={person} alt="" className="UserTabImg" />
+                        <div className="UserTextTab1"></div>
+                        <div className="UserTextTab">Sahib All Hasan</div>
+                </div>
+            </div>
+
+            <div className="col-md-6 mt-3">
+                <div className="container-Tab-User d-flex">
+                    <img src={person} alt="" className="UserTabImg" />
+                    <div className="UserTextTab1"></div>
+                    <div className="UserTextTab">Tumpa </div>
+
+                </div>
+            </div>
+
+            <div className="col-md-6 mt-3">
+                <div className="container-Tab-User d-flex">
+                    <img src={person} alt="" className="UserTabImg" />
+                    <div className="UserTextTab1"></div>
+                    <div className="UserTextTab">Sharna Shaha</div>
+
+                </div>
+            </div>
+
+            <div className="col-md-6 mt-3">
+                <div className="container-Tab-User d-flex">
+                    <img src={person} alt="" className="UserTabImg" />
+                    <div className="UserTextTab1"></div>
+                    <div className="UserTextTab">Kajol Roy</div>
+
                 </div>
             </div>
         </div>
+        <br />
+
     </div>
-    </>
-  )
+    </div>
+</>
+)
 }
 
 export default StarUserPortal

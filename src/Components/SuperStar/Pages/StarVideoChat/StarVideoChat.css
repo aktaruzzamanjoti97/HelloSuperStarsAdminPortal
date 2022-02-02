@@ -56,5 +56,48 @@
     .img-fluid-Tab{
         width:20px;
     }
+    
   }
-  
+.TabUsers{
+    border-radius: 5px;
+}
+/* Container holding the image and the text */
+  .container-Tab-User {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  /* Bottom left text */
+  .UserTextTab1 {
+    position: absolute;
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(3, 0, 0, 0.514);
+}  
+.UserTextTab {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}  
+
+
+.UserTabImg{
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    border: 1px solid white;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+   
+    .UserTabImg{
+        width: 100%;
+        height: 220px;
+        border-radius: 5px;
+        border: 1px solid white;
+        object-fit: cover;
+    }
+  }
