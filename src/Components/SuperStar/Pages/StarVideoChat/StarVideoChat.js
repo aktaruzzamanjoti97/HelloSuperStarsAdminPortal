@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import Iframe from 'react-iframe';
+import { Nav, Tab } from 'react-bootstrap';
+import StarComments from './StarComments';
 import "./StarVideoChat.css";
-// import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
+
 import User from "../../../../assets/images/user1.png";
 import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
 import message from "../../../../../src/assets/images/meetupEvent/message.png";
+
 import axios from "axios";
-import { Nav, Tab } from 'react-bootstrap';
-import StarComments from './StarComments';
+import StarUserPortal from './StarUserPortal';
 
 const StarVideoChat = (props) => {
 
@@ -102,7 +104,7 @@ return (
 
             {/* Tab || User Portal  */}
             <Tab.Pane eventKey="first">
-              fewtrret
+              <StarUserPortal/>
             </Tab.Pane>
 
             {/* Tab || Comments  */}
