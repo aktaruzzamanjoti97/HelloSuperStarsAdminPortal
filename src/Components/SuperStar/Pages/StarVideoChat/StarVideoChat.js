@@ -5,12 +5,9 @@ import "./StarVideoChat.css";
 // import balhasan from "../../../../../src/assets/images/meetupEvent/balhasan.png";
 import User from "../../../../assets/images/user1.png";
 import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
-import person from "../../../../../src/assets/images/meetupEvent/picci.png";
-import person2 from "../../../../../src/assets/images/meetupEvent/chulboro.png";
-import person3 from "../../../../../src/assets/images/meetupEvent/mofiz.png";
 import message from "../../../../../src/assets/images/meetupEvent/message.png";
 import axios from "axios";
-import { Col, Nav, Row, Tab } from 'react-bootstrap';
+import { Nav, Tab } from 'react-bootstrap';
 import StarComments from './StarComments';
 
 const StarVideoChat = (props) => {
@@ -102,12 +99,17 @@ return (
           </div>
 
           <Tab.Content>
+
+            {/* Tab || User Portal  */}
             <Tab.Pane eventKey="first">
               fewtrret
             </Tab.Pane>
+
+            {/* Tab || Comments  */}
             <Tab.Pane eventKey="second">
              <StarComments/>
             </Tab.Pane>
+
           </Tab.Content>
 
         </Tab.Container>

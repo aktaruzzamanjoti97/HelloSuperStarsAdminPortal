@@ -1,11 +1,8 @@
 import React from 'react'
 
-import User from "../../../../assets/images/user1.png";
-import bubbleChat from "../../../../../src/assets/images/meetupEvent/bubble-chat 1.png";
 import person from "../../../../../src/assets/images/meetupEvent/picci.png";
 import person2 from "../../../../../src/assets/images/meetupEvent/chulboro.png";
 import person3 from "../../../../../src/assets/images/meetupEvent/mofiz.png";
-import message from "../../../../../src/assets/images/meetupEvent/message.png";
 
 const StarComments = () => {
   return (
