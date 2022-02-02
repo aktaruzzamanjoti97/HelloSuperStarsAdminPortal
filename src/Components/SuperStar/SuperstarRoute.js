@@ -39,6 +39,7 @@ import StarEventCategory from './Dashboard/StarEventCategory';
 import StarVideoJoin from './Dashboard/Content/StarVideoJoin';
 import StarNotifySchedule from '../Admin/Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule';
 import StartNotifyScheduleView from './Pages/NotifySuperstar/Content/StartNotifyScheduleView';
+import StarEventRequesting from './Dashboard/StarEventRequesting';
 
 
 
@@ -48,6 +49,7 @@ const SuperstarRoute = [
     { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: StarMainDashboard },
     { path: '/superstar/event-date', exact: true, name: 'Dashboard', component: StarDashEvent },
     { path: '/superstar/event-category', exact: true, name: 'Dashboard', component: StarEventCategory },
+    { path: '/superstar/event-requesting', exact: true, name: 'Dashboard', component: StarEventRequesting },
     { path: '/superstar/event-category/join', exact: true, name: 'Dashboard', component: StarVideoJoin },
 
     // Live Chat
@@ -90,18 +92,14 @@ const SuperstarRoute = [
 
     { path: '/superstar/upcoming-event', exact: true, name: 'upcoming-event', component: StarUpcomingEvent },
 
+    // Meetup Event
     { path: '/superstar/meetup-events/pending', exact: true, name: 'meetup-events', component: StarMeetUpEventList },
     { path: '/superstar/meetup-events/approved', exact: true, name: 'meetup-events', component: StarMeetUpEventListApproved },
-
     { path: '/superstar/join-meetup-events/:id', exact: true, name: 'join', component: JoinNoWMeetUp },
-
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
-    
-
-   
-
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
+    
     { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
     
     
