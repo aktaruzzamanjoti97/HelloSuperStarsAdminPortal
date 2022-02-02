@@ -14,9 +14,9 @@ return (
 <>
     <>
         <div className="card m-3 ">
-            <img src={Banner} alt="" className='BannerAGN' />
+            <img src={Banner} alt="" className='img-fluid BannerAGN' />
         </div>
-        <div className="NotifyGreetings d-flex">
+        <div className="row NotifyGreetings d-flex">
 
             <div className="LeftGNA col-8 m-3 d-flex">
                 <div className='NotifyOver w-100'>
@@ -57,7 +57,7 @@ return (
                         </tr>
                     </table>
 
-                    <div className="button mx-5">
+                    <div className="mx-5 mb-3">
                         <button className='btn btn-warning bg-warning mt-3  NotifyBtn' variant="primary" onClick={()=>
                             setModalShowl(true)}><i className="fas fa-bell"></i> Notify</button>
                         <NotifyModalAdmin show={modalShowl} onHide={()=> setModalShowl(false)} />
@@ -79,11 +79,11 @@ return (
                         industry's standard.
                     </p>
 
-                    <div className="d-flex p-2 w-50 buTon-a ">
+                    <div className="d-flex p-2  buTon-a CostWith ">
                         <span>
                             <img src={PriceTag} alt="" className='PriceTage' />
                         </span>
-                        <div className=" mx-2 ">
+                        <div className="mx-2 ">
                             <span className="text-light buTon-ab ">Cost</span>
                             <br></br>
                             <span className="text-light buTon-abc">1200 BDT</span>
