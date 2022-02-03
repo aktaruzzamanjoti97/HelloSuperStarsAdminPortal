@@ -53,6 +53,7 @@ import AdminEventCategory from "./Dashboard/AdminEventCategory";
 import AdminVideoJoin from "./Dashboard/Content/AdminVideoJoin";
 import NotifySchedule from "./Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule";
 import NotifyScheduleView from "./Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifyScheduleView";
+import AdminEventRequest from "./Dashboard/AdminEventRequest";
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -71,6 +72,7 @@ const AdminRoute = [
     { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
     { path: '/superstar-admin/event-date', exact: true, name: 'Dashboard', component: AdminDashEvent },
     { path: '/superstar-admin/event-category', exact: true, name: 'Dashboard', component: AdminEventCategory },
+    { path: '/superstar-admin/event-pending', exact: true, name: 'Dashboard', component: AdminEventRequest },
     { path: '/superstar-admin/event-category/join', exact: true, name: 'Dashboard', component: AdminVideoJoin },
 
     // Schedule Create Route
