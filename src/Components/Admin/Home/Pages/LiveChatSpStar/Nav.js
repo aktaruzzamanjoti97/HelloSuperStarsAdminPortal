@@ -36,29 +36,29 @@ const Nav = () => {
             title="Live Now"
             className="col-md-3 align-items-center justify-content-center "
           >
-            <div className="card ad-card SH-CARD-TSX">
+            <div className="card livechat-card SH-CARD-TSX">
               <div className="card-body  align-items-center">
                 <center>
                   <tr>
-                    <td className="ad-card-td">
+                    <td className="livechat-card-td">
                       <img
                         src={Approved}
-                        className="ad-card-img-top"
+                        className="livechat-card-img-top"
                         alt="..."
                       />
                     </td>
-                    <td className="ad-card-td">
-                      <small className="ad-card-small">{approved}</small>
+                    <td className="livechat-card-td">
+                      <small className="livechat-card-small">{approved}</small>
                     </td>
                   </tr>
                 </center>
               </div>
               <Link
                 to="/superstar-admin/live-chat"
-                className="card-footer ad-card-footer"
+                className="card-footer livechat-card-footer"
               >
                 <button
-                  className="ad-card-footer"
+                  className="livechat-card-footer"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
@@ -76,25 +76,25 @@ const Nav = () => {
             title="Live Now"
             className="col-md-3 align-items-center justify-content-center "
           >
-            <div className="card ad-card SH-CARD-TSX">
+            <div className="card livechat-card SH-CARD-TSX">
               <div className="card-body  align-items-center">
                 <center>
                   <tr>
-                    <td className="ad-card-td">
-                      <img src={Pending} className="ad-card-img-top" alt="..." />
+                    <td className="livechat-card-td">
+                      <img src={Pending} className="livechat-card-img-top" alt="..." />
                     </td>
-                    <td className="ad-card-td">
-                      <small className="ad-card-small">{pending}</small>
+                    <td className="livechat-card-td">
+                      <small className="livechat-card-small">{pending}</small>
                     </td>
                   </tr>
                 </center>
               </div>
               <Link
                 to="/superstar-admin/live-chat/pending"
-                className="card-footer ad-card-footer"
+                className="card-footer livechat-card-footer"
               >
                 <button
-                  className="ad-card-footer"
+                  className="livechat-card-footer"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
@@ -112,25 +112,25 @@ const Nav = () => {
             title="Live Now"
             className="col-md-3 align-items-center justify-content-center "
           >
-            <div className="card ad-card SH-CARD-TSX">
+            <div className="card livechat-card SH-CARD-TSX">
               <div className="card-body  align-items-center">
                 <center>
                   <tr>
-                    <td className="ad-card-td">
-                      <img src={Add} className="ad-card-img-top" alt="..." />
+                    <td className="livechat-card-td">
+                      <img src={Add} className="livechat-card-img-top" alt="..." />
                     </td>
-                    <td className="ad-card-td">
-                      <small className="ad-card-small"></small>
+                    <td className="livechat-card-td">
+                      <small className="livechat-card-small"></small>
                     </td>
                   </tr>
                 </center>
               </div>
               <Link
                 to="/superstar-admin/live-chat/live-event-create"
-                className="ad-card-footer"
+                className="livechat-card-footer"
               >
                 <button
-                  className="card-footer ad-card-footer"
+                  className="card-footer livechat-card-footer"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
