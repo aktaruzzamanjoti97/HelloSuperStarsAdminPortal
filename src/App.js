@@ -29,8 +29,6 @@ import HelloSuperStarShakib from './Components/Admin/Home/Pages/Congratulations/
 import SuperStarOTP from './Components/SuperStar/SuperStarOtp';
 import SuperStarRegistrationOTP from './Components/SuperStar/SuperStarRegistrationOtp';
 
-
-
 // Extra New Route
 import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/RegisterUser/component/RegisterLeftCard';
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
@@ -86,18 +84,13 @@ return (
       <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>
       
 
-
-
-
-
       {/* Private Route with Main Layout */}
       <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
       <SuperStarRoute path="/superstar" name="SuperStar" render={(props) => <StarLayout {...props} />} />
 
 
 
-      
-
+    
 
       {/* Superstar Route - Star| Sub Route  */}
       {/* <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>

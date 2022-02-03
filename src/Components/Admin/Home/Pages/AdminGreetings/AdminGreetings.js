@@ -1,9 +1,35 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './AdminGreetings.css';
+import Notify from '../AdminGreetings/NotifyGreetings/NotifyGreetingsContent';
+import axios from "axios";
+import swal from "sweetalert";
 
 const AdminGreetings = () => {
+    const [state, setstate] = useState();
+
+    useEffect(() => {
+        
+    // axios.get("/sanctum/csrf-cookie").then((response) => {
+    //     axios.get(`api/admin/greeting/status_check`).then((res) => {
+    //       if (res.data.status === 200) {
+  
+    //         //document.getElementById('input_form').reset();
+    //         swal("Success", res.data.message, "success");
+  
+    //       } else {
+    //         swal("error", "hello", "error");
+  
+    //       }
+    //     });
+    //   });
+
+    }, []);
+
+
     return (
+        <>
+
         <div className="">
             <div className="greetingsHeight d-flex justify-content-center align-items-center">
                 <div className="text-center">
@@ -23,6 +49,8 @@ const AdminGreetings = () => {
                 </div>
             </div>
         </div>
+        <Notify/>
+        </>
     );
 };
 
