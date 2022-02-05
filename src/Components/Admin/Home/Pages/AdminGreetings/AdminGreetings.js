@@ -1,10 +1,47 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AdminGreetings.css';
+import Notify from '../AdminGreetings/NotifyGreetings/NotifyGreetingsContent'
+import { useEffect } from 'react';
+import axios from "axios";
+import swal from "sweetalert";
+import { useState } from 'react';
 
 const AdminGreetings = () => {
+
+    const [greeting, setGreeting] = useState({
+        data: '',
+        status: null,
+
+    });
+
+  useEffect(() => {
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+        axios.get('/api/user/greetings_star_status').then((res) => {
+            if (res.data.status === 200) {
+                console.log(res.data.action);
+            setGreeting({
+                data: res.data.greeting,
+                status: res.data.action,
+            })
+          } else {
+            swal("error", "Data base Error", "error");
+  
+          }
+        });
+      });
+
+
+    }, []);
     return (
-        <div className="">
+        <>
+            {greeting.status ?
+                
+                <Notify greeting={greeting}/> 
+        
+        :
+            <div className="">
+            
             <div className="greetingsHeight d-flex justify-content-center align-items-center">
                 <div className="text-center">
                     <div className="box-open">
@@ -22,7 +59,14 @@ const AdminGreetings = () => {
 
                 </div>
             </div>
-        </div>
+            </div>
+        
+       
+        }
+            
+
+        
+        </>
     );
 };
 
