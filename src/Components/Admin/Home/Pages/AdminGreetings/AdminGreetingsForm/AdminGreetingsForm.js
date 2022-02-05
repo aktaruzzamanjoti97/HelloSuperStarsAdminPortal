@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useHistory} from 'react-router-dom';
-import "./AdminGreetingsForm.css";
-
+import axios from "axios";
+import { convertToHTML } from "draft-convert";
+import { ContentState, convertFromHTML, EditorState } from "draft-js";
+import moment from 'moment';
+import React, { useEffect, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState } from "draft-js";
-import { convertToHTML } from "draft-convert";
-import axios from "axios";
+import { useHistory } from 'react-router-dom';
 import swal from "sweetalert";
-import TextField from "@mui/material/TextField";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DateTimePicker from "@mui/lab/DateTimePicker";
-import moment from 'moment'
+import "./AdminGreetingsForm.css";
 
 
 
@@ -58,7 +53,11 @@ const AdminGreetingsForm = () => {
   const [convertedContent, setConvertedContent] = useState(null);
 
   const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
+      EditorState.createWithContent(
+        ContentState.createFromBlockArray(
+          convertFromHTML("<p>My initial content.</p>")
+        )
+      )
   );
 
   const handleEditorChange = (state) => {
@@ -78,13 +77,11 @@ const AdminGreetingsForm = () => {
 
     const fData = new FormData();
 
-    if(imagedata === null)
-    {
-        console.log('empty');
+    if (imagedata === null) {
+      console.log('empty');
     }
-    else
-    {
-        console.log('not empty');
+    else {
+      console.log('not empty');
     }
 
     fData.append("banner", imagedata);
@@ -100,7 +97,7 @@ const AdminGreetingsForm = () => {
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios.post(`api/admin/add_greetings`, fData).then((res) => {
         if (res.data.status === 200) {
-          
+
           //document.getElementById('input_form').reset();
           swal("Success", res.data.message, "success");
           history.push(`/superstar-admin/greetings/details/${res.data.greeting_id}`);
@@ -116,7 +113,7 @@ const AdminGreetingsForm = () => {
       });
     });
 
-    
+
   };
 
   return (
@@ -252,7 +249,7 @@ const AdminGreetingsForm = () => {
               </p>
             </div>
             <div className="col-md-10">
-                {/* <input
+              {/* <input
                 type="file"
                 onChange={(e) => handleChange(e.target.files)}
                 id="image"
@@ -263,8 +260,8 @@ const AdminGreetingsForm = () => {
                 <i class="fas fa-cloud-upload-alt"></i> Upload
                 </label> */}
 
-                <img src={file}  className="img-fluid avatar-img-src" alt=""/>
-                <input type="file" className="btn" onChange={(e) => handleChange(e.target.files)} id="image" name="image"/>
+              <img src={file} className="img-fluid avatar-img-src" alt="" />
+              <input type="file" className="btn" onChange={(e) => handleChange(e.target.files)} id="image" name="image" />
 
             </div>
           </div>

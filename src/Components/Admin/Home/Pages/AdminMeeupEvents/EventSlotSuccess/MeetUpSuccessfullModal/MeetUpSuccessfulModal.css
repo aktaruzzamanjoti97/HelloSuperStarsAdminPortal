@@ -1,0 +1,40 @@
+.meetUpSuccessModal .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #272627;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  max-width: 614px !important;
+  border: 5px solid gold !important;
+  border-radius: 10px;
+}
+
+.btnBackgroundRemove {
+  background-color: #272627 !important;
+  border: 0 !important;
+}
+
+.successfulText {
+  background: linear-gradient(
+    0deg,
+    rgba(195, 174, 34, 1) 0%,
+    rgba(253, 247, 45, 0.9220063025210083) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btnSuccessful {
+  background: linear-gradient(
+    0deg,
+    rgba(195, 174, 34, 1) 0%,
+    rgba(253, 247, 45, 0.9220063025210083) 100%
+  ) !important;
+  color: black;
+  
+}

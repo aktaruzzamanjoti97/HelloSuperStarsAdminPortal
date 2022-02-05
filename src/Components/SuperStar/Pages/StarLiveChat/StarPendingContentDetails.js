@@ -143,9 +143,15 @@ const StarPendingContentDetails = (props) => {
                     <button className='btn MEN-X fw-bold'>Approve </button>
                 </Link> */}
 
+
                 <button className='btn MEN-X fw-bold' onClick={handleClick}>Approve </button>
 
                 <button className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>
+                
+                <Link to={`/superstar/live-chat/edit-session/${event.id}`}>
+                  <button className='btn MEN-Y text-warning fw-bold px-3'>Edit</button>
+                </Link>
+                
             </div>
 
           </div>

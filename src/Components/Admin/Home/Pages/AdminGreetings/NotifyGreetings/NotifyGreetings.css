@@ -1,7 +1,8 @@
 
 .BannerAGN{
     border: 3px solid rgb(255, 174, 0);
-    height: 260px;
+    object-fit: cover;
+    max-height: 330px;
 }
 
 
@@ -155,12 +156,30 @@ table {
 .buTon-abc{
     font-size: 13px;
  }
-.NotiBtnts{
+.NotifyBtn{
     background-color: rgb(131, 130, 130) !important ;
     color: black;
+    width: 100px;
 }
 
-.NotiBtnts:hover{
-    background-color: rgb(6, 118, 247) !important ;
+.NotifyBtn:hover{
+    background-color: rgb(247, 211, 6) !important ;
     color: white !important;
 }
+
+.CostWith{
+    width: 170px !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .LeftGNA{
+        flex: 0 0 auto;
+        width: 90% !important;
+    }
+
+    .rightGNA{
+        flex: 0 0 auto;
+        width: 90% !important;
+    }
+  }

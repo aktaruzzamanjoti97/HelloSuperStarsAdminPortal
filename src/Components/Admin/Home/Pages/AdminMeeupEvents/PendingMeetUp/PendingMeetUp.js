@@ -8,6 +8,7 @@ import hotel from '../../../../../../assets/images/meetupEvent/unsplash_MXbM1NrR
 import clock from '../../../../../../assets/images/meetupEvent/clock.png'
 import EventDetails from '../EventDetails/EventDetails'
 import MeetUpEventNave from '../MeetUpEventNave';
+import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import axios from "axios";
 import { Markup } from 'interweave';
 import moment from 'moment';
@@ -77,10 +78,10 @@ const PendingMeetUp = (props) => {
 
        <div className="card event-card2">
            <div className="row">
-           <div className="col-md-6 d-flex justify-content-center align-items-center">
+           <div className="col-md-4 d-flex justify-content-center align-items-center">
                 <img src={clock} className="img-fluid p-3" alt="" />
              </div>
-             <div className="col-md-6 d-flex align-items-center">
+             <div className="col-md-4 d-flex align-items-center">
          <div>
          <h2 className='text-warning'>Event Details submitted</h2>
             <p className='text-light'>Waiting for &nbsp;
@@ -89,6 +90,34 @@ const PendingMeetUp = (props) => {
             </p>
          </div>
              </div>
+
+             <div className="col-md-4" style={{ borderLeft: "1px dashed yellow" }}>
+
+                            <h5 className='text-light text-center my-3'>Status</h5>
+                            <div className='d-flex justify-content-center align-items-center '>
+                                <div style={{ width: 200, height: 200 }}>
+                                    <CircularProgressbarWithChildren value={50} styles={buildStyles({
+
+
+                                        // Colors
+                                        pathColor: `gold`,
+
+                                    })}>
+
+                                        {/* <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" /> */}
+                                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                                            <strong className='text-light'>50% complete</strong>
+                                        </div>
+                                    </CircularProgressbarWithChildren>
+                                    <p className='text-warning text-center my-2'>Approve by Sakib Al Hasan</p>
+                                </div>
+
+                            </div>
+
+
+                          
+                        </div>
+
            </div>
      
        </div>

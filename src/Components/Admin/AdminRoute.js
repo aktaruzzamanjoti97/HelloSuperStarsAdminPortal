@@ -51,6 +51,9 @@ import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 import AdminDashEvent from "./Dashboard/AdminDashEvent";
 import AdminEventCategory from "./Dashboard/AdminEventCategory";
 import AdminVideoJoin from "./Dashboard/Content/AdminVideoJoin";
+import NotifySchedule from "./Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule";
+import NotifyScheduleView from "./Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifyScheduleView";
+import AdminEventRequest from "./Dashboard/AdminEventRequest";
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -69,6 +72,7 @@ const AdminRoute = [
     { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
     { path: '/superstar-admin/event-date', exact: true, name: 'Dashboard', component: AdminDashEvent },
     { path: '/superstar-admin/event-category', exact: true, name: 'Dashboard', component: AdminEventCategory },
+    { path: '/superstar-admin/event-pending', exact: true, name: 'Dashboard', component: AdminEventRequest },
     { path: '/superstar-admin/event-category/join', exact: true, name: 'Dashboard', component: AdminVideoJoin },
 
     // Schedule Create Route
@@ -87,7 +91,7 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/view', exact: true, name: 'LiveChat', component: SCheduleViewAdmin },
     { path: '/superstar-admin/live-chat/registeruser/:live_chat_id', exact: true, name: 'LiveChat', component: RegistertUser },
     { path: '/superstar-admin/live-chat/add-schedule', exact: true, name: 'LiveChat', component: AddSessionContent },
-    { path: '/superstar-admin/live-chat/chat-star-profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
+    { path: '/superstar-admin/live-chat/profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
 
     
 
@@ -128,6 +132,9 @@ const AdminRoute = [
 
     // Greetings Route
     { path: '/superstar-admin/greetings', exact: true, name: 'greetings', component: AdminGreetings },
+    { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
+    { path: '/superstar-admin/notify-schedule', exact: true, name: 'notify-schedule', component: NotifySchedule },
+    { path: '/superstar-admin/notify-schedule/view', exact: true, name: 'view', component: NotifyScheduleView },
     { path: '/superstar-admin/greetings/greetingsForm', exact: true, name: 'greetingsForm', component: AdminGreetingsForm },
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
@@ -139,7 +146,6 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
 
 
-    { path: '/superstar-admin/notify', exact: true, name: 'notify', component: Notify },
     
 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick}
