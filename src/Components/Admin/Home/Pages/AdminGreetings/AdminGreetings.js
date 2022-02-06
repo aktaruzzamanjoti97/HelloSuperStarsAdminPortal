@@ -2,10 +2,9 @@ import React,{useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './AdminGreetings.css';
 import Notify from '../AdminGreetings/NotifyGreetings/NotifyGreetingsContent'
-import { useEffect } from 'react';
 import axios from "axios";
 import swal from "sweetalert";
-import { useState } from 'react';
+
 
 const AdminGreetings = () => {
 
@@ -17,7 +16,7 @@ const AdminGreetings = () => {
 
   useEffect(() => {
     axios.get("/sanctum/csrf-cookie").then((response) => {
-        axios.get('/api/user/greetings_star_status').then((res) => {
+        axios.get('/api/admin/greetings_star_status').then((res) => {
             if (res.data.status === 200) {
                 console.log(res.data.action);
             setGreeting({
