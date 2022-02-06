@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import './AdminGreetings.css';
 import Notify from '../AdminGreetings/NotifyGreetings/NotifyGreetingsContent'
@@ -42,6 +42,7 @@ const AdminGreetings = () => {
         :
             <div className="">
             
+
             <div className="greetingsHeight d-flex justify-content-center align-items-center">
                 <div className="text-center">
                     <div className="box-open">
@@ -65,7 +66,6 @@ const AdminGreetings = () => {
         }
             
 
-        
         </>
     );
 };

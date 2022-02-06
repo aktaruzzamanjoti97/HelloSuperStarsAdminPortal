@@ -63,22 +63,22 @@
 }
 
 
-.ad-card{
+.livechat-card{
     background-color:#2D2D2D;
   }
-  .ad-card-td{
+  .livechat-card-td{
     padding: 5px;
   }
-  .ad-card-img-top{
+  .livechat-card-img-top{
     width: 60px;
   }
-  .ad-card-small{
+  .livechat-card-small{
     color: gold;
     font-size: 20px;
     text-transform: uppercase;
   }
   
-  .ad-card-footer{
+  .livechat-card-footer{
     background-color: #151515 !important ;
     text-align: center;
     border: none;

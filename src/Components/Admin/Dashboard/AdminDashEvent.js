@@ -44,7 +44,7 @@ return (
             </div>
 
             <div className="containerSa col-md-3 mb-3">
-                <Link to='/superstar-admin/event-category'>
+                <Link to='/superstar-admin/event-pending'>
                 <div className="ClassHeadPen">
                     <div class="container">
                         <div class="ClassHeadC">
