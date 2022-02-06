@@ -11,6 +11,12 @@ import StarLiveChatContent from './Pages/StarLiveChat/StarLiveChatContent';
 import StarLiveChatEdit from './Pages/StarLiveChat/StarEditSession';
 import JoinLiveChat from './Pages/StarLiveChat/RegisterUser/StarRegistertUser'
 
+import AllPost from "./Pages/StarPost/AllPost";
+import PendingPost from "./Pages/StarPost/PendingPost";
+import ApprovedPost from "./Pages/StarPost/ApprovedPost";
+import PostDetails from "./Pages/StarPost/PendingPostDetails";
+import CreatePost from "./Pages/StarPost/Content/AddSessionForm";
+
 
 import StarPendingContent from './Pages/StarLiveChat/StarPendingContent';
 import StarPendingContentDetails from './Pages/StarLiveChat/StarPendingContentDetails';
@@ -52,6 +58,14 @@ const SuperstarRoute = [
     { path: '/superstar/event-category', exact: true, name: 'Dashboard', component: StarEventCategory },
     { path: '/superstar/event-requesting', exact: true, name: 'Dashboard', component: StarEventRequesting },
     { path: '/superstar/event-category/join', exact: true, name: 'Dashboard', component: StarVideoJoin },
+
+    // Post Route
+    { path: '/superstar/post', exact: true, name: 'PendingPost', component: AllPost },
+    { path: '/superstar/post/create', exact: true, name: 'CreatePost', component: CreatePost },
+    { path: '/superstar/post/pending', exact: true, name: 'PendingPost', component: PendingPost },
+    { path: '/superstar/post/approved', exact: true, name: 'PendingPost', component: ApprovedPost },
+    { path: '/superstar/post/:id', exact: true, name: 'PendingPost', component: PostDetails },
+    { path: '/superstar/post/approved', exact: true, name: 'ApprovedPost', component: PendingPost },
 
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },

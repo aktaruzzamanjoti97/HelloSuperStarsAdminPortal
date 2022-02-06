@@ -7,8 +7,8 @@ import swal from "sweetalert";
 
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState } from "draft-js";
-import { convertToHTML, convertFromHTML } from "draft-convert";
+import { ContentState,  convertFromHTML,  EditorState } from "draft-js";
+import { convertToHTML } from "draft-convert";
 
 import Nav from "./Nav";
 
@@ -21,14 +21,17 @@ export default function AddSession(props) {
   const [convertedContent, setConvertedContent] = useState(null);
 
   const [editorState, setEditorState] = useState(() =>
-    EditorState.createEmpty()
+    EditorState.createWithContent(
+      ContentState.createFromBlockArray(
+        convertFromHTML("<p>My initial content.</p>")
+      )
+    )
   );
 
   const handleEditorChange = (state) => {
-    
     setEditorState(state);
     convertContentToHTML();
-    console.log('sonet',state)
+    console.log("sonet", state);
   };
 
   const convertContentToHTML = () => {

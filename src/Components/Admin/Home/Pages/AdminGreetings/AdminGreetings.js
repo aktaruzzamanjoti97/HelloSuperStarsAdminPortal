@@ -49,7 +49,7 @@ const AdminGreetings = () => {
                 </div>
             </div>
         </div>
-        <Notify/>
+        {/* <Notify/> */}
         </>
     );
 };
