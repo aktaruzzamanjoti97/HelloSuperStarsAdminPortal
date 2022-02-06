@@ -1,20 +1,41 @@
 import React from 'react'
 import './NotifyGreetings.css'
 import ReactPlayer from 'react-player'
-import Banner from '../../../../../../assets/images/SakibBanner.PNG'
+
 import Star from '../../../../../../assets/images/profileAvatar/Avater.png'
 import PriceTag from '../../../../../../assets/images/tagPrice.PNG'
 import NotifyModalAdmin from './NotifyModalAdmin'
-import { Link } from 'react-router-dom'
+import { Markup } from 'interweave';
+import { useEffect } from 'react'
+import axios from "axios";
+import swal from "sweetalert";
 
-const NotifyGreetingsContent = () => {
-const [modalShowl, setModalShowl] = React.useState(false);
+const NotifyGreetingsContent = ({ greeting }) => {
+    let base_url = "http://localhost:8000/"
+    const [modalShowl, setModalShowl] = React.useState(false);
+
+    useEffect(() => {
+        axios.get("/sanctum/csrf-cookie").then((response) => {
+            axios.get('/api/user/greetings_star_status').then((res) => {
+                if (res.data.status === 200) {
+
+
+              } else {
+                swal("error", "Data base Error", "error");
+      
+              }
+            });
+          }); 
+    },[])
+    
 
 return (
 <>
     <>
         <div className="card m-3 ">
-            <img src={Banner} alt="" className='img-fluid BannerAGN' />
+
+            <img src={base_url+greeting.data.banner} alt="" className='BannerAGN' />
+
         </div>
         <div className="row NotifyGreetings d-flex">
 
@@ -70,24 +91,24 @@ return (
             <div className="rightGNA col-3 mx-3 mt-4">
 
                 <div className='p-4'>
-                    <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing
-                        width="100%" height="100%" controls={false} />
-                    <p className='NotifyTp'>Get a wishful message from Sakib al hasan</p>
 
-                    <p className='NotifyTpx'>Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard.
-                    </p>
+                <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing width="100%" height="100%"
+                    controls={false} />
+                        <p className='NotifyTp'>{greeting.data.title}</p>
+                
+                        <p className='NotifyTpx'>
+                        <Markup content={greeting.data.description}/>   
+                        </p>
 
-                    <div className="d-flex p-2  buTon-a CostWith ">
-                        <span>
-                            <img src={PriceTag} alt="" className='PriceTage' />
-                        </span>
-                        <div className="mx-2 ">
-                            <span className="text-light buTon-ab ">Cost</span>
-                            <br></br>
-                            <span className="text-light buTon-abc">1200 BDT</span>
-                        </div>
+                <div className="d-flex p-2 w-50 buTon-a ">
+                    <span>
+                        <img src={PriceTag} alt="" className='PriceTage'/>
+                    </span>
+                    <div className=" mx-2 ">
+                        <span className="text-light buTon-ab ">Cost</span>
+                        <br></br>
+                        <span className="text-light buTon-abc">{greeting.data.cost} BDT</span>
+
                     </div>
 
                     <div className="d-flex">
