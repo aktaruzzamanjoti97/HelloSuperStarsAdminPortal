@@ -9,16 +9,21 @@ import { Markup } from 'interweave';
 import { useEffect } from 'react'
 import axios from "axios";
 import swal from "sweetalert";
+import { useState } from 'react'
+import moment from 'moment';
+
 
 const NotifyGreetingsContent = ({ greeting }) => {
     let base_url = "http://localhost:8000/"
     const [modalShowl, setModalShowl] = React.useState(false);
+    const [greetingList, setGreetingList] = useState([]);
 
     useEffect(() => {
         axios.get("/sanctum/csrf-cookie").then((response) => {
-            axios.get('/api/user/greetings_star_status').then((res) => {
+            axios.get('/api/user/greetings_register_list').then((res) => {
                 if (res.data.status === 200) {
-
+                    console.log(res.data.list);
+                    setGreetingList(res.data.list)
 
               } else {
                 swal("error", "Data base Error", "error");
@@ -37,43 +42,21 @@ return (
         <div className="NotifyGreetings d-flex">
 
             <div className="LeftGNA col-8 m-3 d-flex">
-                <div className='NotifyOver w-100'>
-                    <table className='w-100 my-3 NotifyTabletd '>
-                        <tr className='NotifyTable mx-3'>
-                            <td className='Notifytd '><input type="checkbox" /></td>
-                            <td className='Notifytdx  lNTS'> <img src={Star} className='NotifyAimg' alt="" /> Shakib All
-                                Hasan</td>
-                            <td className='Notifytdx'>21/12/1998</td>
-                            <td className='Notifytdx rNTS'>Birthday</td>
-                        </tr>
-                    </table>
-                    <table className='w-100 my-3 NotifyTabletd '>
-                        <tr className='NotifyTable mx-3'>
-                            <td className='Notifytd '><input type="checkbox" /></td>
-                            <td className='Notifytdx  lNTS'> <img src={Star} className='NotifyAimg' alt="" /> Shakib All
-                                Hasan</td>
-                            <td className='Notifytdx'>21/12/1998</td>
-                            <td className='Notifytdx rNTS'>Birthday</td>
-                        </tr>
-                    </table>
-                    <table className='w-100 my-3 NotifyTabletd '>
-                        <tr className='NotifyTable mx-3'>
-                            <td className='Notifytd '><input type="checkbox" /></td>
-                            <td className='Notifytdx  lNTS'> <img src={Star} className='NotifyAimg' alt="" /> Shakib All
-                                Hasan</td>
-                            <td className='Notifytdx'>21/12/1998</td>
-                            <td className='Notifytdx rNTS'>Birthday</td>
-                        </tr>
-                    </table>
-                    <table className='w-100 my-3 NotifyTabletd '>
-                        <tr className='NotifyTable mx-3'>
-                            <td className='Notifytd '><input type="checkbox" /></td>
-                            <td className='Notifytdx  lNTS'> <img src={Star} className='NotifyAimg' alt="" /> Shakib All
-                                Hasan</td>
-                            <td className='Notifytdx'>21/12/1998</td>
-                            <td className='Notifytdx rNTS'>Birthday</td>
-                        </tr>
-                    </table>
+                    <div className='NotifyOver w-100'>
+                   
+                        {greetingList.map(data =>
+                        
+                        <table className='w-100 my-3 NotifyTabletd '>
+                            <tr className='NotifyTable mx-3'>
+                                <td className='Notifytd '><input type="checkbox" /></td>
+                                    <td className='Notifytdx  lNTS'> <img src={Star} className='NotifyAimg' alt="" />{data.user.first_name } {data.user.last_name }</td>
+                                <td className='Notifytdx'>{moment(data.request_time).format('LL')}</td>
+                                <td className='Notifytdx rNTS'>{moment(data.request_time).format('LT')}</td>
+                            </tr>
+                        </table>
+                        )}           
+                           
+
 
                     <div className="button mx-5">
                     <button className='btn btn-warning bg-warning mt-3  NotiBtnts'variant="primary" onClick={()=>
