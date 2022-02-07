@@ -52,7 +52,7 @@ const SuperStarRoute = ({ component: Component, ...rest })=> {
             if(error.response.status === 403)
             {
                 swal("Forbidden",error.response.data.message,"warning");
-                history.push('/');
+                history.push('/superstar/dashboard');
             }
             else if(error.response.status === 404)
             {
@@ -74,7 +74,7 @@ const SuperStarRoute = ({ component: Component, ...rest })=> {
             render={ ({props, location}) =>  
                 Authenticated ?
                 ( <StarLayout {...props} /> ) : 
-                ( <Redirect to= {{pathname: "/", state: {from: location} }} /> )
+                ( <Redirect to= {{pathname: "/superstar/dashboard", state: {from: location} }} /> )
                 
             } 
         /> 

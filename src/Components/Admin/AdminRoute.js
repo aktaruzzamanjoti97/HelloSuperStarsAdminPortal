@@ -36,6 +36,12 @@ import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/Lea
 import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
 import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
 
+import AllPost from "../Admin/Home/Pages/AdminPost/AllPost";
+import PendingPost from "../Admin/Home/Pages/AdminPost/PendingPost";
+import PendingPostDetails from "../Admin/Home/Pages/AdminPost/PendingPostDetails";
+import ApprovedPost from "../Admin/Home/Pages/AdminPost/ApprovedPost";
+import CreatePost from "../Admin/Home/Pages/AdminPost/Content/AddSessionForm";
+
 
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
 import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
@@ -77,6 +83,14 @@ const AdminRoute = [
 
     // Schedule Create Route
     { path: '/superstar-admin/schedule-create', exact: true, name: 'schedule-create', component: ScheduleCreate },
+
+    // Post Route
+    { path: '/superstar-admin/post', exact: true, name: 'PendingPost', component: AllPost },
+    { path: '/superstar-admin/post/create', exact: true, name: 'CreatePost', component: CreatePost },
+    { path: '/superstar-admin/post/pending', exact: true, name: 'PendingPost', component: PendingPost },
+    { path: '/superstar-admin/post/pending/:id', exact: true, name: 'PendingPost', component: PendingPostDetails },
+    { path: '/superstar-admin/post/approved', exact: true, name: 'ApprovedPost', component: ApprovedPost },
+    
 
     // Live Chat Route
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },

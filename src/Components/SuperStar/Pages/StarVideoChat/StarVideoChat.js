@@ -41,6 +41,10 @@ console.log(res.data.meetup);
 }, [props.match.params.id, history]);
 
 return (
+
+
+
+
 <div className="main-div-star">
 
   <div className="container-fluid">

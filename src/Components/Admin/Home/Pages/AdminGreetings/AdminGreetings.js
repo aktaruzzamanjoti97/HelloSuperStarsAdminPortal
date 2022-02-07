@@ -59,12 +59,11 @@ const AdminGreetings = () => {
 
                 </div>
             </div>
-            </div>
+           </div>
         
        
         }
             
-
         </>
     );
 };
