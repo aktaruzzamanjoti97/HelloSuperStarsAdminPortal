@@ -18,7 +18,6 @@ const AdminGreetings = () => {
     axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.get('/api/admin/greetings_star_status').then((res) => {
             if (res.data.status === 200) {
-                console.log(res.data.action);
             setGreeting({
                 data: res.data.greeting,
                 status: res.data.action,

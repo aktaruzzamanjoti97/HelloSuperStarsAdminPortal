@@ -14,8 +14,14 @@ const NotifyGreetingsContent = ({ greeting }) => {
     let base_url = "http://localhost:8000/"
     const [modalShowl, setModalShowl] = React.useState(false);
     const [greetingList, setGreetingList] = useState([]);
+    const [Checked, setChecked] = useState([]);
+  
 
     useEffect(() => {
+        getAllGreetingReg()
+    }, [])
+    
+    const getAllGreetingReg = () => {
         axios.get("/sanctum/csrf-cookie").then((response) => {
             axios.get('/api/admin/greetings_register_list/'+greeting.data.id).then((res) => {
                 if (res.data.status === 200) {
@@ -28,8 +34,23 @@ const NotifyGreetingsContent = ({ greeting }) => {
               }
             });
           }); 
-    },[])
+    }
+
+    const handelCheckBox = (value) => {
+        const currentIndex = Checked.indexOf(value);
+
+        const newChecked = [...Checked];
     
+        if (currentIndex === -1) {
+            newChecked.push(value)
+        } else {
+            newChecked.splice(currentIndex, 1)
+        }
+    
+        setChecked(newChecked)
+    }
+    
+    // console.log(Checked);
 return (
 <>
     <>
@@ -45,8 +66,8 @@ return (
                         
                         <table className='w-100 my-3 NotifyTabletd '>
                             <tr className='NotifyTable mx-3'>
-                                <td className='Notifytd '><input type="checkbox" /></td>
-                                    <td className='Notifytdx  lNTS'> <img src="" className='NotifyAimg' alt="" />{data.user.first_name } {data.user.last_name }</td>
+                                <td className='Notifytd '><input type="checkbox" value={data.user.id} onChange={()=>handelCheckBox(data.user.id)}/></td>
+                                    <td className='Notifytdx  lNTS'> <img src={base_url+data.user.image} className='NotifyAimg' alt="profile" />{data.user.first_name } {data.user.last_name }</td>
                                 <td className='Notifytdx'>{moment(data.request_time).format('LL')}</td>
                                 <td className='Notifytdx rNTS'>{moment(data.request_time).format('LT')}</td>
                             </tr>
@@ -58,7 +79,7 @@ return (
                     <div className="button mx-5">
                     <button className='btn btn-warning bg-warning mt-3  NotiBtnts'variant="primary" onClick={()=>
                             setModalShowl(true)}><i className="fas fa-bell"></i> Notify</button>
-                    <NotifyModalAdmin show={modalShowl} onHide={()=> setModalShowl(false)} />
+                            <NotifyModalAdmin show={modalShowl} onHide={() => setModalShowl(false)} users_id={Checked} setModal={setModalShowl}/>
                 </div>
                 
                 </div>
