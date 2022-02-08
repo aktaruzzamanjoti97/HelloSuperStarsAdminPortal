@@ -15,6 +15,7 @@ const NotifyGreetingsContent = ({ greeting }) => {
     const [modalShowl, setModalShowl] = React.useState(false);
     const [greetingList, setGreetingList] = useState([]);
     const [Checked, setChecked] = useState([]);
+    const [regGreId, setregGreId] = useState([]);
   
 
     useEffect(() => {
@@ -36,21 +37,27 @@ const NotifyGreetingsContent = ({ greeting }) => {
           }); 
     }
 
-    const handelCheckBox = (value) => {
-        const currentIndex = Checked.indexOf(value);
+    const handelCheckBox = (user_id, greetings_id) => {
+        const currentIndex = Checked.indexOf(user_id);
 
         const newChecked = [...Checked];
+        const newRegGreId = [...regGreId];
     
         if (currentIndex === -1) {
-            newChecked.push(value)
+            newChecked.push(user_id)
+            newRegGreId.push(greetings_id)
+
         } else {
             newChecked.splice(currentIndex, 1)
+            newRegGreId.splice(currentIndex, 1)
         }
     
         setChecked(newChecked)
+        setregGreId(newRegGreId)
     }
     
     // console.log(Checked);
+    // console.log(regGreId);
 return (
 <>
     <>
@@ -65,9 +72,16 @@ return (
                         {greetingList.map(data =>
                         
                         <table className='w-100 my-3 NotifyTabletd '>
-                            <tr className='NotifyTable mx-3'>
-                                <td className='Notifytd '><input type="checkbox" value={data.user.id} onChange={()=>handelCheckBox(data.user.id)}/></td>
-                                    <td className='Notifytdx  lNTS'> <img src={base_url+data.user.image} className='NotifyAimg' alt="profile" />{data.user.first_name } {data.user.last_name }</td>
+                                <tr className='NotifyTable mx-3'>
+                                   
+                                    <td className='Notifytd'>
+                                        {data.notification_at ?
+                                            "":
+                                            <input type="checkbox" value={data.user.id} onChange={() => handelCheckBox(data.user.id, data.id)} />
+                                    }
+                                    </td>
+                                    
+                                    <td className='Notifytdx lNTS'> <img src={base_url+data.user.image} className='NotifyAimg' alt="profile" />{data.user.first_name } {data.user.last_name }</td>
                                 <td className='Notifytdx'>{moment(data.request_time).format('LL')}</td>
                                 <td className='Notifytdx rNTS'>{moment(data.request_time).format('LT')}</td>
                             </tr>
@@ -76,10 +90,16 @@ return (
                            
 
 
-                    <div className="button mx-5">
-                    <button className='btn btn-warning bg-warning mt-3  NotiBtnts'variant="primary" onClick={()=>
-                            setModalShowl(true)}><i className="fas fa-bell"></i> Notify</button>
-                            <NotifyModalAdmin show={modalShowl} onHide={() => setModalShowl(false)} users_id={Checked} setModal={setModalShowl}/>
+                        <div className="button mx-5">
+                            {Checked.length > 0 ?
+                   
+                   <button className='btn btn-warning bg-warning mt-3  NotiBtnts'variant="primary" onClick={()=>
+                               setModalShowl(true)}><i className="fas fa-bell"></i> Notify</button>
+                        :
+                        ""
+                    }   
+                            
+                            <NotifyModalAdmin show={modalShowl} onHide={() => setModalShowl(false)} users_id={Checked} setModal={setModalShowl} setGreetingList={setGreetingList} greeting_id={greeting.data.id} greetings_reg_id={regGreId} setChecked={setChecked}/>
                 </div>
                 
                 </div>
