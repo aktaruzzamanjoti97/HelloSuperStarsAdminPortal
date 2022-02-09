@@ -1,9 +1,9 @@
 import React from 'react'
-import SouvenirNav from '../SouvenirNav'
-import LiveIcon from '../../../../../../assets/images/Souvenir/live.png'
-import LiveI from '../../../../../../assets/images/Souvenir/LivwNow.png'
-import Man from '../../../../../../assets/images/Souvenir/3201.png'
-import Men from '../../../../../../assets/images/Souvenir/bid.png'
+import SouvenirNav from '../../../../SouvenirNav'
+import LiveIcon from '../../../../../../../../../assets/images/Souvenir/live.png'
+import LiveI from '../../../../../../../../../assets/images/Souvenir/LivwNow.png'
+import Man from '../../../../../../../../../assets/images/Souvenir/3201.png'
+import Men from '../../../../../../../../../assets/images/Souvenir/bid.png'
 
 import './Souvenir-Live.css'
 const LiveNowSouvenir = () => {
