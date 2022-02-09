@@ -31,10 +31,12 @@ import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
-import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
-import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
-import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
-import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
+//import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+// import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
+
+
+// import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
+// import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
 
 import AllPost from "../Admin/Home/Pages/AdminPost/AllPost";
 import PendingPost from "../Admin/Home/Pages/AdminPost/PendingPost";
@@ -42,15 +44,23 @@ import PendingPostDetails from "../Admin/Home/Pages/AdminPost/PendingPostDetails
 import ApprovedPost from "../Admin/Home/Pages/AdminPost/ApprovedPost";
 import CreatePost from "../Admin/Home/Pages/AdminPost/Content/AddSessionForm";
 
+import LearningSession from "../Admin/Home/Pages/AdminLearningSession/AllPost";
+import PendingLearningSession from "../Admin/Home/Pages/AdminLearningSession/PendingPost";
+import PendingLearningSessionDetails from "../Admin/Home/Pages/AdminLearningSession/PendingPostDetails";
+import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
+import CreateLearningSession from "../Admin/Home/Pages/AdminLearningSession/Content/AddSessionForm";
+
 
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
 import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
 import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
 import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
 import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
-import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
-import ScheduleLearnView from "./Home/Pages/AdminLearningSession/AddSession/Content/ScheduleLearnView";
-import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSession/Content/AdminLearningSessionEventCreate";
+
+// import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
+// import ScheduleLearnView from "./Home/Pages/AdminLearningSession old/AddSession/Content/ScheduleLearnView";
+// import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSessionContent";
+
 import AddSessionForm from "./Home/Pages/LiveChatSpStar/Content/AddSessionForm";
 import EventScheduleDatePick from '../Admin/Home/Pages/ScheduleCreate/EventScheduleDatePick/EventScheduleDatePick'
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
@@ -90,6 +100,21 @@ const AdminRoute = [
     { path: '/superstar-admin/post/pending', exact: true, name: 'PendingPost', component: PendingPost },
     { path: '/superstar-admin/post/pending/:id', exact: true, name: 'PendingPost', component: PendingPostDetails },
     { path: '/superstar-admin/post/approved', exact: true, name: 'ApprovedPost', component: ApprovedPost },
+
+    // Learning Session Route
+    { path: '/superstar-admin/learning-session', exact: true, name: 'learning-session', component: LearningSession },
+    { path: '/superstar-admin/learning-session/create', exact: true, name: 'CreatePost', component: CreateLearningSession },
+    { path: '/superstar-admin/learning-session/pending', exact: true, name: 'learning-session', component: PendingLearningSession },
+    { path: '/superstar-admin/learning-session/pending/:id', exact: true, name: 'learning-session', component: PendingLearningSessionDetails },
+    { path: '/superstar-admin/learning-session/approved', exact: true, name: 'ApprovedPost', component: ApprovedLearningSession },
+
+
+    // { path: '/superstar-admin/learning-session/schedule', exact: true, name: 'schedule', component: LearningAddSession },
+    // { path: '/superstar-admin/learning-session/schedule-view', exact: true, name: 'schedule-view', component: ScheduleLearnView},
+    // { path: '/superstar-admin/live-chat/learning-session/event-create', exact: true, name: 'event-create', component: AdminLearningSessionEventCreate },
+
+    // { path: '/superstar-admin/learning-session/video', exact: true, name: 'video', component: LearningVideoAdmin },
+    // { path: '/superstar-admin/learning-session/video-chat-message', exact: true, name: 'video-chat-message', component: LearningVideoChatAdmin },
     
 
     // Live Chat Route
@@ -118,14 +143,7 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
 
-    // Learning Session Route
-    { path: '/superstar-admin/learning-session', exact: true, name: 'learning-session', component: LiveSession },
-    { path: '/superstar-admin/learning-session/schedule', exact: true, name: 'schedule', component: LearningAddSession },
-    { path: '/superstar-admin/learning-session/schedule-view', exact: true, name: 'schedule-view', component: ScheduleLearnView},
-    { path: '/superstar-admin/live-chat/learning-session/event-create', exact: true, name: 'event-create', component: AdminLearningSessionEventCreate },
-
-    { path: '/superstar-admin/learning-session/video', exact: true, name: 'video', component: LearningVideoAdmin },
-    { path: '/superstar-admin/learning-session/video-chat-message', exact: true, name: 'video-chat-message', component: LearningVideoChatAdmin },
+    
 
     // Route
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
