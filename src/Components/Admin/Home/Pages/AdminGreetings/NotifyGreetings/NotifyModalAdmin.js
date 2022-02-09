@@ -9,22 +9,22 @@ import axios from "axios";
 export default function NotifyModalAdmin(props) {
     const [notificationText, SetNotificationText] = useState("");
 
-   
+    console.log();
 
     const HandelNotificationSent = () => {
-        // console.log(notificationText)
-        // console.log(props.users_id)
+    
         
         const Data = new FormData();
         Data.append('users', props.users_id)
         Data.append('msg', notificationText)
+        Data.append('greetings_id', props.greetings_reg_id)
+        Data.append('greeting_id', props.greeting_id)
             
         axios.get("/sanctum/csrf-cookie").then((response) => {
             axios.post("api/admin/sent_notofiaction_user",Data).then((res) => {
                 if (res.data.status === 200) {
-                    console.log("done");
-                    console.log('array_check',res.rata.array)
-                    
+                    props.setGreetingList(res.data.list) 
+                    props.setChecked([]);
                 }
             });
             });
