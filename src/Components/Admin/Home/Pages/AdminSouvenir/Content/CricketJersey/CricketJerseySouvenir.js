@@ -3,7 +3,11 @@ import Fly from '../../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljt
 import calendar from '../../../../../../../assets/images/meetupEvent/calendar.png'
 import Clock from '../../../../../../../assets/images/meetupEvent/clock-icon.png'
 import './CricketJer.css'
+import { useHistory } from 'react-router-dom'
 const CricketJerseySouvenir = () => {
+
+    let history = useHistory();
+
 return (
 <div>
     <div className="row my-3">
@@ -49,7 +53,7 @@ return (
                 </div>
             </div>
 
-            <button className='btn Cri-btn-x border-warning fw-bold px-5'>Approve </button>
+            <button onClick={() => history.push('/superstar-admin/souvenir/sold')} className='btn Cri-btn-x border-warning fw-bold px-5'>Confirm </button>
             <button className='btn border-warning fw-bold mx-3  px-5 Cri-btn'>Edit</button>
 
         </div>

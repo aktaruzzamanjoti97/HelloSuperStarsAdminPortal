@@ -1,4 +1,18 @@
-.product-card{
-    border: 2px solid yellow;
-    background: #2D2D2D !important;
+.product-card {
+  border: 2px solid yellow;
+  background: #2d2d2d !important;
+  padding: 10px;
+}
+
+.icon-soldProduct {
+  color: white;
+}
+
+.bg-gray {
+  background-color: #737373;
+  border-radius: 10px;
+}
+
+.img-style-sold {
+  width: 100%;
 }

@@ -1,15 +1,10 @@
-import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { TextField } from '@mui/material';
 import { convertToHTML } from 'draft-convert';
 import { EditorState } from 'draft-js';
 import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
-import TimePicker from 'react-multi-date-picker/plugins/time_picker';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const AddProductFromMarketPlace = () => {
-    let history = useHistory();
+const EditProductMarketPlace = () => {
 
     const [convertedContent, setConvertedContent] = useState(null);
 
@@ -28,11 +23,7 @@ const AddProductFromMarketPlace = () => {
         console.log(convertedContent);
     };
 
-    const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
 
-    const handleChange = (newValue) => {
-        setValue(newValue);
-    };
 
     return (
         <div className="AS m-3">
@@ -101,7 +92,7 @@ const AddProductFromMarketPlace = () => {
                                         <p className="ms-4"><big>Price</big></p>
                                     </div>
                                     <div className="col-md-9">
-                                    <input type="number" className="form-control input-gray" />
+                                        <input type="number" className="form-control input-gray" />
                                         {/* <input type="number" className="form-control input-gray" /> */}
                                     </div>
                                 </div>
@@ -111,41 +102,41 @@ const AddProductFromMarketPlace = () => {
 
 
                         {/* <div className="row my-4">
-                        <div className="col-md-1 text-white">
-                            <p><big>Deadline</big></p>
-                        </div>
+                    <div className="col-md-1 text-white">
+                        <p><big>Deadline</big></p>
+                    </div>
 
-                        <div className="col-md-10">
-                            <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                
-                                <div className="row dateDesktopPicker">
-                                    <div className="col-md-3">
-                                    <DesktopDatePicker
-                                        label="Date desktop"
-                                        inputFormat="MM/dd/yyyy"
-                                        value={value}
-                                        onChange={handleChange}
-                                        renderInput={(params) => <TextField {...params} />}
-                                    />
-                                    </div>
-                                    <div className="col-md-3">
-                                    <TimePicker
-                                        
-                                        label="Time"
-                                        value={value}
-                                        onChange={handleChange}
-                                        renderInput={(params) => <TextField {...params} />}
-                                    />
-                                    </div>
-                                    
-                                    
+                    <div className="col-md-10">
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            
+                            <div className="row dateDesktopPicker">
+                                <div className="col-md-3">
+                                <DesktopDatePicker
+                                    label="Date desktop"
+                                    inputFormat="MM/dd/yyyy"
+                                    value={value}
+                                    onChange={handleChange}
+                                    renderInput={(params) => <TextField {...params} />}
+                                />
                                 </div>
+                                <div className="col-md-3">
+                                <TimePicker
+                                    
+                                    label="Time"
+                                    value={value}
+                                    onChange={handleChange}
+                                    renderInput={(params) => <TextField {...params} />}
+                                />
+                                </div>
+                                
+                                
+                            </div>
 
 
-                        
-                            </LocalizationProvider>
-                        </div>
-                    </div> */}
+                    
+                        </LocalizationProvider>
+                    </div>
+                </div> */}
 
 
 
@@ -166,45 +157,45 @@ const AddProductFromMarketPlace = () => {
                             </div>
                         </div>
                         {/* <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Upload Video</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                            </div>
-                        </div> */}
-                        {/* </div> */}
-                        {/* <div className="col-md-4">
-                        <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Star 1 Template</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-
-                            </div>
+                        <div className="col-md-3 text-white">
+                            <p><big>Upload Video</big></p>
                         </div>
-                        <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Star 2 Template</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                            </div>
-                        </div>
-                        <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Star 3 Template</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                            </div>
+                        <div className="col-md-9">
+                            <input type="file" name="file" id="file" className="inputfile" />
+                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
                         </div>
                     </div> */}
+                        {/* </div> */}
+                        {/* <div className="col-md-4">
+                    <div className="row my-4">
+                        <div className="col-md-3 text-white">
+                            <p><big>Star 1 Template</big></p>
+                        </div>
+                        <div className="col-md-9">
+                            <input type="file" name="file" id="file" className="inputfile" />
+                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+
+                        </div>
+                    </div>
+                    <div className="row my-4">
+                        <div className="col-md-3 text-white">
+                            <p><big>Star 2 Template</big></p>
+                        </div>
+                        <div className="col-md-9">
+                            <input type="file" name="file" id="file" className="inputfile" />
+                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                        </div>
+                    </div>
+                    <div className="row my-4">
+                        <div className="col-md-3 text-white">
+                            <p><big>Star 3 Template</big></p>
+                        </div>
+                        <div className="col-md-9">
+                            <input type="file" name="file" id="file" className="inputfile" />
+                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                        </div>
+                    </div>
+                </div> */}
 
 
                         {/* </div> */}
@@ -215,7 +206,7 @@ const AddProductFromMarketPlace = () => {
 
                         <div className="mt-3">
                             <Link to="/superstar-admin/souvenir/edit-jersey">
-                                <button onClick={() => history.pushState('/superstar-admin/souvenir/edit-jersey')} className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
+                                <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
                         </div>
@@ -227,4 +218,4 @@ const AddProductFromMarketPlace = () => {
     );
 };
 
-export default AddProductFromMarketPlace;
+export default EditProductMarketPlace;

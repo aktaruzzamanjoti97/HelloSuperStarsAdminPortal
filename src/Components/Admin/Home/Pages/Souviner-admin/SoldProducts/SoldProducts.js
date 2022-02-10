@@ -1,10 +1,21 @@
-import React from "react";
-import "./SoldProducts.css";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import bat from "../../../../../../assets/images/Souvenir/bat.png";
-import bal from "./../../../../../../assets/images/Souvenir/ball.png";
 import cricketJersy from "../../../../../../assets/images/Souvenir/footbal-jersey.png";
 import Shoe from "../../../../../../assets/images/Souvenir/shoe.png";
+import bal from "./../../../../../../assets/images/Souvenir/ball.png";
+import DeleteProductModal from "./DeleteProductModal/DeleteProductModal";
+import "./SoldProducts.css";
 const SoldProducts = () => {
+  const [modalShow, setModalShow] = useState(false);
+
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/superstar-admin/souvenir/edit-marketplace");
+  }
+
+
   return (
     <div className="container-fluid">
       <div className="container-lg">
@@ -14,102 +25,178 @@ const SoldProducts = () => {
             <div className="card  product-card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-md-6 text-center mb-2">
+                  <div className="col-md-6 d-flex justify-content-center text-center mb-2 px-4">
                     <img src={bat} className="img-fluid" alt="" />
                   </div>
                   <div className="col-md-6 text-center">
-                    <h5 className="text-light mb-3">Cricket Jersey</h5>
-                    <div className="">
-                      <div className="row">
-                        <div className="col-4">
-                          <p className="text-light">Released</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">12-12-2021</p>
-                        </div>
+                    <h5 className="text-light">Cricket Jersey</h5>
+                    <small className="text-muted">Released on 12-12-2021</small>
 
-                        <div className="col-4">
-                          <p className="text-light">Sold</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">19-12-2021</p>
-                        </div>
+                    <p className='text-white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit delectus, assumenda vitae iusto odio quibusdam.</p>
+                    <div className="row">
+                      <div className="col-md-11">
+                        <div className="row">
+                          <div className="row bg-gray">
+                            <div className="col-4">
+                              <small className="text-light">Released</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">12-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Price</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">$150</p>
-                        </div>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Sold</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">19-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Owner</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Shakib Al hasan</p>
-                        </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Buyer </p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Abdullah</p>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Price</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">$150</small>
+                            </div>
+                          </div>
+
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Owner</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Shakib Al hasan</small>
+                            </div>
+                          </div>
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Buyer </small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Abdullah</small>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <div className="col-md-1">
+                        <div className="d-flex justify-content-center align-items-center mt-5">
+                          <div className="">
+                            <div className="d-flex mt-2">
+                              <button type="button" onClick={handleClick} className="btn btn-warning"><i className="fa-solid fa-pencil icon-soldProduct"></i></button>
+
+                            </div>
+                            <div className="d-flex mt-5">
+                              <button onClick={() => setModalShow(true)} className="btn btn-warning"> <i className="fa-solid fa-trash icon-soldProduct"></i></button>
+
+                            </div>
+
+                            <DeleteProductModal
+                              show={modalShow}
+                              onHide={() => setModalShow(false)}
+                            />  
+                          </div>
+
+                        </div>
+                      </div>
+
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
           </div>
+
+
+
           <div className="col-md-12 col-lg-6  my-2">
             <div className="card product-card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-md-6 text-center mb-2">
-                    <img src={cricketJersy} className="img-fluid" alt="" />
+                  <div className="col-md-6 d-flex justify-content-center text-center mb-2  px-4">
+                    <img src={cricketJersy} className="img-fluid  img-style-sold" alt="" />
                   </div>
                   <div className="col-md-6 text-center">
                     <h5 className="text-light mb-3">Cricket Jersey</h5>
-                    <div className="">
-                      <div className="row">
-                        <div className="col-4">
-                          <p className="text-light">Released</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">12-12-2021</p>
-                        </div>
+                    <small className="text-muted">Released on 12-12-2021</small>
 
-                        <div className="col-4">
-                          <p className="text-light">Sold</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">19-12-2021</p>
-                        </div>
+                    <p className='text-white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit delectus, assumenda vitae iusto odio quibusdam.</p>
+                    <div className="row">
+                      <div className="col-md-11">
+                        <div className="row">
+                          <div className="row bg-gray">
+                            <div className="col-4">
+                              <small className="text-light">Released</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">12-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Price</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">$150</p>
-                        </div>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Sold</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">19-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Owner</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Shakib Al hasan</p>
-                        </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Buyer </p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Abdullah</p>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Price</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">$150</small>
+                            </div>
+                          </div>
+
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Owner</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Shakib Al hasan</small>
+                            </div>
+                          </div>
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Buyer </small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Abdullah</small>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <div className="col-md-1">
+                        <div className="d-flex justify-content-center align-items-center mt-5">
+                          <div className="d-flex flex-column">
+                            <div className="d-flex mt-2">
+                              <button className="btn btn-warning"><i class="fa-solid fa-pencil icon-soldProduct"></i></button>
+
+                            </div>
+                            <div className="d-flex mt-5">
+                              <button className="btn btn-warning"> <i class="fa-solid fa-trash icon-soldProduct"></i></button>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -118,50 +205,84 @@ const SoldProducts = () => {
             <div className="card product-card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-md-6 text-center mb-2">
-                    <img src={Shoe} className="img-fluid" alt="" />
+                  <div className="col-md-6 d-flex justify-content-center text-center mb-2 px-4">
+                    <img src={Shoe} className="img-fluid  img-style-sold  img-style-sold" alt="" />
                   </div>
                   <div className="col-md-6 text-center">
                     <h5 className="text-light mb-3">Cricket Jersey</h5>
-                    <div className="">
-                      <div className="row">
-                        <div className="col-4">
-                          <p className="text-light">Released</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">12-12-2021</p>
-                        </div>
+                    <small className="text-muted">Released on 12-12-2021</small>
 
-                        <div className="col-4">
-                          <p className="text-light">Sold</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">19-12-2021</p>
-                        </div>
+                    <p className='text-white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit delectus, assumenda vitae iusto odio quibusdam.</p>
+                    <div className="row">
+                      <div className="col-md-11">
+                        <div className="row">
+                          <div className="row bg-gray">
+                            <div className="col-4">
+                              <small className="text-light">Released</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">12-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Price</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">$150</p>
-                        </div>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Sold</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">19-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Owner</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Shakib Al hasan</p>
-                        </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Buyer </p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Abdullah</p>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Price</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">$150</small>
+                            </div>
+                          </div>
+
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Owner</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Shakib Al hasan</small>
+                            </div>
+                          </div>
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Buyer </small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Abdullah</small>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <div className="col-md-1">
+                        <div className="d-flex justify-content-center align-items-center mt-5">
+                          <div className="d-flex flex-column">
+                            <div className="d-flex mt-2">
+                              <button className="btn btn-warning"><i class="fa-solid fa-pencil icon-soldProduct"></i></button>
+
+                            </div>
+                            <div className="d-flex mt-5">
+                              <button className="btn btn-warning"> <i class="fa-solid fa-trash icon-soldProduct"></i></button>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -170,50 +291,84 @@ const SoldProducts = () => {
             <div className="card  product-card">
               <div className="card-body">
                 <div className="row">
-                  <div className="col-md-6 text-center mb-2">
-                    <img src={bal} className="img-fluid" alt="" />
+                  <div className="col-md-6 d-flex justify-content-center text-center mb-2 px-4">
+                    <img src={bal} className="img-fluid img-style-sold mt-2" alt="" />
                   </div>
                   <div className="col-md-6 text-center">
                     <h5 className="text-light mb-3">Cricket Jersey</h5>
-                    <div className="">
-                      <div className="row">
-                        <div className="col-4">
-                          <p className="text-light">Released</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">12-12-2021</p>
-                        </div>
+                    <small className="text-muted">Released on 12-12-2021</small>
 
-                        <div className="col-4">
-                          <p className="text-light">Sold</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">19-12-2021</p>
-                        </div>
+                    <p className='text-white'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit delectus, assumenda vitae iusto odio quibusdam.</p>
+                    <div className="row">
+                      <div className="col-md-11">
+                        <div className="row">
+                          <div className="row bg-gray">
+                            <div className="col-4">
+                              <small className="text-light">Released</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">12-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Price</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">$150</p>
-                        </div>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Sold</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">19-12-2021</small>
+                            </div>
+                          </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Owner</p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Shakib Al hasan</p>
-                        </div>
 
-                        <div className="col-4">
-                          <p className="text-light">Buyer </p>
-                        </div>
-                        <div className="col-8">
-                          <p className="text-light mx-4">Abdullah</p>
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Price</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">$150</small>
+                            </div>
+                          </div>
+
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Owner</small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Shakib Al hasan</small>
+                            </div>
+                          </div>
+
+                          <div className="row  bg-gray mt-3">
+                            <div className="col-4">
+                              <small className="text-light">Buyer </small>
+                            </div>
+                            <div className="col-8">
+                              <small className="text-light mx-4">Abdullah</small>
+                            </div>
+                          </div>
                         </div>
                       </div>
+                      <div className="col-md-1">
+                        <div className="d-flex justify-content-center align-items-center mt-5">
+                          <div className="d-flex flex-column">
+                            <div className="d-flex mt-2">
+                              <button className="btn btn-warning"><i class="fa-solid fa-pencil icon-soldProduct"></i></button>
+
+                            </div>
+                            <div className="d-flex mt-5">
+                              <button className="btn btn-warning"> <i class="fa-solid fa-trash icon-soldProduct"></i></button>
+
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
