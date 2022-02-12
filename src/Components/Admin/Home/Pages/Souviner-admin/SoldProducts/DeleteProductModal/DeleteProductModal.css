@@ -3,3 +3,8 @@
   border-radius: 10px;
   overflow: hidden;
 }
+
+.deleteModalProduct {
+  width: 35vw !important;
+  max-width: none;
+}

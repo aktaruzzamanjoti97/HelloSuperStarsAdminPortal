@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Total from '../../../../../assets/images/Souvenir/sigma.png';
-import Sold from '../../../../../assets/images/Souvenir/sold.png';
-import Unsold from '../../../../../assets/images/Souvenir/packages.png';
-import Add from '../../../../../assets/images/Souvenir/add .png';
 import pendingMarket from '../../../../../assets/images/pending 2.png';
+import Add from '../../../../../assets/images/Souvenir/add .png';
+import Unsold from '../../../../../assets/images/Souvenir/packages.png';
 
 const MarketPlaceNav = () => {
     return (
@@ -20,7 +18,7 @@ const MarketPlaceNav = () => {
                                         <img src={pendingMarket} width="75px" className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className=" fw-bold Sigma">33</small>
+                                        <small className=" fw-bold Sigma">01</small>
                                     </td>
                                 </tr>
                             </center>
@@ -63,7 +61,7 @@ const MarketPlaceNav = () => {
                                         <img src={Unsold} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className=" fw-bold Unsold">03</small>
+                                        <small className=" fw-bold Unsold">04</small>
                                     </td>
                                 </tr>
                             </center>

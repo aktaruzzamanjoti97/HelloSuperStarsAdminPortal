@@ -11,11 +11,12 @@ const DeleteProductModal = (props) => {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
+            dialogClassName="deleteModalProduct"
         >
 
             <Modal.Body className="bg-dark modalBorderDelete">
              
-                <div className=" p-5 mx-5 my-2 text-center">
+                <div className=" py-3 mx-5 my-2 text-center">
                     <div>
                         <img src={DeleteMarketImg} alt="" />
                         <h4 className="text-white my-3">Delete Product List</h4>

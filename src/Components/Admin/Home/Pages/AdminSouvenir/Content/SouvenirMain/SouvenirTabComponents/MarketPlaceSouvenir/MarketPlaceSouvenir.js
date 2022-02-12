@@ -33,26 +33,29 @@ const MarketPlaceSouvenir = () => {
                         <img src={FootballJersey} className='footBallJerseyImage img-fluid VX-S' alt="" />
                     </div>
 
-                    <div className="SouvenirI mx-4 mt-3">
+                    <div className="SouvenirI d-flex justify-content-center mx-4">
 
-                        <div className="mb-4">
-                            <div className="text-light fw-bold mt-1 mx-2">
-                                <h3>Jersey</h3>
-                            </div>
-                            <div className="text-light  mt-1 mx-2 ">
-                                <small>Started 16th June, 2021</small>
-                            </div>
-                        </div>
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div>
+                                <div>
+                                    <div className="mb-4">
+                                        <div className="text-light fw-bold mt-1 mx-2">
+                                            <h3>Jersey</h3>
+                                        </div>
+                                        <div className="text-light  mt-1 mx-2 ">
+                                            <small>Started 16th June, 2021</small>
+                                        </div>
+                                    </div>
 
-                        <div className="d-flex  p-2 mb-2">
-                            <img src={tagPrice} className=' SouvenirIcon' alt="" />
+                                    <div className="d-flex  p-2 mb-2">
+                                        <img src={tagPrice} className=' SouvenirIcon' alt="" />
 
-                            <div className=" d-flex text-light  mt-1 mx-3 fw-bold ">
-                                20  <span className="ms-3">/</span> <span className="unitFontText ms-3 mt-2">unit</span>
-                            </div>
-                        </div>
+                                        <div className=" d-flex text-light  mt-1 mx-3 fw-bold ">
+                                            20  <span className="ms-3">/</span> <span className="unitFontText ms-3 mt-2">unit</span>
+                                        </div>
+                                    </div>
 
-                        {/* <div className="d-flex p-2">
+                                    {/* <div className="d-flex p-2">
                             <img src={Men} className=' SouvenirIcon' alt="" />
 
                             <div className=" d-flex text-light mt-1 mx-3 fw-bold ">
@@ -60,24 +63,30 @@ const MarketPlaceSouvenir = () => {
                             </div>
                         </div> */}
 
-                        <div>
-                            <div className="d-flex">
-                                <div className="bg-dark px-4 py-3 rounded">
-                                    <small className="text-white">Total</small>
-                                    <div className="d-flex mt-2">
-                                        <img src={Unsold} className='img-fluid' width="30px" alt="" />
-                                        <h4 className="ms-3 text-white fw-bold">40</h4>
-                                    </div>
-                                </div>
-                                <div className="bg-dark ms-3 px-4 py-3 rounded">
-                                    <small className="text-white">Sold</small>
-                                    <div className="d-flex mt-2">
-                                        <img src={dollarSold} className='img-fluid' width="40px" alt="" />
-                                        <h4 className="ms-3 text-white fw-bold">30</h4>
+                                    <div>
+                                        <div className="d-flex">
+                                            <div className="bg-dark px-4 py-3 rounded">
+                                                <small className="text-white">Total</small>
+                                                <div className="d-flex mt-2">
+                                                    <img src={Unsold} className='img-fluid' width="30px" alt="" />
+                                                    <h4 className="ms-3 text-white fw-bold">40</h4>
+                                                </div>
+                                            </div>
+                                            <div className="bg-dark ms-3 px-4 py-3 rounded">
+                                                <small className="text-white">Sold</small>
+                                                <div className="d-flex mt-2">
+                                                    <img src={dollarSold} className='img-fluid' width="40px" alt="" />
+                                                    <h4 className="ms-3 text-white fw-bold">30</h4>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+
+
 
                     </div>
 

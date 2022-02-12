@@ -1,11 +1,7 @@
-import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { TextField } from '@mui/material';
 import { convertToHTML } from 'draft-convert';
 import { EditorState } from 'draft-js';
 import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
-import TimePicker from 'react-multi-date-picker/plugins/time_picker';
 import { Link, useHistory } from 'react-router-dom';
 
 const AddProductFromMarketPlace = () => {
@@ -215,7 +211,7 @@ const AddProductFromMarketPlace = () => {
 
                         <div className="mt-3">
                             <Link to="/superstar-admin/souvenir/edit-jersey">
-                                <button onClick={() => history.pushState('/superstar-admin/souvenir/edit-jersey')} className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
+                                <button onClick={() => history.push('/superstar-admin/souvenir/edit-jersey')} className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
                         </div>
