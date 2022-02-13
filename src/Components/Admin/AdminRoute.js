@@ -72,7 +72,7 @@ import NotifyScheduleView from "./Home/Pages/AdminGreetings/NotifyGreetings/Cont
 import AdminEventRequest from "./Dashboard/AdminEventRequest";
 import SouvenirMain from "./Home/Pages/AdminSouvenir/Content/SouvenirMain/SouvenirMain";
 import AddProductFromMarketPlace from "./Home/Pages/AdminSouvenir/Content/SouvenirMain/AddProductFromMarketPlace/AddProductFromMarketPlace";
-import SoldProducts from '../Admin/Home/Pages/Souviner-admin/SoldProducts/SoldProducts'
+import ProductList from '../Admin/Home/Pages/Souviner-admin/SoldProducts/ProductList'
 import EditProductMarketPlace from '../Admin/Home/Pages/Souviner-admin/SoldProducts/EditProductMarketPlace/EditProductMarketPlace'
 
 
@@ -181,7 +181,7 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
     { path: '/superstar-admin/souvenir/edit-jersey', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
-    { path: '/superstar-admin/souvenir/sold', exact: true, name: 'sold', component: SoldProducts },
+    { path: '/superstar-admin/souvenir/productlist', exact: true, name: 'sold', component: ProductList },
     { path: '/superstar-admin/souvenir/edit-marketplace', exact: true, name: 'edit-marketplace', component: EditProductMarketPlace },
 
 

@@ -10,7 +10,7 @@ const CricketJerseySouvenir = () => {
     let history = useHistory();
 
     function handleClick() {
-        history.push('/superstar-admin/souvenir/sold');
+        history.push('/superstar-admin/souvenir/productlist');
     }
 
 return (

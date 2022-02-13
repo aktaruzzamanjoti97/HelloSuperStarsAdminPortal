@@ -24,11 +24,6 @@ const AddProductFromMarketPlace = () => {
         console.log(convertedContent);
     };
 
-    const [value, setValue] = React.useState(new Date('2014-08-18T21:11:54'));
-
-    const handleChange = (newValue) => {
-        setValue(newValue);
-    };
 
     return (
         <div className="AS m-3">
@@ -47,7 +42,7 @@ const AddProductFromMarketPlace = () => {
 
                         <div className="row my-4">
                             <div className="col-md-1">
-                                <p className="text-white"><big>Title</big></p>
+                                <p className="text-white">Title</p>
                             </div>
                             <div className="col-md-11">
                                 <input className='form-control input-gray' type='text' />
@@ -56,7 +51,7 @@ const AddProductFromMarketPlace = () => {
 
                         <div className="row my-4">
                             <div className="col-md-1">
-                                <p className="text-white"><big>Keyword</big></p>
+                                <p className="text-white">Keyword</p>
                             </div>
                             <div className="col-md-11">
                                 <input className='form-control input-gray' type='text' />
@@ -65,7 +60,7 @@ const AddProductFromMarketPlace = () => {
 
                         <div className="row my-4">
                             <div className="col-md-1 text-white">
-                                <p><big>Description</big></p>
+                                <p>Description</p>
                             </div>
                             <div className="col-md-11">
                                 {/* <textarea className="form-control input-gray me-4" type="text" /> */}
@@ -83,8 +78,8 @@ const AddProductFromMarketPlace = () => {
                         <div className="row my-4">
                             <div className="col-md-6">
                                 <div className="row">
-                                    <div className="col-md-3 text-white">
-                                        <p><big>Total Units</big></p>
+                                    <div className="col-md-2 text-white">
+                                        <p>Total Units</p>
                                     </div>
                                     <div className="col-md-9">
                                         <input type="number" className="form-control input-gray" />
@@ -94,7 +89,7 @@ const AddProductFromMarketPlace = () => {
                             <div className="col-md-6">
                                 <div className="row">
                                     <div className="col-md-2 text-white">
-                                        <p className="ms-4"><big>Price</big></p>
+                                        <p className="ms-4">Price</p>
                                     </div>
                                     <div className="col-md-9">
                                     <input type="number" className="form-control input-gray" />
@@ -106,42 +101,6 @@ const AddProductFromMarketPlace = () => {
                         </div>
 
 
-                        {/* <div className="row my-4">
-                        <div className="col-md-1 text-white">
-                            <p><big>Deadline</big></p>
-                        </div>
-
-                        <div className="col-md-10">
-                            <LocalizationProvider dateAdapter={AdapterDateFns}>
-                                
-                                <div className="row dateDesktopPicker">
-                                    <div className="col-md-3">
-                                    <DesktopDatePicker
-                                        label="Date desktop"
-                                        inputFormat="MM/dd/yyyy"
-                                        value={value}
-                                        onChange={handleChange}
-                                        renderInput={(params) => <TextField {...params} />}
-                                    />
-                                    </div>
-                                    <div className="col-md-3">
-                                    <TimePicker
-                                        
-                                        label="Time"
-                                        value={value}
-                                        onChange={handleChange}
-                                        renderInput={(params) => <TextField {...params} />}
-                                    />
-                                    </div>
-                                    
-                                    
-                                </div>
-
-
-                        
-                            </LocalizationProvider>
-                        </div>
-                    </div> */}
 
 
 
@@ -153,7 +112,7 @@ const AddProductFromMarketPlace = () => {
                         {/* <div className="col-md-4"> */}
                         <div className="row my-4">
                             <div className="col-md-1 text-white">
-                                <p><big>Upload Banner</big></p>
+                                <p>Upload Banner</p>
                             </div>
                             <div className="col-md-3">
                                 <input type="file" name="file" id="file" className="inputfile" />
@@ -161,49 +120,7 @@ const AddProductFromMarketPlace = () => {
 
                             </div>
                         </div>
-                        {/* <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Upload Video</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                            </div>
-                        </div> */}
-                        {/* </div> */}
-                        {/* <div className="col-md-4">
-                        <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Star 1 Template</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-
-                            </div>
-                        </div>
-                        <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Star 2 Template</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                            </div>
-                        </div>
-                        <div className="row my-4">
-                            <div className="col-md-3 text-white">
-                                <p><big>Star 3 Template</big></p>
-                            </div>
-                            <div className="col-md-9">
-                                <input type="file" name="file" id="file" className="inputfile" />
-                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                            </div>
-                        </div>
-                    </div> */}
-
-
-                        {/* </div> */}
+                   
 
 
 

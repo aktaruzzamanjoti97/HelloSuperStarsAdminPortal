@@ -5,8 +5,8 @@ import cricketJersy from "../../../../../../assets/images/Souvenir/footbal-jerse
 import Shoe from "../../../../../../assets/images/Souvenir/shoe.png";
 import bal from "./../../../../../../assets/images/Souvenir/ball.png";
 import DeleteProductModal from "./DeleteProductModal/DeleteProductModal";
-import "./SoldProducts.css";
-const SoldProducts = () => {
+import "./ProductList.css";
+const ProductList = () => {
   const [modalShow, setModalShow] = useState(false);
 
   let history = useHistory();
@@ -19,7 +19,7 @@ const SoldProducts = () => {
   return (
     <div className="container-fluid">
       <div className="">
-        <h3 className="text-light my-3">Sold Products</h3>
+        <h3 className="text-light my-3">Product List</h3>
         <div className="row">
           <div className="col-md-12 col-lg-6  my-4">
             <div className="border-warning product-card">
@@ -42,56 +42,49 @@ const SoldProducts = () => {
                           <div className="row text-sold-font">
                             <div className="row bg-gray">
                               <div className="col-4">
-                                <small className="text-light">Released</small>
+                                <small className="text-light">Units</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">12-12-2021</small>
-                              </div>
-                            </div>
-
-                            <div className="row  bg-gray mt-3">
-                              <div className="col-4">
-                                <small className="text-light">Sold</small>
-                              </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">19-12-2021</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">400</small>
                               </div>
                             </div>
-
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
                                 <small className="text-light">Price</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">$150</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4"><span>$</span>20</small>
                               </div>
                             </div>
 
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Owner</small>
+                                <small className="text-light">Sold</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Shakib Al hasan</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">300</small>
                               </div>
                             </div>
 
+
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Buyer </small>
+                                <small className="text-light">Left</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Abdullah</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">100</small>
                               </div>
                             </div>
+
+                         
                           </div>
                         </div>
                         <div className="col-md-2 d-flex justify-content-center">
                           {/* <div className="d-flex justify-content-center align-items-center"> */}
                           <div className="div-img d-flex justify-content-center align-items-center ">
-                            <div className="pt-5">
+                            <div className="pt-3">
                               <div className="my-3">
                                 <button type="button" onClick={handleClick} className="btn btn-warning"><i className="fa-solid fa-pencil icon-soldProduct"></i></button>
 
@@ -145,56 +138,49 @@ const SoldProducts = () => {
                           <div className="row text-sold-font">
                             <div className="row bg-gray">
                               <div className="col-4">
-                                <small className="text-light">Released</small>
+                                <small className="text-light">Units</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">12-12-2021</small>
-                              </div>
-                            </div>
-
-                            <div className="row  bg-gray mt-3">
-                              <div className="col-4">
-                                <small className="text-light">Sold</small>
-                              </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">19-12-2021</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">400</small>
                               </div>
                             </div>
-
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
                                 <small className="text-light">Price</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">$150</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4"><span>$</span>20</small>
                               </div>
                             </div>
 
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Owner</small>
+                                <small className="text-light">Sold</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Shakib Al hasan</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">300</small>
                               </div>
                             </div>
 
+
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Buyer </small>
+                                <small className="text-light">Left</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Abdullah</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">100</small>
                               </div>
                             </div>
+
+                         
                           </div>
                         </div>
                         <div className="col-md-2 d-flex justify-content-center">
                           {/* <div className="d-flex justify-content-center align-items-center"> */}
                           <div className="div-img d-flex justify-content-center align-items-center ">
-                            <div className="pt-5">
+                            <div className="pt-3">
                               <div className="my-3">
                                 <button type="button" onClick={handleClick} className="btn btn-warning"><i className="fa-solid fa-pencil icon-soldProduct"></i></button>
 
@@ -247,56 +233,49 @@ const SoldProducts = () => {
                           <div className="row text-sold-font">
                             <div className="row bg-gray">
                               <div className="col-4">
-                                <small className="text-light">Released</small>
+                                <small className="text-light">Units</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">12-12-2021</small>
-                              </div>
-                            </div>
-
-                            <div className="row  bg-gray mt-3">
-                              <div className="col-4">
-                                <small className="text-light">Sold</small>
-                              </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">19-12-2021</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">400</small>
                               </div>
                             </div>
-
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
                                 <small className="text-light">Price</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">$150</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4"><span>$</span>20</small>
                               </div>
                             </div>
 
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Owner</small>
+                                <small className="text-light">Sold</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Shakib Al hasan</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">300</small>
                               </div>
                             </div>
 
+
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Buyer </small>
+                                <small className="text-light">Left</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Abdullah</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">100</small>
                               </div>
                             </div>
+
+                         
                           </div>
                         </div>
                         <div className="col-md-2 d-flex justify-content-center">
                           {/* <div className="d-flex justify-content-center align-items-center"> */}
                           <div className="div-img d-flex justify-content-center align-items-center ">
-                            <div className="pt-5">
+                            <div className="pt-3">
                               <div className="my-3">
                                 <button type="button" onClick={handleClick} className="btn btn-warning"><i className="fa-solid fa-pencil icon-soldProduct"></i></button>
 
@@ -349,56 +328,49 @@ const SoldProducts = () => {
                           <div className="row text-sold-font">
                             <div className="row bg-gray">
                               <div className="col-4">
-                                <small className="text-light">Released</small>
+                                <small className="text-light">Units</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">12-12-2021</small>
-                              </div>
-                            </div>
-
-                            <div className="row  bg-gray mt-3">
-                              <div className="col-4">
-                                <small className="text-light">Sold</small>
-                              </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">19-12-2021</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">400</small>
                               </div>
                             </div>
-
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
                                 <small className="text-light">Price</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">$150</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4"><span>$</span>20</small>
                               </div>
                             </div>
 
 
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Owner</small>
+                                <small className="text-light">Sold</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Shakib Al hasan</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">300</small>
                               </div>
                             </div>
 
+
                             <div className="row  bg-gray mt-3">
                               <div className="col-4">
-                                <small className="text-light">Buyer </small>
+                                <small className="text-light">Left</small>
                               </div>
-                              <div className="col-8">
-                                <small className="text-light mx-4">Abdullah</small>
+                              <div className="col-8 d-flex justify-content-end">
+                                <small className="text-light mx-4">100</small>
                               </div>
                             </div>
+
+                         
                           </div>
                         </div>
                         <div className="col-md-2 d-flex justify-content-center">
                           {/* <div className="d-flex justify-content-center align-items-center"> */}
                           <div className="div-img d-flex justify-content-center align-items-center ">
-                            <div className="pt-5">
+                            <div className="pt-3">
                               <div className="my-3">
                                 <button type="button" onClick={handleClick} className="btn btn-warning"><i className="fa-solid fa-pencil icon-soldProduct"></i></button>
 
@@ -434,4 +406,4 @@ const SoldProducts = () => {
   );
 };
 
-export default SoldProducts;
+export default ProductList;
