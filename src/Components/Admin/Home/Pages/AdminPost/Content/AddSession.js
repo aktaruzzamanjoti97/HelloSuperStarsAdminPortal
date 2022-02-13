@@ -56,8 +56,8 @@ export default function AddSession(props) {
     title: "",
     description: "",
     video: "",
-    type: "",
     star_id: "",
+    fee: '',
     error_list: [],
   });
 
@@ -85,6 +85,17 @@ export default function AddSession(props) {
     setImagedata(file[0]);
   };
 
+  
+  const [postType, setPostType] = useState("");
+  const [paymentType, setPaymentType] = useState("");
+  function handleType(e) {
+    setPostType(e.target.value);
+  }
+  function handleType2(e) {
+    setPaymentType(e.target.value);
+  }
+
+
   const registerSubmit = (e) => {
     e.preventDefault();
 
@@ -96,15 +107,16 @@ export default function AddSession(props) {
     fData.append("title", registerInput.title);
     fData.append("star_id", registerInput.star_id);
     fData.append("description", convertedContent);
+    fData.append("fee", registerInput.fee);
     fData.append("video", registerInput.video);
-    fData.append("type", registerInput.type);
+    fData.append("type", paymentType);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios.post(`/api/admin/add_simple_post`, fData).then((res) => {
         if (res.data.status === 200) {
           // document.getElementById('input_form').reset();
           swal("Success", res.data.message, "success");
-          history.push("superstar-admin/post/pending");
+          history.push("/superstar-admin/post/pending");
         } else {
           //setModalShow(true);
           setRegister({
@@ -115,14 +127,6 @@ export default function AddSession(props) {
       });
     });
   };
-  const [postType, setPostType] = useState("");
-  const [paymentType, setPaymentType] = useState("");
-  function handleType(e) {
-    setPostType(e.target.value);
-  }
-  function handleType2(e) {
-    setPaymentType(e.target.value);
-  }
 
   return (
     <>
@@ -173,9 +177,9 @@ export default function AddSession(props) {
                     <div className="col-sm-3">
                       <select
                         onChange={handleType}
-                        name="type"
+                        
                         className="form-control reply-control input-overlay"
-                        value={registerInput.type}
+                        
                       >
                         <option className="text-whaite" value="">
                           Select Post Type
@@ -197,7 +201,7 @@ export default function AddSession(props) {
                         onChange={handleType2}
                         name="type"
                         className="form-control reply-control input-overlay"
-                        value={registerInput.type}
+                        value={paymentType}
                       >
                         <option className="text-whaite" value="">
                         Select Payment Type
@@ -311,12 +315,10 @@ export default function AddSession(props) {
                       </label>
                       <div className="col-sm-7">
                         <input
-                          type="number"
+                          type="text"
                           className="form-control form-control-sm input-in-lv-ch"
                           placeholder="Enter Fees..!"
-                          
-                          name="video"
-                          
+                          name="fee"                         
                         />
                       </div>
                     </div>:""}
