@@ -1,43 +1,43 @@
-
-.Souvenir-bt{
-    margin-bottom: 20px;
+.Souvenir-bt {
+  margin-bottom: 20px;
 }
-.Sigma{
-    color: rgba(6, 218, 255, 0.863);
-    font-size: 25px !important;
-}
-
-.Sold{
-    color: rgba(255, 97, 6, 0.904);
-    font-size: 25px !important;
+.Sigma {
+  color: rgba(6, 218, 255, 0.863);
+  font-size: 30px !important;
 }
 
-.Unsold{
-    color: rgba(255, 176, 6, 0.863);
-    font-size: 25px !important;
+.Sold {
+  color: rgba(255, 97, 6, 0.904);
+  font-size: 30px !important;
 }
 
-.Souvenir-button{
-    border: none !important;
-    color: white;
-    font-weight: 600;
-    background-color: rgba(5, 4, 7, 0.541) !important;
-    border-radius: 0px 0px 10px 10px !important;
+.Unsold {
+  color: rgba(255, 176, 6, 0.863);
+  font-size: 30px !important;
 }
 
-.Souvenir-button:hover{
-    color: black;
-    background-color: rgb(248, 232, 8) !important;
+.Souvenir-button {
+  border: none !important;
+  color: white;
+  font-weight: 600;
+  background-color: rgba(5, 4, 7, 0.541) !important;
+  border-radius: 0px 0px 10px 10px !important;
+}
+
+.Souvenir-button:hover {
+  color: black;
+  background-color: rgb(248, 232, 8) !important;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
-    .Souvenir-bt{
-        width: 25% !important;
-    }
+  .Souvenir-bt {
+    width: 25% !important;
   }
+}
 
-  @media only screen and (min-width: 1024.01px) and (max-width: 1400px) {
-    .Souvenir-bt{
-        width: 25% !important;
-    }
+@media only screen and (min-width: 1024.01px) and (max-width: 1400px) {
+  .Souvenir-bt {
+    width: 25% !important;
   }
+}
+

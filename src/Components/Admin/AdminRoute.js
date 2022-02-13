@@ -28,7 +28,7 @@ import AdminVideoChatIcon from "./Home/Pages/AdminMeeupEvents/AdminVideoChat/Adm
 import AdminAudition from "./Home/Pages/AdminAudition/AdminAudition";
 import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/AuditionsGrandFinal";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
-import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
+import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/SouvenirMain/SouvenirTabComponents/LiveNowSouvenir/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
 //import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
@@ -70,6 +70,11 @@ import AdminVideoJoin from "./Dashboard/Content/AdminVideoJoin";
 import NotifySchedule from "./Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule";
 import NotifyScheduleView from "./Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifyScheduleView";
 import AdminEventRequest from "./Dashboard/AdminEventRequest";
+import SouvenirMain from "./Home/Pages/AdminSouvenir/Content/SouvenirMain/SouvenirMain";
+import AddProductFromMarketPlace from "./Home/Pages/AdminSouvenir/Content/SouvenirMain/AddProductFromMarketPlace/AddProductFromMarketPlace";
+import ProductList from '../Admin/Home/Pages/Souviner-admin/SoldProducts/ProductList'
+import EditProductMarketPlace from '../Admin/Home/Pages/Souviner-admin/SoldProducts/EditProductMarketPlace/EditProductMarketPlace'
+
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -80,7 +85,7 @@ import AdminEventRequest from "./Dashboard/AdminEventRequest";
 
 
 const AdminRoute = [
-    
+
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
 
     { path: '/superstar-admin', exact: true, name: 'Admin' },
@@ -115,14 +120,14 @@ const AdminRoute = [
 
     // { path: '/superstar-admin/learning-session/video', exact: true, name: 'video', component: LearningVideoAdmin },
     // { path: '/superstar-admin/learning-session/video-chat-message', exact: true, name: 'video-chat-message', component: LearningVideoChatAdmin },
-    
+
 
     // Live Chat Route
     { path: '/superstar-admin/live-chat', exact: true, name: 'LiveChat', component: LiveChatContent },
     { path: '/superstar-admin/live-chat/profile/create', exact: true, name: 'LiveChat', component: LiveChatProfileCreate },
     { path: '/superstar-admin/live-chat/live-event-create', exact: true, name: 'live-event-create', component: AddSessionForm },
     { path: '/superstar-admin/live-chat-schedule', exact: true, name: 'live-chat-schedule', component: LiveChatSchedule },
-    { path: '/superstar-admin/live-chat-schedule2', exact: true, name: 'live-chat-schedule2', component: LiveChatSchedule2},
+    { path: '/superstar-admin/live-chat-schedule2', exact: true, name: 'live-chat-schedule2', component: LiveChatSchedule2 },
     { path: '/superstar-admin/live-chat/pending', exact: true, name: 'LiveChat', component: LiveChatPending },
     { path: '/superstar-admin/pending-livechat/:id', exact: true, name: 'pending-livechat-details', component: PendingLiveChat },
     { path: '/superstar-admin/approved-livechat/:id', exact: true, name: 'pending-livechat-details', component: ApprovedLiveChat },
@@ -132,7 +137,7 @@ const AdminRoute = [
     { path: '/superstar-admin/live-chat/add-schedule', exact: true, name: 'LiveChat', component: AddSessionContent },
     { path: '/superstar-admin/live-chat/profile', exact: true, name: 'LiveChat', component: LiveChatProfile },
 
-    
+
 
     // Auditions Route
     { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
@@ -143,12 +148,12 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
 
-    
+
 
     // Route
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
-    { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
+    { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint },
 
     // MeetUp Event Route
     { path: '/superstar-admin/meetup-events/approved', exact: true, name: 'meetup-events', component: LiveMeetUp },
@@ -172,20 +177,21 @@ const AdminRoute = [
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
     // Souvenir Route
-    { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: LiveNowSouvenir },
+    { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
+    { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
+    { path: '/superstar-admin/souvenir/edit-jersey', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
+    { path: '/superstar-admin/souvenir/productlist', exact: true, name: 'sold', component: ProductList },
+    { path: '/superstar-admin/souvenir/edit-marketplace', exact: true, name: 'edit-marketplace', component: EditProductMarketPlace },
 
-    { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
 
 
-    
-
-    {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick}
+    { path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick }
 
 
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
-    
+
 ];
 
 export default AdminRoute;
