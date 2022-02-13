@@ -7,7 +7,9 @@ import moment from 'moment'
 
 
 const SCheduleViewAdmin = () => {
+
     const location = useLocation();
+    
     let history = useHistory();
  
     var txt=false;

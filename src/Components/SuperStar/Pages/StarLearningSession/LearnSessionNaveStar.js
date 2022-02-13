@@ -1,81 +1,96 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Live from '../../../../assets/images/instagram-live 1.png';
-import Pending from '../../../../assets/images/pending 2.png';
-import Add from '../../../../assets/images/UpcomingEvent/add 1.png';
-// import './MeetUpEventNave.css';
+import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
+import Approve from '../../../../assets/images/live.png'
+import Pending from '../../../../assets/images/pending 2.png'
+import Add from '../../../../assets/images/UpcomingEvent/add 1.png'
+import axios from "axios";
 
-const LearnSessionNaveStar = () => {
+export default function LearningSessionNaveStar() {
 
-return (
-<>
-    <div className=" row ">
+    const [approved,setApproved]=useState('');
+  const [pending,setPeding]=useState('');
 
-        <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
-            <div className="card meetupCard">
-                <div className="card-body  align-items-center">
-                    <center>
-                        <tr>
-                            <td className="ad-card-td">
-                                <img src={Live} className="ad-card-img-top" alt="..." />
-                            </td>
-                            <td className="ad-card-td">
-                                <small className="ad-card-small">00</small>
-                            </td>
-                        </tr>
-                    </center>
-                </div>
-                <Link to='/superstar/learning-session'><button className="card-footer Souvenir-button  w-100 "
-                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne"> Approved Learning Session
-                </button></Link>
-            </div>
-        </div><br />
+  //Fetch Approved LiveChat
+  useEffect(() => {
+    axios.get(`/api/star/learning_session/count`).then((res) => {
+      if (res.status === 200) {
+        setApproved(res.data.approved);
+        setPeding(res.data.pending);
 
-        <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
-            <div className="card meetupCard">
-                <div className="card-body  align-items-center">
-                    <center>
-                        <tr>
-                            <td className="ad-card-td">
-                                <img src={Pending} className="ad-card-img-top" alt="..." />
-                            </td>
-                            <td className="ad-card-td">
-                                <small className="ad-card-small">01</small>
-                            </td>
-                        </tr>
-                    </center>
-                </div>
-                <Link to='/superstar/learning-session/request'>
-                    <button className="card-footer Souvenir-button  w-100 "
-                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne"> Requested Learning Session
-                </button></Link>
-            </div>
+        console.log(res.data.pending)
+      }
+    });
+
+    console.log();
+  }, []);
+
+
+    return (
+        <>
+
+<div className="mb-3 row">
+
+<div title="Live Now" className="col-md-3 align-items-center justify-content-center ">
+    <div className="card livechat-card SH-CARD-TSX">
+        <div className="card-body  align-items-center">
+            <center>
+                <tr>
+                    <td className="livechat-card-td">
+                        <img src={Approve} className="livechat-card-img-top" alt="..." />
+                    </td>
+                    <td className="livechat-card-td">
+                        <small className="livechat-card-small">{approved}</small>
+                    </td>
+                </tr>
+            </center>
         </div>
-        <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
-            <div className="card meetupCard">
-                <div className="card-body  align-items-center">
-                    <center>
-                        <tr>
-                            <td className="ad-card-td">
-                                <img src={Add} className="ad-card-img-top" alt="..." />
-                            </td>
-                            <td className="ad-card-td">
-                                <small className="ad-card-small"></small>
-                            </td>
-                        </tr>
-                    </center>
-                </div>
-                <Link to='/superstar/learning-session/schedule'> <button className="card-footer Souvenir-button  w-100 "
-                    data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                    aria-controls="collapseOne"> Add Schedule
-                </button></Link>
-            </div>
-        </div>
+        <Link to='/superstar/learning-session/approved' className="card-footer livechat-card-footer"><button className="livechat-card-footer" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Now
+        </button></Link>
     </div>
-</>
-)
+</div><br/>
+<div title="Live Now" className="col-md-3 align-items-center justify-content-center ">
+    <div className="card livechat-card SH-CARD-TSX">
+        <div className="card-body  align-items-center">
+            <center>
+                <tr>
+                    <td className="livechat-card-td">
+                        <img src={Pending} className="livechat-card-img-top" alt="..." />
+                    </td>
+                    <td className="livechat-card-td">
+                        <small className="livechat-card-small">{pending}</small>
+                    </td>
+                </tr>
+            </center>
+        </div>
+        <Link to='/superstar/learning-session/pending' className="livechat-card-footer"><button className="card-footer livechat-card-footer" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Pending
+        </button></Link>
+    </div>
+</div><br/>
+<div title="Live Now" className="col-md-3 align-items-center justify-content-center ">
+    <div className="card livechat-card SH-CARD-TSX">
+        <div className="card-body  align-items-center">
+            <center>
+                <tr>
+                    <td className="livechat-card-td">
+                        <img src={Add} className="livechat-card-img-top" alt="..." />
+                    </td>
+                    <td className="livechat-card-td">
+                        <small className="livechat-card-small"></small>
+                    </td>
+                </tr>
+            </center>
+        </div>
+        <Link to='/superstar/learning-session' className="livechat-card-footer"><button className="card-footer livechat-card-footer" data-bs-toggle="collapse"
+            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Add Session
+        </button></Link>
+    </div>
+</div>
+</div>
+            
+        </>
+    )
 }
 
-export default LearnSessionNaveStar
+

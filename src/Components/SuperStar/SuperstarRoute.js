@@ -34,6 +34,15 @@ import RequestLearn from './Pages/StarLearningSession/Content/Request/RequestLea
 import ApprovedLearn from './Pages/StarLearningSession/Content/Approved/ApprovedLearn';
 import RequestLearnList from './Pages/StarLearningSession/Content/Request/RequestLearnList';
 import RequestLearnEvent from './Pages/StarLearningSession/Content/Request/RequestLearnEvent';
+
+import AllLearningSession from './Pages/StarLearningSession/AllLearningSession';
+import ApprovedLearningSession from './Pages/StarLearningSession/ApprovedLearningSession';
+import ApprovedLearningSessionDetails from './Pages/StarLearningSession/ApprovedLearningSessionDetails';
+import ApprovedLearningSessionJoin from './Pages/StarLearningSession/VideoLearnSession';
+import PendingLearningSession from './Pages/StarLearningSession/PendingLearningSession';
+import PendingLearningSessionDetails from './Pages/StarLearningSession/PendingLearningSessionDetails';
+import LearningVideoChatAdmin from './Pages/StarLearningSession/LearningVideoStar';
+
 import ApprovedLearnList from './Pages/StarLearningSession/Content/Approved/ApprovedLearnList';
 import ApprovedLearnSlide from './Pages/StarLearningSession/Content/Approved/ApprovedLearnSlide';
 import ApprovedLearnEvent from './Pages/StarLearningSession/Content/Approved/ApprovedLearnEvent';
@@ -84,11 +93,19 @@ const SuperstarRoute = [
     { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session
-    { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
-    { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearnSlide },
+    { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: AllLearningSession },
+    { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearningSession },
+    { path: '/superstar/learning-session/approved/:id', exact: true, name: 'join', component: ApprovedLearningSessionDetails },
+    { path: '/superstar/learning-session/join/:id', exact: true, name: 'join', component: ApprovedLearningSessionJoin },
+    { path: '/superstar/learning-session/pending', exact: true, name: 'approved', component: PendingLearningSession },
+    { path: '/superstar/learning-session/pending/:id', exact: true, name: 'approved', component: PendingLearningSessionDetails },
+
+    { path: '/superstar/learning-session/video-chat-message', exact: true, name: 'video-chat-message', component: LearningVideoChatAdmin },
+    
+
     { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-all', component: ApprovedLearnList },
     { path: '/superstar/learning-session/approved/event', exact: true, name: 'event', component: ApprovedLearnEvent },
-    { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: AppLearnSessionTime },
+    { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: ApprovedLearningSessionDetails },
     { path: '/superstar/learning-session/approved/video', exact: true, name: 'video', component: VideoLearnSession },
 
     { path: '/superstar/learning-session/request', exact: true, name: 'request', component: RequestLearn },
