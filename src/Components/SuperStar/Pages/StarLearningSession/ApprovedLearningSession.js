@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import { Link } from 'react-router-dom'
 import Slider from "react-slick";
-import "./SuperStarContent.css";
-import Nav from "./Nav";
+import LearnSessionNaveStar from './LearnSessionNaveStar'
 import moment from "moment";
+import axios from "axios";
 
-const ApprovedPost = () => {
-
+const ApprovedLearningSession = () => {
   const [events, setEvents] = useState([]);
 
   var settings = {
@@ -45,21 +43,10 @@ const ApprovedPost = () => {
     ],
   };
 
-  // useEffect(() => {
 
-  //     axios.get(`/api/admin/livechat`).then(res =>{
-
-  //       if(res.status === 200)
-  //       {
-  //         setPendingLiveChatNumber(res.data.pendingLiveChatNumber);
-  //       }
-  //       setLoading(false);
-  //     });
-  // }, []);
-
-  // Fetch Approved LiveChat
-  useEffect(() => {
-    axios.get(`/api/star/simple_post/approved`).then((res) => {
+   // Fetch Approved LiveChat
+   useEffect(() => {
+    axios.get(`/api/star/learning_session/approved`).then((res) => {
       if (res.status === 200) {
         setEvents(res.data.post);
       }
@@ -70,15 +57,15 @@ const ApprovedPost = () => {
 
   return (
     <>
-      <div className="AS">
-        <Nav></Nav>
+    <div className="AS">
+        <LearnSessionNaveStar></LearnSessionNaveStar>
 
         <div className="liveMeetupBorder my-5">
           <div className="d-flex px-4 pt-3">
             <div className="faTrophy">
               <i class="fas fa-trophy"></i>
             </div>
-            <h4 className="mx-3 text-white p-2">Pending Post</h4>
+            <h4 className="mx-3 text-white p-2">Approved Learning Session</h4>
           </div>
 
           <div className="pb-3">
@@ -88,7 +75,7 @@ const ApprovedPost = () => {
                   <div className="p-3">
                     <div className="completedMeetupBlack">
                       <img
-                        src={`http://localhost:8000/${event.image}`}
+                        src={`http://localhost:8000/${event.banner}`}
                         className="img-fluid"
                         alt=""
                         style={{ height: "200px" }}
@@ -96,7 +83,7 @@ const ApprovedPost = () => {
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
                           <Link
-                            to={`/superstar/post/${event.id}`} style={{ textDecoration: 'none' }}
+                            to={`/superstar/learning-session/approved/${event.id}`} style={{ textDecoration: 'none' }}
                           >
                             <h5 className="text-white">{event.title}</h5>
                           </Link>
@@ -116,8 +103,9 @@ const ApprovedPost = () => {
 
        
       </div>
+      
     </>
-  );
-};
+  )
+}
 
-export default ApprovedPost;
+export default ApprovedLearningSession

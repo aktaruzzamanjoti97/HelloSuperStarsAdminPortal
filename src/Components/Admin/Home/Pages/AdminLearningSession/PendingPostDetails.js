@@ -47,13 +47,15 @@ const PendingPostDetails = (props) => {
         
 
         <div className="container-fluid">
-            <div className="row">
+
+
+            {/* <div className="row">
                 <div className="col-md-6">
                     <div className="card event-card">
-                     <img src={`http://localhost:8000/${event.image}`} alt="" className="img-fluid" />
+                     <img src={`http://localhost:8000/${event.banner}`} alt="" className="img-fluid" />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
 
@@ -63,7 +65,7 @@ const PendingPostDetails = (props) => {
                 <div className="col-md-12">
                     <div className="card event-card2 shadow">
                      <div className="card-body">
-                     <h5 className="text-light p-2">{event.title}    <sub className='text-warning'>(offline)</sub></h5>
+                     <h5 className="text-light p-2">{event.title}</h5>
                 <p className='text-light'>
                     <Markup content={event.description}/>
                 </p>
