@@ -103,7 +103,7 @@ const PendingPost = () => {
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
                           <Link
-                            to={`/superstar-admin/post/pending/${event.id}`} style={{ textDecoration: 'none' }}
+                            to={`/superstar-admin/post/details/${event.id}`} style={{ textDecoration: 'none' }}
                           >
                             <h5 className="text-white">{event.title}</h5>
                           </Link>

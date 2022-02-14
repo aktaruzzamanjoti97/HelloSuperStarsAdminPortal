@@ -66,6 +66,7 @@ const PendingPost = () => {
   // }, []);
 
   // Fetch Approved LiveChat
+  
   useEffect(() => {
     axios.get(`/api/star/simple_post/pending`).then((res) => {
       if (res.status === 200) {

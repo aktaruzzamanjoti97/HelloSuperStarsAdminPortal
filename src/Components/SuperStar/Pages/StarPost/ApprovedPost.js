@@ -78,7 +78,7 @@ const ApprovedPost = () => {
             <div className="faTrophy">
               <i class="fas fa-trophy"></i>
             </div>
-            <h4 className="mx-3 text-white p-2">Pending Post</h4>
+            <h4 className="mx-3 text-white p-2">Approved Post</h4>
           </div>
 
           <div className="pb-3">

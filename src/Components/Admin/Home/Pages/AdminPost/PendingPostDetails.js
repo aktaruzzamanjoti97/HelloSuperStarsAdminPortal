@@ -87,9 +87,9 @@ const PendingPostDetails = (props) => {
              <div className="col-md-4 d-flex align-items-center">
          <div>
          <h2 className='text-warning'>Event Details submitted</h2>
-            <p className='text-light'>Waiting for &nbsp;
-            { event.star_approval === 1 ? (<span className="fw-bold">Manager Admin</span>) : (<span className="fw-bold">SuperStar</span>) }
-            &nbsp; Approval
+            <p className='text-light'>
+            { event.status === 1 ? (<span className="fw-bold">Already Published</span>) : event.star_approval === 1 ? (<span className="fw-bold">Waiting for &nbsp; Manager Admin Approval</span>) : (<span className="fw-bold">Waiting for &nbsp; Star & Manager Admin Approval</span>) }
+            &nbsp; 
             </p>
          </div>
              </div>
@@ -99,23 +99,34 @@ const PendingPostDetails = (props) => {
                             <h5 className='text-light text-center my-3'>Status</h5>
                             <div className='d-flex justify-content-center align-items-center '>
                                 <div style={{ width: 150, height: 150 }}>
-                                {event.star_approval === 1 ? 
+                                {event.status === 1 ? 
                                 (
-                                    <CircularProgressbarWithChildren value={50} styles={buildStyles({pathColor: `gold`})}>
+                                    <CircularProgressbarWithChildren value={100} styles={buildStyles({pathColor: `gold`})}>
+
+                                        {/* <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" /> */}
+                                        <div style={{ fontSize: 12, marginTop: -5 }}>
+                                            <strong className='text-light'>100% complete</strong>
+                                        </div>
+                                    </CircularProgressbarWithChildren>
+                                ): event.star_approval === 1 ?
+                                (
+                                <CircularProgressbarWithChildren value={50} styles={buildStyles({pathColor: `gold`})}>
 
                                         {/* <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" /> */}
                                         <div style={{ fontSize: 12, marginTop: -5 }}>
                                             <strong className='text-light'>50% complete</strong>
                                         </div>
                                     </CircularProgressbarWithChildren>
-                                ):
-                                <CircularProgressbarWithChildren value={0} styles={buildStyles({pathColor: `gold`})}>
+                                ) : 
+                                (
+                                    <CircularProgressbarWithChildren value={0} styles={buildStyles({pathColor: `gold`})}>
 
                                         {/* <img style={{ width: 40, marginTop: -4 }} className='my-2' src={star} alt="doge" /> */}
                                         <div style={{ fontSize: 12, marginTop: -5 }}>
                                             <strong className='text-light'>0% complete</strong>
                                         </div>
                                     </CircularProgressbarWithChildren>
+                                )
                                 }
                                 </div>
 

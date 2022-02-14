@@ -130,7 +130,7 @@ const handleClick = () => {
                                         <div style={{ fontSize: 12, marginTop: -5 }}>
                                             <strong className='text-light'>0% complete</strong>
                                         </div>
-                                    </CircularProgressbarWithChildren>
+                                </CircularProgressbarWithChildren>
                                 }
                                 </div>
 
