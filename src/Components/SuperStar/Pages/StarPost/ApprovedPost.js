@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "./SuperStarContent.css";
 import Nav from "./Nav";
 import moment from "moment";
+import ReactPlayer from "react-player";
 
 const ApprovedPost = () => {
 
@@ -87,12 +88,18 @@ const ApprovedPost = () => {
                 {events.map((event, index) => (
                   <div className="p-3">
                     <div className="completedMeetupBlack">
-                      <img
+                    {event.image?<img
                         src={`http://localhost:8000/${event.image}`}
                         className="img-fluid"
                         alt=""
                         style={{ height: "200px" }}
-                      />
+                      />:<ReactPlayer
+                      url={event.video}
+                      playing={false}
+                      volume={1}
+                      width="100%"
+                      height="200px" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                    />}
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
                           <Link
