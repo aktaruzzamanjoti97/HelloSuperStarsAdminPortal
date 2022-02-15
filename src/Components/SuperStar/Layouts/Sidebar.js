@@ -1,36 +1,8 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
-import swal from 'sweetalert';
+import {Link} from 'react-router-dom';
 
 
 const Sidebar = () => {
-
-    const history = useHistory();
-
-    const logoutSubmit = (e) => {
-        e.preventDefault();
-        
-        axios.post(`/api/logout`).then(res => {
-          if(res.data.status === 200)
-          {
-            localStorage.removeItem('auth_token');
-            localStorage.removeItem('auth_name');
-            localStorage.removeItem('auth_otp');
-            localStorage.removeItem('auth_id');
-            
-            swal("Success",res.data.message,"success");
-            history.push('/');
-            //browserHistory.push("/path-to-link");
-          }
-          else
-          {
-            swal("Warning",res.data.message,"Warning");
-            //history.push('/');
-          }
-        });
-      }
-    
 
     return (
         <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -98,7 +70,6 @@ const Sidebar = () => {
                     <div className="sb-sidenav-footer">
                         <div className="small">Logged in as:</div>
                         <h5 className="text-warning">{localStorage.auth_name}</h5>
-                        <button className="btn btn-sm btn-warning" onClick={logoutSubmit}> Log Out </button>
                     </div>
                 </nav>
     );

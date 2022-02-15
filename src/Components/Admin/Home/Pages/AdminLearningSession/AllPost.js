@@ -118,11 +118,9 @@ const AllPost = () => {
                             <h5 className="text-white text-ellipsis">{event.title}</h5>
                           </Link> */}
 
-                          <Link
-                            to={`/superstar-admin/learning-session/pending/${event.id}`} style={{ textDecoration: 'none' }}
-                          >
-                            <h5 className="text-white">{event.title}</h5>
-                          </Link>
+                          <a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2" style={{ textDecoration: 'none' }}>
+                          <h5 className="text-white text-ellipsis">{event.title}</h5>
+                          </a>
                         </div>
 
                         <p className="text-secondary">

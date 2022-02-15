@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory} from 'react-router-dom';
 import LiveNow from "./Content/LiveNow";
+import Live from "../../../../../assets/images/instagram-live 1.png";
+import clock from '../../../../../assets/images/meetupEvent/clock.png'
+import Approved from "../../../../../assets/images/approved.png";
+import Pending from "../../../../../assets/images/pending 2.png";
+import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
 import axios from "axios";
 import "./SuperStarContent.css";
 import { Markup } from 'interweave';

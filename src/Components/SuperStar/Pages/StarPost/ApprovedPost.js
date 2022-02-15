@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import LiveNow from "./Content/LiveNow";
+import Live from "../../../../assets/images/instagram-live 1.png";
+import Approved from "../../../../assets/images/approved.png";
+import Pending from "../../../../assets/images/pending 2.png";
+import Add from "../../../../assets/images/UpcomingEvent/add 1.png";
+import LiveIcon from '../../../../assets/images/AdminLiveProfile/live 1.png'
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
@@ -7,6 +13,8 @@ import Nav from "./Nav";
 import moment from "moment";
 
 const ApprovedPost = () => {
+  const [loading, setLoading] = useState(true);
+  const [pendingLiveChatNumber, setPendingLiveChatNumber] = useState([]);
 
   const [events, setEvents] = useState([]);
 
