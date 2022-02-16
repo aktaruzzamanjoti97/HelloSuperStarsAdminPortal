@@ -59,12 +59,14 @@ export default function AddSession(props) {
 
 
   const [registerInput, setRegister] = useState({
-    title: '',
-    description: '',
-    video: '',
-    type: '',
-    star_id: '',
-    error_list: []
+
+    title: "",
+    description: "",
+    video: "",
+    star_id: "",
+    fee: '',
+    error_list: [],
+
   });
 
   const handleInput = (e) => {
@@ -96,6 +98,17 @@ export default function AddSession(props) {
     setImagedata(file[0]);
   }
 
+  
+  const [postType, setPostType] = useState("");
+  const [paymentType, setPaymentType] = useState("");
+  function handleType(e) {
+    setPostType(e.target.value);
+  }
+  function handleType2(e) {
+    setPaymentType(e.target.value);
+  }
+
+
   const registerSubmit = (e) => {
     e.preventDefault();
 
@@ -108,8 +121,10 @@ export default function AddSession(props) {
     fData.append('title', registerInput.title);
     fData.append('star_id', registerInput.star_id);
     fData.append("description", convertedContent);
-    fData.append('video', registerInput.video);
-    fData.append('type', registerInput.type);
+
+    fData.append("fee", registerInput.fee);
+    fData.append("video", registerInput.video);
+    fData.append("type", paymentType);
 
 
     axios.get('/sanctum/csrf-cookie').then(response => {
@@ -117,79 +132,239 @@ export default function AddSession(props) {
         if (res.data.status === 200) {
           // document.getElementById('input_form').reset();   
           swal("Success", res.data.message, "success");
-          history.push('superstar-admin/post/pending');
-        }
-        else {
+
+          history.push("/superstar-admin/post/pending");
+        } else {
+
           //setModalShow(true);
           setRegister({ ...registerInput, error_list: res.data.validation_errors });
         }
       });
     });
-  }
+
+  };
+
 
 
 
   return (
     <>
-    {inputFieldList.map((x, i) => {
-      return (
-        <div {...props} className="my-4" size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
 
-        <div className="Modal-js-body">
-          <div className="container">
-            <form className="p-3" onSubmit={registerSubmit} id="input_form" encType="multipart/form-data">
+      {inputFieldList.map((x, i) => {
+        return (
+          <div
+            {...props}
+            className="my-4"
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <div className="Modal-js-body">
+              <div className="container">
+                <form
+                  className="p-3"
+                  onSubmit={registerSubmit}
+                  id="input_form"
+                  encType="multipart/form-data"
+                >
+                  <div className="form-group row my-4">
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch">
+                      Select Star
+                    </label>
+                    <div className="col-sm-7">
+                      <select
+                        onChange={handleInput}
+                        name="star_id"
+                        className="form-control reply-control input-overlay"
+                        value={registerInput.star_id}
+                      >
+                        <option className="text-whaite" value="">
+                          Choose One
+                        </option>
+                        {starList.map((user, index) => (
+                          <option className="text-whaite" value={user.id}>
+                            {user.first_name} {user.last_name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
 
-              <div className="form-group row my-4">
-                <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch">
-                  Select Star
-                </label>
-                <div className="col-sm-7">
-                  <select onChange={handleInput} name="star_id" className="form-control reply-control input-overlay" value={registerInput.star_id}>
-                    <option className="text-whaite" value="">Choose One</option>
-                    {starList.map((user, index) => (
-                      <option className="text-whaite" value={user.id}>{user.first_name} {user.last_name}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
+                  <div className="form-group row my-4">
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      Post Type
+                    </label>
+                    <div className="col-sm-3">
+                      <select
+                        onChange={handleType}
+                        
+                        className="form-control reply-control input-overlay"
+                        
+                      >
+                        <option className="text-whaite" value="">
+                          Select Post Type
+                        </option>
+                        <option className="text-whaite" value="general">
+                          General
+                        </option>
+                        <option className="text-whaite" value="video">
+                          Video
+                        </option>
+                      </select>
+                    </div>
 
-              <div className="form-group row my-4">
-                <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-                  Title
-                </label>
-                <div className="col-sm-7">
-                  <input type="text" className="form-control form-control-sm input-in-lv-ch"
-                    placeholder="write here.." onChange={handleInput} name='title' value={registerInput.title} />
-                </div>
-              </div>
+                    <label className="col-sm-1 col-form-label text-lg-center col-form-label-sm input-text-lv-ch">
+                    Type
+                    </label>
+                    <div className="col-sm-3">
+                      <select
+                        onChange={handleType2}
+                        name="type"
+                        className="form-control reply-control input-overlay"
+                        value={paymentType}
+                      >
+                        <option className="text-whaite" value="">
+                        Select Payment Type
+                        </option>
+                        <option className="text-whaite" value="free">
+                          Free
+                        </option>
+                        <option className="text-whaite" value="paid">
+                          Paid
+                        </option>
+                      </select>
+                    </div>
+                  </div>
 
+                  <div className="form-group row my-4">
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      Title
+                    </label>
+                    <div className="col-sm-7">
+                      <input
+                        type="text"
+                        className="form-control form-control-sm input-in-lv-ch"
+                        placeholder="Enter title here...!"
+                        onChange={handleInput}
+                        name="title"
+                        value={registerInput.title}
+                      />
+                    </div>
+                  </div>
 
-              <div className="form-group row my-4">
-                <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-                  Description
-                </label>
-                <div className="col-sm-7">
+                  <div className="form-group row my-4">
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      Description
+                    </label>
+                    <div className="col-sm-7">
+                      <Editor
+                        name="description"
+                        editorState={editorState}
+                        onEditorStateChange={handleEditorChange}
+                        wrapperClassName="wrapper-class"
+                        editorClassName="editor-class"
+                        toolbarClassName="toolbar-class"
+                      />
+                    </div>
+                  </div>
+                  {postType === "general" ? (
+                    <div className="form-group row my-3">
+                      <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                        Banner
+                      </label>
+                      <div className="col-sm-3 file-x-i">
+                        <input
+                          type="file"
+                          className="form-control form-control-sm input-in-lv-ch"
+                          onChange={(e) => handleChange(e.target.files)}
+                          id="image"
+                          name="image"
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
 
-                  <Editor
-                    name="description"
-                    editorState={editorState}
-                    onEditorStateChange={handleEditorChange}
-                    wrapperClassName="wrapper-class"
-                    editorClassName="editor-class"
-                    toolbarClassName="toolbar-class"
-                  />
+                  {postType === "video" ? (
+                    <div className="form-group row my-4">
+                      <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                        Video
+                      </label>
+                      <div className="col-sm-7">
+                        <input
+                          type="text"
+                          className="form-control form-control-sm input-in-lv-ch"
+                          placeholder="Enter embedded link!"
+                          onChange={handleInput}
+                          name="video"
+                          value={registerInput.video}
+                        />
+                      </div>
+                    </div>
+                  ) : (
+                    ""
+                  )}
 
-                </div>
-              </div>
+                  {/* <div className="form-group row my-4">
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      Type
+                    </label>
+                    <div className="col-sm-7">
+                      <select
+                        onChange={handleInput}
+                        name="type"
+                        className="form-control reply-control input-overlay"
+                        value={registerInput.type}
+                      >
+                        <option className="text-whaite" value="">
+                          Choose One
+                        </option>
+                        <option className="text-whaite" value="free">
+                          Free
+                        </option>
+                        <option className="text-whaite" value="paid">
+                          Paid
+                        </option>
+                      </select>
+                    </div>
+                  </div> */}
+                  {paymentType==='paid'? <div className="form-group row my-4">
+                      <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                        Fees
+                      </label>
+                      <div className="col-sm-7">
+                        <input
+                          type="text"
+                          className="form-control form-control-sm input-in-lv-ch"
+                          placeholder="Enter Fees..!"
+                          name="fee"                         
+                        />
+                      </div>
+                    </div>:""}
+                 
 
+                  <div className="form-group row my-3">
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      <button
+                        className="btn btn-warning w-100 text-dark con-text-bfo"
+                        type="submit"
+                      >
+                        Confirm
+                      </button>
+                    </label>
+                    <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      <button
+                        onClick={(i) => handleRemoveClick(i)}
+                        className="btn btn-danger w-100 text-dark con-text-bfo"
+                        type="submit"
+                      >
+                        Remove Event
+                      </button>
+                    </label>
+                  </div>
+                </form>
 
-              <div className="form-group row my-3">
-                <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-                  Banner
-                </label>
-                <div className="col-sm-3 file-x-i">
-                  <input type="file" className="form-control form-control-sm input-in-lv-ch" onChange={(e) => handleChange(e.target.files)} id="image" name="image" />
-                </div>
               </div>
 
               <div className="form-group row my-4">

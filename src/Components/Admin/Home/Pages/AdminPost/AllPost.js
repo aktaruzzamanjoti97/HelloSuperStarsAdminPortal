@@ -11,6 +11,7 @@ import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
 import moment from 'moment';
+import ReactPlayer from "react-player";
 
 const AllPost = () => {
   const [loading, setLoading] = useState(true);
@@ -104,23 +105,25 @@ const AllPost = () => {
                 {events.map((event, index) => (
                   <div className="p-3">
                     <div className="completedMeetupBlack">
-                      <img
+                      {event.image?<img
                         src={`http://localhost:8000/${event.image}`}
                         className="img-fluid"
                         alt=""
                         style={{ height: "200px" }}
-                      />
+                      />:<ReactPlayer
+                      url={event.video}
+                      playing={false}
+                      volume={1}
+                      width="100%"
+                      height="200px" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                    />}
                       <div className="p-3">
-                        <div className="d-flex justify-content-between">
-                          {/* <Link
-                            to={`/superstar-admin/approved-livechat/${event.id}`} style={{ textDecoration: 'none' }}
+                      <div className="d-flex justify-content-between">
+                          <Link
+                            to={`/superstar-admin/post/details/${event.id}`} style={{ textDecoration: 'none' }}
                           >
-                            <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </Link> */}
-
-                          <a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2" style={{ textDecoration: 'none' }}>
-                          <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </a>
+                            <h5 className="text-white">{event.title}</h5>
+                          </Link>
                         </div>
 
                         <p className="text-secondary">
@@ -135,7 +138,7 @@ const AllPost = () => {
             </div>
           </div>
         </div> : <div className="container-fluid">
-          <div className="card bg-dark" style={{ border: "2px solid yellow" }}>
+        {/*   <div className="card bg-dark" style={{ border: "2px solid yellow" }}>
 
             <div className="card-body">
               <h5 className="text-light"> <img src={LiveIcon} alt="" className="img-fluid mx-2" /> Live Chat profile</h5>
@@ -151,7 +154,7 @@ const AllPost = () => {
 
               </div>
             </div>
-          </div>
+          </div> */}
         </div>}
 
 

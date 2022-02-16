@@ -98,7 +98,7 @@ const AdminRoute = [
     { path: '/superstar-admin/post', exact: true, name: 'PendingPost', component: AllPost },
     { path: '/superstar-admin/post/create', exact: true, name: 'CreatePost', component: CreatePost },
     { path: '/superstar-admin/post/pending', exact: true, name: 'PendingPost', component: PendingPost },
-    { path: '/superstar-admin/post/pending/:id', exact: true, name: 'PendingPost', component: PendingPostDetails },
+    { path: '/superstar-admin/post/details/:id', exact: true, name: 'PendingPost', component: PendingPostDetails },
     { path: '/superstar-admin/post/approved', exact: true, name: 'ApprovedPost', component: ApprovedPost },
 
     // Learning Session Route

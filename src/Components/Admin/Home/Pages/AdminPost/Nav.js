@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
 import Live from "../../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../../assets/images/approved.png";
+import Approved from "../../../../../assets/images/live.png";
 import Pending from "../../../../../assets/images/pending 2.png";
 import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
 import axios from "axios";
@@ -46,7 +46,7 @@ const Nav = () => {
                       />
                     </td>
                     <td className="livechat-card-td">
-                      <small className="livechat-card-small">{approved}</small>
+                      <h4 className="livechat-card-small">{approved}</h4>
                     </td>
                   </tr>
                 </center>
@@ -63,7 +63,7 @@ const Nav = () => {
                   aria-controls="collapseOne"
                 >
                   {" "}
-                 Approved
+                 Live Now
                 </button>
               </Link>
             </div>
@@ -82,7 +82,7 @@ const Nav = () => {
                       <img src={Pending} className="livechat-card-img-top" alt="..." />
                     </td>
                     <td className="livechat-card-td">
-                      <small className="livechat-card-small">{pending}</small>
+                      <h4 className="livechat-card-small ">{pending}</h4>
                     </td>
                   </tr>
                 </center>
@@ -118,7 +118,7 @@ const Nav = () => {
                       <img src={Add} className="livechat-card-img-top" alt="..." />
                     </td>
                     <td className="livechat-card-td">
-                      <small className="livechat-card-small"></small>
+                      <h4 className="livechat-card-small fw-blod"></h4>
                     </td>
                   </tr>
                 </center>

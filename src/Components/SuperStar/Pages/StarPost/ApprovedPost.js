@@ -11,6 +11,7 @@ import Slider from "react-slick";
 import "./SuperStarContent.css";
 import Nav from "./Nav";
 import moment from "moment";
+import ReactPlayer from "react-player";
 
 const ApprovedPost = () => {
   const [loading, setLoading] = useState(true);
@@ -70,6 +71,7 @@ const ApprovedPost = () => {
     axios.get(`/api/star/simple_post/approved`).then((res) => {
       if (res.status === 200) {
         setEvents(res.data.post);
+        console.log('star name', res.data.star);
       }
     });
 
@@ -86,7 +88,7 @@ const ApprovedPost = () => {
             <div className="faTrophy">
               <i class="fas fa-trophy"></i>
             </div>
-            <h4 className="mx-3 text-white p-2">Pending Post</h4>
+            <h4 className="mx-3 text-white p-2">Approved Post</h4>
           </div>
 
           <div className="pb-3">
@@ -95,12 +97,18 @@ const ApprovedPost = () => {
                 {events.map((event, index) => (
                   <div className="p-3">
                     <div className="completedMeetupBlack">
-                      <img
+                    {event.image?<img
                         src={`http://localhost:8000/${event.image}`}
                         className="img-fluid"
                         alt=""
                         style={{ height: "200px" }}
-                      />
+                      />:<ReactPlayer
+                      url={event.video}
+                      playing={false}
+                      volume={1}
+                      width="100%"
+                      height="200px" // style={{ margin: "0 auto" }} onReady={()=> console.log("ready now")}
+                    />}
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
                           <Link
@@ -120,9 +128,7 @@ const ApprovedPost = () => {
               </Slider>
             </div>
           </div>
-        </div>
-
-       
+        </div> 
       </div>
     </>
   );

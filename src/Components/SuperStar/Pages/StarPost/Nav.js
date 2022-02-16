@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
 import Live from "../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../assets/images/approved.png";
+import Approved from "../../../../assets/images/live.png";
 import Pending from "../../../../assets/images/pending 2.png";
 import Add from "../../../../assets/images/UpcomingEvent/add 1.png";
 import LiveIcon from '../../../../assets/images/AdminLiveProfile/live 1.png'
@@ -42,12 +42,12 @@ const Nav = () => {
                     <td className="livechat-card-td">
                       <img
                         src={Approved}
-                        className="livechat-card-img-top"
+                        className="livechat-card-img-top mx-1"
                         alt="..."
                       />
                     </td>
                     <td className="livechat-card-td">
-                      <small className="livechat-card-small">{approved}</small>
+                      <h4 className="livechat-card-small fw-blod">{approved}</h4>
                     </td>
                   </tr>
                 </center>
@@ -63,8 +63,8 @@ const Nav = () => {
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  {" "}
-                 Approved
+                  
+                 Live Now
                 </button>
               </Link>
             </div>
@@ -83,7 +83,7 @@ const Nav = () => {
                       <img src={Pending} className="livechat-card-img-top" alt="..." />
                     </td>
                     <td className="livechat-card-td">
-                      <small className="livechat-card-small">{pending}</small>
+                    <h4 className="livechat-card-small fw-blod">{pending}</h4>
                     </td>
                   </tr>
                 </center>
@@ -107,7 +107,7 @@ const Nav = () => {
           </div>
           <br />
 
-          {/* <div
+          <div
             title="Live Now"
             className="col-md-3 align-items-center justify-content-center "
           >
@@ -140,7 +140,7 @@ const Nav = () => {
                 </button>
               </Link>
             </div>
-          </div> */}
+          </div>
 
           
         </div>
