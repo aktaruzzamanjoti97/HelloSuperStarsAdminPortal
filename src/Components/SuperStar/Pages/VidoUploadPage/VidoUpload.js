@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import PersonImg from "../../../../assets/images/VidoUpload/unsplash_ChylazdaLkU.png";
 // import Video from "../../../../assets/images/VidoUpload/ymneq71z 1.png";
 import { ReactMediaRecorder } from "react-media-recorder";
 import Webcam from "react-webcam";
 import "./VidoUpload.css";
+import { useEffect } from "react";
 
 
 
@@ -14,6 +16,28 @@ const VidoUpload = () => {
 
   const [stopShowData, setStopShowData] = useState(false);
   const webcamRef = React.useRef(null);
+  const [greetingList, setGreetingList] = useState([]);
+  const [loopIndex, setLoopIndex] = useState(0);
+
+
+
+
+  useEffect(() => {
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get("/api/star/greetings_reg_list/"+9).then((res) => {
+      if (res.status === 200) {
+          // setGreeting(res.data.greeting);
+        setGreetingList(res.data.list);
+        console.log(res.data.list);
+     
+      }
+      });
+  });
+  }, [])
+
+
+  
+  // console.log(currentPosts);
 
   return (
     <div>
@@ -66,9 +90,13 @@ const VidoUpload = () => {
           <div className="col-md-5 ">
             <div className="card right-video-card">
               <div className="card-body">
-                <div className="container my-3">
+                {greetingList ? greetingList.map((data,index) =>
+                  
+                  <>
+                    {index == loopIndex?(
+                  <div className="container my-3">
                   <img src={PersonImg} alt="" className="img-fluid my-2" />
-                  <h5 className="text-light my-2">Shorouvi Akter</h5>
+                        <h5 className="text-light my-2">{data.user.last_name}{index}</h5>
                   <h6 className="text-warning mb-3">Marriage Annerversery</h6>
                   <p className="text-light">Age: 25</p>
                   <p className="text-light mt-4">
@@ -81,7 +109,13 @@ const VidoUpload = () => {
                     libero harum architecto voluptatibus esse asperiores
                     molestias expedita omnis, quod necessitatibus.
                   </p>
-                </div>
+                    </div>
+                    ):(<></>)}
+                </>
+             
+       
+                  
+                  ) : <></>}
               </div>
             </div>
           </div>
@@ -91,6 +125,7 @@ const VidoUpload = () => {
       <div className="container text-center">
         <button className="mx-2 px-3 btn btn-warning">Upload</button>
         <Link to="/superstar/greetings/video-upload">        <button className="mx-2 px-3 btn btn-dark">Next</button></Link>
+        <button className="mx-2 px-3 btn btn-dark" onClick={()=>setLoopIndex(1)}>Next User</button>
 
       </div>
     </div>

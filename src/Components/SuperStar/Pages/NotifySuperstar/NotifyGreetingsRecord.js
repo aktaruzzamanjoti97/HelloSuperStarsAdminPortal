@@ -7,22 +7,33 @@ import Star from '../../../../assets/images/profileAvatar/Avater.png'
 import Banner from '../../../../assets/images/SakibBanner.PNG'
 import PriceTag from '../../../../assets/images/tagPrice.PNG'
 import { Markup } from 'interweave';
+import moment from 'moment';
 
 const NotifyGreetingsRecord = () => {
     const history = useHistory();
-    const [greetingDetail, setGreeting] = useState([]);
+    const [greetingDetail, setGreetingDetail] = useState([]);
+    const [greetingList, setGreetingList] = useState([]);
 
 
     useEffect(() => {
-
+    let geetings_id = ""
     axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.get('/api/star/greetings').then((res) => {
         if (res.status === 200) {
-            setGreeting(res.data.greeting);
-            // console.log(res.data.greeting);
+            setGreetingDetail(res.data.greeting);
+            axios.get("/api/star/greetings_reg_list/"+res.data.greeting.id).then((res) => {
+                if (res.status === 200) {
+                    // setGreeting(res.data.greeting);
+                    setGreetingList(res.data.list);
+               
+                }
+                });
         }
         });
     });
+        
+
+ 
 
     }, []);
     
@@ -35,38 +46,40 @@ return (
         <div className="NotifyGreetings d-flex">
 
             <div className="LeftGNA col-8 m-3 d-flex">
-                <div className='NotifyOver w-100'>
-                    <table className='w-100 my-3 NotifyTabletdRec '>
-                        <tr className='mx-3'>
-                            <td className='Notifytdx letfNotRe text-light'> <img src={Star} className='NotifyAimg' alt="" />Shakib All Hasan</td>
-                            <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> 21/12/1998  09:00 pm</span></td>
-                            <td className='Notifytdx rightNotRe '>
-                                <Link to="/superstar/greetings/video-record"><button className='btn btnRecNot active'><i class="fas fa-video"></i> Rec</button></Link>
-                            </td>
+                    <div className='NotifyOver w-100'>
+                        {greetingList ? greetingList.map(data => 
+                            <>
+                            
+                                
+                                {data.status === '2' ? (
+                                    <table className='w-100 my-3 NotifyTabletdRec '>
+                                    <tr className='mx-3'>
+                                        <td className='Notifytdx letfNotRe text-light'> <img src={Star} className='NotifyAimg' alt="" />{data.user.first_name} {data.user.last_name}</td>
+                                        <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> {moment(data.request_time).format('MMMM Do YYYY, h:mm:ss a')}</span></td>
+                                        <td className='Notifytdx rightNotRe '>
+                                            <Link to="/superstar/greetings/video-record"><button className='btn btnRecNot active'><i class="fas fa-video"></i> Rec</button></Link>
+                                        </td>
+                                
+                                    </tr>
+                                        </table>
+                                ) : (<></>) }
                         
-                        </tr>
-                    </table>
-                    <table className='w-100 my-3 NotifyTabletdRec '>
-                        <tr className='mx-3'>
-                            <td className='Notifytdx letfNotRe  text-light'> <img src={Star} className='NotifyAimg' alt="" />Shakib All Hasan</td>
-                            <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> 21/12/1998  09:00 pm</span></td>
-                            <td className='Notifytdx rightNotRe '><button className='btn btnRecNot'><i class="fas fa-video"></i> Rec</button></td>
-                        </tr>
-                    </table>
-                    <table className='w-100 my-3 NotifyTabletdRec '>
-                        <tr className='mx-3'>
-                            <td className='Notifytdx letfNotRe text-light'> <img src={Star} className='NotifyAimg' alt="" />Shakib All Hasan</td>
-                            <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> 21/12/1998  09:00 pm</span></td>
-                            <td className='Notifytdx rightNotRe '><button className='btn btnRecNot'><i class="fas fa-video"></i> Rec</button></td>
-                        </tr>
-                    </table>
-                    <table className='w-100 my-3 NotifyTabletdRec '>
-                        <tr className='mx-3'>
-                            <td className='Notifytdx letfNotRe text-light'> <img src={Star} className='NotifyAimg' alt="" />Shakib All Hasan</td>
-                            <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> 21/12/1998  09:00 pm</span></td>
-                            <td className='Notifytdx rightNotRe '><button className='btn btnRecNot'><i class="fas fa-video"></i> Rec</button></td>
-                        </tr>
-                    </table>
+                        
+                        
+                                
+
+                            </>
+                        
+                       
+                          
+                       
+                        
+                       )
+                            
+                            
+                    : ""}     
+                   
+                   
                 
                 </div>
 
