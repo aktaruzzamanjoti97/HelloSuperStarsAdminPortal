@@ -74,7 +74,7 @@ const SuperstarRoute = [
     { path: '/superstar/post/pending', exact: true, name: 'PendingPost', component: PendingPost },
     { path: '/superstar/post/approved', exact: true, name: 'PendingPost', component: ApprovedPost },
     { path: '/superstar/post/:id', exact: true, name: 'PendingPost', component: PostDetails },
-    { path: '/superstar/post/approved', exact: true, name: 'ApprovedPost', component: PendingPost },
+    // { path: '/superstar/post/approved', exact: true, name: 'ApprovedPost', component: PendingPost },
 
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },

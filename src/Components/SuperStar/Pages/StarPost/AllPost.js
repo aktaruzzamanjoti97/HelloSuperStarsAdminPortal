@@ -138,7 +138,7 @@ const AllPost = () => {
             </div>
           </div>
         </div> : <div className="container-fluid">
-          <div className="card bg-dark" style={{ border: "2px solid yellow" }}>
+        {/*   <div className="card bg-dark" style={{ border: "2px solid yellow" }}>
 
             <div className="card-body">
               <h5 className="text-light"> <img src={LiveIcon} alt="" className="img-fluid mx-2" /> Live Chat profile</h5>
@@ -154,7 +154,7 @@ const AllPost = () => {
 
               </div>
             </div>
-          </div>
+          </div> */}
         </div>}
 
 

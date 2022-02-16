@@ -85,7 +85,7 @@ const PendingPostDetails = (props) => {
                     <button className='btn MEN-X fw-bold'>Approve </button>
                 </Link> */}
 
-            {event.status === 0 ? (
+            {event.star_approval === 0 ? (
               <>
                 <button className="btn MEN-X fw-bold" onClick={handleClick}>
                   Approve{" "}

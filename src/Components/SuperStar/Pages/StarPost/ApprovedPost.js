@@ -63,6 +63,7 @@ const ApprovedPost = () => {
     axios.get(`/api/star/simple_post/approved`).then((res) => {
       if (res.status === 200) {
         setEvents(res.data.post);
+        console.log('star name', res.data.star);
       }
     });
 
@@ -119,9 +120,7 @@ const ApprovedPost = () => {
               </Slider>
             </div>
           </div>
-        </div>
-
-       
+        </div> 
       </div>
     </>
   );

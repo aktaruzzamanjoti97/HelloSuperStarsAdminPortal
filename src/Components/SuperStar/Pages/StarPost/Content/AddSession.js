@@ -19,7 +19,6 @@ export default function AddSession(props) {
       start_time: "",
       end_time: "",
       fee: "",
-      star_id: "",
       image: "",
     },
   ]);
