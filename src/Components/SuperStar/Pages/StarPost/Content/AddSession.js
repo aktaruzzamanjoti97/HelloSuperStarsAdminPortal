@@ -289,7 +289,8 @@ export default function AddSession(props) {
                       </select>
                     </div>
                   </div> */}
-                  {paymentType==='paid'? <div className="form-group row my-4">
+                  {paymentType==='paid'? 
+                  <div className="form-group row my-4">
                       <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
                         Fees
                       </label>
@@ -298,7 +299,9 @@ export default function AddSession(props) {
                           type="text"
                           className="form-control form-control-sm input-in-lv-ch"
                           placeholder="Enter Fees..!"
-                          name="fee"                         
+                          onChange={handleInput}
+                          name="fee"
+                          value={registerInput.fee}                         
                         />
                       </div>
                     </div>:""}
