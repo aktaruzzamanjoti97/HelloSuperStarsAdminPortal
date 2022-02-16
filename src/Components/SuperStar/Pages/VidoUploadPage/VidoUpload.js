@@ -7,37 +7,65 @@ import { ReactMediaRecorder } from "react-media-recorder";
 import Webcam from "react-webcam";
 import "./VidoUpload.css";
 import { useEffect } from "react";
+import { Markup } from "interweave";
+import moment from 'moment';
+import loaderImg from './loder.gif';
 
 
 
 
 
-const VidoUpload = () => {
+
+const VidoUpload = (props) => {
 
   const [stopShowData, setStopShowData] = useState(false);
   const webcamRef = React.useRef(null);
   const [greetingList, setGreetingList] = useState([]);
-  const [loopIndex, setLoopIndex] = useState(0);
-
+  const [greetingDetail, setGreetingDetail] = useState([]);
+  const [count, setCount] = useState(0);
+  const [end, setEnd] = useState(true);
+  const [loader, setLoader] = useState(false);
+  let base_url = "http://localhost:8000/"
 
 
 
   useEffect(() => {
+    const userIndex = props.match.params.index;
+
     axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.get("/api/star/greetings_reg_list/"+9).then((res) => {
+      axios.get('/api/star/greetings').then((res) => {
       if (res.status === 200) {
-          // setGreeting(res.data.greeting);
-        setGreetingList(res.data.list);
-        console.log(res.data.list);
-     
+          setGreetingDetail(res.data.greeting);
+          axios.get("/api/star/greetings_reg_payment_list/"+res.data.greeting.id).then((res) => {
+              if (res.status === 200) {
+                  setGreetingList(res.data.list);
+                setLoader(true)
+                setCount(parseInt(userIndex))
+              }
+              });
+          }
+          });
+        });
+
+      }, [props.match.params.index])
+    /**
+     * next user
+     */
+  let handelNextUser = () => {
+      
+      const arryLength = greetingList.length;
+      
+      if (count < arryLength-1) {
+        
+        setCount(count+1)
       }
-      });
-  });
-  }, [])
 
-
-  
-  // console.log(currentPosts);
+      if (count == arryLength - 2) {
+        setEnd(false)
+      }
+      
+    console.log(count)
+    }
 
   return (
     <div>
@@ -90,24 +118,18 @@ const VidoUpload = () => {
           <div className="col-md-5 ">
             <div className="card right-video-card">
               <div className="card-body">
-                {greetingList ? greetingList.map((data,index) =>
+                {loader ? greetingList.map((data,index) =>
                   
                   <>
-                    {index == loopIndex?(
+               
+                    {index == count?(
                   <div className="container my-3">
-                  <img src={PersonImg} alt="" className="img-fluid my-2" />
-                        <h5 className="text-light my-2">{data.user.last_name}{index}</h5>
-                  <h6 className="text-warning mb-3">Marriage Annerversery</h6>
-                  <p className="text-light">Age: 25</p>
+                  <img src={base_url+data.user.image} alt="pro image" className="pro-image img-fluid my-2" />
+                        <h5 className="text-light my-2">{data.user.first_name} {data.user.last_name}</h5>
+                  {/* <h6 className="text-warning mb-3">Marriage Annerversery</h6> */}
+                        <p className="text-light">Age: {Math.floor(moment(new Date()).diff(moment(moment(data.birth_date).format('L'),"MM/DD/YYYY"),'years',true))}</p>
                   <p className="text-light mt-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nemo, culpa vel? Dolor atque recusandae quaerat tempore,
-                    totam nam magnam ex commodi dicta vero porro laudantium
-                    laborum nisi ab aut voluptatem! Lorem ipsum dolor sit amet
-                    consectetur, adipisicing elit. Voluptatum, tempora
-                    dignissimos ab sint beatae in ipsum deleniti natus totam
-                    libero harum architecto voluptatibus esse asperiores
-                    molestias expedita omnis, quod necessitatibus.
+                    <Markup content={data.greeting_contex} />
                   </p>
                     </div>
                     ):(<></>)}
@@ -115,7 +137,9 @@ const VidoUpload = () => {
              
        
                   
-                  ) : <></>}
+                ) : <>
+                <img src={loaderImg} alt="" width="100%"/>
+                </>}
               </div>
             </div>
           </div>
@@ -123,9 +147,13 @@ const VidoUpload = () => {
       </div>
 
       <div className="container text-center">
-        <button className="mx-2 px-3 btn btn-warning">Upload</button>
-        <Link to="/superstar/greetings/video-upload">        <button className="mx-2 px-3 btn btn-dark">Next</button></Link>
-        <button className="mx-2 px-3 btn btn-dark" onClick={()=>setLoopIndex(1)}>Next User</button>
+       
+        <Link to="/superstar/greetings/video-upload"> <button className="mx-2 px-3 btn btn-warning">Upload</button></Link>
+        {end ?
+        <button className="mx-2 px-3 btn btn-dark" onClick={handelNextUser}>Next User</button>
+          :
+          <button className="mx-2 px-3 btn btn-dark disabled" onClick={handelNextUser}>Next User</button>
+      }
 
       </div>
     </div>

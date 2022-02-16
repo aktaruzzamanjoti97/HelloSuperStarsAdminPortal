@@ -114,7 +114,7 @@ const VidoUploadPage2 = () => {
 
       <div className="container text-center">
         <button className="mx-2 px-3 btn btn-warning">Upload</button>
-        <button className="mx-2 px-3 btn btn-dark">Next</button>
+        {/* <button className="mx-2 px-3 btn btn-dark">Next</button> */}
       </div>
     </div>
         </div>
