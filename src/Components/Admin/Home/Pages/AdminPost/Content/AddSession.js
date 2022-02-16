@@ -338,7 +338,9 @@ export default function AddSession(props) {
                           type="text"
                           className="form-control form-control-sm input-in-lv-ch"
                           placeholder="Enter Fees..!"
-                          name="fee"                         
+                          onChange={handleInput}
+                          name="fee"
+                          value={registerInput.fee}                       
                         />
                       </div>
                     </div>:""}
@@ -367,7 +369,7 @@ export default function AddSession(props) {
 
               </div>
 
-              <div className="form-group row my-4">
+              {/* <div className="form-group row my-4">
                 <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
                   Video
                 </label>
@@ -379,7 +381,7 @@ export default function AddSession(props) {
 
               
 
-              <div className="form-group row my-4">
+               <div className="form-group row my-4">
                 <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
                   Type
                 </label>
@@ -406,13 +408,13 @@ export default function AddSession(props) {
                     Remove Event
                   </button>
                 </label>
-              </div>
-            </form>
+              </div> */}
+            
 
           </div>
         </div>
 
-      </div>
+    
       )
     })}
      

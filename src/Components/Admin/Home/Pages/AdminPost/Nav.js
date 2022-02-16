@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import LiveNow from "./Content/LiveNow";
-import Live from "../../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../../assets/images/live.png";
+import Approved from "../../../../../assets/images/approved.png";
 import Pending from "../../../../../assets/images/pending 2.png";
 import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
 import axios from "axios";
