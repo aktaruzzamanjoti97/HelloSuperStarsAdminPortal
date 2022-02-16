@@ -102,7 +102,7 @@ const SuperstarRoute = [
     { path: '/superstar/notify/record', exact: true, name: 'notify', component: NotifyRecord },
     { path: '/superstar/notify-schedule', exact: true, name: 'notify-schedule', component: StarNotifySchedule },
     { path: '/superstar/notify-schedule/view', exact: true, name: 'view', component: StartNotifyScheduleView },
-    { path: '/superstar/greetings/video-record', exact: true, name: 'greetings', component: SuperstarGreetingsVideoRecord },
+    { path: '/superstar/greetings/video-record/:index', exact: true, name: 'greetings', component: SuperstarGreetingsVideoRecord },
     { path: '/superstar/greetings/video-upload', exact: true, name: 'greetings', component: SuperstarGreetingsVideoUpload },
 
 

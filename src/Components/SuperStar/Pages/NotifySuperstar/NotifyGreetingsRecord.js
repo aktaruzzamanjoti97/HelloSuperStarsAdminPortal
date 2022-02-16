@@ -21,7 +21,7 @@ const NotifyGreetingsRecord = () => {
         axios.get('/api/star/greetings').then((res) => {
         if (res.status === 200) {
             setGreetingDetail(res.data.greeting);
-            axios.get("/api/star/greetings_reg_list/"+res.data.greeting.id).then((res) => {
+            axios.get("/api/star/greetings_reg_payment_list/"+res.data.greeting.id).then((res) => {
                 if (res.status === 200) {
                     // setGreeting(res.data.greeting);
                     setGreetingList(res.data.list);
@@ -47,22 +47,22 @@ return (
 
             <div className="LeftGNA col-8 m-3 d-flex">
                     <div className='NotifyOver w-100'>
-                        {greetingList ? greetingList.map(data => 
+                        {greetingList ? greetingList.map((data,index) => 
                             <>
                             
                                 
-                                {data.status === '2' ? (
+                               
                                     <table className='w-100 my-3 NotifyTabletdRec '>
                                     <tr className='mx-3'>
                                         <td className='Notifytdx letfNotRe text-light'> <img src={Star} className='NotifyAimg' alt="" />{data.user.first_name} {data.user.last_name}</td>
                                         <td className='Notifytdx datNotify'><span className='text-warning p-1 clockNOte'><i class="fas fa-clock"></i> {moment(data.request_time).format('MMMM Do YYYY, h:mm:ss a')}</span></td>
                                         <td className='Notifytdx rightNotRe '>
-                                            <Link to="/superstar/greetings/video-record"><button className='btn btnRecNot active'><i class="fas fa-video"></i> Rec</button></Link>
+                                            <Link to={`/superstar/greetings/video-record/${index}`}><button className='btn btnRecNot active'><i class="fas fa-video"></i> Rec</button></Link>
                                         </td>
                                 
                                     </tr>
                                         </table>
-                                ) : (<></>) }
+                          
                         
                         
                         
