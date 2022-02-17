@@ -5,45 +5,29 @@ import axios from "axios";
 import swal from "sweetalert";
 // import './AddSessionTextEditor.css';
 
-import { Editor } from "react-draft-wysiwyg";
+
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { ContentState,  convertFromHTML,  EditorState } from "draft-js";
-import { convertToHTML } from "draft-convert";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import moment from 'moment';
+import './StarContent.css'
+
 
 import Nav from "./Nav";
 
 export default function AddSession(props) {
+  let bas_url ="http://localhost:8000/"
   const history = useHistory();
 
   const [event, setEvent] = useState([]);
 
-  // Editor Funtionalities //
-  const [convertedContent, setConvertedContent] = useState(null);
-
-  const [editorState, setEditorState] = useState(() =>
-    EditorState.createWithContent(
-      ContentState.createFromBlockArray(
-        convertFromHTML("<p>My initial content.</p>")
-      )
-    )
-  );
-
-  const handleEditorChange = (state) => {
-    setEditorState(state);
-    convertContentToHTML();
-    console.log("sonet", state);
-  };
-
-  const convertContentToHTML = () => {
-    let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-    setConvertedContent(currentContentAsHTML);
-    //console.log(convertedContent);
-  };
-  // End Editor Functionalies //
+ 
+  const [convertedContent, setConvertedContent] = useState("")
 
   const [imagedata, setImagedata] = useState("");
 
   const [registerInput, setRegister] = useState({
+    id:"",
     title: "",
     description: "",
     date: "",
@@ -79,13 +63,14 @@ export default function AddSession(props) {
     fData.append("start_time", registerInput.start_time);
     fData.append("end_time", registerInput.end_time);
     fData.append("fee", registerInput.fee);
+    fData.append("id", registerInput.id);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`/api/star/add_live_session`, fData).then((res) => {
+      axios.post(`/api/star/update_live_session`, fData).then((res) => {
+
         if (res.data.status === 200) {
-          // document.getElementById('input_form').reset();
           swal("Success", res.data.message, "success");
-          history.push("/superstar/live-chat");
+          history.push(`/superstar/live-chat/pending-session/details/${registerInput.id}`);
         } else {
           //setModalShow(true);
           setRegister({
@@ -151,38 +136,44 @@ export default function AddSession(props) {
                   Instruction
                 </label>
                 <div className="col-sm-7">
-                  {/* <Editor
-                        //editorState={editorState}
-                        toolbarClassName="toolbarClassName"
-                        wrapperClassName="wrapperClassName"
-                        editorClassName="editorClassName"
-                        // onEditorStateChange={onEditorStateChange}
-                        
-                      />
-            */}
-                  <textarea
-                    type="text"
-                    className="form-control form-control-sm input-in-lv-ch"
-                    placeholder="instruction write here.."
-                    onChange={handleInput}
-                    name="description"
-                    value={registerInput.description}
-                  />
+                
 
-                  <Editor
-                    editorState={editorState}
-                    onEditorStateChange={handleEditorChange}
-                    wrapperClassName="wrapper-class"
-                    editorClassName="editor-class"
-                    toolbarClassName="toolbar-class"
-                  />
+                  <CKEditor
+                    editor={ ClassicEditor }
+                    data={registerInput.description}
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } }
+                    onChange={ ( event, editor ) => {
+                      const data = editor.getData();
+                      setConvertedContent(data)
+                        // console.log( { data } );
+                    } }
+                    onBlur={ ( event, editor ) => {
+                        console.log( 'Blur.', editor );
+                    } }
+                    onFocus={ ( event, editor ) => {
+                        console.log( 'Focus.', editor );
+                    } }
+                />
+
                 </div>
               </div>
-
+              <div className="form-group row my-3">
+              <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                 
+                </label>
+                <div className="col-sm-3 file-x-i">
+                  
+                      <img src={bas_url+registerInput.banner} alt="" className="edit-banner "/>
+                </div>
+              </div>
               <div className="form-group row my-3">
                 <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
                   Banner
                 </label>
+            
                 <div className="col-sm-3 file-x-i">
                   <input
                     type="file"
@@ -196,7 +187,7 @@ export default function AddSession(props) {
 
               <div className="form-group row my-4">
                 <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-                  Date
+                  Date 
                 </label>
                 <div className="col-sm-3">
                   <input
@@ -204,14 +195,15 @@ export default function AddSession(props) {
                     className="form-control form-control-sm input-in-lv-ch"
                     onChange={handleInput}
                     name="date"
-                    value={registerInput.date}
+                    value={moment(registerInput.date).format("YYYY-MM-DD")}
+                  
                   />
                 </div>
               </div>
 
               <div className="form-group row my-3 text-warning">
                 <label className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
-                  Time
+                  Time 
                 </label>
                 <div className="col-sm-3">
                   <input
@@ -219,7 +211,7 @@ export default function AddSession(props) {
                     className="form-control form-control-sm input-in-lv-ch"
                     onChange={handleInput}
                     name="start_time"
-                    value={registerInput.start_time}
+                    value={moment(registerInput.start_time).format('hh:mm:ss')}
                   />
                 </div>{" "}
                 To
@@ -229,7 +221,7 @@ export default function AddSession(props) {
                     className="form-control form-control-sm input-in-lv-ch"
                     onChange={handleInput}
                     name="end_time"
-                    value={registerInput.end_time}
+                    value={moment(registerInput.end_time).format('hh:mm:ss')}
                   />
                 </div>
               </div>
