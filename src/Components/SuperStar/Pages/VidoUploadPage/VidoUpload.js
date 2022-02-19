@@ -126,7 +126,7 @@ const VidoUpload = (props) => {
                   <div className="container my-3">
                   <img src={base_url+data.user.image} alt="pro image" className="pro-image img-fluid my-2" />
                         <h5 className="text-light my-2">{data.user.first_name} {data.user.last_name}</h5>
-                  {/* <h6 className="text-warning mb-3">Marriage Annerversery</h6> */}
+                        <h6 className="text-warning mb-3">{data.greetings_type?.greeting_type}</h6>
                         <p className="text-light">Age: {Math.floor(moment(new Date()).diff(moment(moment(data.birth_date).format('L'),"MM/DD/YYYY"),'years',true))}</p>
                   <p className="text-light mt-4">
                     <Markup content={data.greeting_contex} />
