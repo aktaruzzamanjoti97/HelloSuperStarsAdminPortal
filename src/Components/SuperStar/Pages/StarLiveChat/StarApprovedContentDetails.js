@@ -121,7 +121,7 @@ const StarApprovedContentDetails = (props) => {
 
             </div>
             <div className="mt-3">
-                <Link to={`/superstar/live-chat/schedule-list/${event.id}`}>
+                <Link to={`/superstar/live-chat/join/${event.id}`}>
                     <button className='btn MEN-X fw-bold'>Join Now</button>
                 </Link>
             </div>

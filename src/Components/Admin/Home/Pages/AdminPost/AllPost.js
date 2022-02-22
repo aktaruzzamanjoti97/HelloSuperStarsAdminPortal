@@ -128,7 +128,7 @@ const AllPost = () => {
 
                         <p className="text-secondary">
                           {moment(event.date).format('LL')} <br></br>
-                          {moment(event.start_time, "HH:mm:ss").format("hh:mm A")}-{moment(event.end_time, "HH:mm:ss").format("hh:mm A")}
+                          {/* {moment(event.start_time, "HH:mm:ss").format("hh:mm A")}-{moment(event.end_time, "HH:mm:ss").format("hh:mm A")} */}
                         </p>
                       </div>
                     </div>

@@ -17,6 +17,12 @@ import ApprovedPost from "./Pages/StarPost/ApprovedPost";
 import PostDetails from "./Pages/StarPost/PendingPostDetails";
 import CreatePost from "./Pages/StarPost/Content/AddSessionForm";
 
+import LearningSession from "./Pages/AdminLearningSession/AllPost";
+import PendingLearningSession from "./Pages/AdminLearningSession/PendingPost";
+import PendingLearningSessionDetails from "./Pages/AdminLearningSession/PendingPostDetails";
+import ApprovedLearningSession from "./Pages/AdminLearningSession/ApprovedPost";
+import CreateLearningSession from "./Pages/AdminLearningSession/Content/AddSessionForm";
+
 
 import StarPendingContent from './Pages/StarLiveChat/StarPendingContent';
 import StarPendingContentDetails from './Pages/StarLiveChat/StarPendingContentDetails';
@@ -47,6 +53,8 @@ import StarVideoJoin from './Dashboard/Content/StarVideoJoin';
 import StarNotifySchedule from '../Admin/Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule';
 import StartNotifyScheduleView from './Pages/NotifySuperstar/Content/StartNotifyScheduleView';
 import StarEventRequesting from './Dashboard/StarEventRequesting';
+
+
 
 
 
@@ -84,12 +92,19 @@ const SuperstarRoute = [
     { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session
-    { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
-    { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearnSlide },
-    { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-all', component: ApprovedLearnList },
-    { path: '/superstar/learning-session/approved/event', exact: true, name: 'event', component: ApprovedLearnEvent },
-    { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: AppLearnSessionTime },
-    { path: '/superstar/learning-session/approved/video', exact: true, name: 'video', component: VideoLearnSession },
+    // { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
+    // { path: '/superstar/learning-session/approved', exact: true, name: 'approved', component: ApprovedLearnSlide },
+    // { path: '/superstar/learning-session/approved-all', exact: true, name: 'approved-all', component: ApprovedLearnList },
+    // { path: '/superstar/learning-session/approved/event', exact: true, name: 'event', component: ApprovedLearnEvent },
+    // { path: '/superstar/learning-session/approved/join', exact: true, name: 'join', component: AppLearnSessionTime },
+    // { path: '/superstar/learning-session/approved/video', exact: true, name: 'video', component: VideoLearnSession },
+
+    { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: LearningSession },
+    { path: '/superstar/learning-session/create', exact: true, name: 'CreatePost', component: CreateLearningSession },
+    { path: '/superstar/learning-session/pending', exact: true, name: 'learning-session', component: PendingLearningSession },
+    { path: '/superstar/learning-session/pending/:id', exact: true, name: 'learning-session', component: PendingLearningSessionDetails },
+    { path: '/superstar/learning-session/approved', exact: true, name: 'ApprovedPost', component: ApprovedLearningSession },
+
 
     { path: '/superstar/learning-session/request', exact: true, name: 'request', component: RequestLearn },
     { path: '/superstar/learning-session/request-all', exact: true, name: 'request-all', component: RequestLearnList },
