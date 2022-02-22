@@ -2,8 +2,16 @@ import React from 'react'
 import Fly from '../../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png'
 import calendar from '../../../../../../../assets/images/meetupEvent/calendar.png'
 import Clock from '../../../../../../../assets/images/meetupEvent/clock-icon.png'
-import './CricketJer.css'
+import './CricketJerseySouvenir.css'
+import { useHistory } from 'react-router-dom'
 const CricketJerseySouvenir = () => {
+
+    let history = useHistory();
+
+    function handleClick() {
+        history.push('/superstar-admin/souvenir/productlist');
+    }
+
 return (
 <div>
     <div className="row my-3">
@@ -26,30 +34,30 @@ return (
             </div>
 
             <div className=" d-flex mt-5 mb-5 cricket-jersey">
-                <div className="d-flex p-2 buTon-EMN">
+            <div className="d-flex p-4 buTon-EMN">
                     <div className="mt-2  mx-3 ">
                         <span className="text-light"> <img src={calendar} alt="" className='PriceTage' /></span>
                     </div>
                     <div className=" mx-1">
                         <span className="text-light">Date</span>
                         <br></br>
-                        <span className="text-warning BtnTextNMP fw-bold">10:00 PM - 11:00 PM</span>
+                        <span className="text-light">Units</span>
                     </div>
                 </div>
 
-                <div className=" d-flex p-2 buTon-EMN ">
+                <div className=" d-flex p-4 buTon-EMN ">
                     <div className=" mt-2 mx-3">
                         <span className="text-light"> <img src={Clock} alt="" className='PriceTage' /></span>
                     </div>
                     <div className=" mx-1 ">
-                        <span className="text-light">Time</span>
+                    <span className="text-light">Unit Price</span>
                         <br></br>
-                        <span className="text-warning  BtnTextNMP fw-bold">10:00 PM - 11:00 PM</span>
+                        <span className="text-warning  BtnTextNMP Usd fw-bold">20 USD</span>
                     </div>
                 </div>
             </div>
 
-            <button className='btn Cri-btn-x border-warning fw-bold px-5'>Approve </button>
+            <button onClick={handleClick} className='btn Cri-btn-x border-warning fw-bold px-5'>Confirm </button>
             <button className='btn border-warning fw-bold mx-3  px-5 Cri-btn'>Edit</button>
 
         </div>
