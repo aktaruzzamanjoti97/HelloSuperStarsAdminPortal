@@ -76,7 +76,7 @@ const CompletedEventSliders = () => {
                             <img src={`http://localhost:8000/${event.banner}`} className="img-fluid" alt="" style={{ height: '200px' }} />
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
-                                    <Link to={`/superstar-admin/meetup-event-slot/${event.id}`}>
+                                    <Link to={`/superstar-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}>
                                         <h5 className="text-white">{event.title}</h5>
                                     </Link>
                                     <img className="img-fluid" src={EnterImage} alt="" />

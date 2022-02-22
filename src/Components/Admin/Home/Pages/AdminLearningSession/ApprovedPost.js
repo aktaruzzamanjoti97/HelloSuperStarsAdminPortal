@@ -2,11 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
 import Nav from "./Nav";
-import Live from "../../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../../assets/images/approved.png";
-import Pending from "../../../../../assets/images/pending 2.png";
-import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
-import LiveIcon from '../../../../../assets/images/AdminLiveProfile/live 1.png'
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
@@ -122,7 +117,7 @@ const ApprovedPost = () => {
                             <h5 className="text-white text-ellipsis">{event.title}</h5>
                           </Link> */}
 
-                          <a target="_blank" href="https://star-livechat.herokuapp.com/?room=star-livechat_f1d57ujea2" style={{ textDecoration: 'none' }}>
+                          <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
                           <h5 className="text-white text-ellipsis">{event.title}</h5>
                           </a>
                         </div>
