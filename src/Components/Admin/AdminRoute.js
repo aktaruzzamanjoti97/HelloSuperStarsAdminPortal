@@ -78,6 +78,7 @@ import CricketJerserAdmin from "./Home/Pages/Souviner-admin/CricketJersey/Cricke
 import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin2";
 import CricketJerserAdmin3 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin3";
 import ConfirmOrEditAuction from "./Home/Pages/AdminSouvenir/ConfirmOrEditAuction/ConfirmOrEditAuction";
+import LiveBiddingsCheckout from "./Home/Pages/AdminSouvenir/LiveBiddingsCheckout/LiveBiddingsCheckout";
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -193,8 +194,9 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/edit-marketplace', exact: true, name: 'edit-marketplace', component: EditProductMarketPlace },
     // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin }, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin2 }, 
-    // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component:  CricketJerserAdmin3}, // This is important, do not touch this code
+    // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction }, 
+    { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
 
     
 
