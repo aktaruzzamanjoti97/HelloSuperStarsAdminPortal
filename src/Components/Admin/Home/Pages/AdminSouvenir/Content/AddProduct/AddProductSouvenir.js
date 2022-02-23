@@ -39,7 +39,7 @@ const AddProductSouvenir = () => {
 
     return (
         <div className="AS m-3">
-            <SouvenirNav />
+            {/* <SouvenirNav /> */}
 
             <div className="greetingsFormBorder">
                 <div className="greetingsPadding addMeetUpPadding">
@@ -190,7 +190,7 @@ const AddProductSouvenir = () => {
 
 
                         <div className="mt-3">
-                            <Link to="/superstar-admin/meetup-events">
+                            <Link to="/superstar-admin/souvenir/confirm-or-edit-auction">
                                 <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
