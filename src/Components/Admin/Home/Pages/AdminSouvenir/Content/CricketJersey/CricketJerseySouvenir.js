@@ -1,15 +1,16 @@
 import React from 'react'
-import Fly from '../../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png'
+import { useHistory } from 'react-router-dom'
 import calendar from '../../../../../../../assets/images/meetupEvent/calendar.png'
 import Clock from '../../../../../../../assets/images/meetupEvent/clock-icon.png'
+import Fly from '../../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png'
 import './CricketJerseySouvenir.css'
-import { useHistory } from 'react-router-dom'
 const CricketJerseySouvenir = () => {
 
     let history = useHistory();
 
     function handleClick() {
-        history.push('/superstar-admin/souvenir/productlist');
+        // history.push('/superstar-admin/souvenir/live-biddings');
+        history.push('/superstar-admin/souvenir/product-list');
     }
 
 return (

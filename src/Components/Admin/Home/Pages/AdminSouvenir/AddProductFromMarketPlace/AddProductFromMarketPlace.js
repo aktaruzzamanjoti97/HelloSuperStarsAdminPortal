@@ -127,7 +127,7 @@ const AddProductFromMarketPlace = () => {
 
 
                         <div className="mt-3">
-                            <Link to="/superstar-admin/souvenir/edit-jersey">
+                            <Link to="/superstar-admin/souvenir/confirm-or-edit-jersey">
                                 <button onClick={() => history.push('/superstar-admin/souvenir/edit-jersey')} className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
