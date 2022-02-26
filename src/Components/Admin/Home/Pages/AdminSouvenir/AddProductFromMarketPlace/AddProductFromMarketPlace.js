@@ -166,7 +166,7 @@ const AddProductFromMarketPlace = () => {
                             </div>
                             {
                                 file ? (<div className="row">
-                                    <div className="col-md-1 text-light">Selected Banner</div>
+                                    <div className="col-md-1 text-light"><small>Selected Banner</small></div>
                                     <div className="col-md-11 fw-bold text-success">
                                         {file?.name}
                                     </div>
@@ -186,17 +186,10 @@ const AddProductFromMarketPlace = () => {
                                             <p>Upload Image</p>
                                         </div>
                                         <div className="col-md-3">
-                                            {/* <input type="file" name="file" id="file" value={x.inputFile}
-                                                onChange={(e) => handleInputChange(e, i)} className="inputfile" />
-                                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label> */}
+                                           
                                             <UploadComponent {...imageUpload.upload} handleChange={handleChange} />
                                         </div>
-                                        {/* <div className="col-md-1">
-                                            {inputList.length - 1 === i && (
-                                                <button onClick={handleAddClick} className="btn btn-light"><i className="fas fa-plus-circle w-100"></i></button>
-                                            )}
-
-                                        </div> */}
+                                  
                                     </div>
                                 )
                             })}

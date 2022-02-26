@@ -53,6 +53,7 @@ import StarVideoJoin from './Dashboard/Content/StarVideoJoin';
 import StarNotifySchedule from '../Admin/Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule';
 import StartNotifyScheduleView from './Pages/NotifySuperstar/Content/StartNotifyScheduleView';
 import StarEventRequesting from './Dashboard/StarEventRequesting';
+import SuperstarSouvenir from './Pages/Superstar-Souvenir/SuperstarSouvenir';
 
 
 
@@ -77,7 +78,7 @@ const SuperstarRoute = [
 
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
-    { path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList},
+    { path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList },
     { path: '/superstar/live-chat-approve', exact: true, name: 'live-chat-approve', component: StarLiveChatApprove },
     { path: '/superstar/Live-chat/view', exact: true, name: 'LiveChat_view', component: StarScheduleView },
     { path: '/superstar/live-chat/pending-session', exact: true, name: 'LiveChat_pending_session', component: StarPendingContent },
@@ -130,10 +131,14 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
-    
+
+    // Souvenir 
+
+
+    { path: '/superstar/souvenir', exact: true, name: 'superstar-souvenir', component: SuperstarSouvenir },
     { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
-    
-    
+
+
 ];
 
 export default SuperstarRoute
