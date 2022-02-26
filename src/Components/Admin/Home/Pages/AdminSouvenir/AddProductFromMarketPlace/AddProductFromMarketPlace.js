@@ -3,41 +3,41 @@ import { EditorState } from 'draft-js';
 import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import { Link, useHistory } from 'react-router-dom';
-import UploadComponent from './UploadComponent'
+import UploadComponent from './UploadComponent';
 
 const AddProductFromMarketPlace = () => {
 
     const [imageUpload, setImageUpload] = useState({
         upload: {
-          pictures: [],
-          maxFileSize: 5242880,
-          imgExtension: [".jpg", ".png"],
-          defaultImages: []
+            pictures: [],
+            maxFileSize: 5242880,
+            imgExtension: [".jpg", ".png"],
+            defaultImages: []
         }
-      });
-    
-      const handleChange = (files) => {
+    });
+
+    const handleChange = (files) => {
         const { pictures } = imageUpload.upload;
         console.warn({ pictures, files });
-    
-        setImageUpload(
-          {
-            ...imageUpload,
-            upload: {
-              ...imageUpload.upload,
-              pictures: [...pictures, ...files]
-            }
-          },
-          () => {
-            console.warn("It was added!");
-          }
-        );
-      };
 
-      const confirmUpload = () => {
+        setImageUpload(
+            {
+                ...imageUpload,
+                upload: {
+                    ...imageUpload.upload,
+                    pictures: [...pictures, ...files]
+                }
+            },
+            () => {
+                console.warn("It was added!");
+            }
+        );
+    };
+
+    const confirmUpload = () => {
         const { pictures } = imageUpload.upload;
         console.warn("Confirm Upload =>", [...pictures]);
-      };
+    };
 
     const [inputList, setInputList] = useState([{ inputFile: "" }]);
     const [file, setFile] = useState(null);
@@ -164,27 +164,17 @@ const AddProductFromMarketPlace = () => {
                                     <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-md-1"></div>
-                                <div className="col-md-11 text-white">
-                                   {file?.name} 
-                                </div>
-                            </div>
+                            {
+                                file ? (<div className="row">
+                                    <div className="col-md-1 text-light">Selected Banner</div>
+                                    <div className="col-md-11 fw-bold text-success">
+                                        {file?.name}
+                                    </div>
+                                </div>) : null
+                            }
+
                         </div>
 
-
-                        <div>
-                            <div className="row my-4">
-                                <div className="col-md-1 text-white">
-                                    Upload Test
-                                </div>
-                                <div className="col-md-3">
-                                <UploadComponent {...imageUpload.upload} handleChange={handleChange} />
-                                    <input type="file" name="file" id="file" className="inputfile"/>
-                                    <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                                </div>
-                            </div>
-                        </div>
 
 
 
@@ -196,16 +186,17 @@ const AddProductFromMarketPlace = () => {
                                             <p>Upload Image</p>
                                         </div>
                                         <div className="col-md-3">
-                                            <input type="file" name="file" id="file" value={x.inputFile}
+                                            {/* <input type="file" name="file" id="file" value={x.inputFile}
                                                 onChange={(e) => handleInputChange(e, i)} className="inputfile" />
-                                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                            <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label> */}
+                                            <UploadComponent {...imageUpload.upload} handleChange={handleChange} />
                                         </div>
-                                        <div className="col-md-1">
+                                        {/* <div className="col-md-1">
                                             {inputList.length - 1 === i && (
                                                 <button onClick={handleAddClick} className="btn btn-light"><i className="fas fa-plus-circle w-100"></i></button>
                                             )}
 
-                                        </div>
+                                        </div> */}
                                     </div>
                                 )
                             })}

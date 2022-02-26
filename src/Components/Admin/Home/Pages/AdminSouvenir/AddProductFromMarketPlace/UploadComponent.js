@@ -1,5 +1,6 @@
 import React from "react";
 import ImageUploader from "react-images-upload";
+import './AddProductFromMarketPlace.css';
 
 const UploadComponent = (props) => {
   const onDrop = (pictureFiles, pictureDataURLs) => {
@@ -9,18 +10,21 @@ const UploadComponent = (props) => {
   };
 
   return (
-    <ImageUploader
-      withIcon={false}
-      withLabel={false}
-      withPreview={true}
-      buttonText={"Add photos"}
-      fileSizeError={"File size is too big!"}
-      fileTypeError={"This extension is not supported!"}
-      onChange={onDrop}
-      imgExtension={props.imgExtension}
-      maxFileSize={props.maxFileSize}
-      defaultImages={props.defaultImages}
-    />
+    <div className="imageUploader">
+      <ImageUploader
+        withIcon={false}
+        withLabel={false}
+        withPreview={true}
+        buttonText={"Upload Images"}
+        fileSizeError={"File size is too big!"}
+        fileTypeError={"This extension is not supported!"}
+        onChange={onDrop}
+        imgExtension={props.imgExtension}
+        maxFileSize={props.maxFileSize}
+        defaultImages={props.defaultImages}
+      />
+    </div>
+
   );
 };
 
