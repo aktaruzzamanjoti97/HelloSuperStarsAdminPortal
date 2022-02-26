@@ -1,4 +1,4 @@
-import React from 'react';
+import {React,useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Total from '../../../../../assets/images/Souvenir/sigma.png';
 import Sold from '../../../../../assets/images/Souvenir/sold.png';
@@ -7,8 +7,49 @@ import Add from '../../../../../assets/images/Souvenir/add .png';
 import pending from '../../../../../assets/images/pending 2.png';
 
 import './SouvenirNav.css';
+import axios from 'axios';
 
 const SouvenirNav = () => {
+
+
+    //=========================== All State ========================
+    const [pendingProduct,setPendingProduct] = useState([]);
+    const [soldProduct,setSoldProduct] = useState([]);
+    const [unSoldProduct,setunSoldProduct] = useState([]);
+    //============================ Fetch Data=======================
+
+    useEffect(() => {
+
+        axios.get('/api/pending/auction/product').then((res) => {
+            if (res.status === 200) {
+  
+                setPendingProduct(res.data.product);
+ 
+            }
+          });
+    
+
+        axios.get('/api/sold/auction/product').then((res) => {
+          if (res.status === 200) {
+
+            setSoldProduct(res.data.product);
+
+          }
+        });
+
+        axios.get('/api/unSold/auction/product').then((res) => {
+            if (res.status === 200) {
+  
+                setunSoldProduct(res.data.product);
+ 
+            }
+          });
+
+       
+      }, []);
+
+ 
+
 
 return (
 <>
@@ -25,7 +66,7 @@ return (
                             </td>
                             <td className="ad-card-td">
                     
-                                <small className=" fw-bold Sigma">00</small>
+                                <small className=" fw-bold Sigma">{pendingProduct}</small>
                             </td>
                         </tr>
                     </center>
@@ -47,7 +88,7 @@ return (
                             </td>
                             <td className="ad-card-td">
                         
-                                <small className=" fw-bold Sold thirty">30</small>
+                                <small className=" fw-bold Sold thirty">{soldProduct}</small>
                             </td>
                         </tr>
                     </center>
@@ -69,7 +110,7 @@ return (
                                 <img src={Unsold} className="ad-card-img-top" alt="..." />
                             </td>
                             <td className="ad-card-td">
-                                <small className=" fw-bold Unsold">03</small>
+                                <small className=" fw-bold Unsold">{unSoldProduct}</small>
                             </td>
                         </tr>
                     </center>
