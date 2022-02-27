@@ -11,10 +11,8 @@ const SuperstarSouvenir = () => {
                 <SouvenirTab title="Auction"
                     subtitle="Little About us"
                     icon="far fa-address-card">
-                    {/* <LiveNowSouvenir /> */}
-                    {/* <LiveNowSouvenir /> */}
                     <LiveNowAuction />
-                    {/* <p>This is Auction</p> */}
+             
                 </SouvenirTab>
 
                 <SouvenirTab title="Marketplace"
