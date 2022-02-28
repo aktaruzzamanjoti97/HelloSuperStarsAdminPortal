@@ -54,12 +54,7 @@ const MarketPlaceSouvenir = () => {
                                         </div>
                                     </div>
 
-                                    {/* <div className="d-flex p-2">
-                            <img src={Men} className=' SouvenirIcon' alt="" />
-                            <div className=" d-flex text-light mt-1 mx-3 fw-bold ">
-                                145000
-                            </div>
-                        </div> */}
+                               
 
                                     <div>
                                         <div className="d-flex">

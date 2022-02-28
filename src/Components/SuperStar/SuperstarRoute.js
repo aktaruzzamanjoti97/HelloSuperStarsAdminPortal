@@ -54,6 +54,11 @@ import StarNotifySchedule from '../Admin/Home/Pages/AdminGreetings/NotifyGreetin
 import StartNotifyScheduleView from './Pages/NotifySuperstar/Content/StartNotifyScheduleView';
 import StarEventRequesting from './Dashboard/StarEventRequesting';
 import SuperstarSouvenir from './Pages/Superstar-Souvenir/SuperstarSouvenir';
+import AddProductAuctionSuperstar from './Pages/Superstar-Souvenir/AddProductAuctionSuperstar/AddProductAuctionSuperstar';
+import ConfirmOrEditSuperAuction from './Pages/Superstar-Souvenir/AddProductAuctionSuperstar/ConfimrOrEditSuperAuction/ConfirmOrEditSuperAuction';
+import SuperstarLiveBidding from './Pages/Superstar-Souvenir/SuperstarLiveBidding/SuperstarLiveBidding';
+import SuperstarLiveBiddingModal from './Pages/Superstar-Souvenir/SuperstarLiveBidding/SuperstarLiveBiddingModal';
+import SuperstarLiveBiddingCheckout from './Pages/Superstar-Souvenir/SuperstarLiveBiddingCheckout/SueprstarLiveBiddingCheckout';
 
 
 
@@ -136,7 +141,11 @@ const SuperstarRoute = [
 
 
     { path: '/superstar/souvenir', exact: true, name: 'superstar-souvenir', component: SuperstarSouvenir },
-    { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
+    { path: '/superstar/souvenir/add-products', exact: true, name: 'superstar-souvenir-add-products', component: AddProductAuctionSuperstar },
+    { path: '/superstar/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-confirm-edit', component: ConfirmOrEditSuperAuction },
+    // { path: '/superstar-admin/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-auction', component: SuperstarLiveBiddingModal },
+    { path: '/superstar/souvenir/superstar-live-biddings', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBidding },
+    { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
 
 
 ];
