@@ -3,6 +3,8 @@ import MarketPlaceSouvenir from '../../../Admin/Home/Pages/AdminSouvenir/MarketP
 import SouvenirTab from '../../../Admin/Home/Pages/AdminSouvenir/SouvenirMain/SouvenirTabComponents/SouvenirTab';
 import SouvenirTabPanel from '../../../Admin/Home/Pages/AdminSouvenir/SouvenirMain/SouvenirTabComponents/SouvenirTabPanel';
 import LiveNowAuction from './LiveNowAuction/LiveNowAuction';
+import SuperstarLiveNowAuction from './SuperstarLiveNowAuction';
+import SuperstarMarketplaceSouvenir from './SuperstarMarketplaceSouvenir';
 
 const SuperstarSouvenir = () => {
     return (
@@ -11,14 +13,16 @@ const SuperstarSouvenir = () => {
                 <SouvenirTab title="Auction"
                     subtitle="Little About us"
                     icon="far fa-address-card">
-                    <LiveNowAuction />
+                    {/* <LiveNowAuction /> */}
+                    <SuperstarLiveNowAuction />
              
                 </SouvenirTab>
 
                 <SouvenirTab title="Marketplace"
                     subtitle="Our History"
                     icon="fas fa-hourglass-start">
-                    <MarketPlaceSouvenir />
+                    {/* <MarketPlaceSouvenir /> */}
+                    <SuperstarMarketplaceSouvenir />
                 </SouvenirTab>
             </SouvenirTabPanel>
         </div>

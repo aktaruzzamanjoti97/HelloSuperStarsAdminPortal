@@ -59,6 +59,10 @@ import ConfirmOrEditSuperAuction from './Pages/Superstar-Souvenir/AddProductAuct
 import SuperstarLiveBidding from './Pages/Superstar-Souvenir/SuperstarLiveBidding/SuperstarLiveBidding';
 import SuperstarLiveBiddingModal from './Pages/Superstar-Souvenir/SuperstarLiveBidding/SuperstarLiveBiddingModal';
 import SuperstarLiveBiddingCheckout from './Pages/Superstar-Souvenir/SuperstarLiveBiddingCheckout/SueprstarLiveBiddingCheckout';
+import AddProductSuperstarFromMarketPlace from './Pages/Superstar-Souvenir/AddProductSuperstarFromMarketPlace/AddProductSuperstarFromMarketPlace';
+import SuperstarConfirmEditMarketplace from './Pages/Superstar-Souvenir/SuperstarConfirmEditMarketplace/SuperstarConfirmEditMarketplace';
+import SuperstarEditMarketPlaceForm from './Pages/Superstar-Souvenir/SuperstarEditMarketPlaceForm/SuperstarEditMarketPlaceForm';
+import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductList/SuperstarProductList';
 
 
 
@@ -146,6 +150,10 @@ const SuperstarRoute = [
     // { path: '/superstar-admin/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-auction', component: SuperstarLiveBiddingModal },
     { path: '/superstar/souvenir/superstar-live-biddings', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBidding },
     { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
+    { path: '/superstar/souvenir/add-products-marketPlace', exact: true, name: 'superstar-souvenir-live-bidding', component: AddProductSuperstarFromMarketPlace },
+    { path: '/superstar/souvenir/confirm-or-edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarConfirmEditMarketplace },
+    { path: '/superstar/souvenir/product-list', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
+    { path: '/superstar/souvenir/edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarEditMarketPlaceForm },
 
 
 ];

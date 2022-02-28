@@ -1,20 +1,20 @@
 import React from 'react';
-import dollarSold from '../../../../../../assets/images/dollarSign-removebg-preview.png';
+import dollarSold from '../../../../assets/images/dollarSign-removebg-preview.png';
 // import MarketPlaceNav from '../../../../MarketPlaceNav';
-import FootballJersey from '../../../../../../assets/images/footBallJersey.jpg';
+import FootballJersey from '../../../../assets/images/footBallJersey.jpg';
 // import something from '../../../../../../assets/images/footBallJersey.jpg'
-import LiveIcon from '../../../../../../assets/images/Souvenir/live.png';
-import Unsold from '../../../../../../assets/images/Souvenir/packages.png';
-import tagPrice from '../../../../../../assets/images/tagPrice.PNG';
-import MarketPlaceNav from '../MarketPlaceNav/MarketPlaceNav';
-import './MarketPlaceSouvenir.css';
+import LiveIcon from '../../../../assets/images/Souvenir/live.png';
+import Unsold from '../../../../assets/images/Souvenir/packages.png';
+import tagPrice from '../../../../assets/images/tagPrice.PNG';
+import SuperstarMarketPlaceNav from './SuperstarMarketPlaceNav/SuperstarMarketPlaceNav';
 // import MarketPlaceNav from '../MarketPlaceNav/MarketPlaceNav';
 
-const MarketPlaceSouvenir = () => {
+const SuperstarMarketplaceSouvenir = () => {
     return (
         <div>
             <div className="AS m-3">
-                <MarketPlaceNav />
+                {/* <MarketPlaceNav /> */}
+                <SuperstarMarketPlaceNav />
                 <div className="d-flex mb-4 mt-5">
 
                     <div className=" d-flex">
@@ -95,4 +95,4 @@ const MarketPlaceSouvenir = () => {
     );
 };
 
-export default MarketPlaceSouvenir;
+export default SuperstarMarketplaceSouvenir;

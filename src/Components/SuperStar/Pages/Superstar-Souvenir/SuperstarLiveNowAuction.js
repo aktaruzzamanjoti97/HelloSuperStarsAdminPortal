@@ -1,17 +1,17 @@
 import React from 'react'
-import SouvenirNav from '../../../../Admin/Home/Pages/AdminSouvenir/SouvenirNav'
-import LiveIcon from '../../../../../assets/images/Souvenir/live.png'
-import LiveI from '../../../../../assets/images/Souvenir/LivwNow.png'
-import Man from '../../../../../assets/images/Souvenir/3201.png'
-import Men from '../../../../../assets/images/Souvenir/bid.png'
-import SuperstarSouvenirNav from '../SupestarSouvenirNav/SuperstarSouvenirNav'
+import Man from '../../../../assets/images/Souvenir/3201.png'
+import Men from '../../../../assets/images/Souvenir/bid.png'
+import LiveIcon from '../../../../assets/images/Souvenir/live.png'
+import LiveI from '../../../../assets/images/Souvenir/LivwNow.png'
+import SuperstarSouvenirNav from './SupestarSouvenirNav/SuperstarSouvenirNav'
+// import SuperstarSouvenirNav from '../SupestarSouvenirNav/SuperstarSouvenirNav'
 
-const LiveNowAuction = () => {
+const SuperstarLiveNowAuction = () => {
 return (
 <>
     <div className="AS m-3">
-        <SouvenirNav />
-        {/* <SuperstarSouvenirNav /> */}
+        {/* <SouvenirNav /> */}
+        <SuperstarSouvenirNav />
         <div className="d-flex mb-4 mt-5">
 
             <div className=" d-flex">
@@ -65,4 +65,4 @@ return (
 )
 }
 
-export default LiveNowAuction
+export default SuperstarLiveNowAuction
