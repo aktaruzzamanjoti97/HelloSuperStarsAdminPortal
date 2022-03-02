@@ -3,9 +3,9 @@ import { EditorState } from 'draft-js';
 import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import { Link, useHistory } from 'react-router-dom';
-import UploadComponent from './UploadComponent';
+import UploadSuperstarMarketPlace from '../UploadSuperstarMarketPlace/UploadSuperstarMarketPlace';
 
-const AddProductFromMarketPlace = () => {
+const AddProductSuperstarFromMarketPlace = () => {
 
     const [imageUpload, setImageUpload] = useState({
         upload: {
@@ -34,10 +34,10 @@ const AddProductFromMarketPlace = () => {
         );
     };
 
-    const confirmUpload = () => {
-        const { pictures } = imageUpload.upload;
-        console.warn("Confirm Upload =>", [...pictures]);
-    };
+    // const confirmUpload = () => {
+    //     const { pictures } = imageUpload.upload;
+    //     console.warn("Confirm Upload =>", [...pictures]);
+    // };
 
     const [inputList, setInputList] = useState([{ inputFile: "" }]);
     const [file, setFile] = useState(null);
@@ -61,12 +61,12 @@ const AddProductFromMarketPlace = () => {
         console.log(convertedContent);
     };
 
-    const handleInputChange = (e, index) => {
-        const { file, value } = e.target;
-        const list = [...inputList];
-        list[index][file] = value;
-        setInputList(list);
-    };
+    // const handleInputChange = (e, index) => {
+    //     const { file, value } = e.target;
+    //     const list = [...inputList];
+    //     list[index][file] = value;
+    //     setInputList(list);
+    // };
 
 
     const handleAddClick = () => {
@@ -187,7 +187,7 @@ const AddProductFromMarketPlace = () => {
                                         </div>
                                         <div className="col-md-3">
                                            
-                                            <UploadComponent {...imageUpload.upload} handleChange={handleChange} />
+                                            <UploadSuperstarMarketPlace {...imageUpload.upload} handleChange={handleChange} />
                                         </div>
                                   
                                     </div>
@@ -202,7 +202,7 @@ const AddProductFromMarketPlace = () => {
 
 
                         <div className="mt-3">
-                            <Link to="/superstar-admin/souvenir/confirm-or-edit-marketplace">
+                            <Link to="/superstar/souvenir/confirm-or-edit-marketplace">
                                 <button onClick={() => history.push('/superstar-admin/souvenir/edit-or-confirm-marketplace')} className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
@@ -215,4 +215,4 @@ const AddProductFromMarketPlace = () => {
     );
 };
 
-export default AddProductFromMarketPlace; 
+export default AddProductSuperstarFromMarketPlace; 

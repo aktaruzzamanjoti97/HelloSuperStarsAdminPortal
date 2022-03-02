@@ -7,12 +7,10 @@ import { convertToHTML } from "draft-convert";
 import { EditorState } from "draft-js";
 import React, { useState } from 'react';
 import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from 'react-router-dom';
-import './AddProductS.css';
-import UploadAuctionComponent from './UploadAuctionComponent';
+import UploadSuperstarAuction from '../UploadSuperstarAuction/UploadSuperstarAuction';
 
-const AddProductSouvenir = () => {
+const AddProductAuctionSuperstar = () => {
 
     const [convertedContent, setConvertedContent] = useState(null);
     const [file, setFile] = useState(null);
@@ -207,7 +205,7 @@ const AddProductSouvenir = () => {
                                 <p>Upload Images</p>
                             </div>
                             <div className="col-md-3">
-                                <UploadAuctionComponent {...imageUpload.upload} handleAuctionChange={handleAuctionChange} />
+                                <UploadSuperstarAuction {...imageUpload.upload} handleAuctionChange={handleAuctionChange} />
 
                             </div>
                         </div>
@@ -216,7 +214,7 @@ const AddProductSouvenir = () => {
 
 
                         <div className="mt-3">
-                            <Link to="/superstar-admin/souvenir/confirm-or-edit-auction">
+                            <Link to="/superstar/souvenir/confirm-or-edit-super-auction">
                                 <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
@@ -229,4 +227,4 @@ const AddProductSouvenir = () => {
     );
 };
 
-export default AddProductSouvenir;
+export default AddProductAuctionSuperstar;

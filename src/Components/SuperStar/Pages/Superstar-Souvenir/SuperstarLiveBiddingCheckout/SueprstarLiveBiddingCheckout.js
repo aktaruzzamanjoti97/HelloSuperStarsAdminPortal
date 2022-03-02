@@ -1,13 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import profileUser from '../../../../../../assets/images/liveBiddersWinner.jpg';
-import calendar from '../../../../../../assets/images/meetupEvent/calendar.png';
-import Clock from '../../../../../../assets/images/meetupEvent/clock-icon.png';
-import Fly from '../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png';
-import SouvenirAuctionBanner from '../../../../../../assets/images/SouvenirJoti.png';
-import CricketJerseyModal2 from '../../Souviner-admin/CricketJersey/CricketJerseyModal2';
+import profileUser from '../../../../../assets/images/liveBiddersWinner.jpg';
+import calendar from '../../../../../assets/images/meetupEvent/calendar.png';
+import Clock from '../../../../../assets/images/meetupEvent/clock-icon.png';
+import Fly from '../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png';
+import SouvenirAuctionBanner from '../../../../../assets/images/SouvenirJoti.png';
+import SuperstarLiveBiddingCheckoutModal from '../SuperstarLiveBiddingCheckoutModal/SuperstarLiveBiddingCheckoutModal';
+// import CricketJerseyModal2 from '../../Souviner-admin/CricketJersey/CricketJerseyModal2';
 
-const LiveBiddingsCheckout = () => {
+const SuperstarLiveBiddingCheckout = () => {
 
     const [modalShow, setModalShow] = React.useState(false);
 
@@ -101,7 +102,7 @@ const LiveBiddingsCheckout = () => {
                             <td><i className="fa-solid fa-clock text-white"></i> 22:15:40</td>
                             <td>Applied</td>
                             <td><button onClick={() => setModalShow(true)} className='btn btn-warning m-0 py-0 px-1'><small>Checkout</small></button></td>
-                            <CricketJerseyModal2
+                            <SuperstarLiveBiddingCheckoutModal
                                 show={modalShow}
                                 onHide={() => setModalShow(false)}
                             />
@@ -129,4 +130,4 @@ const LiveBiddingsCheckout = () => {
     );
 };
 
-export default LiveBiddingsCheckout;
+export default SuperstarLiveBiddingCheckout;
