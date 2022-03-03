@@ -68,7 +68,7 @@ export default function AddSession(props) {
     star_id: '',
     error_list: []
   });
-
+  
   const handleInput = (e) => {
     const { name, value } = e.target;
     setRegister((prev) => {
