@@ -53,6 +53,16 @@ import StarVideoJoin from './Dashboard/Content/StarVideoJoin';
 import StarNotifySchedule from '../Admin/Home/Pages/AdminGreetings/NotifyGreetings/Content/NotifySchedule';
 import StartNotifyScheduleView from './Pages/NotifySuperstar/Content/StartNotifyScheduleView';
 import StarEventRequesting from './Dashboard/StarEventRequesting';
+import SuperstarSouvenir from './Pages/Superstar-Souvenir/SuperstarSouvenir';
+import AddProductAuctionSuperstar from './Pages/Superstar-Souvenir/AddProductAuctionSuperstar/AddProductAuctionSuperstar';
+import ConfirmOrEditSuperAuction from './Pages/Superstar-Souvenir/AddProductAuctionSuperstar/ConfimrOrEditSuperAuction/ConfirmOrEditSuperAuction';
+import SuperstarLiveBidding from './Pages/Superstar-Souvenir/SuperstarLiveBidding/SuperstarLiveBidding';
+import SuperstarLiveBiddingModal from './Pages/Superstar-Souvenir/SuperstarLiveBidding/SuperstarLiveBiddingModal';
+import SuperstarLiveBiddingCheckout from './Pages/Superstar-Souvenir/SuperstarLiveBiddingCheckout/SueprstarLiveBiddingCheckout';
+import AddProductSuperstarFromMarketPlace from './Pages/Superstar-Souvenir/AddProductSuperstarFromMarketPlace/AddProductSuperstarFromMarketPlace';
+import SuperstarConfirmEditMarketplace from './Pages/Superstar-Souvenir/SuperstarConfirmEditMarketplace/SuperstarConfirmEditMarketplace';
+import SuperstarEditMarketPlaceForm from './Pages/Superstar-Souvenir/SuperstarEditMarketPlaceForm/SuperstarEditMarketPlaceForm';
+import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductList/SuperstarProductList';
 
 
 
@@ -77,7 +87,7 @@ const SuperstarRoute = [
 
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
-    { path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList},
+    { path: '/superstar/live-chat/schedule-list/:id', name: 'Schedule_list', component: LiveChatScheduleList },
     { path: '/superstar/live-chat-approve', exact: true, name: 'live-chat-approve', component: StarLiveChatApprove },
     { path: '/superstar/Live-chat/view', exact: true, name: 'LiveChat_view', component: StarScheduleView },
     { path: '/superstar/live-chat/pending-session', exact: true, name: 'LiveChat_pending_session', component: StarPendingContent },
@@ -130,10 +140,22 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
-    
-    { path: '/superstar/star-jersey', exact: true, name: 'star-jersey', component: CricketJersey },
-    
-    
+
+    // Souvenir 
+
+
+    { path: '/superstar/souvenir', exact: true, name: 'superstar-souvenir', component: SuperstarSouvenir },
+    { path: '/superstar/souvenir/add-products', exact: true, name: 'superstar-souvenir-add-products', component: AddProductAuctionSuperstar },
+    { path: '/superstar/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-confirm-edit', component: ConfirmOrEditSuperAuction },
+    // { path: '/superstar-admin/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-auction', component: SuperstarLiveBiddingModal },
+    { path: '/superstar/souvenir/superstar-live-biddings', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBidding },
+    { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
+    { path: '/superstar/souvenir/add-products-marketPlace', exact: true, name: 'superstar-souvenir-live-bidding', component: AddProductSuperstarFromMarketPlace },
+    { path: '/superstar/souvenir/confirm-or-edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarConfirmEditMarketplace },
+    { path: '/superstar/souvenir/product-list', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
+    { path: '/superstar/souvenir/edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarEditMarketPlaceForm },
+
+
 ];
 
 export default SuperstarRoute
