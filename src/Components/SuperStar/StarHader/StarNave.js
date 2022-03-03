@@ -70,6 +70,7 @@ return (
                                 <Route exact path="/superstar/live-chat/pending-session/view/:id" component={StarPendingView}/>
                                 <Route exact path="/superstar/live-chat/add-session" component={StarAddSessionContent}/>
                                 <Route exact path="/superstar/upcoming-event" component={StarUpcomingEvent}/>
+                                
  
                             </Switch>
                         </div>

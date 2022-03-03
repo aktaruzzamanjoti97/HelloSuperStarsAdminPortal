@@ -1,4 +1,4 @@
-import {React,useState,useEffect} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Total from '../../../../../assets/images/Souvenir/sigma.png';
 import Sold from '../../../../../assets/images/Souvenir/sold.png';
@@ -6,54 +6,9 @@ import Unsold from '../../../../../assets/images/Souvenir/packages.png';
 import Add from '../../../../../assets/images/Souvenir/add .png';
 import pending from '../../../../../assets/images/pending 2.png';
 
-import './SouvenirNav.css';
-import axios from 'axios';
-
-const SouvenirNav = () => {
-
-
-    //=========================== All State ========================
-    const [pendingProduct,setPendingProduct] = useState([]);
-    const [soldProduct,setSoldProduct] = useState([]);
-    const [unSoldProduct,setunSoldProduct] = useState([]);
-    //============================ Fetch Data=======================
-
-    useEffect(() => {
-
-        axios.get('/api/pending/auction/product').then((res) => {
-            if (res.status === 200) {
-  
-                setPendingProduct(res.data.product);
- 
-            }
-          });
-    
-
-        axios.get('/api/sold/auction/product').then((res) => {
-          if (res.status === 200) {
-
-            setSoldProduct(res.data.product);
-
-          }
-        });
-
-        axios.get('/api/unSold/auction/product').then((res) => {
-            if (res.status === 200) {
-  
-                setunSoldProduct(res.data.product);
- 
-            }
-          });
-
-       
-      }, []);
-
- 
-
-
-return (
-<>
-    <div className="mb-3 row">
+const SuperstarSouvenirNav = () => {
+    return (
+        <div className="mb-3 row">
 
         <div title="Live Now" className="col-md-2 align-items-center justify-content-center Souvenir-bt ">
             <div className="card meetupCard">
@@ -66,7 +21,7 @@ return (
                             </td>
                             <td className="ad-card-td">
                     
-                                <small className=" fw-bold Sigma">{pendingProduct}</small>
+                                <small className=" fw-bold Sigma">00</small>
                             </td>
                         </tr>
                     </center>
@@ -88,7 +43,7 @@ return (
                             </td>
                             <td className="ad-card-td">
                         
-                                <small className=" fw-bold Sold thirty">{soldProduct}</small>
+                                <small className=" fw-bold Sold thirty">30</small>
                             </td>
                         </tr>
                     </center>
@@ -110,7 +65,7 @@ return (
                                 <img src={Unsold} className="ad-card-img-top" alt="..." />
                             </td>
                             <td className="ad-card-td">
-                                <small className=" fw-bold Unsold">{unSoldProduct}</small>
+                                <small className=" fw-bold Unsold">03</small>
                             </td>
                         </tr>
                     </center>
@@ -136,15 +91,14 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir/add-products' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar/souvenir/add-products' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Add products
                 </button></Link>
             </div>
         </div>
     </div>
-</>
-)
-}
+    );
+};
 
-export default SouvenirNav
+export default SuperstarSouvenirNav;

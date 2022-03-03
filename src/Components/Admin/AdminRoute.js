@@ -181,12 +181,8 @@ const AdminRoute = [
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
     // Souvenir Route
-    // { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: LiveNowSouvenir },
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
-
     { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
-
-
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
     { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
@@ -197,9 +193,6 @@ const AdminRoute = [
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction }, 
     { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
-
-    
-
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick}
 
 
