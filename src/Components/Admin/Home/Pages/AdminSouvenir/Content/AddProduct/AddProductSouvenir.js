@@ -13,11 +13,13 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from 'react-router-dom';
 import './AddProductS.css';
 import UploadAuctionComponent from './UploadAuctionComponent';
+import { useHistory } from 'react-router-dom';
 
 const AddProductSouvenir = () => {
 
     const [convertedContent, setConvertedContent] = useState(null);
     const [file, setFile] = useState(null);
+    const history = useHistory();
 
     const [editorState, setEditorState] = useState(() =>
         EditorState.createEmpty()
@@ -32,7 +34,7 @@ const AddProductSouvenir = () => {
             bid_from:'',
             bid_to:'',
             banner:'',
-            product_image:''
+            product_image:'',
 
         }
     )
@@ -115,10 +117,15 @@ const AddProductSouvenir = () => {
         fData.append('bid_to',moment(endDate).format('yyyy-MM-DD HH:mm:ss'));
         fData.append('banner',file);
         fData.append('status',0);
-        fData.append('product_image',imageUpload);
+        fData.append('product_image',imageUpload.upload);
+
+        console.log('single',file);
+        console.log('multiple', imageUpload.upload);
 
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.post(`/api/add/auction/product`, fData).then(res => {
+
+                history.push('/superstar-admin/souvenir/confirm-or-edit-auction');
 
                 console.log("data successfully Inserted");
            /*    if (res.data.status === 200) {
@@ -300,7 +307,7 @@ const AddProductSouvenir = () => {
 
 
 
-                       {/*  <div className="mt-3">
+                      {/*   <div className="mt-3">
                             <Link to="/superstar-admin/souvenir/confirm-or-edit-auction">
                                 <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
