@@ -1,11 +1,23 @@
+import axios from 'axios';
 import { convertToHTML } from 'draft-convert';
 import { EditorState } from 'draft-js';
 import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import { Link, useHistory } from 'react-router-dom';
 import UploadComponent from './UploadComponent';
+import swal from 'sweetalert';
 
 const AddProductFromMarketPlace = () => {
+    
+    const [title, setTitle] = useState("")
+    const [unit_price, setUnitprice] = useState("")
+    const [total_items, setItems] = useState("")
+    const [keywords, setKeywords] = useState("")
+    const [image, setImage] = useState()
+
+    const changeHandler = (event) => {
+		setImage(event.target.files[0]);
+	};
 
     const [imageUpload, setImageUpload] = useState({
         upload: {
@@ -78,6 +90,50 @@ const AddProductFromMarketPlace = () => {
         console.log(e.target.files[0]);
     };
 
+    // console.log("Title ", title);
+    // console.log("description ", convertedContent);
+    // console.log("unit_price ", unit_price);
+    // console.log("total_items ", total_items);
+    // console.log("keywords ", keywords);
+    // console.log("image ", image);
+
+    const createMarketplace = async (e) => {
+        e.preventDefault();
+    
+        const formData = new FormData()
+    
+        formData.append('title', title)
+        formData.append('description', convertedContent)
+        formData.append('unit_price', unit_price)
+        formData.append('total_items', total_items)
+        formData.append('keywords', keywords)
+        formData.append('image', image)
+
+
+
+        axios.post(`/api/admin/marketplace/store`, formData).then(res => {
+            if(res.data.status === 200)
+            {
+                console.log('Done');
+                setTitle('')
+                setUnitprice('')
+                setItems('')
+                setKeywords('')
+
+                swal("Welcome",res.data.message,"success");
+            }
+        });
+    
+        // await axios.post(`/api/admin/marketplace/store`, formData).then(({data})=>{
+        //   console.log('Done ', data);
+        //   setTitle('');
+
+        // }).catch(({response})=>{
+        //   console.log("Error ", response);
+        // })
+    }
+    
+
     return (
         <div className="AS m-3">
 
@@ -90,7 +146,8 @@ const AddProductFromMarketPlace = () => {
                         </div>
                         <h3 className="text-warning text-bold">Add Product</h3>
                     </div>
-                    <div action="">
+                    
+                    <form onSubmit={createMarketplace}>
 
 
                         <div className="row my-4">
@@ -98,7 +155,8 @@ const AddProductFromMarketPlace = () => {
                                 <p className="text-white">Title</p>
                             </div>
                             <div className="col-md-11">
-                                <input className='form-control input-gray' type='text' />
+                                <input className='form-control input-gray' type='text' value={title} onChange={(event)=>{
+                              setTitle(event.target.value)}} />
                             </div>
                         </div>
 
@@ -107,7 +165,8 @@ const AddProductFromMarketPlace = () => {
                                 <p className="text-white">Keyword</p>
                             </div>
                             <div className="col-md-11">
-                                <input className='form-control input-gray' type='text' />
+                                <input className='form-control input-gray' type='text' value={keywords} onChange={(event)=>{
+                              setKeywords(event.target.value)}} />
                             </div>
                         </div>
 
@@ -135,7 +194,8 @@ const AddProductFromMarketPlace = () => {
                                         <p>Total Units</p>
                                     </div>
                                     <div className="col-md-9">
-                                        <input type="number" className="form-control input-gray" />
+                                        <input type="number" className="form-control input-gray" value={total_items} onChange={(event)=>{
+                              setItems(event.target.value)}} />
                                     </div>
                                 </div>
                             </div>
@@ -145,69 +205,35 @@ const AddProductFromMarketPlace = () => {
                                         <p className="ms-4">Price</p>
                                     </div>
                                     <div className="col-md-9">
-                                        <input type="number" className="form-control input-gray" />
-                                        {/* <input type="number" className="form-control input-gray" /> */}
+                                        <input type="number" className="form-control input-gray" value={unit_price} onChange={(event)=>{
+                              setUnitprice(event.target.value)}}  />
                                     </div>
                                 </div>
                             </div>
 
                         </div>
 
-
-                        <div>
-                            <div className="row my-4">
-                                <div className="col-md-1 text-white">
-                                    Upload Banner
-                                </div>
-                                <div className="col-md-3">
-                                    <input onChange={handleOnChange} type="file" name="file" id="file" className="inputfile" />
-                                    <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
-                                </div>
+                        <div className="row my-4">
+                            <div className="col-md-1">
+                                <p className="text-white">Image</p>
                             </div>
-                            {
-                                file ? (<div className="row">
-                                    <div className="col-md-1 text-light"><small>Selected Banner</small></div>
-                                    <div className="col-md-11 fw-bold text-success">
-                                        {file?.name}
-                                    </div>
-                                </div>) : null
-                            }
+                            <div className="col-md-11">
+                                <input className='form-control input-gray' type='file' onChange={changeHandler} />
+                            </div>
+                        </div>
 
+                        <div className="row my-4">
+                            <div className="col-md-1">
+                            </div>
+                            <div className="col-md-11">
+                                <button className="mt-2 btn btn-danger" size="lg" block="block" type="submit">
+                                    Save
+                                </button>
+                            </div>
                         </div>
 
 
-
-
-                        <div className="">
-                            {inputList.map((x, i) => {
-                                return (
-                                    <div className="row my-4">
-                                        <div className="col-md-1 text-white">
-                                            <p>Upload Image</p>
-                                        </div>
-                                        <div className="col-md-3">
-                                           
-                                            <UploadComponent {...imageUpload.upload} handleChange={handleChange} />
-                                        </div>
-                                  
-                                    </div>
-                                )
-                            })}
-
-                        </div>
-
-
-
-
-
-
-                        <div className="mt-3">
-                            <Link to="/superstar-admin/souvenir/confirm-or-edit-marketplace">
-                                <button onClick={() => history.push('/superstar-admin/souvenir/edit-or-confirm-marketplace')} className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
-                            </Link>
-
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
