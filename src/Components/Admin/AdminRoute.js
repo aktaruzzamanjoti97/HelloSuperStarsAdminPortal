@@ -30,6 +30,7 @@ import AuditionsGrandFinal from "./Home/Pages/Auditions/Content/GrandFinal/Audit
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
 import LiveNowSouvenir from "./Home/Pages/AdminSouvenir/Content/LiveNowSouvenir";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
+import EditProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/EditProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
 //import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
 // import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
@@ -182,6 +183,7 @@ const AdminRoute = [
 
     // Souvenir Route
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
+    { path: '/superstar-admin/souvenir/edit-auction/:id', exact: true, name: 'edit-auction-product', component: EditProductSouvenir},
     { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
@@ -191,7 +193,7 @@ const AdminRoute = [
     // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin }, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin2 }, 
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
-    { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction }, 
+    { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction },
     { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick}
 
