@@ -5,6 +5,10 @@ import Unsold from '../../../../../../assets/images/Souvenir/packages.png';
 import pendingMarket from '../../../../../../assets/images/pending 2.png';
 
 const MarketPlaceNav = () => {
+
+
+
+
     return (
         <>
             <div className="mb-3 row">
@@ -23,7 +27,7 @@ const MarketPlaceNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                        <Link to={{pathname: "/superstar-admin/souvenir/product-list/pending" }} className=""><button className="card-footer Souvenir-button  w-100 "
                             data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                             aria-controls="collapseOne"> Pending Souvenir
                         </button></Link>
@@ -46,9 +50,10 @@ const MarketPlaceNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                        <Link  to= {{pathname: "/superstar-admin/souvenir/product-list/approved" }} className="">
+                            <button className="card-footer Souvenir-button  w-100 "
                             data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne"> Products List
+                            aria-controls="collapseOne"> Approved Products List
                         </button></Link>
                     </div>
                 </div>
