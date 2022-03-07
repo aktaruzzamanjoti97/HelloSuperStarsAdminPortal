@@ -186,7 +186,8 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
     { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
-    { path: '/superstar-admin/souvenir/product-list', exact: true, name: 'sold', component: ProductList },
+    { path: '/superstar-admin/souvenir/product-list/approved', exact: true, name: 'sold', component: ProductList },
+    { path: '/superstar-admin/souvenir/product-list/pending', exact: true, name: 'sold', component: ProductList },
     { path: '/superstar-admin/souvenir/edit-marketplace', exact: true, name: 'edit-marketplace', component: EditProductMarketPlace },
     // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin }, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin2 }, 

@@ -22,6 +22,8 @@ const SuperstarProductList = () => {
       <div className="">
         <h3 className="text-light my-3">Product List</h3>
         <div className="row">
+
+          
           <div className="col-md-12 col-lg-6  my-4">
             <div className="border-warning product-card">
               <div className="">
@@ -398,6 +400,7 @@ const SuperstarProductList = () => {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
