@@ -7,15 +7,17 @@ import axios from 'axios';
 import { convertToHTML } from "draft-convert";
 import { EditorState } from "draft-js";
 import moment from 'moment';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './AddProductS.css';
 import UploadAuctionComponent from './UploadAuctionComponent';
 import { useHistory } from 'react-router-dom';
 
-const AddProductSouvenir = () => {
+const EditProductSouvenir = () => {
+    let bas_url ="http://localhost:8000/"
+    let { id } = useParams();
 
     const [convertedContent, setConvertedContent] = useState(null);
     const [file, setFile] = useState(null);
@@ -24,6 +26,28 @@ const AddProductSouvenir = () => {
     const [editorState, setEditorState] = useState(() =>
         EditorState.createEmpty()
     );
+
+    useEffect(() => {
+
+        axios.get(`/api/edit/auction/${id}`).then((res) => {
+    
+          if (res.status === 200) {
+            setInputFieldList({
+                name:res.data.product.name,
+                title:res.data.product.title,
+                keyword:res.data.product.keyword,
+                details:res.data.product.details,
+            });
+            setStartDate(res.data.product.bid_from)
+            setStartDate(res.data.product.bid_to)          
+            setFile(res.data.product.banner)      
+          }
+          
+        });
+    
+        console.log();
+      }, []);
+
     const [inputFieldList, setInputFieldList] = useState(
         {
             name:'',
@@ -123,9 +147,10 @@ const AddProductSouvenir = () => {
 
         console.log('single',file);
         console.log('multiple', imageUpload.upload['pictures']);
+        console.log(fData);
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.post(`/api/add/auction/product`, fData).then(res => {
+            axios.put(`/api/update/auction/${id}`, fData).then(res => {
 
                 history.push('/superstar-admin/souvenir/confirm-or-edit-auction');
 
@@ -154,7 +179,7 @@ const AddProductSouvenir = () => {
                         <div className="addIconGreetings">
                             <i style={{ color: '#ffc107' }} class="far fa-plus-square mx-2"></i>
                         </div>
-                        <h3 className="text-warning text-bold">Add Product</h3>
+                        <h3 className="text-warning text-bold">Edit Product</h3>
                     </div>
                     <form onSubmit={dataSubmit}>
 
@@ -290,6 +315,7 @@ const AddProductSouvenir = () => {
                             file ? (<div className="row">
                                 <div className="col-md-1 text-light"><small>Selected Banner</small></div>
                                 <div className="col-md-11 fw-bold text-success">
+                                <img src={bas_url+file} alt="" className="edit-banner "/>
                                     {file?.name}
                                 </div>
                             </div>) : null
@@ -327,4 +353,4 @@ const AddProductSouvenir = () => {
     );
 };
 
-export default AddProductSouvenir;
+export default EditProductSouvenir;
