@@ -152,7 +152,8 @@ const SuperstarRoute = [
     { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
     { path: '/superstar/souvenir/add-products-marketPlace', exact: true, name: 'superstar-souvenir-live-bidding', component: AddProductSuperstarFromMarketPlace },
     { path: '/superstar/souvenir/confirm-or-edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarConfirmEditMarketplace },
-    { path: '/superstar/souvenir/product-list', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
+    { path: '/superstar/souvenir/product-list/pending', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
+    { path: '/superstar/souvenir/product-list/approved', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
     { path: '/superstar/souvenir/edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarEditMarketPlaceForm },
 
 

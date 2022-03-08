@@ -25,6 +25,7 @@ const ProductList = () => {
     history.push("/superstar-admin/souvenir/edit-marketplace");
   }
 
+
   useEffect(() => {
 
     console.log(location.pathname);
@@ -77,7 +78,7 @@ const ProductList = () => {
                   <div className="col-md-6">
                     <div className="p-4">
                       <h5 className="text-light">{product.title}</h5>
-                      <small className="text-muted">Released on  {moment(product.created_at).format('LL')} - {moment(product.created_at).format('LT')}
+                      <small className="text-muted">Released on {moment(product.created_at).format('LL')} - {moment(product.created_at).format('LT')}
                       </small>
 
                       <p className='text-white'>
