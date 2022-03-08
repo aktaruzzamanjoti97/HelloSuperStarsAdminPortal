@@ -23,7 +23,7 @@ const SuperstarMarketPlaceNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                        <Link to={{pathname: "/superstar/souvenir/product-list/pending" }} className=""><button className="card-footer Souvenir-button  w-100 "
                             data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                             aria-controls="collapseOne"> Pending Souvenir
                         </button></Link>
@@ -46,9 +46,9 @@ const SuperstarMarketPlaceNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                        <Link to={{pathname: "/superstar/souvenir/product-list/approved" }} className=""><button className="card-footer Souvenir-button  w-100 "
                             data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne"> Products List
+                            aria-controls="collapseOne"> Approved Products List
                         </button></Link>
                     </div>
                 </div>
