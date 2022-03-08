@@ -1,7 +1,7 @@
-import React from "react";
-import { Link, useHistory } from 'react-router-dom'
-import swal from 'sweetalert';
 import axios from "axios";
+import React from "react";
+import { Link, useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 const Sidebar = () => {
@@ -76,6 +76,10 @@ const Sidebar = () => {
                             <Link className="nav-link" to="/superstar-admin/meetup-events/approved">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Meetup Events
+                            </Link>
+                            <Link className="nav-link" to="/superstar-admin/fan-group">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Fan Group
                             </Link>
                             <Link className="nav-link" to="/superstar-admin/upcoming-event">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
