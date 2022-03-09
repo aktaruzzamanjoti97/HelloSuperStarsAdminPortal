@@ -32,12 +32,7 @@ const EditProductSouvenir = () => {
         axios.get(`/api/edit/auction/${id}`).then((res) => {
     
           if (res.status === 200) {
-            setInputFieldList({
-                name:res.data.product.name,
-                title:res.data.product.title,
-                keyword:res.data.product.keyword,
-                details:res.data.product.details,
-            });
+            setInputFieldList(res.data.product);
             setStartDate(res.data.product.bid_from)
             setStartDate(res.data.product.bid_to)          
             setFile(res.data.product.banner)      
@@ -64,6 +59,7 @@ const EditProductSouvenir = () => {
         )
         
     const handleInput = (e) => {
+        console.log(e.target.value)
         const { name, value } = e.target;
         setInputFieldList((prev) => {
           return ({ ...prev, [name]: value });
@@ -152,7 +148,7 @@ const EditProductSouvenir = () => {
         axios.get('/sanctum/csrf-cookie').then(response => {
             axios.put(`/api/update/auction/${id}`, fData).then(res => {
 
-                history.push('/superstar-admin/souvenir/confirm-or-edit-auction');
+                //history.push('/superstar-admin/souvenir/confirm-or-edit-auction');
 
                 console.log("data successfully Inserted");
            /*    if (res.data.status === 200) {
