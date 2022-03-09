@@ -17,7 +17,7 @@ const LiveNowSouvenir = () => {
 
     useEffect(() => {
 
-        axios.get(`/api/live/allProduct`).then((res) => {
+        axios.get(`/api/admin/live/allProduct`).then((res) => {
     
           if (res.status === 200) {
             console.log('from api',res.data.products)
@@ -45,44 +45,50 @@ return (
                 Live Now
             </div>
         </div>
-        {liveProduct.map((product) =>(
-            <div className="d-flex  Souvenir-Live col-5">
+       
 
-            <div className="SouvenirI d-flex">
-                <img src={`http://localhost:8000/${product.product_image}`} className='img-fluid VX-S' alt="" />
+
+        <div className="row">
+            
+            {liveProduct.map((product) =>(
+            <div className="d-flex  Souvenir-Live col-md-3 m-2 NewEitd">
+    
+                <div className="SouvenirI d-flex">
+                    <img src={`http://localhost:8000/${product.product_image}`} className='img-fluid VX-S' alt="" />
+                </div>
+    
+                <div className="SouvenirI mx-4 mt-3">
+    
+                    <div className="mb-4">
+                        <div className="text-light fw-bold mt-1 mx-2">
+                            <h3>{product.name}</h3>
+                        </div>
+                        <div className="text-light  mt-1 mx-2 ">
+                            <small>{moment(product.bid_to).format('LL')}</small>
+                        </div>
+                    </div>
+    
+                    <div className="d-flex  p-2 mb-2">
+                        <img src={Man} className=' SouvenirIcon' alt="" />
+    
+                        <div className=" d-flex text-light  mt-1 mx-3 fw-bold ">
+                            108
+                        </div>
+                    </div>
+    
+                    <div className="d-flex p-2">
+                        <img src={Men} className=' SouvenirIcon' alt="" />
+    
+                        <div className=" d-flex text-light mt-1 mx-3 fw-bold ">
+                            145000
+                        </div>
+                    </div>
+    
+                </div>
+    
             </div>
-
-            <div className="SouvenirI mx-4 mt-3">
-
-                <div className="mb-4">
-                    <div className="text-light fw-bold mt-1 mx-2">
-                        <h3>{product.name}</h3>
-                    </div>
-                    <div className="text-light  mt-1 mx-2 ">
-                        <small>{moment(product.bid_to).format('LL')}</small>
-                    </div>
+      ))}
                 </div>
-
-                <div className="d-flex  p-2 mb-2">
-                    <img src={Man} className=' SouvenirIcon' alt="" />
-
-                    <div className=" d-flex text-light  mt-1 mx-3 fw-bold ">
-                        108
-                    </div>
-                </div>
-
-                <div className="d-flex p-2">
-                    <img src={Men} className=' SouvenirIcon' alt="" />
-
-                    <div className=" d-flex text-light mt-1 mx-3 fw-bold ">
-                        145000
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        ))}
         
 
     </div>
