@@ -14,7 +14,6 @@ import moment from 'moment';
 
 const MarketPlaceSouvenir = () => {
 
-    
     const [liveProduct, setLiveProduct] = useState([]);
 
     useEffect(() => {

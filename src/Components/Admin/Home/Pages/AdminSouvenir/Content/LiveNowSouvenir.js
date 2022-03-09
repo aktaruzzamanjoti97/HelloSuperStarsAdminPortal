@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SouvenirNav from '../SouvenirNav'
 import LiveIcon from '../../../../../../assets/images/Souvenir/live.png'
 import LiveI from '../../../../../../assets/images/Souvenir/LivwNow.png'
@@ -6,7 +6,31 @@ import Man from '../../../../../../assets/images/Souvenir/3201.png'
 import Men from '../../../../../../assets/images/Souvenir/bid.png'
 
 import './Souvenir-Live.css'
+import axios from 'axios'
+import moment from 'moment'
+
+
+
 const LiveNowSouvenir = () => {
+
+    const [liveProduct,setLiveProduct] = useState([]);
+
+    useEffect(() => {
+
+        axios.get(`/api/live/allProduct`).then((res) => {
+    
+          if (res.status === 200) {
+            console.log('from api',res.data.products)
+            setLiveProduct(res.data.products);
+     
+          }
+          
+        });
+    
+        console.log();
+      }, []);
+
+
 return (
 <>
     <div className="AS m-3">
@@ -21,21 +45,21 @@ return (
                 Live Now
             </div>
         </div>
-
-        <div className="d-flex  Souvenir-Live col-5">
+        {liveProduct.map((product) =>(
+            <div className="d-flex  Souvenir-Live col-5">
 
             <div className="SouvenirI d-flex">
-                <img src={LiveI} className='img-fluid VX-S' alt="" />
+                <img src={`http://localhost:8000/${product.product_image}`} className='img-fluid VX-S' alt="" />
             </div>
 
             <div className="SouvenirI mx-4 mt-3">
 
                 <div className="mb-4">
                     <div className="text-light fw-bold mt-1 mx-2">
-                        <h3>Cricket ball</h3>
+                        <h3>{product.name}</h3>
                     </div>
                     <div className="text-light  mt-1 mx-2 ">
-                        <small>Started 16th June, 2021</small>
+                        <small>{moment(product.bid_to).format('LL')}</small>
                     </div>
                 </div>
 
@@ -58,6 +82,8 @@ return (
             </div>
 
         </div>
+        ))}
+        
 
     </div>
 </>

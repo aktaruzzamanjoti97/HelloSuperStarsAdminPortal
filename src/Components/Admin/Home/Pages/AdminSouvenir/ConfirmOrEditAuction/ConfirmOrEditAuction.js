@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import profileUser from '../../../../../../assets/images/liveBiddersWinner.jpg';
 import calendar from '../../../../../../assets/images/meetupEvent/calendar.png';
@@ -6,6 +6,8 @@ import Clock from '../../../../../../assets/images/meetupEvent/clock-icon.png';
 import Fly from '../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png';
 import SouvenirAuctionBanner from '../../../../../../assets/images/SouvenirJoti.png';
 import './ConfirmOrEditAuction.css';
+import axios from 'axios';
+import moment from 'moment';
 
 
 const ConfirmOrEditAuction = () => {
@@ -17,11 +19,33 @@ const ConfirmOrEditAuction = () => {
         history.push('/superstar-admin/souvenir/live-biddings');
     }
 
+    function editProduct(){
+        history.push(`/superstar-admin/souvenir/edit-auction/${auctionConfirm.id}`)
+    }
+
+    const[auctionConfirm, setConfirmation]=useState([]);
+
+
+    useEffect(() => {
+
+        axios.get(`/api/editOrConfirm/auction/editOrConfirm`).then((res) => {
+    
+          if (res.status === 200) {
+            setConfirmation(res.data.product);
+          }
+          
+        });
+    
+        console.log();
+      }, []);
+    
+     
+
 
     return (
         <div>
             <div>
-                <img className='w-100' src={SouvenirAuctionBanner} alt="" />
+                <img className='w-100' src={`http://localhost:8000/${auctionConfirm.banner}`} alt="" />
             </div>
             <div className="row my-3">
 
@@ -31,16 +55,13 @@ const ConfirmOrEditAuction = () => {
                     <div className="card event-card2 shadow">
                         <div className="card-body">
                             <h5 className="text-light mb-3">
-                                Cricket jersey
+                                {auctionConfirm.name}
                             </h5>
                             <p className="text-light">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galley of type and scrambled it to make a type
-                                specimen book.
+                                {auctionConfirm.details}
                             </p>
                             <p className="text-light ">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            {auctionConfirm.title}
                             </p>
                         </div>
                     </div>
@@ -53,7 +74,7 @@ const ConfirmOrEditAuction = () => {
                             <div className=" mx-1">
                                 <span className="text-light">Last Date</span>
                                 <br></br>
-                                <span className="text-warning  BtnTextNMP Usd fw-bold">21th November</span>
+                                <span className="text-warning  BtnTextNMP Usd fw-bold">{moment(auctionConfirm.bid_to).format('LL')}</span>
                             </div>
                         </div>
 
@@ -64,21 +85,21 @@ const ConfirmOrEditAuction = () => {
                             <div className=" mx-1 ">
                                 <span className="text-light">Time</span>
                                 <br></br>
-                                <span className="text-warning  BtnTextNMP Usd fw-bold">11:00 PM</span>
+                                <span className="text-warning  BtnTextNMP Usd fw-bold">{moment(auctionConfirm.bid_to).format('LT')}</span>
                             </div>
                         </div>
                     </div>
 
                         <div className='d-flex'>
                             <button onClick={handleClick} className="btn btn-warning confirmButton">Confirm</button>
-                            <button className="btn btn-secondary mx-2 deleteButton">Edit</button>
+                            <button onClick={editProduct} className="btn btn-secondary mx-2 deleteButton">Edit</button>
                         </div>
 
                 </div>
 
 
                 <div className="col-md-4 ">
-                    <img src={Fly} alt="Pineapple" className='img-fluid Cricket-Img' />
+                    <img src={`http://localhost:8000/${auctionConfirm.product_image}`} alt="Pineapple" className='img-fluid Cricket-Img' />
                 </div>
 
             </div>
