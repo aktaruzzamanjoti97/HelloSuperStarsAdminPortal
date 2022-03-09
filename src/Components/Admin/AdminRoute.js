@@ -82,6 +82,7 @@ import ConfirmOrEditAuction from "./Home/Pages/AdminSouvenir/ConfirmOrEditAuctio
 import LiveBiddingsCheckout from "./Home/Pages/AdminSouvenir/LiveBiddingsCheckout/LiveBiddingsCheckout";
 import AdminFanGroup from "./Home/Pages/AdminFanGroup/AdminFanGroup";
 import CreateFanGroup from "./Home/Pages/AdminFanGroup/CreateFanGroup/CreateFanGroup";
+import PendingFanGroup from './Home/Pages/AdminFanGroup/PendingFanGroup/PendingFanGroup'
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -204,8 +205,8 @@ const AdminRoute = [
     // @TODO: Fan Group Route
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
-    {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: },
-
+    {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+    
 
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
