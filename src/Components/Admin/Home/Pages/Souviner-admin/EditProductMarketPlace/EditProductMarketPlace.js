@@ -72,6 +72,7 @@ const EditProductMarketPlace = () => {
         formData.append('description', convertedContent)
         formData.append('unit_price', unit_price)
         formData.append('total_items', total_items)
+        formData.append('sellingItems', sellingItems)
         formData.append('keywords', keywords)
         if(image!==null){
             formData.append('image', image)
