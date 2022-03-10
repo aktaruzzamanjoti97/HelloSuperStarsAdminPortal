@@ -90,7 +90,7 @@ useEffect(() => {
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar/souvenir/auction-product-list/sold' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Sold products
                 </button></Link>
@@ -112,7 +112,7 @@ useEffect(() => {
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar/souvenir/auction-product-list/unSold' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Unsold products
                 </button></Link>

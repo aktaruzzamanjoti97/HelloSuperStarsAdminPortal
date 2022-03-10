@@ -188,7 +188,7 @@ const AdminRoute = [
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
-    // Souvenir Route
+    // =================================== Auction Route =====================================
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
     { path: '/superstar-admin/souvenir/edit-auction/:id', exact: true, name: 'edit-auction-product', component: EditProductSouvenir},
     { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
