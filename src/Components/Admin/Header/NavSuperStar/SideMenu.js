@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import logo from '../../../../assets/images/helloSuperStar.png'
-import user from "../../../../assets/images/Profile/profile.jpg";
-import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 import swal from 'sweetalert';
-import {browserHistory} from "react-router";
+import logo from '../../../../assets/images/helloSuperStar.png';
+import user from "../../../../assets/images/Profile/profile.jpg";
 
 /**
  * @author
@@ -205,8 +204,6 @@ const SideMenu = (props) => {
             </a>
           </li> 
           </Link>
-
-          
 
           <Link to='/superstar-admin/upcoming-event'> 
           <li>
