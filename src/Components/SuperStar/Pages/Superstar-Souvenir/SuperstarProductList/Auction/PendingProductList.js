@@ -8,6 +8,7 @@ import LiveI from '../../../../../../assets/images/Souvenir/LivwNow.png'
 import axios from 'axios'
 import moment from 'moment'
 import SuperstarSouvenirNav from '../../SupestarSouvenirNav/SuperstarSouvenirNav'
+import { Link } from 'react-router-dom'
 
 
 const PendingProductList = () => {
@@ -60,7 +61,10 @@ return (
 
                 <div className="mb-4">
                     <div className="text-light fw-bold mt-1 mx-2">
+                        <Link to={`/superstar/souvenir/approvedOrDecline/${product.id}`} style={{ textDecoration: 'none', color:'white' }}>
                         <h3>{product.name}</h3>
+                        </Link>
+                        
                     </div>
                     <div className="text-light  mt-1 mx-2 ">
                         <small>{moment(product.bid_to).format('LL')}</small>
