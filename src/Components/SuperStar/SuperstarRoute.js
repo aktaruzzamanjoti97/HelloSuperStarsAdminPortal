@@ -140,9 +140,7 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
-
     // Souvenir 
-
 
     { path: '/superstar/souvenir', exact: true, name: 'superstar-souvenir', component: SuperstarSouvenir },
     { path: '/superstar/souvenir/add-products', exact: true, name: 'superstar-souvenir-add-products', component: AddProductAuctionSuperstar },
@@ -150,11 +148,13 @@ const SuperstarRoute = [
     // { path: '/superstar-admin/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-auction', component: SuperstarLiveBiddingModal },
     { path: '/superstar/souvenir/superstar-live-biddings', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBidding },
     { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
+
+    // Marketplace
     { path: '/superstar/souvenir/add-products-marketPlace', exact: true, name: 'superstar-souvenir-live-bidding', component: AddProductSuperstarFromMarketPlace },
-    { path: '/superstar/souvenir/confirm-or-edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarConfirmEditMarketplace },
+    { path: '/superstar/souvenir/confirm-or-edit-marketplace/:id', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarConfirmEditMarketplace },
     { path: '/superstar/souvenir/product-list/pending', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
     { path: '/superstar/souvenir/product-list/approved', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
-    { path: '/superstar/souvenir/edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarEditMarketPlaceForm },
+    { path: '/superstar/souvenir/edit-marketplace/:id', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarEditMarketPlaceForm },
 
 
 ];
