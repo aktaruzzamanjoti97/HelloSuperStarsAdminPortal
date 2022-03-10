@@ -29,7 +29,7 @@ const EditProductSouvenir = () => {
 
     useEffect(() => {
 
-        axios.get(`/api/edit/auction/${id}`).then((res) => {
+        axios.get(`/api/admin/edit/auction/${id}`).then((res) => {
     
           if (res.status === 200) {
             setInputFieldList(res.data.product);
@@ -146,7 +146,7 @@ const EditProductSouvenir = () => {
         console.log(fData);
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.put(`/api/update/auction/${id}`, fData).then(res => {
+            axios.put(`/api/admin/update/auction/${id}`, fData).then(res => {
 
                 //history.push('/superstar-admin/souvenir/confirm-or-edit-auction');
 
@@ -331,16 +331,16 @@ const EditProductSouvenir = () => {
 
 
 
-                      {/*   <div className="mt-3">
-                            <Link to="/superstar-admin/souvenir/confirm-or-edit-auction">
+                        <div className="mt-3">
+                            <Link to="/superstar-admin/souvenir">
                                 <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                             </Link>
 
-                        </div> */}
-                        <div className="mt-3">
+                        </div>
+                       {/*  <div className="mt-3">
 
                                 <button className="btn btn-warning save-greetings-button py-2" type='submit'><big><b>Confirm</b></big></button>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

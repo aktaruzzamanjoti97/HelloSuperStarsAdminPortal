@@ -20,7 +20,7 @@ const SouvenirNav = () => {
 
     useEffect(() => {
 
-        axios.get('/api/pending/auction/product').then((res) => {
+        axios.get('/api/admin/pending/auction/product').then((res) => {
             if (res.status === 200) {
   
                 setPendingProduct(res.data.product);
@@ -29,7 +29,7 @@ const SouvenirNav = () => {
           });
     
 
-        axios.get('/api/sold/auction/product').then((res) => {
+        axios.get('/api/admin/sold/auction/product').then((res) => {
           if (res.status === 200) {
 
             setSoldProduct(res.data.product);
@@ -37,7 +37,7 @@ const SouvenirNav = () => {
           }
         });
 
-        axios.get('/api/unSold/auction/product').then((res) => {
+        axios.get('/api/admin/unSold/auction/product').then((res) => {
             if (res.status === 200) {
   
                 setunSoldProduct(res.data.product);
