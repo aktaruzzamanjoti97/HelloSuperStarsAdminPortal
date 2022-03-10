@@ -208,7 +208,7 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
-    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1}
+    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},
 
 
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
