@@ -1,0 +1,119 @@
+.fanbanner{
+    height: 30vh !important;
+    width: 100%;
+  
+}
+.main-fan-container{
+    border: 3px solid gold;
+    border-radius: 5px;
+}
+
+.fileFan {
+    position: relative;
+    display: flex;
+  
+  }
+  
+  .fileFan > input[type='file'] {
+    display: none
+  }
+  
+  .fileFan > label {
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+    outline: 0;
+  
+    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    background-color:#484748;
+    color: white;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .fileFan > label:hover {
+    border-color: hsl(0, 0%, 21%);
+  }
+  
+  .fileFan > label:active {
+    background-color: hsl(0, 0%, 96%);
+  }
+  
+  .fileFan > label > i {
+    padding-right: 5px;
+  }
+ 
+  
+
+
+  
+
+
+  
+
+
+  
+  
+  @keyframes pulse {
+    0% {
+      color: hsl(48, 100%, 67%);
+    }
+    50% {
+      color: hsl(48, 100%, 38%);
+    }
+    100% {
+      color: hsl(48, 100%, 67%);
+    }
+  }
+
+  .nav-pills .NavColorFan,
+.nav-pills .show > .NavColorFan {
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #2D2D2D !important;
+  cursor: pointer;
+}
+.nav-pills .NavColorFan.active,
+.nav-pills .show > .NavColorFan {
+  color: black;
+  padding-left: 25px;
+  padding-right: 25px;
+  background: transparent
+    linear-gradient(115deg, #faed89 0%, #ffc000 69%, #ffc633 100%) 0% 0%
+    no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-pills .NavColorFan,
+    .nav-pills .show > .NavColorFan {
+      color: #fff;
+      padding-left: 5px;
+      padding-right: 5px;
+      background-color: #2D2D2D !important;
+      font-size: 13px !important;
+      margin-bottom: 10px;
+    }
+    .nav-pills .NavColorFan.active,
+    .nav-pills .show > .NavColorFan {
+      color: black;
+      padding-left: 5px;
+      padding-right: 5px;
+      background: transparent
+        linear-gradient(115deg, #faed89 0%, #ffc000 69%, #ffc633 100%) 0% 0%
+        no-repeat padding-box;
+      border-radius: 2px;
+      opacity: 1;
+      font-size: 13px !important;
+    }
+  }

@@ -80,6 +80,7 @@ import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/Crick
 import CricketJerserAdmin3 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin3";
 import ConfirmOrEditAuction from "./Home/Pages/AdminSouvenir/ConfirmOrEditAuction/ConfirmOrEditAuction";
 import LiveBiddingsCheckout from "./Home/Pages/AdminSouvenir/LiveBiddingsCheckout/LiveBiddingsCheckout";
+import FanbaseAdmin1 from "./FanbaseGroup/FanbaseAdmin1";
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -196,9 +197,11 @@ const AdminRoute = [
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction },
     { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
-    {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick}
+    {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
+    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1}
 
+    // 
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
     
