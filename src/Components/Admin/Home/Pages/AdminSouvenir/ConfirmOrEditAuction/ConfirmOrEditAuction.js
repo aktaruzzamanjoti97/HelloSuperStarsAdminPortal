@@ -28,7 +28,7 @@ const ConfirmOrEditAuction = () => {
 
     useEffect(() => {
 
-        axios.get(`/api/editOrConfirm/auction/editOrConfirm`).then((res) => {
+        axios.get(`/api/admin/editOrConfirm/auction/editOrConfirm`).then((res) => {
     
           if (res.status === 200) {
             setConfirmation(res.data.product);
@@ -45,7 +45,7 @@ const ConfirmOrEditAuction = () => {
     return (
         <div>
             <div>
-                <img className='w-100' src={`http://localhost:8000/${auctionConfirm.banner}`} alt="" />
+                <img className='w-100' src={`http://localhost:8000/${auctionConfirm.banner}`} alt="" style={{height:'700px', width:'1080px' }}/>
             </div>
             <div className="row my-3">
 

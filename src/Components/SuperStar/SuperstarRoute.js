@@ -17,6 +17,8 @@ import ApprovedPost from "./Pages/StarPost/ApprovedPost";
 import PostDetails from "./Pages/StarPost/PendingPostDetails";
 import CreatePost from "./Pages/StarPost/Content/AddSessionForm";
 
+import PendingProductList from './Pages/Superstar-Souvenir/SuperstarProductList/Auction/PendingProductList';
+
 import LearningSession from "./Pages/AdminLearningSession/AllPost";
 import PendingLearningSession from "./Pages/AdminLearningSession/PendingPost";
 import PendingLearningSessionDetails from "./Pages/AdminLearningSession/PendingPostDetails";
@@ -141,7 +143,7 @@ const SuperstarRoute = [
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
 
-    // Souvenir 
+    // <======================== Auction Route =====================
 
 
     { path: '/superstar/souvenir', exact: true, name: 'superstar-souvenir', component: SuperstarSouvenir },
@@ -150,6 +152,10 @@ const SuperstarRoute = [
     // { path: '/superstar-admin/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-auction', component: SuperstarLiveBiddingModal },
     { path: '/superstar/souvenir/superstar-live-biddings', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBidding },
     { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
+    { path: '/superstar/souvenir/auction-product-list/pending', exact: true, name: 'superstar-souvenir-live-bidding', component: PendingProductList },
+    { path: '/superstar/souvenir/auction-product-list/sold', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
+    { path: '/superstar/souvenir/auction-product-list/unSold', exact: true, name: 'superstar-souvenir-live-bidding', component: PendingProductList },
+    //<========================= End Auction Route ==========================
     { path: '/superstar/souvenir/add-products-marketPlace', exact: true, name: 'superstar-souvenir-live-bidding', component: AddProductSuperstarFromMarketPlace },
     { path: '/superstar/souvenir/confirm-or-edit-marketplace', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarConfirmEditMarketplace },
     { path: '/superstar/souvenir/product-list/pending', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },

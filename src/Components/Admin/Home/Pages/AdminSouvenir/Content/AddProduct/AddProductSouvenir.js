@@ -125,7 +125,7 @@ const AddProductSouvenir = () => {
     // console.log('multiple', imageUpload.upload['pictures']);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`/api/add/auction/product`, fData).then((res) => {
+      axios.post(`/api/admin/add/auction/product`, fData).then((res) => {
         history.push("/superstar-admin/souvenir/confirm-or-edit-auction");
 
         // console.log("data successfully Inserted");
