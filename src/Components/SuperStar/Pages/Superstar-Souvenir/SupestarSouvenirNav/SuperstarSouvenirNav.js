@@ -1,12 +1,54 @@
-import React from 'react';
+import {React,useState,useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import Total from '../../../../../assets/images/Souvenir/sigma.png';
 import Sold from '../../../../../assets/images/Souvenir/sold.png';
 import Unsold from '../../../../../assets/images/Souvenir/packages.png';
 import Add from '../../../../../assets/images/Souvenir/add .png';
 import pending from '../../../../../assets/images/pending 2.png';
+import axios from 'axios';
+
 
 const SuperstarSouvenirNav = () => {
+//=========================== All State ========================
+const [pendingProduct,setPendingProduct] = useState([]);
+const [soldProduct,setSoldProduct] = useState([]);
+const [unSoldProduct,setunSoldProduct] = useState([]);
+//============================ Fetch Data=======================
+
+useEffect(() => {
+
+    axios.get('/api/star/pending/auction/product').then((res) => {
+        if (res.status === 200) {
+
+            setPendingProduct(res.data.product);
+
+        }
+      });
+
+
+    axios.get('/api/star/sold/auction/product').then((res) => {
+      if (res.status === 200) {
+
+        setSoldProduct(res.data.product);
+
+      }
+    });
+
+    axios.get('/api/star/unSold/auction/product').then((res) => {
+        if (res.status === 200) {
+
+            setunSoldProduct(res.data.product);
+
+        }
+      });
+
+   
+  }, []);
+
+
+
+
+
     return (
         <div className="mb-3 row">
 
@@ -21,12 +63,12 @@ const SuperstarSouvenirNav = () => {
                             </td>
                             <td className="ad-card-td">
                     
-                                <small className=" fw-bold Sigma">00</small>
+                                <small className=" fw-bold Sigma">{pendingProduct}</small>
                             </td>
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar/souvenir/auction-product-list/pending' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Pending Souvenir
                 </button></Link>
@@ -43,7 +85,7 @@ const SuperstarSouvenirNav = () => {
                             </td>
                             <td className="ad-card-td">
                         
-                                <small className=" fw-bold Sold thirty">30</small>
+                                <small className=" fw-bold Sold thirty">{soldProduct}</small>
                             </td>
                         </tr>
                     </center>
@@ -65,7 +107,7 @@ const SuperstarSouvenirNav = () => {
                                 <img src={Unsold} className="ad-card-img-top" alt="..." />
                             </td>
                             <td className="ad-card-td">
-                                <small className=" fw-bold Unsold">03</small>
+                                <small className=" fw-bold Unsold">{unSoldProduct}</small>
                             </td>
                         </tr>
                     </center>
