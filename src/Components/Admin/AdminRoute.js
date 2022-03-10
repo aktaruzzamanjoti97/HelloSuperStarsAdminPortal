@@ -189,11 +189,14 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/edit-auction/:id', exact: true, name: 'edit-auction-product', component: EditProductSouvenir},
     { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
+
+    //Marketplace
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
-    { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
+    { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace/:id', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
     { path: '/superstar-admin/souvenir/product-list/approved', exact: true, name: 'sold', component: ProductList },
     { path: '/superstar-admin/souvenir/product-list/pending', exact: true, name: 'sold', component: ProductList },
-    { path: '/superstar-admin/souvenir/edit-marketplace', exact: true, name: 'edit-marketplace', component: EditProductMarketPlace },
+    { path: '/superstar-admin/souvenir/edit-marketplace/:id', exact: true, name: 'edit-marketplace', component: EditProductMarketPlace },
+
     // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin }, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin2 }, 
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code

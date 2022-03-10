@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, Link } from "react-router-dom";
 import bat from "../../../../../../assets/images/Souvenir/bat.png";
 import cricketJersy from "../../../../../../assets/images/Souvenir/footbal-jersey.png";
 import Shoe from "../../../../../../assets/images/Souvenir/shoe.png";
@@ -21,9 +21,9 @@ const ProductList = () => {
   let history = useHistory();
   const location = useLocation();
 
-  function handleClick() {
-    history.push("/superstar-admin/souvenir/edit-marketplace");
-  }
+  // function handleClick() {
+  //   history.push("/superstar-admin/souvenir/edit-marketplace");
+  // }
 
 
   useEffect(() => {
@@ -132,14 +132,29 @@ const ProductList = () => {
                           {/* <div className="d-flex justify-content-center align-items-center"> */}
                           <div className="div-img d-flex justify-content-center align-items-center ">
                             <div className="pt-3">
-                              <div className="my-3">
+                              {/* <div className="my-3">
                                 <button type="button" onClick={handleClick} className="btn btn-warning"><i className="fa-solid fa-pencil icon-soldProduct"></i></button>
 
-                              </div>
-                              <div className="">
-                                <button onClick={() => setModalShow(true)} className="btn btn-light"> <i className="fa-solid fa-trash icon-deleteProduct"></i></button>
+                              </div> */}
+
+                              <div className="my-3">
+                                <Link to={`/superstar-admin/souvenir/edit-marketplace/${product.id}`} className='btn btn-success me-2'>
+                                <i className="fa-solid fa-pencil icon-soldProduct"></i>
+                                                    </Link>
 
                               </div>
+
+                              <div className="">
+                                <Link to={`/superstar-admin/souvenir/confirm-or-edit-marketplace/${product.id}`} className='btn btn-danger'>
+                                <i className="fa-solid fa-eye icon-soldProduct"></i>
+                                                    </Link>
+
+                              </div>
+
+                              {/* <div className="">
+                                <button onClick={() => setModalShow(true)} className="btn btn-light"> <i className="fa-solid fa-eye icon-deleteProduct"></i></button>
+
+                              </div> */}
                             </div>
 
 
