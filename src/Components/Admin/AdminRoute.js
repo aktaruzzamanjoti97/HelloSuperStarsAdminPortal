@@ -80,9 +80,13 @@ import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/Crick
 import CricketJerserAdmin3 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin3";
 import ConfirmOrEditAuction from "./Home/Pages/AdminSouvenir/ConfirmOrEditAuction/ConfirmOrEditAuction";
 import LiveBiddingsCheckout from "./Home/Pages/AdminSouvenir/LiveBiddingsCheckout/LiveBiddingsCheckout";
+
+import FanbaseAdmin1 from "./FanbaseGroup/FanbaseAdmin1";
+
 import AdminFanGroup from "./Home/Pages/AdminFanGroup/AdminFanGroup";
 import CreateFanGroup from "./Home/Pages/AdminFanGroup/CreateFanGroup/CreateFanGroup";
 import PendingFanGroup from './Home/Pages/AdminFanGroup/PendingFanGroup/PendingFanGroup'
+
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
 
@@ -204,13 +208,14 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
+    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1}
 
-    // @TODO: Fan Group Route
+
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
     {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
-    
 
+  
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
     
