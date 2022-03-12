@@ -72,6 +72,8 @@ import AddProductSuperstarFromMarketPlace from './Pages/Superstar-Souvenir/AddPr
 import SuperstarConfirmEditMarketplace from './Pages/Superstar-Souvenir/SuperstarConfirmEditMarketplace/SuperstarConfirmEditMarketplace';
 import SuperstarEditMarketPlaceForm from './Pages/Superstar-Souvenir/SuperstarEditMarketPlaceForm/SuperstarEditMarketPlaceForm';
 import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductList/SuperstarProductList';
+import SuperstarAuditionPending from './Pages/SuperstarAudition/SuperstarAuditionPending/SuperstarAuditionPending';
+import SuperstarAudition from './Pages/SuperstarAudition/SuperstarAudition';
 
 
 
@@ -107,8 +109,9 @@ const SuperstarRoute = [
     { path: '/superstar/live-chat/add-session', exact: true, name: 'add_session', component: StarAddSessionContent },
     { path: '/superstar/live-chat/edit-session/:id', exact: true, name: 'edit_session', component: StarLiveChatEdit },
 
-    // Audition
-    { path: '/superstar/auditions', exact: true, name: 'auditions', component: AuditionsStar },
+    //@FIXME: Audition
+    { path: '/superstar/audition', exact: true, name: 'auditions', component: SuperstarAudition },
+    { path: '/superstar/auditions/pending', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session
     // { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },

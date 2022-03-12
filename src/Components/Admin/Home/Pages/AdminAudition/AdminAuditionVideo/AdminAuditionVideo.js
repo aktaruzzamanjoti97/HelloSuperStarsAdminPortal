@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
+import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import decline from '../../../../../../assets/images/declined.png';
 import sign from '../../../../../../assets/images/sign.png';
@@ -7,6 +8,9 @@ import "./AdminAuditionVideo.css";
 import { fakeVideoData } from './fakeVideoData';
 
 const AdminAuditionVideo = () => {
+
+  let history = useHistory();
+
   var settings = {
     dots: true,
     infinite: false,
@@ -107,9 +111,6 @@ const AdminAuditionVideo = () => {
             <h2 className="text-warning"> Video Filtering </h2>
 
             <Slider {...settings}>
-         
-
-
 
               {
                 fakeVideoData.map((singleVideo, index) => (
@@ -121,32 +122,6 @@ const AdminAuditionVideo = () => {
                 ))
               }
 
-
-
-
-
-
-              {/* <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div> */}
-              {/* <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div>
-                <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div>
-                <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div>
-                <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div>
-                <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div>
-                <div>
-                  <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-                </div> */}
             </Slider>
 
 
@@ -239,7 +214,9 @@ const AdminAuditionVideo = () => {
 
 
 
-            <div className='d-flex justify-content-center mt-4'>
+            <div onClick={() => {
+              history.push('/superstar-admin/audition/audition-video-show')
+            }} className='d-flex justify-content-center mt-4'>
               <button className='btn btn-warning w-25'><b>Open to Vote</b></button>
             </div>
           </div>
