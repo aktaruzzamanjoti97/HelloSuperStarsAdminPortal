@@ -85,7 +85,7 @@ import FanbaseAdmin1 from "./FanbaseGroup/FanbaseAdmin1";
 
 import AdminFanGroup from "./Home/Pages/AdminFanGroup/AdminFanGroup";
 import CreateFanGroup from "./Home/Pages/AdminFanGroup/CreateFanGroup/CreateFanGroup";
-import PendingFanGroup from './Home/Pages/AdminFanGroup/PendingFanGroup/PendingFanGroup'
+import PendingFanGroup from './Home/Pages/AdminFanGroup/PendingFanGroup/PendingFanGroup';
 
 
 // import NotifyRecord from "./Home/Pages/AdminGreetings/NotifyGreetings/NotifyGreetingsRecord"
@@ -94,6 +94,13 @@ import PendingFanGroup from './Home/Pages/AdminFanGroup/PendingFanGroup/PendingF
 // import StarVidoRecord from './Home/Pages/SuperstarGreetings/VidoUploadPage/VidoUpload';
 // import StarVidoUpload from './Home/Pages/SuperstarGreetings/VidoUploadPage2.js/VidoUploadPage2';
 
+//<================================= Auction ==============================
+
+import PendingProductList from "./Home/Pages/AdminSouvenir/Auction/PendingProductList";
+import SoldProductList from "./Home/Pages/AdminSouvenir/Auction/SoldProductList";
+import UnsoldProductList from "./Home/Pages/AdminSouvenir/Auction/UnsoldProductList";
+import ApprovedOrDecline from "./Home/Pages/AdminSouvenir/Auction/ApprovedOrDecline";
+import PendingProductDetails from "./Home/Pages/AdminSouvenir/Auction/PendingProductDetails";
 
 
 const AdminRoute = [
@@ -188,11 +195,16 @@ const AdminRoute = [
     { path: '/superstar-admin/greetings/details', exact: true, name: 'details', component: GreetingsDetails },
     { path: '/superstar-admin/greetings/details/:greeting_id', exact: true, name: 'details', component: GreetingsDetails },
 
-    // =================================== Auction Route =====================================
+    // =================================== Auction Routes =====================================
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
     { path: '/superstar-admin/souvenir/edit-auction/:id', exact: true, name: 'edit-auction-product', component: EditProductSouvenir},
     { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
+    { path: '/superstar-admin/souvenir-auction/product-list/pending', exact: true, name: 'pending', component: PendingProductList },
+    { path: '/superstar-admin/souvenir-auction/product-list/sold', exact: true, name: 'sold', component: SoldProductList },
+    { path: '/superstar-admin/souvenir-auction/product-list/unsold', exact: true, name: 'unSold', component: UnsoldProductList },
+    { path: '/superstar-admin/souvenir-auction/product-list/approvedOrDecline', exact: true, name: 'approvedOrDecline', component: ApprovedOrDecline },
+    { path: '/superstar-admin/product/details/:id', exact: true, name: 'PendingProduct', component: PendingProductDetails },
 
     //Marketplace
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
@@ -208,7 +220,7 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
-    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1}
+    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},
 
 
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},

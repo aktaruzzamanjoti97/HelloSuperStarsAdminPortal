@@ -71,7 +71,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar-admin/souvenir-auction/product-list/pending' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Pending Souvenir
                 </button></Link>
@@ -93,7 +93,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar-admin/souvenir-auction/product-list/sold' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Sold products
                 </button></Link>
@@ -115,7 +115,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/souvenir' className=""><button className="card-footer Souvenir-button  w-100 "
+                <Link to='/superstar-admin/souvenir-auction/product-list/unsold' className=""><button className="card-footer Souvenir-button  w-100 "
                     data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                     aria-controls="collapseOne"> Unsold products
                 </button></Link>
