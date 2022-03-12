@@ -1,5 +1,5 @@
 import './App.css';
-import { HashRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {  BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import './Components/Admin/Adminlogin.css'
 
