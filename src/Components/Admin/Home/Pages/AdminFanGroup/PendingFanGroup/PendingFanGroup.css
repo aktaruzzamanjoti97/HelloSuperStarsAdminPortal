@@ -1,8 +1,16 @@
 .estimateSection {
   background-color: #2d2d2d;
+  border: 1px solid gray;
+  border-radius: 10px;
 }
 
 .bgStar {
   background-color: #032218;
-  border: 2px solid ;
+  border: 2px solid;
+}
+
+.pendingGroupFan {
+  background-image: url("../../../../../../assets/images/fanGroup/Rectangle421.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
