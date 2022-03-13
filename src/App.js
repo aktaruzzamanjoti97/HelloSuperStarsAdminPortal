@@ -2,7 +2,7 @@ import './App.css';
 import {  BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import './Components/Admin/Adminlogin.css'
-
+import VideoCall from './VideoCall'
 
 
 // Main Layout
@@ -79,6 +79,8 @@ return (
       <Route exact path='/superstar_registration/otp' component={SuperStarRegistrationOTP} />
 
       <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
+      <Route exact path='/videoCall' component={VideoCall} />
+      
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>

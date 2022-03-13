@@ -4,6 +4,7 @@ import fanBanner from "../../../assets/images/Fanbase-img/Fanbasebanner.jpg";
 import { Tab, Nav } from "react-bootstrap";
 import FanBaseHome from "./FanBaseComponents/FanBaseHome";
 import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
+import FanBaseMessenger from "./FanBaseComponents/FanBaseMessenger";
 const FanbaseAdmin1 = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
@@ -142,9 +143,7 @@ const FanbaseAdmin1 = () => {
           <Tab.Pane eventKey="group"><FanBaseGroup /></Tab.Pane>
           <Tab.Pane eventKey="message">
 
-            <h1 className="text-warning">
-              Messenger content here
-            </h1>
+        <FanBaseMessenger />
           </Tab.Pane>
         </Tab.Content>
         <Nav variant="pills">
