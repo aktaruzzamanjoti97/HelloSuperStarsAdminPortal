@@ -110,6 +110,7 @@ import SoldProductList from "./Home/Pages/AdminSouvenir/Auction/SoldProductList"
 import UnsoldProductList from "./Home/Pages/AdminSouvenir/Auction/UnsoldProductList";
 import ApprovedOrDecline from "./Home/Pages/AdminSouvenir/Auction/ApprovedOrDecline";
 import PendingProductDetails from "./Home/Pages/AdminSouvenir/Auction/PendingProductDetails";
+import AdminSelectJury from "./Home/Pages/AdminAudition/AdminSelectJury/AdminSelectJury";
 
 
 const AdminRoute = [
@@ -168,7 +169,8 @@ const AdminRoute = [
     
 
     // @FIXME: Auditions Route
-    { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AuditionsGrandFinal },
+    { path: '/superstar-admin/auditions/grand-final', exact: true, name: 'grand-final', component: AdminSelectJury },
+    // { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },

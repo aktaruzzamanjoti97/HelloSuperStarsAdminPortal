@@ -1,15 +1,15 @@
-import React, { useState, useEffect  } from 'react';
-import { Button, Modal } from 'react-bootstrap';
-import { useHistory} from 'react-router-dom';
-import avatarImage from '../../../../../../assets/images/profileAvatar/Avater.png';
-import './AddSuperStarModal.css';
 import axios from "axios";
-import swal from 'sweetalert';
-
+import { convertToHTML } from "draft-convert";
+import { EditorState } from "draft-js";
+import React, { useEffect, useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState } from "draft-js";
-import { convertToHTML } from "draft-convert";
+import { useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
+import avatarImage from '../../../../../../assets/images/profileAvatar/Avater.png';
+import './AddSuperStarModal.css';
+
 
 
 const AddSuperStarModal = (props) => {
@@ -233,7 +233,7 @@ const AddSuperStarModal = (props) => {
                                                     </select>
                                                 </div>
 
-                                            </div>
+                                             </div>
                                         </div>
                                     </div>
                                 </div>
