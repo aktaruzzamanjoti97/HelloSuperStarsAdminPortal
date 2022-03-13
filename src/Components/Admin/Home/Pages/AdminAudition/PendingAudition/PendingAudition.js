@@ -2,7 +2,9 @@ import React from 'react';
 import PendingAuditionSlider from '../PendingAuditionSlider/PendingAuditionSlider';
 import { useHistory } from "react-router-dom";
 
+
 const PendingAudition = () => {
+   
 
     return (
         <div className="liveMeetupBorder my-5">
