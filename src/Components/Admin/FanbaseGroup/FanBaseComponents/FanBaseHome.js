@@ -3,6 +3,7 @@ import "./FanBaseHome.css";
 import fan from "../../../../assets/images/Fanbase-img/unsplash_sYhUhse5uT8.png";
 import meme from "../../../../assets/images/Fanbase-img/meme.png";
 import meme2 from "../../../../assets/images/Fanbase-img/meme2.png";
+
 const FanBaseHome = () => {
   return (
     <>
@@ -23,7 +24,9 @@ const FanBaseHome = () => {
       </div>
 
       <div className="container">
-        <div className="card bg-dark postFancard my-4">
+        <div className="parent-divFan">
+          <div className="child-divFan">
+          <div className="card bg-dark postFancard my-4">
           <div className="card-body">
             <div className="d-flex">
               <img src={fan} className="img-fluid mx-2" alt="" />
@@ -105,6 +108,9 @@ const FanBaseHome = () => {
             </div>
           </div>
         </div>
+          </div>
+        </div>
+       
       </div>
     </>
   );
