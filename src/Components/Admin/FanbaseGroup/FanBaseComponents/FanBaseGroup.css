@@ -1,0 +1,35 @@
+.fanMessageCard{
+    border: 2px solid gold !important;
+}
+
+.nav-pills .GroupMessengerChat,
+.nav-pills .show > .NavColorFan {
+  color: balck !important;
+
+  background-color: none !important;
+}
+.nav-pills .GroupMessengerChat.active,
+.nav-pills .show > .NavColorFan {
+  color: gold !important;
+  border-radius: 50% !important;
+  background: none !important;
+  border-radius: 2px;
+  opacity: 1;
+}
+.GroupMessengerChat {
+    color: gray !important;
+}
+.parentMsgDiv {
+    width: 100%;
+    height: 300px;
+
+ overflow: hidden;
+  }
+  
+  .childMsgDiv {
+    height: 100%;
+    margin-right: -50px; /* Maximum width of scrollbar */
+    padding-right: 50px; /* Maximum width of scrollbar */
+    overflow-y: scroll;
+    
+  }

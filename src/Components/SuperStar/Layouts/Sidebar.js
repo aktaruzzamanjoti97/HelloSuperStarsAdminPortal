@@ -1,7 +1,7 @@
-import React from "react";
-import { Link, useHistory } from 'react-router-dom'
-import swal from 'sweetalert';
 import axios from "axios";
+import React from "react";
+import { Link, useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 
 
 const Sidebar = () => {
@@ -54,7 +54,7 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Progress Bar
                             </Link>
-                            <Link className="nav-link" to="/superstar/auditions">
+                            <Link className="nav-link" to="/superstar/audition">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Audition
                             </Link>

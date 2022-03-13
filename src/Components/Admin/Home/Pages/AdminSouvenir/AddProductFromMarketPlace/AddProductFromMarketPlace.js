@@ -1,7 +1,7 @@
+import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { convertToHTML } from 'draft-convert';
 import { EditorState } from 'draft-js';
-import React, { useState } from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import { Link, useHistory } from 'react-router-dom';
 import UploadComponent from './UploadComponent';
@@ -10,10 +10,12 @@ import swal from 'sweetalert';
 const AddProductFromMarketPlace = () => {
     
     const [title, setTitle] = useState("")
+    const [starId, setStarId] = useState("")
     const [unit_price, setUnitprice] = useState("")
     const [total_items, setItems] = useState("")
     const [keywords, setKeywords] = useState("")
     const [image, setImage] = useState()
+    const [starList, setStarList] = useState([]);
 
     const changeHandler = (event) => {
 		setImage(event.target.files[0]);
@@ -50,6 +52,17 @@ const AddProductFromMarketPlace = () => {
         const { pictures } = imageUpload.upload;
         console.warn("Confirm Upload =>", [...pictures]);
     };
+
+    // Fetch Stars Added By Admin
+    useEffect(() => {
+
+        axios.get(`/api/admin/star_list`).then((res) => {
+        if (res.status === 200) {
+            setStarList(res.data.category);
+            console.log(res.data.category);
+        }
+        });
+    }, []);
 
     const [inputList, setInputList] = useState([{ inputFile: "" }]);
     const [file, setFile] = useState(null);
@@ -103,6 +116,7 @@ const AddProductFromMarketPlace = () => {
         const formData = new FormData()
     
         formData.append('title', title)
+        formData.append('star_id', starId)
         formData.append('description', convertedContent)
         formData.append('unit_price', unit_price)
         formData.append('total_items', total_items)
@@ -158,6 +172,28 @@ const AddProductFromMarketPlace = () => {
                                 <input className='form-control input-gray' type='text' value={title} onChange={(event)=>{
                               setTitle(event.target.value)}} />
                             </div>
+                        </div>
+
+                        <div className="row my-4">
+                            <div className="col-md-2 text-white">
+                                <p><big>Select Super Star</big></p>
+                            </div>
+                                 <div className="col-md-10">
+                                            <select
+                                            onChange={(event)=>{setStarId(event.target.value)}}
+                                            name="star_id"
+                                            className="form-control reply-control input-overlay"
+                                        >
+                                            <option className="text-whaite" value="">
+                                            Choose One
+                                            </option>
+                                            {starList.map((user, index) => (
+                                            <option className="text-whaite" value={user.id}>
+                                                {user.first_name} {user.last_name}
+                                            </option>
+                                            ))}
+                                        </select>
+                                  </div>
                         </div>
 
                         <div className="row my-4">

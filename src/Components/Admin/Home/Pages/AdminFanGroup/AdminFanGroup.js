@@ -6,7 +6,7 @@ import AdminFanGroupNav from './AdminFanGroupNav/AdminFanGroupNav';
 
 const AdminFanGroup = () => {
     return (
-        <div>
+        <div className="ms-4">
             <AdminFanGroupNav />
 
             <div className="my-3">
