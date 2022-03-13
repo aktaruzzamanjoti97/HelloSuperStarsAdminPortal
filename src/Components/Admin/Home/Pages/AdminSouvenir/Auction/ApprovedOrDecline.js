@@ -1,37 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import profileUser from '../../../../../../assets/images/liveBiddersWinner.jpg';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import calendar from '../../../../../../assets/images/meetupEvent/calendar.png';
 import Clock from '../../../../../../assets/images/meetupEvent/clock-icon.png';
 import Fly from '../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png';
 import SouvenirAuctionBanner from '../../../../../../assets/images/SouvenirJoti.png';
-import './ConfirmOrEditAuction.css';
 import axios from 'axios';
 import moment from 'moment';
-import { Markup } from 'interweave';
 
 
-const ConfirmOrEditAuction = () => {
+const ApprovedOrDecline = () => {
+    const {id} = useParams()
 
     let history = useHistory();
 
-    function handleClick() {
-        // history.push('/superstar-admin/souvenir/live-biddings');
-        history.push('/superstar-admin/souvenir');
-    }
+    const approved = () => {
 
-    function editProduct(){
-        history.push(`/superstar-admin/souvenir/edit-auction/${auctionConfirm.id}`)
+        axios.put(`/api/star/approved/auction/${id}`).then((res) => {
+    
+            if (res.status === 200) {
+                history.push(`/superstar/souvenir`)
+            }
+            
+          });
     }
+    // function editProduct(){
+    //     history.push(`/superstar-admin/souvenir/edit-auction/${auctionConfirm.id}`)
+    // }
 
     const[auctionConfirm, setConfirmation]=useState([]);
 
 
     useEffect(() => {
 
-        axios.get(`/api/admin/editOrConfirm/auction/editOrConfirm`).then((res) => {
+        axios.get(`/api/star/approvedOrDecline/auction/${id}`).then((res) => {
     
           if (res.status === 200) {
+              console.log(res.data.product)
             setConfirmation(res.data.product);
           }
           
@@ -40,13 +44,12 @@ const ConfirmOrEditAuction = () => {
         console.log();
       }, []);
     
-     
 
 
     return (
         <div>
             <div>
-                <img className='w-100' src={`http://localhost:8000/${auctionConfirm.banner}`} alt="" style={{height:'700px', width:'1080px' }}/>
+                <img className='w-100' src={`http://localhost:8000/${auctionConfirm.banner}`} alt="" style={{height:'400px', width:'1080px' }}/>
             </div>
             <div className="row my-3">
 
@@ -56,10 +59,10 @@ const ConfirmOrEditAuction = () => {
                     <div className="card event-card2 shadow">
                         <div className="card-body">
                             <h5 className="text-light mb-3">
-                                {auctionConfirm.name}
+                            {auctionConfirm.name}
                             </h5>
                             <p className="text-light">
-                            <Markup content={auctionConfirm.details} />
+                            {auctionConfirm.details}
                             </p>
                             <p className="text-light ">
                             {auctionConfirm.title}
@@ -92,15 +95,20 @@ const ConfirmOrEditAuction = () => {
                     </div>
 
                         <div className='d-flex'>
-                            <button onClick={handleClick} className="btn btn-warning confirmButton">Confirm</button>
-                            <button onClick={editProduct} className="btn btn-secondary mx-2 deleteButton">Edit</button>
+                        <Link>
+                            <button onClick={approved} className="btn btn-warning confirmButton">Approved</button>
+                        </Link>
+                        <Link to={`/superstar/souvenir`}>
+                            <button className="btn btn-secondary mx-2 deleteButton">Decline</button>
+                        </Link>
+
                         </div>
 
                 </div>
 
 
                 <div className="col-md-4 ">
-                    <img src={`http://localhost:8000/${auctionConfirm.product_image}`} alt="Pineapple" className='img-fluid Cricket-Img' />
+                    <img src={`http://localhost:8000/${auctionConfirm.product_image}`} alt="Pineapple" className='img-fluid Cricket-Img'/>
                 </div>
 
             </div>
@@ -109,4 +117,4 @@ const ConfirmOrEditAuction = () => {
     );
 };
 
-export default ConfirmOrEditAuction;
+export default ApprovedOrDecline;

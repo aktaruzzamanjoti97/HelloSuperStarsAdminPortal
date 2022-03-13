@@ -15,6 +15,10 @@ import './AddProductS.css';
 import UploadAuctionComponent from './UploadAuctionComponent';
 import { useHistory } from 'react-router-dom';
 
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 const EditProductSouvenir = () => {
     let bas_url ="http://localhost:8000/"
     let { id } = useParams();
@@ -146,20 +150,12 @@ const EditProductSouvenir = () => {
         console.log(fData);
 
         axios.get('/sanctum/csrf-cookie').then(response => {
-            axios.put(`/api/admin/update/auction/${id}`, fData).then(res => {
+            axios.post(`/api/admin/update/auction/${id}`, fData).then(res => {
 
-                //history.push('/superstar-admin/souvenir/confirm-or-edit-auction');
+                if (res.data.status === 200) {
+                    history.push('/superstar-admin/souvenir');
+                }
 
-                console.log("data successfully Inserted");
-           /*    if (res.data.status === 200) {
-                // document.getElementById('input_form').reset();   
-                swal("Success", res.data.message, "success");
-                history.push('/superstar-admin/live-chat/pending');
-              }
-              else {
-                //setModalShow(true);
-                setRegister({ ...registerInput, error_list: res.data.validation_errors });
-              } */
             });
           });
 
@@ -225,15 +221,25 @@ const EditProductSouvenir = () => {
                                 <p>Description</p>
                             </div>
                             <div className="col-md-11">
-                                {/* <textarea className="form-control input-gray me-4" type="text" /> */}
-                                <Editor
-                                    editorState={editorState}
-                                    onEditorStateChange={handleEditorChange}
-                                    wrapperClassName="wrapper-class"
-                                    editorClassName="editor-class"
-                                    toolbarClassName="toolbar-class"
-
-                                />
+                                <CKEditor
+                                editor={ ClassicEditor }
+                                data={inputFieldList.details}
+                                onReady={ editor => {
+                                    // You can store the "editor" and use when it is needed.
+                                    console.log( 'Editor is ready to use!', editor );
+                                } }
+                                onChange={ ( event, editor ) => {
+                                const data = editor.getData();
+                                setConvertedContent(data)
+                                    // console.log( { data } );
+                                } }
+                                onBlur={ ( event, editor ) => {
+                                    console.log( 'Blur.', editor );
+                                } }
+                                onFocus={ ( event, editor ) => {
+                                    console.log( 'Focus.', editor );
+                                } }
+                            />
                             </div>
                         </div>
 
@@ -332,15 +338,8 @@ const EditProductSouvenir = () => {
 
 
                         <div className="mt-3">
-                            <Link to="/superstar-admin/souvenir">
-                                <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
-                            </Link>
-
+                        <button type='submit' className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
                         </div>
-                       {/*  <div className="mt-3">
-
-                                <button className="btn btn-warning save-greetings-button py-2" type='submit'><big><b>Confirm</b></big></button>
-                        </div> */}
                     </form>
                 </div>
             </div>
