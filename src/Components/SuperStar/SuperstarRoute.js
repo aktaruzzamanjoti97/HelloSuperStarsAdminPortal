@@ -23,6 +23,7 @@ import PendingProductList from './Pages/Superstar-Souvenir/SuperstarProductList/
 import UnSoldProductList from './Pages/Superstar-Souvenir/SuperstarProductList/Auction/UnsoldProductList';
 import SoldProductList from './Pages/Superstar-Souvenir/SuperstarProductList/Auction/SoldProductList';
 import ApprovedOrDecline from './Pages/Superstar-Souvenir/SuperstarProductList/Auction/ApprovedOrDecline';
+import EditProductSouvenir from './Pages/Superstar-Souvenir/SuperstarProductList/Auction/EditProductSouvenir';
 
 //<============================= End Star Auction Section =========================
 
@@ -163,6 +164,7 @@ const SuperstarRoute = [
     { path: '/superstar/souvenir/add-products', exact: true, name: 'superstar-souvenir-add-products', component: AddProductAuctionSuperstar },
     { path: '/superstar/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-confirm-edit', component: ConfirmOrEditSuperAuction },
     { path: '/superstar/souvenir/approvedOrDecline/:id', exact: true, name: 'superstar-souvenir-approved-decline', component: ApprovedOrDecline },
+    { path: '/superstar/souvenir/edit/:id', exact: true, name: 'superstar-souvenir-edit', component: EditProductSouvenir },
     // { path: '/superstar-admin/souvenir/confirm-or-edit-super-auction', exact: true, name: 'superstar-souvenir-auction', component: SuperstarLiveBiddingModal },
     { path: '/superstar/souvenir/superstar-live-biddings', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBidding },
     { path: '/superstar/souvenir/superstar-live-biddings-checkout', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarLiveBiddingCheckout },
