@@ -57,7 +57,7 @@ const SuperStarRoute = ({ component: Component, ...rest })=> {
             else if(error.response.status === 404)
             {
                 swal("404 Error","Url/Page Not Found","warning");
-                history.push('/404');
+                history.push('/superstar/dashboard');
             }
             return Promise.reject(error);
         }

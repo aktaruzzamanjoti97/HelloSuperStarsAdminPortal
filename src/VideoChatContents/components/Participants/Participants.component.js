@@ -3,8 +3,13 @@ import "./Participants.css";
 import { connect } from "react-redux";
 import { Participant } from "./Participant/Participant.component";
 import { useState } from "react";
+import axios from "axios";
 
 const Participants = (props) => {
+
+  //const [Participant, setUserInfo] = useState([]);
+
+
   let customHideVedio = "";
   const videoRef = useRef(null);
 
@@ -25,7 +30,23 @@ const Participants = (props) => {
 
 
   let participantKey = Object.keys(props.participants);
+
+
   useEffect(() => {
+
+
+    // axios.get("/sanctum/csrf-cookie").then((response) => {
+    //   axios.get("/api/user_info").then((res) => {
+    //       if (res.data.status === 200) {
+    //         Participant = res.data.users.user_type;
+
+    //           console.log('dgd',Participant)
+    //       }
+    //   });
+    // });
+
+
+
     if (videoRef.current) {
       videoRef.current.srcObject = props.stream;
       videoRef.current.muted = true;

@@ -1,8 +1,11 @@
 import MainScreen from "./VideoChatContents/components/MainScreen/MainScreen.component"
 
-import firepadRef, { db, userName } from "./VideoChatContents/server/firebase";
+import firepadRef, { db } from "./VideoChatContents/server/firebase";
 import "./VideoCall.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+
 import {
   setMainStream,
   addParticipant,
@@ -21,7 +24,28 @@ function VideoCall(props) {
 
     return localStream;
   };
+
+  //const [userName, setUserName] = useState('');
+
+let userName = '';
+
+
+
   useEffect(async () => {
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get("/api/user_info").then((res) => {
+          if (res.data.status === 200) {
+            // setUserName(res.data.users.user_type);
+
+            // console.log(res.data.users.user_type)
+
+            userName = res.data.users.user_type;
+          }
+      });
+    });
+
+
     const stream = await getUserStream();
     stream.getVideoTracks()[0].enabled = false;
     props.setMainStream(stream);
