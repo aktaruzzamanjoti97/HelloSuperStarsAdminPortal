@@ -24,7 +24,7 @@ const NotifyGreetingsContent = ({ greeting }) => {
     
     const getAllGreetingReg = () => {
         axios.get("/sanctum/csrf-cookie").then((response) => {
-            axios.get('/api/admin/greetings_register_list/'+greeting.data.id).then((res) => {
+            axios.get('/api/admin/greetings_register_list/'+greeting.data?.id).then((res) => {
                 if (res.data.status === 200) {
                     console.log(res.data.list);
                     setGreetingList(res.data.list)
@@ -62,7 +62,7 @@ return (
 <>
     <>
         <div className="card m-3 ">
-            <img src={base_url+greeting.data.banner} alt="" className='BannerAGN' />
+            <img src={base_url+greeting.data?.banner} alt="" className='BannerAGN' />
         </div>
         <div className="NotifyGreetings d-flex">
 
@@ -77,7 +77,7 @@ return (
                                     <td className='Notifytd'>
                                         {data.notification_at ?
                                             "":
-                                            <input type="checkbox" value={data.user.id} onChange={() => handelCheckBox(data.user.id, data.id)} />
+                                            <input type="checkbox" value={data.user?.id} onChange={() => handelCheckBox(data.user?.id, data.id)} />
                                     }
                                     </td>
                                     
@@ -99,7 +99,7 @@ return (
                         ""
                     }   
                             
-                            <NotifyModalAdmin show={modalShowl} onHide={() => setModalShowl(false)} users_id={Checked} setModal={setModalShowl} setGreetingList={setGreetingList} greeting_id={greeting.data.id} greetings_reg_id={regGreId} setChecked={setChecked}/>
+                            <NotifyModalAdmin show={modalShowl} onHide={() => setModalShowl(false)} users_id={Checked} setModal={setModalShowl} setGreetingList={setGreetingList} greeting_id={greeting.data?.id} greetings_reg_id={regGreId} setChecked={setChecked}/>
                 </div>
                 
                 </div>
@@ -111,10 +111,10 @@ return (
                 <div className='p-4'>
                 <ReactPlayer className='ReactNAv' url="https://www.youtube.com/watch?v=-X4ikwUwxoE" playing width="100%" height="100%"
                     controls={false} />
-                        <p className='NotifyTp'>{greeting.data.title}</p>
+                        <p className='NotifyTp'>{greeting.data?.title}</p>
                 
                         <p className='NotifyTpx'>
-                        <Markup content={greeting.data.description}/>   
+                        <Markup content={greeting.data?.description}/>   
                         </p>
 
                 <div className="d-flex p-2 w-50 buTon-a ">
@@ -124,7 +124,7 @@ return (
                     <div className=" mx-2 ">
                         <span className="text-light buTon-ab ">Cost</span>
                         <br></br>
-                        <span className="text-light buTon-abc">{greeting.data.cost} BDT</span>
+                        <span className="text-light buTon-abc">{greeting.data?.cost} BDT</span>
                     </div>
                 </div>
 

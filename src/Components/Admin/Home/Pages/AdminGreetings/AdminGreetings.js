@@ -8,23 +8,25 @@ import swal from "sweetalert";
 
 const AdminGreetings = () => {
 
-    const [greeting, setGreeting] = useState({
-        data: '',
-        status: null,
+    const [greeting, setGreeting] = useState({});
 
-    });
+    const [status, setStatus] = useState(false);
+
+
 
   useEffect(() => {
     axios.get("/sanctum/csrf-cookie").then((response) => {
         axios.get('/api/admin/greetings_star_status').then((res) => {
             if (res.data.status === 200) {
-            setGreeting({
-                data: res.data.greeting,
-                status: res.data.action,
-            })
+                console.log('gt_dfata',res.data.greeting);
+            // setGreeting({
+            //     data: res.data?.greeting,
+            //     status: res.data?.action,
+            // })
+            setGreeting(res.data.greeting)
+            setStatus(res.data.action)
           } else {
             swal("error", "Data base Error", "error");
-  
           }
         });
       });
@@ -33,7 +35,7 @@ const AdminGreetings = () => {
     }, []);
     return (
         <>
-            {greeting.status ?
+            {status ?
                 
                 <Notify greeting={greeting}/> 
         

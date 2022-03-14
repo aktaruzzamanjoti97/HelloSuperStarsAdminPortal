@@ -35,6 +35,8 @@ import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
 // import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
 // import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
 
+import NotFound from './Components/Pages/Errors/Error';
+
 
 
 
@@ -85,28 +87,18 @@ return (
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>
       
-
       {/* Private Route with Main Layout */}
       <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
       <SuperStarRoute path="/superstar" name="SuperStar" render={(props) => <StarLayout {...props} />} />
 
+      <Route exact path='/learning-session/live-stream' component={VideoCall} />
 
 
-    
+      {/* Error Route */}
+      <Route path='/404' component={NotFound} />
 
-      {/* Superstar Route - Star| Sub Route  */}
-      {/* <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/view' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/registeruser/:live_chat_id' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/> */}
-                    
+      <Route component={NotFound} />
 
-     
-      
     </Switch>
   </Router>
 

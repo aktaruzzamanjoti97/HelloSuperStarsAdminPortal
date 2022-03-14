@@ -40,7 +40,9 @@ let userName = '';
 
             // console.log(res.data.users.user_type)
 
-            userName = res.data.users.user_type;
+            //userName = res.data.users.user_type;
+
+            userName = res.data.users.id;
           }
       });
     });
