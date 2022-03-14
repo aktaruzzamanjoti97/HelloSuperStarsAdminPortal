@@ -8,9 +8,9 @@ const AdminSelectJury = () => {
   return (
     <div className="container">
       <div className="row mb-5">
-        <div className="col-md-4 d-flex justify-content-center">
-          <div className="bg-dark">
-            <div className="px-3 d-flex justify-content-start bg-warning rounded-3">
+        <div className="col-md-4 my-3 d-flex justify-content-center">
+          <div className="bg-dark cardBox">
+            <div className="px-3 d-flex justify-content-start nameBg rounded-3">
               <img className="img-fluid arafatPic py-2" src={unplash} alt="" />
               <div className="d-flex align-items-center">
                 <h6 className="mx-3 text-black juryName">Arafat Hossain</h6>
@@ -57,15 +57,15 @@ const AdminSelectJury = () => {
               </div>
             </div>
             <div className="m-3">
-              <button className="w-100 btn btn-warning p-2">
-                <big className="text-white">Details</big>
+              <button className="w-100 btn nameBg p-2">
+                <big className="text-dark fw-bold">Details</big>
               </button>
             </div>
           </div>
         </div>
-        <div className="col-md-4 d-flex justify-content-center">
-          <div className="bg-dark">
-            <div className="px-3 d-flex justify-content-start bg-warning rounded-3">
+        <div className="col-md-4 my-3 d-flex justify-content-center">
+          <div className="bg-dark cardBox">
+            <div className="px-3 d-flex justify-content-start nameBg rounded-3">
               <img className="img-fluid arafatPic py-2" src={unplash} alt="" />
               <div className="d-flex align-items-center">
                 <h6 className="mx-3 text-black juryName">Arafat Hossain</h6>
@@ -112,15 +112,15 @@ const AdminSelectJury = () => {
               </div>
             </div>
             <div className="m-3">
-              <button className="w-100 btn btn-warning p-2">
-                <big className="text-white">Details</big>
+              <button className="w-100 btn nameBg p-2">
+                <big className="text-dark fw-bold">Details</big>
               </button>
             </div>
           </div>
         </div>
-        <div className="col-md-4 d-flex justify-content-center">
-          <div className="bg-dark">
-            <div className="px-3 d-flex justify-content-start bg-warning rounded-3">
+        <div className="col-md-4 my-3 d-flex justify-content-center">
+          <div className="bg-dark cardBox">
+            <div className="px-3 d-flex justify-content-start nameBg rounded-3">
               <img className="img-fluid arafatPic py-2" src={unplash} alt="" />
               <div className="d-flex align-items-center">
                 <h6 className="mx-3 text-black juryName">Arafat Hossain</h6>
@@ -167,8 +167,8 @@ const AdminSelectJury = () => {
               </div>
             </div>
             <div className="m-3">
-              <button className="w-100 btn btn-warning p-2">
-                <big className="text-white">Details</big>
+              <button className="w-100 btn nameBg p-2">
+                <big className="text-dark fw-bold">Details</big>
               </button>
             </div>
           </div>
@@ -176,8 +176,8 @@ const AdminSelectJury = () => {
       </div>
 
       <div className="bg-dark my-3">
-        <div className="bg-warning p-2 rounded-3">
-          <h5 className="text-black p-1">Selection Next Round</h5>
+        <div className="nameBg p-2 rounded-3">
+          <h5 className="text-black p-1 mx-2">Selection for Next Round</h5>
         </div>
 
         <div className="row p-4">
@@ -185,10 +185,10 @@ const AdminSelectJury = () => {
             <big>Select top</big>
           </p>
           <div className="col-md-3">
-            <input type="text" className="form-control input-gray border border-warning" />
+            <input type="text" className="my-2 form-control input-gray border border-warning" />
           </div>
           <div className="col-md-2">
-            <button className="btn btn-warning">Apply</button>
+            <button className="btn nameBg my-2 fw-bold">Apply</button>
           </div>
         </div>
 
@@ -206,14 +206,14 @@ const AdminSelectJury = () => {
 
         <div className="row p-4">
           <div className="col-md-6">
-            <button className="btn btn-warning w-100">Apply</button>
+            <button className="btn nameBg fw-bold w-100">Send</button>
           </div>
         </div>
       </div>
 
       <div className="bg-dark my-5">
-        <div className="bg-warning p-2 rounded-3">
-          <h5 className="text-black p-1">Rejected</h5>
+        <div className="nameBg p-2 rounded-3">
+          <h5 className="text-black p-1 mx-2">Rejected</h5>
         </div>
 
         <div className="row p-4">
@@ -229,7 +229,7 @@ const AdminSelectJury = () => {
 
           <div className="row p-4">
             <div className="col-md-4">
-              <button className="btn btn-warning w-100">Send</button>
+              <button className="btn nameBg fw-bold w-100">Send</button>
             </div>
           </div>
         </div>
