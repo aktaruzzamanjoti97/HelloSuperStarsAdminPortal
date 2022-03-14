@@ -162,7 +162,7 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/superstar-admin/auditions/jury-select', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
-    { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
+    // { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
     { path: '/superstar-admin/audition/create-event', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
