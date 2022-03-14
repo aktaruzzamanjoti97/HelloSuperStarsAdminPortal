@@ -6,6 +6,7 @@ import Fly from '../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.p
 import SouvenirAuctionBanner from '../../../../../../assets/images/SouvenirJoti.png';
 import axios from 'axios';
 import moment from 'moment';
+import { Markup } from 'interweave';
 
 
 const ApprovedOrDecline = () => {
@@ -62,7 +63,7 @@ const ApprovedOrDecline = () => {
                             {auctionConfirm.name}
                             </h5>
                             <p className="text-light">
-                            {auctionConfirm.details}
+                                <Markup content={auctionConfirm.details} />
                             </p>
                             <p className="text-light ">
                             {auctionConfirm.title}
