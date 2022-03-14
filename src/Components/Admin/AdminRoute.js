@@ -30,6 +30,8 @@ import AdminAuditionLiveVideoFilter from "./Home/Pages/AdminAudition/AdminAuditi
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
 import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
 import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
+import AdminRoundOneAppeal from "./Home/Pages/AdminAudition/AdminRoundOneAppeal/AdminRoundOneAppeal";
+import AdminRoundTwoAppeal from "./Home/Pages/AdminAudition/AdminRoundTwoAppeal/AdminRoundTwoAppeal";
 import AdminSelectJury from "./Home/Pages/AdminAudition/AdminSelectJury/AdminSelectJury";
 import PendingAudition from "./Home/Pages/AdminAudition/PendingAudition/PendingAudition";
 import AdminFanGroup from "./Home/Pages/AdminFanGroup/AdminFanGroup";
@@ -156,6 +158,8 @@ const AdminRoute = [
     
 
     // @FIXME: Auditions Route
+    { path: '/superstar-admin/auditions/round2-appeal', exact: true, name: 'grand-final', component: AdminRoundTwoAppeal },
+    { path: '/superstar-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/superstar-admin/auditions/jury-select', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
