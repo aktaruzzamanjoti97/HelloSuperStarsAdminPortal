@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory} from 'react-router-dom';
 import "./AdminGreetings.css";
 
 import { Editor } from "react-draft-wysiwyg";
@@ -8,16 +7,8 @@ import { EditorState } from "draft-js";
 import { convertToHTML } from "draft-convert";
 import axios from "axios";
 import swal from "sweetalert";
-import TextField from "@mui/material/TextField";
-import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import LocalizationProvider from "@mui/lab/LocalizationProvider";
-import DateTimePicker from "@mui/lab/DateTimePicker";
-import moment from 'moment'
 
 const LiveChatProfileCreate = () => {
-  const history = useHistory();
-  const [startTime, setStartTime] = useState(new Date());
-  const [endTime, setEndTime] = useState(new Date());
 
   const [greetingInput, setGreeting] = useState({
     title: "",
@@ -41,9 +32,6 @@ const LiveChatProfileCreate = () => {
     setImagedata(file[0]);
   };
 
-
-  
-  
 
   // Editor Funtionalities //
   const [convertedContent, setConvertedContent] = useState(null);
