@@ -53,12 +53,12 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
             if(error.response.status === 403)
             {
                 swal("Forbidden",error.response.data.message,"warning");
-                history.push('/');
+                history.push('/superstar-admin/dashboard');
             }
             else if(error.response.status === 404)
             {
                 swal("404 Error","Url/Page Not Found","warning");
-                history.push('/404');
+                history.push('/superstar-admin/dashboard');
             }
             return Promise.reject(error);
         }

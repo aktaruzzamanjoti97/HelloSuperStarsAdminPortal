@@ -19,17 +19,48 @@ import { convertToHTML } from "draft-convert";
 
 const AddSuperStar = () => {
 
+
+    const [filem, setFilem] = useState([]);
+
+  function uploadSingleFile(e) {
+    let ImagesArray = Object.entries(e.target.files).map((e) =>
+      URL.createObjectURL(e[1])
+    );
+    //console.log(ImagesArray);
+    setFilem([...filem, ...ImagesArray]);
+    console.log("file", filem);
+  }
+
+//   const handleChange = (file) => {
+//     setFile(URL.createObjectURL(file[0]));
+//     setImagedata(file[0]);
+
+//     console.log('image single',imagedata);
+// }
+
+
+  function upload(e) {
+    e.preventDefault();
+    console.log(filem);
+  }
+
+  function deleteFile(e) {
+    const s = filem.filter((item, index) => index !== e);
+    setFilem(s);
+    console.log(s);
+  }
+
+
     const [loading, setLoading] = useState(true);
     const [file, setFile] = useState('');
     const [starList, setStarList] = useState([]);
-
     const [modalShow, setModalShow] = useState(false);
-
     const [users, setUser] = useState([]);
-  
-  const [subcategory, setSubcategory] = useState([]);
-  const [category, setCategory] = useState([]);
-  const [imagedata, setImagedata] = useState('');
+    const [subcategory, setSubcategory] = useState([]);
+    const [category, setCategory] = useState([]);
+    const [imagedata, setImagedata] = useState('');
+
+
 
   const [registerInput, setRegister] = useState({
     first_name: '',
@@ -75,7 +106,7 @@ const handleChange = (file) => {
     setFile(URL.createObjectURL(file[0]));
     setImagedata(file[0]);
 
-    console.log(imagedata);
+    console.log('image single',imagedata);
 }
 
 // Editor Funtionalities //
@@ -172,6 +203,11 @@ const convertContentToHTML = () => {
         fData.append('category_id', category);
         fData.append('subcategory_id', registerInput.subcategory_id);
         fData.append('terms&condition', convertedContent);
+
+        fData.append('imagem[]', filem);
+
+        console.log('single', imagedata);
+        console.log('multiple', filem);
 
 
         axios.get('/sanctum/csrf-cookie').then(response => {
@@ -354,6 +390,31 @@ const convertContentToHTML = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="form-group preview">
+        {filem.length > 0 &&
+          filem.map((item, index) => {
+            return (
+              <div key={item}>
+                <img src={item} alt="" />
+                <button type="button" onClick={() => deleteFile(index)}>
+                  delete
+                </button>
+              </div>
+            );
+          })}
+      </div>
+
+                                <input
+                                    type="file"
+                                    disabled={file.length === 5}
+                                    className="form-control"
+                                    onChange={uploadSingleFile}
+                                    multiple
+                                />
+
+
+
                             </div>
                         </div>
 
