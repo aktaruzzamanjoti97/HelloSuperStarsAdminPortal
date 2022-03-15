@@ -74,6 +74,7 @@
     background: transparent linear-gradient(110deg, #FE00F4 0%, #5025FE 100%) 0% 0% no-repeat padding-box;
     border-radius: 3px;
     /* width: 100%; */
+    margin-right: 10px !important;
     margin-left: 20px !important;
 
 }
@@ -131,6 +132,7 @@
     .textColMaR{
        font-size: 13px;
        width: 90%;
+      
     }
     .SendT{
         margin-right: 20px;

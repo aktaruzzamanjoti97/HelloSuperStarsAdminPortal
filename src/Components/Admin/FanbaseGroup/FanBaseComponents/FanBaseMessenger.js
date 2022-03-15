@@ -5,7 +5,7 @@ const FanBaseMessenger = () => {
 return (
 <>
     <div className=" MessengerBody py-3 ps-2 text-light">
-        <h6 className="fw-bold mx-2">Group inbox</h6>
+        <h6 className="fw-bold ">Group inbox</h6>
 
         <div className="top-right-messenger">
 
@@ -20,52 +20,52 @@ return (
 
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMa   p-2">Some ipsum dolor </div>
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
         </div>
 
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMaR   p-2">Some ipsum dolor </div>
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
         </div>
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMa   p-2">Some ipsum dolor yer t </div>
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
         </div>
 
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMaR   p-2">Some ipsum dolor yer t </div>
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
         </div>
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMa   p-2">Some ipsum dolor yer t </div>
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
         </div>
 
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMaR   p-2">Some ipsum dolor yer t </div>
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
         </div>
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMa   p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
         </div>
 
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
-            <div className="col-ms-9 textColMaR mx-2  p-2">Some ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMaR   p-2">Some ipsum dolor yer t </div>
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
         </div>
 
         <div className="d-flex LeftMessage d-flex mt-3 justify-content-between">
             <div className="col-sm-1 "><img src={PicMa} alt="" className="PicLeftMessage" /></div>
-            <div className="col-ms-9 textColMa mx-2  p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
+            <div className="col-ms-9 textColMa   p-2">Sometryrt yrtyrt yrtyrt yrr6u6utyu ipsum dolor yer t </div>
             <div className="col-ms-1  timeTextMa"><small className="TexMessage">Today | 5:10 PM</small></div>
         </div>
 
