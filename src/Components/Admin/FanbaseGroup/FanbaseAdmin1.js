@@ -5,6 +5,7 @@ import { Tab, Nav } from "react-bootstrap";
 import FanBaseHome from "./FanBaseComponents/FanBaseHome";
 import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
 import FanBaseMessenger from "./FanBaseComponents/FanBaseMessenger";
+import FanBaseMedia from "./FanBaseComponents/MediaComponent/FanBaseMedia";
 const FanbaseAdmin1 = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
@@ -118,7 +119,7 @@ const FanbaseAdmin1 = () => {
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         <h1 className="text-warning">
-                          Media component here
+                          <FanBaseMedia />
                           </h1>
                         </Tab.Pane>
                       <Tab.Pane eventKey="Third"> <h1 className="text-warning">
