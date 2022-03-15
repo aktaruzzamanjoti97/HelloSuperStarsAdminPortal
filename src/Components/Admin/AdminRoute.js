@@ -172,7 +172,7 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
-    { path: '/superstar-admin/audition/create-event', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
+    { path: '/superstar-admin/audition/create-event/', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/superstar-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
     { path: '/superstar-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
     { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },

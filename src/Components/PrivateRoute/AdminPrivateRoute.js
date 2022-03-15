@@ -58,7 +58,7 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
             else if(error.response.status === 404)
             {
                 swal("404 Error","Url/Page Not Found","warning");
-                history.push('/superstar-admin/dashboard');
+                history.push('/404');
             }
             return Promise.reject(error);
         }
