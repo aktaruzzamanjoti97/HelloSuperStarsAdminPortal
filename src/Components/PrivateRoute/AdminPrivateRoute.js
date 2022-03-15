@@ -6,7 +6,7 @@ import AdminRegistration from '../Admin/Home/Pages/AdminRegistration/AdminRegist
 // import MasterLayout from './layouts/admin/MasterLayout';
 // import HomePage from "../Pages/Home/HomePages";
 
-import AdminLayout from "../Admin/MasterLayout";
+import MasterLayout from "../Admin/MasterLayout";
 
 const AdminPrivateRoute = ({ component: Component, ...rest })=> {
 
@@ -74,8 +74,8 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
         <Route {...rest}
             render={ ({props, location}) =>  
                 Authenticated ?
-                ( <AdminLayout {...props} /> ) : 
-                ( <Redirect to= {{pathname: "/", state: {from: location} }} /> )
+                ( <MasterLayout {...props} /> ) : 
+                ( <Redirect to= {{pathname: "/superstar-admin/dashboard", state: {from: location} }} /> )
                 
             } 
         /> 

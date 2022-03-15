@@ -111,6 +111,8 @@ import UnsoldProductList from "./Home/Pages/AdminSouvenir/Auction/UnsoldProductL
 import ApprovedOrDecline from "./Home/Pages/AdminSouvenir/Auction/ApprovedOrDecline";
 import PendingProductDetails from "./Home/Pages/AdminSouvenir/Auction/PendingProductDetails";
 
+import NotFound from "../Pages/Errors/Error";
+
 
 const AdminRoute = [
     
@@ -238,6 +240,8 @@ const AdminRoute = [
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
     {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+
+    {path: '/superstar-admin/404', exact: true, name: 'not-found', component: NotFound},
 
   
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
