@@ -6,6 +6,7 @@ import FanBaseHome from "./FanBaseComponents/FanBaseHome";
 import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
 import FanBaseMessenger from "./FanBaseComponents/FanBaseMessenger";
 import FanBaseMedia from "./FanBaseComponents/MediaComponent/FanBaseMedia";
+import ApproveComponent from "./FanBaseComponents/ApproveComponent/ApproveComponent";
 const FanbaseAdmin1 = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
@@ -118,13 +119,11 @@ const FanbaseAdmin1 = () => {
                         <FanBaseHome />
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <h1 className="text-warning">
+                       
                           <FanBaseMedia />
-                          </h1>
+                         
                         </Tab.Pane>
-                      <Tab.Pane eventKey="Third"> <h1 className="text-warning">
-                         Approval component here
-                          </h1></Tab.Pane>
+                      <Tab.Pane eventKey="Third"> <ApproveComponent /></Tab.Pane>
                       <Tab.Pane eventKey="Four"> <h1 className="text-warning">
                         Analytics Compoenent here
                           </h1></Tab.Pane>

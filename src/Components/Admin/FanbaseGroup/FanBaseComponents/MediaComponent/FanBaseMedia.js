@@ -19,7 +19,7 @@ const FanBaseMedia = () => {
                <div className="container p-3">
                    <div className="row">
                        {mediaData.map((img)=>{
-                           return  <div className="col-md-3 mb-4" >
+                           return  <div className="col-3 mb-4" >
                            <div className="content-1" style={{ border:'2px solid gold',borderRadius:'10px',cursor:'pointer' }}>
                               <img src={img} className='img-fluid w-100' alt="" style={{ borderRadius:'10px' }}/>
                            </div>
