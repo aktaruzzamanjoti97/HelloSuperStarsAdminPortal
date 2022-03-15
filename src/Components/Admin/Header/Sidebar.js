@@ -1,7 +1,9 @@
 import axios from "axios";
 import React from "react";
+import { Dropdown } from "react-bootstrap";
 import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
+import './Sidebar.css';
 
 
 const Sidebar = () => {
@@ -92,6 +94,25 @@ const Sidebar = () => {
                             <Link className="nav-link" to="/superstar-admin/souvenir">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Souvenir
+                            </Link>
+                            <Link className="nav-link" to="/superstar-admin/souvenir">
+                                <div className="sb-nav-link-icon "><i className="fas fa-tachometer-alt"></i></div>
+                                <div className="dropDownMarketPlaece">
+                                <Dropdown>
+                                <Dropdown.Toggle id="dropdown-basic">
+                       <span className="text-muted">Order List</span>
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item className='marktePlaceOrderTxt'><Link to='/superstar-admin/souvenir/marketplace-orderlist'> MarketPlace </Link></Dropdown.Item>
+                                    <Link to='superstar-admin/souvenir/auction-orderlist'><Dropdown.Item className="marktePlaceOrderTxt">Auction</Dropdown.Item></Link>
+                                    
+                                    
+                            
+                                </Dropdown.Menu>
+                                </Dropdown>
+                                </div>
+                          
                             </Link>
                             <Link className="nav-link" to="/superstar-admin/wallet">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
