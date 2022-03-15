@@ -102,6 +102,7 @@ import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSupe
 
 
 import NotFound from "../Pages/Errors/Error";
+import FanGroupInvitation from "./Home/Pages/AdminAudition/FanGroupInvitation/FanGroupInvitation";
 
 
 const AdminRoute = [
@@ -164,6 +165,7 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/superstar-admin/auditions/jury-select', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
+    { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
     // { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
