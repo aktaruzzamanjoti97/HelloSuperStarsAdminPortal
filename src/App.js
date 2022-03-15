@@ -2,7 +2,7 @@ import './App.css';
 import {  BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import './Components/Admin/Adminlogin.css'
-
+import VideoCall from './VideoCall'
 
 
 // Main Layout
@@ -34,6 +34,8 @@ import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/Regis
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
 // import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
 // import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
+
+import NotFound from './Components/Pages/Errors/Error';
 
 
 
@@ -79,32 +81,24 @@ return (
       <Route exact path='/superstar_registration/otp' component={SuperStarRegistrationOTP} />
 
       <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
+      <Route exact path='/videoCall' component={VideoCall} />
+      
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
       <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/>
       
-
       {/* Private Route with Main Layout */}
       <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
       <SuperStarRoute path="/superstar" name="SuperStar" render={(props) => <StarLayout {...props} />} />
 
+      <Route exact path='/learning-session/live-stream' component={VideoCall} />
 
 
-    
+      {/* Error Route */}
+      <Route path='/404' component={NotFound} />
 
-      {/* Superstar Route - Star| Sub Route  */}
-      {/* <SuperStarRoute  exact path='/superstar/dashboard' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/view' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/registeruser/:live_chat_id' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/add-session' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session/view/:id' component={SuperstarRoute}/>
-      <SuperStarRoute  exact path='/superstar/Live-chat/star-live/leftcard' component={RegisterLeftCard}/> */}
-                    
+      <Route component={NotFound} />
 
-     
-      
     </Switch>
   </Router>
 

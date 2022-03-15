@@ -134,7 +134,8 @@ const AllPost = () => {
               </Slider>
             </div>
           </div>
-        </div> : <div className="container-fluid">
+        </div> :
+         <div className="container-fluid">
           <div className="card bg-dark" style={{ border: "2px solid yellow" }}>
 
             <div className="card-body">

@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect }from 'react';
 import { Link } from 'react-router-dom';
 import Live from '../../../../../../assets/images/instagram-live 1.png';
 import Pending from '../../../../../../assets/images/pending 2.png';
 import Add from '../../../../../../assets/images/UpcomingEvent/add 1.png';
+import axios from "axios";
 
 const AdminAuditionNav = () => {
+
+    const [live,setLive] = useState('');
+    const [pending,setPending] = useState('');
+
+    useEffect(() => {
+        axios.get('/api/admin/audition/status').then((res) => {
+          if (res.data.status === 200) {
+            setLive(res.data.live);
+            setPending(res.data.pending);
+    
+            console.log(res.data.pending)
+          }
+        });
+    
+        console.log();
+      }, []);
+
+      function pad(d) {
+        return (d < 10) ? '0' + d.toString() : d.toString();
+      }
+
     return (
         <>
             <div className=" row ">
@@ -18,7 +40,7 @@ const AdminAuditionNav = () => {
                                         <img src={Live} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className="ad-card-small">01</small>
+                                        <small className="ad-card-small">{pad(live)}</small>
                                     </td>
                                 </tr>
                             </center>
@@ -41,7 +63,7 @@ const AdminAuditionNav = () => {
                                         <img src={Pending} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className="ad-card-small">00</small>
+                                        <small className="ad-card-small">{pad(pending)}</small>
                                     </td>
                                 </tr>
                             </center>

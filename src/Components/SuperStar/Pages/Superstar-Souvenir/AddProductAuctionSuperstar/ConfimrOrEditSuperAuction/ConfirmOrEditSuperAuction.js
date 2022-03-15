@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import calendar from '../../../../../../assets/images/meetupEvent/calendar.png';
 import Clock from '../../../../../../assets/images/meetupEvent/clock-icon.png';
 import Fly from '../../../../../../assets/images/Souvenir/unsplash_Z4RYz52ljts.png';
 import SouvenirAuctionBanner from '../../../../../../assets/images/SouvenirJoti.png';
 import axios from 'axios';
 import moment from 'moment';
+import { Markup } from 'interweave';
 
 
 const ConfirmOrEditSuperAuction = () => {
@@ -53,7 +54,7 @@ const ConfirmOrEditSuperAuction = () => {
                             {auctionConfirm.name}
                             </h5>
                             <p className="text-light">
-                            {auctionConfirm.details}
+                                <Markup content={auctionConfirm.details}/>   
                             </p>
                             <p className="text-light ">
                             {auctionConfirm.title}
@@ -87,7 +88,10 @@ const ConfirmOrEditSuperAuction = () => {
 
                         <div className='d-flex'>
                             <button onClick={handleClick} className="btn btn-warning confirmButton">Confirm</button>
+                            <Link to={`/superstar/souvenir/edit/${auctionConfirm.id}`}>
+                                
                             <button className="btn btn-secondary mx-2 deleteButton">Edit</button>
+                            </Link>
                         </div>
 
                 </div>

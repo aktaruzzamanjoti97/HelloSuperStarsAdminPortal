@@ -101,6 +101,8 @@ import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSupe
 
 
 
+import NotFound from "../Pages/Errors/Error";
+
 
 const AdminRoute = [
     
@@ -165,7 +167,7 @@ const AdminRoute = [
     // { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
-    { path: '/superstar-admin/audition/create-event', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
+    { path: '/superstar-admin/audition/create-event/', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/superstar-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
     { path: '/superstar-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
     { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
@@ -231,6 +233,8 @@ const AdminRoute = [
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
     {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+
+    {path: '/superstar-admin/404', exact: true, name: 'not-found', component: NotFound},
 
   
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },

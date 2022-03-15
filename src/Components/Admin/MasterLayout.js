@@ -16,8 +16,6 @@ import './assets/css/styles.css'
 const MasterLayout = () => {
 
     
-
-
     return (
         <div className="sb-nav-fixed">
             <Navbar></Navbar>
