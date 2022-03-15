@@ -36,7 +36,7 @@ const AdminLogin = () => {
                         localStorage.setItem('auth_name', res.data.name);
                         localStorage.setItem('auth_id', res.data.id);
                         localStorage.setItem('auth_phone', res.data.phone);
-                        
+                        localStorage.setItem('auth_type', res.data.role);
                          
                         if(res.data.role == 'admin')
                         {

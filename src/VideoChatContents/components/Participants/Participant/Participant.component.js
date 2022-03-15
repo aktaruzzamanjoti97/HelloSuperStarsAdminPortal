@@ -6,6 +6,7 @@ import "./Participant.css";
 import CardVideoCall from "../../Shared/Card/CardVideoCall.component";
 
 export const Participant = (props) => {
+
   const {
     curentIndex,
     currentParticipant,
@@ -17,10 +18,12 @@ export const Participant = (props) => {
   if (!currentParticipant) return <></>;
   return (
     // className={`${currentParticipant.name === "star"? `${currentUser?'flex-item-video':'flex-item-video-star'}` :"flex-item-video"}`}
-    <div  >
-      <CardVideoCall>
+    <div>
+      {console.log('users',currentParticipant)}
+
+      <CardVideoCall >
         <video
-        style={currentParticipant.name==='star'?{height:'70vh'}:currentParticipant.name==='admin'?{height:'30vh'}:null}
+          style={currentParticipant.name==='star'?{height:'80vh', border: '2px solid gold'} : currentParticipant.name==='admin'? {height:'30vh'} : null}
           ref={videoRef}
           className="video"
           id={`participantVideo${curentIndex}`}
@@ -43,8 +46,7 @@ export const Participant = (props) => {
           </div>
         )}
         <div className="name">
-          {currentParticipant.name}
-          {currentUser ? "(You)" : ""}
+          {currentUser ? <>{localStorage.getItem('auth_name')} (You)</> : <>{currentParticipant.name}</>}
         </div>
       </CardVideoCall>
     </div>
