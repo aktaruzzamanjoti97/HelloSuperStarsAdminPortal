@@ -32,6 +32,7 @@ import PendingLearningSession from "./Pages/AdminLearningSession/PendingPost";
 import PendingLearningSessionDetails from "./Pages/AdminLearningSession/PendingPostDetails";
 import ApprovedLearningSession from "./Pages/AdminLearningSession/ApprovedPost";
 import CreateLearningSession from "./Pages/AdminLearningSession/Content/AddSessionForm";
+import LearningSessionLiveStream from "../../VideoCall";
 
 
 import StarPendingContent from './Pages/StarLiveChat/StarPendingContent';
@@ -182,6 +183,8 @@ const SuperstarRoute = [
     { path: '/superstar/souvenir/product-list/approved', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarProductList },
     { path: '/superstar/souvenir/edit-marketplace/:id', exact: true, name: 'superstar-souvenir-live-bidding', component: SuperstarEditMarketPlaceForm },
 
+
+    { path: '/superstar/videocall', exact: true, name: 'superstar-learning-session-live-stream', component: LearningSessionLiveStream },
 
 ];
 

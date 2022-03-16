@@ -5,6 +5,10 @@ import { Tab, Nav } from "react-bootstrap";
 import FanBaseHome from "./FanBaseComponents/FanBaseHome";
 import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
 import FanBaseMessenger from "./FanBaseComponents/FanBaseMessenger";
+import FanBaseMedia from "./FanBaseComponents/MediaComponent/FanBaseMedia";
+import ApproveComponent from "./FanBaseComponents/ApproveComponent/ApproveComponent";
+import Analytics from "./AnalyticsComponents/Analytics";
+import FanBaseSetting from "./FanbaseSettingComponents/FanBaseSetting";
 const FanbaseAdmin1 = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
@@ -117,49 +121,49 @@ const FanbaseAdmin1 = () => {
                         <FanBaseHome />
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <h1 className="text-warning">
-                          Media component here
-                          </h1>
-                        </Tab.Pane>
-                      <Tab.Pane eventKey="Third"> <h1 className="text-warning">
-                         Approval component here
-                          </h1></Tab.Pane>
-                      <Tab.Pane eventKey="Four"> <h1 className="text-warning">
-                        Analytics Compoenent here
-                          </h1></Tab.Pane>
+                        <FanBaseMedia />
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="Third">
+                        {" "}
+                        <ApproveComponent />
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="Four">
+                        {" "}
+                        <Analytics></Analytics>
+                      </Tab.Pane>
                       <Tab.Pane eventKey="Fifth">
-                      <h1 className="text-warning">
-                        Setting component here
-                          </h1></Tab.Pane>
+                        <FanBaseSetting />
+                      </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
                 </div>
               </div>
             </div>
             <div className="col-md-4 ">
-           <div className="container my-2 ">
-           <Tab.Container id="left-tabs-example" defaultActiveKey="group">
-        <Tab.Content className="my-2">
-          <Tab.Pane eventKey="group"><FanBaseGroup /></Tab.Pane>
-          <Tab.Pane eventKey="message">
-
-        <FanBaseMessenger />
-          </Tab.Pane>
-        </Tab.Content>
-        <Nav variant="pills">
-          <Nav.Item>
-            <Nav.Link className="MessengerChat mx-2" eventKey="group">
-            <i class="fa-solid py-2 fa-user-group"></i>
-            </Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className="MessengerChat" eventKey="message">
-            <i class="fa-brands py-2 fa-facebook-messenger"></i>
-            </Nav.Link>
-          </Nav.Item>
-        </Nav>
-      </Tab.Container>
-           </div>
+              <div className="container my-2 ">
+                <Tab.Container id="left-tabs-example" defaultActiveKey="group">
+                  <Tab.Content className="my-2">
+                    <Tab.Pane eventKey="group">
+                      <FanBaseGroup />
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="message">
+                      <FanBaseMessenger />
+                    </Tab.Pane>
+                  </Tab.Content>
+                  <Nav variant="pills">
+                    <Nav.Item>
+                      <Nav.Link className="MessengerChat mx-2" eventKey="group">
+                        <i class="fa-solid py-2 fa-user-group"></i>
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link className="MessengerChat" eventKey="message">
+                        <i class="fa-brands py-2 fa-facebook-messenger"></i>
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Tab.Container>
+              </div>
             </div>
           </div>
         </div>

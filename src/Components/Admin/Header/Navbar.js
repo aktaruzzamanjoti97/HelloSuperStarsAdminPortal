@@ -26,6 +26,7 @@ const Navbar = () => {
             localStorage.removeItem('auth_otp');
             localStorage.removeItem('auth_id');
             localStorage.removeItem('auth_phone');
+            localStorage.removeItem('auth_type');
             
             swal("Success",res.data.message,"success");
             history.push('/');

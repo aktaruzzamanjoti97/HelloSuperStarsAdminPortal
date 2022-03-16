@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Add from '../../../../../../assets/images/Souvenir/add .png';
 import Unsold from '../../../../../../assets/images/Souvenir/packages.png';
 import pendingMarket from '../../../../../../assets/images/pending 2.png';
+import axios from 'axios';
 
 const MarketPlaceNav = () => {
 
+    
+    const [approvedCount, setApprovedCount] = useState('');
+    const [pendingCount, setPendingCount] = useState('');
+    
+    useEffect(() => {
 
+
+          axios.get(`/api/admin/marketplace/product-list/approved`).then(res => {
+
+            if(res.data.status === 200)
+            {
+                setApprovedCount(res.data.approvedCount);
+            }
+          });
+
+
+          axios.get(`/api/admin/marketplace/product-list/pending`).then(res => {
+            if(res.data.status === 200)
+            {
+              setPendingCount(res.data.pendingCount);
+            }
+          });
+    
+    }, []);
 
 
     return (
@@ -22,7 +46,7 @@ const MarketPlaceNav = () => {
                                         <img src={pendingMarket} width="75px" className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className=" fw-bold Sigma">01</small>
+                                        <small className=" fw-bold Sigma">{pendingCount}</small>
                                     </td>
                                 </tr>
                             </center>
@@ -45,7 +69,7 @@ const MarketPlaceNav = () => {
                                         <img src={Unsold} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className=" fw-bold Unsold">04</small>
+                                        <small className=" fw-bold Unsold">{approvedCount}</small>
                                     </td>
                                 </tr>
                             </center>

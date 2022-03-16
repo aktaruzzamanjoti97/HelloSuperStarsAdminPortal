@@ -1,3 +1,18 @@
+// import LearningSession from "../Admin/Home/Pages/AdminLearningSession/AllPost";
+// import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
+// import CreateLearningSession from "../Admin/Home/Pages/AdminLearningSession/Content/AddSessionForm";
+// import PendingLearningSession from "../Admin/Home/Pages/AdminLearningSession/PendingPost";
+// import PendingLearningSessionDetails from "../Admin/Home/Pages/AdminLearningSession/PendingPostDetails";
+//import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+// import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
+// import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
+// import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
+// import AllPost from "../Admin/Home/Pages/AdminPost/AllPost";
+// import ApprovedPost from "../Admin/Home/Pages/AdminPost/ApprovedPost";
+// import CreatePost from "../Admin/Home/Pages/AdminPost/Content/AddSessionForm";
+// import PendingPost from "../Admin/Home/Pages/AdminPost/PendingPost";
+// import PendingPostDetails from "../Admin/Home/Pages/AdminPost/PendingPostDetails";
+import LearningSessionLiveStream from "../../VideoCall";
 import LearningSession from "../Admin/Home/Pages/AdminLearningSession/AllPost";
 import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
 import CreateLearningSession from "../Admin/Home/Pages/AdminLearningSession/Content/AddSessionForm";
@@ -16,6 +31,7 @@ import LiveChatContent from "../Admin/Home/Pages/LiveChatSpStar/LiveChatContent"
 import LiveChatPending from "../Admin/Home/Pages/LiveChatSpStar/LiveChatPending";
 import LiveChatProfileCreate from "../Admin/Home/Pages/LiveChatSpStar/LiveChatProfileCreate";
 import EventScheduleDatePick from '../Admin/Home/Pages/ScheduleCreate/EventScheduleDatePick/EventScheduleDatePick';
+import NotFound from "../Pages/Errors/Error";
 import AdminDashEvent from "./Dashboard/AdminDashEvent";
 import AdminEventCategory from "./Dashboard/AdminEventCategory";
 import AdminEventRequest from "./Dashboard/AdminEventRequest";
@@ -30,9 +46,13 @@ import AdminAuditionLiveVideoFilter from "./Home/Pages/AdminAudition/AdminAuditi
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
 import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
 import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
+// import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
+// import AdminAuditionVideoShow from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow";
+// import AdminAuditionVideoShow2 from "./Home/Pages/AdminAudition/AdminAuditionVideoShow/AdminAuditionVideoShow2";
 import AdminRoundOneAppeal from "./Home/Pages/AdminAudition/AdminRoundOneAppeal/AdminRoundOneAppeal";
 import AdminRoundTwoAppeal from "./Home/Pages/AdminAudition/AdminRoundTwoAppeal/AdminRoundTwoAppeal";
 import AdminSelectJury from "./Home/Pages/AdminAudition/AdminSelectJury/AdminSelectJury";
+import FanGroupInvitation from "./Home/Pages/AdminFanGroup/FanGroupInvitation/FanGroupInvitation";
 import PendingAudition from "./Home/Pages/AdminAudition/PendingAudition/PendingAudition";
 import AdminFanGroup from "./Home/Pages/AdminFanGroup/AdminFanGroup";
 import CreateFanGroup from "./Home/Pages/AdminFanGroup/CreateFanGroup/CreateFanGroup";
@@ -71,6 +91,24 @@ import LiveBiddingsCheckout from "./Home/Pages/AdminSouvenir/LiveBiddingsCheckou
 import SouvenirMain from "./Home/Pages/AdminSouvenir/SouvenirMain/SouvenirMain";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
 import AddSessionContent from "./Home/Pages/LiveChatSpStar/AddSessionContent";
+// import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
+// import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
+//import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
+// import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
+
+
+// import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
+// import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
+
+
+
+
+
+
+
+import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
+import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
+
 // import AddSession from "./Home/Pages/LiveChatSpStar/Content/AddSession";
 // import ScheduleLearnView from "./Home/Pages/AdminLearningSession old/AddSession/Content/ScheduleLearnView";
 // import AdminLearningSessionEventCreate from "./Home/Pages/AdminLearningSession/AddSessionContent";
@@ -79,8 +117,8 @@ import SCheduleViewAdmin from "./Home/Pages/LiveChatSpStar/Content/SCheduleViewA
 import ApprovedLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatApprovedDetails";
 import PendingLiveChat from "./Home/Pages/LiveChatSpStar/LiveChatPendingDetails";
 import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
-import LiveChatSchedule from "./Home/Pages/LiveChatSpStar/LiveChatSchedule";
-import LiveChatSchedule2 from "./Home/Pages/LiveChatSpStar/LiveChatSchedule2";
+
+
 import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
 import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin2";
@@ -88,6 +126,7 @@ import EditProductMarketPlace from "./Home/Pages/Souviner-admin/EditProductMarke
 import ProductList from "./Home/Pages/Souviner-admin/ProductList/ProductList";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
+import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetweenStars/CompletionBetweenStars";
 
 
 
@@ -99,10 +138,6 @@ import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSupe
 
 
 
-
-
-import NotFound from "../Pages/Errors/Error";
-import FanGroupInvitation from "./Home/Pages/AdminAudition/FanGroupInvitation/FanGroupInvitation";
 
 
 const AdminRoute = [
@@ -165,11 +200,11 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/superstar-admin/auditions/jury-select', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
-    { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
+
     // { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
-    { path: '/superstar-admin/audition/create-event/', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
+    { path: '/superstar-admin/audition/create-event/:id', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/superstar-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
     { path: '/superstar-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
     { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
@@ -215,6 +250,7 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir-auction/product-list/approvedOrDecline', exact: true, name: 'approvedOrDecline', component: ApprovedOrDecline },
     { path: '/superstar-admin/product/details/:id', exact: true, name: 'PendingProduct', component: PendingProductDetails },
 
+
     //Marketplace
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
     { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace/:id', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
@@ -232,15 +268,19 @@ const AdminRoute = [
     {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},
 
 
+    // @FIXME: Admin Fan Group Route
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
     {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
-
+    {path: '/superstar-admin/pending-fan-group-competition', exact: true, name: 'pending-fan-group', component: CompletionBetweenStars},
+    { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
     {path: '/superstar-admin/404', exact: true, name: 'not-found', component: NotFound},
 
   
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
+
+    { path: '/superstar-admin/videocall', exact: true, name: 'superstar-admin-learning-session-live-stream', component: LearningSessionLiveStream },
     
 ];
 

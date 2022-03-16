@@ -16,6 +16,8 @@ import {
 import { connect } from "react-redux";
 
 function VideoCall(props) {
+
+
   const getUserStream = async () => {
     const localStream = await navigator.mediaDevices.getUserMedia({
       audio: true,
@@ -27,28 +29,26 @@ function VideoCall(props) {
 
   //const [userName, setUserName] = useState('');
 
-let userName = '';
-
+let userName = localStorage.getItem('auth_type');
 
 
   useEffect(async () => {
 
-    axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.get("/api/user_info").then((res) => {
-          if (res.data.status === 200) {
-            // setUserName(res.data.users.user_type);
+    // axios.get("/sanctum/csrf-cookie").then((response) => {
+    //   axios.get("/api/user_info").then((res) => {
+    //       if (res.data.status === 200) {
+    //         // setUserName(res.data.users.user_type);
 
-            // console.log(res.data.users.user_type)
+    //         // console.log(res.data.users.user_type)
 
-            //userName = res.data.users.user_type;
-
-            userName = res.data.users.id;
-          }
-      });
-    });
+    //         userName = res.data.users.user_type;
+    //       }
+    //   });
+    // });
 
 
     const stream = await getUserStream();
+
     stream.getVideoTracks()[0].enabled = false;
     props.setMainStream(stream);
 

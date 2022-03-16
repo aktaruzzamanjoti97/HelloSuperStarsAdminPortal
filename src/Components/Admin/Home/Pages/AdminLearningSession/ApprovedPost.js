@@ -6,12 +6,22 @@ import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
 import moment from 'moment';
+import firepadRef from "../../../../../VideoChatContents/server/firebase";
+
+//var room_id = firepadRef.key;
+
 
 const ApprovedPost = () => {
-  const [loading, setLoading] = useState(true);
-  const [pendingLiveChatNumber, setPendingLiveChatNumber] = useState([]);
-
+  let history = useHistory();
   const [events, setEvents] = useState([]);
+
+  const joinLive = (room_id) => {
+    history.push({
+        pathname: '/videocall',
+        search:  `id=${room_id}`
+    });
+  }
+
 
   var settings = {
     dots: true,
@@ -48,34 +58,15 @@ const ApprovedPost = () => {
     ],
   };
 
-  const history = useHistory();
-
-  // useEffect(() => {
-
-  //     axios.get(`/api/admin/livechat`).then(res =>{
-
-  //       if(res.status === 200)
-  //       {
-  //         setPendingLiveChatNumber(res.data.pendingLiveChatNumber);
-  //       }
-  //       setLoading(false);
-  //     });
-  // }, []);
 
   // Fetch Approved LiveChat
   useEffect(() => {
 
     axios.get(`/api/admin/learning_session/approved`).then((res) => {
-
       if (res.status === 200) {
         setEvents(res.data.post);
       }
-      
     });
-
-   
-
-    console.log();
   }, []);
 
  
@@ -111,15 +102,24 @@ const ApprovedPost = () => {
                       />
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
-                          {/* <Link
-                            to={`/superstar-admin/approved-livechat/${event.id}`} style={{ textDecoration: 'none' }}
+                          <Link className="Link"
+                          target="_blank"
+                            to={
+                                {pathname: '/superstar-admin/videocall',
+                                search:  `id=${event.room_id}`}
+                            }
                           >
                             <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </Link> */}
+                          </Link>
 
-                          <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
+                          {/* <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
                           <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </a>
+                          </a> */}
+
+                          {/* <h5 className="text-white text-ellipsis Link" style={{ cursor: 'pointer' }} onClick={() => joinLive(event.room_id)}>{event.title}</h5> */}
+
+
+
                         </div>
 
                         <p className="text-secondary">
