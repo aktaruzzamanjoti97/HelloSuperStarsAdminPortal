@@ -74,6 +74,8 @@ const MainScreen = (props) => {
   };
   return (
     <div className="wrapper">
+      <h2 className="text-center text-warning">Learning Session</h2>
+
       <div className="main-screen">
         <Participants />
       </div>

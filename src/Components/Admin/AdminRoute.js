@@ -50,6 +50,8 @@ import PendingLearningSession from "../Admin/Home/Pages/AdminLearningSession/Pen
 import PendingLearningSessionDetails from "../Admin/Home/Pages/AdminLearningSession/PendingPostDetails";
 import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
 import CreateLearningSession from "../Admin/Home/Pages/AdminLearningSession/Content/AddSessionForm";
+import LearningSessionLiveStream from "../../VideoCall";
+
 
 
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
@@ -249,6 +251,8 @@ const AdminRoute = [
   
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
+
+    { path: '/superstar-admin/videocall', exact: true, name: 'superstar-admin-learning-session-live-stream', component: LearningSessionLiveStream },
     
 ];
 

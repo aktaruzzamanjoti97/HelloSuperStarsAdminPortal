@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import LiveNow from "./Content/LiveNow";
 import Nav from "./Nav";
-// import Live from "../../../../../assets/images/instagram-live 1.png";
-// import Approved from "../../../../../assets/images/approved.png";
-// import Pending from "../../../../../assets/images/pending 2.png";
-// import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
-// import LiveIcon from '../../../../../assets/images/AdminLiveProfile/live 1.png'
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
 import moment from 'moment';
 
 const ApprovedPost = () => {
-  const [loading, setLoading] = useState(true);
-  const [pendingLiveChatNumber, setPendingLiveChatNumber] = useState([]);
+  let history = useHistory();
+
+  const joinLive = (room_id) => {
+    history.push({
+        pathname: '/superstar/videocall',
+        search:  `id=${room_id}`
+    });
+  }
 
   const [events, setEvents] = useState([]);
 
@@ -52,21 +52,6 @@ const ApprovedPost = () => {
       },
     ],
   };
-
-  const history = useHistory();
-
-  // useEffect(() => {
-
-  //     axios.get(`/api/admin/livechat`).then(res =>{
-
-  //       if(res.status === 200)
-  //       {
-  //         setPendingLiveChatNumber(res.data.pendingLiveChatNumber);
-  //       }
-  //       setLoading(false);
-  //     });
-  // }, []);
-
   // Fetch Approved LiveChat
   useEffect(() => {
 
@@ -90,10 +75,6 @@ const ApprovedPost = () => {
     <>
       <div className="AS">
         <Nav></Nav>
-
-
-
-
         <div className="liveMeetupBorder my-5">
           <div className="d-flex px-4 pt-3">
             <div className="faTrophy">
@@ -116,15 +97,31 @@ const ApprovedPost = () => {
                       />
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
+
+                        <Link className="Link"
+                        target="_blank"
+                            to={
+                                {pathname: '/superstar/videocall',
+                                search:  `id=${event.room_id}`}
+                            }
+                          >
+                            <h5 className="text-white text-ellipsis">{event.title}</h5>
+                          </Link>
                           {/* <Link
                             to={`/superstar-admin/approved-livechat/${event.id}`} style={{ textDecoration: 'none' }}
                           >
                             <h5 className="text-white text-ellipsis">{event.title}</h5>
                           </Link> */}
 
-                          <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
+                          {/* <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
                           <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </a>
+                          </a> */}
+
+
+                          {/* <h5 className="text-white text-ellipsis Link" style={{ cursor: 'pointer' }} onClick={() => joinLive(event.room_id)}>{event.title} + {event.room_id}</h5> */}
+
+
+
                         </div>
 
                         <p className="text-secondary">
