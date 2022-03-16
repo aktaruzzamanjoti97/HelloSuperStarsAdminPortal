@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
 import axios from "axios";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import swal from "sweetalert";
 
-const AdminAuditionCreateEvent = () => {
+const AdminAuditionCreateEvent = (props) => {
   const location = useLocation();
   const history = useHistory();
 
-  const [peding_id, setPendigID] = useState("");
+  const [audition_id, setAuditionId] = useState("");
   const [stars, setStars] = useState([]);
   const [file, setFile] = useState("");
   const [imagedata, setImagedata] = useState("");
   const [convertedContent, setConvertedContent] = useState("");
+
+  const [audition, setAudition] = useState("");
+
+
 
   const [inputData, setInputData] = useState({
     title: "",
@@ -34,32 +38,66 @@ const AdminAuditionCreateEvent = () => {
     setImagedata(file[0]);
   };
 
+  useEffect(() => {
+    //Fetch Superstars
+    axios.get("/api/admin/audition/stars").then((res) => {
+      if (res.data.status === 200) {
+        setStars(res.data.stars);
+      }
+    });
+    
+    var aud_id = props.match.params.id;
+
+    // geeting audtion id
+    setAuditionId(props.match.params.id);
+
+    axios.get(`/api/admin/audition/${aud_id}`).then((res) => {
+      if (res.data.status === 200) {
+        console.log('monir',res.data.audition.title)
+        setInputData({...inputData,title: res.data.audition.title});
+        setConvertedContent(res.data.audition.description);
+      }
+    });
+
+  }, [props.match.params.id]);
+
   // Add Audtion Form Submission
   const auditionSubmit = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
     formData.append("title", inputData.title);
-    formData.append("star_one_id", inputData.star_one_id);
-    formData.append("star_two_id", inputData.star_two_id);
-    formData.append("star_three_id", inputData.star_three_id);
+    formData.append("star_one_id",inputData.star_one_id);
+    formData.append("star_two_id",inputData.star_two_id);
+    formData.append("star_three_id",inputData.star_three_id);
     formData.append("description", convertedContent);
     formData.append("banner", imagedata);
-    formData.append("audition_id", peding_id);
+    formData.append("audition_id", audition_id);
 
-    console.log(inputData.title);
+    console.log('Image Data',imagedata);
 
-    axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`api/admin/audition/add`, formData).then((res) => {
-        if (res.data.status === 200) {
-          //document.getElementById('input_form').reset();
+    // axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.post(`api/admin/audition/add`,formData).then((res) => {
+        // alert('dad')
+        if (res.status === 200) {
+          setInputData({
+            title: "",
+            star_one_id: "",
+            star_two_id: "",
+            star_three_id: "",
+            error_list: [],
+          });
+          setConvertedContent("");
+          setFile("");
           swal("Success", res.data.message, "success");
-        //   history.push(
-        //     `/superstar-admin/greetings/details/${res.data.greeting_id}`
-        //   );
+          //   history.push(
+          //     `/superstar-admin/greetings/details/${res.data.greeting_id}`
+          //   );
           //window.location.href = "/superstar-admin/superstars";
           //setModalShow(false);
-        } else {
+        }else if (res.status === 30){
+          swal("Error", res.data.message, "error");
+        }else {
           //setModalShow(true);
           setInputData({
             ...inputData,
@@ -67,20 +105,8 @@ const AdminAuditionCreateEvent = () => {
           });
         }
       });
-    });
+    // });
   };
-
-  useEffect(() => {
-    //Fetch Superstars
-    axios.get("/api/admin/audition/stars").then((res) => {
-        if (res.data.status === 200) {
-          setStars(res.data.stars);
-        }
-    });
-
-    setPendigID(location.state);
-  }, [location]);
-
 
   return (
     <div className="AS">
@@ -118,6 +144,7 @@ const AdminAuditionCreateEvent = () => {
                   onChange={handleInput}
                 />
               </div>
+              <span className="text-light">{inputData.error_list.title}</span>
             </div>
 
             <div className="row my-4">
@@ -127,17 +154,13 @@ const AdminAuditionCreateEvent = () => {
                 </p>
               </div>
               <div className="col-md-11">
-
-                
                 <CKEditor
-                    data={inputData.description}
-                    editor={ ClassicEditor }
-                    onChange={ ( event, editor ) => {
-                      setConvertedContent(editor.getData())
-                    } }
+                  data={convertedContent}
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    setConvertedContent(editor.getData());
+                  }}
                 />
-
-
               </div>
             </div>
 
@@ -240,6 +263,7 @@ const AdminAuditionCreateEvent = () => {
                     <label for="file">
                       <i class="fas fa-cloud-upload-alt"></i> Upload
                     </label>
+                    <span className="text-light">{inputData.error_list.title}</span>
                   </div>
                 </div>
               </div>

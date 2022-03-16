@@ -19,7 +19,6 @@ const roomId = urlparams.get("id");
 
 if (roomId) {
   firepadRef = firepadRef.child(roomId);
-  //alert(firepadRef);
 } else {
   firepadRef = firepadRef.push();
   //window.history.replaceState(null, "Meet", "?id=" + firepadRef.key);
