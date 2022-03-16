@@ -3,7 +3,9 @@ import fanbase from '../../../../../assets/images/Fanbase-img/fanBaseApprove/c7m
 import fanbase1 from '../../../../../assets/images/Fanbase-img/fanBaseGroup/1.png';
 import { DropdownButton,Dropdown } from 'react-bootstrap';
 import './ApproveComponent.css'
+import DeclineModal from './DeclineModal';
 const ApproveComponent = () => {
+  const [modalShow, setModalShow] = React.useState(false);
     return (
         <div>
              <div className="container">
@@ -41,7 +43,11 @@ const ApproveComponent = () => {
          
               </div>
               <div className="col-6 text-center">
-              <button className='btn approve-btn2 w-100 text-light py-3' ><i class="fa fa-ban mx-1" aria-hidden="true"></i>Decline</button>
+              <button className='btn approve-btn2 w-100 text-light py-3' onClick={() => setModalShow(true)} ><i class="fa fa-ban mx-1" aria-hidden="true"></i>Decline</button>
+              <DeclineModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
               </div>
           </div>
             </div>
