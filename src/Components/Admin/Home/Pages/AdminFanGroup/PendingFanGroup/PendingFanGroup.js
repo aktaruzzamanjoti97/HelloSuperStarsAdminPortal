@@ -79,7 +79,7 @@ const PendingGroup = () => {
                   <i className="text-warning">Accepted</i>
                 </small>
               </p>
-              <button className="btn btn-secondary w-100">Render Group</button>
+              <button className="btn btn-warning w-100">Render Group</button>
             </div>
           </div>
         </div>
