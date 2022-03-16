@@ -50,6 +50,8 @@ import PendingLearningSession from "../Admin/Home/Pages/AdminLearningSession/Pen
 import PendingLearningSessionDetails from "../Admin/Home/Pages/AdminLearningSession/PendingPostDetails";
 import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
 import CreateLearningSession from "../Admin/Home/Pages/AdminLearningSession/Content/AddSessionForm";
+import LearningSessionLiveStream from "../../VideoCall";
+
 
 
 import AdminAuditionVideo from "./Home/Pages/AdminAudition/AdminAuditionVideo/AdminAuditionVideo";
@@ -112,6 +114,7 @@ import ApprovedOrDecline from "./Home/Pages/AdminSouvenir/Auction/ApprovedOrDecl
 import PendingProductDetails from "./Home/Pages/AdminSouvenir/Auction/PendingProductDetails";
 
 import NotFound from "../Pages/Errors/Error";
+import MarketPlaceOrderlist from "./Home/Pages/AdminSouvenir/MarketPlaceOrderlist/MarketPlaceOrderlist";
 
 
 const AdminRoute = [
@@ -220,7 +223,9 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir-auction/product-list/approvedOrDecline', exact: true, name: 'approvedOrDecline', component: ApprovedOrDecline },
     { path: '/superstar-admin/product/details/:id', exact: true, name: 'PendingProduct', component: PendingProductDetails },
 
+
     //Marketplace
+    { path: '/superstar-admin/souvenir/marketplace-orderlist', exact: true, name: 'marketplace-orderlist', component: MarketPlaceOrderlist },
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
     { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace/:id', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
     { path: '/superstar-admin/souvenir/product-list/approved', exact: true, name: 'sold', component: ProductList },
@@ -246,6 +251,8 @@ const AdminRoute = [
   
     // { path: '/superstar-admin/video_record', exact: true, name: 'greetings', component: StarVidoRecord },
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
+
+    { path: '/superstar-admin/videocall', exact: true, name: 'superstar-admin-learning-session-live-stream', component: LearningSessionLiveStream },
     
 ];
 

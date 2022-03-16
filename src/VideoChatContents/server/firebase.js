@@ -16,11 +16,12 @@ export const userName = localStorage.getItem('auth_otp');
 const urlparams = new URLSearchParams(window.location.search);
 const roomId = urlparams.get("id");
 
+
 if (roomId) {
   firepadRef = firepadRef.child(roomId);
 } else {
   firepadRef = firepadRef.push();
-  window.history.replaceState(null, "Meet", "?id=" + firepadRef.key);
+  //window.history.replaceState(null, "Meet", "?id=" + firepadRef.key);
 }
 
 export default firepadRef;

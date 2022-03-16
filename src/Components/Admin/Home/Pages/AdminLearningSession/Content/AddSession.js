@@ -7,7 +7,21 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import './AddSessionTextEditor.css';
+import firebase from "firebase";
+import firepadRef from "../../../../../../VideoChatContents/server/firebase";
 
+// var firebaseConfig = {
+//   apiKey: "AIzaSyD3xegugXiXeX1W2MTdDorwq-wM4fR25cA", // Add API Key
+//   databaseURL:"https://meetcloneapp-default-rtdb.asia-southeast1.firebasedatabase.app/" // Add databaseURL
+// };
+
+// Initialize Firebase
+//firebase.initializeApp(firebaseConfig);
+// var firepadRef = firebase.database().ref();
+// firepadRef = firepadRef.push();
+var room_id = firepadRef.key;
+
+//alert(room_id)
 
 
 
@@ -121,11 +135,9 @@ export default function AddSession(props) {
     fData.append('end_time', registerInput.end_time);
     fData.append('fee', registerInput.fee);
     fData.append('participant_number', registerInput.participant_number);
-    
-
     fData.append("description", convertedContent);
-    // fData.append('video', registerInput.video);
-    // fData.append('type', registerInput.type);
+    fData.append('room_id', room_id);
+
 
 
     axios.get('/sanctum/csrf-cookie').then(response => {
@@ -141,6 +153,8 @@ export default function AddSession(props) {
         }
       });
     });
+
+
   }
 
 
@@ -161,7 +175,7 @@ export default function AddSession(props) {
                 </label>
                 <div className="col-sm-7">
                   <select onChange={handleInput} name="star_id" className="form-control reply-control input-overlay" value={registerInput.star_id}>
-                    <option className="text-whaite" value="">Choose One</option>
+                    <option className="text-whaite" value="">Choose One Star4</option>
                     {starList.map((user, index) => (
                       <option className="text-whaite" value={user.id}>{user.first_name} {user.last_name}</option>
                     ))}
