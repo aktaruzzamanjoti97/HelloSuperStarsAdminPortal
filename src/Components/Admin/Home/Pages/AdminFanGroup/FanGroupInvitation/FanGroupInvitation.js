@@ -122,7 +122,7 @@ function FanGroupInvitationModal(props) {
                 <button className="btn btnDlt text-warning fw-bold">
                   Save
                 </button>
-                <button className="btn acceptBtn text-dark fw-bold">
+                <button className="btn actDlt text-dark fw-bold">
                   Save & Accept
                 </button>
               </div>
@@ -195,9 +195,7 @@ const FanGroupInvitation = () => {
                 >
                   Edit
                 </button>
-                <button className="btn acceptBtn text-dark fw-bold">
-                  Accept
-                </button>
+                <button className="btn actDlt text-dark fw-bold">Accept</button>
               </div>
             </div>
           </div>

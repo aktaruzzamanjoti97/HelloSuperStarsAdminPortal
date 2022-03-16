@@ -53,9 +53,7 @@ const FanGroupInvitation = () => {
                 Ignore
               </button>
               <button className="btn btnDlt text-warning fw-bold">Edit</button>
-              <button className="btn acceptBtn text-dark fw-bold">
-                Accept
-              </button>
+            
             </div>
           </div>
         </div>

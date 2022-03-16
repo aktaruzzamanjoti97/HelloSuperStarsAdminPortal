@@ -87,7 +87,7 @@ const PendingGroup = () => {
 
       <div className="d-flex my-3">
         <button className="btn btnDlt text-warning fw-bold">Delete</button>
-        <button className="btn acceptBtn text-warning fw-bold">Edit</button>
+        <button className="btn btnDlt text-warning fw-bold">Edit</button>
       </div>
     </div>
   );
