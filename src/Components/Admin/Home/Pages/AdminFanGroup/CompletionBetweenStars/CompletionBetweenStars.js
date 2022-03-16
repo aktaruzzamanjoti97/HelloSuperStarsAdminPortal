@@ -1,12 +1,15 @@
 import React from "react";
+import { Link, useHistory } from "react-router-dom";
 import VS from "../../../../../../assets/images/fanGroup/VS.png";
 import FanGroupIcon from "../../../../../../assets/images/iconFan/expired-1.png";
 import Salman from "../../../../../../assets/images/SalmanKhan.jpg";
-import ShahrukhAnother from '../../../../../../assets/images/starImg/shah-rukh-khan-01.webp'
+import ShahrukhAnother from "../../../../../../assets/images/starImg/shah-rukh-khan-01.webp";
 // import shahRukhAnother from "../../../../../../assets/images/starImg/shahRukhAnother.webp";
 import "./CompletionBetweenStars.css";
 
 const CompetitionBetweenStars = () => {
+  let history = useHistory();
+
   return (
     <>
       <div className="container">
@@ -102,9 +105,12 @@ const CompetitionBetweenStars = () => {
             </div>
 
             <div className="d-flex justify-content-center my-5">
-              <button className="btn nameBg fw-bolder launchBtn px-5 py-2">
-                Launch Fan Group
-              </button>
+              <Link to="/superstar-admin/FanbaseAdmin1">
+                {" "}
+                <button className="btn nameBg fw-bolder launchBtn px-5 py-2">
+                  Launch Fan Group
+                </button>
+              </Link>
             </div>
           </div>
         </div>

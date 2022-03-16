@@ -1,10 +1,17 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Ayushman from "../../../../../../assets/images/AyshmanKhurana.webp";
 import FanGroupIcon from "../../../../../../assets/images/iconFan/expired-1.png";
 import Salman from "../../../../../../assets/images/SalmanKhan.jpg";
 import "./PendingFanGroup.css";
 
 const PendingGroup = () => {
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push("/superstar-admin/pending-fan-group-competition");
+  };
+
   return (
     <div className="container">
       <div className="d-flex my-2">
@@ -79,7 +86,9 @@ const PendingGroup = () => {
                   <i className="text-warning">Accepted</i>
                 </small>
               </p>
-              <button className="btn btn-warning w-100">Render Group</button>
+              <button onClick={handleClick} className="btn btn-warning w-100">
+                Render Group
+              </button>
             </div>
           </div>
         </div>
