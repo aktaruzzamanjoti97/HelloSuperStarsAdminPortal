@@ -8,6 +8,7 @@ import LiveI from '../../../../../../assets/images/Souvenir/LivwNow.png'
 import axios from 'axios'
 import moment from 'moment'
 import SouvenirNav from '../SouvenirNav'
+import { Link } from 'react-router-dom'
 
 
 const UnSoldProductList = () => {
@@ -19,7 +20,7 @@ const UnSoldProductList = () => {
         axios.get(`/api/admin/unSold/auction/product`).then((res) => {
     
           if (res.status === 200) {
-            console.log('from api',res.data.unsold_product)
+            //console.log('from api',res.data.unsold_product)
             setUnSoldProduct(res.data.unsold_product);
      
           }
@@ -59,7 +60,9 @@ return (
 
                 <div className="mb-4">
                     <div className="text-light fw-bold mt-1 mx-2">
+                    <Link to={`/superstar-admin/souvenir/live-bidding/${product.id}`} style={{ textDecoration: 'none', color:'white' }}>
                         <h3>{product.name}</h3>
+                        </Link>
                     </div>
                     <div className="text-light  mt-1 mx-2 ">
                         <small>{moment(product.bid_to).format('LL')}</small>

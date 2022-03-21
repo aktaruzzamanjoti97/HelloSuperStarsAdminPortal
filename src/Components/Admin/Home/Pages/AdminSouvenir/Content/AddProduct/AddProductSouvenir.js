@@ -7,7 +7,7 @@ import axios from "axios";
 import { convertToHTML } from "draft-convert";
 import { EditorState } from "draft-js";
 import moment from "moment";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from "react-router-dom";
@@ -19,6 +19,7 @@ const AddProductSouvenir = () => {
   const [convertedContent, setConvertedContent] = useState(null);
   const [file, setFile] = useState(null);
   const [product, setProduct] = useState(null);
+  const [starList, setStarList] = useState([]);
 
   console.log(product);
 
@@ -32,6 +33,7 @@ const AddProductSouvenir = () => {
     title: "",
     keyword: "",
     details: "",
+    star_id: "",
     base_price: "",
     bid_from: "",
     bid_to: "",
@@ -45,6 +47,19 @@ const AddProductSouvenir = () => {
       return { ...prev, [name]: value };
     });
   };
+
+    // Fetch Stars Added By Admin
+    useEffect(() => {
+
+      axios.get(`/api/admin/star_list`).then(res => {
+  
+        if (res.status === 200) {
+          setStarList(res.data.category);
+          console.log("star list",res.data.category);
+        }
+      });
+    }, []);
+  
 
   const handleEditorChange = (state) => {
     setEditorState(state);
@@ -113,6 +128,7 @@ const AddProductSouvenir = () => {
     fData.append("name", inputFieldList.name);
     fData.append("title", inputFieldList.title);
     fData.append("keyword", inputFieldList.keyword);
+    fData.append('star_id', inputFieldList.star_id);
     fData.append("details", convertedContent);
     fData.append("base_price", inputFieldList.base_price);
     fData.append("bid_from", moment(endDate).format("yyyy-MM-DD HH:mm:ss"));
@@ -158,6 +174,29 @@ const AddProductSouvenir = () => {
             <h3 className="text-warning text-bold">Add Product</h3>
           </div>
           <form onSubmit={dataSubmit}>
+          <div className="form-group row my-4">
+                    <label className="col-md-1 col-form-label col-form-label-sm input-text-lv-ch">
+                      Select Star
+                    </label>
+                    <div className="col-md-11">
+                      <select
+                        onChange={handleInput}
+                        name="star_id"
+                        className="form-control reply-control input-overlay"
+                        value={inputFieldList.star_id}
+                      >
+                        <option className="text-whaite" value="">
+                          Choose One
+                        </option>
+                        {starList.map((user, index) => (
+                          <option className="text-whaite" value={user.id}>
+                            {user.first_name} {user.last_name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+            
             <div className="row my-4">
               <div className="col-md-1">
                 <p className="text-white">Name</p>

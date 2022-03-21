@@ -1,5 +1,6 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import profileUser from '../../../../../../assets/images/liveBiddersWinner.jpg';
 import calendar from '../../../../../../assets/images/meetupEvent/calendar.png';
 import Clock from '../../../../../../assets/images/meetupEvent/clock-icon.png';
@@ -9,13 +10,25 @@ import CricketJerseyModal2 from '../../Souviner-admin/CricketJersey/CricketJerse
 
 const LiveBiddingsCheckout = () => {
 
+    const params  = useParams();
+
+    //alert(auction_id)
+
+    const [product, setProduct] = useState();
+
     const [modalShow, setModalShow] = React.useState(false);
 
     let history = useHistory();
 
-    function handleClick() {
-        history.push('')
-    }
+    useEffect(()=>{
+
+        axios.get(`/api/admin/show/auction/product/${params.id}`).then((res)=>{
+        if(res.status === 200){
+        console.log('product ',res.data.product)
+        }
+    })
+    },[params.id])
+
 
     return (
         <div>
