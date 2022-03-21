@@ -10,6 +10,7 @@ const AdminAuditionCreateEvent = (props) => {
   const history = useHistory();
 
   const [audition_id, setAuditionId] = useState("");
+  const [inputList, setInputList] = useState([{}]);
   const [stars, setStars] = useState([]);
   const [file, setFile] = useState("");
   const [imagedata, setImagedata] = useState("");
@@ -110,6 +111,27 @@ const AdminAuditionCreateEvent = (props) => {
     // });
   };
 
+  // handle input change
+  const handleInputChange = (e, index) => {
+    const { value } = e.target;
+    const list = [...inputList];
+    list[index] = value;
+    console.log(list);
+    setInputList(list);
+  };
+
+  // handle click event of the Remove button
+  const handleRemoveClick = (index) => {
+    const list = [...inputList];
+    list.splice(index, 1);
+    setInputList(list);
+  };
+
+  // handle click event of the Add button
+  const handleAddClick = () => {
+    setInputList([...inputList, {}]);
+  };
+
   return (
     <div className="AS">
       {/* <MeetUpEventNave /> */}
@@ -171,7 +193,60 @@ const AdminAuditionCreateEvent = (props) => {
               </div>
             </div>
 
-            {inputData.star_ids.length > 0 ? (
+            {inputList.map((x, i) => {
+              return (
+                <>
+                  <div className="row my-4">
+                    <div className="col-md-1">
+                      <p className="text-white">
+                        <big>Superstar {i+1}</big>
+                      </p>
+                    </div>
+                    <div className="col-md-11">
+                    <div className="d-flex">
+                      <select
+                        value={x}
+                        onChange={(e) => handleInputChange(e, i)}
+                        className="form-select input-gray text-white"
+                        aria-label="Default select example"
+                      >
+                        <option selected>Select Superstar</option>
+                        <option value="1">Shakib Al Hasan</option>
+                        <option value="2">Musfiqur Rahim</option>
+                        <option value="3">Tamim Iqbal</option>
+                      </select>
+
+                      <div className="btn-box">
+                        {inputList.length !== 1 && (
+                          <button
+                            className="mr10 btn btn-danger mx-2"
+                            onClick={() => handleRemoveClick(i)}
+                          >
+                            <i class="fa-solid fa-minus"></i>
+                          </button>
+                        )}
+                        {inputList.length - 1 === i && (
+                          <button
+                            className="btn btn-success mx-1"
+                            onClick={handleAddClick}
+                          >
+                            <i className="fa-solid fa-plus"></i>
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
+
+            {console.log('Joti', JSON.stringify(inputList))}
+
+
+
+            {/* @FIXME: Monir bhai */}
+            {/* {inputData.star_ids.length > 0 ? (
               <div>
                 {inputData.star_ids.map((judge, index) => (
                   <div>
@@ -182,7 +257,6 @@ const AdminAuditionCreateEvent = (props) => {
                         </p>
                       </div>
                       <div className="col-md-11">
-                        {/* <input className='form-control input-gray' type='text' placeholder='Enter Event Title' /> */}
                         <select
                           className="form-select input-gray text-white"
                           aria-label="Default select example"
@@ -209,87 +283,84 @@ const AdminAuditionCreateEvent = (props) => {
                 ))}
               </div>
             ) : (
-             
               <div>
-              <div className="row my-4">
-                <div className="col-md-1">
-                  <p className="text-white">
-                    <big>Superstar 1</big>
-                  </p>
+                <div className="row my-4">
+                  <div className="col-md-1">
+                    <p className="text-white">
+                      <big>Superstar 1</big>
+                    </p>
+                  </div>
+                  <div className="col-md-11">
+                    <select
+                      className="form-select input-gray text-white"
+                      aria-label="Default select example"
+                      name="star_one_id"
+                      value={inputData.star_one_id}
+                      onChange={handleInput}
+                    >
+                      <option value="">Select Superstar</option>
+                      {stars.map((star, i) => (
+                        <option
+                          value={star.id}
+                        >{`${star.first_name} ${star.last_name} `}</option>
+                      ))}
+                    </select>
+                    <span className="text-danger">
+                      {inputData.error_list.star_one_id}
+                    </span>
+                  </div>
                 </div>
-                <div className="col-md-11">
-                  {/* <input className='form-control input-gray' type='text' placeholder='Enter Event Title' /> */}
-                  <select
-                    className="form-select input-gray text-white"
-                    aria-label="Default select example"
-                    name="star_one_id"
-                    value={inputData.star_one_id}
-                    onChange={handleInput}
-                  >
-                    <option value="">Select Superstar</option>
-                    {stars.map((star, i) => (
-                      <option
-                        value={star.id}
-                      >{`${star.first_name} ${star.last_name} `}</option>
-                    ))}
-                  </select>
-                  <span className="text-danger">
-                    {inputData.error_list.star_one_id}
-                  </span>
-                </div>
-              </div>
 
-              <div className="row my-4">
-                <div className="col-md-1">
-                  <p className="text-white">
-                    <big>Superstar 2</big>
-                  </p>
+                <div className="row my-4">
+                  <div className="col-md-1">
+                    <p className="text-white">
+                      <big>Superstar 2</big>
+                    </p>
+                  </div>
+                  <div className="col-md-11">
+           
+                    <select
+                      className="form-select input-gray text-white"
+                      aria-label="Default select example"
+                      name="star_two_id"
+                      value={inputData.star_two_id}
+                      onChange={handleInput}
+                    >
+                      <option value="">Select Superstar</option>
+                      {stars.map((star, i) => (
+                        <option
+                          value={star.id}
+                        >{`${star.first_name} ${star.last_name} `}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
-                <div className="col-md-11">
-                  {/* <input className='form-control input-gray' type='text' placeholder='Enter Event Title' /> */}
-                  <select
-                    className="form-select input-gray text-white"
-                    aria-label="Default select example"
-                    name="star_two_id"
-                    value={inputData.star_two_id}
-                    onChange={handleInput}
-                  >
-                    <option value="">Select Superstar</option>
-                    {stars.map((star, i) => (
-                      <option
-                        value={star.id}
-                      >{`${star.first_name} ${star.last_name} `}</option>
-                    ))}
-                  </select>
-                </div>
-              </div>
 
-              <div className="row my-4">
-                <div className="col-md-1">
-                  <p className="text-white">
-                    <big>Superstar 3</big>
-                  </p>
-                </div>
-                <div className="col-md-11">
-                  {/* <input className='form-control input-gray' type='text' placeholder='Enter Event Title' /> */}
-                  <select
-                    className="form-select input-gray text-white"
-                    aria-label="Default select example"
-                    name="star_three_id"
-                    value={inputData.star_three_id}
-                    onChange={handleInput}
-                  >
-                    <option value="">Select Superstar</option>
-                    {stars.map((star, i) => (
-                      <option
-                        value={star.id}
-                      >{`${star.first_name} ${star.last_name} `}</option>
-                    ))}
-                  </select>
+                <div className="row my-4">
+                  <div className="col-md-1">
+                    <p className="text-white">
+                      <big>Superstar 3</big>
+                    </p>
+                  </div>
+                  <div className="col-md-11">
+                    <select
+                      className="form-select input-gray text-white"
+                      aria-label="Default select example"
+                      name="star_three_id"
+                      value={inputData.star_three_id}
+                      onChange={handleInput}
+                    >
+                      <option value="">Select Superstar</option>
+                      {stars.map((star, i) => (
+                        <option
+                          value={star.id}
+                        >{`${star.first_name} ${star.last_name} `}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               </div>
-            </div>
-            )}
+            )} */}
 
             {inputData.star_ids.map((judge, index) => (
               <div>
