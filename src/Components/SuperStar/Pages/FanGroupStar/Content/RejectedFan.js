@@ -6,7 +6,7 @@ import LeMerridian from "../../../../../assets/images/MeetupImages/unsplash_xEaA
 import Session from "../../../../../assets/images/email.png";
 import FanGroupNav from "../FanGroupNav";
 
-const AcceptedFan = () => {
+const RejectedFan = () => {
 var settings = {
 dots: true,
 infinite: false,
@@ -151,4 +151,4 @@ return (
 );
 };
 
-export default AcceptedFan
+export default RejectedFan
