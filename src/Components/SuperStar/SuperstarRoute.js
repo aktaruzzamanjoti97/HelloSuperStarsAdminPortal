@@ -77,6 +77,7 @@ import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductLis
 import SuperstarAuditionPending from './Pages/SuperstarAudition/SuperstarAuditionPending/SuperstarAuditionPending';
 import SuperstarAudition from './Pages/SuperstarAudition/SuperstarAudition';
 import FanGroupHome from './Pages/FanGroupStar/FanGroupHome';
+import AcceptedFan from './Pages/FanGroupStar/Content/AcceptedFan';
 
 
 
@@ -155,9 +156,10 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
-    
+
     // Fan Group
     { path: '/superstar/fan-group', exact: true, name: 'fan-group', component: FanGroupHome },
+    { path: '/superstar/fan-group-accepted', exact: true, name: 'fan-group-accepted', component: AcceptedFan },
 
     // Souvenir 
 
