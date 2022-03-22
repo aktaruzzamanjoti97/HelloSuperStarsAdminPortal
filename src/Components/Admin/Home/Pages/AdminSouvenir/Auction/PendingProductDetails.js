@@ -30,7 +30,6 @@ const PendingProductDetails = () => {
           
         });
     
-        console.log();
       }, []);
 
 

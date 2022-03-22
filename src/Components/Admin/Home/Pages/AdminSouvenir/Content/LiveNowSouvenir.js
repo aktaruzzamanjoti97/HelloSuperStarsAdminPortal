@@ -21,7 +21,7 @@ const LiveNowSouvenir = () => {
         axios.get(`/api/admin/live/allProduct`).then((res) => {
     
           if (res.status === 200) {
-            console.log('from api',res.data.products)
+            //console.log('from api',res.data.products)
             setLiveProduct(res.data.products);
      
           }

@@ -87,6 +87,7 @@ import ConfirmOrEditAuction from "./Home/Pages/AdminSouvenir/ConfirmOrEditAuctio
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
 import EditProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/EditProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
+import CricketJerseyModal from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerseyModal";
 import LiveBiddingsCheckout from "./Home/Pages/AdminSouvenir/LiveBiddingsCheckout/LiveBiddingsCheckout";
 import SouvenirMain from "./Home/Pages/AdminSouvenir/SouvenirMain/SouvenirMain";
 import GrandFinish from "./Home/Pages/Auditions/Content/Finish/GrandFinish";
@@ -121,6 +122,7 @@ import LiveChatProfile from "./Home/Pages/LiveChatSpStar/LiveChatProfile";
 
 import RegistertUser from "./Home/Pages/LiveChatSpStar/RegisterUser/RegistertUser";
 import ScheduleCreate from "./Home/Pages/ScheduleCreate/ScheduleCreate";
+import CricketJerserAdmin from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin";
 import CricketJerserAdmin2 from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerserAdmin2";
 import EditProductMarketPlace from "./Home/Pages/Souviner-admin/EditProductMarketPlace/EditProductMarketPlace";
 import ProductList from "./Home/Pages/Souviner-admin/ProductList/ProductList";
@@ -242,13 +244,14 @@ const AdminRoute = [
     // =================================== Auction Routes =====================================
     { path: '/superstar-admin/souvenir/add-products', exact: true, name: 'add-products', component: AddProductSouvenir },
     { path: '/superstar-admin/souvenir/edit-auction/:id', exact: true, name: 'edit-auction-product', component: EditProductSouvenir},
-    { path: '/superstar-admin/souvenir/test', exact: true, name: 'test', component: CricketJerseySouvenir },
+    { path: '/superstar-admin/souvenir/live-bidding/:id', exact: true, name: 'test', component: CricketJerserAdmin },
     { path: '/superstar-admin/souvenir', exact: true, name: 'souvenir', component: SouvenirMain },
     { path: '/superstar-admin/souvenir-auction/product-list/pending', exact: true, name: 'pending', component: PendingProductList },
     { path: '/superstar-admin/souvenir-auction/product-list/sold', exact: true, name: 'sold', component: SoldProductList },
     { path: '/superstar-admin/souvenir-auction/product-list/unsold', exact: true, name: 'unSold', component: UnsoldProductList },
     { path: '/superstar-admin/souvenir-auction/product-list/approvedOrDecline', exact: true, name: 'approvedOrDecline', component: ApprovedOrDecline },
     { path: '/superstar-admin/product/details/:id', exact: true, name: 'PendingProduct', component: PendingProductDetails },
+    { path: '/superstar-admin/souvenir/live-biddings-checkout/:id', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout },
 
 
     //Marketplace
@@ -261,8 +264,7 @@ const AdminRoute = [
     // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin }, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin2 }, 
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
-    { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction },
-    { path: '/superstar-admin/souvenir/live-biddings-checkout', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout }, 
+    { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction }, 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
     {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},
