@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import pendingFan from "../../../../assets/images/iconFan/expired-1.png";
 import Invitation from "../../../../assets/images/iconFan/invitation2.png";
-// import "./AdminFanGroupNav.css";
+import "./FanGroupStar.css";
 
 const FanGroupNav = () => {
 return (

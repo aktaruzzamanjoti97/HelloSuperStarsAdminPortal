@@ -78,6 +78,9 @@ import SuperstarAuditionPending from './Pages/SuperstarAudition/SuperstarAuditio
 import SuperstarAudition from './Pages/SuperstarAudition/SuperstarAudition';
 import FanGroupHome from './Pages/FanGroupStar/FanGroupHome';
 import AcceptedFan from './Pages/FanGroupStar/Content/AcceptedFan';
+import RejectedFan from './Pages/FanGroupStar/Content/RejectedFan';
+import InvitationFan from './Pages/FanGroupStar/Content/InvitationFan';
+import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
 
 
 
@@ -160,6 +163,9 @@ const SuperstarRoute = [
     // Fan Group
     { path: '/superstar/fan-group', exact: true, name: 'fan-group', component: FanGroupHome },
     { path: '/superstar/fan-group-accepted', exact: true, name: 'fan-group-accepted', component: AcceptedFan },
+    { path: '/superstar/fan-group-rejected', exact: true, name: 'fan-group-rejected', component: RejectedFan },
+    { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
+    { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
 
     // Souvenir 
 

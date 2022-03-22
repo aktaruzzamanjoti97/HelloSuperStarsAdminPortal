@@ -6,7 +6,7 @@ import LeMerridian from "../../../../../assets/images/MeetupImages/unsplash_xEaA
 import Session from "../../../../../assets/images/email.png";
 import FanGroupNav from "../FanGroupNav";
 
-const AcceptedFan = () => {
+const InvitationFan = () => {
 var settings = {
 dots: true,
 infinite: false,
@@ -49,11 +49,11 @@ return (
     <div className="liveMeetupBorder my-5">
         <div className="d-flex px-4 pt-3">
             <div className="faTrophy"><i class="far fa-calendar-alt"></i></div>
-            <h4 className="mx-3 text-white p-2">Accepted</h4>
+            <h4 className="mx-3 text-white p-2">Invitation</h4>
             <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareAFan"></i> &nbsp;
                 Approved</span>
-            {/* <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareASchePen"></i> &nbsp;
-                Pending</span> */}
+            <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squarePFan"></i> &nbsp;
+                Pending</span>
         </div>
 
         <div className="pb-3">
@@ -72,7 +72,7 @@ return (
                                 <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
                             </div>
-                            <div className="d-flex justify-content-center ApprovedFan">
+                            <div className="d-flex justify-content-center PendingFan">
                                 <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@ return (
                                 <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
                             </div>
-                            <div className="d-flex justify-content-center ApprovedFan">
+                            <div className="d-flex justify-content-center PendingFan">
                                 <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
                             </div>
                         </div>
@@ -161,4 +161,4 @@ return (
 );
 };
 
-export default AcceptedFan
+export default InvitationFan

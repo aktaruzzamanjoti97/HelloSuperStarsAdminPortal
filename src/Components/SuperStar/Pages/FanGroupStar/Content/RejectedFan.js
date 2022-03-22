@@ -2,7 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 
+import Bang from '../../../../../assets/images/1ukfvg1a.png';
+
 import LeMerridian from "../../../../../assets/images/MeetupImages/unsplash_xEaAoizNFV8.png";
+
 import Session from "../../../../../assets/images/email.png";
 import FanGroupNav from "../FanGroupNav";
 
@@ -41,6 +44,7 @@ slidesToScroll: 1,
 },
 ],
 };
+
 return (
 <>
 
@@ -49,9 +53,9 @@ return (
     <div className="liveMeetupBorder my-5">
         <div className="d-flex px-4 pt-3">
             <div className="faTrophy"><i class="far fa-calendar-alt"></i></div>
-            <h4 className="mx-3 text-white p-2">Accepted</h4>
-            <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareAScheApp"></i> &nbsp;
-                Approved</span>
+            <h4 className="mx-3 text-white p-2">Rejected</h4>
+            <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareRFan"></i> &nbsp;
+                Reject</span>
             {/* <span className="mx-3 text-white py-2 mt-1"><i class="fas fa-square squareASchePen"></i> &nbsp;
                 Pending</span> */}
         </div>
@@ -64,29 +68,16 @@ return (
                     <div className="col-md-3">
                         <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
-                            <div className="card-body">
-                                <center>
-                                    <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                                    <div class="centeredImgC fw-bold  mt-2">23</div>
-                                </center>
+                            <div className="card-body containerFan">
+                                <img src={Bang} className="img-fluid" alt="" />
+
+                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
+                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
+
                             </div>
-                            <div className="d-flex justify-content-center ApprovedAdSchedule">
-                                <p className="fw-bold mt-4">February , 2022</p>
-                            </div>
-                        </div>
-                        </Link>
-                    </div>
-                    <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
-                        <div className="card bg-dark my-3 card-dashbord">
-                            <div className="card-body">
-                                <center>
-                                    <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                                    <div class="centeredImgC fw-bold  mt-2">23</div>
-                                </center>
-                            </div>
-                            <div className="d-flex justify-content-center ApprovedAdSchedule">
-                                <p className="fw-bold mt-4">March , 2022</p>
+                            <div className="d-flex justify-content-center RejectedFan">
+                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
                             </div>
                         </div>
                         </Link>
@@ -94,29 +85,16 @@ return (
                     <div className="col-md-3">
                         <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
-                            <div className="card-body">
-                                <center>
-                                    <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                                    <div class="centeredImgC fw-bold  mt-2">23</div>
-                                </center>
+                            <div className="card-body containerFan">
+                                <img src={Bang} className="img-fluid" alt="" />
+
+                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
+                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
+
                             </div>
-                            <div className="d-flex justify-content-center ApprovedAdSchedule">
-                                <p className="fw-bold mt-4">April , 2022</p>
-                            </div>
-                        </div>
-                        </Link>
-                    </div>
-                    <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
-                        <div className="card bg-dark my-3 card-dashbord">
-                            <div className="card-body">
-                                <center>
-                                    <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                                    <div class="centeredImgC fw-bold  mt-2">23</div>
-                                </center>
-                            </div>
-                            <div className="d-flex justify-content-center ApprovedAdSchedule">
-                                <p className="fw-bold mt-4">April , 2022</p>
+                            <div className="d-flex justify-content-center RejectedFan">
+                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
                             </div>
                         </div>
                         </Link>
@@ -124,14 +102,50 @@ return (
                     <div className="col-md-3">
                         <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
-                            <div className="card-body">
-                                <center>
-                                    <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                                    <div class="centeredImgC fw-bold  mt-2">23</div>
-                                </center>
+                            <div className="card-body containerFan">
+                                <img src={Bang} className="img-fluid" alt="" />
+
+                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
+                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
+
                             </div>
-                            <div className="d-flex justify-content-center ApprovedAdSchedule">
-                                <p className="fw-bold mt-4">April , 2022</p>
+                            <div className="d-flex justify-content-center RejectedFan">
+                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
+                            </div>
+                        </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-3">
+                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <div className="card bg-dark my-3 card-dashbord">
+                            <div className="card-body containerFan">
+                                <img src={Bang} className="img-fluid" alt="" />
+
+                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
+                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
+
+                            </div>
+                            <div className="d-flex justify-content-center RejectedFan">
+                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
+                            </div>
+                        </div>
+                        </Link>
+                    </div>
+                    <div className="col-md-3">
+                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <div className="card bg-dark my-3 card-dashbord">
+                            <div className="card-body containerFan">
+                                <img src={Bang} className="img-fluid" alt="" />
+
+                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
+                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
+
+                            </div>
+                            <div className="d-flex justify-content-center RejectedFan">
+                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
                             </div>
                         </div>
                         </Link>
@@ -140,10 +154,10 @@ return (
                 </Slider>
             </div>
         </div>
-        {/* <center>
-            <Link to='/superstar-admin/dashboard'><Button className='btn bg-warning mt-3 mb-3 fw-bold text-dark '> View
-                All</Button></Link>
-        </center> */}
+        {/*
+        <Link to='/superstar-admin/dashboard'><Button className='btn bg-warning mt-3 mb-3 fw-bold text-dark '> View
+            All</Button></Link>
+        */}
 
     </div>
 
