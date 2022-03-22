@@ -129,6 +129,8 @@ import ProductList from "./Home/Pages/Souviner-admin/ProductList/ProductList";
 import UpcomingEvent from "./Home/Pages/UpcomingEvent/UpcomingEvent";
 import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSuperStarPrint";
 import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetweenStars/CompletionBetweenStars";
+import AdminApprovedFanGroup from "./Home/Pages/AdminFanGroup/AdminApprovedFanGroup/AdminApprovedFanGroup";
+import AdminPendingFanGroup from "./Home/Pages/AdminFanGroup/AdminPendingFanGroup/AdminPendingFanGroup";
 
 
 
@@ -273,9 +275,12 @@ const AdminRoute = [
     // @FIXME: Admin Fan Group Route
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
-    {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+    // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+    // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: AdminPe},
     {path: '/superstar-admin/pending-fan-group-competition', exact: true, name: 'pending-fan-group', component: CompletionBetweenStars},
     { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
+    { path: '/superstar-admin/approved-fan-group', exact: true, name: 'grand-final', component: AdminApprovedFanGroup },
+    { path: '/superstar-admin/pending-fan-group', exact: true, name: 'grand-final', component: AdminPendingFanGroup },
     {path: '/superstar-admin/404', exact: true, name: 'not-found', component: NotFound},
 
   

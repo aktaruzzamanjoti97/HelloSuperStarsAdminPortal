@@ -12,6 +12,15 @@ import "./CreateFanGroup.css";
 const CreateFanGroup = () => {
   const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
 
+  const [file, setFile] = useState("");
+  const [imagedata, setImagedata] = useState("");
+
+  const handleImageChange = (file) => {
+    console.log('This is image file',file[0]);
+    // setFile(URL.createObjectURL(file[0]));
+    setImagedata(file[0]);
+  };
+
   const handleChange = (newValue) => {
     setValue(newValue);
   };
@@ -134,7 +143,25 @@ const CreateFanGroup = () => {
 
             <div className="row my-4">
               <div className="col-md-2">
-                <p className="text-white">Invite Star</p>
+                <p className="text-white">My Star</p>
+              </div>
+              <div className="col-md-6 input-graySelect">
+                <select
+                  className="form-select form-control input-gray text-light"
+                  aria-label="Default select example"
+                >
+                  <option selected>Shahrukh Khan</option>
+                  <option value="1">Shahrukh Khan</option>
+                  <option value="2">Salman Khan</option>
+                  <option value="3">Amir Khan</option>
+                </select>
+              </div>
+            </div>
+
+
+            <div className="row my-4">
+              <div className="col-md-2">
+                <p className="text-white">Invite Star Admin</p>
               </div>
               <div className="col-md-6 input-graySelect">
                 <select
@@ -164,6 +191,26 @@ const CreateFanGroup = () => {
                   <option value="3">Amir Khan</option>
                 </select>
               </div>
+            </div>
+
+            <div className="row my-4">
+            <div className="col-md-2">
+                <p className="text-white">Upload Banner</p>
+              </div>
+              <div className="col-md-3">
+              <input
+                      type="file"
+                      name="file"
+                      id="file"
+                      className="inputfile"
+                      
+                    />
+                    <label for="file">
+                      <i class="fas fa-cloud-upload-alt"></i> Upload
+                    </label>
+               
+              </div>
+          
             </div>
 
             <div className="mt-3">
