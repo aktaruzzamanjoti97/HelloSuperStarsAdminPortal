@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import pendingFan from "../../../../assets/images/iconFan/expired-1.png";
-import Invitation from "../../../../assets/images/iconFan/invitation2.png";
+import Invitation from "../../../../assets/images/Invitation.png";
+import approved from "../../../../assets/images/approved.png";
+import Accept from "../../../../assets/images/Accept.png";
 import "./FanGroupStar.css";
 
 const FanGroupNav = () => {
@@ -13,7 +15,7 @@ return (
             <div className="card-body d-flex justify-content-center  align-items-center">
                 <tr className="d-flex">
                     <td className="ad-card-td d-flex justify-content-center align-items-center">
-                        <img src={pendingFan} width="75px" className="ad-card-img-top blur" alt="..." />
+                        <img src={approved} width="75px" className="ad-card-img-top blur" alt="..." />
                     </td>
                     <td className="ad-card-td d-flex flex-column">
                         <small className="text-light">Accepted</small>
