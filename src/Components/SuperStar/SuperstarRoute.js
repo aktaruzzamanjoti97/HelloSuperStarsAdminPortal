@@ -113,7 +113,7 @@ const SuperstarRoute = [
 
     //@FIXME: Audition
     { path: '/superstar/audition', exact: true, name: 'auditions', component: SuperstarAudition },
-    { path: '/superstar/auditions/pending', exact: true, name: 'auditions', component: AuditionsStar },
+    { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session
     // { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },

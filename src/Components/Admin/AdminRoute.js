@@ -154,6 +154,10 @@ const AdminRoute = [
     { path: '/superstar-admin/event-pending', exact: true, name: 'Dashboard', component: AdminEventRequest },
     { path: '/superstar-admin/event-category/join', exact: true, name: 'Dashboard', component: AdminVideoJoin },
 
+    // Jury Board Routes
+
+    // { path: '/superstar-admin/jury-board', exact: true, name: 'JuryBoard', component: UpcomingEvent },
+
     // Schedule Create Route
     { path: '/superstar-admin/schedule-create', exact: true, name: 'schedule-create', component: ScheduleCreate },
 
@@ -219,6 +223,8 @@ const AdminRoute = [
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
+
+    
 
     // MeetUp Event Route
     { path: '/superstar-admin/meetup-events/approved', exact: true, name: 'meetup-events', component: LiveMeetUp },

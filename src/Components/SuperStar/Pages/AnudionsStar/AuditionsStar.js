@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import './AudtionsStar.css'
 import Banner from '../../../../assets/images/Auditions/unsplash_IeTLKtzbLNo.png'
 
@@ -8,9 +8,24 @@ import Clock from '../../../../assets/images/Auditions/finish.png'
 import Spotlight from '../../../../assets/images/Auditions/spotlight.png'
 import Unsplash from '../../../../assets/images/Auditions/unsplash.png'
 
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const AuditionsStar = () => {
+
+    const [audition,setAudition] = useState("");
+
+    useEffect(() => {
+        axios.get("/api/superstar/audition/pendings").then((res) => { 
+          if (res.data.status === 200) {
+            setAudition(res.data.pending_auditions);
+    
+            console.log('star pending audition',res.data.pending_auditions);
+          }
+        });
+    
+    }, []);
+
 return (
 <>
     <div className="card m-3">
