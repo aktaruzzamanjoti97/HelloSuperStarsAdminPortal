@@ -1,14 +1,22 @@
 import React from "react";
 // import "./FanBaseStar.css";
 import fanBanner from "../../../../../assets/images/Fanbase-img/Fanbasebanner.jpg";
+
 import { Tab, Nav } from "react-bootstrap";
-import FanBaseHome from "./FanBaseComponents/FanBaseHome";
-import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
-import FanBaseMessenger from "./FanBaseComponents/FanBaseMessenger";
-import FanBaseMedia from "./FanBaseComponents/MediaComponent/FanBaseMedia";
-import ApproveComponent from "./FanBaseComponents/ApproveComponent/ApproveComponent";
-import Analytics from "./AnalyticsComponents/Analytics";
-import FanBaseSetting from "./FanbaseSettingComponents/FanBaseSetting";
+
+// import FanBaseHome from "./FanBaseComponents/FanBaseHome";
+// import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
+// import FanBaseMessenger from "./FanBaseComponents/FanBaseMessenger";
+// import FanBaseMedia from "./FanBaseComponents/MediaComponent/FanBaseMedia";
+// import ApproveComponent from "./FanBaseComponents/ApproveComponent/ApproveComponent";
+
+// import FanBaseSetting from "./FanbaseSettingComponents/FanBaseSetting";
+
+import Analytics from "./FanBaseStarComponents/AnalyticsFan";
+import SettingsFan from "./FanBaseStarComponents/SettingsFan";
+import FanBaseGroupStar from "./FanBaseStarComponents/FanBaseGroupStar";
+import FanBaseMessengerStar from "./FanBaseStarComponents/FanBaseMessengerStar";
+
 const FanBaseStar = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
@@ -118,21 +126,21 @@ const FanBaseStar = () => {
 
                     <Tab.Content className=" my-2">
                       <Tab.Pane eventKey="first">
-                        <FanBaseHome />
+                        {/* <FanBaseHome /> */}
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
-                        <FanBaseMedia />
+                        {/* <FanBaseMedia /> */}
                       </Tab.Pane>
                       <Tab.Pane eventKey="Third">
                         {" "}
-                        <ApproveComponent />
+                        {/* <ApproveComponent /> */}
                       </Tab.Pane>
                       <Tab.Pane eventKey="Four">
                         {" "}
-                        <Analytics></Analytics>
+                        <Analytics/>
                       </Tab.Pane>
                       <Tab.Pane eventKey="Fifth">
-                        <FanBaseSetting />
+                        <SettingsFan />
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
@@ -144,10 +152,10 @@ const FanBaseStar = () => {
                 <Tab.Container id="left-tabs-example" defaultActiveKey="group">
                   <Tab.Content className="my-2">
                     <Tab.Pane eventKey="group">
-                      <FanBaseGroup />
+                      <FanBaseGroupStar />
                     </Tab.Pane>
                     <Tab.Pane eventKey="message">
-                      <FanBaseMessenger />
+                      <FanBaseMessengerStar />
                     </Tab.Pane>
                   </Tab.Content>
                   <Nav variant="pills">

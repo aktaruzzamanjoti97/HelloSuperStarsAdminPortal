@@ -1,13 +1,13 @@
 import React from "react";
-import "./Analytics.css";
-import vectior1 from "../../../../assets/images/fanGroup/Vector.png";
-import vectior2 from "../../../../assets/images/fanGroup/Vector (1).png";
-import vectior3 from "../../../../assets/images/fanGroup/unknown.png";
-import chart from "../../../../assets/images/fanGroup/chart.png";
-import fan from '../../../../assets/images/Fanbase-img/1.png'
+// import "./Analytics.css";
+import vectior1 from "../../../../../../assets/images/fanGroup/Vector.png";
+import vectior2 from "../../../../../../assets/images/fanGroup/Vector (1).png";
+import vectior3 from "../../../../../../assets/images/fanGroup/unknown.png";
+import chart from "../../../../../../assets/images/fanGroup/chart.png";
+import fan from '../../../../../../assets/images/Fanbase-img/1.png'
 import { Table } from "react-bootstrap";
 
-const Analytics = () => {
+const AnalyticsFan = () => {
   return (
     <div className="container my-3">
       <div className="row">
@@ -122,5 +122,5 @@ const Analytics = () => {
   );
 };
 
-export default Analytics;
+export default AnalyticsFan;
 
