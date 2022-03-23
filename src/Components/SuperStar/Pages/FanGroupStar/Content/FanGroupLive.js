@@ -9,7 +9,7 @@ const FanGroupLive = () => {
       <div className="ms-4">
       {/* <FanGroupNav/> */}
 
-      <div className="mt-5 mb-3">
+      <div className="mt-2 mb-3">
         <div className="d-flex mt-4">
           <img
             width="38px"

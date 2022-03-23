@@ -29,7 +29,7 @@ return (
                     <button className="btn bg-warning text-dark mt-3 me-3" disabled>Enrolled : <span
                             className="fw-bold">20</span> </button>
                     <button className="btn mt-3 text-light" disabled>Status : <span
-                            className='text-success fw-bold'>Accepted</span></button>
+                            className='text-danger fw-bold'>Rejected</span></button>
                 </div>
 
             </div>

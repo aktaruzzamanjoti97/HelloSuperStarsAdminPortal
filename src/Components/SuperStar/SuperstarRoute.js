@@ -88,6 +88,8 @@ import InvitationFan from './Pages/FanGroupStar/Content/InvitationFan';
 import InvitationDetails from './Pages/FanGroupStar/Content/InvitationDetails';
 import FanbaseAdmin1 from '../Admin/FanbaseGroup/FanbaseAdmin1';
 import AcceptedDetails from './Pages/FanGroupStar/Content/AcceptedDetails';
+import RejectedDetails from './Pages/FanGroupStar/Content/RejectedDetails';
+import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
 
 
 
@@ -173,8 +175,9 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-rejected', exact: true, name: 'fan-group-rejected', component: RejectedFan },
     { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
     { path: '/superstar/fan-group/accepted', exact: true, name: 'accepted', component: AcceptedDetails },
+    { path: '/superstar/fan-group/rejected', exact: true, name: 'rejected', component: RejectedDetails },
     { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
-
+    { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
 
     { path: '/superstar/fan-group/home', exact: true, name: 'details', component: FanbaseAdmin1 },
 

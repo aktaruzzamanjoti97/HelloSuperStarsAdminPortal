@@ -63,7 +63,7 @@ return (
                 <Slider className="slider-width" {...settings}>
 
                     <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
                                 <img src={Bang} className="img-fluid BangFan" alt="" />
@@ -80,7 +80,7 @@ return (
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
                                 <img src={Bang} className="img-fluid BangFan" alt="" />
@@ -97,7 +97,7 @@ return (
                         </Link>
                     </div>
                     <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
                                 <img src={Bang} className="img-fluid BangFan" alt="" />
@@ -113,8 +113,9 @@ return (
                         </div>
                         </Link>
                     </div>
+                    
                     <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
                                 <img src={Bang} className="img-fluid BangFan" alt="" />
@@ -130,8 +131,9 @@ return (
                         </div>
                         </Link>
                     </div>
+
                     <div className="col-md-3">
-                        <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
                                 <img src={Bang} className="img-fluid BangFan" alt="" />
