@@ -9,7 +9,7 @@ const FanGroupLive = () => {
       <div className="ms-4">
       {/* <FanGroupNav/> */}
 
-      <div className="mt-5 mb-3">
+      <div className="mt-2 mb-3">
         <div className="d-flex mt-4">
           <img
             width="38px"
@@ -23,7 +23,7 @@ const FanGroupLive = () => {
         <div className="row my-3">
           <div className="col-md-9">
             <div className="bgBlurDiv d-flex justify-content-end align-items-end">
-              <Link to="">
+              <Link to="/superstar/fan-group/home">
                 {" "}
                 <button className="btn btn-warning enterBtn fw-bold py-2 px-4 m-5">
                   Enter
