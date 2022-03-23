@@ -167,7 +167,7 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-rejected', exact: true, name: 'fan-group-rejected', component: RejectedFan },
     { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
     { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
-    { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
+    { path: '/superstar/fan-group-invitation/details/:slug', exact: true, name: 'details', component: InvitationDetails },
     
 
     // Souvenir 

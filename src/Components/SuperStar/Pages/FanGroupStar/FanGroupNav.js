@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Rejected from "../../../../assets/images/fanGroup/Rejected.png";
 import Invitation from "../../../../assets/images/fanGroup/Invitation.png";
 import Accept from "../../../../assets/images/fanGroup/Accept.png";
 // import approved from "../../../../assets/images/approved.png";
 import "./FanGroupStar.css";
+import axios from "axios";
 
 const FanGroupNav = () => {
+
+    const [allFanAccept, setAllFanAccept] = useState([]);
+    const [allFanReject, setAllFanReject] = useState([]);
+    const [allFanActive, setAllFanActive] = useState([]);
+
+    console.log("Length ", allFanAccept.length)
+
+    useEffect(() => {
+
+        axios.get("/api/star/fan/group/starlist/status").then(res => {
+          if (res.data.status === 200) {
+            console.log( res.data);
+
+            setAllFanAccept(res.data.starApproved);
+            setAllFanActive(res.data.starActive);
+            setAllFanReject(res.data.starRejected);
+    
+          }
+        });
+    
+    }, []);
+
 return (
 <div className="mb-3 row">
 
@@ -19,7 +42,7 @@ return (
                     </td>
                     <td className="ad-card-td d-flex flex-column">
                         <small className="text-light">Accepted</small>
-                        <small className=" fw-bold invitationTxt">01</small>
+                        <small className=" fw-bold invitationTxt">{ allFanAccept.length }</small>
                     </td>
                 </tr>
             </div>
@@ -38,7 +61,7 @@ return (
                     </td>
                     <td className="ad-card-td d-flex flex-column">
                         <small className="text-light">Rejected</small>
-                        <small className=" fw-bold invitationTxt">01</small>
+                        <small className=" fw-bold invitationTxt">{ allFanReject.length }</small>
                     </td>
                 </tr>
             </div>
@@ -58,7 +81,7 @@ return (
                         </td>
                         <td className="ad-card-td d-flex flex-column">
                             <small className="text-light">Invitation</small>
-                            <small className=" fw-bold invitationTxt">01</small>
+                            <small className=" fw-bold invitationTxt">{ allFanActive.length }</small>
                         </td>
                     </tr>
                 </center>

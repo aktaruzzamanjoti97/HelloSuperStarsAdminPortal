@@ -1,9 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import invitationImg from "../../../../../assets/images/iconFan/invitation2.png";
 import starImg from "../../../../../assets/images/starImg/shah-rukh-khan-01.webp";
 // import "./FanGroupInvitation.css";
+import { Markup } from 'interweave';
+import moment from 'moment';
 
 const InvitationDetails = () => {
+  let { slug } = useParams();
+
+  const [fanDetails, setFanDetails] = useState('');
+  const [starDetails, setStarDetails] = useState('');
+
+  console.log("fanDetails ", fanDetails)
+  console.log("starDetails ", starDetails)
+
+    useEffect(() => {
+
+        axios.get(`/api/star/fan/group/details/${slug}`).then(res => {
+          if (res.data.status === 200) {
+            console.log( res.data);
+
+            setFanDetails(res.data.fanDetails);
+            setStarDetails(res.data.starId);
+    
+          }
+        });
+    
+    }, []);
+
   return (
     <>
     <div className="container">
@@ -18,10 +44,10 @@ const InvitationDetails = () => {
 
           <div className="">
             <div className="d-flex justify-content-center">
-              <img className="img-fluid starImg me-4" src={starImg} alt="" />
+              <img className="img-fluid starImg me-4" src={`http://localhost:8000/${starDetails.image}`} alt="" />
               <div className="vertical-line"></div>
               <div className="ms-4">
-                <p className="shahrukhTxt text-light">Shahrukh Khan</p>
+                <p className="shahrukhTxt text-light">{starDetails.first_name} {starDetails.last_name}</p>
                 <p className="bollywoodTxt text-light">Bollywood</p>
               </div>
             </div>
@@ -30,12 +56,9 @@ const InvitationDetails = () => {
               <div className="col-md-3"></div>
               <div className="col-md-6 g-5">
                 <div className="text-light">
-                  <h3 className="fw-bold">Shahrukh fanbase VS Star Name</h3>
+                  <h3 className="fw-bold">{ fanDetails.group_name}</h3>
                   <p className="loremDammy">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Aspernatur sunt dolore nemo tenetur, cumque sequi itaque
-                    voluptatibus? Eveniet, molestias corrupti maiores, dolorum
-                    culpa, similique a ea quo eos error ipsum?
+                  <Markup content= {fanDetails.description}/>
                   </p>
                 </div>
               </div>
@@ -43,9 +66,9 @@ const InvitationDetails = () => {
             </div>
             <div className="text-center">
               <p className="loremDammy">
-                Starts at <span>12 Feb 2022</span>{" "}
+                Starts at <span>{moment(fanDetails.start_date).format('LL')}</span>{" "}
                 <span className="vertical-line2 mx-3"></span> Ends at{" "}
-                <span>12 April 2022</span>
+                <span>{moment(fanDetails.end_date).format('LL')}</span>
               </p>
             </div>
 
