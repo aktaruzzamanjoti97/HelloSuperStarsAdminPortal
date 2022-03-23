@@ -157,7 +157,7 @@ const CreateFanGroup = () => {
                 </select>
               </div>
             </div>
-
+{/* 
 
             <div className="row my-4">
               <div className="col-md-2">
@@ -174,7 +174,7 @@ const CreateFanGroup = () => {
                   <option value="3">Amir Khan</option>
                 </select>
               </div>
-            </div>
+            </div> */}
 
             <div className="row my-4">
               <div className="col-md-2">
