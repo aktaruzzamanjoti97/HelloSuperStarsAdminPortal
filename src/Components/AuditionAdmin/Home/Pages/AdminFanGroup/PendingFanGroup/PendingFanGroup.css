@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Zen+Dots&display=swap");
+
+.estimateSection {
+  background-color: #2d2d2d;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+.bgStar {
+  background-color: #032218;
+  border: 5px solid #333938;
+  border-radius: 10px;
+  width: 16rem;
+}
+
+.pendingGroupFan {
+  background-image: url("../../../../../../assets/images/fanGroup/Rectangle421.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 17vh;
+  width: 100%;
+}
+
+.fanGroupBgImage {
+  background-image: url("../../../../../../assets/images/fanGroup/Maskgroup.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 17vh;
+  /* width: 100% */
+}
+
+.fanGroupText {
+  font-family: "Alex Brush", cursive;
+  font-family: "Zen Dots", cursive;
+  color: #ffd200;
+}
+
+.pendingTxt {
+  font-size: 28px;
+}
+
+.fanGroupTxt {
+  font-size: 35px;
+}
+
+.btnDlt {
+  border: 2px solid gold !important;
+  width: 12rem;
+  padding: 10px !important;
+  margin: 15px;
+  background-color: #2d2d2d;
+  border-radius: 15px !important;
+}
+
+.btnDlt:hover {
+  background-color: #ddd !important;
+  color: #032218 !important;
+}

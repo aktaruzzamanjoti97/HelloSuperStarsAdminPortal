@@ -1,0 +1,16 @@
+.messsage-card{
+    background: #2D2D2D !important;
+}
+.custom-chat-container{
+    width: 90% !important;
+}
+.slick-list:focus {
+    outline: none;
+}
+
+.MSGIcon-VC {
+    position: absolute;
+    bottom: 1px;
+    height: 50px;
+    width: 50px;
+}

@@ -45,7 +45,7 @@ const Navbar = () => {
         <nav className="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             
             <img src={logo} alt="sdhfhsd" className="logo-ad" style={{  width: '40px' }}/>
-            <Link className="navbar-brand" to="/superstar-admin">Super Star Admin</Link>
+            <Link className="navbar-brand" to="/superstar-admin">Superstar Admin</Link>
             
             <button className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-white" id="" onClick={sidebarToggle}><i className="fas fa-bars"></i></button>
             

@@ -1,0 +1,25 @@
+.blurBg {
+  backdrop-filter: blur(10px);
+  filter: blur(8px);
+  transition: 0.5s ease;
+}
+
+.bgBlurDiv {
+  border: 2px solid gold;
+  background-image: url("../../../../../assets/images/pngLive.png");
+  min-height: 70vh;
+  border-radius: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.enterBtn {
+  width: 10rem;
+  color: white;
+}
+
+.input-graySelect {
+  background-color: #737373 !important;
+  border: none !important;
+  border-radius: 6px !important;
+}

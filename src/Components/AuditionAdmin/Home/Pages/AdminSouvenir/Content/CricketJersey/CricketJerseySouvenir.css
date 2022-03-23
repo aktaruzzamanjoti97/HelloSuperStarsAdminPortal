@@ -1,0 +1,32 @@
+@media only screen and (max-width: 600px) {
+   .cricket-jersey{
+       display: flex !important;
+       flex-direction: column !important;
+   }
+  }
+
+  .Cricket-Img{
+    object-fit: cover !important;
+  }
+
+  .Cri-btn-x {
+    background: linear-gradient(
+102.45deg, #F7ED00 28.52%, #FFD11A 72.31%) !important;
+}
+.Cri-btn-x:hover {
+    background: none !important;
+    color: rgb(235, 219, 8) !important;
+}
+
+.Cri-btn{
+    color: rgb(235, 219, 8) !important;
+}
+.Cri-btn:hover{
+      color: black !important;
+      background: linear-gradient(
+        102.45deg, #F7ED00 28.52%, #FFD11A 72.31%) !important;
+  }
+
+  .Usd {
+    font-size: 1.8rem;
+  }
