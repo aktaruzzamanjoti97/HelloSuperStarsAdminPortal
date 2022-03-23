@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Ayushman from "../../../../../../assets/images/AyshmanKhurana.webp";
 import FanGroupIcon from "../../../../../../assets/images/iconFan/expired-1.png";
 import Salman from "../../../../../../assets/images/SalmanKhan.jpg";
@@ -96,7 +96,9 @@ const PendingGroup = () => {
 
       <div className="d-flex my-3">
         <button className="btn btnDlt text-warning fw-bold">Delete</button>
-        <button className="btn btnDlt text-warning fw-bold">Edit</button>
+        <Link to="/superstar-admin/pending-fan-group-Edit">
+          <button className="btn btnDlt text-warning fw-bold">Edit</button>
+        </Link>
       </div>
     </div>
   );
