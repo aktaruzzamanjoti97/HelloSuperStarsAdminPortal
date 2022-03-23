@@ -118,9 +118,28 @@ const AllPost = () => {
                             <h5 className="text-white text-ellipsis">{event.title}</h5>
                           </Link> */}
 
-                          <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
+                          {/* <a target="_blank" href="https://angularhttp-c976c.web.app/?id=-MwLqWCE8jYIdPF9GH5v" style={{ textDecoration: 'none' }}>
                           <h5 className="text-white text-ellipsis">{event.title}</h5>
-                          </a>
+                          </a> */}
+
+                          { event.status === 1 ? (
+                            <Link
+                            to={`/superstar-admin/learning-session/pending/${event.id}`} style={{ textDecoration: 'none' }}
+                          >
+                            <h5 className="text-white">{event.title}</h5>
+                          </Link>
+                          ):
+                          (
+                            <Link
+                            to={`/superstar-admin/learning-session/pending/${event.id}`} style={{ textDecoration: 'none' }}
+                          >
+                            <h5 className="text-white">{event.title}</h5>
+                          </Link>
+                          )
+                            
+                          }
+
+
                         </div>
 
                         <p className="text-secondary">
