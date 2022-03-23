@@ -157,6 +157,10 @@ const AdminRoute = [
     { path: '/superstar-admin/event-pending', exact: true, name: 'Dashboard', component: AdminEventRequest },
     { path: '/superstar-admin/event-category/join', exact: true, name: 'Dashboard', component: AdminVideoJoin },
 
+    // Jury Board Routes
+
+    // { path: '/superstar-admin/jury-board', exact: true, name: 'JuryBoard', component: UpcomingEvent },
+
     // Schedule Create Route
     { path: '/superstar-admin/schedule-create', exact: true, name: 'schedule-create', component: ScheduleCreate },
 
@@ -223,6 +227,8 @@ const AdminRoute = [
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
+    
+
     // MeetUp Event Route
     { path: '/superstar-admin/meetup-events/approved', exact: true, name: 'meetup-events', component: LiveMeetUp },
     { path: '/superstar-admin/meetup-events/pending', exact: true, name: 'meetup-events', component: PendingMeetUpList },
@@ -255,6 +261,7 @@ const AdminRoute = [
     { path: '/superstar-admin/souvenir-auction/product-list/approvedOrDecline', exact: true, name: 'approvedOrDecline', component: ApprovedOrDecline },
     { path: '/superstar-admin/product/details/:id', exact: true, name: 'PendingProduct', component: PendingProductDetails },
     { path: '/superstar-admin/souvenir/live-biddings-checkout/:id', exact: true, name: 'live-biddings', component: LiveBiddingsCheckout },
+    { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction }, 
 
 
     //Marketplace
@@ -267,7 +274,6 @@ const AdminRoute = [
     // { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin }, // This is important, do not touch this code
     { path: '/superstar-admin/souvenir/live-biddings', exact: true, name: 'live-biddings', component: CricketJerserAdmin2 }, 
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
-    { path: '/superstar-admin/souvenir/confirm-or-edit-auction', exact: true, name: 'live-biddings', component: ConfirmOrEditAuction }, 
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
     {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},

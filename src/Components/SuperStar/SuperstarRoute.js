@@ -76,6 +76,12 @@ import SuperstarEditMarketPlaceForm from './Pages/Superstar-Souvenir/SuperstarEd
 import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductList/SuperstarProductList';
 import SuperstarAuditionPending from './Pages/SuperstarAudition/SuperstarAuditionPending/SuperstarAuditionPending';
 import SuperstarAudition from './Pages/SuperstarAudition/SuperstarAudition';
+import FanGroupHome from './Pages/FanGroupStar/FanGroupHome';
+import AcceptedFan from './Pages/FanGroupStar/Content/AcceptedFan';
+import RejectedFan from './Pages/FanGroupStar/Content/RejectedFan';
+import InvitationFan from './Pages/FanGroupStar/Content/InvitationFan';
+import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
+import InvitationDetails from './Pages/FanGroupStar/Content/InvitationDetails';
 
 
 
@@ -113,7 +119,7 @@ const SuperstarRoute = [
 
     //@FIXME: Audition
     { path: '/superstar/audition', exact: true, name: 'auditions', component: SuperstarAudition },
-    { path: '/superstar/auditions/pending', exact: true, name: 'auditions', component: AuditionsStar },
+    { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session
     // { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
@@ -154,6 +160,15 @@ const SuperstarRoute = [
     { path: '/superstar/meetup-events/:id', exact: true, name: 'meetup-events', component: StarMeetUpEvent },
     { path: '/superstar/star-video-chat/:id', exact: true, name: 'star-video-chat', component: StarVideoChat },
 
+
+    // Fan Group
+    { path: '/superstar/fan-group', exact: true, name: 'fan-group', component: FanGroupHome },
+    { path: '/superstar/fan-group-accepted', exact: true, name: 'fan-group-accepted', component: AcceptedFan },
+    { path: '/superstar/fan-group-rejected', exact: true, name: 'fan-group-rejected', component: RejectedFan },
+    { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
+    { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
+    { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
+    
 
     // Souvenir 
 

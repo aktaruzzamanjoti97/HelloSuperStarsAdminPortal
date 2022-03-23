@@ -41,6 +41,7 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </Link>
+                            
                             <Link className="nav-link" to="/superstar/post">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Post
@@ -73,6 +74,10 @@ const Sidebar = () => {
                             <Link className="nav-link" to="/superstar/upcoming-event">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Upcoming Events
+                            </Link>
+                            <Link className="nav-link" to="/superstar/fan-group">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Fan Group
                             </Link>
                             <Link className="nav-link" to="/superstar/greetings">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>

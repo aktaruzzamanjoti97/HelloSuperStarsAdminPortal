@@ -25,6 +25,7 @@ const EditProductSouvenir = () => {
 
     const [convertedContent, setConvertedContent] = useState(null);
     const [file, setFile] = useState(null);
+    const [productImage, setProductImage] = useState(null);
     const history = useHistory();
 
     const [editorState, setEditorState] = useState(() =>
@@ -39,7 +40,8 @@ const EditProductSouvenir = () => {
             setInputFieldList(res.data.product);
             setStartDate(res.data.product.bid_from)
             setStartDate(res.data.product.bid_to)          
-            setFile(res.data.product.banner)      
+            setFile(res.data.product.banner)
+            setProductImage(res.data.product.product_image)      
           }
           
         });
@@ -128,6 +130,10 @@ const EditProductSouvenir = () => {
         setFile(e.target.files[0]);
         console.log(e.target.files[0]);
     };
+    const handleOnChangeImage = (e) => {
+        setProductImage(e.target.files[0]);
+        console.log(e.target.files[0]);
+    };
 
     const dataSubmit =(e)=>{
         e.preventDefault();
@@ -141,6 +147,7 @@ const EditProductSouvenir = () => {
         fData.append('bid_from',moment(endDate).format('yyyy-MM-DD HH:mm:ss'));
         fData.append('bid_to',moment(endDate).format('yyyy-MM-DD HH:mm:ss'));
         fData.append('banner',file);
+        fData.append('product_image',productImage);
         fData.append('status',0);
         fData.append('product_image',imageUpload.upload['pictures']);
         
@@ -324,21 +331,33 @@ const EditProductSouvenir = () => {
                         }
 
 
-                        <div className="row my-4">
+<div className="row my-4">
                             <div className="col-md-1 text-white">
-                                <p>Upload Images</p>
+                                <p>Upload Image</p>
                             </div>
                             <div className="col-md-3">
-                                <UploadAuctionComponent {...imageUpload.upload} handleAuctionChange={handleAuctionChange} />
+                                <input onChange={handleOnChangeImage} type="file" name="product_image" id="image" className="inputfile" />
+                                <label for="image"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
 
                             </div>
                         </div>
+                        {
+                            productImage ? (<div className="row">
+                                <div className="col-md-1 text-light"><small>Selected Image</small></div>
+                                <div className="col-md-11 fw-bold text-success">
+                                <img src={bas_url+productImage} alt="" className="edit-banner "/>
+                                    {productImage?.name}
+                                </div>
+                            </div>) : null
+                        }
 
 
 
 
                         <div className="mt-3">
+                            <Link to={`/superstar-admin/souvenir/confirm-or-edit-auction`}>
                         <button type='submit' className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
+                            </Link>
                         </div>
                     </form>
                 </div>
