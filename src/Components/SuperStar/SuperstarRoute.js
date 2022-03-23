@@ -81,6 +81,7 @@ import AcceptedFan from './Pages/FanGroupStar/Content/AcceptedFan';
 import RejectedFan from './Pages/FanGroupStar/Content/RejectedFan';
 import InvitationFan from './Pages/FanGroupStar/Content/InvitationFan';
 import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
+import InvitationDetails from './Pages/FanGroupStar/Content/InvitationDetails';
 
 
 
@@ -166,6 +167,8 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-rejected', exact: true, name: 'fan-group-rejected', component: RejectedFan },
     { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
     { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
+    { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
+    
 
     // Souvenir 
 
