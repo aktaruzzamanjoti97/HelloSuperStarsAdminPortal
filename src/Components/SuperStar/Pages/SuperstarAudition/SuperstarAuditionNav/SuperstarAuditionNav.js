@@ -1,9 +1,28 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import Live from '../../../../../assets/images/instagram-live 1.png';
 import Pending from '../../../../../assets/images/pending 2.png';
+import axios from 'axios';
 
 const SuperstarAuditionNav = () => {
+
+    const [pedingAudition,setPendingAudition] = useState([]);
+
+    useEffect(() => {
+        axios.get("/api/superstar/audition/pendings").then((res) => { 
+          if (res.data.status === 200) {
+            setPendingAudition(res.data.pending_auditions);
+    
+            console.log('star pending audition',res.data.pending_auditions);
+          }
+        });
+    
+      }, []);
+
+      function pad(d) {
+        return (d < 10) ? '0' + d.toString() : d.toString();
+      }
+
     return (
         <>
             <div className=" row ">
@@ -38,12 +57,12 @@ const SuperstarAuditionNav = () => {
                                         <img src={Pending} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className="ad-card-small">00</small>
+                                        <small className="ad-card-small">{pad(pedingAudition.length)}</small>
                                     </td>
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/superstar/auditions/pending'>
+                        <Link to={`/superstar/auditions/pending/${pedingAudition.id}`}>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Pending Audition
