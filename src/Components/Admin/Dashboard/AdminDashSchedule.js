@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Slider from "react-slick";
-import { Link, useHistory } from 'react-router-dom'
-import Session from "../../../assets/images/email.png";
 import axios from "axios";
-import swal from 'sweetalert';
 import moment from 'moment';
+import React, { useEffect, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import Slider from "react-slick";
+import Session from "../../../assets/images/email.png";
 
 const AdminDashSchedule = () => {
 var settings = {
@@ -76,7 +75,7 @@ return (
                     <div className="card-body">
                         <center>
                             <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                            <div class="centeredImgC fw-bold  mt-2">23</div>
+                            <div class="centeredImgC fw-bold  mt-2">25</div>
                         </center>
                     </div>
                     <Link to='/superstar-admin/dashboard/event-list' className='LinkEventSchedule'>
@@ -97,7 +96,7 @@ return (
                     <div className="card-body">
                         <center>
                             <img src={Session} className="img-fluid ADImgSchedule" alt="" />
-                            <div class="centeredImgC fw-bold  mt-2">23</div>
+                            <div class="centeredImgC fw-bold  mt-2">25</div>
                         </center>
                     </div>
                     <div className="d-flex justify-content-center ApprovedAdSchedule">
@@ -116,7 +115,7 @@ return (
                         </center>
                     </div>
                     <div className="d-flex justify-content-center ApprovedAdSchedule">
-                        <p className="fw-bold mt-4">March , 2022</p>
+                        <p className="fw-bold mt-4">March , 2021</p>
                     </div>
                 </div>
                 </Link>
