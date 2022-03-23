@@ -20,7 +20,7 @@ const AuditionsStar = () => {
           if (res.data.status === 200) {
             setAudition(res.data.pending_auditions);
     
-            console.log('star pending audition',res.data.pending_auditions);
+            //console.log('star pending audition',res.data.pending_auditions);
           }
         });
     

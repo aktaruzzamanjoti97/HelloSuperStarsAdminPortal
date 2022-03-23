@@ -50,7 +50,7 @@ const openModal = (data) => {
       axios.get(`/api/admin/liveBidding/auction/${id}`).then((res) => {
   
         if (res.status === 200) {
-          console.log('from api data',res.data.bidding)
+          //console.log('from api data',res.data.bidding)
           setPendingBidding(res.data.bidding);
    
         }
