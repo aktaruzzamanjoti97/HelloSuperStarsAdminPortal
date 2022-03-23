@@ -17,6 +17,7 @@ import SettingsFan from "./FanBaseStarComponents/SettingsFan";
 import FanBaseGroupStar from "./FanBaseStarComponents/FanBaseGroupStar";
 import FanBaseMessengerStar from "./FanBaseStarComponents/FanBaseMessengerStar";
 import ApproveComponenStart from "./FanBaseStarComponents/ApproveComponentStar";
+import FanBaseHomeStar from "./FanBaseStarComponents/FanBaseHomeStar";
 
 const FanBaseStar = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
@@ -127,7 +128,7 @@ const FanBaseStar = () => {
 
                     <Tab.Content className=" my-2">
                       <Tab.Pane eventKey="first">
-                        {/* <FanBaseHome /> */}
+                        <FanBaseHomeStar />
                       </Tab.Pane>
                       <Tab.Pane eventKey="second">
                         {/* <FanBaseMedia /> */}
