@@ -1,0 +1,28 @@
+/* .slickCard {
+    width: 360px !important;
+    margin-right: 5px;
+  } */
+
+/* .slickSliderWidth {
+    width: 360px !important;
+  } */
+
+.slider-width {
+  width: 98% !important;
+}
+
+.slick-parent .slick-prev.slick-disabled:before,
+.slick-parent .slick-next.slick-disabled:before {
+  /* opacity: 0.25; */
+  display: none !important;
+}
+
+.slick-parent .slick-next:before {
+  /* content: '→'; */
+  display: none !important;
+}
+
+.completedMeetupBlack {
+  background-color: #151515;
+  border-radius: 10px;
+}

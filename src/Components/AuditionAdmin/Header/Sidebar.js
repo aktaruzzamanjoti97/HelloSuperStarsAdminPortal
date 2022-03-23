@@ -68,10 +68,10 @@ const Sidebar = () => {
                             </Link>
                             <Link className="nav-link" to="/superstar-admin/progressbar">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                                Progress Bar
+                                Progress BarF
                             </Link> */}
 
-                            <Link className="nav-link" to="/superstar-admin/audition">
+                            <Link className="nav-link" to="/audition-admin/audition">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Audition
                             </Link>
