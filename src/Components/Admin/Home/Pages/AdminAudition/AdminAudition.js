@@ -26,7 +26,6 @@ const AdminAudition = () => {
 
     return (
         <div className="AS">
-            {/* <MeetUpEventNave /> */}
 
             <div className="greetingsFormBorder">
                 <div className="greetingsPadding addMeetUpPadding">
@@ -130,9 +129,9 @@ const AdminAudition = () => {
 
 
                         <div className="mt-3">
-                            <Link to="/superstar-admin/meetup-events">
+                            {/* <Link to="/superstar-admin/meetup-events"> */}
                                 <button className="btn btn-warning save-greetings-button py-2"><big><b>Confirm</b></big></button>
-                            </Link>
+                            {/* </Link> */}
 
                         </div>
                     </form>

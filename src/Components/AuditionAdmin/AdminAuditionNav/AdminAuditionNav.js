@@ -11,7 +11,7 @@ const AdminAuditionNav = () => {
     const [pending,setPending] = useState('');
 
     useEffect(() => {
-        axios.get('/api/admin/audition/status').then((res) => {
+        axios.get('/api/audition-admin/audition/status').then((res) => {
           if (res.data.status === 200) {
             setLive(res.data.live);
             setPending(res.data.pending);

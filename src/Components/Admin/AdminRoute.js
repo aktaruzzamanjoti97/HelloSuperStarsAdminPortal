@@ -132,6 +132,7 @@ import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetween
 import AdminApprovedFanGroup from "./Home/Pages/AdminFanGroup/AdminApprovedFanGroup/AdminApprovedFanGroup";
 import AdminPendingFanGroup from "./Home/Pages/AdminFanGroup/AdminPendingFanGroup/AdminPendingFanGroup";
 import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/EditPendingFanGroup";
+import AddJuryBoard from "./Home/Pages/AddJuryBoard/AddJuryBoard";
 
 
 
@@ -226,7 +227,7 @@ const AdminRoute = [
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
     // Jury Board routes
-    // { path: '/superstar-admin/superstars', exact: true, name: 'JuryBoard', component: JuryBoard },
+    // { path: '/superstar-admin/jury-board', exact: true, name: 'jury-board', component: AddJuryBoard },
     
 
     // MeetUp Event Route

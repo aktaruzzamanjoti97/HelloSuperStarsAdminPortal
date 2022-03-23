@@ -10,7 +10,6 @@ import EnterImage from '../../../assets/images/enter 1.png'
 
 const CompleteAuditionSlider = () => {
 
-    const [meetupEvents, setMeetupEvents] = useState([]);
 
     var settings = {
         dots: true,
@@ -48,18 +47,7 @@ const CompleteAuditionSlider = () => {
     };
 
     // Fetch Stars Added By Admin
-    useEffect(() => {
-
-        axios.get(`/api/admin/meetup_event/approved`).then(res =>{
-
-          if(res.status === 200)
-          {
-            setMeetupEvents(res.data.meetup);
-            //console.log(res.data.category);
-          }
-        });
-
-    }, []);
+   
 
     return (
         <div>
@@ -67,17 +55,17 @@ const CompleteAuditionSlider = () => {
             <div className="slick-parent d-flex justify-content-center">
                 <Slider className="slider-width" {...settings}>
 
-                    {meetupEvents.map((event, index) => (
+
 
                         <div className="p-3">
                             <div className="completedMeetupBlack">
-                                <img src={`http://localhost:8000/${event.banner}`} className="img-fluid" alt="" style={{ height: '200px' }} />
+                                <img src="" className="img-fluid" alt="" style={{ height: '200px' }} />
                                 <div className="p-3">
                                     <div className="d-flex justify-content-between">
-                                        <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}>
-                                            <h5 className="text-white">{event.title}</h5>
-                                        </Link>
-                                        <img className="img-fluid" src={EnterImage} alt="" />
+                                        {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
+                                            <h5 className="text-white">title</h5>
+                                        {/* </Link> */}
+                                        <img className="img-fluid" src="" alt="" />
                                     </div>
 
                                     <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
@@ -87,7 +75,7 @@ const CompleteAuditionSlider = () => {
                             </div>
                         </div>
 
-                    ))}
+              
 
 
                 </Slider>
