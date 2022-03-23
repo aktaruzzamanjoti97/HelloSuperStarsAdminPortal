@@ -2,6 +2,7 @@ import React from 'react';
 import fanbase from '../../../../../../assets/images/Fanbase-img/fanBaseApprove/c7mgygu5 1.png';
 import fanbase1 from '../../../../../../assets/images/Fanbase-img/fanBaseGroup/1.png';
 import { DropdownButton,Dropdown } from 'react-bootstrap';
+import DeclineModalStar from './DeclineModalStar';
 // import './ApproveComponenStart.css'
 // import DeclineModal from './DeclineModal';
 const ApproveComponenStart = () => {
@@ -47,11 +48,11 @@ return (
 
                                 </div>
                                 <div className="col-6 text-center">
-                                    {/* <button className='btn approve-btn2 w-100 text-light py-3' onClick={()=>
+                                    <button className='btn approve-btn2 w-100 text-light py-3' onClick={()=>
                                         setModalShow(true)} ><i class="fa fa-ban mx-1"
                                             aria-hidden="true"></i>Decline</button>
-                                    <DeclineModal show={modalShow} onHide={()=> setModalShow(false)}
-                                        /> */}
+                                    <DeclineModalStar show={modalShow} onHide={()=> setModalShow(false)}
+                                        />
                                 </div>
                             </div>
                         </div>
