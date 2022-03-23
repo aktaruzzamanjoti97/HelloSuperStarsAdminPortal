@@ -76,12 +76,18 @@ import SuperstarEditMarketPlaceForm from './Pages/Superstar-Souvenir/SuperstarEd
 import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductList/SuperstarProductList';
 import SuperstarAuditionPending from './Pages/SuperstarAudition/SuperstarAuditionPending/SuperstarAuditionPending';
 import SuperstarAudition from './Pages/SuperstarAudition/SuperstarAudition';
+
+
+
+
 import FanGroupHome from './Pages/FanGroupStar/FanGroupHome';
 import AcceptedFan from './Pages/FanGroupStar/Content/AcceptedFan';
 import RejectedFan from './Pages/FanGroupStar/Content/RejectedFan';
 import InvitationFan from './Pages/FanGroupStar/Content/InvitationFan';
-import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
+
 import InvitationDetails from './Pages/FanGroupStar/Content/InvitationDetails';
+import FanbaseAdmin1 from '../Admin/FanbaseGroup/FanbaseAdmin1';
+import AcceptedDetails from './Pages/FanGroupStar/Content/AcceptedDetails';
 
 
 
@@ -166,9 +172,13 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-accepted', exact: true, name: 'fan-group-accepted', component: AcceptedFan },
     { path: '/superstar/fan-group-rejected', exact: true, name: 'fan-group-rejected', component: RejectedFan },
     { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
-    { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
+    { path: '/superstar/fan-group/accepted', exact: true, name: 'accepted', component: AcceptedDetails },
     { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
-    
+
+
+    { path: '/superstar/fan-group/home', exact: true, name: 'details', component: FanbaseAdmin1 },
+
+    // FanbaseAdmin1
 
     // Souvenir 
 

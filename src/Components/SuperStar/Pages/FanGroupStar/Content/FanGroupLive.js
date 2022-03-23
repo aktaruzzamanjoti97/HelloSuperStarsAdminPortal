@@ -23,7 +23,7 @@ const FanGroupLive = () => {
         <div className="row my-3">
           <div className="col-md-9">
             <div className="bgBlurDiv d-flex justify-content-end align-items-end">
-              <Link to="">
+              <Link to="/superstar/fan-group/home">
                 {" "}
                 <button className="btn btn-warning enterBtn fw-bold py-2 px-4 m-5">
                   Enter

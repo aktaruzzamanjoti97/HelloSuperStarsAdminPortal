@@ -68,5 +68,42 @@
   }
 
 
+  .BannerFan{
+    width: 100vw !important;
+    height: 30vh !important;
+    object-fit: cover !important;
+  }
 
+  .FanAccepted{
+    border: 1px solid gold;
+  }
+
+
+  .BtnFanAccepted{
+    background-color: aquamarine !important;
+  }
+
+  .BtnFanAccepted:hover{
+    background-color: rgb(252, 214, 89) !important;
+  }
+
+
+
+  .SlamanFanImg{
+    width:45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    
+}
+
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1400px) {
+  .StarAdmin2{
+    font-size: 15px !important;
+  }
+}
   
