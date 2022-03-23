@@ -26,7 +26,6 @@ const FanBaseMediaStar = () => {
                        </div>
                        })}
                    </div>
-                   
                </div>
            </div>
         </div>

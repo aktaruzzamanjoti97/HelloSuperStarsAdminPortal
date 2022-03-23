@@ -7,7 +7,6 @@ import HomeFanLive from './Content/HomeFanLive';
 const FanGroupHome = () => {
 return (
 <>
-  <div className="ms-4">
     <FanGroupNav />
     <div className="mt-2 liveMeetupBorder py-3 ps-3  ">
       <div className="d-flex">
@@ -16,8 +15,6 @@ return (
       </div>
       <HomeFanLive />
     </div>
-
-  </div>
 </>
 )
 }
