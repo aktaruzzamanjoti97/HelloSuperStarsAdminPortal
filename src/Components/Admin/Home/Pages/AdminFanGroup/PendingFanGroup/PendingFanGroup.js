@@ -1,4 +1,8 @@
 import React from "react";
+import {
+  buildStyles,
+  CircularProgressbarWithChildren,
+} from "react-circular-progressbar";
 import { Link, useHistory } from "react-router-dom";
 import Ayushman from "../../../../../../assets/images/AyshmanKhurana.webp";
 import FanGroupIcon from "../../../../../../assets/images/iconFan/expired-1.png";
@@ -53,42 +57,68 @@ const PendingGroup = () => {
       </div>
 
       <div className="d-flex flex-wrap my-4">
-        <div className="mx-2">
-          <div className="bgStar">
-            <img className="img-fluid" src={Ayushman} alt="" />
-            <div className="m-2">
-              <p>
-                {" "}
-                <big className="text-light fw-bolder">Auyshman Khurana</big>
-              </p>
-              <p>
-                <small>
-                  <span className="text-muted">Status</span>:{" "}
-                  <i className="text-muted">Pending</i>
-                </small>
-              </p>
-              <button className="btn btn-secondary w-100">Render Group</button>
+        <div className="col-md-8 d-flex">
+          <div className="mx-2">
+            <div className="bgStar">
+              <img className="img-fluid" src={Ayushman} alt="" />
+              <div className="m-2">
+                <p>
+                  {" "}
+                  <big className="text-light fw-bolder">Auyshman Khurana</big>
+                </p>
+                <p>
+                  <small>
+                    <span className="text-muted">Status</span>:{" "}
+                    <i className="text-muted">Pending</i>
+                  </small>
+                </p>
+                <button className="btn btn-secondary w-100">
+                  Render Group
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-3">
+            <div className="bgStar ">
+              <img className="img-fluid" src={Salman} alt="" />
+              <div className="m-2">
+                <p>
+                  {" "}
+                  <big className="text-light fw-bolder">Salman Khan</big>
+                </p>
+                <p>
+                  <small>
+                    <span className="text-secondary">Status</span>:{" "}
+                    <i className="text-warning">Accepted</i>
+                  </small>
+                </p>
+                <button onClick={handleClick} className="btn btn-warning w-100">
+                  Render Group
+                </button>
+              </div>
             </div>
           </div>
         </div>
-
-        <div className="mx-3">
-          <div className="bgStar ">
-            <img className="img-fluid" src={Salman} alt="" />
-            <div className="m-2">
-              <p>
-                {" "}
-                <big className="text-light fw-bolder">Salman Khan</big>
-              </p>
-              <p>
-                <small>
-                  <span className="text-secondary">Status</span>:{" "}
-                  <i className="text-warning">Accepted</i>
-                </small>
-              </p>
-              <button onClick={handleClick} className="btn btn-warning w-100">
-                Render Group
-              </button>
+        <div className="col-md-4">
+          <div className="" style={{ borderLeft: "1px dashed yellow" }}>
+            <h5 className="text-light text-center my-3">Status</h5>
+            <div className="d-flex justify-content-center align-items-center ">
+              <div style={{ width: 200, height: 200 }}>
+                <CircularProgressbarWithChildren
+                  value={50}
+                  styles={buildStyles({
+                    pathColor: `gold`,
+                  })}
+                >
+                  <div style={{ fontSize: 12, marginTop: -5 }}>
+                    <strong className="text-light">50% complete</strong>
+                  </div>
+                </CircularProgressbarWithChildren>
+                <p className="text-warning text-center my-2">
+                  Approve by Sakib Al Hasan
+                </p>
+              </div>
             </div>
           </div>
         </div>
