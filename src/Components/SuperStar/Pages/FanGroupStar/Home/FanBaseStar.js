@@ -1,6 +1,6 @@
 import React from "react";
 // import "./FanBaseStar.css";
-import fanBanner from "../../../assets/images/Fanbase-img/Fanbasebanner.jpg";
+import fanBanner from "../../../../../assets/images/Fanbase-img/Fanbasebanner.jpg";
 import { Tab, Nav } from "react-bootstrap";
 import FanBaseHome from "./FanBaseComponents/FanBaseHome";
 import FanBaseGroup from "./FanBaseComponents/FanBaseGroup";
