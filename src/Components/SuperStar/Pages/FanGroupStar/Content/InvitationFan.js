@@ -1,8 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
-import Bang from '../../../../../assets/images/1ukfvg1a.png';
-import LeMerridian from "../../../../../assets/images/MeetupImages/unsplash_xEaAoizNFV8.png";
+import Bang from '../../../../../assets/images/Fanbase-img/9.png';
+
 import Session from "../../../../../assets/images/email.png";
 import FanGroupNav from "../FanGroupNav";
 
