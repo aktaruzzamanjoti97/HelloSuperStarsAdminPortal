@@ -1,5 +1,5 @@
 import './App.css';
-import {  BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {  BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 import './Components/Admin/Adminlogin.css'
 import VideoCall from './VideoCall'
@@ -8,10 +8,12 @@ import VideoCall from './VideoCall'
 // Main Layout
 import AdminLayout from './Components/Admin/MasterLayout';
 import StarLayout from './Components/SuperStar/MasterLayout';
+import AuditionAdminLayout from './Components/AuditionAdmin/MasterLayout';
 
 
 //Private Route
 import AdminPrivateRoute from './Components/PrivateRoute/AdminPrivateRoute';
+import AuditionAdminPrivateRoute from './Components/PrivateRoute/AuditionAdminPrivateRoute';
 import SuperStarRoute from "./Components/PrivateRoute/SuperStarRoute";
 
 
@@ -21,6 +23,10 @@ import AdminLogin from "./Components/Admin/AdminLogin";
 import AdminRegistration from './Components/Admin/AdminRegistratoin';
 import AdminOTP from "./Components/Admin/AdminOTP";
 import AdminPannel from './Components/Admin/AdminPannel';
+
+
+// Indevidual Route for Audion Admin
+import AuditionAdminOTP from './Components/AuditionAdmin/AdminOTP'
 
 // Indevidual Route for Star
 import SuperStarQR from './Components/SuperStar/SuperStarQR';
@@ -32,12 +38,9 @@ import SuperStarRegistrationOTP from './Components/SuperStar/SuperStarRegistrati
 // Extra New Route
 import RegisterLeftCard from './Components/Admin/Home/Pages/LiveChatSpStar/RegisterUser/component/RegisterLeftCard';
 import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
-// import SuperstarGreetings from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetings';
-// import SuperstarGreetingsForm from './Components/Admin/Home/Pages/SuperstarGreetings/SuperstarGreetingsForm/SuperstarGreetingsForm';
+
 
 import NotFound from './Components/Pages/Errors/Error';
-
-
 
 
 // Connect with Backend with Laravel Sanctum Authentication //
@@ -69,16 +72,15 @@ return (
       <Route exact path='/superstar-admin/registration' component={AdminRegistration} />
       <Route exact path='/superstar-admin/otp' component={AdminOTP} />
 
-      {/*
-      <Route exact path='/superstar-admin/greetings' component={SuperstarGreetings} />
-      <Route exact path='/superstar-admin/greetings/greetingsForm' component={SuperstarGreetingsForm} />
-      */}
-
       {/* Indevidual SuperStar Route */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
       <Route exact path='/superstar/qr' component={SuperStarQR} />
       <Route exact path='/superstar/otp' component={SuperStarOTP} />
       <Route exact path='/superstar_registration/otp' component={SuperStarRegistrationOTP} />
+
+      {/* Indevidual Admin Route */}
+      <Route exact path='/audition-admin/otp' component={AuditionAdminOTP} />
+
 
       <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
       <Route exact path='/videoCall' component={VideoCall} />
@@ -90,8 +92,11 @@ return (
       {/* Private Route with Main Layout */}
       <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
       <SuperStarRoute path="/superstar" name="SuperStar" render={(props) => <StarLayout {...props} />} />
+      <AuditionAdminPrivateRoute path="/audition-admin" name="audition-admin-private-route" render={(props) => <AuditionAdminLayout {...props} />} />
 
       <Route exact path='/learning-session/live-stream' component={VideoCall} />
+
+
 
 
       {/* Error Route */}

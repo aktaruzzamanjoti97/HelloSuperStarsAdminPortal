@@ -1,0 +1,20 @@
+.dropDownMarketPlaece .btn-primary {
+    /* color: #5E6975; */
+    background-color: #212529 !important;
+    /* border-color: none !important; */
+    border: none !important
+    
+}
+
+.marktePlaceOrderTxt{
+    text-decoration: none !important;
+}
+.badgeDanger{
+    background-color: black;
+}
+.badgeInfo{
+    background-color: blueviolet;
+}
+.badgeSuccess{
+    background-color: burlywood;
+}

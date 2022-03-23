@@ -1,0 +1,6 @@
+.decline-form ::placeholder{
+    color: white !important;
+}
+.decline-form textarea{
+    color: white !important;
+}

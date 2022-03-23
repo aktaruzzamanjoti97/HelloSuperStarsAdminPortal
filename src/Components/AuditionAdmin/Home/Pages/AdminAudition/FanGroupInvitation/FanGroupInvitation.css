@@ -1,0 +1,72 @@
+.invitationBg {
+  background-image: url("../../../../../../assets/images/fanGroup/Group3811.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid goldenrod;
+  border-radius: 15px;
+  border-radius: 15px;
+  min-height: 85vh;
+}
+
+.vertical-line {
+  border-left: 3px solid goldenrod;
+  height: 15vh;
+}
+
+.vertical-line2 {
+  border-left: 3px solid #ddd;
+  height: 5vh;
+}
+
+.starImg {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.invitationHeader {
+  font-size: 80px;
+  background: linear-gradient(
+    102.45deg,
+    #f5ea45 28.52%,
+    #dda336 52.38%,
+    #e7a725 72.31%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shahrukhTxt {
+  font-size: 45px;
+  font-weight: 200;
+}
+
+.bollywoodTxt {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.loremDammy {
+  color: lightgray;
+}
+
+.acceptBtn {
+  border: 2px solid white !important;
+  color: black;
+  width: 12rem;
+  background: linear-gradient(
+    102.45deg,
+    #f5ea45 28.52%,
+    #dda336 52.38%,
+    #e7a725 72.31%
+  );
+  padding: 10px !important;
+  margin: 15px;
+  background-color: #2d2d2d;
+  border-radius: 15px !important;
+}
+
+.acceptBtn:hover {
+  background-color: black;
+  color: goldenrod !important;
+}

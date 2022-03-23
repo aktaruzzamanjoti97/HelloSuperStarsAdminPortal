@@ -38,15 +38,20 @@ const AdminLogin = () => {
                         localStorage.setItem('auth_phone', res.data.phone);
                         localStorage.setItem('auth_type', res.data.role);
                          
-                        if(res.data.role == 'admin')
+                        if(res.data.role === 'admin')
                         {
                             swal("Welcome",res.data.message,"success");
                             history.push('/superstar-admin/otp');
                         }
-                        if(res.data.role == 'star')
+                        if(res.data.role === 'star')
                         {
                             swal("Welcome",res.data.message,"success");
                             history.push('/superstar/otp');
+                        }
+                        if(res.data.role === 'audition-admin')
+                        {
+                            swal("Welcome",res.data.message,"success");
+                            history.push('/audition-admin/otp');
                         }
                         
                     }

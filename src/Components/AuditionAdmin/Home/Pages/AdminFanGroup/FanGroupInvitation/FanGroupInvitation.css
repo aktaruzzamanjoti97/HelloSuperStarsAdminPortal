@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Zen+Dots&display=swap");
+
+.invitationHeader {
+  font-family: "Alex Brush", cursive;
+  font-family: "Zen Dots", cursive;
+  color: goldenrod;
+  font-size: 82px;
+}
+
+.starImg {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.vertical-line {
+  border-left: 3px solid lightgray;
+  height: 15vh;
+}
+
+.shahrukhTxt {
+  font-size: 52px;
+  font-weight: 200;
+}
+
+bollywoodTxt {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.starDummy {
+  width: 35rem !important;
+}
+
+.loremDammy {
+  color: lightgray;
+}
+
+.invitationBg {
+  background-image: url("../../../../../../assets/images/fanGroup/Group3811.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid goldenrod;
+  min-height: 80vh;
+  border-radius: 10px;
+}
+
+.vertical-line2 {
+  border-left: 2px solid lightgray;
+  height: 20px;
+}
+
+.actDlt {
+  border: 2px solid #ddd !important;
+  width: 12rem;
+  padding: 10px !important;
+  margin: 15px;
+  background-color: goldenrod !important;
+  border-radius: 15px !important;
+}

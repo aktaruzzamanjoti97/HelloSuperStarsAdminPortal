@@ -1,0 +1,24 @@
+.NotifyBGModal {
+  border: 2px solid goldenrod;
+  background-color: rgb(61, 60, 60);
+  outline: none;
+  border-radius: 5px;
+}
+
+.NotifyMobtn {
+  float: right;
+}
+
+.moNotifyAd {
+  background-color: gray;
+}
+
+.NotImgMo {
+  width: 20px;
+}
+
+.sms-body {
+  background-color: black;
+  color: goldenrod;
+  border-radius: 10px;
+}

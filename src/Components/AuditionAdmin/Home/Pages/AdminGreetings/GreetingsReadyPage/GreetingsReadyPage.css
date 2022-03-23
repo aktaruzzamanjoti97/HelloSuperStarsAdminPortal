@@ -1,0 +1,45 @@
+.wishfulBanner {
+  width: 100%;
+  height: auto;
+  object-fit: cover !important;
+  border: 2px solid #ffd910;
+}
+
+.wishfulMessages {
+  /* border: 1px solid red; */
+  padding: 2rem;
+  background-color: #252525;
+  border-radius: 10px;
+}
+
+.costDisplay {
+  background-color: #252525;
+  border-radius: 10px;
+  /* width: 5vw; */
+}
+
+.funnelDollar {
+  font-size: 2.5rem;
+  color: #ffb00a;
+}
+
+.costParaTag {
+  padding-bottom: 0rem !important;
+}
+
+.greetingsNextButton {
+  width: 10vw;
+  padding: 0.8rem 0;
+  color: #b7b7b7;
+  border: none !important;
+  background: #4f4f4f;
+  border-radius: 10px;
+}
+
+.greetingsEditButton {
+  width: 10vw;
+  padding: 0.8rem 0;
+  background: #4f4f4f;
+  border: none !important;
+  border-radius: 10px;
+}

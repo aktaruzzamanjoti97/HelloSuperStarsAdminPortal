@@ -1,0 +1,153 @@
+
+
+
+/* Messenger */
+.MessengerBody{
+    background-color: #212121;
+    border-radius: 5px 5px 0px 0px;
+    position: relative;
+    border-top:1px solid rgb(134, 134, 134, 0.829) ;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+
+}
+
+
+
+.PicMessenger{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.top-right-messenger {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    
+  }
+.messengerUser{
+    font-size: smaller;
+}
+
+
+
+.MessengerText{
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.MessengerText::-webkit-scrollbar {
+    width: 0px;
+  }
+
+.PicLeftMessage{
+    width: 2.59rem;
+    height: 2.59rem;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-right: 2px;
+}
+
+.textColMa{
+    font: var(--unnamed-font-style-normal) normal medium 20px/30px var(--unnamed-font-family-poppins);
+    text-align: left;
+    font: normal normal medium 20px/30px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    background: transparent linear-gradient(290deg, #00A791 0%, #00E479 100%) 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    /* width: 100%; */
+    margin-left: 20px !important;
+
+}
+
+.textColMaR{
+    font: var(--unnamed-font-style-normal) normal medium 20px/30px var(--unnamed-font-family-poppins);
+    text-align: left;
+    font: normal normal medium 20px/30px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    background: transparent linear-gradient(110deg, #FE00F4 0%, #5025FE 100%) 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    /* width: 100%; */
+    margin-right: 10px !important;
+    margin-left: 20px !important;
+
+}
+
+.MessengerText{
+    background-color: #2C2C2C;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+}
+
+
+.timeTextMa{
+    width: 7vw;
+    position: relative;
+}
+
+.TexMessage{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: xx-small;
+    text-align: end;
+}
+
+.IconMessageT{
+    cursor: pointer;
+}
+
+.MessageWidth{
+    width: 100%;
+    border: 1px solid rgb(134, 134, 134, 0.829) ;
+    background-color: #2C2C2C;
+    border-radius: 30px;
+    color: white;
+    font-size: small;
+}
+
+@media only screen and (max-width: 1400px) {
+    .textColMa{
+        
+        margin-left: 25px !important;
+        
+    }
+    .MessageWidth{
+        margin-left: 10px;
+    }
+    .TexMessage{
+        
+        font-size: 7.5px;
+    }
+    .textColMa{
+        font-size: 13px;
+    }
+    
+    .textColMaR{
+       font-size: 13px;
+       width: 90%;
+      
+    }
+    .SendT{
+        margin-right: 20px;
+    }
+  }
+
+  .MessengerFooter{
+    background-color: #212121;
+    border-radius:  0px 0px 5px 5px;
+    position: relative;
+    justify-content: space-between;
+    border-bottom:1px solid rgba(134, 134, 134, 0.829) ;
+    border-left:1px solid rgb(134, 134, 134, 0.829) ;
+    border-right:1px solid rgb(134, 134, 134, 0.829) ;
+}
+
+
+

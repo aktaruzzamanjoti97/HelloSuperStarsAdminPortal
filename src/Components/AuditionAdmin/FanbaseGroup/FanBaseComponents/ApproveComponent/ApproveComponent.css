@@ -1,0 +1,30 @@
+.approve-btn{
+    background: linear-gradient(93.4deg, #13DC93 -26.99%, #0FCA17 119.28%);
+    border-radius: 5px;
+}
+.approve-btn2{
+    background: linear-gradient(93.4deg, #FF6B00 -26.99%, #EC6214 119.28%);
+border-radius: 5px;
+}
+
+.starDropdown .dropdown-menu {
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    left: -7rem !important;
+    margin: 0;
+    font-size: 1rem;
+    color: white !important;
+    text-align: left;
+    list-style: none;
+    background-color: black !important;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+}
+.starDropdown .dropdown-toggle::after {
+    display: none !important; 
+  }
+  

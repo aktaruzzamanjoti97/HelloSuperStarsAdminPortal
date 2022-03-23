@@ -1,0 +1,18 @@
+/* .liveFilterImage {
+  background-image: url("../../../../../../assets/images/liveVideoUpload.PNG");
+  background-size: cover;
+  min-height: 35vh;
+  background-repeat: no-repeat;
+} */
+
+.videoFilterIcon {
+  font-size: 40px;
+}
+
+.filterTxt {
+  font-size: 25px;
+}
+
+.filterIcon {
+  font-size: 25px;
+}
