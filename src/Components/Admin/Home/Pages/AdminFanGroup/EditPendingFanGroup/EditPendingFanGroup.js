@@ -7,16 +7,15 @@ import { convertToHTML } from "draft-convert";
 import { EditorState } from "draft-js";
 import React, { useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
-import "./CreateFanGroup.css";
 
-const CreateFanGroup = () => {
+const EditPendingFanGroup = () => {
   const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
 
   const [file, setFile] = useState("");
   const [imagedata, setImagedata] = useState("");
 
   const handleImageChange = (file) => {
-    console.log('This is image file',file[0]);
+    console.log("This is image file", file[0]);
     // setFile(URL.createObjectURL(file[0]));
     setImagedata(file[0]);
   };
@@ -53,7 +52,7 @@ const CreateFanGroup = () => {
                 class="far fa-plus-square mx-2"
               ></i>
             </div>
-            <h3 className="text-warning text-bold">Create Fan Group</h3>
+            <h3 className="text-warning text-bold">Edit Fan Group</h3>
           </div>
 
           <form>
@@ -101,7 +100,9 @@ const CreateFanGroup = () => {
                     </Stack>
                   </LocalizationProvider>
                 </div>
-                <div className="col-md-1 d-flex justify-content-center"><span className='fw-bold text-light mt-3'>To</span></div>
+                <div className="col-md-1 d-flex justify-content-center">
+                  <span className="fw-bold text-light mt-3">To</span>
+                </div>
                 <div className="col-md-3 timeLengthPicker">
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
                     <Stack spacing={3}>
@@ -157,9 +158,8 @@ const CreateFanGroup = () => {
                 </select>
               </div>
             </div>
-{/* 
 
-            <div className="row my-4">
+            {/* <div className="row my-4">
               <div className="col-md-2">
                 <p className="text-white">Invite Star Admin</p>
               </div>
@@ -194,23 +194,20 @@ const CreateFanGroup = () => {
             </div>
 
             <div className="row my-4">
-            <div className="col-md-2">
+              <div className="col-md-2">
                 <p className="text-white">Upload Banner</p>
               </div>
               <div className="col-md-3">
-              <input
-                      type="file"
-                      name="file"
-                      id="file"
-                      className="inputfile"
-                      
-                    />
-                    <label for="file">
-                      <i class="fas fa-cloud-upload-alt"></i> Upload
-                    </label>
-               
+                <input
+                  type="file"
+                  name="file"
+                  id="file"
+                  className="inputfile"
+                />
+                <label for="file">
+                  <i class="fas fa-cloud-upload-alt"></i> Upload
+                </label>
               </div>
-          
             </div>
 
             <div className="mt-3">
@@ -230,4 +227,4 @@ const CreateFanGroup = () => {
   );
 };
 
-export default CreateFanGroup;
+export default EditPendingFanGroup;

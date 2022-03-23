@@ -131,6 +131,7 @@ import WelcomeSuperStarPrint from "./Home/Pages/WelcomSuperStarPrint/WelcomeSupe
 import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetweenStars/CompletionBetweenStars";
 import AdminApprovedFanGroup from "./Home/Pages/AdminFanGroup/AdminApprovedFanGroup/AdminApprovedFanGroup";
 import AdminPendingFanGroup from "./Home/Pages/AdminFanGroup/AdminPendingFanGroup/AdminPendingFanGroup";
+import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/EditPendingFanGroup";
 
 
 
@@ -282,6 +283,8 @@ const AdminRoute = [
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
     // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+    {path: '/superstar-admin/pending-fan-group-Edit-delete', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+    {path: '/superstar-admin/pending-fan-group-Edit', exact: true, name: 'pending-fan-group', component: EditPendingFanGroup},
     // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: AdminPe},
     {path: '/superstar-admin/pending-fan-group-competition', exact: true, name: 'pending-fan-group', component: CompletionBetweenStars},
     { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
