@@ -1,5 +1,5 @@
 import React from "react";
-// import "./FanBaseGroup.css";
+
 import img1 from "../../../../../../assets/images/Fanbase-img/fanBaseGroup/1.png";
 import img2 from "../../../../../../assets/images/Fanbase-img/fanBaseGroup/2.png";
 import img3 from "../../../../../../assets/images/Fanbase-img/fanBaseGroup/3.png";
