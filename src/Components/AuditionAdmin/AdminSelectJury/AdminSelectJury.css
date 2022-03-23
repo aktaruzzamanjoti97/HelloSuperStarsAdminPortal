@@ -1,0 +1,40 @@
+.juryName {
+  font-size: 25px;
+}
+
+.arafatPic {
+  border: 50%;
+  width: 55px;
+}
+
+.threeF {
+  background-color: #fffdcf;
+}
+
+.cFour {
+  background-color: #c4ffc5;
+}
+
+.ffdNine {
+  background-color: #ffd9dc;
+}
+
+.iconJury {
+  width: 45px;
+}
+
+.iconJuryText {
+  font-size: 42px;
+}
+.nameBg {
+  background: linear-gradient(
+    102.45deg,
+    #f5ea45 28.52%,
+    #dda336 52.38%,
+    #e7a725 72.31%
+  );
+}
+
+.cardBox {
+  width: 22rem;
+}
