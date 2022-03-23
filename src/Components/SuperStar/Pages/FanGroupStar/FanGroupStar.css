@@ -77,12 +77,15 @@
   }
 
   .FanAccepted{
-    border: 1px solid gold;
-  }
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 5px rgba(8, 10, 10, 0.247)  ;
+}
 
 
   .BtnFanAccepted{
     background-color: aquamarine !important;
+    width: 15vw;
   }
 
   .BtnFanAccepted:hover{
