@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
+import { Link } from "react-router-dom";
 import invitationImg from "../../../../../assets/images/iconFan/invitation2.png";
 import starImg from "../../../../../assets/images/starImg/shah-rukh-khan-01.webp";
 // import "./FanGroupInvitation.css";
@@ -76,7 +78,7 @@ const InvitationDetails = () => {
               <button className="btn btnDlt text-warning fw-bold">
                 Ignore
               </button>
-              <button className="btn btnDlt text-warning fw-bold">Edit</button>
+              <Link to='/superstar/fan-group-invitation/edit'><button className="btn btnDlt text-warning fw-bold">Edit</button></Link>
 
               <button className="btn actDlt text-dark fw-bold">Accept</button>
             
