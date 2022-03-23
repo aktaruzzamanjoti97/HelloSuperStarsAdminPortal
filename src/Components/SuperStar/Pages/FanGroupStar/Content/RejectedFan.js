@@ -66,9 +66,9 @@ return (
                         <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
-                                <img src={Bang} className="img-fluid BangFan" alt="" />
+                                <img src={Bang} className="BangFan" alt="" />
 
-                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <img src={Session} className="centeredFanIcon" alt="" />
                                 <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                                 <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -83,9 +83,9 @@ return (
                         <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
-                                <img src={Bang} className="img-fluid BangFan" alt="" />
+                                <img src={Bang} className="BangFan" alt="" />
 
-                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <img src={Session} className="centeredFanIcon" alt="" />
                                 <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                                 <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -100,27 +100,9 @@ return (
                         <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
-                                <img src={Bang} className="img-fluid BangFan" alt="" />
+                                <img src={Bang} className="BangFan" alt="" />
 
-                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
-                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
-                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
-
-                            </div>
-                            <div className="d-flex justify-content-center RejectedFan">
-                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
-                            </div>
-                        </div>
-                        </Link>
-                    </div>
-                    
-                    <div className="col-md-3">
-                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
-                        <div className="card bg-dark my-3 card-dashbord">
-                            <div className="card-body containerFan">
-                                <img src={Bang} className="img-fluid BangFan" alt="" />
-
-                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <img src={Session} className="centeredFanIcon" alt="" />
                                 <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                                 <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -136,9 +118,27 @@ return (
                         <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
                         <div className="card bg-dark my-3 card-dashbord">
                             <div className="card-body containerFan">
-                                <img src={Bang} className="img-fluid BangFan" alt="" />
+                                <img src={Bang} className="BangFan" alt="" />
 
-                                <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                                <img src={Session} className="centeredFanIcon" alt="" />
+                                <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
+                                <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
+
+                            </div>
+                            <div className="d-flex justify-content-center RejectedFan">
+                                <p className="fw-bold mt-4">22.03.22 to 25.03.22</p>
+                            </div>
+                        </div>
+                        </Link>
+                    </div>
+
+                    <div className="col-md-3">
+                        <Link to='/superstar/fan-group/rejected' className='LinkEventSchedule'>
+                        <div className="card bg-dark my-3 card-dashbord">
+                            <div className="card-body containerFan">
+                                <img src={Bang} className="BangFan" alt="" />
+
+                                <img src={Session} className="centeredFanIcon" alt="" />
                                 <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                                 <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 

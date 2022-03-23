@@ -40,7 +40,8 @@ slidesToScroll: 1,
 ],
 };
 return (
-<>
+<>    
+
 
     <div className="pb-3">
 
@@ -51,9 +52,9 @@ return (
                     <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                     <div className="card bg-dark my-3 card-dashbord">
                         <div className="card-body containerFan">
-                            <img src={Bang} className="img-fluid" alt="" />
+                            <img src={Bang} className="BangFan" alt="" />
 
-                            <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                            <img src={Session} className="centeredFanIcon" alt="" />
                             <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                             <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -68,9 +69,9 @@ return (
                     <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                     <div className="card bg-dark my-3 card-dashbord">
                         <div className="card-body containerFan">
-                            <img src={Bang} className="img-fluid" alt="" />
+                            <img src={Bang} className="BangFan" alt="" />
 
-                            <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                            <img src={Session} className="centeredFanIcon" alt="" />
                             <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                             <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -85,9 +86,9 @@ return (
                     <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                     <div className="card bg-dark my-3 card-dashbord">
                         <div className="card-body containerFan">
-                            <img src={Bang} className="img-fluid" alt="" />
+                            <img src={Bang} className="BangFan" alt="" />
 
-                            <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                            <img src={Session} className="centeredFanIcon" alt="" />
                             <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                             <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -102,9 +103,9 @@ return (
                     <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                     <div className="card bg-dark my-3 card-dashbord">
                         <div className="card-body containerFan">
-                            <img src={Bang} className="img-fluid" alt="" />
+                            <img src={Bang} className="BangFan" alt="" />
 
-                            <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                            <img src={Session} className="centeredFanIcon" alt="" />
                             <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                             <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
@@ -119,9 +120,9 @@ return (
                     <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
                     <div className="card bg-dark my-3 card-dashbord">
                         <div className="card-body containerFan">
-                            <img src={Bang} className="img-fluid" alt="" />
+                            <img src={Bang} className="BangFan" alt="" />
 
-                            <img src={Session} className="img-fluid ADImgSchedule centeredFanIcon" alt="" />
+                            <img src={Session} className="centeredFanIcon" alt="" />
                             <div class="centeredImgC fw-bold  mt-2 centeredFanITn">23</div>
                             <div class="centeredFanIText">Slaman Vs Shah Rukh</div>
 
