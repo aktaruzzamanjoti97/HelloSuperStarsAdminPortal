@@ -77,9 +77,6 @@ const ApprovedPost = () => {
       <div className="AS">
         <Nav></Nav>
 
-
-
-
         <div className="liveMeetupBorder my-5">
           <div className="d-flex px-4 pt-3">
             <div className="faTrophy">
@@ -118,8 +115,6 @@ const ApprovedPost = () => {
 
                           {/* <h5 className="text-white text-ellipsis Link" style={{ cursor: 'pointer' }} onClick={() => joinLive(event.room_id)}>{event.title}</h5> */}
 
-
-
                         </div>
 
                         <p className="text-secondary">
@@ -134,11 +129,6 @@ const ApprovedPost = () => {
             </div>
           </div>
         </div> 
-
-
-
-
-
 
       </div>
     </>
