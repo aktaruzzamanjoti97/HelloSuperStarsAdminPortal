@@ -132,9 +132,7 @@ import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetween
 import AdminApprovedFanGroup from "./Home/Pages/AdminFanGroup/AdminApprovedFanGroup/AdminApprovedFanGroup";
 import AdminPendingFanGroup from "./Home/Pages/AdminFanGroup/AdminPendingFanGroup/AdminPendingFanGroup";
 import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/EditPendingFanGroup";
-import AddJuryBoard from "./Home/Pages/AddJuryBoard/AddJuryBoard";
-import AdminJuryBoard from "./Home/Pages/AdminJuryBoard/AdminJuryBoard";
-import AdminJuryAgreementPaper from "./Home/Pages/AdminJuryBoard/AdminJuryAgreementPaper/AdminJuryAgreementPaper";
+
 
 
 
@@ -228,8 +226,7 @@ const AdminRoute = [
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
-    // Jury Board routes
-    // { path: '/superstar-admin/jury-board', exact: true, name: 'jury-board', component: AddJuryBoard },
+    
     
 
     // MeetUp Event Route
@@ -302,9 +299,7 @@ const AdminRoute = [
     { path: '/superstar-admin/videocall', exact: true, name: 'superstar-admin-learning-session-live-stream', component: LearningSessionLiveStream },
 
 
-    // @TODO: Admin Jury Board
-    { path: '/superstar-admin/jury-board', exact: true, name: 'audition-video-show2', component: AdminJuryBoard },
-    { path: '/superstar-admin/jury-board-agreement-paper', exact: true, name: 'audition-video-show2', component: AdminJuryAgreementPaper },
+    
 
     
 ];

@@ -55,16 +55,9 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Super Stars 
                             </Link>
-                            <Link className="nav-link" to="/superstar-admin/jury-board">
-                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                                Jury Board
-                            </Link>
+                           
 
-                            {/* <Link className="nav-link" to="/superstar-admin/jury-board">
-                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-                                Jury Board
-                            </Link> */}
-
+                           
                             <Link className="nav-link" to="/superstar-admin/live-chat">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Live Chat
