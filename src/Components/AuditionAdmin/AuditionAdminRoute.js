@@ -12,7 +12,7 @@ import PendingAudition from "./PendingAudition/PendingAudition";
 import AdminAuditionCreateEvent from "./AdminAuditionCreateEvent/AdminAuditionCreateEvent";
 import AdminAuditionLiveVideoFilter from "./AdminAuditionLiveVideoFilter/AdminAuditionLiveVideoFilter";
 import GrandFinish from "./Dashboard/Content/Finish/GrandFinish";
-import AuditionAdminSuperstars from "../Admin/Home/Pages/AdminJuryBoard/AdminJuryBoard";
+
 
 
 const AuditionAdminRoute = [
