@@ -1,29 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import "./";
+import axios from "axios";
+import { convertToHTML } from "draft-convert";
+import { EditorState } from "draft-js";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Modal } from "react-bootstrap";
+import { Editor } from "react-draft-wysiwyg";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { Link } from "react-router-dom";
 import AddUser from "../../../../../assets/images/AddUser/AddUser.png";
 import avatarImage from "../../../../../assets/images/profileAvatar/Avater.png";
-import "./AddJuryBoard.css";
-import AddJuryBoardModal from "./AddJuryBoardModal/AddJuryBoardModal";
-import axios from "axios";
-import swal from "sweetalert";
 
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState } from "draft-js";
-import { convertToHTML } from "draft-convert";
-
-const AddJuryBoard = () => {
-  const [filem, setFilem] = useState([]);
-
-  function deleteFile(e) {
-    const s = filem.filter((item, index) => index !== e);
-    setFilem(s);
-    console.log(s);
-  }
-
+const AdminJuryBoard = () => {
   const [loading, setLoading] = useState(true);
   const [file, setFile] = useState("");
   const [starList, setStarList] = useState([]);
@@ -40,12 +26,6 @@ const AddJuryBoard = () => {
     error_list: [],
   });
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    setRegister((prev) => {
-      return { ...prev, [name]: value };
-    });
-  };
   const selectState = (e) => {
     let value = e.target.value;
     var data = value;
@@ -117,7 +97,7 @@ const AddJuryBoard = () => {
         >
           <div className="avatar-img my-3 text-center">
             <img
-              src={`http://localhost:8000/${star.image}`}
+              src=""
               className="img-fluid avatar-img-src"
               alt="profile-pic"
               style={{ borderRadius: "50%" }}
@@ -132,11 +112,11 @@ const AddJuryBoard = () => {
                 textOverflow: "ellipsis",
               }}
             >
-              {star.first_name} {star.last_name}
+              Aktaruzzaman Joti
             </h5>
             <p className="text-white">Actress</p>
             <div className="parent-div">
-              <Link to={`/superstar-admin/agreement-paper/${star.id}`}>
+              <Link to="/superstar-admin/jury-board-agreement-paper">
                 <button className="btn btn-warning btn-upload">
                   <i className="fas fa-calendar-day mx-2"></i>
                   Details
@@ -148,41 +128,6 @@ const AddJuryBoard = () => {
       </span>
     ));
   }
-
-  const registerSubmit = (e) => {
-    e.preventDefault();
-
-    const fData = new FormData();
-
-    fData.append("image", imagedata);
-    fData.append("first_name", registerInput.first_name);
-    fData.append("last_name", registerInput.last_name);
-    fData.append("category_id", category);
-    fData.append("subcategory_id", registerInput.subcategory_id);
-    fData.append("terms&condition", convertedContent);
-
-    axios.get("/sanctum/csrf-cookie").then((response) => {
-      axios.post(`/api/star_register`, fData).then((res) => {
-        if (res.data.status === 200) {
-          swal("Success", res.data.message, "success");
-          setModalShow(false);
-          setRegister([]);
-          setImagedata("");
-
-          axios.get(`/api/admin/star_list`).then((res) => {
-            if (res.status === 200) {
-              setStarList(res.data.category);
-            }
-          });
-        } else {
-          setRegister({
-            ...registerInput,
-            error_list: res.data.validation_errors,
-          });
-        }
-      });
-    });
-  };
 
   return (
     <>
@@ -207,7 +152,7 @@ const AddJuryBoard = () => {
                 >
                   Add New
                 </button>
-                {/* <input type="file" className="btn" onChange={handleChange} /> */}
+                
               </div>
             </div>
           </Card.Body>
@@ -233,11 +178,7 @@ const AddJuryBoard = () => {
               </h1>
             </div>
             <div className="">
-              <form
-                onSubmit={registerSubmit}
-                id="input_form"
-                encType="multipart/form-data"
-              >
+              <form onSubmit="" id="input_form" encType="multipart/form-data">
                 <div className="row">
                   <div className="form-group mb-3">
                     <div className="row mx-auto mb-3">
@@ -252,9 +193,9 @@ const AddJuryBoard = () => {
                                 <input
                                   type="text"
                                   className="form-control reply-control input-overlay"
-                                  onChange={handleInput}
+                                  onChange=""
                                   name="first_name"
-                                  value={registerInput.first_name}
+                                  value=""
                                 />
                               </div>
 
@@ -265,9 +206,9 @@ const AddJuryBoard = () => {
                                 <input
                                   type="text"
                                   className="form-control reply-control input-overlay"
-                                  onChange={handleInput}
+                                  onChange=""
                                   name="last_name"
-                                  value={registerInput.last_name}
+                                  value=""
                                 />
                               </div>
                             </div>
@@ -316,19 +257,15 @@ const AddJuryBoard = () => {
                                 className="form-control reply-control input-overlay"
                                 id="category_id"
                                 name="category_id"
-                                value={registerInput.category_id}
+                                value="{registerInput.category_id}"
                               >
                                 <option className="text-whaite" value="">
                                   Choose One
                                 </option>
-                                {users.map((user, index) => (
-                                  <option
-                                    className="text-whaite"
-                                    value={user.id}
-                                  >
-                                    {user.name}
-                                  </option>
-                                ))}
+
+                                <option className="text-whaite" value="">
+                                  This is something
+                                </option>
                               </select>
                             </div>
 
@@ -338,22 +275,18 @@ const AddJuryBoard = () => {
                               </big>
 
                               <select
-                                onChange={handleInput}
+                                onChange=""
                                 className="form-control reply-control input-overlay"
                                 name="subcategory_id"
-                                value={registerInput.subcategory_id}
+                                value=""
                               >
                                 <option className="text-whaite" value="">
                                   Choose One
                                 </option>
-                                {subcategory.map((user, index) => (
-                                  <option
-                                    className="text-white"
-                                    value={user.id}
-                                  >
-                                    {user.name}
-                                  </option>
-                                ))}
+
+                                <option className="text-white" value="">
+                                  Nameeeee
+                                </option>
                               </select>
                             </div>
                           </div>
@@ -405,25 +338,14 @@ const AddJuryBoard = () => {
                       </div>
                     </div>
 
-                    <div className="form-group preview">
-                      {filem.length > 0 &&
-                        filem.map((item, index) => {
-                          return (
-                            <div key={item}>
-                              <img src={item} alt="" />
-                              <button
-                                type="button"
-                                onClick={() => deleteFile(index)}
-                              >
-                                delete
-                              </button>
-                            </div>
-                          );
-                        })}
-                    </div>
-
-
-
+                    {/* <div className="form-group preview">
+                      <div>
+                        <img src="" alt="" />
+                        <button type="button" onClick="">
+                          delete
+                        </button>
+                      </div>
+                    </div> */}
 
                   </div>
                 </div>
@@ -444,14 +366,51 @@ const AddJuryBoard = () => {
         className="border border-warning mt-4 row"
       >
         {/* <div className="row">
-                   {
-                       dummyData.map(star => <SuperstarList star={star}/>)d
-                   }
-               </div> */}
-        <div className="p-4 row col-12">{stars}</div>
+                     {
+                         dummyData.map(star => <SuperstarList star={star}/>)d
+                     }
+                 </div> */}
+        <div className="p-4 row col-12">
+        <span className="col-md-2">
+        <Card.Body
+          className="border border-warning mb-2"
+          style={{ background: "#000000", borderRadius: "10px" }}
+        >
+          <div className="avatar-img my-3 text-center">
+            <img
+              src=""
+              className="img-fluid avatar-img-src"
+              alt="profile-pic"
+              style={{ borderRadius: "50%" }}
+            />
+          </div>
+          <div className="text-center my-2">
+            <h5
+              className="text-white text-center"
+              style={{
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              Aktaruzzaman Joti
+            </h5>
+            <p className="text-white">Actress</p>
+            <div className="parent-div">
+              <Link to="/superstar-admin/jury-board-agreement-paper">
+                <button className="btn btn-warning btn-upload">
+                  <i className="fas fa-calendar-day mx-2"></i>
+                  Details
+                </button>
+              </Link>
+            </div>
+          </div>
+        </Card.Body>
+      </span>
+        </div>
       </div>
     </>
   );
 };
 
-export default AddJuryBoard;
+export default AdminJuryBoard;
