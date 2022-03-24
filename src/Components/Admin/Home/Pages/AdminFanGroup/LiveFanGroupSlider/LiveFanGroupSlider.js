@@ -5,9 +5,12 @@ import Session from "../../../../../../assets/images/email.png";
 import EnterImage from "../../../../../../assets/images/enter 1.png";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import "./LiveFanGroupSlider.css";
+import moment from "moment";
 
 const LiveFanGroupSlider = () => {
-  const [meetupEvents, setMeetupEvents] = useState([]);
+  const [fanLiveGroup, setFanLiveGroup] = useState([]);
+
+  console.log('fanLiveGroup', fanLiveGroup);
 
   var settings = {
     dots: true,
@@ -46,9 +49,9 @@ const LiveFanGroupSlider = () => {
 
   // Fetch Stars Added By Admin
   useEffect(() => {
-    axios.get(`/api/admin/meetup_event/approved`).then((res) => {
+    axios.get(`/api/admin/fan/group/adminlist/status`).then((res) => {
       if (res.status === 200) {
-        setMeetupEvents(res.data.meetup);
+        setFanLiveGroup(res.data.fanLiveGroup);
         //console.log(res.data.category);
       }
     });
@@ -58,7 +61,7 @@ const LiveFanGroupSlider = () => {
     <div>
       <div className="slick-parent d-flex justify-content-center">
         <Slider className="slider-width" {...settings}>
-          {meetupEvents.map((event, index) => (
+          {fanLiveGroup.map((liveFan, index) => (
             <div className="p-3">
               <div className="completedMeetupBlack">
                 <div className="card-body">
@@ -74,7 +77,7 @@ const LiveFanGroupSlider = () => {
                 </div>
 
                 <img
-                  src={bannerVs}
+                  src={`http://localhost:8000/${liveFan.banner}`}
                   className="img-fluid"
                   alt=""
                   style={{ height: "200px" }}
@@ -84,7 +87,7 @@ const LiveFanGroupSlider = () => {
                         <p className="fw-bold mt-4">February , 2022</p>
                     </div> */}
                   <div className="d-flex justify-content-center">
-                    <h5 className="fw-bolder mt-4">February , 2022</h5>
+                    <h5 className="fw-bolder mt-4">{moment(liveFan.start_date).format('LL')} To {moment(liveFan.end_date).format('LL')}</h5>
 
                     <img
                       className="img-fluid mx-2 mt-2"

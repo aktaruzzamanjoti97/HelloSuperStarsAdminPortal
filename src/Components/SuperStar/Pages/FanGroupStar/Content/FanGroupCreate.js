@@ -10,13 +10,14 @@ import { EditorState } from "draft-js";
 import React, { useEffect, useState } from "react";
 import { Editor } from "react-draft-wysiwyg";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import swal from 'sweetalert';
 // import "./FanGroupCreate.css";
 import moment from "moment";
 
 const FanGroupCreate = () => {
   let { slug } = useParams();
+  const history = useHistory();
 
   const [dateValue, setDateValue] = useState(new Date());
   const [endDateValue, setEndDateValue] = useState(new Date());
@@ -93,6 +94,7 @@ const FanGroupCreate = () => {
         // setKeywords('')
 
         swal("Welcome", res.data.message, "success");
+        history.push('/superstar/fan-group-invitation');
       }
     });
   }

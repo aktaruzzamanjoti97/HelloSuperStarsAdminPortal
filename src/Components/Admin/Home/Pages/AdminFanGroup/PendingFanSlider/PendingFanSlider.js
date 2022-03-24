@@ -1,10 +1,12 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import Session from "../../../../../../assets/images/email.png";
 import EnterImage from "../../../../../../assets/images/enter 1.png";
 import "./PendingFanSlider.css";
+import moment from "moment";
 
 const PendingFanSlider = () => {
   let history = useHistory();
@@ -48,10 +50,22 @@ const PendingFanSlider = () => {
     history.push("/superstar-admin/pending-fan-group-Edit-delete");
   };
 
+  const [fanPending, setFanPending] = useState([]);
+  useEffect(() => {
+    axios.get(`/api/admin/fan/group/adminlist/status`).then((res) => {
+      if (res.status === 200) {
+        setFanPending(res.data.fanPending);
+        //console.log(res.data.category);
+      }
+    });
+  }, []);
+
   return (
     <div>
       <div className="slick-parent d-flex justify-content-center">
         <Slider className="slider-width" {...settings}>
+        
+        {fanPending.map((liveFan, index) => (
           <div className="p-3">
             <div className="completedMeetupBlack">
               <div className="card-body">
@@ -67,7 +81,7 @@ const PendingFanSlider = () => {
               </div>
 
               <img
-                src={bannerVs}
+                src={`http://localhost:8000/${liveFan.banner}`}
                 className="img-fluid"
                 alt=""
                 style={{ height: "200px" }}
@@ -77,7 +91,7 @@ const PendingFanSlider = () => {
                           <p className="fw-bold mt-4">February , 2022</p>
                       </div> */}
                 <div className="d-flex justify-content-center">
-                  <h5 className="fw-bolder mt-4">February , 2022</h5>
+                  <h5 className="fw-bolder mt-4">{moment(liveFan.start_date).format('LL')} To {moment(liveFan.end_date).format('LL')}</h5>
 
                   <img
                     onClick={handleChange}
@@ -89,6 +103,7 @@ const PendingFanSlider = () => {
               </div>
             </div>
           </div>
+        ))}
         </Slider>
       </div>
     </div>

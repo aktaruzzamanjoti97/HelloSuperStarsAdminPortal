@@ -6,6 +6,7 @@ import Session from "../../../../../../assets/images/email.png";
 import EnterImage from "../../../../../../assets/images/enter 1.png";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import './ApprovedFanSlider.css'
+import moment from "moment";
 
 const ApprovedFanSlider = () => {
 
@@ -46,12 +47,22 @@ const ApprovedFanSlider = () => {
       };
     
 
+      const [fanApproved, setFanApproved] = useState([]);
+      useEffect(() => {
+        axios.get(`/api/admin/fan/group/adminlist/status`).then((res) => {
+          if (res.status === 200) {
+            setFanApproved(res.data.fanApproved);
+            //console.log(res.data.category);
+          }
+        });
+      }, []);
 
     return (
         <div>
         <div className="slick-parent d-flex justify-content-center">
           <Slider className="slider-width" {...settings}>
     
+          {fanApproved.map((liveFan, index) => (
               <div className="p-3">
                 <div className="completedMeetupBlack">
                   <div className="card-body">
@@ -67,7 +78,7 @@ const ApprovedFanSlider = () => {
                   </div>
   
                   <img
-                    src={bannerVs}
+                    src={`http://localhost:8000/${liveFan.banner}`}
                     className="img-fluid"
                     alt=""
                     style={{ height: "200px" }}
@@ -77,7 +88,7 @@ const ApprovedFanSlider = () => {
                           <p className="fw-bold mt-4">February , 2022</p>
                       </div> */}
                     <div className="d-flex justify-content-center">
-                      <h5 className="fw-bolder mt-4">February , 2022</h5>
+                      <h5 className="fw-bolder mt-4">{moment(liveFan.start_date).format('LL')} To {moment(liveFan.end_date).format('LL')}</h5>
   
                       <img
                         className="img-fluid mx-2 mt-2"
@@ -88,7 +99,7 @@ const ApprovedFanSlider = () => {
                   </div>
                 </div>
               </div>
-  
+          ))}
           </Slider>
         </div>
       </div>

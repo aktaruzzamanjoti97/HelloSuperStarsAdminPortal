@@ -17,13 +17,14 @@ const InvitationDetails = () => {
   const [fanDetails, setFanDetails] = useState('');
   const [starDetails, setStarDetails] = useState('');
   const [id, setId] = useState('');
+  console.log("My ID ", id);
 
   console.log("fanDetails ", fanDetails)
   console.log("starDetails ", starDetails)
 
   useEffect(() => {
 
-    axios.get(`/api/star/fan/group/details/${slug}`).then(res => {
+    axios.get(`/api/star/fan/group/details/${slug}/${id}`).then(res => {
       if (res.data.status === 200) {
         console.log('partha ', res.data);
 

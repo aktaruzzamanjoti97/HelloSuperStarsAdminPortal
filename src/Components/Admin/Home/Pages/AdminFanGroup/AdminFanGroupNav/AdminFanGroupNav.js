@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import pendingFan from "../../../../../../assets/images/iconFan/expired-1.png";
 import HourGlass from "../../../../../../assets/images/iconFan/hourglass1.png";
 import Invitation from "../../../../../../assets/images/iconFan/invitation2.png";
 import approved from "../../../../../../assets/images/Icon/approved.png";
 import "./AdminFanGroupNav.css";
+import axios from "axios";
 
 const AdminFanGroupNav = () => {
+
+  const [fanPending, setFanPending] = useState([]);
+  const [fanApproved, setFanApproved] = useState([]);
+
+  console.log('fanApproved', fanApproved);
+  
+  useEffect(() => {
+    axios.get(`/api/admin/fan/group/adminlist/status`).then((res) => {
+      if (res.status === 200) {
+        setFanPending(res.data.fanPendingCount);
+        setFanApproved(res.data.fanApprovedCount);
+        //console.log(res.data.category);
+      }
+    });
+  }, []);
+
   return (
     <div className="mb-3 row">
       <div
@@ -22,7 +39,7 @@ const AdminFanGroupNav = () => {
                 </td>
                 <td className="ad-card-td d-flex flex-column">
                   <small className="text-light">Approved</small>
-                  <small className=" fw-bold invitationTxt">01</small>
+                  <small className=" fw-bold invitationTxt">{fanApproved}</small>
                 </td>
               </tr>
             </center>
@@ -55,7 +72,7 @@ const AdminFanGroupNav = () => {
               </td>
               <td className="ad-card-td d-flex flex-column">
                 <small className="text-light">Pending</small>
-                <small className=" fw-bold invitationTxt">01</small>
+                <small className=" fw-bold invitationTxt">{fanPending}</small>
               </td>
             </tr>
           </div>
