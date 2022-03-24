@@ -4,6 +4,10 @@ import axios from "axios";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import swal from "sweetalert";
+import { LocalizationProvider, MobileDatePicker } from "@mui/lab";
+import { Stack, TextField } from "@mui/material";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import moment from "moment";
 
 const AdminAuditionCreateEvent = (props) => {
   const location = useLocation();
@@ -14,9 +18,21 @@ const AdminAuditionCreateEvent = (props) => {
   const [stars, setStars] = useState([]);
   const [file, setFile] = useState("");
   const [imagedata, setImagedata] = useState("");
+  const [videoData, setVideoData] = useState("");
   const [convertedContent, setConvertedContent] = useState("");
 
   const [audition, setAudition] = useState("");
+
+  const [startDate, setStartDate] = useState(new Date("2022-08-18T21:11:54"));
+  const [endDate, setEndDate] = useState(new Date("2022-08-18T21:11:54"));
+
+  const handleStartDateChange = (newValue) => {
+    setStartDate(newValue);
+  };
+
+  const handleEndDateChange = (newValue) => {
+    setEndDate(newValue);
+  };
 
   const [inputData, setInputData] = useState({
     title: "",
@@ -33,11 +49,17 @@ const AdminAuditionCreateEvent = (props) => {
   const handleChange = (file) => {
     setFile(URL.createObjectURL(file[0]));
     setImagedata(file[0]);
+    
+  };
+  // Video Input
+  const handleVideoChange = (file) => {
+    console.log('Video File',file);
+    setVideoData(file[0]);
   };
 
   useEffect(() => {
     //Fetch Superstars
-    axios.get("/api/admin/audition/stars").then((res) => {
+    axios.get("/api/audition-admin/audition/stars").then((res) => {
       if (res.data.status === 200) {
         setStars(res.data.stars);
       }
@@ -48,10 +70,10 @@ const AdminAuditionCreateEvent = (props) => {
     // geeting audtion id
     setAuditionId(props.match.params.id);
 
-    axios.get(`/api/admin/audition/${aud_id}`).then((res) => {
+    axios.get(`/api/audition-admin/audition/${aud_id}`).then((res) => {
       if (res.data.status === 200) {
         let audition = res.data.audition;
-        console.log("Single Audition:", audition);
+        // console.log("Single Audition:", audition);
 
         // set Title
         setInputData({
@@ -61,6 +83,11 @@ const AdminAuditionCreateEvent = (props) => {
 
         // set Image Data
         setImagedata(audition.banner);
+        setVideoData(audition.video);
+
+        // set Star and End Date
+        setStartDate(audition.start_time);
+        setEndDate(audition.end_time);
 
         // set audition star
         if (res.data.judge_ids.length > 0) {
@@ -76,16 +103,19 @@ const AdminAuditionCreateEvent = (props) => {
   // Add Audtion Form Submission
   const auditionSubmit = (e) => {
     e.preventDefault();
-
+    console.log('Video',videoData);
     const formData = new FormData();
     formData.append("title", inputData.title);
     formData.append("star_ids", inputList);
     formData.append("description", convertedContent);
     formData.append("banner", imagedata);
+    formData.append("video", videoData);
+    formData.append("start_time",moment(startDate).format("yyyy-MM-DD HH:mm:ss"));
+    formData.append("end_time",moment(endDate).format("yyyy-MM-DD HH:mm:ss"));
     formData.append("audition_id", audition_id);
 
     // axios.get("/sanctum/csrf-cookie").then((response) => {
-    axios.post(`api/admin/audition/add`, formData).then((res) => {
+    axios.post(`api/audition-admin/audition/add`, formData).then((res) => {
       if (res.data.status === 200) {
         swal("Success", res.data.message, "success");
         history.push(`/audition-admin/audition/pending`);
@@ -197,6 +227,7 @@ const AdminAuditionCreateEvent = (props) => {
                           aria-label="Default select example"
                         >
                           <option selected>Select Superstar</option>
+
                           {/* <option value="1">Shakib Al Hasan</option>
                         <option value="2">Musfiqur Rahim</option>
                         <option value="3">Tamim Iqbal</option> */}
@@ -233,11 +264,44 @@ const AdminAuditionCreateEvent = (props) => {
               );
             })}
 
-            {console.log(
-              "Monir InputList",
-              JSON.parse(JSON.stringify(inputList))
-            )}
+            <div className="row my-4">
+                <div className="col-md-2">
+                  <p className="text-white">Time Length</p>
+                </div>
+                <div className="col-md-9 row">
+                  <div className="col-md-5 timeLengthPicker">
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <Stack spacing={3}>
+                        <MobileDatePicker
+                          label="Start Date"
+                          inputFormat="MM/dd/yyyy"
+                          value={startDate}
+                          onChange={handleStartDateChange}
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                      </Stack>
+                    </LocalizationProvider>
+                  </div>
+                  <div className="col-md-1 d-flex justify-content-center">
+                    <span className="fw-bold text-light mt-3">To</span>
+                  </div>
+                  <div className="col-md-5 timeLengthPicker">
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                      <Stack spacing={3}>
+                        <MobileDatePicker
+                          label="End Date"
+                          inputFormat="MM/dd/yyyy"
+                          value={endDate}
+                          onChange={handleEndDateChange}
+                          renderInput={(params) => <TextField {...params} />}
+                        />
+                      </Stack>
+                    </LocalizationProvider>
+                  </div>
+                </div>
+              </div>
 
+            
             <div className="row">
               <div className="col-md-4">
                 <div className="row my-4">
@@ -271,6 +335,42 @@ const AdminAuditionCreateEvent = (props) => {
                     </label>
                     <span className="text-danger">
                       {inputData.error_list.banner}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+              <div className="row my-4">
+                  <div className="col-md-3 text-white">
+                    <p>
+                      <big>Upload Video</big>
+                    </p>
+                  </div>
+                  <div className="col-md-9">
+
+                    {/* <img
+                        src={file}
+                        className="img-fluid avatar-img-src mb-3"
+                        alt=""
+                      />
+                    {imagedata != null ? (<img
+                        src={`http://localhost:8000/${imagedata}`}
+                        className="img-fluid avatar-img-src mb-3"
+                        alt=""
+                      />) :""} */}
+                    
+                    <input
+                      type="file"
+                      name="video"
+                      id="video"
+                      className="inputfile"
+                      onChange={(e) => handleVideoChange(e.target.files)}
+                    />
+                    <label for="file">
+                      <i class="fas fa-cloud-upload-alt"></i> Upload
+                    </label>
+                    <span className="text-danger">
+                      {inputData.error_list.video}
                     </span>
                   </div>
                 </div>
