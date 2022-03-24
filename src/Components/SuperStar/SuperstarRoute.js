@@ -182,7 +182,7 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-invitation/details/:slug', exact: true, name: 'details', component: InvitationDetails },
 
     // { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
-    { path: '/superstar/fan-group-invitation/edit', exact: true, name: 'edit', component: FanGroupCreate },
+    { path: '/superstar/fan-group-invitation/edit/:slug', exact: true, name: 'edit', component: FanGroupCreate },
     { path: '/superstar/fan-group/accepted', exact: true, name: 'accepted', component: AcceptedDetails },
     { path: '/superstar/fan-group/rejected', exact: true, name: 'rejected', component: RejectedDetails },
     { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },

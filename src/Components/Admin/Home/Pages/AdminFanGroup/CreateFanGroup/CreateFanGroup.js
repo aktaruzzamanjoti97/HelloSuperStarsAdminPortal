@@ -284,7 +284,7 @@ const CreateFanGroup = () => {
                   className="form-select form-control input-gray text-light"
                   aria-label="Default select example" id='star_one' name='star_one'
                 >
-                  <option value="0">--Select First Star--</option>
+                  <option value="0">--Select Star--</option>
                   {allStar.map((star, index) => (
                     <option value={star.id}>{star.first_name} {star.last_name}</option>
                   ))}
@@ -301,7 +301,7 @@ const CreateFanGroup = () => {
                   className="form-select form-control input-gray text-light" onChange={(event) => { setTwoStar(event.target.value) }}
                   aria-label="Default select example"
                 >
-                  <option value="0">--Select Second Star--</option>
+                  <option value="0">--Select Another Star--</option>
                   {someStar.map((star, index) => (
                     <option value={star.id}>{star.first_name} {star.last_name}</option>
                   ))}
