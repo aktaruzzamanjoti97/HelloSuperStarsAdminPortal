@@ -8,44 +8,61 @@ import Clock from '../../../../assets/images/Auditions/finish.png'
 import Spotlight from '../../../../assets/images/Auditions/spotlight.png'
 import Unsplash from '../../../../assets/images/Auditions/unsplash.png'
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Markup } from 'interweave'
+import moment from 'moment'
 
 const AuditionsStar = () => {
+    const history = useHistory();
 
-    const [audition,setAudition] = useState("");
+  const {id}=   useParams();
+
+
+    const [pending_audition,setPendingAudition] = useState([]);
 
     useEffect(() => {
-        axios.get("/api/superstar/audition/pendings").then((res) => { 
+        axios.get(`/api/star/audition/${id}`).then((res) => { 
           if (res.data.status === 200) {
-            setAudition(res.data.pending_auditions);
+
+            setPendingAudition(res.data.pending_audition);
     
-            //console.log('star pending audition',res.data.pending_auditions);
+             console.log('star single pending audition',res.data.pending_audition);
           }
         });
     
     }, []);
 
+    const approved = () => {
+
+        axios.put(`/api/star/approved/audition/${id}`).then((res) => {
+    
+            if (res.status === 200) {
+                history.push(`/superstar/audition`)
+            }
+            
+          });
+    }
+
 return (
+    
 <>
-    <div className="card m-3">
+{pending_audition.map((audition)=>(
+<>
+<div className="card m-3">
         <img src={Banner} alt="" className='Banner-Auditions' />
     </div>
 
     <div className='row m-3 d-flex Audition-Main'>
         <div className='mt-4 mb-5  col-md-9'>
             <h4 className='text-light fw-bold  mb-4 '>
-                Guitar for the beginners
+                {audition.title}
             </h4>
             <p className='text-light '>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                specimen book.
+
+                <Markup content={audition.description}/>
             </p>
-            <p className='text-light '>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </p> <br />
+             <br />
 
             <div className=" col-12 BTN-x-P">
                 <div className="d-flex  buTon-EMN py-2 p-3">
@@ -55,7 +72,7 @@ return (
                     <div className=" mx-1">
                         <span className="text-light">Start</span>
                         <br></br>
-                        <span className="text-warning BtnTextNMP fw-bold">21st November </span>
+                        <span className="text-warning BtnTextNMP fw-bold">{moment(audition.start_time).format('LL')}</span>
                     </div>
                 </div>
 
@@ -66,15 +83,14 @@ return (
                     <div className=" mx-1">
                         <span className="text-light">End</span>
                         <br></br>
-                        <span className="text-warning BtnTextNMP fw-bold">21st December </span>
+                        <span className="text-warning BtnTextNMP fw-bold">{moment(audition.end_time).format('LL')} </span>
                     </div>
                 </div>
 
             </div>
             <div className="mt-3">
-                <Link to='/superstar/dashboard'>
-                    <button className='btn MEN-X fw-bold'>Approve </button>
-                </Link>
+                <button onClick={approved} className='btn MEN-X fw-bold'>Approve </button>
+                
                 <button className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>
             </div>
         </div>
@@ -90,29 +106,24 @@ return (
                     </div>
                 </div>
             </div>
-            <div className="d-flex  py-2 AuditionSR-p ">
+            {audition.judge.map((judge)=>(
+                <div className="d-flex  py-2 AuditionSR-p ">
                 <div className=" mx-4 mt-2">
-                    <span className="mt-2"> <img src={Unsplash} alt="" className='AuditionsStrImg' /></span>
+                    <span className="mt-2"> <img src={`http://localhost:8000/${judge.user?.image}`} alt="" className='AuditionsStrImg' /></span>
                 </div>
                 <div className="mt-2">
-                    <span className="text-light Star-text-Au">Superstar Name</span>
+                    <span className="text-light Star-text-Au">{judge.user.first_name} {judge.user.last_name}</span>
                     <br></br>
                     <span className="text-warning music-text">Music</span>
                 </div>
             </div>
-            <div className="d-flex  py-2 AuditionSR-p ">
-                <div className=" mx-4 mt-2">
-                    <span className="mt-2"> <img src={Unsplash} alt="" className='AuditionsStrImg' /></span>
-                </div>
-                <div className="mt-2">
-                    <span className="text-light Star-text-Au">Superstar Name</span>
-                    <br></br>
-                    <span className="text-warning music-text">Music</span>
-                </div>
-            </div>
+            ))}
         </div>
 
     </div>
+</>
+))}
+  
 
 </>
 )
