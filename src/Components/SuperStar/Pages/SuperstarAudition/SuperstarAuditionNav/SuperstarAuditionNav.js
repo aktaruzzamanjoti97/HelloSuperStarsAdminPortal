@@ -13,7 +13,7 @@ const SuperstarAuditionNav = () => {
           if (res.data.status === 200) {
             setPendingAudition(res.data.pending_auditions);
     
-            console.log('star pending audition',res.data.pending_auditions);
+            //console.log('star pending audition',res.data.pending_auditions);
           }
         });
     
@@ -62,7 +62,7 @@ const SuperstarAuditionNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to={`/superstar/auditions/pending/${pedingAudition.id}`}>
+                        <Link to={`/superstar/audition/pending`}>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Pending Audition

@@ -1,0 +1,29 @@
+.fanCard{
+    background-color: #555555 !important;
+    margin-top: 15px;
+}
+.fan-input{
+    background-color: #4D4D4D !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 15px !important;
+    color: white !important;
+}
+.postFancard{
+    border: 2px solid gold !important;
+    border-radius: 10px !important;
+}
+.chekfan{
+    cursor: pointer;
+}
+.fan-button{
+    width: 30%;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    .fan-button{
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+  }

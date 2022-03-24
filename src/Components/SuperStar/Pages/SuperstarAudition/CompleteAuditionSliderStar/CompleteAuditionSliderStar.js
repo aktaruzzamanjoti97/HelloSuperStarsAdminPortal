@@ -83,7 +83,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
@@ -100,7 +100,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
@@ -117,7 +117,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
@@ -134,7 +134,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
@@ -151,7 +151,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
@@ -168,7 +168,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
@@ -185,7 +185,7 @@ const CompleteAuditionSliderStar = () => {
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
                                             <Link to="" style={{ textDecoration: 'none' }}>
-                                                <h5 className="text-white">This is Pending Audition</h5>
+                                                <h5 className="text-white">This is Complete Audition</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
