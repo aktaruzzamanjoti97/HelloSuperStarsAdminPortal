@@ -131,7 +131,7 @@ const AddProductSouvenir = () => {
     fData.append('star_id', inputFieldList.star_id);
     fData.append("details", convertedContent);
     fData.append("base_price", inputFieldList.base_price);
-    fData.append("bid_from", moment(endDate).format("yyyy-MM-DD HH:mm:ss"));
+    fData.append("bid_from", moment(startDate).format("yyyy-MM-DD HH:mm:ss"));
     fData.append("bid_to", moment(endDate).format("yyyy-MM-DD HH:mm:ss"));
     fData.append("banner", file);
     fData.append("status", 0);
