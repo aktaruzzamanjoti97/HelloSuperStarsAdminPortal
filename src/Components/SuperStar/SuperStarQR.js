@@ -29,10 +29,22 @@ const SuperStarQR = () => {
             axios.post(`/api/star_qr_verify`, data).then(res => {
                 if(res.data.status === 200)
                     {
+                        // console.log('qr_code by user_id',res);
+                        let auth_type = res.data.auth_type;
+
                         localStorage.setItem('auth_id', res.data.star_id);
+                        localStorage.setItem('auth_type', auth_type);
 
                         swal("Success",res.data.message,"success");
-                        history.push('/superstar/registration');
+
+                        if (auth_type === 'star') {
+                            history.push('/superstar/registration');
+                        }else{
+                            history.push('/jury-board/registration');
+                        }
+
+                        
+                        
                     }
                     else if(res.data.status === 401)
                     {
