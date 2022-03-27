@@ -85,6 +85,7 @@ import SoldProductList from "./Home/Pages/AdminSouvenir/Auction/SoldProductList"
 import UnsoldProductList from "./Home/Pages/AdminSouvenir/Auction/UnsoldProductList";
 import ConfirmOrEditAuction from "./Home/Pages/AdminSouvenir/ConfirmOrEditAuction/ConfirmOrEditAuction";
 import AddProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/AddProductSouvenir";
+import MarketPlaceOrderlist from "./Home/Pages/AdminSouvenir/MarketPlaceOrderlist/MarketPlaceOrderlist";
 import EditProductSouvenir from "./Home/Pages/AdminSouvenir/Content/AddProduct/EditProductSouvenir";
 import CricketJerseySouvenir from "./Home/Pages/AdminSouvenir/Content/CricketJersey/CricketJerseySouvenir";
 import CricketJerseyModal from "./Home/Pages/Souviner-admin/CricketJersey/CricketJerseyModal";
@@ -265,6 +266,7 @@ const AdminRoute = [
 
 
     //Marketplace
+    { path: '/superstar-admin/souvenir/marketplace-orderlist', exact: true, name: 'marketplace-orderlist', component: MarketPlaceOrderlist },
     { path: '/superstar-admin/souvenir/add-products-marketplace', exact: true, name: 'add-products-marketPlace', component: AddProductFromMarketPlace },
     { path: '/superstar-admin/souvenir/confirm-or-edit-marketplace/:id', exact: true, name: 'edit-jersey', component: CricketJerseySouvenir },
     { path: '/superstar-admin/souvenir/product-list/approved', exact: true, name: 'sold', component: ProductList },
