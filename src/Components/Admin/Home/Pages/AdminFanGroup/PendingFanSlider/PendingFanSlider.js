@@ -49,6 +49,8 @@ const PendingFanSlider = () => {
   const handleChange = () => {
     history.push("/superstar-admin/pending-fan-group-Edit-delete");
   };
+  
+console.log("Done");
 
   const [fanPending, setFanPending] = useState([]);
   useEffect(() => {
