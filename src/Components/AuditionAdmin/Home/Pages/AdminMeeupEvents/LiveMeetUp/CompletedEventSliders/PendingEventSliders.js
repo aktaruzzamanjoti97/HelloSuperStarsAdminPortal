@@ -52,18 +52,18 @@ const PendingEventSliders = () => {
 
 
     // Fetch Stars Added By Admin
-    useEffect(() => {
+    // useEffect(() => {
 
-        axios.get(`/api/admin/meetup_event/pending`).then(res =>{
+    //     axios.get(`/api/admin/meetup_event/pending`).then(res =>{
 
-          if(res.status === 200)
-          {
-            setMeetupEvents(res.data.meetup);
-            //console.log(res.data.category);
-          }
+    //       if(res.status === 200)
+    //       {
+    //         setMeetupEvents(res.data.meetup);
+    //         //console.log(res.data.category);
+    //       }
           
-        });
-    }, []);
+    //     });
+    // }, []);
 
 
 
@@ -74,16 +74,17 @@ const PendingEventSliders = () => {
             <div className="slick-parent d-flex justify-content-center">
                 <Slider className="slider-width" {...settings}>
 
-                {meetupEvents.map((event, index) => (
+                {/* {meetupEvents.map((event, index) => ( */}
                     
                     <div className="p-3">
                         <div className="completedMeetupBlack">
-                            <img src={`http://localhost:8000/${event.banner}`} className="img-fluid" alt="" style={{ height: '200px' }} />
+                            <img src={EnterImage} className="img-fluid" alt="" style={{ height: '200px' }} />
+                            
                             <div className="p-3">
                                 <div className="d-flex justify-content-between">
-                                    <Link to={`/superstar-admin/pending-meetup/${event.id}`} style={{ textDecoration: 'none' }}>
-                                        <h5 className="text-white">{event.title}</h5>
-                                    </Link>
+                                    {/* <Link to={`/superstar-admin/pending-meetup/${event.id}`} style={{ textDecoration: 'none' }}> */}
+                                        <h5 className="text-white">Title</h5>
+                                    {/* </Link> */}
                                     <img className="img-fluid" src={EnterImage} alt="" />
                                 </div>
 
@@ -94,7 +95,7 @@ const PendingEventSliders = () => {
                         </div>
                     </div>
                     
-                ))}
+                {/* ))} */}
                 
 
                 </Slider>

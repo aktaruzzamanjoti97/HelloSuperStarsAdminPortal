@@ -16,7 +16,7 @@ const PendingAuditionSlider = (props) => {
   const [pendings, setPendings] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/admin/audition/pendings").then((res) => { 
+    axios.get("/api/audition-admin/audition/pendings").then((res) => { 
       if (res.data.status === 200) {
         setPendings(res.data.pendings);
 
@@ -69,7 +69,7 @@ const PendingAuditionSlider = (props) => {
         <div className="slick-parent d-flex justify-content-center">
           <Slider className="slider-width" {...settings}>
             {pendings.map((pending, index) => (
-              <Link to={`/superstar-admin/audition/create-event/${pending.id}`} className="Link">
+              <Link to={`/audition-admin/audition/create-event/${pending.id}`} className="Link">
                 <div className="p-3" style={{ cursor: "pointer" }}>
                   <div className="completedMeetupBlack">
                     <img

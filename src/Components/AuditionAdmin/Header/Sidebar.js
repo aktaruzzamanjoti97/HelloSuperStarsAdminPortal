@@ -75,6 +75,14 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Audition
                             </Link>
+                            <Link className="nav-link" to="/audition-admin/superstars">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Superstars
+                            </Link>
+                            <Link className="nav-link" to="/audition-admin/jury-board">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Jury Board
+                            </Link>
                             
                             {/* <Link className="nav-link" to="/superstar-admin/learning-session">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>

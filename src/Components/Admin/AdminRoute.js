@@ -146,6 +146,7 @@ import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/
 
 
 
+
 const AdminRoute = [
     
     { path: '/superstar-admin/superstar-registration', exact: true, name: 'Registration', component: AdminRegistration },
@@ -226,8 +227,7 @@ const AdminRoute = [
     { path: '/superstar-admin/superstars', exact: true, name: 'LiveChat', component: AddSuperStar },
     { path: '/superstar-admin/agreement-paper/:star_id', exact: true, name: 'LiveChat', component: WelcomeSuperStarPrint }, 
 
-    // Jury Board routes
-    // { path: '/superstar-admin/superstars', exact: true, name: 'JuryBoard', component: JuryBoard },
+    
     
 
     // MeetUp Event Route
@@ -299,6 +299,10 @@ const AdminRoute = [
     // { path: '/superstar-admin/video_upload', exact: true, name: 'greetings', component: VidoRecord },
 
     { path: '/superstar-admin/videocall', exact: true, name: 'superstar-admin-learning-session-live-stream', component: LearningSessionLiveStream },
+
+
+    
+
     
 ];
 
