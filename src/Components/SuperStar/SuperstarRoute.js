@@ -76,7 +76,7 @@ import SuperstarEditMarketPlaceForm from './Pages/Superstar-Souvenir/SuperstarEd
 import SuperstarProductList from './Pages/Superstar-Souvenir/SuperstarProductList/SuperstarProductList';
 import SuperstarAuditionPending from './Pages/SuperstarAudition/SuperstarAuditionPending/SuperstarAuditionPending';
 import SuperstarAudition from './Pages/SuperstarAudition/SuperstarAudition';
-
+import SuperstarAuditionLive from './Pages/SuperstarAudition/SuperstarAuditionLive/SuperstarAuditionLive';
 
 
 
@@ -130,6 +130,7 @@ const SuperstarRoute = [
     //@FIXME: Audition
     { path: '/superstar/audition', exact: true, name: 'auditions', component: SuperstarAudition },
     { path: '/superstar/audition/pending', exact: true, name: 'auditions', component:SuperstarAuditionPending},
+    { path: '/superstar/audition/live', exact: true, name: 'auditions', component:SuperstarAuditionLive},
     { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
 
     // Learning Session

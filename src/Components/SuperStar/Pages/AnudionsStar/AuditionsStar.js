@@ -50,7 +50,7 @@ return (
 {pending_audition.map((audition)=>(
 <>
 <div className="card m-3">
-        <img src={Banner} alt="" className='Banner-Auditions' />
+        <img src={`http://localhost:8000/${audition.banner}`} alt="" className='Banner-Auditions' />
     </div>
 
     <div className='row m-3 d-flex Audition-Main'>
@@ -112,7 +112,7 @@ return (
                     <span className="mt-2"> <img src={`http://localhost:8000/${judge.user?.image}`} alt="" className='AuditionsStrImg' /></span>
                 </div>
                 <div className="mt-2">
-                    <span className="text-light Star-text-Au">{judge.user.first_name} {judge.user.last_name}</span>
+                    <span className="text-light Star-text-Au">{judge.user?.first_name} {judge.user?.last_name}</span>
                     <br></br>
                     <span className="text-warning music-text">Music</span>
                 </div>
