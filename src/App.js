@@ -74,6 +74,9 @@ return (
 
       {/* Indevidual SuperStar Route */}
       <Route exact path='/superstar/registration' component={SuperStarRegistration} />
+
+      <Route exact path='/jury-board/registration' component={SuperStarRegistration} />
+
       <Route exact path='/superstar/qr' component={SuperStarQR} />
       <Route exact path='/superstar/otp' component={SuperStarOTP} />
       <Route exact path='/superstar_registration/otp' component={SuperStarRegistrationOTP} />

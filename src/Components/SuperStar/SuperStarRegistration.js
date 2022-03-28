@@ -50,6 +50,7 @@ const SuperStarRegistration = () => {
 
         const data = {
             id: localStorage.auth_id,
+            auth_type: localStorage.auth_type,
             email: registerInput.email,
             phone: registerInput.phone,
             password: registerInput.password,
