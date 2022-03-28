@@ -69,7 +69,7 @@ const PendingAuditionSlider = (props) => {
         <div className="slick-parent d-flex justify-content-center">
           <Slider className="slider-width" {...settings}>
             {pendings.map((pending, index) => (
-              <Link to={`/audition-admin/audition/create-event/${pending.id}`} className="Link">
+              <Link to={`/audition-admin/audition/pending/${pending.id}`} className="Link">
                 <div className="p-3" style={{ cursor: "pointer" }}>
                   <div className="completedMeetupBlack">
                     <img

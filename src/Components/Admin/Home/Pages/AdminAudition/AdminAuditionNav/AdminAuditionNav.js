@@ -16,11 +16,11 @@ const AdminAuditionNav = () => {
             setLive(res.data.live);
             setPending(res.data.pending);
     
-            console.log(res.data.pending)
+            //console.log(res.data.pending)
           }
         });
-    
-        console.log();
+        
+
       }, []);
 
       function pad(d) {

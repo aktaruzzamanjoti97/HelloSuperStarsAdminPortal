@@ -136,7 +136,7 @@ const AdminAuditionCreateEvent = (props) => {
                 class="far fa-plus-square mx-2"
               ></i>
             </div>
-            <h3 className="text-warning text-bold">Create Audtion</h3>
+            <h3 className="text-warning text-bold">Edit Audition</h3>
           </div>
           <form id="input_form" encType="multipart/form-data">
             <div className="row my-4">

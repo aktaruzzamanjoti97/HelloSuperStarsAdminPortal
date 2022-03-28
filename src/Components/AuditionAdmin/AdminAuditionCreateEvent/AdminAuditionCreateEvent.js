@@ -56,6 +56,16 @@ const AdminAuditionCreateEvent = (props) => {
     console.log('Video File',file);
     setVideoData(file[0]);
   };
+  const Confirmed = () => {
+
+    axios.put(`/api/audition-admin/confirmed/audition/${audition_id}`).then((res) => {
+
+        if (res.status === 200) {
+            history.push(`/audition-admin/audition`)
+        }
+        
+      });
+}
 
   useEffect(() => {
     //Fetch Superstars
@@ -65,6 +75,7 @@ const AdminAuditionCreateEvent = (props) => {
       }
     });
 
+ 
     var aud_id = props.match.params.id;
 
     // geeting audtion id
@@ -166,7 +177,7 @@ const AdminAuditionCreateEvent = (props) => {
                 class="far fa-plus-square mx-2"
               ></i>
             </div>
-            <h3 className="text-warning text-bold">Create Audtion</h3>
+            <h3 className="text-warning text-bold">Review Audition</h3>
           </div>
           <form id="input_form" encType="multipart/form-data">
             <div className="row my-4">
@@ -383,11 +394,20 @@ const AdminAuditionCreateEvent = (props) => {
                 onClick={auditionSubmit}
               >
                 <big>
+                  <b>Review Again</b>
+                </big>
+              </button>
+              
+            </div>
+          </form>
+          <button
+                className="btn btn-warning save-greetings-button py-2"
+                onClick={Confirmed}
+              >
+                <big>
                   <b>Confirm</b>
                 </big>
               </button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
