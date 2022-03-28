@@ -53,6 +53,12 @@ const AdminLogin = () => {
                             swal("Welcome",res.data.message,"success");
                             history.push('/audition-admin/otp');
                         }
+
+                        if(res.data.role === 'jury')
+                        {
+                            swal("Welcome",res.data.message,"success");
+                            history.push('/jury-board/otp');
+                        }
                         
                     }
                     else if(res.data.status === 403)

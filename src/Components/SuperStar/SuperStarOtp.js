@@ -49,7 +49,11 @@ const AdminOTP = () => {
           localStorage.setItem("auth_otp", "yes");
 
           swal("Success", res.data.message, "success");
-          history.push("/superstar/dashboard");
+          if (localStorage.auth_type === 'star') {
+            history.push("/superstar/dashboard");
+          }
+          history.push("/jury-board/dashboard");
+
         } else if (res.data.status === 401) {
           swal("Warning", res.data.message, "warning");
         } else {

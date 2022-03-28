@@ -154,6 +154,9 @@ const AdminRoute = [
     { path: '/superstar-admin', exact: true, name: 'Admin' },
 
     { path: '/superstar-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
+
+    { path: '/jury-board-admin/dashboard', exact: true, name: 'Dashboard', component: AdminMainDashboard },
+
     { path: '/superstar-admin/event-date', exact: true, name: 'Dashboard', component: AdminDashEvent },
     { path: '/superstar-admin/event-category', exact: true, name: 'Dashboard', component: AdminEventCategory },
     { path: '/superstar-admin/event-pending', exact: true, name: 'Dashboard', component: AdminEventRequest },

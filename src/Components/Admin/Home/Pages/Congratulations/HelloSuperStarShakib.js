@@ -51,7 +51,7 @@ const HelloSuperStarShakib = () => {
                                     <button type="button" className="btn btn-secondary w-25 me-3">Edit</button>
 
                                     <button onClick={() => setModalShow(true)} type="button" className="btn btn-warning w-25 ms-3">Next</button>
-
+                                    
                                     <CongratulationModal show={modalShow}
                                         onHide={() => setModalShow(false)} />
                                 </div>

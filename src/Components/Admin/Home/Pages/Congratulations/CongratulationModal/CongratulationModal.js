@@ -20,7 +20,7 @@ const CongratulationModal = (props) => {
                 <div className="row">
                     <div className="col-md-7 text-white">
                         <h2>Congratulations</h2>
-                        <h1>Dear Superstar</h1>
+                        <h1>{localStorage.auth_type === 'star' ? 'Dear Superstar' : 'Dear Jury Member'}</h1>
                         <p className="my-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate?</p>
                     </div>
                     <div className="col-md-5">
@@ -29,7 +29,9 @@ const CongratulationModal = (props) => {
                 </div>
 
                 <div className="d-flex justify-content-center mt-5">
-                    <Link to='/superstar/dashboard'><Button className=" continue-button"><b className="text-black">Continue</b></Button></Link>
+                    <Link to={localStorage.auth_type === 'star' ? '/superstar/dashboard' : '/jury-board/dashboard'}>
+                        <Button className=" continue-button"><b className="text-black">Continue</b></Button>
+                    </Link>
                 </div>
             </Modal.Body>
 

@@ -1,0 +1,9 @@
+.liveMeetupBorder {
+  border: 2px solid gold;
+  background-color: #2d2d2d;
+}
+
+.faTrophy {
+  color: goldenrod;
+  font-size: 2rem;
+}

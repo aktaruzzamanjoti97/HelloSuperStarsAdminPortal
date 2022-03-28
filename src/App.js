@@ -8,6 +8,7 @@ import VideoCall from './VideoCall'
 // Main Layout
 import AdminLayout from './Components/Admin/MasterLayout';
 import StarLayout from './Components/SuperStar/MasterLayout';
+import JuryLayout from './Components/JuryBoard/MasterLayout';
 import AuditionAdminLayout from './Components/AuditionAdmin/MasterLayout';
 
 
@@ -41,6 +42,7 @@ import SuperstarRoute from './Components/SuperStar/SuperstarRoute';
 
 
 import NotFound from './Components/Pages/Errors/Error';
+import JuryBoardRoute from './Components/PrivateRoute/JuryBoardRoute';
 
 
 // Connect with Backend with Laravel Sanctum Authentication //
@@ -78,14 +80,25 @@ return (
       <Route exact path='/jury-board/registration' component={SuperStarRegistration} />
 
       <Route exact path='/superstar/qr' component={SuperStarQR} />
+
       <Route exact path='/superstar/otp' component={SuperStarOTP} />
+
+      <Route exact path='/jury-board/otp' component={SuperStarOTP} />
+
       <Route exact path='/superstar_registration/otp' component={SuperStarRegistrationOTP} />
+
+      <Route exact path='/jury-board-registration/otp' component={SuperStarRegistrationOTP} />
 
       {/* Indevidual Admin Route */}
       <Route exact path='/audition-admin/otp' component={AuditionAdminOTP} />
 
 
       <Route exact path='/superstar/congratulations' component={HelloSuperStarShakib} />
+
+      {/* jury board congratulations by Monir */}
+      <Route exact path='/jury-board/congratulations' component={HelloSuperStarShakib} />
+
+
       <Route exact path='/videoCall' component={VideoCall} />
       
       <SuperStarRoute  exact path='/superstar/Live-chat/pedning-session' component={SuperstarRoute}/>
@@ -94,7 +107,11 @@ return (
       
       {/* Private Route with Main Layout */}
       <AdminPrivateRoute path="/superstar-admin" name="Admin" render={(props) => <AdminLayout {...props} />} />
+
       <SuperStarRoute path="/superstar" name="SuperStar" render={(props) => <StarLayout {...props} />} />
+
+      <JuryBoardRoute path="/jury-board" name="JuryBoard" render={(props) => <JuryLayout {...props} />} />
+
       <AuditionAdminPrivateRoute path="/audition-admin" name="audition-admin-private-route" render={(props) => <AuditionAdminLayout {...props} />} />
 
       <Route exact path='/learning-session/live-stream' component={VideoCall} />
