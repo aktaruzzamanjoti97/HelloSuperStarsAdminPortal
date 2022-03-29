@@ -1,0 +1,103 @@
+.CommentScroll{
+    border-radius: 5px;
+    height: 70vh;
+    overflow: scroll;
+}
+
+.CommentScroll::-webkit-scrollbar {
+    width: 0px;
+  }
+.InputComment  {
+    width: 100%;
+    padding-left: 10px;
+    color: rgb(253, 251, 251);
+    border: none;
+    border-radius: 5px 0px 0px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: 1px solid goldenrod;
+}
+.BtnComment  {
+    padding-left: 10px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    outline: 1px solid goldenrod;
+}
+
+.InputComment::placeholder{
+    color: gray;
+} 
+
+/* Tab || User Portal - Comments */
+
+.img-fluid-Tab{
+    width: 35px;
+}
+@media only screen and (max-width: 1024px) {
+    .img-fluid-Tab{
+        width:15px;
+    }
+  }
+@media only screen and (min-width: 1025px) and (max-width: 1400px){
+    .img-fluid-Tab{
+        width:20px;
+    }
+    
+  }
+
+
+
+
+.TabUsers{
+    padding-bottom: 10px;
+}
+
+.TabUsers1{
+    border-radius: 5px;
+    height: 80vh;
+    overflow: scroll;
+}
+
+.TabUsers1::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+/* Container holding the image and the text */
+  .container-Tab-User {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  /* Bottom left text */
+  .UserTextTab1 {
+    position: absolute;
+    bottom: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(3, 0, 0, 0.514);
+}  
+.UserTextTab {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}  
+
+
+.UserTabImg{
+    width: 100%;
+    height: 18vh;
+    border-radius: 5px;
+    border: 1px solid white;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+   
+    .UserTabImg{
+        width: 100%;
+        height: 220px;
+        border-radius: 5px;
+        border: 1px solid white;
+        object-fit: cover;
+    }
+  }

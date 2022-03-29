@@ -1,0 +1,13 @@
+.greetingsApproveButton {
+  width: 10vw;
+  padding: 0.8rem 0;
+  color: black;
+  border: none !important;
+  background: #ffd910;
+  border-radius: 10px;
+}
+
+.banner-image {
+  height: 300px;
+  object-fit: cover;
+}

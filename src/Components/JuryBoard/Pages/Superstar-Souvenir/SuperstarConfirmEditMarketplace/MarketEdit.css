@@ -1,0 +1,22 @@
+.DesktopEdit{
+    display: block;
+}
+
+.mobileEdit{
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .DesktopEdit{
+        display: none;
+    }
+    
+    .mobileEdit{
+        display: block;
+    }
+
+    .btnInfo{
+        padding: 5px !important;
+        width: 150px !important;
+    }
+  }

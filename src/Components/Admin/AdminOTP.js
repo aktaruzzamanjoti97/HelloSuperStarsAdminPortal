@@ -51,7 +51,13 @@ $(".inputs").keyup(function () {
                         localStorage.setItem('auth_otp', 'yes');
 
                         swal("Success",res.data.message,"success");
+
+                        if (res.data.auth_type === 'jury') {
+                            history.push('/jury-board-admin/dashboard');
+                        }
+
                         history.push('/superstar-admin/dashboard');
+                        
                     }
                     else if(res.data.status === 401)
                     {

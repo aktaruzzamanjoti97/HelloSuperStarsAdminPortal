@@ -92,6 +92,7 @@ import RejectedDetails from './Pages/FanGroupStar/Content/RejectedDetails';
 import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
 import FanBaseStar from './Pages/FanGroupStar/Home/FanBaseStar';
 import FanGroupCreate from './Pages/FanGroupStar/Content/FanGroupCreate';
+// import JuryBoardDashboard from '../JuryBoard/Dashboard/JuryBoardDashboard';
 
 
 
@@ -100,7 +101,11 @@ import FanGroupCreate from './Pages/FanGroupStar/Content/FanGroupCreate';
 
 const SuperstarRoute = [
     { path: '/superstar', exact: true, name: 'SuperStar' },
+
     { path: '/superstar/dashboard', exact: true, name: 'Dashboard', component: StarMainDashboard },
+
+    // { path: '/jury-board/dashboard', exact: true, name: 'Dashboard', component: JuryBoardDashboard },
+
     { path: '/superstar/event-date', exact: true, name: 'Dashboard', component: StarDashEvent },
     { path: '/superstar/event-category', exact: true, name: 'Dashboard', component: StarEventCategory },
     { path: '/superstar/event-requesting', exact: true, name: 'Dashboard', component: StarEventRequesting },

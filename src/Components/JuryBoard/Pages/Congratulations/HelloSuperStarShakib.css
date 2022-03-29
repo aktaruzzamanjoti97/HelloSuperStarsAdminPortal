@@ -1,0 +1,46 @@
+.helloShakib {
+    background-color: #232323;
+    min-height: 100vh;
+    color: #fff;
+    /* position: relative; */
+  }
+  
+  .helloShakib-border {
+    border: 2px solid #f5ea45;
+    padding: 50px 0;
+    margin: 25px;
+    min-width: 90%;
+    position: relative;
+    /* line-height: 100vh; */
+  }
+  
+  .vl {
+    border-left: 2px solid #FFCB5E;
+    height: 150px;
+  }
+  
+  .superStarName {
+    font-weight: 900;
+    background: linear-gradient(
+      102.45deg,
+      #f5ea45 28.52%,
+      #dda336 52.38%,
+      #e7a725 72.31%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @media only screen and (max-width: 600px) {
+      .secondCol{
+          margin-top: 25px;
+      }
+  }
+  
+  @media only screen and (max-width: 350px){
+      li{
+          font-size: 13px;
+      }
+  }
+  
+  

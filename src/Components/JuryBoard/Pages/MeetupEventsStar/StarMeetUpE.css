@@ -1,0 +1,24 @@
+.Banner-SME {
+    border: 3px solid rgb(250, 213, 7);
+    height: 260px;
+    object-fit: cover;
+}
+.MEN-X {
+    background: linear-gradient(102.45deg, #F7ED00 28.52%, #FFD11A 72.31%) !important;
+}
+.MEN-Y{
+    background: #4F4F4F !important;
+}
+
+.Mde-Nt{
+    background: #252525 !important;
+    padding: 15px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+
