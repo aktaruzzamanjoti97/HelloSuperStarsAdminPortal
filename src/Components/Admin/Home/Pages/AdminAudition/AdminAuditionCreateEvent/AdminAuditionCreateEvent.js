@@ -197,9 +197,6 @@ const AdminAuditionCreateEvent = (props) => {
                           aria-label="Default select example"
                         >
                           <option selected>Select Superstar</option>
-                          {/* <option value="1">Shakib Al Hasan</option>
-                        <option value="2">Musfiqur Rahim</option>
-                        <option value="3">Tamim Iqbal</option> */}
 
                           {stars.map((star, i) => (
                             <option
@@ -233,11 +230,6 @@ const AdminAuditionCreateEvent = (props) => {
               );
             })}
 
-            {console.log(
-              "Monir InputList",
-              JSON.parse(JSON.stringify(inputList))
-            )}
-
             <div className="row">
               <div className="col-md-4">
                 <div className="row my-4">
@@ -247,18 +239,21 @@ const AdminAuditionCreateEvent = (props) => {
                     </p>
                   </div>
                   <div className="col-md-9">
-
                     <img
-                        src={file}
-                        className="img-fluid avatar-img-src mb-3"
-                        alt=""
-                      />
-                    {imagedata != null ? (<img
+                      src={file}
+                      className="img-fluid avatar-img-src mb-3"
+                      alt=""
+                    />
+                    {imagedata != null ? (
+                      <img
                         src={`http://localhost:8000/${imagedata}`}
                         className="img-fluid avatar-img-src mb-3"
                         alt=""
-                      />) :""}
-                    
+                      />
+                    ) : (
+                      ""
+                    )}
+
                     <input
                       type="file"
                       name="file"

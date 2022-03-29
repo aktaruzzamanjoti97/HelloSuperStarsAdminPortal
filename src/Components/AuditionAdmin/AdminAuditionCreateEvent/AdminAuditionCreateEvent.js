@@ -53,7 +53,7 @@ const AdminAuditionCreateEvent = (props) => {
   };
   // Video Input
   const handleVideoChange = (file) => {
-    console.log('Video File',file);
+    console.log('Video File',file[0]);
     setVideoData(file[0]);
   };
   const Confirmed = () => {
@@ -114,7 +114,6 @@ const AdminAuditionCreateEvent = (props) => {
   // Add Audtion Form Submission
   const auditionSubmit = (e) => {
     e.preventDefault();
-    console.log('Video',videoData);
     const formData = new FormData();
     formData.append("title", inputData.title);
     formData.append("star_ids", inputList);
@@ -377,7 +376,7 @@ const AdminAuditionCreateEvent = (props) => {
                       className="inputfile"
                       onChange={(e) => handleVideoChange(e.target.files)}
                     />
-                    <label for="file">
+                    <label for="video">
                       <i class="fas fa-cloud-upload-alt"></i> Upload
                     </label>
                     <span className="text-danger">
