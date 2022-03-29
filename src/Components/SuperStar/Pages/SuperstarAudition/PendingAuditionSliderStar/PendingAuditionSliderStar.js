@@ -7,6 +7,7 @@ import LeMerridian from '../../../../../assets/images/MeetupImages/unsplash_xEaA
 import Session from '../../../../../assets/images/MeetupImages/unsplash_YC8qqp50BdA.png'
 import EnterImage from '../../../../../assets/images/enter 1.png'
 import axios from 'axios';
+import { Markup } from 'interweave';
 
 
 const PendingAuditionSliderStar = () => {
@@ -89,7 +90,8 @@ axios.get(`/api/superstar/audition/pendings`).then((res)=>{
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
 
-                                        <p className="text-secondary">{audition.description}
+                                        <p className="text-secondary">
+                                        <Markup content={audition.description}/>
                                         </p>
                                     </div>
                                 </div>

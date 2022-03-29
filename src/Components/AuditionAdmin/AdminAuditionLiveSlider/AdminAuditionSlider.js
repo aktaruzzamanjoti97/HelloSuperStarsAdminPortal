@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import MeetupImage1 from '../../../assets/images/MeetupImages/unsplash_MXbM1NrRqtI.png';
 import RadisonBlue from '../../../assets/images/MeetupImages/unsplash_QdAAasrZhdk.png';
@@ -6,10 +6,26 @@ import LeMerridian from '../../../assets/images/MeetupImages/unsplash_xEaAoizNFV
 import Session from '../../../assets/images/MeetupImages/unsplash_YC8qqp50BdA.png'
 import EnterImage from '../../../assets/images/enter 1.png'
 import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+import { Markup } from 'interweave';
 
 const AdminAuditionSlider = () => {
 
     let history = useHistory()
+
+    const [lives, setLives] = useState([]);
+
+    useEffect(() => {
+      axios.get("/api/audition-admin/audition/lives").then((res) => { 
+        if (res.data.status === 200) {
+            setLives(res.data.lives);
+  
+          console.log(res.data.lives);
+        }
+      });
+  
+      console.log();
+    }, []);
     
     var settings = {
         dots: true,
@@ -53,28 +69,28 @@ const AdminAuditionSlider = () => {
                 <div className="slick-parent d-flex justify-content-center">
                     <Slider className="slider-width" {...settings}>
 
-
+                    {lives.map((live, index) => (
 
                         <div className="p-3">
                             <div className="completedMeetupBlack">
-                                <img src={MeetupImage1} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
+                                <img src={`http://localhost:8000/${live.banner}`} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
                                 <div onClick={()=>{
                                     history.push('/audition-admin/audition/live-upload-show')
                                 }} className="p-3">
                                     <div className="d-flex justify-content-between">
                                         <Link to="" style={{ textDecoration: 'none' }}>
-                                            <h5 className="text-white">This is Pending Audition</h5>
+                                            <h5 className="text-white">{live.title}</h5>
                                         </Link>
                                         <img className="img-fluid" src={EnterImage} alt="" />
                                     </div>
 
-                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                    <p className="text-secondary"><Markup content={live.description}></Markup>
                                     </p>
                                 </div>
 
                             </div>
                         </div>
-
+                        ))}
                     </Slider>
                 </div>
 
