@@ -7,6 +7,7 @@ import LeMerridian from '../../../../../assets/images/MeetupImages/unsplash_xEaA
 import Session from '../../../../../assets/images/MeetupImages/unsplash_YC8qqp50BdA.png'
 import EnterImage from '../../../../../assets/images/enter 1.png'
 import axios from 'axios';
+import { Markup } from 'interweave';
 
 
 const LiveAuditionSliderStar = () => {
@@ -14,14 +15,14 @@ const LiveAuditionSliderStar = () => {
 
     let history = useHistory()
 
-    const [pendingAuditions, setPendingAudition] = useState([]);
+    const [liveAuditions, setLiveAudition] = useState([]);
 
     useEffect(()=>{
-axios.get(`/api/superstar/audition/pendings`).then((res)=>{
+axios.get(`/api/superstar/audition/live`).then((res)=>{
     if(res.status === 200){
 
-        console.log("pending audition", res.data.pending_auditions)
-        setPendingAudition(res.data.pending_auditions)
+        //console.log("pending audition", res.data.liveAuditions)
+        setLiveAudition(res.data.liveAuditions)
     }
 })
     },[]);
@@ -75,7 +76,7 @@ axios.get(`/api/superstar/audition/pendings`).then((res)=>{
 
 
 
-                          {pendingAuditions?.map((audition)=>
+                          {liveAuditions?.map((audition)=>
                           
 
                               <div className="p-3">
@@ -83,13 +84,15 @@ axios.get(`/api/superstar/audition/pendings`).then((res)=>{
                                     <img src={`http://localhost:8000/${audition.banner}`} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
-                                            <Link to={`/superstar/auditions/pending/${audition.id}`} style={{ textDecoration: 'none' }}>
+                                            <Link to='' style={{ textDecoration: 'none' }}>
                                                 <h5 className="text-white">{audition.title}</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
                                         </div>
 
-                                        <p className="text-secondary">{audition.description}
+                                        <p className="text-secondary">
+                                        <Markup content={audition.description}/>
+                                        
                                         </p>
                                     </div>
                                 </div>

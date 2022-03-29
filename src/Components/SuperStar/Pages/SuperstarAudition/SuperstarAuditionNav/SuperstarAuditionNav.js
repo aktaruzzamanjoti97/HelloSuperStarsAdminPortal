@@ -7,15 +7,22 @@ import axios from 'axios';
 const SuperstarAuditionNav = () => {
 
     const [pedingAudition,setPendingAudition] = useState([]);
+    const [liveAudition,setLiveAudition] = useState([]);
 
     useEffect(() => {
         axios.get("/api/superstar/audition/pendings").then((res) => { 
           if (res.data.status === 200) {
             setPendingAudition(res.data.pending_auditions);
-    
-            //console.log('star pending audition',res.data.pending_auditions);
+
           }
         });
+        axios.get("/api/superstar/audition/live").then((res) => { 
+            if (res.data.status === 200) {
+
+                setLiveAudition(res.data.liveAuditions);
+  
+            }
+          });
     
       }, []);
 
@@ -36,7 +43,10 @@ const SuperstarAuditionNav = () => {
                                         <img src={Live} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
+
                                         <small className="ad-card-small"></small>
+
+                                        <small className="ad-card-small">{pad(liveAudition.length)}</small>
                                     </td>
                                 </tr>
                             </center>

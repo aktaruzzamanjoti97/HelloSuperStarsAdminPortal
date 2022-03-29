@@ -12,6 +12,7 @@ import PendingAudition from "./PendingAudition/PendingAudition";
 import AdminAuditionCreateEvent from "./AdminAuditionCreateEvent/AdminAuditionCreateEvent";
 import AdminAuditionLiveVideoFilter from "./AdminAuditionLiveVideoFilter/AdminAuditionLiveVideoFilter";
 import GrandFinish from "./Dashboard/Content/Finish/GrandFinish";
+import AuditionsStatus from "./AuditionStatus/AuditionsStatus";
 
 
 
@@ -28,6 +29,7 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
     { path: '/audition-admin/audition/create-event/:id', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/audition-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
+    { path: '/audition-admin/audition/pending/:id', exact: true, name: 'audition-details', component: AuditionsStatus},
     { path: '/audition-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
     { path: '/audition-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
     { path: '/audition-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
