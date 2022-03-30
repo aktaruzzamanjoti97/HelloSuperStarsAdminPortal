@@ -26,12 +26,12 @@ const AuditionAdminRoute = [
 
     // { path: '/audition-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/audition-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
-    { path: '/audition-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
+    { path: '/audition-admin/audition/live-upload-show/:id', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },
     { path: '/audition-admin/audition/create-event/:id', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/audition-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
     { path: '/audition-admin/audition/pending/:id', exact: true, name: 'audition-details', component: AuditionsStatus},
     { path: '/audition-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
-    { path: '/audition-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
+    { path: '/audition-admin/audition/audition-video/:id', exact: true, name: 'audition-video', component: AdminAuditionVideo },
     { path: '/audition-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/audition-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
 

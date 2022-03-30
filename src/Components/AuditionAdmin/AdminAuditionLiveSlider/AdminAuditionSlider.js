@@ -75,7 +75,7 @@ const AdminAuditionSlider = () => {
                             <div className="completedMeetupBlack">
                                 <img src={`http://localhost:8000/${live.banner}`} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
                                 <div onClick={()=>{
-                                    history.push('/audition-admin/audition/live-upload-show')
+                                    history.push(`/audition-admin/audition/live-upload-show/${live.id}`)
                                 }} className="p-3">
                                     <div className="d-flex justify-content-between">
                                         <Link to="" style={{ textDecoration: 'none' }}>
