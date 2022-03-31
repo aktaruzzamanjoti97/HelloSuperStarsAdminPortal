@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
-import decline from '../../../assets/images/declined.png';
-import sign from '../../../assets/images/sign.png';
+import decline from "../../../assets/images/declined.png";
+import sign from "../../../assets/images/sign.png";
 import "./AdminAuditionVideo.css";
-import { fakeVideoData } from './fakeVideoData';
-
-const AdminAuditionVideo = () => {
-
+import { fakeVideoData } from "./fakeVideoData";
+import axios from "axios";
+const AdminAuditionVideo = (props) => {
   let history = useHistory();
+  const [audition, setAudition] = useState([]);
+  const [declineInput, setDeclineInput] = useState(false)
+
+  var aud_id = props.match.params.id;
+
+  useEffect(() => {
+    axios.get(`/api/audition-admin/audition/${aud_id}`).then((res) => {
+      if (res.data.status === 200) {
+        let audition = res.data.audition;
+        console.log("Single Audition:", audition);
+        setAudition(audition);
+      }
+    });
+  }, [aud_id]);
 
   var settings = {
     dots: true,
@@ -81,152 +94,124 @@ const AdminAuditionVideo = () => {
     ],
   };
 
-  const [clickVideoLink, setClickVideoLink] = useState([]);
+  const [clickVideoLink, setClickVideoLink] = useState('');
+
+  console.log('Click video', clickVideoLink);
+  
   const [multiSelectArrays, setMultiSelectArrays] = useState([]);
 
+  function handleSelectVideo(participant_id) {
+    // if (!clickVideoLink.includes(audition.participant[index])) {
+    //   setClickVideoLink([...clickVideoLink, audition.participant[index]]);
+    // }
 
+    setClickVideoLink(participant_id);
 
-  function handleSelectVideo(index) {
-    if (!clickVideoLink.includes(fakeVideoData[index])) {
-      setClickVideoLink([...clickVideoLink, fakeVideoData[index]])
-    }
   }
 
   console.log(clickVideoLink);
 
   function clickMultipleSelectVideo() {
-    setMultiSelectArrays(clickVideoLink)
+    setMultiSelectArrays(clickVideoLink);
   }
 
   console.log(multiSelectArrays);
 
-
+  const handleDeclineInput = () => {
+    setDeclineInput(!declineInput)
+  }
 
   return (
     <div>
-
-      <div className='videoSliderBorder d-flex justify-content-center'>
+      <div className="videoSliderBorder d-flex justify-content-center">
         <div className="videoSliderStyle py-5 px-3">
           <div>
             <h2 className="text-warning"> Video Filtering </h2>
 
             <Slider {...settings}>
-
-              {
-                fakeVideoData.map((singleVideo, index) => (
-                  <div className="" >
-                    <div className="videos bg-success p-4 mx-4" onClick={() => handleSelectVideo(index)} key={singleVideo.id}>
-                      <ReactPlayer url={singleVideo.link} className="img-fluid w-100" />
-                    </div>
+              {audition.participant?.map((video, i) => (
+                <div className="">
+                  <div
+                    className="videos bg-success p-4 mx-4"
+                    onClick={() => handleSelectVideo(video.id)}
+                    key={video.id}
+                  >
+                    <video width="630" controls>
+                      <source
+                        src={
+                          audition.video != null
+                            ? `http://localhost:8000/${audition.video}`
+                            : "https://youtu.be/dgfTiONcnTc"
+                        }
+                        type="video/mp4"
+                      />
+                    </video>
                   </div>
-                ))
-              }
-
+                </div>
+              ))}
+              
             </Slider>
 
+            <div className="my-3">
+              <span
+                onClick={() => clickMultipleSelectVideo()}
+                className="buttonStyle"
+                type="button"
+              >
+                <img className="img-fluid" width="40px" src={sign} alt="" />
+              </span>
 
-
-
+              <button onClick={handleDeclineInput} className="ms-3 buttonStyle" type="button">
+                <img className="img-fluid" width="40px" src={decline} alt="" />
+              </button>
+            </div>
           </div>
 
-          <div className='my-3'>
-            <button onClick={() => clickMultipleSelectVideo()} className='buttonStyle' type="button"><img className='img-fluid' width='40px' src={sign} alt="" /></button>
-            <button className='ms-3 buttonStyle' type="button"><img className='img-fluid' width='40px' src={decline} alt="" /></button>
-          </div>
-
-          <div className="row mt-4">
+          {
+            declineInput ? (
+              <div className="row mt-4">
             <div className="col-md-4">
-              <input type="text" className='form-control input-gray' placeholder='Comment' />
+              <input
+                type="text"
+                className="form-control input-gray"
+                placeholder="Comment"
+              />
             </div>
             <div className="col-md-1">
-              <button className='form-control btn btn-warning'>Done</button>
+              <button className="form-control btn btn-warning">Done</button>
             </div>
           </div>
+            ) : null
+          }
+
+         
         </div>
       </div>
 
-
-      <div className='my-4'>
-
-        <div className='filterVideoBorder d-flex justify-content-center'>
-
+      <div className="my-4">
+        <div className="filterVideoBorder d-flex justify-content-center">
           <div className="filteredVideoWidth py-5 px-2">
-            <h2 className='text-warning'>Filtered Video</h2>
-            {/* 
-            <div className="d-flex">
-              <div key={imageSelect.key} className='p-4'>
-                <img className="img-fluid" src={imageSelect.imgUrl} alt="" />
-              </div>
-            </div> */}
-
-            {/* <Slider {...settings2}> */}
-
-            {/* {
-                imageSelect.map((i) => (
-                  <div key={i.id} className='p-4'>
-                    <img className="img-fluid" src={i.imgUrl} alt="" />
-                  </div>
-                ))
-              } */}
-
+            <h2 className="text-warning">Filtered Video</h2>
             <Slider {...settings2}>
-              {
-                multiSelectArrays.map((video) => (
-                  <div key={video.id} className='p-2'>
-                    <ReactPlayer className="img-fluid" url={video.link} />
-                  </div>
-                ))
-              }
+              {multiSelectArrays.map((video) => (
+                <div key={video.id} className="p-2">
+                  <ReactPlayer className="img-fluid" url={video.link} />
+                </div>
+              ))}
             </Slider>
 
-
-
-
-
-            {/* {console.log(imageSelect)} */}
-
-
-
-            {/* <div className='p-4'>
-                <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />    
-              </div>
-              <div className='p-4'>
-                <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-      
-              </div>
-              <div className='p-4'>
-                <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png'alt="" />
-              </div>
-              <div className='p-4'>
-                <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-              </div>
-              <div className='p-4'>
-                <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-              </div>
-              <div className='p-4'>
-                <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-              </div>
-              <div className='p-4'>
-              <img className="img-fluid" src='https://i.ibb.co/0sB4XhY/unplash.png' alt="" />
-              </div> */}
-            {/* </Slider> */}
-
-
-
-
-            <div onClick={() => {
-              history.push('/audition-admin/audition/audition-video-show')
-            }} className='d-flex justify-content-center mt-4'>
-              <button className='btn btn-warning w-25'><b>Open to Vote</b></button>
+            <div
+              onClick={() => {
+                history.push("/audition-admin/audition/audition-video-show");
+              }}
+              className="d-flex justify-content-center mt-4"
+            >
+              <button className="btn btn-warning w-25">
+                <b>Open to Vote</b>
+              </button>
             </div>
           </div>
-
         </div>
-
-
-
-
-
       </div>
     </div>
   );
