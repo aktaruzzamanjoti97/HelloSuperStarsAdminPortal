@@ -21,7 +21,7 @@ const AdminAuditionCreateEvent = (props) => {
   const [videoData, setVideoData] = useState("");
   const [convertedContent, setConvertedContent] = useState("");
 
-  const [audition, setAudition] = useState("");
+  const [roundStatus, setRoundStatus] = useState("");
 
   const [startDate, setStartDate] = useState(new Date("2022-08-18T21:11:54"));
   const [endDate, setEndDate] = useState(new Date("2022-08-18T21:11:54"));
@@ -119,6 +119,7 @@ const AdminAuditionCreateEvent = (props) => {
     formData.append("star_ids", inputList);
     formData.append("description", convertedContent);
     formData.append("banner", imagedata);
+    formData.append("round_status", inputData.round_status);
     formData.append("video", videoData);
     formData.append("start_time",moment(startDate).format("yyyy-MM-DD HH:mm:ss"));
     formData.append("end_time",moment(endDate).format("yyyy-MM-DD HH:mm:ss"));
@@ -273,7 +274,27 @@ const AdminAuditionCreateEvent = (props) => {
                 </>
               );
             })}
+<div className="row my-4">
+                      <div className="col-md-1">
+                      <p className="text-white">Select Round</p>
+                      </div>
+                      <div className="col-md-11">
+                        <select
+                          name="round_status"
+                          type="number"
+                          onChange={handleInput}
+                          className="form-select input-gray text-white"
+                          aria-label="Default select example"
+                        >
+                          <option selected>Select Round</option>
+                          <option value="1">First Round</option>
+                        <option value="2">Second Round</option>
+                        <option value="3">Third Round</option>
+                     
+                     </select>
 
+            </div>
+            </div>
             <div className="row my-4">
                 <div className="col-md-2">
                   <p className="text-white">Time Length</p>
@@ -310,8 +331,7 @@ const AdminAuditionCreateEvent = (props) => {
                   </div>
                 </div>
               </div>
-
-            
+              
             <div className="row">
               <div className="col-md-4">
                 <div className="row my-4">
