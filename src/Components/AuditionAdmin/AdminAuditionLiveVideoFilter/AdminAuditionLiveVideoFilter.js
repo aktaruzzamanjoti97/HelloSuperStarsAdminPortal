@@ -101,8 +101,8 @@ const AdminAuditionLiveVideoFilter = (props) => {
               <video width="400" controls>
                 <source
                   src={
-                    audition.video != null
-                      ? `http://localhost:8000/${audition.video}`
+                    video.video_url != null
+                      ? `http://localhost:8000/${video.video_url}`
                       : "https://youtu.be/dgfTiONcnTc"
                   }
                   type="video/mp4"
