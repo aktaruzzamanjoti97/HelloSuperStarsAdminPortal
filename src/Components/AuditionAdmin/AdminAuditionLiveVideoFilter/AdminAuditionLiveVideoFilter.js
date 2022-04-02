@@ -24,6 +24,7 @@ const AdminAuditionLiveVideoFilter = (props) => {
     });
   }, [aud_id]);
 
+
   const handleClick = () => {
     history.push(`/audition-admin/audition/audition-video/${aud_id}`);
   };

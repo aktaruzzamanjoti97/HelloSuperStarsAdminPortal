@@ -1,28 +1,104 @@
 import React, { useState, useEffect } from "react";
-import ReactPlayer from "react-player";
 import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import decline from "../../../assets/images/declined.png";
 import sign from "../../../assets/images/sign.png";
 import "./AdminAuditionVideo.css";
-import { fakeVideoData } from "./fakeVideoData";
 import axios from "axios";
-const AdminAuditionVideo = (props) => {
-  let history = useHistory();
-  const [audition, setAudition] = useState([]);
-  const [declineInput, setDeclineInput] = useState(false)
+import swal from "sweetalert";
 
-  var aud_id = props.match.params.id;
+const AdminAuditionVideo = (props) => {
+  const [clickVideoLink, setClickVideoLink] = useState("");
+  const [acceptVideo, setAcceptVideo] = useState(0);
+  const [rejectVideo, setRejectvideo] = useState(0);
+  const [comments, setComments] = useState("");
+  const [error_list, setErrorList] = useState([]);
+
+  const [acceptedVideos, setAcceptedVidoes] = useState([]);
+
+  let history = useHistory();
+
+  const [audition_videos, setAuditionVideos] = useState([]);
+
+  const [declineInput, setDeclineInput] = useState(false);
+
+  const aud_id = props.match.params.id;
 
   useEffect(() => {
-    axios.get(`/api/audition-admin/audition/${aud_id}`).then((res) => {
+    getAuditionVedio(aud_id);
+    getAcceptedVideo(aud_id);
+  }, [aud_id]);
+
+  const getAuditionVedio = (aud_id) => {
+    axios.get(`/api/audition-admin/audtion-videos/${aud_id}`).then((res) => {
       if (res.data.status === 200) {
-        let audition = res.data.audition;
-        console.log("Single Audition:", audition);
-        setAudition(audition);
+        let video = res.data.audition_videos;
+        setAuditionVideos(video);
+        // console.log('Audition Id',aud_id);
       }
     });
-  }, [aud_id]);
+  };
+
+  const getAcceptedVideo = (aud_id) => {
+    axios.get(`/api/audition-admin/accepted-videos/${aud_id}`).then((res) => {
+      if (res.data.status === 200) {
+        let video = res.data.accepted_videos;
+        setAcceptedVidoes(video);
+      }
+    });
+  };
+
+  function handleSelectVideo(participant_id) {
+    setClickVideoLink(participant_id);
+    setAcceptVideo(1);
+    console.log("Video Clicked", participant_id);
+  }
+
+  // show reject comment form
+  const handleDeclineInput = () => {
+    setDeclineInput(!declineInput);
+    setRejectvideo(1);
+  };
+
+  // set comment input
+
+  const handleComment = (e) => {
+    setComments(e.target.value);
+  };
+
+  // Submit Accepted Video
+  const submitFiltervideo = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("audition_id", aud_id);
+    formData.append("participant_id", clickVideoLink);
+    formData.append("accept", acceptVideo);
+    formData.append("reject", rejectVideo);
+    formData.append("comments", comments);
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios
+        .post(`api/audition-admin/filter-video/submit`, formData)
+        .then((res) => {
+          console.log("data", res.data);
+          if (res.data.status === 200) {
+            getAuditionVedio(aud_id);
+            getAcceptedVideo(aud_id);
+            swal("Success", res.data.message, "success");
+            setComments(" ");
+            // history.push(`/audition-admin/audition/pending`);
+          } else if (res.data.status === 422) {
+            setErrorList({
+              ...error_list,
+              error_list: res.data.validation_errors,
+            });
+          } else {
+            console.log("Exception Error : ", res.data.message);
+            // swal("Error", res.data.message, "error");
+          }
+        });
+    });
+  };
 
   var settings = {
     dots: true,
@@ -94,33 +170,6 @@ const AdminAuditionVideo = (props) => {
     ],
   };
 
-  const [clickVideoLink, setClickVideoLink] = useState('');
-
-  console.log('Click video', clickVideoLink);
-  
-  const [multiSelectArrays, setMultiSelectArrays] = useState([]);
-
-  function handleSelectVideo(participant_id) {
-    // if (!clickVideoLink.includes(audition.participant[index])) {
-    //   setClickVideoLink([...clickVideoLink, audition.participant[index]]);
-    // }
-
-    setClickVideoLink(participant_id);
-
-  }
-
-  console.log(clickVideoLink);
-
-  function clickMultipleSelectVideo() {
-    setMultiSelectArrays(clickVideoLink);
-  }
-
-  console.log(multiSelectArrays);
-
-  const handleDeclineInput = () => {
-    setDeclineInput(!declineInput)
-  }
-
   return (
     <div>
       <div className="videoSliderBorder d-flex justify-content-center">
@@ -129,7 +178,7 @@ const AdminAuditionVideo = (props) => {
             <h2 className="text-warning"> Video Filtering </h2>
 
             <Slider {...settings}>
-              {audition.participant?.map((video, i) => (
+              {audition_videos?.map((video, i) => (
                 <div className="">
                   <div
                     className="videos bg-success p-4 mx-4"
@@ -139,8 +188,8 @@ const AdminAuditionVideo = (props) => {
                     <video width="630" controls>
                       <source
                         src={
-                          audition.video != null
-                            ? `http://localhost:8000/${audition.video}`
+                          video.video_url != null
+                            ? `http://localhost:8000/${video.video_url}`
                             : "https://youtu.be/dgfTiONcnTc"
                         }
                         type="video/mp4"
@@ -149,42 +198,54 @@ const AdminAuditionVideo = (props) => {
                   </div>
                 </div>
               ))}
-              
             </Slider>
 
-            <div className="my-3">
-              <span
-                onClick={() => clickMultipleSelectVideo()}
-                className="buttonStyle"
-                type="button"
-              >
-                <img className="img-fluid" width="40px" src={sign} alt="" />
-              </span>
+            {audition_videos?.length > 0 ? (
+              <div className="my-3">
+                <span
+                  onClick={submitFiltervideo}
+                  className="buttonStyle"
+                  type="button"
+                >
+                  <img className="img-fluid" width="40px" src={sign} alt="" />
+                </span>
 
-              <button onClick={handleDeclineInput} className="ms-3 buttonStyle" type="button">
-                <img className="img-fluid" width="40px" src={decline} alt="" />
-              </button>
-            </div>
+                <button
+                  onClick={handleDeclineInput}
+                  className="ms-3 buttonStyle"
+                  type="button"
+                >
+                  <img
+                    className="img-fluid"
+                    width="40px"
+                    src={decline}
+                    alt=""
+                  />
+                </button>
+              </div>
+            ) : null}
           </div>
 
-          {
-            declineInput ? (
-              <div className="row mt-4">
-            <div className="col-md-4">
-              <input
-                type="text"
-                className="form-control input-gray"
-                placeholder="Comment"
-              />
+          {declineInput ? (
+            <div className="row mt-4">
+              <div className="col-md-4">
+                <input
+                  type="text"
+                  className="form-control input-gray"
+                  placeholder="Comment"
+                  onChange={handleComment}
+                />
+              </div>
+              <div className="col-md-1">
+                <span
+                  className="form-control btn btn-warning"
+                  onClick={submitFiltervideo}
+                >
+                  Done
+                </span>
+              </div>
             </div>
-            <div className="col-md-1">
-              <button className="form-control btn btn-warning">Done</button>
-            </div>
-          </div>
-            ) : null
-          }
-
-         
+          ) : null}
         </div>
       </div>
 
@@ -193,10 +254,17 @@ const AdminAuditionVideo = (props) => {
           <div className="filteredVideoWidth py-5 px-2">
             <h2 className="text-warning">Filtered Video</h2>
             <Slider {...settings2}>
-              {multiSelectArrays.map((video) => (
-                <div key={video.id} className="p-2">
-                  <ReactPlayer className="img-fluid" url={video.link} />
-                </div>
+              {acceptedVideos?.map((video, i) => (
+                <video width="400" controls>
+                  <source
+                    src={
+                      video.video_url != null
+                        ? `http://localhost:8000/${video.video_url}`
+                        : "https://youtu.be/dgfTiONcnTc"
+                    }
+                    type="video/mp4"
+                  />
+                </video>
               ))}
             </Slider>
 
@@ -207,7 +275,7 @@ const AdminAuditionVideo = (props) => {
               className="d-flex justify-content-center mt-4"
             >
               <button className="btn btn-warning w-25">
-                <b>Open to Vote</b>
+                <b>Send to Manager Admin</b>
               </button>
             </div>
           </div>
