@@ -420,7 +420,7 @@ const AdminAuditionCreateEvent = (props) => {
             </div>
           </form>
           <button
-                className="btn btn-warning save-greetings-button py-2"
+                className="btn btn-warning save-greetings-button py-2 mt-4"
                 onClick={Confirmed}
               >
                 <big>

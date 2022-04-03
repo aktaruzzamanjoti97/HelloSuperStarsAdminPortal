@@ -9,24 +9,24 @@ import { Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import axios from "axios";
 import { Markup } from "interweave";
+import AdminAuditionNav from "../AdminAuditionNav/AdminAuditionNav";
 
 const PendingAuditionSlider = (props) => {
-  let history = useHistory();
+  
+  const [pendingAuditions, setPendingAudition] = useState([]);
 
-  const [pendings, setPendings] = useState([]);
+  useEffect(()=>{
+axios.get(`/api/admin/audition/pendings`).then((res)=>{
+  if(res.status === 200){
 
-  useEffect(() => {
-    axios.get("/api/admin/audition/pendings").then((res) => { 
-      if (res.data.status === 200) {
-        setPendings(res.data.pendings);
+      setPendingAudition(res.data.pending_auditions)
+  }
+})
+  },[]);
 
-        console.log(res.data.pendings);
-      }
-    });
-
-    console.log();
-  }, []);
-
+  const handlePending = () => {
+      // history.push('/superstar-admin/audition/create-event')
+  }
   var settings = {
     dots: true,
     infinite: false,
@@ -64,12 +64,13 @@ const PendingAuditionSlider = (props) => {
   };
 
   return (
+    <>
     <div>
       <div>
         <div className="slick-parent d-flex justify-content-center">
           <Slider className="slider-width" {...settings}>
-            {pendings.map((pending, index) => (
-              <Link to={`/superstar-admin/audition/create-event/${pending.id}`} className="Link">
+            {pendingAuditions.map((pending, index) => (
+              <>
                 <div className="p-3" style={{ cursor: "pointer" }}>
                   <div className="completedMeetupBlack">
                     <img
@@ -96,13 +97,15 @@ const PendingAuditionSlider = (props) => {
                     </div>
                   </div>
                 </div>
-              </Link>
+              </>
             ))}
           </Slider>
         </div>
       </div>
     </div>
+    </>
   );
+
 };
 
 export default PendingAuditionSlider;

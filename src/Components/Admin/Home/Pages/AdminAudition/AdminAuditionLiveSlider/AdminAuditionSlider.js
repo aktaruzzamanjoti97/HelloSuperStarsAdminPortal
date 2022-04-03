@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import MeetupImage1 from '../../../../../../assets/images/MeetupImages/unsplash_MXbM1NrRqtI.png';
 import RadisonBlue from '../../../../../../assets/images/MeetupImages/unsplash_QdAAasrZhdk.png';
@@ -6,10 +6,30 @@ import LeMerridian from '../../../../../../assets/images/MeetupImages/unsplash_x
 import Session from '../../../../../../assets/images/MeetupImages/unsplash_YC8qqp50BdA.png'
 import EnterImage from '../../../../../../assets/images/enter 1.png'
 import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+import { Markup } from 'interweave';
+import AdminAuditionNav from '../AdminAuditionNav/AdminAuditionNav';
 
 const AdminAuditionSlider = () => {
 
     let history = useHistory()
+
+    const [liveAuditions, setLiveAudition] = useState([]);
+
+    useEffect(()=>{
+axios.get(`/api/admin/audition/live`).then((res)=>{
+    if(res.status === 200){
+
+        //console.log("pending audition", res.data.liveAuditions)
+        setLiveAudition(res.data.liveAuditions)
+    }
+})
+    },[]);
+
+    const handlePending = () => {
+        // history.push('/superstar-admin/audition/create-event')
+    }
+
     
     var settings = {
         dots: true,
@@ -47,33 +67,39 @@ const AdminAuditionSlider = () => {
     };
 
     return (
+
+
+        <>
         <div>
             <div>
 
                 <div className="slick-parent d-flex justify-content-center">
                     <Slider className="slider-width" {...settings}>
 
+                      {liveAuditions?.map((audition)=>
+                      
 
-
-                        <div className="p-3">
+                          <div className="p-3">
                             <div className="completedMeetupBlack">
-                                <img src={MeetupImage1} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
-                                <div onClick={()=>{
-                                    history.push('/superstar-admin/audition/live-upload-show')
-                                }} className="p-3">
+                                <img src={`http://localhost:8000/${audition.banner}`} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
+                                <div onClick={handlePending} className="p-3">
                                     <div className="d-flex justify-content-between">
-                                        <Link to="" style={{ textDecoration: 'none' }}>
-                                            <h5 className="text-white">This is Pending Audition</h5>
-                                        </Link>
+                                            <h5 className="text-white">{audition.title}</h5>
                                         <img className="img-fluid" src={EnterImage} alt="" />
                                     </div>
 
-                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                    <p className="text-secondary">
+                                    <Markup content={audition.description}/>
+                                    
                                     </p>
                                 </div>
-
                             </div>
                         </div>
+                     
+                     )}
+                            
+                         
+                     
 
                     </Slider>
                 </div>
@@ -81,6 +107,9 @@ const AdminAuditionSlider = () => {
 
             </div>
         </div>
+    </>
+
+
     );
 };
 

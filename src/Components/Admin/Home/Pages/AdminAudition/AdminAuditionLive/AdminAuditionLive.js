@@ -1,9 +1,12 @@
 import React from 'react';
 import AdminAuditionSlider from '../AdminAuditionLiveSlider/AdminAuditionSlider';
+import AdminAuditionNav from '../AdminAuditionNav/AdminAuditionNav';
 
 
 const AdminAuditionLive = () => {
     return (
+        <>
+        <AdminAuditionNav/>
         <div className="liveMeetupBorder my-5">
             <div className="d-flex px-4 pt-3">
                 <div className="faTrophy"><i class="fas fa-trophy"></i></div>
@@ -16,6 +19,7 @@ const AdminAuditionLive = () => {
             </div>
 
         </div>
+        </>
     );
 };
 

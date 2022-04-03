@@ -74,11 +74,8 @@ axios.get(`/api/superstar/audition/live`).then((res)=>{
                     <div className="slick-parent d-flex justify-content-center">
                         <Slider className="slider-width" {...settings}>
 
-
-
                           {liveAuditions?.map((audition)=>
                           
-
                               <div className="p-3">
                                 <div className="completedMeetupBlack">
                                     <img src={`http://localhost:8000/${audition.banner}`} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
