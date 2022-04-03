@@ -100,6 +100,35 @@ const AdminAuditionVideo = (props) => {
     });
   };
 
+  // send manager admin 
+
+  const sendManagerAdmin = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("audition_id", aud_id);
+    formData.append("send_manager_admin", 1);
+    
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios
+        .post(`api/audition-admin/send-manager-admin`, formData)
+        .then((res) => {
+          console.log("data", res.data);
+          if (res.data.status === 200) {
+            swal("Success", res.data.message, "success");
+           
+            // history.push(`/audition-admin/audition/pending`);
+          } else {
+            setErrorList({
+              ...error_list,
+              error_list: res.data.validation_errors,
+            });
+          } 
+        });
+    });
+  }
+
   var settings = {
     dots: true,
     infinite: false,
@@ -269,15 +298,17 @@ const AdminAuditionVideo = (props) => {
             </Slider>
 
             <div
-              onClick={() => {
-                history.push("/audition-admin/audition/audition-video-show");
-              }}
+              // onClick={() => {
+              //   history.push("/audition-admin/audition/audition-video-show");
+              // }}
               className="d-flex justify-content-center mt-4"
             >
-              <button className="btn btn-warning w-25">
+              <span className="btn btn-warning w-25" onClick={sendManagerAdmin}>
                 <b>Send to Manager Admin</b>
-              </button>
+              </span>
             </div>
+
+            
           </div>
         </div>
       </div>
