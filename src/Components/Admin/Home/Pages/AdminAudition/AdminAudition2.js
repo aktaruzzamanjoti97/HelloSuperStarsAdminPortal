@@ -15,7 +15,7 @@ const AdminAudition2 = () => {
                 </div>
 
                 <div className="pb-3">
-                    <CompleteAuditionSlider />
+                    {/* <CompleteAuditionSlider /> */}
                 </div>
 
             </div>
