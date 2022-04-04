@@ -12,21 +12,19 @@ import { Markup } from "interweave";
 import AdminAuditionNav from "../AdminAuditionNav/AdminAuditionNav";
 
 const PendingAuditionSlider = (props) => {
-  
   const [pendingAuditions, setPendingAudition] = useState([]);
 
-  useEffect(()=>{
-axios.get(`/api/admin/audition/pendings`).then((res)=>{
-  if(res.status === 200){
-
-      setPendingAudition(res.data.pending_auditions)
-  }
-})
-  },[]);
+  useEffect(() => {
+    axios.get(`/api/admin/audition/pendings`).then((res) => {
+      if (res.status === 200) {
+        setPendingAudition(res.data.pending_auditions);
+      }
+    });
+  }, []);
 
   const handlePending = () => {
-      // history.push('/superstar-admin/audition/create-event')
-  }
+    // history.push('/superstar-admin/audition/create-event')
+  };
   var settings = {
     dots: true,
     infinite: false,
@@ -65,47 +63,50 @@ axios.get(`/api/admin/audition/pendings`).then((res)=>{
 
   return (
     <>
-    <div>
       <div>
-        <div className="slick-parent d-flex justify-content-center">
-          <Slider className="slider-width" {...settings}>
-            {pendingAuditions.map((pending, index) => (
-              <>
-                <div className="p-3" style={{ cursor: "pointer" }}>
-                  <div className="completedMeetupBlack">
-                    <img
-                      src={
-                        pending.banner == null
-                          ? DefaultBanner
-                          : `http://localhost:8000/${pending.banner}`
-                      }
-                      className="img-fluid w-100"
-                      alt=""
-                      style={{ height: "200px" }}
-                    />
-                    <div className="p-3">
-                      <div className="d-flex justify-content-between">
-                          <h5 className="text-white">{pending.title}</h5>
-                        <img className="img-fluid" src={EnterImage} alt="" />
+        <div>
+          <div className="slick-parent d-flex justify-content-center">
+            <Slider className="slider-width" {...settings}>
+              {pendingAuditions.map((pending, index) => (
+                <>
+                  <div className="p-3" style={{ cursor: "pointer" }}>
+                    <div className="completedMeetupBlack">
+                      <img
+                        src={
+                          pending.banner == null
+                            ? DefaultBanner
+                            : `http://localhost:8000/${pending.banner}`
+                        }
+                        className="img-fluid w-100"
+                        alt=""
+                        style={{ height: "200px" }}
+                      />
+                      <div className="p-3">
+                        <div className="d-flex justify-content-between">
+                          <Link
+                            to={`/superstar-admin/audition/details/${pending.id}`}
+                            style={{ textDecoration: "none" }}
+                          >
+                            <h5 className="text-white">{pending.title}</h5>
+                          </Link>
+
+                          <img className="img-fluid" src={EnterImage} alt="" />
+                        </div>
+
+                        <p className="text-secondary">
+                          <Markup content={pending.description}></Markup>
+                        </p>
                       </div>
-
-                      <p className="text-secondary">
-                        <Markup content={pending.description}></Markup>
-                      </p>
-
-                      
                     </div>
                   </div>
-                </div>
-              </>
-            ))}
-          </Slider>
+                </>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
-
 };
 
 export default PendingAuditionSlider;
