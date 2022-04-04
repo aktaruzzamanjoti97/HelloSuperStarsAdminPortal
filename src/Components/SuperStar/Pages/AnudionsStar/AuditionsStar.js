@@ -43,6 +43,16 @@ const AuditionsStar = () => {
             
           });
     }
+    const decline = () => {
+
+        axios.put(`/api/star/decline/audition/${id}`).then((res) => {
+    
+            if (res.status === 200) {
+                history.push(`/superstar/audition`)
+            }
+            
+          });
+    }
 
 return (
     
@@ -91,7 +101,7 @@ return (
             <div className="mt-3">
                 <button onClick={approved} className='btn MEN-X fw-bold'>Approve </button>
                 
-                <button className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>
+                <button onClick={decline} className='btn MEN-Y text-warning fw-bold mx-3'>Decline</button>
             </div>
         </div>
 

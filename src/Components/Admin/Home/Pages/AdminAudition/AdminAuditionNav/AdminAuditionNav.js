@@ -7,26 +7,31 @@ import axios from "axios";
 
 const AdminAuditionNav = () => {
 
-    const [live,setLive] = useState('');
-    const [pending,setPending] = useState('');
+    const [pedingAudition,setPendingAudition] = useState([]);
+    const [liveAudition,setLiveAudition] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/admin/audition/status').then((res) => {
+        axios.get("/api/admin/audition/pendings").then((res) => { 
           if (res.data.status === 200) {
-            setLive(res.data.live);
-            setPending(res.data.pending);
-    
-            //console.log(res.data.pending)
+
+              console.log('pending audtition',res.data.pending_auditions)
+            setPendingAudition(res.data.pending_auditions);
+
           }
         });
-        
-
+        axios.get("/api/admin/audition/live").then((res) => { 
+            if (res.data.status === 200) {
+console.log('live audtition',res.data.liveAuditions)
+                setLiveAudition(res.data.liveAuditions);
+  
+            }
+          });
+    
       }, []);
 
       function pad(d) {
         return (d < 10) ? '0' + d.toString() : d.toString();
       }
-
     return (
         <>
             <div className=" row ">
@@ -40,7 +45,7 @@ const AdminAuditionNav = () => {
                                         <img src={Live} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className="ad-card-small">{pad(live)}</small>
+                                        <small className="ad-card-small">{pad(liveAudition.length)}</small>
                                     </td>
                                 </tr>
                             </center>
@@ -63,7 +68,7 @@ const AdminAuditionNav = () => {
                                         <img src={Pending} className="ad-card-img-top" alt="..." />
                                     </td>
                                     <td className="ad-card-td">
-                                        <small className="ad-card-small">{pad(pending)}</small>
+                                        <small className="ad-card-small">{pad(pedingAudition.length)}</small>
                                     </td>
                                 </tr>
                             </center>
