@@ -1,10 +1,12 @@
 
 import JuryBoardDashboard from './Dashboard/JuryBoardDashboard';
+import JurySelectBoard from './Pages/JurySelectBoard/JurySelectBoard';
 
 const JuryBoardRoute = [
     { path: '/jury-board', exact: true, name: 'JuryBoard' },
 
     { path: '/jury-board/dashboard', exact: true, name: 'Dashboard', component: JuryBoardDashboard },
+    { path: '/jury-board/select', exact: true, name: 'Jury-board-select', component: JurySelectBoard },
     
 
 
