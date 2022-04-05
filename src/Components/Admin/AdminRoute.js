@@ -133,7 +133,11 @@ import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetween
 import AdminApprovedFanGroup from "./Home/Pages/AdminFanGroup/AdminApprovedFanGroup/AdminApprovedFanGroup";
 import AdminPendingFanGroup from "./Home/Pages/AdminFanGroup/AdminPendingFanGroup/AdminPendingFanGroup";
 import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/EditPendingFanGroup";
+
+import AuditionsAdminStar from "./Home/Pages/AdminAudition/AuditionAdminDetails/AuditionsAdminStar";
+
 import ApprovedFanGroup from "./Home/Pages/AdminFanGroup/ApprovedFanGroup/ApprovedFanGroup";
+
 
 
 
@@ -220,6 +224,7 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/create-event/:id', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/superstar-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
     { path: '/superstar-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
+    { path: '/superstar-admin/audition/details/:id', exact: true, name: 'audition-pending', component: AuditionsAdminStar},
     { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
     { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
