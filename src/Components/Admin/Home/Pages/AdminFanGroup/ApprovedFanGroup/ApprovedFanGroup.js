@@ -7,13 +7,12 @@ import { Link, useHistory } from "react-router-dom";
 import Ayushman from "../../../../../../assets/images/AyshmanKhurana.webp";
 import FanGroupIcon from "../../../../../../assets/images/iconFan/expired-1.png";
 import Salman from "../../../../../../assets/images/SalmanKhan.jpg";
-import "./PendingFanGroup.css";
 
-const PendingGroup = () => {
+const ApprovedFanGroup = () => {
   let history = useHistory();
 
   const handleClick = () => {
-    history.push("/superstar-admin/pending-fan-group-competition");
+      history.push("/superstar-admin/FanbaseAdmin1");
   };
 
   return (
@@ -26,7 +25,7 @@ const PendingGroup = () => {
       <div className="pendingGroupFan my-3">
         <div className="fanGroupBgImage w-100 fanGroupText d-flex justify-content-center align-items-center">
           <div>
-            <h4 className="pendingTxt">PENDING</h4>
+            <h4 className="pendingTxt">Approved</h4>
             <h2 className="fanGroupTxt">FAN GROUP</h2>
           </div>
         </div>
@@ -34,7 +33,7 @@ const PendingGroup = () => {
 
       <div className="row my-4">
         <div className="col-md-8 text-light">
-          <h2>Shahrukh Fanbase vs Star Name</h2>
+          <h2>Shahrukh Fanbase vs Salman Khan</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
             possimus repellat, accusantium est vitae perspiciatis accusamus vel
@@ -93,7 +92,7 @@ const PendingGroup = () => {
                     <i className="text-warning">Accepted</i>
                   </small>
                 </p>
-                <button  className="btn btn-warning w-100">
+                <button onClick={handleClick} className="btn btn-warning w-100">
                   Render Group
                 </button>
               </div>
@@ -106,17 +105,17 @@ const PendingGroup = () => {
             <div className="d-flex justify-content-center align-items-center ">
               <div style={{ width: 200, height: 200 }}>
                 <CircularProgressbarWithChildren
-                  value={50}
+                  value={100}
                   styles={buildStyles({
                     pathColor: `gold`,
                   })}
                 >
                   <div style={{ fontSize: 12, marginTop: -5 }}>
-                    <strong className="text-light">50% complete</strong>
+                    <strong className="text-light">100% complete</strong>
                   </div>
                 </CircularProgressbarWithChildren>
                 <p className="text-warning text-center my-2">
-                  Approve by Sakib Al Hasan
+                  Approved by Sakib Al Hasan and Salman Khan
                 </p>
               </div>
             </div>
@@ -124,17 +123,9 @@ const PendingGroup = () => {
         </div>
       </div>
 
-      <div className="d-flex my-3">
-        <button className="btn btnDlt text-warning fw-bold">Delete</button>
-        <Link to="/superstar-admin/pending-fan-group-Edit">
-          <button className="btn btnDlt text-warning fw-bold">Edit</button>
-        </Link>
-        <Link to="/superstar-admin/pending-fan-group-competition">
-          <button className="btn btnDlt text-warning fw-bold">Done</button>
-        </Link>
-      </div>
+      
     </div>
   );
 };
 
-export default PendingGroup;
+export default ApprovedFanGroup;

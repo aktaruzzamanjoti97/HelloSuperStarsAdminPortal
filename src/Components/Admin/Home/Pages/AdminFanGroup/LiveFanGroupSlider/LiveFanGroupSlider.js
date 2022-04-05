@@ -6,11 +6,18 @@ import EnterImage from "../../../../../../assets/images/enter 1.png";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import "./LiveFanGroupSlider.css";
 import moment from "moment";
+import {useHistory} from 'react-router';
 
 const LiveFanGroupSlider = () => {
   const [fanLiveGroup, setFanLiveGroup] = useState([]);
 
   console.log('fanLiveGroup', fanLiveGroup);
+
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push('/superstar-admin/FanbaseAdmin1')
+  }
 
   var settings = {
     dots: true,
@@ -58,7 +65,7 @@ const LiveFanGroupSlider = () => {
   }, []);
 
   return (
-    <div>
+    <div onClick={handleClick}>
       <div className="slick-parent d-flex justify-content-center">
         <Slider className="slider-width" {...settings}>
           {fanLiveGroup.map((liveFan, index) => (
