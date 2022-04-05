@@ -1,6 +1,5 @@
 import React from "react";
-import LivePng from "../../../../../assets/images/iconFan/Group850.png";
-import approved from '../../../../../assets/images/Icon/approved.png'
+import LiveFanImage from "../../../../../assets/images/FanGroupImages/Group456.png";
 import "./AdminFanGroup.css";
 import AdminFanGroupNav from "./AdminFanGroupNav/AdminFanGroupNav";
 import LiveFanGroupSlider from "./LiveFanGroupSlider/LiveFanGroupSlider";
@@ -11,7 +10,7 @@ const AdminFanGroup = () => {
       <AdminFanGroupNav />
 
       <div className="liveMeetupBorder my-5">
-        <div className="d-flex mt-4 mx-3">
+        {/* <div className="d-flex mt-4 mx-3">
           <img
             width="38px"
             className="img-fluid text-white"
@@ -19,9 +18,15 @@ const AdminFanGroup = () => {
             alt=""
           />
           <h3 className="text-light mx-2">Live Fan Group</h3>
-        </div>
+        </div> */}
 
-        <div className="pb-3">
+        <div className="">
+          <img
+            src={LiveFanImage}
+            className="img-fluid liveFanImage"
+            height="70px"
+            alt=""
+          />
           <LiveFanGroupSlider />
         </div>
       </div>

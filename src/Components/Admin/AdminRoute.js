@@ -133,7 +133,11 @@ import CompletionBetweenStars from "./Home/Pages/AdminFanGroup/CompletionBetween
 import AdminApprovedFanGroup from "./Home/Pages/AdminFanGroup/AdminApprovedFanGroup/AdminApprovedFanGroup";
 import AdminPendingFanGroup from "./Home/Pages/AdminFanGroup/AdminPendingFanGroup/AdminPendingFanGroup";
 import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/EditPendingFanGroup";
+
 import AuditionsAdminStar from "./Home/Pages/AdminAudition/AuditionAdminDetails/AuditionsAdminStar";
+
+import ApprovedFanGroup from "./Home/Pages/AdminFanGroup/ApprovedFanGroup/ApprovedFanGroup";
+
 
 
 
@@ -297,6 +301,7 @@ const AdminRoute = [
     { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
     { path: '/superstar-admin/approved-fan-group', exact: true, name: 'grand-final', component: AdminApprovedFanGroup },
     { path: '/superstar-admin/pending-fan-group', exact: true, name: 'grand-final', component: AdminPendingFanGroup },
+    { path: '/superstar-admin/approved-fan-group-edit-delete', exact: true, name: 'grand-final', component: ApprovedFanGroup },
     {path: '/superstar-admin/404', exact: true, name: 'not-found', component: NotFound},
 
   

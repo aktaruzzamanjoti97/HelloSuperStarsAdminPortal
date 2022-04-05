@@ -7,9 +7,11 @@ import EnterImage from "../../../../../../assets/images/enter 1.png";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import './ApprovedFanSlider.css'
 import moment from "moment";
+import { useHistory } from 'react-router-dom';
 
 const ApprovedFanSlider = () => {
 
+  let history = useHistory();
 
     var settings = {
         dots: true,
@@ -57,8 +59,12 @@ const ApprovedFanSlider = () => {
         });
       }, []);
 
+      const handleClick = () => {
+        history.push('/superstar-admin/approved-fan-group-edit-delete')
+      }
+
     return (
-        <div>
+        <div onClick={handleClick}>
         <div className="slick-parent d-flex justify-content-center">
           <Slider className="slider-width" {...settings}>
     

@@ -23,3 +23,8 @@
   border: none !important;
   border-radius: 6px !important;
 }
+
+.liveFanImage {
+  width: 100% !important;
+  height: 140px !important;
+}
