@@ -86,6 +86,9 @@ const AdminAuditionVideo = (props) => {
             getAcceptedVideo(aud_id);
             swal("Success", res.data.message, "success");
             setComments(" ");
+            setAcceptVideo(0);
+            setRejectvideo(0);
+            setDeclineInput(false);
             // history.push(`/audition-admin/audition/pending`);
           } else if (res.data.status === 422) {
             setErrorList({
