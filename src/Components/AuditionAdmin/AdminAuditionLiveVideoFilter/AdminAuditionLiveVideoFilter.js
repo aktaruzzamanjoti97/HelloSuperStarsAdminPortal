@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import liveVideoPng from "../../../assets/images/liveVideoUpload.PNG";
 import roundSubmissionPlay from "../../../assets/images/ShakibPlayVideoGreetings.png";
@@ -121,6 +121,13 @@ const AdminAuditionLiveVideoFilter = (props) => {
             <i className="fa-solid fa-angles-right text-primary filterIcon"></i>{" "}
             <span className="filterTxt text-primary">Next round</span>
           </button>
+          <Link to={`/audition-admin/auditions/jury-select`}>
+<button className="btn btn-light px-5 mx-3">
+            <i className="fa-solid fa-angles-right text-primary filterIcon"></i>{" "}
+            <span className="filterTxt text-primary">1st Round Summary</span>
+          </button>
+          </Link>
+          
         </div>
       </div>
     </div>
