@@ -36,6 +36,7 @@ const AdminAuditionCreateEvent = (props) => {
 
   const [inputData, setInputData] = useState({
     title: "",
+    round_status: "",
     // star_ids: [],
     error_list: [],
   });
@@ -90,6 +91,7 @@ const AdminAuditionCreateEvent = (props) => {
         setInputData({
           ...inputData,
           title: audition.title,
+          round_status:audition.round_status
         });
 
         // set Image Data
@@ -282,6 +284,7 @@ const AdminAuditionCreateEvent = (props) => {
                         <select
                           name="round_status"
                           type="number"
+                          value={inputData.round_status}
                           onChange={handleInput}
                           className="form-select input-gray text-white"
                           aria-label="Default select example"
@@ -424,7 +427,7 @@ const AdminAuditionCreateEvent = (props) => {
                 onClick={Confirmed}
               >
                 <big>
-                  <b>Confirm</b>
+                  <b>Send To Manager</b>
                 </big>
               </button>
         </div>
