@@ -7,7 +7,7 @@ import meme2 from "../../../../assets/images/Fanbase-img/meme2.png";
 const FanBaseHome = () => {
   return (
     <>
-      <div className="card bg-dark mt-4">
+      {/* <div className="card bg-dark mt-4">
         <div className="card-body">
           <div class=" row">
             <label class="col-sm-2 col-form-label">Create post</label>
@@ -21,7 +21,7 @@ const FanBaseHome = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="container">
         <div className="parent-divFan">

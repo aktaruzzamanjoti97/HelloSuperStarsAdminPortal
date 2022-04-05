@@ -94,7 +94,7 @@ const FanGroupCreate = () => {
         // setKeywords('')
 
         swal("Welcome", res.data.message, "success");
-        history.push('/superstar/fan-group-invitation');
+        history.push('/superstar-admin/fan-group');
       }
     });
   }

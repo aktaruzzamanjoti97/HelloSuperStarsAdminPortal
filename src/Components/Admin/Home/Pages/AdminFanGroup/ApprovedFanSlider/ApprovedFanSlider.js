@@ -7,7 +7,7 @@ import EnterImage from "../../../../../../assets/images/enter 1.png";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import './ApprovedFanSlider.css'
 import moment from "moment";
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const ApprovedFanSlider = () => {
 
@@ -59,12 +59,12 @@ const ApprovedFanSlider = () => {
         });
       }, []);
 
-      const handleClick = () => {
-        history.push('/superstar-admin/approved-fan-group-edit-delete')
-      }
+      // const handleClick = () => {
+      //   history.push('/superstar-admin/approved-fan-group-edit-delete')
+      // }
 
     return (
-        <div onClick={handleClick}>
+        <div>
         <div className="slick-parent d-flex justify-content-center">
           <Slider className="slider-width" {...settings}>
     
@@ -95,12 +95,14 @@ const ApprovedFanSlider = () => {
                       </div> */}
                     <div className="d-flex justify-content-center">
                       <h5 className="fw-bolder mt-4">{moment(liveFan.start_date).format('LL')} To {moment(liveFan.end_date).format('LL')}</h5>
-  
-                      <img
+                      <Link to={`/superstar-admin/approved-fan-group-edit-delete/${liveFan.slug}`}>
+                        <img 
                         className="img-fluid mx-2 mt-2"
                         src={EnterImage}
                         alt=""
                       />
+                    </Link>
+                    
                     </div>
                   </div>
                 </div>
