@@ -12,7 +12,7 @@ return (
         <div className="card-body">
           <h5 className="text-light">Warned</h5>
 
-          {/* table content here */}
+
           <Table striped bordered hover variant="dark" style={{ fontSize:'12px' }}>
             <thead>
               <tr>
