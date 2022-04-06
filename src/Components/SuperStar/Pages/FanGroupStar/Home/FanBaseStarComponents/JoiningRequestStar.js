@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Table } from 'react-bootstrap'
 
 import JoinImg from "../../../../../../assets/images/fanGroup/unknown.png";
+import JoiningRequestModalStar from './JoiningRequestModalStar';
 
 
 const JoiningRequestStar = () => {
@@ -29,7 +30,7 @@ return (
                 <td className='text-center'> <i class="btn fa-solid fa-eye text-warning " onClick={()=>
                     setModalShow(true)} ></i> <i class="fa-solid fa-square-plus text-success btn "></i> <i
                     class="fa-solid fa-trash-can text-danger btn  "></i>
-                  {/* <JoiningRequestModal show={modalShow} onHide={()=> setModalShow(false)}  /> */}
+                  <JoiningRequestModalStar show={modalShow} onHide={()=> setModalShow(false)}  />
                 </td>
               </tr>
             </tbody>
