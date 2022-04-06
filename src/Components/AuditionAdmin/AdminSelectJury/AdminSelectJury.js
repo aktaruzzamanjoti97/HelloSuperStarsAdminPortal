@@ -1,10 +1,27 @@
-import React from "react";
+import React,{useState,useEffect,useHistory} from "react";
 import unplash from "../../../assets/images/Auditions/unsplash.png";
 import decline from "../../../assets/images/declined.png";
 import sign from "../../../assets/images/sign.png";
 import "./AdminSelectJury.css";
+import axios from "axios";
 
-const AdminSelectJury = () => {
+const AdminSelectJury = (props) => {
+
+  let history = useHistory();
+  // const [audition, setAudition] = useState([]);
+
+  var aud_id = props.match.params.id;
+
+  // useEffect(() => {
+  //   axios.get(`/api/audition-admin/jury-selected-videos/${aud_id}`).then((res) => {
+  //     if (res.data.status === 200) {
+  //       let audition = res.data.audition_juries;
+  //       console.log("Single Audition:", audition);
+  //     }
+  //   });
+  // }, [aud_id]);
+
+
   return (
     <div className="container">
       <div className="row mb-5">
@@ -63,6 +80,7 @@ const AdminSelectJury = () => {
             </div>
           </div>
         </div>
+
         <div className="col-md-4 my-3 d-flex justify-content-center">
           <div className="bg-dark cardBox">
             <div className="px-3 d-flex justify-content-start nameBg rounded-3">

@@ -121,7 +121,7 @@ const AdminAuditionLiveVideoFilter = (props) => {
             <i className="fa-solid fa-angles-right text-primary filterIcon"></i>{" "}
             <span className="filterTxt text-primary">Next round</span>
           </button>
-          <Link to={`/audition-admin/auditions/jury-select`}>
+          <Link to={`/audition-admin/auditions/jury-select/${aud_id}`}>
 <button className="btn btn-light px-5 mx-3">
             <i className="fa-solid fa-angles-right text-primary filterIcon"></i>{" "}
             <span className="filterTxt text-primary">1st Round Summary</span>
