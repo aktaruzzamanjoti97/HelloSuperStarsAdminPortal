@@ -27,4 +27,9 @@ border-radius: 5px;
 .starDropdown .dropdown-toggle::after {
     display: none !important; 
   }
+
+  .hasImg{
+    height: 50px;
+    width: 50px;
+  }
   

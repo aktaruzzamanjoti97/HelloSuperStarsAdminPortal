@@ -26,3 +26,10 @@
     background-color: green ;
     color: white !important;
 }
+
+.ProImgx{
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    object-fit: cover !important;
+}
