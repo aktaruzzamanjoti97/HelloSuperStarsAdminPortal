@@ -105,7 +105,7 @@ const CompetitionBetweenStars = () => {
             </div>
 
             <div className="d-flex justify-content-center my-5">
-              <Link to="/superstar-admin/FanbaseAdmin1">
+              <Link to="/superstar-admin/fangroup/view">
                 {" "}
                 <button className="btn nameBg fw-bolder launchBtn px-5 py-2">
                   Launch Fan Group

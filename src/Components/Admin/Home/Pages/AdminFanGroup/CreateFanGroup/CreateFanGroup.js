@@ -103,7 +103,7 @@ const CreateFanGroup = () => {
 
     formData.append("my_star", oneStar);
     formData.append("another_star", twoStar);
-    formData.append("banner", banner.name);
+    formData.append("banner", banner);
 
     axios.post(`/api/admin/fan-group/store`, formData).then((res) => {
       if (res.data.status === 200) {

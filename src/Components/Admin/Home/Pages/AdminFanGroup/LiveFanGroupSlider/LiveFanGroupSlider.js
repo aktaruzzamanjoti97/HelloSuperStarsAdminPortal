@@ -7,6 +7,7 @@ import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import "./LiveFanGroupSlider.css";
 import moment from "moment";
 import {useHistory} from 'react-router';
+import { Link } from "react-router-dom";
 
 const LiveFanGroupSlider = () => {
   const [fanLiveGroup, setFanLiveGroup] = useState([]);
@@ -16,7 +17,7 @@ const LiveFanGroupSlider = () => {
   let history = useHistory();
 
   const handleClick = () => {
-    history.push('/superstar-admin/FanbaseAdmin1')
+    history.push('/superstar-admin/fangroup/view')
   }
 
   var settings = {
@@ -65,7 +66,7 @@ const LiveFanGroupSlider = () => {
   }, []);
 
   return (
-    <div onClick={handleClick}>
+    <div>
       <div className="slick-parent d-flex justify-content-center">
         <Slider className="slider-width" {...settings}>
           {fanLiveGroup.map((liveFan, index) => (
@@ -96,11 +97,14 @@ const LiveFanGroupSlider = () => {
                   <div className="d-flex justify-content-center">
                     <h5 className="fw-bolder mt-4">{moment(liveFan.start_date).format('LL')} To {moment(liveFan.end_date).format('LL')}</h5>
 
+                    <Link to={`/superstar-admin/fangroup/view/${liveFan.slug}`}>
                     <img
                       className="img-fluid mx-2 mt-2"
                       src={EnterImage}
                       alt=""
                     />
+                    </Link>
+                    
                   </div>
                 </div>
               </div>

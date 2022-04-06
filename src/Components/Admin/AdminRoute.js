@@ -287,21 +287,21 @@ const AdminRoute = [
     // { path: '/superstar-admin/souvenir/live-biddings2', exact: true, name: 'live-biddings2', component:  CricketJerserAdmin3}, // This is important, do not touch this code
     {path: '/superstar-admin/live-chat/select-schedule', exact: true, name: 'select-schedule', component: EventScheduleDatePick},
 
-    {path: '/superstar-admin/FanbaseAdmin1', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},
+    {path: '/superstar-admin/fangroup/view/:slug', exact: true, name: 'FanbaseAdmin1', component: FanbaseAdmin1},
 
 
     // @FIXME: Admin Fan Group Route
     {path: '/superstar-admin/fan-group', exact: true, name: 'fan-group', component: AdminFanGroup},
     {path: '/superstar-admin/create-fan-group', exact: true, name: 'create-fan-group', component: CreateFanGroup},
     // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
-    {path: '/superstar-admin/pending-fan-group-Edit-delete', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
-    {path: '/superstar-admin/pending-fan-group-Edit', exact: true, name: 'pending-fan-group', component: EditPendingFanGroup},
+    {path: '/superstar-admin/pending-fan-group-Edit-delete/:slug', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
+    {path: '/superstar-admin/pending-fan-group-Edit/:slug', exact: true, name: 'pending-fan-group', component: EditPendingFanGroup},
     // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: AdminPe},
     {path: '/superstar-admin/pending-fan-group-competition', exact: true, name: 'pending-fan-group', component: CompletionBetweenStars},
     { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
     { path: '/superstar-admin/approved-fan-group', exact: true, name: 'grand-final', component: AdminApprovedFanGroup },
     { path: '/superstar-admin/pending-fan-group', exact: true, name: 'grand-final', component: AdminPendingFanGroup },
-    { path: '/superstar-admin/approved-fan-group-edit-delete', exact: true, name: 'grand-final', component: ApprovedFanGroup },
+    { path: '/superstar-admin/approved-fan-group-edit-delete/:slug', exact: true, name: 'grand-final', component: ApprovedFanGroup },
     {path: '/superstar-admin/404', exact: true, name: 'not-found', component: NotFound},
 
   

@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import bannerVs from "../../../../../../assets/images/bannerVs.png";
 import Session from "../../../../../../assets/images/email.png";
@@ -94,13 +94,14 @@ console.log("Done");
                       </div> */}
                 <div className="d-flex justify-content-center">
                   <h5 className="fw-bolder mt-4">{moment(liveFan.start_date).format('LL')} To {moment(liveFan.end_date).format('LL')}</h5>
-
-                  <img
-                    onClick={handleChange}
-                    className="img-fluid mx-2 mt-2"
-                    src={EnterImage}
-                    alt=""
-                  />
+                    <Link to={`/superstar-admin/pending-fan-group-Edit-delete/${liveFan.slug}`}>
+                        <img
+                        className="img-fluid mx-2 mt-2"
+                        src={EnterImage}
+                        alt=""
+                      />
+                    </Link>
+                  
                 </div>
               </div>
             </div>
