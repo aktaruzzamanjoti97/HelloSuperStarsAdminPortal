@@ -19,13 +19,14 @@ import FanBaseMessengerStar from "./FanBaseStarComponents/FanBaseMessengerStar";
 import ApproveComponenStart from "./FanBaseStarComponents/ApproveComponentStar";
 import FanBaseHomeStar from "./FanBaseStarComponents/FanBaseHomeStar";
 import FanBaseMediaStar from "./FanBaseStarComponents/FanBaseMediaStar";
+import JoiningRequestStar from "./FanBaseStarComponents/JoiningRequestStar";
 
 const FanBaseStar = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
   return (
     <div className="container-fluid">
-      <div className="container d-flex justify-content-center align-items-center main-fan-container  p-0 ">
+      <div className=" d-flex justify-content-center align-items-center main-fan-container  p-0 ">
         <div
           className={
             remove
@@ -37,7 +38,7 @@ const FanBaseStar = () => {
             <label for="input-file">
               <span>
                 {" "}
-                <i class="fas fa-camera mx-2"></i>Add Cover photo
+                <i class="fas fa-camera mx-2"></i>Add Cover photods fwe sd
               </span>
             </label>
             <input
@@ -79,7 +80,7 @@ const FanBaseStar = () => {
       </div>
 
       <div className="container-fluid">
-        <div className="container">
+        <div className="">
           <div className="row">
             <div className="col-md-8 ">
               <div className="container">
@@ -122,6 +123,12 @@ const FanBaseStar = () => {
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link className="NavColorFan" eventKey="Fifth">
+                          <i className="fa-solid fa-chart-line mx-1"></i>
+                          Joining Request
+                        </Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link className="NavColorFan" eventKey="Six">
                           <i className="fa-solid fa-gear mx-1"></i> Settings
                         </Nav.Link>
                       </Nav.Item>
@@ -139,10 +146,12 @@ const FanBaseStar = () => {
                         <ApproveComponenStart />
                       </Tab.Pane>
                       <Tab.Pane eventKey="Four">
-                        {" "}
                         <Analytics/>
                       </Tab.Pane>
                       <Tab.Pane eventKey="Fifth">
+                        <JoiningRequestStar/>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="Six">
                         <SettingsFan />
                       </Tab.Pane>
                     </Tab.Content>

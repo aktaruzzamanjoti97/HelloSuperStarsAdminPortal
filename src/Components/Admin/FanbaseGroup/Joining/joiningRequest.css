@@ -1,0 +1,28 @@
+.proJoin{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.BGIJoin{
+    background-color: black;
+    border-radius: 0px 20px 0px 20px;
+    border: 1px solid rgb(255, 196, 0);
+    -webkit-border-radius: 0px 20px 0px 20px;
+    -moz-border-radius: 0px 20px 0px 20px;
+    -ms-border-radius: 0px 20px 0px 20px;
+    -o-border-radius: 0px 20px 0px 20px;
+}
+
+.TesXA{
+    width: 200px !important;
+}
+
+.TDwith{
+    width: 150px;
+}
+.btnJoin:hover{
+    background-color: green ;
+    color: white !important;
+}
