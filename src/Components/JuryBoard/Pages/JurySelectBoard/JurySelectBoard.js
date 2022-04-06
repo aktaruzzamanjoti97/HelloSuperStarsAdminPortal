@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import Slider from "react-slick";
 import decline from "../../../../assets/images/declined.png";
@@ -7,6 +8,21 @@ import sign from "../../../../assets/images/sign.png";
 import "./JurySelectBoard.css";
 
 const JurySelectBoard = () => {
+
+
+const [selectVideo, setSelectVideo] = useState([]);
+
+useEffect(()=>{
+
+  axios.get('api/jury/selectVideo').then((res)=>{
+
+    console.log('Select Jury Video', res.data.audition_videos);
+  })
+
+},[])
+
+
+
   var settings = {
     dots: true,
     infinite: false,
@@ -193,7 +209,7 @@ const JurySelectBoard = () => {
       <div className="videoSliderBorder d-flex justify-content-center">
         <div className="videoSliderStyle py-5 px-3">
           <div>
-            <h2 className="text-warning py-2"> Video Filtering </h2>
+            <h2 className="text-warning py-2"> Video Marking </h2>
 
             <Slider {...settings}>
               {audition_videos?.map((video, i) => (
@@ -227,14 +243,14 @@ const JurySelectBoard = () => {
             <div className="col-md-2">
               <input
                 type="text"
-                className="form-control input-gray"
+                className="form-control input-gray donePlaceHolder"
                 placeholder="Marks"
               />
             </div>
             <div className="col-md-4">
               <input
                 type="text"
-                className="form-control input-gray"
+                className="form-control input-gray donePlaceHolder"
                 placeholder="Comment"
               />
             </div>

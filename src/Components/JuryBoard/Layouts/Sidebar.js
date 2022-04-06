@@ -42,7 +42,7 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </Link>
-                            <Link className="nav-link" to="/jury-board/dashboard">
+                            <Link className="nav-link" to="/jury-board/select">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Audition
                             </Link>

@@ -52,7 +52,10 @@ const AdminOTP = () => {
           if (localStorage.auth_type === 'jury') {
             history.push("/jury-board/dashboard");
           }
-          history.push("/superstar/dashboard");
+          if (localStorage.auth_type === 'star') {
+            history.push("/superstar/dashboard");
+          }
+          
 
         } else if (res.data.status === 401) {
           swal("Warning", res.data.message, "warning");
