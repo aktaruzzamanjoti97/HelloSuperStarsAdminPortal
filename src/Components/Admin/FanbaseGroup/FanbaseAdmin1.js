@@ -12,22 +12,23 @@ import FanBaseSetting from "./FanbaseSettingComponents/FanBaseSetting";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import { Markup } from "interweave";
-import swal from 'sweetalert';
-import moment from 'moment';
+import swal from "sweetalert";
+import moment from "moment";
 import { height } from "@mui/system";
+import JoiningRequest from "./Joining/JoiningRequest";
 
 const FanbaseAdmin1 = () => {
   let history = useHistory();
-  let {slug} = useParams();
-  
-  console.log('My sllug', slug);
+  let { slug } = useParams();
+
+  console.log("My sllug", slug);
 
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
 
   const [fanDetails, setFanDetails] = useState([]);
-  console.log('fanDetails approved', fanDetails);
-  console.log('slug', slug);
+  console.log("fanDetails approved", fanDetails);
+  console.log("slug", slug);
 
   useEffect(() => {
     axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
@@ -37,45 +38,48 @@ const FanbaseAdmin1 = () => {
     });
   }, [slug]);
 
-  
   return (
     <div className="container-fluid">
-      <div className="container  main-fan-container  p-0 "
-      style={{height:'300px',backgroundImage: `url("http://localhost:8000/${fanDetails.banner}")`, backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat'}} >
+      <div
+        className="  main-fan-container  p-0 "
+        style={{
+          height: "300px",
+          backgroundImage: `url("http://localhost:8000/${fanDetails.banner}")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
 
+      <div className="d-flex justify-content-around my-3">
+        <div class="fileFan">
+          <label for="input-file">
+            <span>
+              {" "}
+              <i class="fas fa-camera mx-2"></i>Add Cover photo
+            </span>
+          </label>
+          <input
+            id="input-file"
+            type="file"
+            name="myImage"
+            // onChange={(event) => {
+            //   console.log(event.target.files[0]);
+            //   setSelectedImage(event.target.files[0]);
+            // }}
+          />
+        </div>
       </div>
 
-<div className="d-flex justify-content-around my-3">
-<div class="fileFan">
-    <label for="input-file">
-      <span>
-        {" "}
-        <i class="fas fa-camera mx-2"></i>Add Cover photo
-      </span>
-    </label>
-    <input
-    
-      id="input-file"
-      type="file"
-      name="myImage"
-      // onChange={(event) => {
-      //   console.log(event.target.files[0]);
-      //   setSelectedImage(event.target.files[0]);
-      // }}
-    />
-  </div>
-</div>
-
       <div className="container-fluid">
-        <div className="container">
+        <div className="">
           <div className="row">
             <div className="col-md-8 ">
               <div className="container">
-                <h2 className="text-light my-3">{ fanDetails.group_name }</h2>
+                <h2 className="text-light my-3">{fanDetails.group_name}</h2>
                 <p className="text-muted">
-                  Created at {moment(fanDetails.start_date).format('LL')} | Continue til {moment(fanDetails.end_date).format('LL')}
+                  Created at {moment(fanDetails.start_date).format("LL")} |
+                  Continue til {moment(fanDetails.end_date).format("LL")}
                 </p>
 
                 <div className="my-3">
@@ -112,6 +116,13 @@ const FanbaseAdmin1 = () => {
                       </Nav.Item>
                       <Nav.Item>
                         <Nav.Link className="NavColorFan" eventKey="Fifth">
+                          <i className="fa-solid fa-chart-line mx-1"></i>
+                          Joining Request
+                        </Nav.Link>
+                      </Nav.Item>
+                     
+                      <Nav.Item>
+                        <Nav.Link className="NavColorFan" eventKey="Six">
                           <i className="fa-solid fa-gear mx-1"></i> Settings
                         </Nav.Link>
                       </Nav.Item>
@@ -133,6 +144,10 @@ const FanbaseAdmin1 = () => {
                         <Analytics></Analytics>
                       </Tab.Pane>
                       <Tab.Pane eventKey="Fifth">
+                        {" "}
+                        <JoiningRequest/>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="Six">
                         <FanBaseSetting />
                       </Tab.Pane>
                     </Tab.Content>
@@ -175,9 +190,6 @@ const FanbaseAdmin1 = () => {
 
 export default FanbaseAdmin1;
 
-
-        
-
 // {selectedImage ? (
 //   <>
 //     <img
@@ -188,8 +200,6 @@ export default FanbaseAdmin1;
 //     <br />
 //     {/* <button onClick={() => setSelectedImage(null)}>Remove</button> */}
 
-
-    
 //   </>
 // ) :
 
@@ -200,7 +210,7 @@ export default FanbaseAdmin1;
 //       ? "fanbanner d-flex justify-content-center align-items-center d-none"
 //       : "fanbanner d-flex justify-content-center align-items-center hasImg"
 //   }
-//   style={{  
+//   style={{
 //     backgroundImage: "url(" + `http://localhost:8000/${fanDetails.banner}` + ")",
 //     backgroundPosition: 'center',
 //     backgroundSize: 'cover',
@@ -215,7 +225,7 @@ export default FanbaseAdmin1;
 //       </span>
 //     </label>
 //     <input
-    
+
 //       id="input-file"
 //       type="file"
 //       name="myImage"
@@ -237,14 +247,9 @@ export default FanbaseAdmin1;
 //   }}
 // /> */}
 
-
-
-
 // </div>
 //   )
 
-
 // }
-
 
 // {/* <img src={`http://localhost:8000/${fanDetails.banner}`} className='img-fluid fanbanner w-100' alt="" /> */}
