@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './FanBaseSetting.css'
 import { Table } from 'react-bootstrap';
 import vectior3 from "../../../../assets/images/fanGroup/unknown.png";
 
 const FanBaseSetting = () => {
+const [joinFanGroup, setJoinFanGroup] = useState('');
+// const [one, setOne] = useState(0);
+// const [two, setTwo] = useState(1);
+
+  function handleApprove(){
+    console.log('joinFanGroup ', joinFanGroup);
+  }
     return (
         <div>
             <div className="row my-3">
@@ -53,12 +60,11 @@ const FanBaseSetting = () => {
       <div className="container-fluid m-0 p-0 my-3">
           <div className="card bg-dark">
               <div className="card-body">
-              <select class="form-select bg-dark text-light" aria-label="Default select example">
-  <option selected>Approve by Admin</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select>
+              <select class="form-select bg-dark text-light" aria-label="Default select example" onClick={handleApprove}>
+                <option selected>-- Select Approval--</option>
+                <option value='0' onChange={(event)=>{ setJoinFanGroup(event.target.value) }}>Approve by Admin/Star</option>
+                <option value='1' onChange={(event)=>{ setJoinFanGroup(event.target.value) }}>Anyone can Join</option>
+              </select>
 
 <div className="container p-0 mt-3 ">
     <div className="card ms-auto w-75" style={{ background:'#373737' }}>

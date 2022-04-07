@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./FanBaseGroup.css";
 import img1 from "../../../../assets/images/Fanbase-img/fanBaseGroup/1.png";
 import img2 from "../../../../assets/images/Fanbase-img/fanBaseGroup/2.png";
@@ -8,6 +8,8 @@ import img5 from "../../../../assets/images/Fanbase-img/fanBaseGroup/5.png";
 import img6 from "../../../../assets/images/Fanbase-img/fanBaseGroup/5.png";
 
 import { Nav, Tab } from "react-bootstrap";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 const msgData = [
   {
@@ -57,7 +59,27 @@ const msgData2 = [
   },
 ];
 
+
+
+
+
 function FanBaseGroup() {
+
+  let { slug } = useParams();
+const [userJoin, setUserJoin] = useState([]);
+const [myStar, setMyStar] = useState('');
+console.log('userJoin ', userJoin)
+console.log('myStar ', myStar)
+
+useEffect(() => {
+  axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
+    if (res.status === 200) {
+      setUserJoin(res.data.userJoin);
+      setMyStar(res.data.myStar);
+    }
+  });
+}, [slug]);
+
   return (
     <div className="my-3">
       <div className="card bg-dark fanMessageCard">
@@ -70,7 +92,7 @@ function FanBaseGroup() {
                   style={{ cursor: "pointer" }}
                   eventKey="first"
                 >
-                  Members (230)
+                  Members ({userJoin.length})
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item>
@@ -79,7 +101,7 @@ function FanBaseGroup() {
                   style={{ cursor: "pointer" }}
                   eventKey="second"
                 >
-                  Admins (02)
+                  Admins (01)
                 </Nav.Link>
               </Nav.Item>
             </Nav>
@@ -90,18 +112,18 @@ function FanBaseGroup() {
                   <div className="card-body">
                     <div class="parentMsgDiv">
                       <div class="childMsgDiv">
-                        {msgData.map((item) => {
+                        {userJoin.map((item) => {
                           return (
                             <div className="d-flex mb-3">
                               <img
-                                src={item.img}
-                                className="img-fluid"
+                                src={`http://localhost:8000/${item.image}`}
+                                className="img-fluid" style={{width: '30px', height: '30px'}}
                                 alt=""
                               />
                               <div className="w-75 mx-2">
                                 <p className="m-0 p-0">{item.name}</p>
                                 <small className="m-0 p-0 text-muted">
-                                  {item.fan}
+                                  {item.first_name} {item.last_name}
                                 </small>
                               </div>
                             </div>
@@ -117,23 +139,23 @@ function FanBaseGroup() {
                   <div className="card-body">
                     <div className="parentMsgDiv">
                       <div className="childMsgDiv">
-                        {msgData2.map((item) => {
-                          return (
+                        
+                          
                             <div className="d-flex mb-3">
-                              <img
+                              {/* <img
                                 src={item.img}
                                 className="img-fluid"
                                 alt=""
-                              />
+                              /> */}
                               <div className="w-75 mx-2">
-                                <p className="m-0 p-0">{item.name}</p>
+                                <p className="m-0 p-0">Own <small>(Admin)</small></p>
                                 <small className="m-0 p-0 text-muted">
-                                  {item.fan}
+                                  {myStar.first_name} {myStar.last_name}
                                 </small>
                               </div>
                             </div>
-                          );
-                        })}
+                      
+                       
                       </div>
                     </div>
                   </div>
