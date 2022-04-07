@@ -86,6 +86,8 @@ import RejectedFan from './Pages/FanGroupStar/Content/RejectedFan';
 import InvitationFan from './Pages/FanGroupStar/Content/InvitationFan';
 
 import InvitationDetails from './Pages/FanGroupStar/Content/InvitationDetails';
+import IgnoredDetails from './Pages/FanGroupStar/Content/IgnoredDetails';
+import AcceptDetail from './Pages/FanGroupStar/Content/AcceptDetail';
 import FanbaseAdmin1 from '../Admin/FanbaseGroup/FanbaseAdmin1';
 import AcceptedDetails from './Pages/FanGroupStar/Content/AcceptedDetails';
 import RejectedDetails from './Pages/FanGroupStar/Content/RejectedDetails';
@@ -185,8 +187,10 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-invitation', exact: true, name: 'fan-group-invitation', component: InvitationFan },
 
     
-    { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
+    { path: '/superstar/fan-group-live/:slug', exact: true, name: 'fan-group-live', component: FanGroupLive },
     { path: '/superstar/fan-group-invitation/details/:slug', exact: true, name: 'details', component: InvitationDetails },
+    { path: '/superstar/fan-group-ignored/details/:slug', exact: true, name: 'details', component: IgnoredDetails },
+    { path: '/superstar/fan-group-accepted/details/:slug', exact: true, name: 'details', component: AcceptDetail },
 
     // { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
     { path: '/superstar/fan-group-invitation/edit/:slug', exact: true, name: 'edit', component: FanGroupCreate },
@@ -194,7 +198,7 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group/rejected', exact: true, name: 'rejected', component: RejectedDetails },
     { path: '/superstar/fan-group-live', exact: true, name: 'fan-group-live', component: FanGroupLive },
 
-    { path: '/superstar/fan-group/home', exact: true, name: 'details', component: FanBaseStar },
+    { path: '/superstar/fan-group/home/:slug', exact: true, name: 'details', component: FanBaseStar },
 
     // FanbaseAdmin1
 

@@ -1,9 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import FanGroupNav from './FanGroupNav'
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LivePng from "../../../../../assets/images/iconFan/Group850.png";
+import './FanLive.css'
+import backImg from '../../../../../assets/images/Fanbase-img/Fanbasebanner.jpg'
+import axios from 'axios';
 
 const FanGroupLive = () => {
+  let {slug} = useParams();
+
+  const [fanDetails, setFanDetails] = useState('');
+  
+  useEffect(() => {
+
+    axios.get(`/api/star/fan/group/details/${slug}`).then(res => {
+      if (res.data.status === 200) {
+        console.log('partha ', res.data);
+
+        setFanDetails(res.data.fanDetails);
+
+      }
+    });
+
+  }, []);
+
+
   return (
     <>
       <div className="ms-4">
@@ -22,10 +43,12 @@ const FanGroupLive = () => {
 
         <div className="row my-3">
           <div className="col-md-9">
-            <div className="bgBlurDiv d-flex justify-content-end align-items-end">
-              <Link to="/superstar/fan-group/home">
-                {" "}
-                <button className="btn btn-warning enterBtn fw-bold py-2 px-4 m-5">
+            
+            <div className=" TextPo">
+               <img src={`http://localhost:8000/${fanDetails.banner}`} alt=""  className='bgBlurDivLive'/>
+
+              <Link to={`/superstar/fan-group/home/${slug}`}>
+                <button className="btn btn-warning enterBtn fw-bold py-2 px-4 m-5 bottom-rightIMJ ">
                   Enter
                 </button>
               </Link>

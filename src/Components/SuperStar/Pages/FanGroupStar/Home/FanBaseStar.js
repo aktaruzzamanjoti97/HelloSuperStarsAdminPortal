@@ -1,5 +1,5 @@
-import React from "react";
-// import "./FanBaseStar.css";
+import React, { useEffect, useState } from "react";
+// import "./FanStarID";
 import fanBanner from "../../../../../assets/images/Fanbase-img/Fanbasebanner.jpg";
 
 import { Tab, Nav } from "react-bootstrap";
@@ -20,73 +20,73 @@ import ApproveComponenStart from "./FanBaseStarComponents/ApproveComponentStar";
 import FanBaseHomeStar from "./FanBaseStarComponents/FanBaseHomeStar";
 import FanBaseMediaStar from "./FanBaseStarComponents/FanBaseMediaStar";
 import JoiningRequestStar from "./FanBaseStarComponents/JoiningRequestStar";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import moment from 'moment';
 
 const FanBaseStar = () => {
+  let { slug } = useParams();
+
+  const [fanDetails, setFanDetails] = useState('');
+
+  useEffect(() => {
+
+    axios.get(`/api/star/fan/group/details/${slug}`).then(res => {
+      if (res.data.status === 200) {
+        console.log('partha ', res.data);
+
+        setFanDetails(res.data.fanDetails);
+
+      }
+    });
+
+  }, []);
+
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
   return (
     <div className="container-fluid">
-      <div className=" d-flex justify-content-center align-items-center main-fan-container  p-0 ">
-        <div
-          className={
-            remove
-              ? "fanbanner d-flex justify-content-center align-items-center d-none"
-              : "fanbanner d-flex justify-content-center align-items-center"
-          }
-        >
-          <div class="fileFan">
-            <label for="input-file">
-              <span>
-                {" "}
-                <i class="fas fa-camera mx-2"></i>Add Cover photods fwe sd
-              </span>
-            </label>
-            <input
-              onClick={() => setRemove(true)}
-              id="input-file"
-              type="file"
-              name="myImage"
-              onChange={(event) => {
-                console.log(event.target.files[0]);
-                setSelectedImage(event.target.files[0]);
-              }}
-            />
-          </div>
-
-          {/* <input
-        onClick={()=>setRemove(true)}
-       
-          type="file"
-          name="myImage"
-          onChange={(event) => {
-            console.log(event.target.files[0]);
-            setSelectedImage(event.target.files[0]);
-          }}
-        /> */}
+      <div
+        className="  main-fan-container  p-0 "
+        style={{
+          height: "300px",
+          backgroundImage: `url("http://localhost:8000/${fanDetails.banner}")`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          
+        }}
+      >
+<div className="d-flex justify-content-around my-3 mt-5 StarAddXS"  >
+        <div class="fileFan">
+          <label for="input-file">
+            <span>
+              <i class="fas fa-camera mx-2"></i>Add Cover photo
+            </span>
+          </label>
+          <input
+            id="input-file"
+            type="file"
+            name="myImage"
+          // onChange={(event) => {
+          //   console.log(event.target.files[0]);
+          //   setSelectedImage(event.target.files[0]);
+          // }}
+          />
         </div>
-
-        {selectedImage && (
-          <>
-            <img
-              alt="not fount"
-              className="img-fluid fanbanner w-100"
-              src={URL.createObjectURL(selectedImage)}
-            />
-            <br />
-            {/* <button onClick={() => setSelectedImage(null)}>Remove</button> */}
-          </>
-        )}
-        {/* <img src={fanBanner} className='img-fluid fanbanner w-100' alt="" /> */}
       </div>
+      </div>
+
+      
 
       <div className="container-fluid">
         <div className="">
           <div className="row">
             <div className="col-md-8 ">
               <div className="container">
-                <h2 className="text-light my-3">Shrukh Khan vs Salman khan</h2>
+                <h2 className="text-light my-3">{fanDetails.group_name}</h2>
                 <p className="text-muted">
-                  Created at 12 Feb 2022 | Continue til 22 Apr 2022
+                  Created at {moment(fanDetails.start_date).format('LL')} | Continue til {moment(fanDetails.end_date).format('LL')}
                 </p>
 
                 <div className="my-3">
@@ -146,10 +146,10 @@ const FanBaseStar = () => {
                         <ApproveComponenStart />
                       </Tab.Pane>
                       <Tab.Pane eventKey="Four">
-                        <Analytics/>
+                        <Analytics />
                       </Tab.Pane>
                       <Tab.Pane eventKey="Fifth">
-                        <JoiningRequestStar/>
+                        <JoiningRequestStar />
                       </Tab.Pane>
                       <Tab.Pane eventKey="Six">
                         <SettingsFan />
