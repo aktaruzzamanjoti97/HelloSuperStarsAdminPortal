@@ -23,6 +23,9 @@ const [comments, setComments] = useState("");
 const [marks, setMarks] = useState("");
 const [acceptedVideos, setAcceptedVidoes] = useState([]);
 const [error_list, setErrorList] = useState([]);
+const [declineInput, setDeclineInput] = useState(true);
+const [selectedVideo, setSelectedVideo] = useState(0);
+const [rejectVideo, setRejectvideo] = useState(0);
 
 //Countdown state
 const auditionTime = moment(auditionInfo.auditions?.start_time).format('LL HH:mm:ss')
@@ -70,6 +73,19 @@ function handleSelectVideo(participant_id,audition_id) {
   setAcceptVideo(1);
   console.log("Video Clicked", participant_id);
 }
+
+  // show reject comment form
+  const handleSelected = () => {
+    setSelectedVideo(1);
+    setDeclineInput(true);
+  };
+
+  // show reject comment form
+  const handleDeclineInput = () => {
+    setDeclineInput(!declineInput);
+    setRejectvideo(1);
+  };
+
   // set marks input
 
   const handleMarks = (e) => {
@@ -87,7 +103,8 @@ function handleSelectVideo(participant_id,audition_id) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("audition_id", aud_id);
-    // formData.append("judge_id", judge_id);
+    formData.append("selected", selectedVideo);
+    formData.append("rejected", rejectVideo);
     formData.append("participant_id", clickVideoLink);
     formData.append("comments", comments);
     formData.append("marks", marks);
@@ -303,9 +320,35 @@ function handleSelectVideo(participant_id,audition_id) {
               ))}
             </Slider>
 
+            {audition_videos?.length > 0 ? (
+              <div className="my-3">
+                <span
+                  onClick={handleSelected}
+                  className="buttonStyle"
+                  type="button"
+                >
+                  <img className="img-fluid" width="40px" src={sign} alt="" />
+                </span>
+
+                <button
+                  onClick={handleDeclineInput}
+                  className="ms-3 buttonStyle"
+                  type="button"
+                >
+                  <img
+                    className="img-fluid"
+                    width="40px"
+                    src={decline}
+                    alt=""
+                  />
+                </button>
+              </div>
+            ) : null}
+
           </div>
 
           <div className="row mt-4">
+          {declineInput ? (
             <div className="col-md-2">
               <input
                 type="text"
@@ -315,6 +358,7 @@ function handleSelectVideo(participant_id,audition_id) {
                 onChange={handleMarks}
               />
             </div>
+            ) : null}
             <div className="col-md-4">
               <input
                 type="text"
