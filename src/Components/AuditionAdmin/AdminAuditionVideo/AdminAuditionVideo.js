@@ -15,6 +15,7 @@ const AdminAuditionVideo = (props) => {
   const [error_list, setErrorList] = useState([]);
 
   const [acceptedVideos, setAcceptedVidoes] = useState([]);
+  const [rejecteddVideos, setRejectedVidoes] = useState([]);
 
   let history = useHistory();
 
@@ -27,6 +28,7 @@ const AdminAuditionVideo = (props) => {
   useEffect(() => {
     getAuditionVedio(aud_id);
     getAcceptedVideo(aud_id);
+    getRejectedVideo(aud_id);
   }, [aud_id]);
 
   const getAuditionVedio = (aud_id) => {
@@ -44,6 +46,15 @@ const AdminAuditionVideo = (props) => {
       if (res.data.status === 200) {
         let video = res.data.accepted_videos;
         setAcceptedVidoes(video);
+      }
+    });
+  };
+
+  const getRejectedVideo = (aud_id) => {
+    axios.get(`/api/audition-admin/rejected-videos/${aud_id}`).then((res) => {
+      if (res.data.status === 200) {
+        let video = res.data.rejected_videos;
+        setRejectedVidoes(video);
       }
     });
   };
@@ -309,6 +320,39 @@ const AdminAuditionVideo = (props) => {
               <span className="btn btn-warning w-25" onClick={sendManagerAdmin}>
                 <b>Send to Manager Admin</b>
               </span>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <div className="my-4">
+        <div className="filterVideoBorder d-flex justify-content-center">
+          <div className="filteredVideoWidth py-5 px-2">
+            <h2 className="text-warning">Rejected Video</h2>
+            <Slider {...settings2}>
+              {rejecteddVideos?.map((video, i) => (
+                <video width="400" controls>
+                  <source
+                    src={
+                      video.video_url != null
+                        ? `http://localhost:8000/${video.video_url}`
+                        : "https://youtu.be/dgfTiONcnTc"
+                    }
+                    type="video/mp4"
+                  />
+                </video>
+              ))}
+            </Slider>
+
+            <div
+              // onClick={() => {
+              //   history.push("/audition-admin/audition/audition-video-show");
+              // }}
+              className="d-flex justify-content-center mt-4"
+            >
+              
             </div>
 
             
