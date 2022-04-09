@@ -27,14 +27,7 @@ const [declineInput, setDeclineInput] = useState(true);
 const [selectedVideo, setSelectedVideo] = useState(0);
 const [rejectVideo, setRejectvideo] = useState(0);
 
-//Countdown state
-const auditionTime = moment(auditionInfo.auditions?.start_time).format('LL HH:mm:ss')
-//console.log(auctionTime);
-const countDownDate = new Date(auditionTime).getTime();
-const [day, setDay] = useState('');
-const [hour, setHour] = useState('');
-const [minute, setMinute] = useState('');
-const [second, setSecond] = useState('');
+
 
 
 
@@ -206,31 +199,47 @@ function handleSelectVideo(participant_id,audition_id) {
   };
 
 
-  // Countdown
-  useEffect(()=>{
+    //Countdown state
+    const auditionTime = moment("april 20, 2022 15:37:25").format('LL HH:mm:ss')
+    // console.log('time',auditionTime);
+    const countDownDate = new Date(auditionTime).getTime();
+    // console.log('count',countDownDate);
+    const [day, setDay] = useState('');
+    const [hour, setHour] = useState('');
+    const [minute, setMinute] = useState('');
+    const [second, setSecond] = useState('');
 
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = countDownDate - now;
+useEffect(()=>{
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        setDay(days);
+  const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
 
-        var hours = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        setHour(hours);
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      setDay(days);
 
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        setMinute(minutes);
+      var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      setHour(hours);
+
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      setMinute(minutes);
 
 
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        setSecond(seconds)
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      setSecond(seconds)
 
-    }, 1000);
+  }, 1000);
+
+  return ()=>clearInterval(interval);
 
 },[])
+
+
+  
+
+ 
 
 
   return (
