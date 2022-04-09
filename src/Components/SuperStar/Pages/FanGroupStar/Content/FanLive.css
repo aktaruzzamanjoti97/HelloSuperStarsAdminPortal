@@ -1,0 +1,19 @@
+.bgBlurDivLive{
+    border: 2px solid gold;
+
+    min-height: 70vh;
+    width: 60vw;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.TextPo{
+    position: relative;
+}
+/* Bottom right text */
+.bottom-rightIMJ {
+    position: absolute;
+    bottom: 6px;
+    right: 20px;
+  }

@@ -63,10 +63,10 @@ const FanbaseAdmin1 = () => {
             id="input-file"
             type="file"
             name="myImage"
-            // onChange={(event) => {
-            //   console.log(event.target.files[0]);
-            //   setSelectedImage(event.target.files[0]);
-            // }}
+          // onChange={(event) => {
+          //   console.log(event.target.files[0]);
+          //   setSelectedImage(event.target.files[0]);
+          // }}
           />
         </div>
       </div>
@@ -120,7 +120,7 @@ const FanbaseAdmin1 = () => {
                           Joining Request
                         </Nav.Link>
                       </Nav.Item>
-                     
+
                       <Nav.Item>
                         <Nav.Link className="NavColorFan" eventKey="Six">
                           <i className="fa-solid fa-gear mx-1"></i> Settings
@@ -145,7 +145,7 @@ const FanbaseAdmin1 = () => {
                       </Tab.Pane>
                       <Tab.Pane eventKey="Fifth">
                         {" "}
-                        <JoiningRequest/>
+                        <JoiningRequest />
                       </Tab.Pane>
                       <Tab.Pane eventKey="Six">
                         <FanBaseSetting />

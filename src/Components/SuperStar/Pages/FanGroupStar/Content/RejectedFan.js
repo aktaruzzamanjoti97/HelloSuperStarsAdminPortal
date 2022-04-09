@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Bang from '../../../../../assets/images/Fanbase-img/9.png';
 import Session from "../../../../../assets/images/email.png";
@@ -9,6 +9,9 @@ import axios from "axios";
 import moment from 'moment';
 
 const RejectedFan = () => {
+
+    let {slug} = useParams();
+
     var settings = {
         dots: true,
         infinite: false,
@@ -81,7 +84,7 @@ const RejectedFan = () => {
                         
                         {allFanReject.map((fangroup, index) => (
                             <div className="col-md-3">
-                                <Link to='/superstar/fan-group-live' className='LinkEventSchedule'>
+                                <Link to={`fan-group-ignored/details/${fangroup.slug}`} className='LinkEventSchedule'>
                                     <div className="card bg-dark my-3 card-dashbord">
                                         <div className="card-body containerFan">
                                             <img src={`http://localhost:8000/${fangroup.banner}`} className="img-fluid BangFan" alt="" />
