@@ -11,6 +11,7 @@ import JoiningRequestModal from './JoiningRequestModal';
 const JoiningRequest = () => {
 const [modalShow, setModalShow] = React.useState(false);
 
+
 let {slug} = useParams();
 
 const [fanMember, setFanMember] = useState([]);

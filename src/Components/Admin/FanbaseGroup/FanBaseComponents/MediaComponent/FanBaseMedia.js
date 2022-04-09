@@ -11,43 +11,43 @@ import img8 from '.././../../../../assets/images/Fanbase-img/8.png';
 import img10 from '.././../../../../assets/images/Fanbase-img/10.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-const mediaData=[img1,img2,img3,img4,img5,img6,img7,img8,img10,img1,img2,img3];
+const mediaData = [img1, img2, img3, img4, img5, img6, img7, img8, img10, img1, img2, img3];
 
 const FanBaseMedia = () => {
-let { slug } = useParams();
-const [fanMedia, setFanMedia] = useState([]);
-console.log('fanMedia ', fanMedia)
+  let { slug } = useParams();
+  const [fanMedia, setFanMedia] = useState([]);
+  console.log('fanMedia ', fanMedia)
 
-useEffect(() => {
+  useEffect(() => {
     axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
       if (res.status === 200) {
         setFanMedia(res.data.allFanPost);
       }
     });
   }, [slug]);
-  
-    return (
-        <div className='card my-3 bg-dark'>
-           <div className="card-boy">
-               <h4 className='text-light p-3'>Media Files</h4>
-               <div className="container p-3">
-                   <div className="row">
-                       {fanMedia.map((post, i)=>{
-                           return  <div className="col-3 mb-4" >
-                           <div className="content-1" style={{ border:'2px solid gold',borderRadius:'10px',cursor:'pointer' }}>
-                              <img src={`http://localhost:8000/${post.image}`} className='img-fluid w-100 hasImgg' alt="" style={{ borderRadius:'10px' }}/>
-                           </div>
-                       </div>
-                       })}
-                  
 
-                   
-                   </div>
-                   
-               </div>
-           </div>
+  return (
+    <div className='card my-3 bg-dark'>
+      <div className="card-boy">
+        <h4 className='text-light p-3'>Media Files</h4>
+        <div className="container p-3">
+          <div className="row">
+            {fanMedia.map((post, i) => {
+              return <div className="col-3 mb-4" >
+                <div className="content-1" style={{ border: '2px solid gold', borderRadius: '10px', cursor: 'pointer' }}>
+                  <img src={`http://localhost:8000/${post.image}`} className='img-fluid w-100 hasImgg' alt="" style={{ borderRadius: '10px' }} />
+                </div>
+              </div>
+            })}
+
+
+
+          </div>
+
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default FanBaseMedia;
