@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import JuryMarkingDetails from "./JuryMarkingDetails";
-import unplash from "../../../assets/images/Auditions/unsplash.png";
-import decline from "../../../assets/images/declined.png";
-import sign from "../../../assets/images/sign.png";
 import "./AdminSelectJury.css";
 import axios from "axios";
+import swal from "sweetalert";
 
 const AdminSelectJury = (props) => {
   let history = useHistory();
+
   const [participants, setAuditionParticipant] = useState([]);
+
   const [juries, setJuries] = useState([]);
+  const [selectedTop,setSelectedTop] = useState("");
+  const [selectedMessage,setSelectedMessage] = useState("");
+  const [rejectedMessage,setRejecteddMessage] = useState("");
 
   var aud_id = props.match.params.id;
 
@@ -25,6 +28,52 @@ const AdminSelectJury = (props) => {
         }
       });
   }, [aud_id]);
+
+  const handleSelectedTop = (e) => {
+    setSelectedTop(e.target.value);
+  }
+  const handleSelectedMessage = (e) => {
+    setSelectedMessage(e.target.value);
+  }
+  const handleRejectedMessage = (e) => {
+    setRejecteddMessage(e.target.value);
+  }
+
+  // Submit Selected Video
+  const submitSelectedVideo = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("selected_top", selectedTop);
+    formData.append("message", selectedMessage);
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios
+        .post(`api/audition-admin/selected-top-videos`, formData)
+        .then((res) => {
+          if (res.data.status === 200) {
+            setSelectedTop('');
+            setSelectedMessage('');
+            swal("Success", res.data.message, "success");
+          }
+        });
+    });
+  };
+
+  // Submit submitRejectedVideo
+  const submitRejectedVideo = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("message", rejectedMessage);
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios
+        .post(`api/audition-admin/rejected-videos-message`, formData)
+        .then((res) => {
+          if (res.data.status === 200) {
+            setRejecteddMessage('');
+            swal("Success", res.data.message, "success");
+          }
+        });
+    });
+  };
 
   
 
@@ -47,53 +96,6 @@ const AdminSelectJury = (props) => {
               </div>
 
               <JuryMarkingDetails juryId={jury.id}/>
-
-
-              {/* <div className="threeF m-3  p-2 rounded-3">
-                <div className="d-flex ">
-                  <button className="">
-                    <i className="fa-solid fa-video text-warning iconJuryText"></i>
-                  </button>
-                  <span className="mx-3">
-                    <span>Total Videos</span>
-                    <h5>
-                      <big className="text-warning">{jury.marking_video?.length}</big>
-                    </h5>
-                  </span>
-                </div>
-              </div>
-
-
-              <div className="cFour m-3  p-2 rounded-3">
-                <div className="d-flex">
-                  <button>
-                    <img src={sign} className="img-fluid iconJury" alt="" />
-                  </button>
-                  <span className="mx-3">
-                    <span>Selected Videos</span>
-                    <h5>
-                      <big className="text-warning">1
-                      </big>
-                    </h5>
-                  </span>
-                </div>
-              </div>
-
-
-              <div className="ffdNine m-3  p-2 rounded-3">
-                <div className="d-flex">
-                  <button>
-                    <img src={decline} className="img-fluid iconJury" alt="" />
-                  </button>
-                  <span className="mx-3">
-                    <span>Rejected Videos</span>
-                    <h5>
-                      <big className="text-warning">2</big>
-                    </h5>
-                  </span>
-                </div>
-              </div> */}
-
 
               <div className="m-3">
                 <button className="w-100 btn nameBg p-2">
@@ -118,11 +120,13 @@ const AdminSelectJury = (props) => {
             <input
               type="text"
               className="my-2 form-control input-gray border border-warning"
+              onChange={handleSelectedTop}
+              value={selectedTop}
             />
           </div>
-          <div className="col-md-2">
-            <button className="btn nameBg my-2 fw-bold">Apply</button>
-          </div>
+          {/* <div className="col-md-2">
+            <span className="btn nameBg my-2 fw-bold">Apply</span>
+          </div> */}
         </div>
 
         <div className="row p-4">
@@ -133,13 +137,15 @@ const AdminSelectJury = (props) => {
               cols="30"
               rows="4"
               className="form-control input-gray mx-1 border border-warning"
+              onChange={handleSelectedMessage}
+              value={selectedMessage}
             ></textarea>
           </div>
         </div>
 
         <div className="row p-4">
           <div className="col-md-6">
-            <button className="btn nameBg fw-bold w-100">Send</button>
+            <span className="btn nameBg fw-bold w-100" onClick={submitSelectedVideo}>Send</span>
           </div>
         </div>
       </div>
@@ -157,12 +163,14 @@ const AdminSelectJury = (props) => {
               cols="30"
               rows="4"
               className="form-control input-gray mx-2 border border-warning"
+              onChange={handleRejectedMessage}
+              value={rejectedMessage}
             ></textarea>
           </div>
 
           <div className="row p-4">
             <div className="col-md-4">
-              <button className="btn nameBg fw-bold w-100">Send</button>
+              <span className="btn nameBg fw-bold w-100" onClick={submitRejectedVideo}>Send</span>
             </div>
           </div>
         </div>

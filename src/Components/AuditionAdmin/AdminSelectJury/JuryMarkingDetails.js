@@ -9,9 +9,9 @@ const JuryMarkingDetails = (juryId) => {
 
   let history = useHistory();
 
-  const [totalVideos, setTotalVideos] = useState([]);
-  const [passedVideo, setPassedVideo] = useState([]);
-  const [failedVideo, setFailedVideo] = useState([]);
+  const [totalVideos, setTotalVideos] = useState();
+  const [passedVideo, setPassedVideo] = useState();
+  const [failedVideo, setFailedVideo] = useState();
 
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const JuryMarkingDetails = (juryId) => {
                   <span className="mx-3">
                     <span>Total Videos</span>
                     <h5>
-                      <big className="text-warning">{totalVideos?.length}</big>
+                      <big className="text-warning">{totalVideos}</big>
                     </h5>
                   </span>
                 </div>
@@ -56,7 +56,7 @@ const JuryMarkingDetails = (juryId) => {
                   <span className="mx-3">
                     <span>Selected Videos</span>
                     <h5>
-                      <big className="text-warning">{passedVideo?.length}
+                      <big className="text-warning">{passedVideo}
                       </big>
                     </h5>
                   </span>
@@ -72,7 +72,7 @@ const JuryMarkingDetails = (juryId) => {
                   <span className="mx-3">
                     <span>Rejected Videos</span>
                     <h5>
-                      <big className="text-warning">{failedVideo?.length}</big>
+                      <big className="text-warning">{failedVideo}</big>
                     </h5>
                   </span>
                 </div>
