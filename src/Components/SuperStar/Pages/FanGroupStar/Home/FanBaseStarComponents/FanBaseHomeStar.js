@@ -13,6 +13,7 @@ const FanBaseHomeStar = () => {
 
   const [allFanPost, setAllFanPost] = useState([]);
   console.log('allFanPost ', allFanPost)
+  console.log('slug ', slug)
 
   useEffect(() => {
     axios.get(`/api/star/fan/group/show/${slug}`).then((res) => {
@@ -60,7 +61,8 @@ const FanBaseHomeStar = () => {
                   </div>
 
                   <div className="container my-2">
-                    <img src={meme} className="img-fluid w-100" alt="" />
+                    <p>{post.description}</p>
+                    <img src={`http://localhost:8000/${post.image}`} className="img-fluid w-100" alt="" />
                     <div className="my-3">
                       <small className="chekfan">
                         <i class="fa-solid fa-thumbs-up mx-1"></i>1.5k Likes
