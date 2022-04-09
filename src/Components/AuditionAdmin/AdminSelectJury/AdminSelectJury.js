@@ -70,6 +70,7 @@ const AdminSelectJury = (props) => {
           if (res.data.status === 200) {
             setRejecteddMessage('');
             swal("Success", res.data.message, "success");
+            history.push(`/audition-admin/auditions/round2-appeal/${aud_id}`);
           }
         });
     });

@@ -19,7 +19,7 @@ import AuditionsStatus from "./AuditionStatus/AuditionsStatus";
 const AuditionAdminRoute = [
     
     { path: '/audition-admin/dashboard', exact: true, name: 'dashboard', component: dashboard },
-    { path: '/audition-admin/auditions/round2-appeal', exact: true, name: 'grand-final', component: AdminRoundTwoAppeal },
+    { path: '/audition-admin/auditions/round2-appeal/:id', exact: true, name: 'grand-final', component: AdminRoundTwoAppeal },
     { path: '/audition-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/audition-admin/auditions/jury-select/:id', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/audition-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
