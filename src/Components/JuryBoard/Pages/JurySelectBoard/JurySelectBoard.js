@@ -354,7 +354,7 @@ setInterval(() => {
           </div>
 
           <div className="row mt-4">
-          {declineInput ? (
+         
             <div className="col-md-2">
               <input
                 type="text"
@@ -364,7 +364,7 @@ setInterval(() => {
                 onChange={handleMarks}
               />
             </div>
-            ) : null}
+         
             <div className="col-md-4">
               <input
                 type="text"
