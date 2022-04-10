@@ -66,19 +66,19 @@ const msgData2 = [
 function FanBaseGroup() {
 
   let { slug } = useParams();
-const [userJoin, setUserJoin] = useState([]);
-const [myStar, setMyStar] = useState('');
-console.log('userJoin ', userJoin)
-console.log('myStar ', myStar)
+  const [userJoin, setUserJoin] = useState([]);
+  const [myStar, setMyStar] = useState('');
+  console.log('userJoin ', userJoin)
+  console.log('myStar ', myStar)
 
-useEffect(() => {
-  axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
-    if (res.status === 200) {
-      setUserJoin(res.data.userJoin);
-      setMyStar(res.data.myStar);
-    }
-  });
-}, [slug]);
+  useEffect(() => {
+    axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
+      if (res.status === 200) {
+        setUserJoin(res.data.userJoin);
+        setMyStar(res.data.myStar);
+      }
+    });
+  }, [slug]);
 
   return (
     <div className="my-3">
@@ -117,7 +117,7 @@ useEffect(() => {
                             <div className="d-flex mb-3">
                               <img
                                 src={`http://localhost:8000/${item.image}`}
-                                className="img-fluid" style={{width: '30px', height: '30px'}}
+                                className="img-fluid" style={{ width: '30px', height: '30px' }}
                                 alt=""
                               />
                               <div className="w-75 mx-2">
@@ -139,23 +139,23 @@ useEffect(() => {
                   <div className="card-body">
                     <div className="parentMsgDiv">
                       <div className="childMsgDiv">
-                        
-                          
-                            <div className="d-flex mb-3">
-                              {/* <img
+
+
+                        <div className="d-flex mb-3">
+                          {/* <img
                                 src={item.img}
                                 className="img-fluid"
                                 alt=""
                               /> */}
-                              <div className="w-75 mx-2">
-                                <p className="m-0 p-0">Own <small>(Admin)</small></p>
-                                <small className="m-0 p-0 text-muted">
-                                  {myStar.first_name} {myStar.last_name}
-                                </small>
-                              </div>
-                            </div>
-                      
-                       
+                          <div className="w-75 mx-2">
+                            <p className="m-0 p-0">Own <small>(Admin)</small></p>
+                            <small className="m-0 p-0 text-muted">
+                              {myStar.first_name} {myStar.last_name}
+                            </small>
+                          </div>
+                        </div>
+
+
                       </div>
                     </div>
                   </div>

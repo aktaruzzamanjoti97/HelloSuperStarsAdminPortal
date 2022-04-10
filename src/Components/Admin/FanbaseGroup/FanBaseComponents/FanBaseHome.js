@@ -21,6 +21,7 @@ const FanBaseHome = () => {
       }
     });
   }, [slug]);
+  
   return (
     <>
       {/* <div className="card bg-dark mt-4">
