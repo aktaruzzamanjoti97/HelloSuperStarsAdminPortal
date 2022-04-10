@@ -200,7 +200,7 @@ function handleSelectVideo(participant_id,audition_id) {
 
 
     //Countdown state
-    const auditionTime = moment("april 20, 2022 15:37:25").format('LL HH:mm:ss')
+    const auditionTime = moment(auditionInfo.auditions?.end_time).format('LL HH:mm:ss')
     // console.log('time',auditionTime);
     const countDownDate = new Date(auditionTime).getTime();
     // console.log('count',countDownDate);
@@ -209,9 +209,7 @@ function handleSelectVideo(participant_id,audition_id) {
     const [minute, setMinute] = useState('');
     const [second, setSecond] = useState('');
 
-useEffect(()=>{
-
-  const interval = setInterval(() => {
+setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;
 
@@ -230,16 +228,15 @@ useEffect(()=>{
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
       setSecond(seconds)
 
-  }, 1000);
+  });
 
-  return ()=>clearInterval(interval);
-
-},[])
 
 
   
 
- 
+ const alertMessage = () => {
+  swal("Success","Video Has Been Successfully Submitted!", "success");
+ }
 
 
   return (
@@ -413,7 +410,7 @@ useEffect(()=>{
               // }}
               className="d-flex justify-content-end mt-4"
             >
-              <span className="btn btn-warning w-25">
+              <span className="btn btn-warning w-25" onClick={alertMessage}>
                 <b>Submit & Complete</b>
               </span>
             </div>
