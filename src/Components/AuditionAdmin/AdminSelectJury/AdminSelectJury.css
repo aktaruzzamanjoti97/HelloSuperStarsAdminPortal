@@ -38,3 +38,22 @@
 .cardBox {
   width: 22rem;
 }
+
+.radioButtonSelect .css-ahj2mt-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  letter-spacing: 0.00938em;
+}
+
+.radioButtonSelect .css-hyxlzm {
+    position: relative;
+    display: -webkit-box;
+    color: gold;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
