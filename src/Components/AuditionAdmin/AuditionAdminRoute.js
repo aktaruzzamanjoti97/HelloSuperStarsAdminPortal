@@ -13,6 +13,7 @@ import AdminAuditionCreateEvent from "./AdminAuditionCreateEvent/AdminAuditionCr
 import AdminAuditionLiveVideoFilter from "./AdminAuditionLiveVideoFilter/AdminAuditionLiveVideoFilter";
 import GrandFinish from "./Dashboard/Content/Finish/GrandFinish";
 import AuditionsStatus from "./AuditionStatus/AuditionsStatus";
+import ParticipantList from "./ParticipantList/ParticipantList";
 
 
 
@@ -34,6 +35,8 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/audition-video/:id', exact: true, name: 'audition-video', component: AdminAuditionVideo },
     { path: '/audition-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/audition-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
+    { path: '/audition-admin/audition/participantList', exact: true, name: 'participant-list', component: ParticipantList},
+
 
     //@TODO: Superstar Route
     

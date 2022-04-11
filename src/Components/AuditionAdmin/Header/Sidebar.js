@@ -51,6 +51,11 @@ const Sidebar = () => {
                                 Audition
                             </Link>
 
+                            <Link className="nav-link" to="/audition-admin/audition/participantList">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Participant List
+                            </Link>
+
                            
                             
                         
