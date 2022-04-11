@@ -15,7 +15,7 @@ const AdminAuditionVideo = (props) => {
   const [error_list, setErrorList] = useState([]);
 
   const [acceptedVideos, setAcceptedVidoes] = useState([]);
-  const [rejecteddVideos, setRejectedVidoes] = useState([]);
+  const [rejectedVideos, setRejectedVidoes] = useState([]);
 
   let history = useHistory();
 
@@ -95,6 +95,7 @@ const AdminAuditionVideo = (props) => {
           if (res.data.status === 200) {
             getAuditionVedio(aud_id);
             getAcceptedVideo(aud_id);
+            getRejectedVideo(aud_id);
             swal("Success", res.data.message, "success");
             setComments(" ");
             setAcceptVideo(0);
@@ -332,7 +333,7 @@ const AdminAuditionVideo = (props) => {
           <div className="filteredVideoWidth py-5 px-2">
             <h2 className="text-warning">Rejected Video</h2>
             <Slider {...settings2}>
-              {rejecteddVideos?.map((video, i) => (
+              {rejectedVideos?.map((video, i) => (
                 <video width="400" controls>
                   <source
                     src={

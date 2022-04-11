@@ -57,16 +57,16 @@ const AdminAuditionCreateEvent = (props) => {
     console.log('Video File',file[0]);
     setVideoData(file[0]);
   };
-  const Confirmed = () => {
+//   const Confirmed = () => {
 
-    axios.put(`/api/audition-admin/confirmed/audition/${audition_id}`).then((res) => {
+//     axios.put(`/api/audition-admin/confirmed/audition/${audition_id}`).then((res) => {
 
-        if (res.status === 200) {
-            history.push(`/audition-admin/audition`)
-        }
+//         if (res.status === 200) {
+//             history.push(`/audition-admin/audition`)
+//         }
         
-      });
-}
+//       });
+// }
 
   useEffect(() => {
     //Fetch Superstars
@@ -422,14 +422,6 @@ const AdminAuditionCreateEvent = (props) => {
               
             </div>
           </form>
-          <button
-                className="btn btn-warning save-greetings-button py-2 mt-4"
-                onClick={Confirmed}
-              >
-                <big>
-                  <b>Send To Manager</b>
-                </big>
-              </button>
         </div>
       </div>
     </div>

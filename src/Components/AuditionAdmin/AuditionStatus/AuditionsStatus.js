@@ -18,6 +18,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Markup } from 'interweave'
 import moment from 'moment'
+import swal from "sweetalert";
 
 const AuditionsStatus = () => {
     const history = useHistory();
@@ -26,18 +27,37 @@ const AuditionsStatus = () => {
 
 
     const [auditionStatus, setPendingAudition] = useState([]);
+    const [sendToManager, setSendToManager] = useState(false);
 
     useEffect(() => {
         axios.get(`/api/audition-admin/auditionStatus/${id}`).then((res) => {
             if (res.data.status === 200) {
 
                 setPendingAudition(res.data.auditionStatus);
+            }
+        });
 
-                console.log('star single pending audition', res.data.auditionStatus);
+        axios.get(`/api/audition-admin/sendManager/${id}`).then((res) => {
+            console.log('data',res.data.sendManager)
+            if (res.data.sendManager) {
+
+                setSendToManager(true);
             }
         });
 
     }, []);
+
+    const Confirmed = () => {
+
+        axios.put(`/api/audition-admin/confirmed/audition/${id}`).then((res) => {
+    
+            if (res.status === 200) {
+                swal("Success", "Audition Sent to Manager Admin", "success");
+                history.push(`/audition-admin/audition`)
+            }
+            
+          });
+    }
 
 
 
@@ -89,6 +109,7 @@ const AuditionsStatus = () => {
                                 <Link to={`/audition-admin/audition/create-event/${audition.id}`}>
                                     <button className='btn MEN-X fw-bold'>Review </button>
                                 </Link>
+                                    <button disabled={!sendToManager}   className='btn MEN-X fw-bold ms-3' onClick={Confirmed}>Send to Manager </button>
                             </div>
                         </div>
 
