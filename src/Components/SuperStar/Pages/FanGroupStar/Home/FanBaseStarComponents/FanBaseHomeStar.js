@@ -6,6 +6,7 @@ import meme2 from "../../../../../../assets/images/Fanbase-img/meme2.png";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import moment from 'moment';
+import ReactPlayer from "react-player";
 
 const FanBaseHomeStar = () => {
 
@@ -63,6 +64,11 @@ const FanBaseHomeStar = () => {
                   <div className="container my-2">
                     <p>{post.description}</p>
                     <img src={`http://localhost:8000/${post.image}`} className="img-fluid w-100" alt="" />
+                    <ReactPlayer className='form-control VideoPlays'
+                  url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
+                  autoplay
+                  controls="true"
+                />
                     <div className="my-3">
                       <small className="chekfan">
                         <i class="fa-solid fa-thumbs-up mx-1"></i>1.5k Likes
