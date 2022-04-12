@@ -24,13 +24,12 @@ const AdminSelectJury = (props) => {
   const [rejectedMessage, setRejecteddMessage] = useState("");
   const [mark_wise,setMarkWise] = useState("");
   const [number_wise,setNumberWise] = useState("");
+  const [mark_wise_videos,setMarkWiseVideos] = useState("");
 
   var aud_id = props.match.params.id;
 
   useEffect(() => {
-    axios
-      .get(`/api/audition-admin/jury-selected-videos/${aud_id}`)
-      .then((res) => {
+    axios.get(`/api/audition-admin/jury-selected-videos/${aud_id}`).then((res) => {
         if (res.data.status === 200) {
           setAuditionParticipant(res.data.audition_participants);
           setJuries(res.data.juries);
@@ -57,10 +56,18 @@ const AdminSelectJury = (props) => {
   const handleNumber = (e) => {
     setNumberWise(e.target.value);
     setMarkWise('');
+    setMarkWiseVideos('');
   }
 
-  console.log('mark_wise',mark_wise);
-  console.log('number_wise',number_wise);
+  const markWiseUser = (e) => {
+    axios.get(`/api/audition-admin/get-mark-wise-videos/${aud_id}/${selectedTop}`).then((res) => {
+      if (res.data.status === 200) {
+        setMarkWiseVideos(res.data.mark_wise_videos);
+      }
+    });
+
+  }
+  
 
   // Submit Selected Video
   const submitSelectedVideo = (e) => {
@@ -80,6 +87,7 @@ const AdminSelectJury = (props) => {
           if (res.data.status === 200) {
             setSelectedTop("");
             setSelectedMessage("");
+            setMarkWiseVideos("");
             swal("Success", res.data.message, "success");
           }
         });
@@ -174,10 +182,13 @@ const AdminSelectJury = (props) => {
               onChange={handleSelectedTop}
               value={selectedTop}
             />
+               <p className="text-warning">{mark_wise_videos}</p>
           </div>
-          {/* <div className="col-md-2">
-            <span className="btn nameBg my-2 fw-bold">Apply</span>
-          </div> */}
+          {mark_wise === 'mark' ? <div className="col-md-2">
+       
+            <span className="btn nameBg my-2 mt-5 fw-bold" onClick={markWiseUser}>Apply</span>
+          </div> : null}
+          
         </div>
 
         <div className="row p-4">
