@@ -10,9 +10,11 @@ import swal from "sweetalert";
 import { map } from "jquery";
 import { Markup } from "interweave";
 import moment from "moment";
+import { useParams } from "react-router-dom";
 
-const JurySelectBoard = () => {
+const StarMarkingVideo = () => {
 
+const params = useParams();
 
 const [auditionInfo, setAuditionInfo] = useState([]);
 const [clickVideoLink, setClickVideoLink] = useState("");
@@ -40,18 +42,18 @@ useEffect(()=>{
 
 
 const getAuditionVedio = () => {
-  axios.get('api/jury/selectVideo').then((res) => {
+  axios.get(`api/star/selectVideo/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.audition_videos;
+      console.log('Audition videos',video);
       setAuditionVideos(video);
       setAuditionInfo(res.data.auditionInfo)
-      console.log('Audition Id',video);
     }
   });
 };
 
 const getAcceptedVideo = () => {
-  axios.get('api/jury/juryMarkingDone/videos').then((res) => {
+  axios.get(`api/star/starMarkingDone/videos/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.accepted_videos;
       console.log('done video',video)
@@ -96,15 +98,15 @@ function handleSelectVideo(participant_id,audition_id) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("audition_id", aud_id);
-    formData.append("selected", selectedVideo);
-    formData.append("rejected", rejectVideo);
+    // formData.append("selected", selectedVideo);
+    // formData.append("rejected", rejectVideo);
     formData.append("participant_id", clickVideoLink);
     formData.append("comments", comments);
     formData.append("marks", marks);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios
-        .post(`api/jury/juryMarking`, formData)
+        .post(`api/star/starMarking`, formData)
         .then((res) => {
           console.log("data", res.data);
           if (res.data.status === 200) {
@@ -122,6 +124,9 @@ function handleSelectVideo(participant_id,audition_id) {
               error_list: res.data.validation_errors,
             });
             swal("Please Select Video First",...error_list);
+          }
+          if(res.data.status === 202){
+            swal("Please Marking Between Given Range !");
           } 
         });
     });
@@ -297,7 +302,7 @@ setInterval(() => {
           </p>
 
           <h4 className="fw-bolder my-3 text-success text-center">
-            Jury Judgement Board
+            Judgement Board
           </h4>
         </div>
       </div>
@@ -305,27 +310,23 @@ setInterval(() => {
       <div className="videoSliderBorder d-flex justify-content-center">
         <div className="videoSliderStyle py-5 px-3">
           <div>
-            <h2 className="text-warning py-2"> Make Marking Between 0 - {auditionInfo.auditions?.setJuryMark} </h2>
+            <h2 className="text-warning py-2"> Make Marking Between 0 - {auditionInfo.auditions?.setJudgeMark} </h2>
 
             <Slider {...settings}>
-              {audition_videos?.map((video, i) => (
+              {audition_videos.length > 0 ? audition_videos?.map((video, i) => (
                 <div className="">
                   <div className="videos bg-success p-4 mx-4" onClick={() => handleSelectVideo(video.id,video.audition_id)} key={video.id}>
                   <video width="630" controls>
                       <source
-                        src={
-                          video.video_url != null
-                            ? `http://localhost:8000/${video.video_url}`
-                            : "https://youtu.be/dgfTiONcnTc"
-                        }
+                        src={`http://localhost:8000/${video?.video_url}`}
                         type="video/mp4"
                       />
                     </video>
                   </div>
                 </div>
-              ))}
+              )):null}
             </Slider>
-
+{/* 
             {audition_videos?.length > 0 ? (
               <div className="my-3">
                 <span
@@ -349,7 +350,7 @@ setInterval(() => {
                   />
                 </button>
               </div>
-            ) : null}
+            ) : null} */}
 
           </div>
 
@@ -421,4 +422,4 @@ setInterval(() => {
   );
 };
 
-export default JurySelectBoard;
+export default StarMarkingVideo;
