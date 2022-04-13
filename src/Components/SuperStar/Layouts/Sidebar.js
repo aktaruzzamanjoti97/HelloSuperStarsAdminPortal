@@ -1,10 +1,13 @@
 import axios from "axios";
-import React from "react";
+import React,{useState} from "react";
+import { Button, Collapse } from "react-bootstrap";
 import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 
 
 const Sidebar = () => {
+    const [open, setOpen] = useState(false);
+
     const history = useHistory();
 
     const logoutSubmit = (e) => {
@@ -59,6 +62,20 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Audition
                             </Link>
+                            <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+      >
+        click
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+          terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+          labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </Collapse>
                             <Link className="nav-link" to="/superstar/learning-session">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Learning Session

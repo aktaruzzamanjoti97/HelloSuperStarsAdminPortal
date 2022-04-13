@@ -138,8 +138,13 @@ import AuditionsAdminStar from "./Home/Pages/AdminAudition/AuditionAdminDetails/
 
 import ApprovedFanGroup from "./Home/Pages/AdminFanGroup/ApprovedFanGroup/ApprovedFanGroup";
 
+import EventsLive from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/EventsLive";
+import PendingEventAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/PendingEventAudition";
+import EventRequestApproval from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/EventRequestApproval";
 
 
+
+//// Audition New Route
 
 
 
@@ -230,6 +235,14 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
 
     
+    //// Audition New Route
+    { path: '/superstar-admin/audition/event', exact: true, name: 'event', component: EventsLive },
+    { path: '/superstar-admin/audition/event/pending', exact: true, name: 'pending', component: PendingEventAudition },
+    { path: '/superstar-admin/audition/event/request-approve', exact: true, name: 'pending', component: EventRequestApproval },
+
+
+
+
 
     // Route
     { path: '/superstar-admin/upcoming-event', exact: true, name: 'LiveChat', component: UpcomingEvent },

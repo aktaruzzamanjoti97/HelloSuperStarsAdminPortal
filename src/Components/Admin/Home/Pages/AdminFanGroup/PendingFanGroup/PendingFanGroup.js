@@ -258,6 +258,8 @@ const PendingGroup = () => {
         <Link to={`/superstar-admin/pending-fan-group-Edit/${fanDetails.slug}`}>
           <button className="btn btnDlt text-warning fw-bold">Edit</button>
         </Link>
+
+        <button className="btn btnDlt text-warning fw-bold">Edit</button>
       </div>
     </div>
   );
