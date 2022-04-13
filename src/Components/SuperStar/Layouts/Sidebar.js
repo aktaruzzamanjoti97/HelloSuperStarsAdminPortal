@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { Dropdown } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import swal from "sweetalert";
 import "./Sidebar.css";
@@ -86,7 +85,7 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to="/superstar/live-audition">
+                    <Link class="dropdown-item" to="/superstar/audition/live">
                       Live audition
                     </Link>
                   </li>
@@ -99,11 +98,10 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link class="dropdown-item" to=''>
+                    <Link class="dropdown-item" to="">
                       Result
                     </Link>
                   </li>
-               
                 </ul>
               </div>
               {/* <Dropdown>

@@ -72,11 +72,56 @@ const Sidebar = () => {
             </div>
             Progress Bar
           </Link>
-          <Link className="nav-link" to="/superstar-admin/audition">
+          <Link className="nav-link">
             <div className="sb-nav-link-icon">
               <i className="fas fa-tachometer-alt"></i>
             </div>
-            Audition
+            <div className="myButton">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Audition
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <li>
+                    <Link class="dropdown-item" to="/superstar-admin/audition">
+                      Audition Dashboard
+                    </Link>
+                  </li>
+                  <li>
+                    <Link class="dropdown-item" to="/superstar-admin/audition/live">
+                      Live Audition
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      class="dropdown-item"
+                      to="/superstar-admin/auditions/pending-audition"
+                    >
+                      Pending Audition
+                    </Link>
+                  </li>
+                  <li>
+                    <Link class="dropdown-item" to="/superstar-admin/auditions/requestForApproval">
+                      Request Approval
+                    </Link>
+                  </li>
+                  <li>
+                    <Link class="dropdown-item" to="">
+                      Result
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </Link>
           <Link className="nav-link" to="/superstar-admin/learning-session">
             <div className="sb-nav-link-icon">

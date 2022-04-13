@@ -1,21 +1,22 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import ReactPlayer from "react-player";
-import pendingBanner from "../../../../../assets/images/pendingBannerAudio.png";
-import demo from "../../../../../assets/images/pendingIcons/demo.png";
-import finish from "../../../../../assets/images/pendingIcons/finish.png";
-import jury from "../../../../../assets/images/pendingIcons/jury.png";
-import star from "../../../../../assets/images/pendingIcons/star.png";
-import start from "../../../../../assets/images/pendingIcons/start.png";
+import pendingBanner from "../../../../../../assets/images/pendingBannerAudio.png";
+import demo from "../../../../../../assets/images/pendingIcons/demo.png";
+import finish from "../../../../../../assets/images/pendingIcons/finish.png";
+import jury from "../../../../../../assets/images/pendingIcons/jury.png";
+import star from "../../../../../../assets/images/pendingIcons/star.png";
+import start from "../../../../../../assets/images/pendingIcons/start.png";
+import "./AdminRequestForApproval.css";
 
-const StarAudioVideoPending = () => {
+const AdminRequestForApproval = () => {
   return (
     <div className="container-fluid">
       <h2 className="text-white">Request for approval</h2>
       <div className="requestApprovalBottomLine mb-4"></div>
 
-      <div className="mainBorderPending p-5">
-        <h3 className="text-primary fw-bolder my-2">Guitar Auditions</h3>
+      <div className="mainBorderPending">
+        <h3 className="text-primary my-2">Guitar Auditions</h3>
         <p className="text-light my-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
           dolore tenetur deleniti itaque impedit modi atque esse qui nam nihil
@@ -148,11 +149,11 @@ const StarAudioVideoPending = () => {
           </div>
         </div>
 
-        <div className="d-flex justify-content-evenly my-5">
-          <button className="text-primary btnPending rounded-3 p-2">
-            Rejected
+        <div className="d-flex justify-content-end my-5">
+          <button className="text-primary btnAdPending rounded-3 p-2 mx-4">
+            Pending
           </button>
-          <button className="text-light btnApproved p-2 rounded-3">
+          <button className="text-light btnApproved p-2 rounded-3 mx-4">
             Approved
           </button>
         </div>
@@ -161,4 +162,4 @@ const StarAudioVideoPending = () => {
   );
 };
 
-export default StarAudioVideoPending;
+export default AdminRequestForApproval;

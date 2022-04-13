@@ -34,6 +34,7 @@
 
 .mainBorderPending {
   border: 2px solid gold;
+  background-color: #1f1f1f;
   border-radius: 10px;
   padding: 20px;
 }
