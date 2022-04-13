@@ -17,58 +17,60 @@ const mediaData = [img1, img2, img3, img4, img5, img6, img7, img8, img10, img1, 
 const FanBaseMedia = () => {
   let { slug } = useParams();
   const [fanMedia, setFanMedia] = useState([]);
+  const [fanVideo, setFanMediaVideo] = useState([]);
   console.log('fanMedia ', fanMedia)
 
   useEffect(() => {
     axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
       if (res.status === 200) {
-        setFanMedia(res.data.allFanPost);
+        setFanMedia(res.data.fanMedia);
+        setFanMediaVideo(res.data.fanVideo);
       }
     });
   }, [slug]);
 
   return (
     <>
-    <div className='card my-3 bg-dark'>
-      <div className="card-boy">
-        <h4 className='text-light p-3'>Photos Files</h4>
-        <div className="container p-3">
-          <div className="row">
-            {fanMedia.map((post, i) => {
-              return <div className="col-3 mb-4" >
-                <div className="content-1" style={{ border: '2px solid gold', borderRadius: '10px', cursor: 'pointer' }}>
-                  <img src={`http://localhost:8000/${post.image}`} className='img-fluid w-100 hasImgg' alt="" style={{ borderRadius: '10px' }} />
+      <div className='card my-3 bg-dark'>
+        <div className="card-boy">
+          <h4 className='text-light p-3'>Photos Files</h4>
+          <div className="container p-3">
+            <div className="row">
+              {fanMedia.map((post, i) => {
+                return <div className="col-3 mb-4" >
+                  <div className="content-1" style={{ border: '2px solid gold', borderRadius: '10px', cursor: 'pointer' }}>
+                    <img src={`http://localhost:8000/${post.image}`} className='img-fluid w-100 hasImgg' alt="" style={{ borderRadius: '10px' }} />
+                  </div>
                 </div>
-              </div>
-            })}
-          </div>
+              })}
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
 
-    <div className='card my-3 bg-dark'>
-      <div className="card-boy">
-        <h4 className='text-light p-3'>Videos Files</h4>
-        <div className="container p-3">
-          <div className="row">
-            {fanMedia.map((post, i) => {
-              return <div className="col-3 mb-4" >
-                <div className="content-1" style={{ border: '2px solid gold', borderRadius: '10px', cursor: 'pointer' }}>
+      <div className='card my-3 bg-dark'>
+        <div className="card-boy">
+          <h4 className='text-light p-3'>Videos Files</h4>
+          <div className="container p-3">
+            <div className="row">
+              {fanVideo.map((post, i) => {
+                return <div className="col-3 mb-4" >
+                  <div className="content-1" style={{  borderRadius: '10px', cursor: 'pointer' }}>
 
-                <ReactPlayer className='GdsAS'
-                  url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
-                  autoplay
-                  controls="true"
-                />
+                    <ReactPlayer className='GdsAS'
+                      url={`http://localhost:8000/${post.video}`}
+                      autoplay
+                      controls="true"
+                    />
+                  </div>
                 </div>
-              </div>
-            })}
-          </div>
+              })}
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };

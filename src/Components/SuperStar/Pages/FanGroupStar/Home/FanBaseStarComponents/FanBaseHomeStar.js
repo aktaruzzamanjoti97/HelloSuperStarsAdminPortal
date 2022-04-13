@@ -51,24 +51,27 @@ const FanBaseHomeStar = () => {
               <div className="card bg-dark postFancard my-4">
                 <div className="card-body">
                   <div className="d-flex">
-                    <img src={`http://localhost:8000/${post.user?.image}`} className="img-fluid mx-2" alt="" style={{height: '40px',  width: '40px'}} />
+                    <img src={`http://localhost:8000/${post.user?.image}`} className="img-fluid mx-2" alt="" style={{ height: '40px', width: '40px' }} />
                     <div className=" w-75">
                       <h6 className="m-0">{post.user?.first_name} {post.user?.last_name}</h6>
                       <small style={{ color: "#A7A7A7" }}>
-                      <span>{moment(post.created_at).format('LT')} </span> <span className="mx-2">{moment(post.created_at).format('LL')}</span>{" "}
-                      <span>{ post.star_name }</span>
+                        <span>{moment(post.created_at).format('LT')} </span> <span className="mx-2">{moment(post.created_at).format('LL')}</span>{" "}
+                        <span>{post.star_name}</span>
                       </small>
                     </div>
                   </div>
 
                   <div className="container my-2">
                     <p>{post.description}</p>
-                    <img src={`http://localhost:8000/${post.image}`} className="img-fluid w-100" alt="" />
-                    <ReactPlayer className='form-control VideoPlays'
-                  url="https://www.youtube.com/watch?v=LRtEJPSj2-8"
-                  autoplay
-                  controls="true"
-                />
+                    {post.image ?
+                      <img src={`http://localhost:8000/${post.image}`} className="img-fluid w-100" alt="" />
+                      :
+                      <ReactPlayer className='form-control VideoPlays'
+                        url={`http://localhost:8000/${post.video}`}
+                        autoplay
+                        controls="true"
+                      />
+                    }
                     <div className="my-3">
                       <small className="chekfan">
                         <i class="fa-solid fa-thumbs-up mx-1"></i>1.5k Likes

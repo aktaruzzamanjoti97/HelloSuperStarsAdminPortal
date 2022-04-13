@@ -27,7 +27,7 @@ const FanbaseAdmin1 = () => {
   const [remove, setRemove] = React.useState(false);
 
   const [fanDetails, setFanDetails] = useState([]);
-  console.log("fanDetails approved", fanDetails);
+  console.log("selectedImage approved", selectedImage);
   console.log("slug", slug);
 
   useEffect(() => {
@@ -37,6 +37,28 @@ const FanbaseAdmin1 = () => {
       }
     });
   }, [slug]);
+  
+  function selectImage(file){
+
+    // setFile(URL.createObjectURL(file[0]));
+    // setImagedata(file[0]);
+
+
+    const formData = new FormData()
+
+    formData.append('banner', file[0])
+
+    console.log('image ok', file[0]);
+
+
+    axios.post(`/api/admin/fan/group/image/update/${slug}`, formData).then((res) => {
+      if (res.status === 200) {
+        console.log('Done');
+        swal("Welcome", res.data.message, "success");
+        // history.push('/superstar-admin/fan-group');
+      }
+    });
+  }
 
   return (
     <div className="container-fluid">
@@ -63,10 +85,14 @@ const FanbaseAdmin1 = () => {
             id="input-file"
             type="file"
             name="myImage"
+            onChange={(e) =>
+              selectImage(e.target.files)
+            }
           // onChange={(event) => {
           //   console.log(event.target.files[0]);
           //   setSelectedImage(event.target.files[0]);
-          // }}
+          // }} 
+
           />
         </div>
       </div>
