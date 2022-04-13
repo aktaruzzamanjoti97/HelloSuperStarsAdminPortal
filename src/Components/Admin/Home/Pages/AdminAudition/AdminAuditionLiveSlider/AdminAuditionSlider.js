@@ -73,7 +73,7 @@ const AdminAuditionSlider = () => {
         <div>
           <div className="slick-parent d-flex justify-content-center">
             <Slider className="slider-width" {...settings}>
-              <div className="p-3">
+              {/* <div className="p-3">
                 <div className="sliderCardBorder">
                   <img
                     src={guitarCompetition}
@@ -82,11 +82,11 @@ const AdminAuditionSlider = () => {
                     style={{ height: "200px" }}
                   />
                   <div className="p-3">
-                    {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
+                 
                     <h5 className="text-white text-center">
                       Guitar Competition
                     </h5>
-                    {/* </Link> */}
+                  
 
                     <p className="text-secondary">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -106,11 +106,11 @@ const AdminAuditionSlider = () => {
                     style={{ height: "200px" }}
                   />
                   <div className="p-3">
-                    {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
+
                     <h5 className="text-white text-center">
                       Swimming Competition
                     </h5>
-                    {/* </Link> */}
+        
 
                     <p className="text-secondary">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -130,11 +130,11 @@ const AdminAuditionSlider = () => {
                     style={{ height: "200px" }}
                   />
                   <div className="p-3">
-                    {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
+                
                     <h5 className="text-white text-center">
                       Football Competition
                     </h5>
-                    {/* </Link> */}
+              
 
                     <p className="text-secondary">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -144,12 +144,12 @@ const AdminAuditionSlider = () => {
                     <button className="btn btn-done w-100 fw-bold">Done</button>
                   </div>
                 </div>
-              </div>
+              </div> */}
          
 
               {/* Monir Vai er Kaj */}
 
-              {/* {liveAuditions?.map((audition)=>
+              {liveAuditions?.map((audition)=>
                       
 
                           <div className="p-3">
@@ -172,7 +172,7 @@ const AdminAuditionSlider = () => {
                             </div>
                         </div>
                      
-                     )} */}
+                     )}
             </Slider>
           </div>
         </div>

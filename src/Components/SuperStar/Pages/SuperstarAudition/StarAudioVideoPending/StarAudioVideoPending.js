@@ -9,6 +9,9 @@ import star from "../../../../../assets/images/pendingIcons/star.png";
 import start from "../../../../../assets/images/pendingIcons/start.png";
 
 const StarAudioVideoPending = () => {
+
+  
+
   return (
     <div className="container-fluid">
       <h2 className="text-white">Request for approval</h2>
