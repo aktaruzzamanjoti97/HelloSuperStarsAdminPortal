@@ -1,14 +1,29 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
 import VS from "../../../../../../assets/images/fanGroup/VS.png";
 import FanGroupIcon from "../../../../../../assets/images/iconFan/expired-1.png";
 import Salman from "../../../../../../assets/images/SalmanKhan.jpg";
 import ShahrukhAnother from "../../../../../../assets/images/starImg/shah-rukh-khan-01.webp";
 // import shahRukhAnother from "../../../../../../assets/images/starImg/shahRukhAnother.webp";
 import "./CompletionBetweenStars.css";
+import { Markup } from "interweave";
 
 const CompetitionBetweenStars = () => {
   let history = useHistory();
+  const {slug} = useParams();
+
+  const [fanDetails, setFanDetails] = useState([]);
+  console.log('fanDetails ', fanDetails);
+  console.log('slug', slug);
+
+  useEffect(() => {
+    axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
+      if (res.status === 200) {
+        setFanDetails(res.data.fanDetails);
+      }
+    });
+  }, [slug]);
 
   return (
     <>
@@ -29,12 +44,10 @@ const CompetitionBetweenStars = () => {
 
         <div className="row my-4">
           <div className="col-md-11 text-light">
-            <h2>Shahrukh Fanbase vs Star Name</h2>
+            <h2>{fanDetails.group_name} </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
-              possimus repellat, accusantium est vitae perspiciatis accusamus
-              vel molestias enim. Natus quibusdam deleniti dignissimos aperiam
-              adipisci unde, reprehenderit eius quisquam exercitationem.
+
+          <Markup content={fanDetails.description} />
             </p>
           </div>
         </div>
@@ -44,16 +57,16 @@ const CompetitionBetweenStars = () => {
             <div className="col-md-5">
               <div className="mx-2">
                 <div className="bgStar">
-                  <img className="img-fluid" src={ShahrukhAnother} alt="" />
+                  <img className="img-fluid" src={`http://localhost:8000/${fanDetails.my_superstar?.image}`} alt="" />
                   <div className="m-2">
                     <p>
                       {" "}
-                      <big className="text-light fw-bolder">Shahrukh Khan</big>
+                      <big className="text-light fw-bolder">{fanDetails.my_superstar?.first_name} {fanDetails.my_superstar?.last_name}</big>
                     </p>
                     <p>
                       <small>
-                        <span className="text-muted">Bollywood</span>:{" "}
-                        {/* <i className="text-muted">Pending</i> */}
+                        <span className="text-muted">Status</span>:{" "}
+                        <i className="text-muted">Pending</i>
                       </small>
                     </p>
                   </div>
@@ -66,15 +79,16 @@ const CompetitionBetweenStars = () => {
             <div className="col-md-5">
               <div className="mx-3">
                 <div className="bgStar ">
-                  <img className="img-fluid" src={Salman} alt="" />
+                  <img className="img-fluid" src={`http://localhost:8000/${fanDetails.another_superstar?.image}`} alt="" />
                   <div className="m-2">
                     <p>
                       {" "}
-                      <big className="text-light fw-bolder">Salman Khan</big>
+                      <big className="text-light fw-bolder">{fanDetails.another_superstar?.first_name} {fanDetails.another_superstar?.last_name}</big>
                     </p>
                     <p>
                       <small>
-                        <span className="text-secondary">Bollywood</span>:{" "}
+                        <span className="text-secondary">Status</span>:{" "}
+                        <i className="text-muted">Pending</i>
                       </small>
                     </p>
 
@@ -107,9 +121,9 @@ const CompetitionBetweenStars = () => {
             <div className="d-flex justify-content-center my-5">
               <Link to="/superstar-admin/fangroup/view">
                 {" "}
-                <button className="btn nameBg fw-bolder launchBtn px-5 py-2">
+                {/* <button className="btn nameBg fw-bolder launchBtn px-5 py-2">
                   Launch Fan Group
-                </button>
+                </button> */}
               </Link>
             </div>
           </div>

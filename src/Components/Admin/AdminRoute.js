@@ -297,7 +297,7 @@ const AdminRoute = [
     {path: '/superstar-admin/pending-fan-group-Edit-delete/:slug', exact: true, name: 'pending-fan-group', component: PendingFanGroup},
     {path: '/superstar-admin/pending-fan-group-Edit/:slug', exact: true, name: 'pending-fan-group', component: EditPendingFanGroup},
     // {path: '/superstar-admin/pending-fan-group', exact: true, name: 'pending-fan-group', component: AdminPe},
-    {path: '/superstar-admin/pending-fan-group-competition', exact: true, name: 'pending-fan-group', component: CompletionBetweenStars},
+    {path: '/superstar-admin/pending-fan-group-competition/:slug', exact: true, name: 'pending-fan-group', component: CompletionBetweenStars},
     { path: '/superstar-admin/invitation-fan-group', exact: true, name: 'grand-final', component: FanGroupInvitation },
     { path: '/superstar-admin/approved-fan-group', exact: true, name: 'grand-final', component: AdminApprovedFanGroup },
     { path: '/superstar-admin/pending-fan-group', exact: true, name: 'grand-final', component: AdminPendingFanGroup },
