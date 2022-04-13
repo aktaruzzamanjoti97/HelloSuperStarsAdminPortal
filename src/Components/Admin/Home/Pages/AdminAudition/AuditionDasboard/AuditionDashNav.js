@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Live from '../../../../../../assets/images/instagram-live 1.png';
 import Pending from '../../../../../../assets/images/pending 2.png';
 import RequestPng from '../../../../../../assets/images/Request.png';
-import './AudioCs.css'
+
 const AuditionDashNav = () => {
 return (
 <>
@@ -23,7 +23,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to='/superstar-admin/audition/even'>
+                <Link to=''>
                 <button className="card-footer Souvenir-button AudioSA w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Audition
                 </button>
@@ -48,7 +48,7 @@ return (
                     </center>
                 </div>
                 
-                <Link to='/superstar-admin/audition/event/pending'>
+                <Link to='/superstar-admin/audition/event'>
                 <button className="card-footer Souvenir-button AudioSAA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Pending Event
                 </button>

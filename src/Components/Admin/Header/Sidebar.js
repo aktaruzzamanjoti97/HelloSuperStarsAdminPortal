@@ -78,7 +78,7 @@ return (
 
             <Collapse in={open}>
                 <div id="example-collapse-text">
-                    <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
+                    <Link className="Link text-light" to='/superstar-admin/audition/dashboard'><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
                     <Link className="Link text-light" to='/superstar-admin/audition/event'><p className="ms-3 PBtn me-3 p-2">Events</p></Link>
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
