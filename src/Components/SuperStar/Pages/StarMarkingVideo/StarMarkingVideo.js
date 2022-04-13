@@ -20,14 +20,15 @@ const [auditionInfo, setAuditionInfo] = useState([]);
 const [clickVideoLink, setClickVideoLink] = useState("");
 const [aud_id, setAuditionId] = useState("");
 const [acceptVideo, setAcceptVideo] = useState(0);
+const [video_status, setVideoStatus] = useState(false);
+const [selectedStatus, setSelectedStatus] = useState(null);
 const [audition_videos, setAuditionVideos] = useState([]);
 const [comments, setComments] = useState("");
 const [marks, setMarks] = useState("");
 const [acceptedVideos, setAcceptedVidoes] = useState([]);
 const [error_list, setErrorList] = useState([]);
 const [declineInput, setDeclineInput] = useState(true);
-const [selectedVideo, setSelectedVideo] = useState(0);
-const [rejectVideo, setRejectvideo] = useState(0);
+
 
 
 
@@ -45,7 +46,7 @@ const getAuditionVedio = () => {
   axios.get(`api/star/selectVideo/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.audition_videos;
-      console.log('Audition videos',video);
+      console.log('Judge Audition videos',video);
       setAuditionVideos(video);
       setAuditionInfo(res.data.auditionInfo)
     }
@@ -71,14 +72,16 @@ function handleSelectVideo(participant_id,audition_id) {
 
   // show reject comment form
   const handleSelected = () => {
-    setSelectedVideo(1);
+    setVideoStatus(true);
+    setSelectedStatus(1);
     setDeclineInput(true);
   };
 
   // show reject comment form
   const handleDeclineInput = () => {
+    setVideoStatus(true);
+    setSelectedStatus(0);
     setDeclineInput(!declineInput);
-    setRejectvideo(1);
   };
 
   // set marks input
@@ -98,8 +101,7 @@ function handleSelectVideo(participant_id,audition_id) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("audition_id", aud_id);
-    // formData.append("selected", selectedVideo);
-    // formData.append("rejected", rejectVideo);
+    formData.append("selected_status", selectedStatus);
     formData.append("participant_id", clickVideoLink);
     formData.append("comments", comments);
     formData.append("marks", marks);
@@ -126,7 +128,7 @@ function handleSelectVideo(participant_id,audition_id) {
             swal("Please Select Video First",...error_list);
           }
           if(res.data.status === 202){
-            swal("Please Marking Between Given Range !");
+            swal("Your Maximum Mark", `${res.data.message}`, "error");
           } 
         });
     });
@@ -326,7 +328,7 @@ setInterval(() => {
                 </div>
               )):null}
             </Slider>
-{/* 
+
             {audition_videos?.length > 0 ? (
               <div className="my-3">
                 <span
@@ -350,46 +352,48 @@ setInterval(() => {
                   />
                 </button>
               </div>
-            ) : null} */}
+            ) : null}
 
           </div>
 
-          <div className="row mt-4">
+          {audition_videos.length > 0 ? 
+            video_status?<div className="row mt-4">
          
-            <div className="col-md-2">
-              <input
-                type="text"
-                className="form-control input-gray donePlaceHolder"
-                placeholder="Marks"
-                value={marks}
-                onChange={handleMarks}
-              />
-            </div>
-         
-            <div className="col-md-4">
-              <input
-                type="text"
-                className="form-control input-gray donePlaceHolder"
-                placeholder="Comment"
-                value={comments}
-                onChange={handleComment}
-              />
-            </div>
-            <div className="col-md-1">
+         <div className="col-md-2">
+           <input
+             type="text"
+             className="form-control input-gray donePlaceHolder"
+             placeholder="Marks"
+             value={marks}
+             onChange={handleMarks}
+           />
+         </div>
+      
+         <div className="col-md-4">
+           <input
+             type="text"
+             className="form-control input-gray donePlaceHolder"
+             placeholder="Comment"
+             value={comments}
+             onChange={handleComment}
+           />
+         </div>
+         <div className="col-md-1">
 
-            {/* {clickVideoLink == true?<span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>:null} */}
+         {/* {clickVideoLink == true?<span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>:null} */}
 
 
-              <span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>
-            </div>
-          </div>
+           <span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>
+         </div>
+       </div>:null:null}
+
         </div>
       </div>
 
       <div className="my-4">
         <div className="filterVideoBorder d-flex justify-content-center">
           <div className="filteredVideoWidth py-5 px-2">
-            <h2 className="text-warning py-2">Filtered Video</h2>
+            <h2 className="text-warning py-2">Evaluated Done Video</h2>
             <Slider {...settings2}>
             {acceptedVideos?.map((video, i) => (
                 <video width="400" controls>

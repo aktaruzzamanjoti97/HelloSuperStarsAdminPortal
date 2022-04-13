@@ -26,6 +26,7 @@ const [error_list, setErrorList] = useState([]);
 const [declineInput, setDeclineInput] = useState(true);
 const [selectedVideo, setSelectedVideo] = useState(0);
 const [rejectVideo, setRejectvideo] = useState(0);
+const [videoStatus, setVideoStatus] = useState(false);
 
 
 
@@ -67,15 +68,17 @@ function handleSelectVideo(participant_id,audition_id) {
   console.log("Video Clicked", participant_id);
 }
 
-  // show reject comment form
+  // show select comment form
   const handleSelected = () => {
     setSelectedVideo(1);
+    setVideoStatus(true);
     setDeclineInput(true);
   };
 
   // show reject comment form
   const handleDeclineInput = () => {
     setDeclineInput(!declineInput);
+    setVideoStatus(true);
     setRejectvideo(1);
   };
 
@@ -122,6 +125,9 @@ function handleSelectVideo(participant_id,audition_id) {
               error_list: res.data.validation_errors,
             });
             swal("Please Select Video First",...error_list);
+          }
+          if(res.data.status === 202){
+            swal("Your Maximum Mark", `${res.data.message}`, "error");
           } 
         });
     });
@@ -353,35 +359,35 @@ setInterval(() => {
 
           </div>
 
-          <div className="row mt-4">
+         {audition_videos?.length > 0 ? videoStatus? <div className="row mt-4">
          
-            <div className="col-md-2">
-              <input
-                type="text"
-                className="form-control input-gray donePlaceHolder"
-                placeholder="Marks"
-                value={marks}
-                onChange={handleMarks}
-              />
-            </div>
-         
-            <div className="col-md-4">
-              <input
-                type="text"
-                className="form-control input-gray donePlaceHolder"
-                placeholder="Comment"
-                value={comments}
-                onChange={handleComment}
-              />
-            </div>
-            <div className="col-md-1">
+         <div className="col-md-2">
+           <input
+             type="text"
+             className="form-control input-gray donePlaceHolder"
+             placeholder="Marks"
+             value={marks}
+             onChange={handleMarks}
+           />
+         </div>
+      
+         <div className="col-md-4">
+           <input
+             type="text"
+             className="form-control input-gray donePlaceHolder"
+             placeholder="Comment"
+             value={comments}
+             onChange={handleComment}
+           />
+         </div>
+         <div className="col-md-1">
 
-            {/* {clickVideoLink == true?<span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>:null} */}
+         {/* {clickVideoLink == true?<span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>:null} */}
 
 
-              <span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>
-            </div>
-          </div>
+           <span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>
+         </div>
+       </div>:null:null}
         </div>
       </div>
 
