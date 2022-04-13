@@ -1,0 +1,8 @@
+.divCenter {
+  width: 40rem;
+}
+
+.donePlaceHolder::placeholder {
+  color: lightgray !important;
+}
+

@@ -6,8 +6,78 @@ import vectior3 from "../../../../../../assets/images/fanGroup/unknown.png";
 import chart from "../../../../../../assets/images/fanGroup/chart.png";
 import fan from '../../../../../../assets/images/Fanbase-img/1.png'
 import { Table } from "react-bootstrap";
+import { Chart as ChartJS } from 'chart.js/auto';
+import { Chart }            from 'react-chartjs-2';
+import { Line } from "react-chartjs-2";
+
+// const data = {
+//   labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+//   datasets: [
+//     {
+//       label: "First dataset",
+//       data: [33, 53, 85, 41, 44, 65],
+//       fill: true,
+//       backgroundColor: "rgba(75,192,192,0.2)",
+//       borderColor: "rgba(75,192,192,1)"
+//     },
+//     {
+//       label: "Second dataset",
+//       data: [33, 25, 35, 51, 54, 76],
+//       fill: false,
+//       borderColor: "#742774"
+//     }
+//   ]
+// };
+
+
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  bezierCurve: false,
+  datasets: [
+    {
+      label: "dataset",
+      data: [0, 53, 85, 41, 44, 65],
+      fill: true,
+      // backgroundColor: "#7E1D9C",
+      borderColor: "#FEF40B"
+    },
+       {
+      label: "Second dataset",
+      data: [0, 25, 35, 51, 54, 76],
+      fill: true,
+      borderColor: "#742774"
+    }
+  ]
+};
+
+const legend = {
+  display: true,
+  position: "bottom",
+  labels: {
+    fontColor: "#323130",
+    fontSize: 14
+  }
+};
+
+const options = {
+  title: {
+    display: true,
+    text: "Chart Title"
+  },
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          suggestedMin: 0,
+          suggestedMax: 100
+        }
+      }
+    ]
+  }
+};
 
 const AnalyticsFan = () => {
+
 return (
 <div className="container my-3">
   <div className="row">
@@ -23,7 +93,8 @@ return (
               <h2 className="text-light m-0 p-0">150</h2>
             </div>
             <div>
-              <img src={vectior1} alt="" className="img-fluid" />
+              <img  type='line' src={vectior1} alt="" className="img-fluid" />
+              
             </div>
           </div>
         </div>
@@ -54,7 +125,10 @@ return (
   <div className="row my-3">
     <div className="container">
       <div className="card " style={{ border: "none" }}>
-        <img src={chart} className="img-fluid w-100 " alt="" />
+
+      {/* <Line data={data} /> */}
+      <Line data={data} legend={legend} options={options} />
+   
       </div>
     </div>
   </div>

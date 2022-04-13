@@ -94,6 +94,7 @@ import RejectedDetails from './Pages/FanGroupStar/Content/RejectedDetails';
 import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
 import FanBaseStar from './Pages/FanGroupStar/Home/FanBaseStar';
 import FanGroupCreate from './Pages/FanGroupStar/Content/FanGroupCreate';
+import StarMarkingVideo from './Pages/StarMarkingVideo/StarMarkingVideo';
 // import JuryBoardDashboard from '../JuryBoard/Dashboard/JuryBoardDashboard';
 
 
@@ -139,6 +140,7 @@ const SuperstarRoute = [
     { path: '/superstar/audition/pending', exact: true, name: 'auditions', component:SuperstarAuditionPending},
     { path: '/superstar/audition/live', exact: true, name: 'auditions', component:SuperstarAuditionLive},
     { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
+    { path: '/superstar/auditions/videos/:id', exact: true, name: 'auditions', component: StarMarkingVideo },
 
     // Learning Session
     // { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },

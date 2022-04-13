@@ -10,23 +10,25 @@ import swal from "sweetalert";
 import { map } from "jquery";
 import { Markup } from "interweave";
 import moment from "moment";
+import { useParams } from "react-router-dom";
 
-const JurySelectBoard = () => {
+const StarMarkingVideo = () => {
 
+const params = useParams();
 
 const [auditionInfo, setAuditionInfo] = useState([]);
 const [clickVideoLink, setClickVideoLink] = useState("");
 const [aud_id, setAuditionId] = useState("");
 const [acceptVideo, setAcceptVideo] = useState(0);
+const [video_status, setVideoStatus] = useState(false);
+const [selectedStatus, setSelectedStatus] = useState(null);
 const [audition_videos, setAuditionVideos] = useState([]);
 const [comments, setComments] = useState("");
 const [marks, setMarks] = useState("");
 const [acceptedVideos, setAcceptedVidoes] = useState([]);
 const [error_list, setErrorList] = useState([]);
 const [declineInput, setDeclineInput] = useState(true);
-const [selectedVideo, setSelectedVideo] = useState(0);
-const [rejectVideo, setRejectvideo] = useState(0);
-const [videoStatus, setVideoStatus] = useState(false);
+
 
 
 
@@ -41,18 +43,18 @@ useEffect(()=>{
 
 
 const getAuditionVedio = () => {
-  axios.get('api/jury/selectVideo').then((res) => {
+  axios.get(`api/star/selectVideo/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.audition_videos;
+      console.log('Judge Audition videos',video);
       setAuditionVideos(video);
       setAuditionInfo(res.data.auditionInfo)
-      console.log('Audition Id',video);
     }
   });
 };
 
 const getAcceptedVideo = () => {
-  axios.get('api/jury/juryMarkingDone/videos').then((res) => {
+  axios.get(`api/star/starMarkingDone/videos/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.accepted_videos;
       console.log('done video',video)
@@ -68,18 +70,18 @@ function handleSelectVideo(participant_id,audition_id) {
   console.log("Video Clicked", participant_id);
 }
 
-  // show select comment form
+  // show reject comment form
   const handleSelected = () => {
-    setSelectedVideo(1);
     setVideoStatus(true);
+    setSelectedStatus(1);
     setDeclineInput(true);
   };
 
   // show reject comment form
   const handleDeclineInput = () => {
-    setDeclineInput(!declineInput);
     setVideoStatus(true);
-    setRejectvideo(1);
+    setSelectedStatus(0);
+    setDeclineInput(!declineInput);
   };
 
   // set marks input
@@ -99,15 +101,14 @@ function handleSelectVideo(participant_id,audition_id) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("audition_id", aud_id);
-    formData.append("selected", selectedVideo);
-    formData.append("rejected", rejectVideo);
+    formData.append("selected_status", selectedStatus);
     formData.append("participant_id", clickVideoLink);
     formData.append("comments", comments);
     formData.append("marks", marks);
 
     axios.get("/sanctum/csrf-cookie").then((response) => {
       axios
-        .post(`api/jury/juryMarking`, formData)
+        .post(`api/star/starMarking`, formData)
         .then((res) => {
           console.log("data", res.data);
           if (res.data.status === 200) {
@@ -303,7 +304,7 @@ setInterval(() => {
           </p>
 
           <h4 className="fw-bolder my-3 text-success text-center">
-            Jury Judgement Board
+            Judgement Board
           </h4>
         </div>
       </div>
@@ -311,25 +312,21 @@ setInterval(() => {
       <div className="videoSliderBorder d-flex justify-content-center">
         <div className="videoSliderStyle py-5 px-3">
           <div>
-            <h2 className="text-warning py-2"> Make Marking Between 0 - {auditionInfo.auditions?.setJuryMark} </h2>
+            <h2 className="text-warning py-2"> Make Marking Between 0 - {auditionInfo.auditions?.setJudgeMark} </h2>
 
             <Slider {...settings}>
-              {audition_videos?.map((video, i) => (
+              {audition_videos.length > 0 ? audition_videos?.map((video, i) => (
                 <div className="">
                   <div className="videos bg-success p-4 mx-4" onClick={() => handleSelectVideo(video.id,video.audition_id)} key={video.id}>
                   <video width="630" controls>
                       <source
-                        src={
-                          video.video_url != null
-                            ? `http://localhost:8000/${video.video_url}`
-                            : "https://youtu.be/dgfTiONcnTc"
-                        }
+                        src={`http://localhost:8000/${video?.video_url}`}
                         type="video/mp4"
                       />
                     </video>
                   </div>
                 </div>
-              ))}
+              )):null}
             </Slider>
 
             {audition_videos?.length > 0 ? (
@@ -359,7 +356,8 @@ setInterval(() => {
 
           </div>
 
-         {audition_videos?.length > 0 ? videoStatus? <div className="row mt-4">
+          {audition_videos.length > 0 ? 
+            video_status?<div className="row mt-4">
          
          <div className="col-md-2">
            <input
@@ -388,13 +386,14 @@ setInterval(() => {
            <span className="form-control btn btn-warning" onClick={submitFiltervideo}> Done</span>
          </div>
        </div>:null:null}
+
         </div>
       </div>
 
       <div className="my-4">
         <div className="filterVideoBorder d-flex justify-content-center">
           <div className="filteredVideoWidth py-5 px-2">
-            <h2 className="text-warning py-2">Filtered Video</h2>
+            <h2 className="text-warning py-2">Evaluated Done Video</h2>
             <Slider {...settings2}>
             {acceptedVideos?.map((video, i) => (
                 <video width="400" controls>
@@ -427,4 +426,4 @@ setInterval(() => {
   );
 };
 
-export default JurySelectBoard;
+export default StarMarkingVideo;
