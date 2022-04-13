@@ -81,7 +81,7 @@ axios.get(`/api/superstar/audition/live`).then((res)=>{
                                     <img src={`http://localhost:8000/${audition.banner}`} className="img-fluid w-100" alt="" style={{ height: '200px' }} />
                                     <div onClick={handlePending} className="p-3">
                                         <div className="d-flex justify-content-between">
-                                            <Link to='' style={{ textDecoration: 'none' }}>
+                                            <Link to={`/superstar/auditions/videos/${audition.id}`} style={{ textDecoration: 'none' }}>
                                                 <h5 className="text-white">{audition.title}</h5>
                                             </Link>
                                             <img className="img-fluid" src={EnterImage} alt="" />
