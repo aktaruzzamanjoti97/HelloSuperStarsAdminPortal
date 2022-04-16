@@ -46,7 +46,6 @@ const getAuditionVedio = () => {
   axios.get(`api/star/selectVideo/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.audition_videos;
-      console.log('Judge Audition videos',video);
       setAuditionVideos(video);
       setAuditionInfo(res.data.auditionInfo)
     }
@@ -57,7 +56,6 @@ const getAcceptedVideo = () => {
   axios.get(`api/star/starMarkingDone/videos/${params.id}`).then((res) => {
     if (res.data.status === 200) {
       let video = res.data.accepted_videos;
-      console.log('done video',video)
       setAcceptedVidoes(video);
     }
   });
@@ -207,7 +205,7 @@ function handleSelectVideo(participant_id,audition_id) {
 
 
     //Countdown state
-    const auditionTime = moment(auditionInfo.auditions?.end_time).format('LL HH:mm:ss')
+    const auditionTime = moment(auditionInfo?.end_time).format('LL HH:mm:ss')
     // console.log('time',auditionTime);
     const countDownDate = new Date(auditionTime).getTime();
     // console.log('count',countDownDate);
@@ -250,7 +248,7 @@ setInterval(() => {
     <>
       <div className="card m-3">
 
-          <img src={`http://localhost:8000/${auditionInfo.auditions?.banner}`} alt="" className="Banner-SME-b" />
+          <img src={`http://localhost:8000/${auditionInfo.banner}`} alt="" className="Banner-SME-b" />
         <div class="centered ">
           <div className="MENbtn d-flex ">
           <div className="btn-l-1">
@@ -295,12 +293,12 @@ setInterval(() => {
       <div className="d-flex justify-content-center align-items-center">
         <div className="divCenter">
           <h4 className="fw-bold text-center text-center text-light">
-          {auditionInfo.auditions?.title}
+          {auditionInfo.title}
           </h4>
           <p className="text-success text-center">Audition</p>
 
           <p className="text-center text-light">
-           <Markup content={auditionInfo.auditions?.description}/>
+           <Markup content={auditionInfo.description}/>
           </p>
 
           <h4 className="fw-bolder my-3 text-success text-center">
@@ -312,7 +310,7 @@ setInterval(() => {
       <div className="videoSliderBorder d-flex justify-content-center">
         <div className="videoSliderStyle py-5 px-3">
           <div>
-            <h2 className="text-warning py-2"> Make Marking Between 0 - {auditionInfo.auditions?.setJudgeMark} </h2>
+            <h2 className="text-warning py-2"> Make Marking Between 0 - {auditionInfo.setJudgeMark} </h2>
 
             <Slider {...settings}>
               {audition_videos.length > 0 ? audition_videos?.map((video, i) => (
