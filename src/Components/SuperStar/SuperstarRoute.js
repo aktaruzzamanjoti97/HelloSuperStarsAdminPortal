@@ -194,6 +194,7 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-ignored/details/:slug', exact: true, name: 'details', component: IgnoredDetails },
     { path: '/superstar/fan-group-accepted/details/:slug', exact: true, name: 'details', component: AcceptDetail },
 
+
     // { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
     { path: '/superstar/fan-group-invitation/edit/:slug', exact: true, name: 'edit', component: FanGroupCreate },
     { path: '/superstar/fan-group/accepted', exact: true, name: 'accepted', component: AcceptedDetails },

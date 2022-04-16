@@ -258,6 +258,7 @@ const PendingGroup = () => {
         <Link to={`/superstar-admin/pending-fan-group-Edit/${fanDetails.slug}`}>
           <button className="btn btnDlt text-warning fw-bold">Edit</button>
         </Link>
+
         <Link to={`/superstar-admin/pending-fan-group-competition/${fanDetails.slug}`}> 
         {
           fanDetails.another_star_status === '1' && fanDetails.my_star_status === '1' ?
