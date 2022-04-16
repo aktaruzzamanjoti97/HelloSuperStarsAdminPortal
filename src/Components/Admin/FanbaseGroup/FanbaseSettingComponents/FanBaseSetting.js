@@ -5,12 +5,14 @@ import vectior3 from "../../../../assets/images/fanGroup/unknown.png";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
+import moment from 'moment';
 
 const FanBaseSetting = () => {
   const [joinFanGroup, setJoinFanGroup] = useState('');
   const [postFanGroup, setPostFanGroup] = useState('');
+  const [fanWarning, setFanWarning] = useState([]);
   // const [postFanGdroup, setPostFanGroupd] = useState([]);
-  // console.log('postFanGdroup', postFanGdroup);
+  console.log('fanWarning', fanWarning);
 
   let { slug } = useParams();
 
@@ -20,9 +22,19 @@ const FanBaseSetting = () => {
         // setPostFanGroupd(res.data.fanDetails);
         setJoinFanGroup(res.data.fanDetails.join_approval_status);
         setPostFanGroup(res.data.fanDetails.post_approval_status);
+        setFanWarning(res.data.fanWarning);
       }
     });
   }, [slug]);
+
+  // useEffect(() => {
+  //   axios.get(`/api/fan/group/settings/warning/${slug}`).then((res) => {
+  //     console.log("Done");
+  //     // if (res.status === 200) {
+  //     //   setFanWarning(res.data.fanWarning);
+  //     // }
+  //   });
+  // }, [slug]);
 
   function handleApprove() {
 
@@ -51,8 +63,34 @@ const FanBaseSetting = () => {
         }
       });
     }
-
   }
+
+  function warningDelete(id) {
+    console.log('what ', id);
+    
+    axios.get(`/api/admin/fan/group/settings/warning/${id}`).then((res) => {
+      if (res.status === 200) {
+        console.log('Done');
+  
+        swal("Welcome", res.data.message, "success");
+        // history.push('/superstar-admin/fan-group');
+      }
+    });
+  }
+
+  function fanNoWarning(id) {
+    console.log('what ', id);
+    
+    axios.post(`/api/admin/fan/group/settings/no-warning/${id}`).then((res) => {
+      if (res.status === 200) {
+        console.log('Done');
+  
+        swal("Welcome", res.data.message, "success");
+        // history.push('/superstar-admin/fan-group');
+      }
+    });
+  }
+
   return (
     <div>
       <div className="row my-3">
@@ -72,26 +110,14 @@ const FanBaseSetting = () => {
                   </tr>
                 </thead>
                 <tbody>
+                {fanWarning.map((warning, i) => ( 
                   <tr>
-                    <td><img src={vectior3} className='img-fluid mx-1' alt="" /> Shoyib Mallick</td>
-                    <td>4  </td>
-                    <td>19|02|22 </td>
-                    <td> <span className='btn btn-sm btn-success'><i class="fa-solid fa-circle-check"></i></span><span className='btn btn-sm btn-danger mx-2'><i class="fas fa-minus"></i></span> </td>
+                    <td><img src={vectior3} className='img-fluid mx-1' alt="" /> {warning.user.first_name} {warning.user.last_name}</td>
+                    <td>{warning.warning_count} </td>
+                    <td>{moment(warning.updated_at).format('LL')} </td>
+                    <td> <span className='btn btn-sm btn-success'><i class="fa-solid fa-circle-check" onClick={()=>fanNoWarning(warning.id)}></i></span><span className='btn btn-sm btn-danger mx-2'><i class="fas fa-minus" onClick={()=>warningDelete(warning.id)}></i></span> </td> 
                   </tr>
-                  <tr>
-                    <td><img src={vectior3} className='img-fluid mx-1' alt="" /> Shoyib Mallick</td>
-                    <td>4  </td>
-                    <td>19|02|22 </td>
-                    <td> <span className='btn btn-sm btn-success'><i class="fa-solid fa-circle-check"></i></span><span className='btn btn-sm btn-danger mx-2'><i class="fas fa-minus"></i></span> </td>
-                  </tr>
-                  <tr>
-                    <td><img src={vectior3} className='img-fluid mx-1' alt="" /> Shoyib Mallick</td>
-                    <td>4  </td>
-                    <td>19|02|22 </td>
-                    <td> <span className='btn btn-sm btn-success'><i class="fa-solid fa-circle-check"></i></span><span className='btn btn-sm btn-danger mx-2'><i class="fas fa-minus"></i></span> </td>
-                  </tr>
-
-
+                ))}
                 </tbody>
               </Table>
             </div>
