@@ -1,11 +1,13 @@
 import axios from "axios";
-import React from "react";
+import React, {useState} from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Button, Collapse } from "react-bootstrap";
 import swal from "sweetalert";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const history = useHistory();
+  const [open, setOpen] = useState(false);
 
   const logoutSubmit = (e) => {
     e.preventDefault();
@@ -29,24 +31,86 @@ const Sidebar = () => {
     });
   };
 
-  return (
-    <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-      <div className="sb-sidenav-menu">
-        <div className="nav">
-          <div className="sb-sidenav-menu-heading">Core</div>
-          <Link className="nav-link" to="/superstar/dashboard">
-            <div className="sb-nav-link-icon">
-              <i className="fas fa-tachometer-alt"></i>
-            </div>
-            Dashboard
-          </Link>
 
-          <Link className="nav-link" to="/superstar/post">
-            <div className="sb-nav-link-icon">
-              <i className="fas fa-tachometer-alt"></i>
-            </div>
-            Post
-          </Link>
+
+    return (
+        <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div className="sb-sidenav-menu">
+                        <div className="nav">
+                            <div className="sb-sidenav-menu-heading">Core</div>
+                            <Link className="nav-link" to="/superstar/dashboard">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </Link>
+                            
+                            <Link className="nav-link" to="/superstar/post">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Post
+                            </Link>
+                            
+                            <Link className="nav-link" to="/superstar/live-chat">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Live Chat
+                            </Link>
+                            <Link className="nav-link" to="/superstar/progressbar">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Progress Bar
+                            </Link>
+                            <Link className="nav-link" to="/superstar/audition">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Audition
+                            </Link>
+                            <Button
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+      >
+        click
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+          terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+          labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </Collapse>
+                            <Link className="nav-link" to="/superstar/learning-session">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Learning Session
+                            </Link>
+                            <Link className="nav-link" to="/superstar/live-video">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Live Video
+                            </Link>
+                            <Link className="nav-link" to="/superstar/meetup-events/approved">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Meetup Events
+                            </Link>
+                            <Link className="nav-link" to="/superstar/upcoming-event">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Upcoming Events
+                            </Link>
+                            <Link className="nav-link" to="/superstar/fan-group">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Fan Group
+                            </Link>
+                            <Link className="nav-link" to="/superstar/greetings">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Greetings
+                            </Link>
+                            <Link className="nav-link" to="/superstar/souvenir">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Sovenir
+                            </Link>
+                            <Link className="nav-link" to="/superstar/wallet">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Wallet
+                            </Link>
+                            <Link className="nav-link" to="/superstar/settings">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Settings
+                            </Link>
+                            
 
           <Link className="nav-link" to="/superstar/live-chat">
             <div className="sb-nav-link-icon">

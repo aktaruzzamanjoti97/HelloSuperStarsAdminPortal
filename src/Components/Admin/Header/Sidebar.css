@@ -18,3 +18,39 @@
 .badgeSuccess{
     background-color: burlywood;
 }
+
+.PBtn{
+    cursor: pointer;
+    background-color: black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.PBtn:hover{
+    cursor: pointer;
+    
+    background-color: rgb(36, 35, 35);
+    color: white;
+    border: 1px solid rgb(53, 51, 54);
+}
+
+.active{
+    background-color: #FFCE00 !important;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.BGBlue{
+    background-color: #2D2D2D !important;
+}
+
+.PTBDn{
+    background: linear-gradient(90deg, #FFCE00 0%, #DFA434 100%);
+    border-radius: 30px !important;
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    -ms-border-radius: 30px !important;
+    -o-border-radius: 30px !important;
+}

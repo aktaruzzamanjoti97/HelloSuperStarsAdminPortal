@@ -97,6 +97,7 @@ import FanGroupCreate from './Pages/FanGroupStar/Content/FanGroupCreate';
 import StarPendingAudition from './Pages/SuperstarAudition/StarPendingAudition/StarPendingAudition';
 import StarVideoPendingAudition from './Pages/SuperstarAudition/StarVideoPendingAudition/StarVideoPendingAudition';
 import StarAudioVideoPending from './Pages/SuperstarAudition/StarAudioVideoPending/StarAudioVideoPending';
+import StarMarkingVideo from './Pages/StarMarkingVideo/StarMarkingVideo';
 // import JuryBoardDashboard from '../JuryBoard/Dashboard/JuryBoardDashboard';
 
 
@@ -146,6 +147,7 @@ const SuperstarRoute = [
     // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarPendingAudition },
     // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarVideoPendingAudition },
     { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarAudioVideoPending },
+    { path: '/superstar/auditions/videos/:id', exact: true, name: 'auditions', component: StarMarkingVideo },
 
     // Learning Session
     // { path: '/superstar/learning-session', exact: true, name: 'learning-session', component: ApprovedLearn },
@@ -198,6 +200,7 @@ const SuperstarRoute = [
     { path: '/superstar/fan-group-invitation/details/:slug', exact: true, name: 'details', component: InvitationDetails },
     { path: '/superstar/fan-group-ignored/details/:slug', exact: true, name: 'details', component: IgnoredDetails },
     { path: '/superstar/fan-group-accepted/details/:slug', exact: true, name: 'details', component: AcceptDetail },
+
 
     // { path: '/superstar/fan-group-invitation/details', exact: true, name: 'details', component: InvitationDetails },
     { path: '/superstar/fan-group-invitation/edit/:slug', exact: true, name: 'edit', component: FanGroupCreate },

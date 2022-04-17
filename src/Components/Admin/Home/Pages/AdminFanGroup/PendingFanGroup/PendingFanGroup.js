@@ -123,9 +123,9 @@ const PendingGroup = () => {
                     
                   </small>
                 </p>
-                {/* <button className="btn btn-secondary w-100">
+                <button className="btn btn-secondary w-100">
                   Render Group
-                </button> */}
+                </button>
               </div>
             </div>
           </div>
@@ -151,9 +151,9 @@ const PendingGroup = () => {
                     }
                   </small>
                 </p>
-                {/* <button onClick={handleClick} className="btn btn-warning w-100">
+                <button className="btn btn-secondary w-100">
                   Render Group
-                </button> */}
+                </button>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@ const PendingGroup = () => {
               ''
               }
               
-              {
+              {/* {
                 fanDetails.another_star_status === '1' && fanDetails.my_star_status === '1' ?
               <div className="bg-dark bgBorderManagerAuth py-2 px-5 d-flex">
                 <div className="spinnerBootstrap">
@@ -246,7 +246,7 @@ const PendingGroup = () => {
               </div>
               :
               ''
-              }
+              } */}
 
             </div>
           </div>
@@ -257,6 +257,15 @@ const PendingGroup = () => {
         <button className="btn btnDlt text-warning fw-bold" onClick={deleteFanGroup}>Delete</button>
         <Link to={`/superstar-admin/pending-fan-group-Edit/${fanDetails.slug}`}>
           <button className="btn btnDlt text-warning fw-bold">Edit</button>
+        </Link>
+
+        <Link to={`/superstar-admin/pending-fan-group-competition/${fanDetails.slug}`}> 
+        {
+          fanDetails.another_star_status === '1' && fanDetails.my_star_status === '1' ?
+            <button className="btn btnDlt btn-warning fw-bold">Done</button>
+          :
+          ''
+          }
         </Link>
       </div>
     </div>

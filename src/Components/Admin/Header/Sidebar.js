@@ -6,7 +6,7 @@ import swal from "sweetalert";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-  const history = useHistory();
+  let history = useHistory();
 
   const logoutSubmit = (e) => {
     e.preventDefault();

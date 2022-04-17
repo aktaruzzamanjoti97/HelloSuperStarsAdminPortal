@@ -6,6 +6,7 @@ import meme2 from "../../../../assets/images/Fanbase-img/meme2.png";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import moment from 'moment';
+import ReactPlayer from "react-player";
 
 const FanBaseHome = () => {
 
@@ -21,7 +22,7 @@ const FanBaseHome = () => {
       }
     });
   }, [slug]);
-  
+
   return (
     <>
       {/* <div className="card bg-dark mt-4">
@@ -53,13 +54,25 @@ const FanBaseHome = () => {
                       <h6 className="m-0">{post.user?.first_name} {post.user?.last_name}</h6>
                       <small style={{ color: "#A7A7A7" }}>
                         <span>{moment(post.created_at).format('LT')} </span> <span className="mx-2">{moment(post.created_at).format('LL')}</span>{" "}
-                        <span>{ post.star_name }</span>
+                        <span>{post.star_name}</span>
                       </small>
                     </div>
                   </div>
 
                   <div className="container my-2">
-                    <img src={`http://localhost:8000/${post.image}`} className="img-fluid w-100" alt="" />
+                    {post.image ?
+                      <img src={`http://localhost:8000/${post.image}`} className="img-fluid w-100" alt="" />
+                      :
+                      <div>
+                        <center>
+                        <ReactPlayer className='form-control VideoPlays'
+                          url={`http://localhost:8000/${post.video}`}
+                          autoplay
+                          controls="true"
+                        />
+                      </center>
+                      </div>
+                    }
                     <div className="my-3">
                       <small className="chekfan">
                         <i class="fa-solid fa-thumbs-up mx-1"></i>1.5k Likes
