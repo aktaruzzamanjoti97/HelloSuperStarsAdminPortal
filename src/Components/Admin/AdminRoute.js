@@ -143,6 +143,10 @@ import PendingEventAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Co
 import EventRequestApproval from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/EventRequestApproval";
 import DashboardAudition from "./Home/Pages/AdminAudition/AuditionDasboard/DashboardAudition";
 import CreateEventAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/CreateEventAudition";
+import AllPromoVideos from "./Home/Pages/PromoVideos/AllPromoVideos";
+import UploadPromoVideo from "./Home/Pages/PromoVideos/Content/AddSession";
+import PendingPromoVideo from "./Home/Pages/PromoVideos/PendingPromoVideo";
+import LivePromoVideo from "./Home/Pages/PromoVideos/LivePromoVideo";
 
 
 
@@ -330,8 +334,12 @@ const AdminRoute = [
     { path: '/superstar-admin/videocall', exact: true, name: 'superstar-admin-learning-session-live-stream', component: LearningSessionLiveStream },
 
 
-    
+    // Promo Videos
 
+      { path: '/superstar-admin/allPromo/videos', exact: true, name: 'allPromo', component: AllPromoVideos },
+      { path: '/superstar-admin/upload/promoVideo', exact: true, name: 'createPromo', component: UploadPromoVideo },
+      { path: '/superstar-admin/pending/promoVideo', exact: true, name: 'pendingPromo', component: PendingPromoVideo },
+      { path: '/superstar-admin/live/promoVideo', exact: true, name: 'pendingPromo', component: LivePromoVideo },
     
 ];
 
