@@ -1,17 +1,17 @@
-// import LearningSession from "../Admin/Home/Pages/AdminLearningSession/AllPost";
-// import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
+// import LearningSession from "../Admin/Home/Pages/AdminLearningSession/AllPromoVideos";
+// import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/LivePromoVideo";
 // import CreateLearningSession from "../Admin/Home/Pages/AdminLearningSession/Content/AddSessionForm";
-// import PendingLearningSession from "../Admin/Home/Pages/AdminLearningSession/PendingPost";
-// import PendingLearningSessionDetails from "../Admin/Home/Pages/AdminLearningSession/PendingPostDetails";
+// import PendingLearningSession from "../Admin/Home/Pages/AdminLearningSession/PendingPromoVideo";
+// import PendingLearningSessionDetails from "../Admin/Home/Pages/AdminLearningSession/PendingVideoDetails";
 //import LiveSession from "./Home/Pages/AdminLearningSession/LiveSession/LiveSession";
 // import LearningAddSession from "./Home/Pages/AdminLearningSession/AddSession/LearningAddSession";
 // import LearningVideoAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoAdmin";
 // import LearningVideoChatAdmin from "./Home/Pages/AdminLearningSession/Content/LearningVideoChatAdmin";
-// import AllPost from "../Admin/Home/Pages/AdminPost/AllPost";
-// import ApprovedPost from "../Admin/Home/Pages/AdminPost/ApprovedPost";
+// import AllPromoVideos from "../Admin/Home/Pages/AdminPost/AllPromoVideos";
+// import LivePromoVideo from "../Admin/Home/Pages/AdminPost/LivePromoVideo";
 // import CreatePost from "../Admin/Home/Pages/AdminPost/Content/AddSessionForm";
-// import PendingPost from "../Admin/Home/Pages/AdminPost/PendingPost";
-// import PendingPostDetails from "../Admin/Home/Pages/AdminPost/PendingPostDetails";
+// import PendingPromoVideo from "../Admin/Home/Pages/AdminPost/PendingPromoVideo";
+// import PendingVideoDetails from "../Admin/Home/Pages/AdminPost/PendingVideoDetails";
 import LearningSessionLiveStream from "../../VideoCall";
 import LearningSession from "../Admin/Home/Pages/AdminLearningSession/AllPost";
 import ApprovedLearningSession from "../Admin/Home/Pages/AdminLearningSession/ApprovedPost";
@@ -336,7 +336,7 @@ const AdminRoute = [
 
     // Promo Videos
 
-      { path: '/superstar-admin/allPromo/videos', exact: true, name: 'allPromo', component: AllPromoVideos },
+      { path: '/superstar-admin/promo-videos', exact: true, name: 'allPromo', component: AllPromoVideos },
       { path: '/superstar-admin/upload/promoVideo', exact: true, name: 'createPromo', component: UploadPromoVideo },
       { path: '/superstar-admin/pending/promoVideo', exact: true, name: 'pendingPromo', component: PendingPromoVideo },
       { path: '/superstar-admin/live/promoVideo', exact: true, name: 'pendingPromo', component: LivePromoVideo },

@@ -2,11 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
 import Nav from "./Nav";
-import Live from "../../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../../assets/images/approved.png";
-import Pending from "../../../../../assets/images/pending 2.png";
-import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
-import LiveIcon from '../../../../../assets/images/AdminLiveProfile/live 1.png'
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
@@ -71,7 +66,7 @@ const AllPromoVideos = () => {
   // Fetch Approved LiveChat
   useEffect(() => {
 
-    axios.get(`/api/admin/promoVideo/all`).then((res) => {
+    axios.get(`/api/star/promoVideo/all`).then((res) => {
 
       if (res.data.status === 200) {
         setEvents(res.data.promoVideos);
@@ -117,9 +112,13 @@ const AllPromoVideos = () => {
                       </video>
                       <div className="p-3">
                       <div className="d-flex justify-content-between">
-                            <h5 className="text-white">{event.title}</h5>
+                          {/*<Link*/}
+                          {/*  to={`/superstar/post/${event.id}`} style={{ textDecoration: 'none' }}*/}
+                          {/*>*/}
+                          {/*  */}
+                          {/*</Link>*/}
+                        <h5 className="text-white">{event.title}</h5>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -128,8 +127,24 @@ const AllPromoVideos = () => {
             </div>
           </div>
         </div> : <div className="container-fluid">
-        </div>}
+        {/*   <div className="card bg-dark" style={{ border: "2px solid yellow" }}>
 
+            <div className="card-body">
+              <h5 className="text-light"> <img src={LiveIcon} alt="" className="img-fluid mx-2" /> Live Chat profile</h5>
+              <div className="container text-center">
+                <i style={{ color: '#ffc107' }} class="fas fa-box-open fa-4x my-2"></i>
+                <h2 className="fw-bold text-light">No Data here</h2>
+                <h5 className="text-light my-3">Create Default LiveChat Profile Now!</h5>
+                <p className=" my-2 text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <Link to="/superstar-admin/live-chat/profile/create">
+                <button className="btn btn-warning px-5 py-2 mb-5">Create Now</button>
+                </Link>
+                
+
+              </div>
+            </div>
+          </div> */}
+        </div>}
       </div>
     </>
   );

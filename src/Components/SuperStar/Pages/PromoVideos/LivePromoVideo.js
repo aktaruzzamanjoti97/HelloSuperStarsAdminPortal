@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
-import Nav from "./Nav";
-import Live from "../../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../../assets/images/approved.png";
-import Pending from "../../../../../assets/images/pending 2.png";
-import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
-import LiveIcon from '../../../../../assets/images/AdminLiveProfile/live 1.png'
+import Live from "../../../../assets/images/instagram-live 1.png";
+import Approved from "../../../../assets/images/approved.png";
+import Pending from "../../../../assets/images/pending 2.png";
+import Add from "../../../../assets/images/UpcomingEvent/add 1.png";
+import LiveIcon from '../../../../assets/images/AdminLiveProfile/live 1.png'
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
-import moment from 'moment';
+import Nav from "./Nav";
+import moment from "moment";
 import ReactPlayer from "react-player";
 
-const AllPromoVideos = () => {
+const LivePromoVideo = () => {
   const [loading, setLoading] = useState(true);
   const [pendingLiveChatNumber, setPendingLiveChatNumber] = useState([]);
 
@@ -54,8 +54,6 @@ const AllPromoVideos = () => {
     ],
   };
 
-  const history = useHistory();
-
   // useEffect(() => {
 
   //     axios.get(`/api/admin/livechat`).then(res =>{
@@ -70,33 +68,26 @@ const AllPromoVideos = () => {
 
   // Fetch Approved LiveChat
   useEffect(() => {
-
-    axios.get(`/api/admin/promoVideo/all`).then((res) => {
-
+    axios.get(`/api/star/promoVideo/live`).then((res) => {
       if (res.data.status === 200) {
         setEvents(res.data.promoVideos);
       }
-      
     });
 
     console.log();
   }, []);
-
- 
-
 
   return (
     <>
       <div className="AS">
         <Nav></Nav>
 
-
-        {events.length > 0 ? <div className="liveMeetupBorder my-5">
+        <div className="liveMeetupBorder my-5">
           <div className="d-flex px-4 pt-3">
             <div className="faTrophy">
               <i class="fas fa-trophy"></i>
             </div>
-            <h4 className="mx-3 text-white p-2">All Promo Videos</h4>
+            <h4 className="mx-3 text-white p-2">Promo Live Videos</h4>
           </div>
 
           <div className="pb-3">
@@ -116,10 +107,9 @@ const AllPromoVideos = () => {
                         />
                       </video>
                       <div className="p-3">
-                      <div className="d-flex justify-content-between">
+                        <div className="d-flex justify-content-between">
                             <h5 className="text-white">{event.title}</h5>
                         </div>
-
                       </div>
                     </div>
                   </div>
@@ -127,12 +117,10 @@ const AllPromoVideos = () => {
               </Slider>
             </div>
           </div>
-        </div> : <div className="container-fluid">
-        </div>}
-
+        </div> 
       </div>
     </>
   );
 };
 
-export default AllPromoVideos;
+export default LivePromoVideo;
