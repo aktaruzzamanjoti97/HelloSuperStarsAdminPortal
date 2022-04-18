@@ -34,6 +34,11 @@
     width: 25% !important;
   }
 
+  @media only screen and (max-width: 600px) {
+    .Souvenir-bt {
+      width: 100% !important;
+    }
+  }
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
     .Souvenir-bt{
         width: 25% !important;
@@ -42,6 +47,12 @@
 
   @media only screen and (min-width: 1024.01px) and (max-width: 1400px) {
     .Souvenir-bt {
-      width: 25% !important;
+      width: 22% !important;
+    }
+  }
+
+  @media only screen and (min-width: 1401px) {
+    .Souvenir-bt {
+      width: 20% !important;
     }
   }

@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import CertificateAudition from './CertificateAudition'
 import { MDBTable} from 'mdbreact';
 import ImgPro from '../../../../../../../../assets/images/Avater.png'
-const RequestCertificate = () => {
-
+import { Button } from 'react-bootstrap';
+import CertificateModal from './CertificateModal';
+const RequestCertificate = (props) => {
+const [modalShow, setModalShow] = React.useState(false);
 return (
+
 <>
     <CertificateAudition />
     <div className="row mx-1">
@@ -33,15 +36,17 @@ return (
                 </thead>
                 <tbody>
                     <tr className=''>
-                        <td > <img src={ImgPro} alt=' ' className='ImhAs'/> </td>
+                        <td> <img src={ImgPro} alt=' ' className='ImhAs' /> </td>
                         <td className='pt-3 textPro'>Apinki Goshly</td>
                         <td className='pt-3 textPro'>+880 172320 xxxxx</td>
                         <td className='pt-3 textPro'>23</td>
                         <td className='pt-3 textPro'>2nd Round Qualified</td>
-                        <td> 
-                        <button className='btn btnView text-success mx-1'><i class="fa-solid fa-eye"></i></button>
-                        <button className='btn btnEdit text-info mx-1'><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button className='btn btnDel text-danger mx-1'><i class="fa-solid fa-trash-can"></i></button>
+                        <td>
+                            <button className='btn btnView text-success mx-1'><i class="fa-solid fa-eye"></i></button>
+                            <button className='btn btnEdit text-info mx-1' onClick={()=> setModalShow(true)}><i
+                                    class="fa-solid fa-pen-to-square"></i></button>
+                            <button className='btn btnDel text-danger mx-1'><i
+                                    class="fa-solid fa-trash-can"></i></button>
                         </td>
                     </tr>
                 </tbody>
@@ -49,6 +54,9 @@ return (
                 <MDBTableHead columns={data.columns} />
                 <MDBTableBody rows={data.rows} /> */}
             </MDBTable>
+
+            <CertificateModal show={modalShow} onHide={()=> setModalShow(false)} />
+
         </div>
     </div>
 </>

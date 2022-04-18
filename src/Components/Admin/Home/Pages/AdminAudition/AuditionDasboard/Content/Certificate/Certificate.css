@@ -61,3 +61,34 @@ border-radius: 10px;
 .textPro{
     color: #D2C3C3 !important;
 }
+
+.MoInBg{
+    color: rgba(240, 255, 255, 0.842) !important;
+    background-color: black !important;
+    border: 1px solid rgb(0, 195, 255) !important;
+}
+
+.textYtM{
+    
+    color: rgba(240, 255, 255, 0.842);
+}
+
+.btnModalR{
+    background: #6AFFF6 !important;
+border-radius: 10px;
+}
+
+.btnModalR:hover{
+    color: aliceblue !important;
+    background-color: black !important;
+   border:1px solid #6AFFF6 !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .classSa{
+        width: 100%;
+    }
+}
+  
+  
