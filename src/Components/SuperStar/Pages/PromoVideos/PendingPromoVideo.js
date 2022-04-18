@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import LiveNow from "./Content/LiveNow";
 import Live from "../../../../assets/images/instagram-live 1.png";
 import Approved from "../../../../assets/images/approved.png";
@@ -12,12 +12,42 @@ import "./SuperStarContent.css";
 import Nav from "./Nav";
 import moment from "moment";
 import ReactPlayer from "react-player";
+import swal from "sweetalert";
 
 const PendingPromoVideo = () => {
+
+  const history = useHistory()
+
   const [loading, setLoading] = useState(true);
   const [pendingLiveChatNumber, setPendingLiveChatNumber] = useState([]);
 
   const [events, setEvents] = useState([]);
+
+
+  const handleClick = (id) => {
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get(`/api/star/promoVideo/approved/${id}`).then((res) => {
+        if (res.data.status === 200) {
+          swal("Success", res.data.message, "success");
+          history.push("/superstar/live/promoVideo");
+        }
+      });
+    });
+  };
+
+  const decline =(id) => {
+
+    axios.get("/sanctum/csrf-cookie").then((response) => {
+      axios.get(`/api/star/promoVideo/decline/${id}`).then((res) => {
+        if (res.data.status === 200) {
+          swal("Success", res.data.message, "success");
+          history.push("/superstar/live/promoVideo");
+        }
+      });
+    });
+  };
+
 
   var settings = {
     dots: true,
@@ -75,7 +105,6 @@ const PendingPromoVideo = () => {
       }
     });
 
-    console.log();
   }, []);
 
   return (
@@ -109,12 +138,15 @@ const PendingPromoVideo = () => {
                       </video>
                       <div className="p-3">
                         <div className="d-flex justify-content-between">
-                          <Link
-                            to={`/superstar/pending/videoDetails/${event.id}`} style={{ textDecoration: 'none' }}
-                          >
                             <h5 className="text-white">{event.title}</h5>
-                          </Link>
                         </div>
+                        <button className="btn MEN-X fw-bold" onClick={()=>handleClick(event.id)}>
+                  Approved
+                </button>
+
+                <button className="btn MEN-Y text-warning fw-bold mx-3" onClick={()=>decline(event.id)}>
+                  Decline
+                </button>
                       </div>
                     </div>
                   </div>
