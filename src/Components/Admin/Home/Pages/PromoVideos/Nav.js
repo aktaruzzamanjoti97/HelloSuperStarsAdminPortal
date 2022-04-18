@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import LiveNow from "./Content/LiveNow";
-import Live from "../../../../assets/images/instagram-live 1.png";
-import Approved from "../../../../assets/images/approved.png";
-import Pending from "../../../../assets/images/pending 2.png";
-import Add from "../../../../assets/images/UpcomingEvent/add 1.png";
+import Approved from "../../../../../assets/images/approved.png";
+import Pending from "../../../../../assets/images/pending 2.png";
+import Add from "../../../../../assets/images/UpcomingEvent/add 1.png";
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";
@@ -16,10 +14,10 @@ const Nav = () => {
 
   //Fetch Approved LiveChat
   useEffect(() => {
-    axios.get(`/api/star/simple_post/count`).then((res) => {
+    axios.get(`/api/admin/promoVideo/count`).then((res) => {
       if (res.status === 200) {
-        setApproved(res.data.approved);
-        setPeding(res.data.pending);
+        setApproved(res.data.liveTotal);
+        setPeding(res.data.pendingTotal);
       }
     });
 
@@ -41,18 +39,18 @@ const Nav = () => {
                     <td className="livechat-card-td">
                       <img
                         src={Approved}
-                        className="livechat-card-img-top mx-1"
+                        className="livechat-card-img-top"
                         alt="..."
                       />
                     </td>
                     <td className="livechat-card-td">
-                      <h4 className="livechat-card-small fw-blod">{approved}</h4>
+                      <h4 className="livechat-card-small">{approved}</h4>
                     </td>
                   </tr>
                 </center>
               </div>
               <Link
-                to="/superstar/post/approved"
+                to="/superstar-admin/live/promoVideo"
                 className="card-footer livechat-card-footer"
               >
                 <button
@@ -62,7 +60,7 @@ const Nav = () => {
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  
+                  {" "}
                  Live Now
                 </button>
               </Link>
@@ -82,13 +80,13 @@ const Nav = () => {
                       <img src={Pending} className="livechat-card-img-top" alt="..." />
                     </td>
                     <td className="livechat-card-td">
-                    <h4 className="livechat-card-small fw-blod">{pending}</h4>
+                      <h4 className="livechat-card-small ">{pending}</h4>
                     </td>
                   </tr>
                 </center>
               </div>
               <Link
-                to="/superstar/post/pending"
+                to="/superstar-admin/pending/promoVideo"
                 className="card-footer livechat-card-footer"
               >
                 <button
@@ -118,13 +116,13 @@ const Nav = () => {
                       <img src={Add} className="livechat-card-img-top" alt="..." />
                     </td>
                     <td className="livechat-card-td">
-                      <small className="livechat-card-small"></small>
+                      <h4 className="livechat-card-small fw-blod"></h4>
                     </td>
                   </tr>
                 </center>
               </div>
               <Link
-                to="/superstar/post/create"
+                to="/superstar-admin/upload/promoVideo"
                 className="livechat-card-footer"
               >
                 <button
@@ -135,13 +133,11 @@ const Nav = () => {
                   aria-controls="collapseOne"
                 >
                   {" "}
-                  Create Post
+                  Upload Promo Video
                 </button>
               </Link>
             </div>
           </div>
-
-          
         </div>
 
  

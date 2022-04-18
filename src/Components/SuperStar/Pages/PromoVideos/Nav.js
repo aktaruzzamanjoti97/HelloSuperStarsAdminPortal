@@ -16,10 +16,10 @@ const Nav = () => {
 
   //Fetch Approved LiveChat
   useEffect(() => {
-    axios.get(`/api/star/simple_post/count`).then((res) => {
+    axios.get(`/api/star/promoVideo/count`).then((res) => {
       if (res.status === 200) {
-        setApproved(res.data.approved);
-        setPeding(res.data.pending);
+        setApproved(res.data.liveTotal);
+        setPeding(res.data.pendingTotal);
       }
     });
 
@@ -52,7 +52,7 @@ const Nav = () => {
                 </center>
               </div>
               <Link
-                to="/superstar/post/approved"
+                to="/superstar/live/promoVideo"
                 className="card-footer livechat-card-footer"
               >
                 <button
@@ -88,7 +88,7 @@ const Nav = () => {
                 </center>
               </div>
               <Link
-                to="/superstar/post/pending"
+                to="/superstar/pending/promoVideo"
                 className="card-footer livechat-card-footer"
               >
                 <button
@@ -106,40 +106,40 @@ const Nav = () => {
           </div>
           <br />
 
-          <div
-            title="Live Now"
-            className="col-md-3 align-items-center justify-content-center "
-          >
-            <div className="card livechat-card SH-CARD-TSX">
-              <div className="card-body  align-items-center">
-                <center>
-                  <tr>
-                    <td className="livechat-card-td">
-                      <img src={Add} className="livechat-card-img-top" alt="..." />
-                    </td>
-                    <td className="livechat-card-td">
-                      <small className="livechat-card-small"></small>
-                    </td>
-                  </tr>
-                </center>
-              </div>
-              <Link
-                to="/superstar/post/create"
-                className="livechat-card-footer"
-              >
-                <button
-                  className="card-footer livechat-card-footer"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  {" "}
-                  Create Post
-                </button>
-              </Link>
-            </div>
-          </div>
+          {/*<div*/}
+          {/*  title="Live Now"*/}
+          {/*  className="col-md-3 align-items-center justify-content-center "*/}
+          {/*>*/}
+          {/*  <div className="card livechat-card SH-CARD-TSX">*/}
+          {/*    <div className="card-body  align-items-center">*/}
+          {/*      <center>*/}
+          {/*        <tr>*/}
+          {/*          <td className="livechat-card-td">*/}
+          {/*            <img src={Add} className="livechat-card-img-top" alt="..." />*/}
+          {/*          </td>*/}
+          {/*          <td className="livechat-card-td">*/}
+          {/*            <small className="livechat-card-small"></small>*/}
+          {/*          </td>*/}
+          {/*        </tr>*/}
+          {/*      </center>*/}
+          {/*    </div>*/}
+          {/*    <Link*/}
+          {/*      to="/superstar/post/create"*/}
+          {/*      className="livechat-card-footer"*/}
+          {/*    >*/}
+          {/*      <button*/}
+          {/*        className="card-footer livechat-card-footer"*/}
+          {/*        data-bs-toggle="collapse"*/}
+          {/*        data-bs-target="#collapseOne"*/}
+          {/*        aria-expanded="true"*/}
+          {/*        aria-controls="collapseOne"*/}
+          {/*      >*/}
+          {/*        {" "}*/}
+          {/*        Create Post*/}
+          {/*      </button>*/}
+          {/*    </Link>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
 
           
         </div>

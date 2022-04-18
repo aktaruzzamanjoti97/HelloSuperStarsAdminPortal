@@ -16,6 +16,7 @@ import PendingPost from "./Pages/StarPost/PendingPost";
 import ApprovedPost from "./Pages/StarPost/ApprovedPost";
 import PostDetails from "./Pages/StarPost/PendingPostDetails";
 import CreatePost from "./Pages/StarPost/Content/AddSessionForm";
+import UploadPromoVideo from "./Pages/StarPost/Content/AddSession";
 
 //=========================== Star Auction Section =============================
 
@@ -95,6 +96,10 @@ import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
 import FanBaseStar from './Pages/FanGroupStar/Home/FanBaseStar';
 import FanGroupCreate from './Pages/FanGroupStar/Content/FanGroupCreate';
 import StarMarkingVideo from './Pages/StarMarkingVideo/StarMarkingVideo';
+import AllPromoVideos from "./Pages/PromoVideos/AllPromoVideos";
+import PendingPromoVideo from './Pages/PromoVideos/PendingPromoVideo';
+import LivePromoVideo from './Pages/PromoVideos/LivePromoVideo';
+import PendingVideoDetails from "./Pages/PromoVideos/PendingVideoDetails";
 // import JuryBoardDashboard from '../JuryBoard/Dashboard/JuryBoardDashboard';
 
 
@@ -120,7 +125,7 @@ const SuperstarRoute = [
     { path: '/superstar/post/pending', exact: true, name: 'PendingPost', component: PendingPost },
     { path: '/superstar/post/approved', exact: true, name: 'PendingPost', component: ApprovedPost },
     { path: '/superstar/post/:id', exact: true, name: 'PendingPost', component: PostDetails },
-    // { path: '/superstar/post/approved', exact: true, name: 'ApprovedPost', component: PendingPost },
+    // { path: '/superstar/post/approved', exact: true, name: 'LivePromoVideo', component: PendingPromoVideo },
 
     // Live Chat
     { path: '/superstar/live-chat', exact: true, name: 'LiveChat', component: StarLiveChatContent },
@@ -235,6 +240,14 @@ const SuperstarRoute = [
 
 
     { path: '/superstar/videocall', exact: true, name: 'superstar-learning-session-live-stream', component: LearningSessionLiveStream },
+
+        // Promo Videos
+
+        { path: '/superstar/promo-videos', exact: true, name: 'promo-videos', component: AllPromoVideos },
+        // { path: '/superstar/upload/promoVideo', exact: true, name: 'createPromo', component: UploadPromoVideo },
+        { path: '/superstar/pending/promoVideo', exact: true, name: 'pendingPromo', component: PendingPromoVideo },
+        { path: '/superstar/live/promoVideo', exact: true, name: 'pendingPromo', component: LivePromoVideo },
+        { path: '/superstar/pending/videoDetails/:id', exact: true, name: 'pendingPromo', component: PendingVideoDetails },
 
 ];
 

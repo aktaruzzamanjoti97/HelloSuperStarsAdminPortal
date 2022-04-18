@@ -75,6 +75,10 @@ return (
                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                 Audition
             </div>
+            <Link className="nav-link" to="/superstar-admin/promo-videos">
+            <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+            Promo Videos
+            </Link>
 
             <Collapse in={open}>
                 <div id="example-collapse-text">
