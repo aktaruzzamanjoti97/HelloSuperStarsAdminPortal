@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "react-slick";
 import auditionSelectRoundBanner from "../../../assets/images/AuditionAdmin/audition537.png";
 import diamond from "../../../assets/images/AuditionAdmin/diamondGift.png";
 import downArrow from "../../../assets/images/AuditionAdmin/downArrow.png";
@@ -15,6 +16,41 @@ import sign from "../../../assets/images/sign.png";
 import "./AuditionFinalResult.css";
 
 const AuditionFinalResult = () => {
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="container">
       <h3 className="fw-bold text-muted">Submitted Content</h3>
@@ -436,108 +472,162 @@ const AuditionFinalResult = () => {
           <img className="mx-2" src={rightArrow} alt="" />
         </div>
 
-        <div className="col-md-4 d-flex justify-content-center">
-          <div className="userResultBox d-flex p-4">
-            <div className="d-flex align-items-center">
-              <img src={rafa} className="photoImgStyleRound img-fluid" alt="" />
-            </div>
-
-            <div className="px-2">
-              <h5 className="text-light">Imdadul Haque</h5>
-              <h6>User Vote: 24k</h6>
-
-              <p className="text-muted">User Gift</p>
-              <div className="d-flex">
-                <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                  <img src={diamond} alt="" />
-                  <span className="mx-1" style={{ color: "#8794EE" }}>
-                    215
-                  </span>
-                </div>
-                <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                  <img src={gold} alt="" />
-                  <span className="mx-1" style={{ color: "#FEDA95" }}>
-                    215
-                  </span>
-                </div>
-                <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                  <img src={silver} alt="" />
-                  <span className="mx-1" style={{ color: "#A6AFBA" }}>
-                    215
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 d-flex justify-content-center">
-          <div className="userResultBox d-flex p-4">
-            <div className="d-flex align-items-center">
-              <img src={rafa} className="photoImgStyleRound img-fluid" alt="" />
-            </div>
-
-            <div className="px-2">
-              <h5 className="text-light">Imdadul Haque</h5>
-              <h6>User Vote: 24k</h6>
-
-              <p className="text-muted">User Gift</p>
-              <div className="d-flex">
-                <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                  <img src={diamond} alt="" />
-                  <span className="mx-1" style={{ color: "#8794EE" }}>
-                    215
-                  </span>
-                </div>
-                <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                  <img src={gold} alt="" />
-                  <span className="mx-1" style={{ color: "#FEDA95" }}>
-                    215
-                  </span>
-                </div>
-                <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                  <img src={silver} alt="" />
-                  <span className="mx-1" style={{ color: "#A6AFBA" }}>
-                    215
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 d-flex justify-content-center">
-          <div className="userResultBox d-flex p-4">
-            <div className="d-flex align-items-center">
-              <img src={oni} className="photoImgStyleRound img-fluid" alt="" />
-            </div>
-
-            <div className="px-2">
-              <div>
-                <h5 className="text-light">Imdadul Haque</h5>
-                <h6>User Vote: 24k</h6>
-
-                <p className="text-muted">User Gift</p>
-                <div className="d-flex">
-                  <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                    <img src={diamond} alt="" />
-                    <span className="mx-1" style={{ color: "#8794EE" }}>
-                      215
-                    </span>
+        <div className="row p-4">
+          <div className="slick-parent d-flex justify-content-center">
+            <Slider className="slider-width" {...settings}>
+              <div className="p-1">
+                <div className="userResultBox d-flex p-4">
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={rafa}
+                      className="photoImgStyleRound img-fluid"
+                      alt=""
+                    />
                   </div>
-                  <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                    <img src={gold} alt="" />
-                    <span className="mx-1" style={{ color: "#FEDA95" }}>
-                      215
-                    </span>
-                  </div>
-                  <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                    <img src={silver} alt="" />
-                    <span className="mx-1" style={{ color: "#A6AFBA" }}>
-                      215
-                    </span>
+
+                  <div className="px-2">
+                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h6>User Vote: 24k</h6>
+
+                    <p className="text-muted">User Gift</p>
+                    <div className="d-flex">
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={diamond} alt="" />
+                        <span className="mx-1" style={{ color: "#8794EE" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={gold} alt="" />
+                        <span className="mx-1" style={{ color: "#FEDA95" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={silver} alt="" />
+                        <span className="mx-1" style={{ color: "#A6AFBA" }}>
+                          215
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div className="p-1">
+                <div className="userResultBox d-flex p-4">
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={rafa}
+                      className="photoImgStyleRound img-fluid"
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="px-2">
+                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h6>User Vote: 24k</h6>
+
+                    <p className="text-muted">User Gift</p>
+                    <div className="d-flex">
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={diamond} alt="" />
+                        <span className="mx-1" style={{ color: "#8794EE" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={gold} alt="" />
+                        <span className="mx-1" style={{ color: "#FEDA95" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={silver} alt="" />
+                        <span className="mx-1" style={{ color: "#A6AFBA" }}>
+                          215
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-1">
+                <div className="userResultBox d-flex p-4">
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={rafa}
+                      className="photoImgStyleRound img-fluid"
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="px-2">
+                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h6>User Vote: 24k</h6>
+
+                    <p className="text-muted">User Gift</p>
+                    <div className="d-flex">
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={diamond} alt="" />
+                        <span className="mx-1" style={{ color: "#8794EE" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={gold} alt="" />
+                        <span className="mx-1" style={{ color: "#FEDA95" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={silver} alt="" />
+                        <span className="mx-1" style={{ color: "#A6AFBA" }}>
+                          215
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-1">
+                <div className="userResultBox d-flex p-4">
+                  <div className="d-flex align-items-center">
+                    <img
+                      src={rafa}
+                      className="photoImgStyleRound img-fluid"
+                      alt=""
+                    />
+                  </div>
+
+                  <div className="px-2">
+                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h6>User Vote: 24k</h6>
+
+                    <p className="text-muted">User Gift</p>
+                    <div className="d-flex">
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={diamond} alt="" />
+                        <span className="mx-1" style={{ color: "#8794EE" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={gold} alt="" />
+                        <span className="mx-1" style={{ color: "#FEDA95" }}>
+                          215
+                        </span>
+                      </div>
+                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
+                        <img src={silver} alt="" />
+                        <span className="mx-1" style={{ color: "#A6AFBA" }}>
+                          215
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Slider>
           </div>
         </div>
       </div>
@@ -548,81 +638,88 @@ const AuditionFinalResult = () => {
         </div>
 
         <div className="row p-4">
-          <div className="col-md-4 d-flex justify-content-center">
-            <div>
-              <div className="nameBg d-flex justify-content-start mb-3 rounded-3 p-3">
-                <img src={iconStar} alt="" />
-                <h1 className="mx-3">Winner</h1>
-              </div>
-              <div className="userResultBox d-flex p-4">
-                <div className="d-flex align-items-center">
-                  <img
-                    src={rafa}
-                    className="photoImgStyleRound img-fluid"
-                    alt=""
-                  />
-                </div>
+          <div className="slick-parent d-flex justify-content-center">
+            <Slider className="slider-width" {...settings}>
+              <div className="p-1">
+                <div>
+                  <div className="nameBg d-flex justify-content-start mb-3 rounded-3 p-3">
+                    <img src={iconStar} alt="" />
+                    <h1 className="mx-3">Winner</h1>
+                  </div>
+                  <div className="userResultBox d-flex p-4">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={rafa}
+                        className="photoImgStyleRound img-fluid"
+                        alt=""
+                      />
+                    </div>
 
-                <div className="px-2">
-                  <h5 className="text-light">Imdadul Haque</h5>
-                  <h6>Total Mark: </h6>
+                    <div className="px-2">
+                      <h5 className="text-light">Imdadul Haque</h5>
+                      <h6>Total Mark: </h6>
 
-                  <p className="text-light">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex justify-content-center">
-            <div>
-              <div className="nameBg d-flex justify-content-around rounded-3 mb-3 p-3">
-                <img src={iconStar} alt="" />
-                <h1>1st Runner Up</h1>
-              </div>
-              <div className="userResultBox d-flex p-4">
-                <div className="d-flex align-items-center">
-                  <img
-                    src={rafa}
-                    className="photoImgStyleRound img-fluid"
-                    alt=""
-                  />
-                </div>
-
-                <div className="px-2">
-                  <h5 className="text-light">Imdadul Haque</h5>
-                  <h6>Total Mark: </h6>
-
-                  <p className="text-light">Lorem ipsum dolor sit amet.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex justify-content-center">
-            <div>
-              <div className="nameBg d-flex justify-content-around rounded-3 p-3 mb-3">
-                <img src={iconStar} alt="" />
-                <h1>2nd Runner Up</h1>
-              </div>
-              <div className="userResultBox d-flex p-4">
-                <div className="d-flex align-items-center">
-                  <img
-                    src={oni}
-                    className="photoImgStyleRound img-fluid"
-                    alt=""
-                  />
-                </div>
-
-                <div className="px-2">
-                  <div>
-                    <h5 className="text-light">Imdadul Haque</h5>
-                    <h6>Total Mark: </h6>
-
-                    <p className="text-light">Lorem ipsum dolor sit amet.</p>
+                      <p className="text-light">Lorem ipsum dolor sit amet.</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+              <div className="p-1">
+                <div>
+                  <div className="nameBg d-flex justify-content-around rounded-3 mb-3 p-3">
+                    <img src={iconStar} alt="" />
+                    <h1>1st Runner Up</h1>
+                  </div>
+                  <div className="userResultBox d-flex p-4">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={rafa}
+                        className="photoImgStyleRound img-fluid"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="px-2">
+                      <h5 className="text-light">Imdadul Haque</h5>
+                      <h6>Total Mark: </h6>
+
+                      <p className="text-light">Lorem ipsum dolor sit amet.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-1">
+                <div>
+                  <div className="nameBg d-flex justify-content-around rounded-3 p-3 mb-3">
+                    <img src={iconStar} alt="" />
+                    <h2>2nd Runner Up</h2>
+                  </div>
+                  <div className="userResultBox d-flex p-4">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={oni}
+                        className="photoImgStyleRound img-fluid"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="px-2">
+                      <div>
+                        <h5 className="text-light">Imdadul Haque</h5>
+                        <h6>Total Mark: </h6>
+
+                        <p className="text-light">
+                          Lorem ipsum dolor sit amet.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Slider>
           </div>
         </div>
+
 
         <div className="d-flex justify-content-center">
           <button className="certificateBtn m-4">Go for the Certificate</button>
