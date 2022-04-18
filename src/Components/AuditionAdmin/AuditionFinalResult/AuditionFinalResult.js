@@ -565,29 +565,9 @@ const AuditionFinalResult = () => {
 
                 <div className="px-2">
                   <h5 className="text-light">Imdadul Haque</h5>
-                  <h6>User Vote: 24k</h6>
+                  <h6>Total Mark: </h6>
 
-                  <p className="text-muted">User Gift</p>
-                  <div className="d-flex">
-                    <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                      <img src={diamond} alt="" />
-                      <span className="mx-1" style={{ color: "#8794EE" }}>
-                        215
-                      </span>
-                    </div>
-                    <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                      <img src={gold} alt="" />
-                      <span className="mx-1" style={{ color: "#FEDA95" }}>
-                        215
-                      </span>
-                    </div>
-                    <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                      <img src={silver} alt="" />
-                      <span className="mx-1" style={{ color: "#A6AFBA" }}>
-                        215
-                      </span>
-                    </div>
-                  </div>
+                  <p className="text-light">Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
             </div>
@@ -609,29 +589,9 @@ const AuditionFinalResult = () => {
 
                 <div className="px-2">
                   <h5 className="text-light">Imdadul Haque</h5>
-                  <h6>User Vote: 24k</h6>
+                  <h6>Total Mark: </h6>
 
-                  <p className="text-muted">User Gift</p>
-                  <div className="d-flex">
-                    <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                      <img src={diamond} alt="" />
-                      <span className="mx-1" style={{ color: "#8794EE" }}>
-                        215
-                      </span>
-                    </div>
-                    <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                      <img src={gold} alt="" />
-                      <span className="mx-1" style={{ color: "#FEDA95" }}>
-                        215
-                      </span>
-                    </div>
-                    <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                      <img src={silver} alt="" />
-                      <span className="mx-1" style={{ color: "#A6AFBA" }}>
-                        215
-                      </span>
-                    </div>
-                  </div>
+                  <p className="text-light">Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
             </div>
@@ -654,29 +614,9 @@ const AuditionFinalResult = () => {
                 <div className="px-2">
                   <div>
                     <h5 className="text-light">Imdadul Haque</h5>
-                    <h6>User Vote: 24k</h6>
+                    <h6>Total Mark: </h6>
 
-                    <p className="text-muted">User Gift</p>
-                    <div className="d-flex">
-                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                        <img src={diamond} alt="" />
-                        <span className="mx-1" style={{ color: "#8794EE" }}>
-                          215
-                        </span>
-                      </div>
-                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                        <img src={gold} alt="" />
-                        <span className="mx-1" style={{ color: "#FEDA95" }}>
-                          215
-                        </span>
-                      </div>
-                      <div className="prizeBox p-1 m-1 d-flex justify-content-center">
-                        <img src={silver} alt="" />
-                        <span className="mx-1" style={{ color: "#A6AFBA" }}>
-                          215
-                        </span>
-                      </div>
-                    </div>
+                    <p className="text-light">Lorem ipsum dolor sit amet.</p>
                   </div>
                 </div>
               </div>
