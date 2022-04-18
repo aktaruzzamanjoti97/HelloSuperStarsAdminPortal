@@ -83,7 +83,7 @@ return (
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
-                    <Link className="Link text-light" to='/superstar-admin/audition/certificate'><p className="ms-3 PBtn me-3 p-2">Certificate</p></Link>
+                    <Link className="Link text-light" to='/superstar-admin/audition/certificate-create'><p className="ms-3 PBtn me-3 p-2">Certificate</p></Link>
 
                 </div>
                 

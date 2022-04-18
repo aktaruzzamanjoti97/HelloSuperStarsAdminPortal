@@ -148,6 +148,8 @@ import UploadPromoVideo from "./Home/Pages/PromoVideos/Content/AddSession";
 import PendingPromoVideo from "./Home/Pages/PromoVideos/PendingPromoVideo";
 import LivePromoVideo from "./Home/Pages/PromoVideos/LivePromoVideo";
 import CertificateAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CertificateAudition";
+import CreateCertificate from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CreateCertificate";
+import RequestCertificate from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/RequestCertificate";
 
 
 
@@ -251,7 +253,8 @@ const AdminRoute = [
 
     { path: '/superstar-admin/audition/event/create-event', exact: true, name: 'create-event', component: CreateEventAudition },
     
-    { path: '/superstar-admin/audition/certificate', exact: true, name: 'certificate', component: CertificateAudition },
+    { path: '/superstar-admin/audition/certificate-create', exact: true, name: 'certificate-create', component: CreateCertificate },
+    { path: '/superstar-admin/audition/certificate-request', exact: true, name: 'certificate-request', component: RequestCertificate },
 
 
 

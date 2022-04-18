@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom';
 import Live from '../../../../../../../../assets/images/req.png';
+import './Certificate.css'
+
 const CertificateAudition = () => {
     const [color, setColor] = React.useState("green");
 
@@ -30,7 +32,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <NavLink to='/superstar-admin/audition/event' exact>
+                <NavLink to='/superstar-admin/audition/certificate-request' exact>
                 <button activeClassName='active' className="card-footer Souvenir-button AudioSA w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Request for Certificate
                 </button>
@@ -55,7 +57,7 @@ return (
                     </center>
                 </div>
                 
-                <NavLink to='/superstar-admin/audition/event/pending'>
+                <NavLink to='/superstar-admin/audition/certificate-create'>
                 <button className="card-footer Souvenir-button AudioSAA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Create Certificate
                 </button>

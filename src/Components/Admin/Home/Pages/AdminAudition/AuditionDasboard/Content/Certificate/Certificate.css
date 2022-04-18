@@ -1,0 +1,63 @@
+.ReImg{
+ height: 20vh;
+ width: fit-content;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+ margin-top: 200px;
+ border-radius: 10px;
+ border: 1px solid rgb(255, 238, 0) !important;
+}
+
+.tITLES{
+    color: rgba(240, 255, 255, 0.685);
+    border-bottom: 1px solid rgba(245, 245, 245, 0.479);
+}
+
+.top3{
+    background: linear-gradient(102.45deg, #F5EA45 28.52%, #DDA336 52.38%, #E7A725 72.31%) !important;
+    border-radius: 10px;
+}
+
+.WinnerCard{
+    color: rgba(240, 255, 255, 0.432);
+    border-bottom: 1px solid rgba(245, 245, 245, 0.479) !important;
+}
+.textYt{
+    color: rgba(240, 255, 255, 0.842);
+}
+
+.InBG{
+    background-color: black !important;
+    border: none !important;
+    color: rgba(240, 255, 255, 0.842) !important;
+}
+
+.btnSd{
+    background: linear-gradient(102.45deg, #F5EA45 28.52%, #DDA336 52.38%, #E7A725 72.31%);
+border-radius: 10px;
+}
+
+.btnView:hover{
+    color: white !important;
+ background-color: rgba(1, 245, 131, 0.863);
+}
+.btnEdit:hover{
+    color: white !important;
+ background-color: rgba(1, 99, 245, 0.863);
+}
+.btnDel:hover{
+    color: white !important;
+ background-color: rgba(245, 1, 13, 0.863);
+}
+
+.ImhAs{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.textPro{
+    color: #D2C3C3 !important;
+}
