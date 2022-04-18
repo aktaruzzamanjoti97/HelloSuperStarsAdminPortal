@@ -23,6 +23,7 @@ import JoiningRequestStar from "./FanBaseStarComponents/JoiningRequestStar";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import moment from 'moment';
+import swal from "sweetalert";
 
 const FanBaseStar = () => {
   let { slug } = useParams();
@@ -41,6 +42,28 @@ const FanBaseStar = () => {
     });
 
   }, []);
+
+  function selectImage(file){
+
+    // setFile(URL.createObjectURL(file[0]));
+    // setImagedata(file[0]);
+
+
+    const formData = new FormData()
+
+    formData.append('banner', file[0])
+
+    console.log('image ok', file[0]);
+
+
+    axios.post(`/api/star/fan/group/image/update/${slug}`, formData).then((res) => {
+      if (res.status === 200) {
+        console.log('Done');
+        swal("Welcome", res.data.message, "success");
+        // history.push('/superstar-admin/fan-group');
+      }
+    });
+  }
 
   const [selectedImage, setSelectedImage] = React.useState(null);
   const [remove, setRemove] = React.useState(false);
@@ -68,6 +91,9 @@ const FanBaseStar = () => {
             id="input-file"
             type="file"
             name="myImage"
+            onChange={(e) =>
+              selectImage(e.target.files)
+            }
           // onChange={(event) => {
           //   console.log(event.target.files[0]);
           //   setSelectedImage(event.target.files[0]);

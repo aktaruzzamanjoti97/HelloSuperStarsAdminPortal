@@ -35,6 +35,7 @@ const FanBaseSetting = () => {
   //     // }
   //   });
   // }, [slug]);
+  
 
   function handleApprove() {
 
@@ -68,7 +69,7 @@ const FanBaseSetting = () => {
   function warningDelete(id) {
     console.log('what ', id);
     
-    axios.get(`/api/admin/fan/group/settings/warning/${id}`).then((res) => {
+    axios.get(`/api/admin/fan/group/settings/delete/${id}`).then((res) => {
       if (res.status === 200) {
         console.log('Done');
   

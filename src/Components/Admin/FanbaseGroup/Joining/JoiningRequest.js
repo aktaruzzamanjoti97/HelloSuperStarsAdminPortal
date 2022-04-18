@@ -15,7 +15,7 @@ const [modalShow, setModalShow] = React.useState(false);
 let {slug} = useParams();
 
 const [fanMember, setFanMember] = useState([]);
-console.log('fanMember ', fanMember)
+console.log('fanMember check', fanMember)
 
 useEffect(() => {
   axios.get(`/api/admin/fan/group/show/${slug}`).then((res) => {
