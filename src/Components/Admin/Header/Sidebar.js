@@ -75,10 +75,6 @@ return (
                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                 Audition
             </div>
-            <Link className="nav-link" to="/superstar-admin/promo-videos">
-            <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-            Promo Videos
-            </Link>
 
             <Collapse in={open}>
                 <div id="example-collapse-text">
@@ -87,11 +83,17 @@ return (
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
                     <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
-                    <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
+                    <Link className="Link text-light" to='/superstar-admin/audition/certificate'><p className="ms-3 PBtn me-3 p-2">Certificate</p></Link>
 
                 </div>
                 
             </Collapse>
+
+            
+            <Link className="nav-link" to="/superstar-admin/promo-videos">
+            <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+            Promo Videos
+            </Link>
 
             <Link className="nav-link" to="/superstar-admin/learning-session">
             <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>

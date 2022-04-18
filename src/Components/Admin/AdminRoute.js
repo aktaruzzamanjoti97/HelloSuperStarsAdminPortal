@@ -147,6 +147,7 @@ import AllPromoVideos from "./Home/Pages/PromoVideos/AllPromoVideos";
 import UploadPromoVideo from "./Home/Pages/PromoVideos/Content/AddSession";
 import PendingPromoVideo from "./Home/Pages/PromoVideos/PendingPromoVideo";
 import LivePromoVideo from "./Home/Pages/PromoVideos/LivePromoVideo";
+import CertificateAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CertificateAudition";
 
 
 
@@ -249,6 +250,8 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/event/request-approve', exact: true, name: 'pending', component: EventRequestApproval },
 
     { path: '/superstar-admin/audition/event/create-event', exact: true, name: 'create-event', component: CreateEventAudition },
+    
+    { path: '/superstar-admin/audition/certificate', exact: true, name: 'certificate', component: CertificateAudition },
 
 
 
