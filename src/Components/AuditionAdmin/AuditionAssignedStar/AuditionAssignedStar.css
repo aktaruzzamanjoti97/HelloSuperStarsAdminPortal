@@ -1,0 +1,164 @@
+.bottomLineBlack {
+  border-bottom: 1px solid #000000;
+}
+
+/* .starTitleBox {
+  background-color: #050505 !important;
+} */
+
+.starTitleBoxColor {
+  background-color: #050505 !important;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.starBox {
+  position: relative !important;
+}
+
+.primaryBtnStyle {
+  position: absolute !important;
+  left: 36% !important;
+  top: 75% !important;
+  width: 100px;
+}
+
+.checkBoxContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkBoxContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #1d1d1d;
+  border: 1px solid gold;
+}
+
+/* On mouse-over, add a grey background color */
+.checkBoxContainer:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkBoxContainer input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkBoxContainer input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkBoxContainer .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.showAllVideosBorder {
+  background-color: #1d1d1d;
+  border: 1px solid gold;
+  border-radius: 5px;
+}
+
+.btnPost {
+  width: 300px;
+  height: 65px;
+  background-color: #3a8ff2;
+  border-radius: 10px;
+  font-size: 25px !important;
+}
+.deskTopDate .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+  color: white;
+  box-sizing: border-box;
+  position: relative;
+  cursor: text;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+  padding-right: 14px;
+  background-color: #7c7c7c;
+}
+
+.cardBorderStar {
+  border-radius: 10px;
+}
+
+.autoAssignedBtn {
+  background: linear-gradient(
+    102.45deg,
+    #f5ea45 28.52%,
+    #dda336 52.38%,
+    #e7a725 72.31%
+  );
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+}
+
+.applyBtn {
+  background: #3a8ff2;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+}
+
+.main-slider .slick-prev {
+  left: -25px;
+  color: gray;
+  background-color: #151515;
+}
+
+.main-slider .slick-next {
+  right: 25px;
+  color: gray;
+  background-color: #1d1d1d;
+}

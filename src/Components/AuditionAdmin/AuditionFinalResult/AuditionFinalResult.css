@@ -1,0 +1,11 @@
+.certificateBtn {
+  width: 390px;
+  height: 60px;
+  background: linear-gradient(
+    102.45deg,
+    #f5ea45 28.52%,
+    #dda336 52.38%,
+    #e7a725 72.31%
+  );
+  border-radius: 10px;
+}

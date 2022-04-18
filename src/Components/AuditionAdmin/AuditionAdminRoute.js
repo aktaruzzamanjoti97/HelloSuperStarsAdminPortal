@@ -14,6 +14,10 @@ import AdminAuditionLiveVideoFilter from "./AdminAuditionLiveVideoFilter/AdminAu
 import GrandFinish from "./Dashboard/Content/Finish/GrandFinish";
 import AuditionsStatus from "./AuditionStatus/AuditionsStatus";
 import ParticipantList from "./ParticipantList/ParticipantList";
+import AuditionSelectionRound from "./AuditionSelectionRound/AuditionSelectionRound";
+import AuditionAssignedStar from "./AuditionAssignedStar/AuditionAssignedStar";
+import AdminAuditionRoundThree from "./AdminAuditionRoundThree/AdminAuditionRoundThree";
+import AuditionFinalResult from "./AuditionFinalResult/AuditionFinalResult";
 
 
 
@@ -36,11 +40,10 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/audition-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
     { path: '/audition-admin/audition/participantList', exact: true, name: 'participant-list', component: ParticipantList},
-
-
-    //@TODO: Superstar Route
-    
-
+    { path: '/audition-admin/audition/selection-round', exact: true, name: 'participant-list', component: AuditionSelectionRound},
+    { path: '/audition-admin/audition/assigned-star', exact: true, name: 'participant-list', component: AuditionAssignedStar},
+    { path: '/audition-admin/audition/round-result', exact: true, name: 'participant-list', component: AdminAuditionRoundThree},
+    { path: '/audition-admin/audition/final-result', exact: true, name: 'participant-list', component: AuditionFinalResult},
 ];
 
 export default AuditionAdminRoute;

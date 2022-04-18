@@ -1,0 +1,20 @@
+.userResultBox {
+  border: 1px solid #ff0;
+  border-radius: 10px;
+}
+
+.prizeBox {
+  background-color: #424242;
+  border-radius: 15px;
+  width: 4rem;
+}
+
+.photoImgStyleRound {
+  border-radius: 50%;
+  width: 85px;
+  height: 85px !important;
+}
+
+.bgGray {
+  background-color: #2d2d2d;
+}
