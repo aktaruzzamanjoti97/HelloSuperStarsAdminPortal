@@ -161,7 +161,7 @@ const AuditionAssignJury = () => {
 
         <Slider {...settings} className='my-3'>
           <div>
-          <div className="card " style={{ backgroundColor:'black' }}>
+          <div className="card " style={{ backgroundColor:'black',border:'none',outline:'none' }}>
             <div className="card-body">
           <div className="text-center d-flex justify-content-center">
           <img src={person1} alt='' height={150} width={150} style={{borderRadius:'50%'}}/>
@@ -177,7 +177,7 @@ const AuditionAssignJury = () => {
         </div>
           </div>
           <div>
-          <div className="card " style={{ backgroundColor:'black' }}>
+          <div className="card " style={{ backgroundColor:'black',border:'none',outline:'none' }}>
             <div className="card-body">
           <div className="text-center d-flex justify-content-center">
           <img src={person2} alt='' height={150} width={150} style={{borderRadius:'50%'}}/>
@@ -193,7 +193,7 @@ const AuditionAssignJury = () => {
         </div>
           </div>
           <div>
-          <div className="card " style={{ backgroundColor:'black' }}>
+          <div className="card " style={{ backgroundColor:'black',border:'none',outline:'none' }}>
             <div className="card-body">
           <div className="text-center d-flex justify-content-center">
           <img src={person1} alt='' height={150} width={150} style={{borderRadius:'50%'}}/>
@@ -209,7 +209,7 @@ const AuditionAssignJury = () => {
         </div>
           </div>
           <div>
-          <div className="card">
+         
           <div className="card " style={{ backgroundColor:'black' }}>
             <div className="card-body">
           <div className="text-center d-flex justify-content-center">
@@ -223,11 +223,11 @@ const AuditionAssignJury = () => {
                 <button className='btn btn-secondary'>25 videos</button>
                 <button className='btn btn-warning mx-2'>Done</button>
             </div>
-        </div>
+      
             </div>
           </div>
           <div>
-          <div className="card">
+        
           <div className="card " style={{ backgroundColor:'black' }}>
             <div className="card-body">
           <div className="text-center d-flex justify-content-center">
@@ -241,7 +241,7 @@ const AuditionAssignJury = () => {
                 <button className='btn btn-secondary'>25 videos</button>
                 <button className='btn btn-warning mx-2'>Done</button>
             </div>
-        </div>
+      
             </div>
           </div>
           <div>

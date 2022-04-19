@@ -1,0 +1,71 @@
+.accordionHeader {
+    background-color: #525151 !important;
+    color: white !important;
+
+}
+
+.star-cardColor {
+    background-color: #6b6868 !important;
+}
+
+.star-pendingColor {
+    color: #62FFE9 !important
+}
+
+.status-container {
+    border: 1px solid 'gold' !important;
+}
+
+.star-cardColor2 {
+    background-color: #525151 !important;
+}
+
+.status-start {
+    background-color:
+        rgba(58, 143, 242, 0.5);
+    ;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.status-start2 {
+    background-color:
+        rgba(255, 217, 16, 0.5);
+    ;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+}
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='gold'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+ }
+
+/* @media only screen and (max-width: 600px) {
+        .fontSizeStatus{
+font-size: 10px !important;
+        }
+        .statusImg{
+height: 20px;
+width: 20px;
+        }
+        .status-start{
+            background-color: 
+            rgba(58, 143, 242, 0.5);
+            ;
+            height: 50px;
+            width: 80px;
+            border-radius: 3px;
+            font-size: 10px !important;
+            }
+            
+            .status-start2{
+                background-color: 
+                rgba(255, 217, 16, 0.5);
+                ;
+                height: 50px;
+                width: 80px;
+                border-radius: 3px;
+                font-size: 10px !important;
+                }
+      } */
