@@ -323,7 +323,7 @@ const AuditionAssignedStar = () => {
           <div className="row p-4">
             <div className="slick-parent main-slider d-flex justify-content-center">
               <Slider className="slider-width" {...settings}>
-                <div className="p-3">
+                <div className="p-1">
                   <div className="">
                     <img src={ferdous} className="w-100" alt="" />
 
@@ -338,7 +338,7 @@ const AuditionAssignedStar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-1">
                   <div>
                     <img src={ferdous} className="w-100" alt="" />
 
@@ -353,7 +353,7 @@ const AuditionAssignedStar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-1">
                   <div>
                     <img src={ferdous} className="w-100" alt="" />
 
@@ -368,7 +368,7 @@ const AuditionAssignedStar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-1">
                   <div>
                     <img src={ferdous} className="w-100" alt="" />
 
@@ -383,7 +383,7 @@ const AuditionAssignedStar = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-3">
+                <div className="p-1">
                   <div>
                     <img src={ferdous} className="w-100" alt="" />
 

@@ -1,12 +1,14 @@
 import axios from "axios";
-import React from "react";
-import { Dropdown } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Collapse, Dropdown } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import swal from "sweetalert";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-  let history = useHistory();
+  const [open, setOpen] = useState(false);
+
+  const history = useHistory();
 
   const logoutSubmit = (e) => {
     e.preventDefault();
@@ -72,83 +74,68 @@ const Sidebar = () => {
             </div>
             Progress Bar
           </Link>
-          <Link className="nav-link">
+          <Link className="nav-link" to="/superstar-admin/audition">
             <div className="sb-nav-link-icon">
               <i className="fas fa-tachometer-alt"></i>
             </div>
-            <div className="myButton">
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Audition
-                </button>
-                <ul
-                  class="dropdown-menu dropdown-menu-dark"
-                  aria-labelledby="dropdownMenuButton2"
-                >
-                  <li>
-                    <Link class="dropdown-item" to="/superstar-admin/audition">
-                      Audition Dashboard
-                    </Link>
-                  </li>
-                  <li>
-                    <Link class="dropdown-item" to="/superstar-admin/audition/live">
-                      Live Audition
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      class="dropdown-item"
-                      to="/superstar-admin/auditions/pending-audition"
-                    >
-                      Pending Audition
-                    </Link>
-                  </li>
-                  <li>
-                    <Link class="dropdown-item" to="/superstar-admin/auditions/requestForApproval">
-                      Request Approval
-                    </Link>
-                  </li>
-                  <li>
-                    <Link class="dropdown-item" to="">
-                      Result
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            Audition
           </Link>
+
+          <div
+            className="nav-link"
+            onClick={() => setOpen(!open)}
+            aria-controls="example-collapse-text"
+            aria-expanded={open}
+          >
+            <div className="sb-nav-link-icon">
+              <i className="fas fa-tachometer-alt"></i>
+            </div>
+            Audition
+          </div>
+
+          <Collapse in={open}>
+            <div id="example-collapse-text">
+              <Link
+                className="Link text-light"
+                to="/superstar-admin/audition/dashboard"
+              >
+                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+              </Link>
+              <Link
+                className="Link text-light"
+                to="/superstar-admin/audition/event"
+              >
+                <p className="ms-3 PBtn me-3 p-2">Events</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+              </Link>
+              <Link
+                className="Link text-light"
+                to="/superstar-admin/audition/certificate-create"
+              >
+                <p className="ms-3 PBtn me-3 p-2">Certificate</p>
+              </Link>
+            </div>
+          </Collapse>
+
+          <Link className="nav-link" to="/superstar-admin/promo-videos">
+            <div className="sb-nav-link-icon">
+              <i className="fas fa-tachometer-alt"></i>
+            </div>
+            Promo Videos
+          </Link>
+
           <Link className="nav-link" to="/superstar-admin/learning-session">
             <div className="sb-nav-link-icon">
               <i className="fas fa-tachometer-alt"></i>
             </div>
-
-            <Collapse in={open}>
-                <div id="example-collapse-text">
-                    <Link className="Link text-light" to='/superstar-admin/audition/dashboard'><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
-                    <Link className="Link text-light" to='/superstar-admin/audition/event'><p className="ms-3 PBtn me-3 p-2">Events</p></Link>
-                    <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
-                    <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
-                    <Link className="Link text-light" to=''><p className="ms-3 PBtn me-3 p-2">Dashboard</p></Link>
-                    <Link className="Link text-light" to='/superstar-admin/audition/certificate-create'><p className="ms-3 PBtn me-3 p-2">Certificate</p></Link>
-
-                </div>
-                
-            </Collapse>
-
-            
-            <Link className="nav-link" to="/superstar-admin/promo-videos">
-            <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
-            Promo Videos
-            </Link>
-
-            <Link className="nav-link" to="/superstar-admin/learning-session">
-            <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
             Learning Session
           </Link>
           <Link className="nav-link" to="/superstar-admin/live-video">

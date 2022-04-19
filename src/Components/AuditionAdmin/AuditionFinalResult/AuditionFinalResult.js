@@ -1,4 +1,5 @@
 import React from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
 import auditionSelectRoundBanner from "../../../assets/images/AuditionAdmin/audition537.png";
 import diamond from "../../../assets/images/AuditionAdmin/diamondGift.png";
@@ -16,12 +17,63 @@ import sign from "../../../assets/images/sign.png";
 import "./AuditionFinalResult.css";
 
 const AuditionFinalResult = () => {
+
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    // <img src={LeftArrow} alt="prevArrow" {...props} />
+    <FaArrowLeft {...props} />
+  );
+
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <FaArrowRight {...props} />
+  );
+
   var settings = {
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    initialSlide: 0,
+    prevArrow: <SlickArrowLeft />,
+    nextArrow: <SlickArrowRight />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+ 
+
+  var settings2 = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: <SlickArrowLeft />,
+    nextArrow: <SlickArrowRight />,
     initialSlide: 0,
     responsive: [
       {
@@ -467,10 +519,10 @@ const AuditionFinalResult = () => {
       </div>
 
       <div className="row bgGray p-3 pb-5 my-4">
-        <div className="d-flex justify-content-end my-3">
+        {/* <div className="d-flex justify-content-end my-3">
           <img className="mx-2" src={leftArrow} alt="" />
           <img className="mx-2" src={rightArrow} alt="" />
-        </div>
+        </div> */}
 
         <div className="row p-4">
           <div className="slick-parent d-flex justify-content-center">
@@ -486,7 +538,7 @@ const AuditionFinalResult = () => {
                   </div>
 
                   <div className="px-2">
-                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h5 className="text-light">Aktaruzzaman Joti</h5>
                     <h6>User Vote: 24k</h6>
 
                     <p className="text-muted">User Gift</p>
@@ -524,7 +576,7 @@ const AuditionFinalResult = () => {
                   </div>
 
                   <div className="px-2">
-                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h5 className="text-light">Aktaruzzaman Joti</h5>
                     <h6>User Vote: 24k</h6>
 
                     <p className="text-muted">User Gift</p>
@@ -562,7 +614,7 @@ const AuditionFinalResult = () => {
                   </div>
 
                   <div className="px-2">
-                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h5 className="text-light">Aktaruzzaman Joti</h5>
                     <h6>User Vote: 24k</h6>
 
                     <p className="text-muted">User Gift</p>
@@ -600,7 +652,7 @@ const AuditionFinalResult = () => {
                   </div>
 
                   <div className="px-2">
-                    <h5 className="text-light">Imdadul Haque</h5>
+                    <h5 className="text-light">Aktaruzzaman Joti</h5>
                     <h6>User Vote: 24k</h6>
 
                     <p className="text-muted">User Gift</p>
@@ -639,12 +691,12 @@ const AuditionFinalResult = () => {
 
         <div className="row p-4">
           <div className="slick-parent d-flex justify-content-center">
-            <Slider className="slider-width" {...settings}>
+            <Slider className="slider-width" {...settings2}>
               <div className="p-1">
                 <div>
                   <div className="nameBg d-flex justify-content-start mb-3 rounded-3 p-3">
                     <img src={iconStar} alt="" />
-                    <h1 className="mx-3">Winner</h1>
+                    <h2 className="mx-3">Winner</h2>
                   </div>
                   <div className="userResultBox d-flex p-4">
                     <div className="d-flex align-items-center">
@@ -656,7 +708,7 @@ const AuditionFinalResult = () => {
                     </div>
 
                     <div className="px-2">
-                      <h5 className="text-light">Imdadul Haque</h5>
+                      <h5 className="text-light">Aktaruzzaman Joti</h5>
                       <h6>Total Mark: </h6>
 
                       <p className="text-light">Lorem ipsum dolor sit amet.</p>
@@ -668,7 +720,7 @@ const AuditionFinalResult = () => {
                 <div>
                   <div className="nameBg d-flex justify-content-around rounded-3 mb-3 p-3">
                     <img src={iconStar} alt="" />
-                    <h1>1st Runner Up</h1>
+                    <h2>1st Runner Up</h2>
                   </div>
                   <div className="userResultBox d-flex p-4">
                     <div className="d-flex align-items-center">
@@ -680,7 +732,7 @@ const AuditionFinalResult = () => {
                     </div>
 
                     <div className="px-2">
-                      <h5 className="text-light">Imdadul Haque</h5>
+                      <h5 className="text-light">Aktaruzzaman Joti</h5>
                       <h6>Total Mark: </h6>
 
                       <p className="text-light">Lorem ipsum dolor sit amet.</p>
@@ -705,7 +757,35 @@ const AuditionFinalResult = () => {
 
                     <div className="px-2">
                       <div>
-                        <h5 className="text-light">Imdadul Haque</h5>
+                        <h5 className="text-light">Aktaruzzaman Joti</h5>
+                        <h6>Total Mark: </h6>
+
+                        <p className="text-light">
+                          Lorem ipsum dolor sit amet.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-1">
+                <div>
+                  <div className="nameBg d-flex justify-content-around rounded-3 p-3 mb-3">
+                    <img src={iconStar} alt="" />
+                    <h2>3rd Runner Up</h2>
+                  </div>
+                  <div className="userResultBox d-flex p-4">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={oni}
+                        className="photoImgStyleRound img-fluid"
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="px-2">
+                      <div>
+                        <h5 className="text-light">Aktaruzzaman Joti</h5>
                         <h6>Total Mark: </h6>
 
                         <p className="text-light">
@@ -719,7 +799,6 @@ const AuditionFinalResult = () => {
             </Slider>
           </div>
         </div>
-
 
         <div className="d-flex justify-content-center">
           <button className="certificateBtn m-4">Go for the Certificate</button>

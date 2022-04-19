@@ -1,4 +1,5 @@
 import React from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Slider from "react-slick";
 import auditionSelectRoundBanner from "../../../assets/images/AuditionAdmin/audition537.png";
 import diamond from "../../../assets/images/AuditionAdmin/diamondGift.png";
@@ -21,6 +22,15 @@ const AdminAuditionRoundThree = () => {
     setValue(newValue);
   };
 
+  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+    // <img src={LeftArrow} alt="prevArrow" {...props} />
+    <FaArrowLeft {...props} />
+  );
+
+  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
+    <FaArrowRight {...props} />
+  );
+
   var settings = {
     dots: true,
     infinite: false,
@@ -28,6 +38,8 @@ const AdminAuditionRoundThree = () => {
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
+    prevArrow: <SlickArrowLeft />,
+    nextArrow: <SlickArrowRight />,
     responsive: [
       {
         breakpoint: 1024,
@@ -134,7 +146,7 @@ const AdminAuditionRoundThree = () => {
                 </div>
               </div>
               <div className="m-3">
-                <button className="w-100 btn nameBg p-2">
+                <button className="w-100 btn grayBg p-2">
                   <big className="text-dark fw-bold">Details</big>
                 </button>
               </div>
@@ -142,7 +154,7 @@ const AdminAuditionRoundThree = () => {
           </div>
           <div className="col-md-4 my-3 d-flex justify-content-center">
             <div className="bg-dark cardBox">
-              <div className="px-3 d-flex justify-content-start nameBg rounded-3">
+              <div className="px-3 d-flex justify-content-start grayBg rounded-3">
                 <img
                   className="img-fluid photoImgStyle photoImgStyle py-2"
                   src={rafa}
@@ -193,7 +205,7 @@ const AdminAuditionRoundThree = () => {
                 </div>
               </div>
               <div className="m-3">
-                <button className="w-100 btn nameBg p-2">
+                <button className="w-100 btn grayBg p-2">
                   <big className="text-dark fw-bold">Details</big>
                 </button>
               </div>
@@ -252,7 +264,7 @@ const AdminAuditionRoundThree = () => {
                 </div>
               </div>
               <div className="m-3">
-                <button className="w-100 btn nameBg p-2">
+                <button className="w-100 btn grayBg p-2">
                   <big className="text-dark fw-bold">Details</big>
                 </button>
               </div>
@@ -472,10 +484,7 @@ const AdminAuditionRoundThree = () => {
       </div>
 
       <div className="row bgGray p-3 pb-5 my-4">
-        <div className="d-flex justify-content-end my-3">
-          <img className="mx-2" src={leftArrow} alt="" />
-          <img className="mx-2" src={rightArrow} alt="" />
-        </div>
+       
 
         <div className="row p-4">
           <div className="slick-parent d-flex justify-content-center">
@@ -632,7 +641,6 @@ const AdminAuditionRoundThree = () => {
                   </div>
                 </div>
               </div>
-          
             </Slider>
           </div>
         </div>
