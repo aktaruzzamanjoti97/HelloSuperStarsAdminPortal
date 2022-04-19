@@ -137,6 +137,7 @@ import EditPendingFanGroup from "./Home/Pages/AdminFanGroup/EditPendingFanGroup/
 import AuditionsAdminStar from "./Home/Pages/AdminAudition/AuditionAdminDetails/AuditionsAdminStar";
 
 import ApprovedFanGroup from "./Home/Pages/AdminFanGroup/ApprovedFanGroup/ApprovedFanGroup";
+import AdminRequestForApproval from "./Home/Pages/AdminAudition/AdminRequestForApproval/AdminRequestForApproval";
 
 import EventsLive from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/EventsLive";
 import PendingEventAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Event/PendingEventAudition";
@@ -231,7 +232,7 @@ const AdminRoute = [
     { path: '/superstar-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/superstar-admin/auditions/jury-select', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
-
+    { path: '/superstar-admin/auditions/pending-audition', exact: true, name: 'grand-final', component: AdminRequestForApproval },
     // { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
     { path: '/superstar-admin/audition', exact: true, name: 'audition', component: AdminAudition2 },
     { path: '/superstar-admin/audition/live-upload-show', exact: true, name: 'audition', component: AdminAuditionLiveVideoFilter },

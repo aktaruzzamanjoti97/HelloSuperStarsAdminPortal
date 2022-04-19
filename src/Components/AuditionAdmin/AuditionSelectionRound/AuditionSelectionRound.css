@@ -1,0 +1,33 @@
+.bottomLine {
+  border-bottom: 2px solid gray;
+}
+
+.beginnerRoundTitle {
+  background-color: #2d2d2d;
+  border-radius: 10px;
+}
+
+.viewListBtn {
+  background-color: #c4ffc5 !important;
+}
+
+.photoImgStyle {
+  border-radius: 50% !important;
+}
+
+.table-bordered > :not(caption) > * {
+  border-width: 0 !important;
+}
+
+.imgBorderBanner {
+  border: 1px solid #ff0;
+  border-radius: 10px;
+}
+
+.titleBorderHeader {
+  background-color: #59a5ff;
+}
+
+.grayBg {
+  background-color: #c4c4c4 !important;
+}

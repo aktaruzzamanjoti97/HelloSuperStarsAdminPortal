@@ -95,6 +95,9 @@ import RejectedDetails from './Pages/FanGroupStar/Content/RejectedDetails';
 import FanGroupLive from './Pages/FanGroupStar/Content/FanGroupLive';
 import FanBaseStar from './Pages/FanGroupStar/Home/FanBaseStar';
 import FanGroupCreate from './Pages/FanGroupStar/Content/FanGroupCreate';
+import StarPendingAudition from './Pages/SuperstarAudition/StarPendingAudition/StarPendingAudition';
+import StarVideoPendingAudition from './Pages/SuperstarAudition/StarVideoPendingAudition/StarVideoPendingAudition';
+import StarAudioVideoPending from './Pages/SuperstarAudition/StarAudioVideoPending/StarAudioVideoPending';
 import StarMarkingVideo from './Pages/StarMarkingVideo/StarMarkingVideo';
 import AllPromoVideos from "./Pages/PromoVideos/AllPromoVideos";
 import PendingPromoVideo from './Pages/PromoVideos/PendingPromoVideo';
@@ -143,8 +146,12 @@ const SuperstarRoute = [
     //@FIXME: Audition
     { path: '/superstar/audition', exact: true, name: 'auditions', component: SuperstarAudition },
     { path: '/superstar/audition/pending', exact: true, name: 'auditions', component:SuperstarAuditionPending},
+    { path: '/superstar/audition/pending', exact: true, name: 'auditions', component:SuperstarAuditionPending},
     { path: '/superstar/audition/live', exact: true, name: 'auditions', component:SuperstarAuditionLive},
     { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
+    // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarPendingAudition },
+    // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarVideoPendingAudition },
+    { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarAudioVideoPending },
     { path: '/superstar/auditions/videos/:id', exact: true, name: 'auditions', component: StarMarkingVideo },
 
     // Learning Session

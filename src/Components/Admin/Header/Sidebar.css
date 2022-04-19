@@ -1,56 +1,55 @@
 .dropDownMarketPlaece .btn-primary {
-    /* color: #5E6975; */
-    background-color: #212529 !important;
-    /* border-color: none !important; */
-    border: none !important
-    
+  /* color: #5E6975; */
+  background-color: #212529 !important;
+  /* border-color: none !important; */
+  border: none !important;
 }
 
-.marktePlaceOrderTxt{
-    text-decoration: none !important;
+.marktePlaceOrderTxt {
+  text-decoration: none !important;
 }
-.badgeDanger{
-    background-color: black;
+.badgeDanger {
+  background-color: black;
 }
-.badgeInfo{
-    background-color: blueviolet;
+.badgeInfo {
+  background-color: blueviolet;
 }
-.badgeSuccess{
-    background-color: burlywood;
-}
-
-.PBtn{
-    cursor: pointer;
-    background-color: black;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+.badgeSuccess {
+  background-color: burlywood;
 }
 
-.PBtn:hover{
-    cursor: pointer;
-    
-    background-color: rgb(36, 35, 35);
-    color: white;
-    border: 1px solid rgb(53, 51, 54);
+.PBtn {
+  cursor: pointer;
+  background-color: black;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
-/* .active{
-    background-color: #FFCE00 !important;
-    border-radius: 0px 0px 10px 10px;
-} */
+.PBtn:hover {
+  cursor: pointer;
 
-.BGBlue{
-    background-color: #2D2D2D !important;
+  background-color: rgb(36, 35, 35);
+  color: white;
+  border: 1px solid rgb(53, 51, 54);
 }
 
-.PTBDn{
-    background: linear-gradient(90deg, #FFCE00 0%, #DFA434 100%);
-    border-radius: 30px !important;
-    -webkit-border-radius: 30px !important;
-    -moz-border-radius: 30px !important;
-    -ms-border-radius: 30px !important;
-    -o-border-radius: 30px !important;
+.active {
+  background-color: #ffce00 !important;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.BGBlue {
+  background-color: #2d2d2d !important;
+}
+
+.PTBDn {
+  background: linear-gradient(90deg, #ffce00 0%, #dfa434 100%);
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
 }
