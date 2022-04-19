@@ -15,16 +15,15 @@ import swal from "sweetalert";
 const PendingVideoDetails = (props) => {
   const history = useHistory();
 
-  const [event, setEvent] = useState("");
+  const [event, setEvent] = useState([]);
 
   useEffect(() => {
-    let isMounted = true;
 
     const event_id = props.match.params.id;
 
     axios.get(`/api/star/promoVideo/pending/${event_id}`).then((res) => {
-      if (isMounted) {
-        if (res.data.status === 200) {
+     {
+        if (res.data.status == 200) {
           setEvent(res.data.promoVideos);
         }
       }
@@ -60,16 +59,16 @@ const PendingVideoDetails = (props) => {
           <div className="row">
             <div className="col-md-6">
               <div className="card event-card">
-                <video width="600" controls>
-                  <source
-                      src={
-                        event.video_url != null
-                            ? `http://localhost:8000/${event.video_url}`
-                            : "https://youtu.be/dgfTiONcnTc"
-                      }
-                      type="video/mp4"
-                  />
-                </video>
+              <video width="312" controls>
+                        <source
+                            src={
+                              event.video_url != null
+                                  ? `http://localhost:8000/${event.video_url}`
+                                  : "https://youtu.be/dgfTiONcnTc"
+                            }
+                            type="video/mp4"
+                        />
+                      </video>
               </div>
             </div>
           </div>
@@ -96,7 +95,7 @@ const PendingVideoDetails = (props) => {
             {event.star_approval === 0 ? (
               <>
                 <button className="btn MEN-X fw-bold" onClick={handleClick}>
-                  Approve{" "}
+                  Approved
                 </button>
 
                 <button className="btn MEN-Y text-warning fw-bold mx-3" onClick={decline}>
