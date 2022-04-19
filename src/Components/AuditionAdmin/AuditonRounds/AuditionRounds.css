@@ -1,0 +1,28 @@
+.round1Tab{
+  border: 2px solid rgba(255, 217, 16, 1);
+ /* padding: 10px 30px 10px 30px; */
+ background-color: #474747;
+ border-radius: 5px;
+}
+
+
+.NavColorFan,
+.show > .NavAudition {
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  background-color: #343434;
+
+}
+.NavColorFan.active,
+.show > .NavAudition {
+  color: black;
+  padding-left: 25px;
+  padding-right: 25px;
+  background: transparent
+    linear-gradient(115deg, #faed89 0%, #ffc000 69%, #ffc633 100%) 0% 0%
+    no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+
+}

@@ -1,0 +1,7 @@
+.slick-slide div {
+    outline: none;
+}
+*:focus {
+    outline: 0;
+    outline: none;
+  }
