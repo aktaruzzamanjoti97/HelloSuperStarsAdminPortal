@@ -113,6 +113,9 @@ const Sidebar = () => {
               <Link className="Link text-light" to="/superstar-admin/audition/event/request-approve-view">
                 <p className="ms-3 PBtn me-3 p-2">Request For Approval</p>
               </Link>
+              <Link className="Link text-light" to="/superstar-admin/audition/round">
+                <p className="ms-3 PBtn me-3 p-2">Round</p>
+              </Link>
               <Link className="Link text-light" to="">
                 <p className="ms-3 PBtn me-3 p-2">Live Admins</p>
               </Link>
