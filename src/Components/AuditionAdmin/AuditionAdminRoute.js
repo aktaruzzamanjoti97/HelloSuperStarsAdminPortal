@@ -18,6 +18,7 @@ import AuditionSelectionRound from "./AuditionSelectionRound/AuditionSelectionRo
 import AuditionAssignedStar from "./AuditionAssignedStar/AuditionAssignedStar";
 import AdminAuditionRoundThree from "./AdminAuditionRoundThree/AdminAuditionRoundThree";
 import AuditionFinalResult from "./AuditionFinalResult/AuditionFinalResult";
+import AuditionRounds from "./AuditonRounds/AuditionRounds";
 
 
 
@@ -44,6 +45,13 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/assigned-star', exact: true, name: 'participant-list', component: AuditionAssignedStar},
     { path: '/audition-admin/audition/round-result', exact: true, name: 'participant-list', component: AdminAuditionRoundThree},
     { path: '/audition-admin/audition/final-result', exact: true, name: 'participant-list', component: AuditionFinalResult},
+
+    { path: '/audition-admin/audition/audition-round', exact: true, name: 'participant-list', component: AuditionRounds},
+
+
+    //@TODO: Superstar Route
+    
+
 ];
 
 export default AuditionAdminRoute;

@@ -62,13 +62,13 @@ const options = {
 
 const AnalyticsFan = () => {
 
-  const [daysOne, setDaysOne] = useState('');
+  // const [daysOne, setDaysOne] = useState('');
  
   const { slug } = useParams();
   console.log('our slug is ', slug);
 
   const data = {
-    labels: ["06-5-19", "Feb", "Mar", "Apr", "May", "Jun"],
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
     bezierCurve: false,
     datasets: [
       {
@@ -89,18 +89,18 @@ const AnalyticsFan = () => {
 
   
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    axios.get(`/api/star/fan/group/analytics/${slug}`).then(res => {
-      if (res.data.status === 200) {
-        console.log('partha ggg', res.data.daysOne);
+  //   axios.get(`/api/star/fan/group/analytics/${slug}`).then(res => {
+  //     if (res.data.status === 200) {
+  //       console.log('partha ggg', res.data.daysOne);
 
-        setDaysOne(res.data.daysOne);
+  //       setDaysOne(res.data.daysOne);
 
-      }
-    });
+  //     }
+  //   });
 
-  }, []);
+  // }, []);
 
 
   return (
@@ -115,7 +115,7 @@ const AnalyticsFan = () => {
                   <i class="fa-solid fa-user-group fan-icon"></i>
                 </div>
                 <div className="graph-content w-50 mx-3">
-                  <small className="text-light m-0 p-0">Salman group {moment(daysOne).format("LL")}</small>
+                  <small className="text-light m-0 p-0">Salman group</small>
                   <h2 className="text-light m-0 p-0">150</h2>
                 </div>
                 <div>

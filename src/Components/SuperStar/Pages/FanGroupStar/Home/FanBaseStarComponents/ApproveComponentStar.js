@@ -25,11 +25,26 @@ let { slug } = useParams();
       }
     });
   }, [slug]);
+
   
   function approveMember(id){
     console.log("id is ", id);
 
     axios.post(`/api/star/fan/member/post/${id}`).then((res) => {
+      if (res.status === 200) {
+        console.log('Done');
+  
+        swal("Welcome", res.data.message, "success");
+        // history.push('/superstar-admin/fan-group');
+      }
+    });
+  }
+
+  function handleIdWarning(id, fanId){
+    console.log("id is ", id);
+    console.log("id is ", fanId);
+
+    axios.post(`/api/star/fan/group/approval/warning/${id}/${fanId}`).then((res) => {
       if (res.status === 200) {
         console.log('Done');
   
@@ -63,7 +78,7 @@ return (
                                     <div className='starDropdown'>
                                         <DropdownButton variant='dark' className='bg-dark text-light'
                                             id="dropdown-basic-button" title=".....">
-                                            <Dropdown.Item href="#/action-1" className='text-light'><i
+                                            <Dropdown.Item href="#/action-1" className='text-light' onClick={()=>handleIdWarning(post.user_id, post.fan_group_id)}><i
                                                     class="fa-solid fa-triangle-exclamation mx-1"></i>Give Warning
                                             </Dropdown.Item>
 

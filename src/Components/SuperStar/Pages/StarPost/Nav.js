@@ -5,7 +5,6 @@ import Live from "../../../../assets/images/instagram-live 1.png";
 import Approved from "../../../../assets/images/approved.png";
 import Pending from "../../../../assets/images/pending 2.png";
 import Add from "../../../../assets/images/UpcomingEvent/add 1.png";
-import LiveIcon from '../../../../assets/images/AdminLiveProfile/live 1.png'
 import axios from "axios";
 import Slider from "react-slick";
 import "./SuperStarContent.css";

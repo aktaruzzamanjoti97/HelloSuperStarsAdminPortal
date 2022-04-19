@@ -1,0 +1,49 @@
+
+.videoRound .slick-slide {
+    margin-left:20px;
+ }
+ 
+ .videoRound .slick-list [data-slick-index="0"] {
+     margin-left: 0;
+   }
+   /* .videoRound .slick-slider {
+    height: 220px;
+
+    padding: 10px;
+} */
+
+.roundBtn{
+    background: linear-gradient(102.45deg, #F5EA45 28.52%, #DDA336 52.38%, #E7A725 72.31%) !important;
+}
+.roundBtnCursor{
+    cursor: pointer !important;
+
+}
+
+.videoRound .slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 15rem;
+    padding: 10px;
+}
+
+.slick-prev {
+    left: -25px;
+    color: gray;
+}
+.slick-prev:hover {
+    left: -25px;
+    color: gold !important; 
+}
+.slick-next {
+    right: -25px;
+    color: gray;
+}
+.slick-next:hover {
+    right: -25px;
+    color: gold !important;
+}
+  

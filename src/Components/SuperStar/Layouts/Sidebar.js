@@ -47,6 +47,10 @@ const Sidebar = () => {
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
                                 Post
                             </Link>
+                            <Link className="nav-link" to="/superstar/promo-videos">
+                                <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                                Promo Videos
+                            </Link>
                             
                             <Link className="nav-link" to="/superstar/live-chat">
                                 <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
