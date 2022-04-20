@@ -151,6 +151,7 @@ import LivePromoVideo from "./Home/Pages/PromoVideos/LivePromoVideo";
 import CertificateAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CertificateAudition";
 import CreateCertificate from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CreateCertificate";
 import RequestCertificate from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/RequestCertificate";
+import AuditionRounds from "../AuditionAdmin/AuditonRounds/AuditionRounds";
 
 
 
@@ -251,7 +252,8 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/event', exact: true, name: 'event', component: EventsLive },
     { path: '/superstar-admin/audition/event/pending', exact: true, name: 'pending', component: PendingEventAudition },
     { path: '/superstar-admin/audition/event/request-approve', exact: true, name: 'pending', component: EventRequestApproval },
-
+    { path: '/superstar-admin/audition/event/request-approve-view', exact: true, name: 'pending', component: AdminRequestForApproval },
+    { path: '/superstar-admin/audition/round', exact: true, name: 'round', component: AuditionRounds },
     { path: '/superstar-admin/audition/event/create-event', exact: true, name: 'create-event', component: CreateEventAudition },
     
     { path: '/superstar-admin/audition/certificate-create', exact: true, name: 'certificate-create', component: CreateCertificate },

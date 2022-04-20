@@ -107,14 +107,38 @@ const Sidebar = () => {
               >
                 <p className="ms-3 PBtn me-3 p-2">Events</p>
               </Link>
-              <Link className="Link text-light" to="">
-                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+              <Link className="Link text-light" to="/superstar-admin/audition/event/create-event">
+                <p className="ms-3 PBtn me-3 p-2">Create events</p>
+              </Link>
+              <Link className="Link text-light" to="/superstar-admin/audition/event/request-approve-view">
+                <p className="ms-3 PBtn me-3 p-2">Request For Approval</p>
+              </Link>
+              <Link className="Link text-light" to="/superstar-admin/audition/round">
+                <p className="ms-3 PBtn me-3 p-2">Round</p>
               </Link>
               <Link className="Link text-light" to="">
-                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+                <p className="ms-3 PBtn me-3 p-2">Live Admins</p>
               </Link>
               <Link className="Link text-light" to="">
-                <p className="ms-3 PBtn me-3 p-2">Dashboard</p>
+                <p className="ms-3 PBtn me-3 p-2">Jurys</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Result</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">SuperStar</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">SuperStar Admins</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Register User List</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Selected User List</p>
+              </Link>
+              <Link className="Link text-light" to="">
+                <p className="ms-3 PBtn me-3 p-2">Rejected User List</p>
               </Link>
               <Link
                 className="Link text-light"
