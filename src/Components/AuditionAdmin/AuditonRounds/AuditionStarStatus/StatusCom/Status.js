@@ -9,13 +9,16 @@ import topvideoBanner from "../../../../../assets/images/Rounds/unsplash_IeTLKtz
 import icon1 from '../../../../../assets/images/Rounds/icons/Group 975.png'
 import icon2 from '../../../../../assets/images/Rounds/icons/finish 1.png'
 import icon3 from '../../../../../assets/images/Rounds/icons/flag 1.png'
+
 const Status = () => {
+  const [checkData,setCheckData]=React.useState('Momotaz')
   var settings = {
+    
     dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 0,
     initialSlide: 0,
     responsive: [
       {
@@ -46,19 +49,19 @@ const Status = () => {
   };
   return (
     <div>
-      <Slider {...settings}>
+      <div className="d-flex justify-content-between flex-wrap">
         <div
           className=""
-          style={{ height: "200px", width: "200px", borderRadius: "20px", }}
+          style={{ height: "200px", width: "230px", borderRadius: "20px", }}
         >
           <img src={star} alt="" className="h-100 w-100" />
         </div>
 
         <div
-          className="card bg-warning"
-          style={{ height: "200px", width: "200px", borderRadius: "20px" }}
+          className={checkData=='Momotaz'?"card bg-warning":"card star-cardColor"}
+          style={{ height: "200px", width: "230px", borderRadius: "20px" }}
         >
-          <div className="card-body" style={{ cursor:'pointer' }}>
+          <div className="card-body" style={{ cursor:'pointer' }} onClick={()=>setCheckData('Momotaz')}>
             <div className="d-flex justify-content-end">
               <small className="text-bold">Submitted</small>
             </div>
@@ -72,10 +75,10 @@ const Status = () => {
           </div>
         </div>
         <div
-          className="card star-cardColor"
-          style={{ height: "200px", width: "200px", borderRadius: "20px" }}
+          className={checkData=='Protik'?"card bg-warning":"card star-cardColor"}
+          style={{ height: "200px", width: "230px", borderRadius: "20px" }}
         >
-          <div className="card-body" style={{ cursor:'pointer' }}>
+          <div className="card-body" style={{ cursor:'pointer' }} onClick={()=>setCheckData('Protik')}>
             <div className="d-flex justify-content-end">
               <small className="text-bold star-pendingColor">Pending*</small>
             </div>
@@ -89,10 +92,10 @@ const Status = () => {
           </div>
         </div>
         <div
-          className="card star-cardColor"
-          style={{ height: "200px", width: "200px", borderRadius: "20px" }}
+          className={checkData=='James'?"card bg-warning":"card star-cardColor"}
+          style={{ height: "200px", width: "230px", borderRadius: "20px" }}
         >
-          <div className="card-body" style={{ cursor:'pointer' }}>
+          <div className="card-body" style={{ cursor:'pointer' }} onClick={()=>setCheckData('James')}>
             <div className="d-flex justify-content-end">
               <small className="text-bold star-pendingColor">Pending*</small>
             </div>
@@ -105,41 +108,9 @@ const Status = () => {
             </div>
           </div>
         </div>
-        <div
-          className="card star-cardColor"
-          style={{ height: "200px", width: "200px", borderRadius: "20px" }}
-        >
-          <div className="card-body" style={{ cursor:'pointer' }}>
-            <div className="d-flex justify-content-end">
-              <small className="text-bold star-pendingColor">Pending*</small>
-            </div>
-            <div className="text-center d-flex justify-content-center">
-              <img
-                src={singer}
-                style={{ height: "100px", width: "100px", borderRadius: "50%" }}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="card bg-warning"
-          style={{ height: "200px", width: "200px", borderRadius: "20px" }}
-        >
-          <div className="card-body" style={{ cursor:'pointer' }}>
-            <div className="d-flex justify-content-end">
-              <small className="text-bold star-pendingColor">Pending*</small>
-            </div>
-            <div className="text-center d-flex justify-content-center">
-              <img
-                src={james}
-                style={{ height: "100px", width: "100px", borderRadius: "50%" }}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </Slider>
+     
+   
+      </div>
 
       <div className="container my-3">
         <div style={{ border: "2px solid gold", borderRadius: "10px" }}>

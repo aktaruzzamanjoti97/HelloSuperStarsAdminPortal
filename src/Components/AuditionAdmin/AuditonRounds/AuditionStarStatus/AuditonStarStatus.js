@@ -1,18 +1,19 @@
 import React from "react";
 import "./AuditionStarStatus.css";
 import Status from "./StatusCom/Status";
+import Status2 from "./StatusCom/Status2";
 
 const AuditonStarStatus = () => {
   return (
-    <div className="my-2">
-      <div class="accordion" id="accordionExample">
+    <div classNameName="my-2">
+      <div className="accordion" id="accordionExample">
         <div
-          class="accordion-item mb-1"
+          className="accordion-item mb-1"
           style={{ border: "none", outline: "none" }}
         >
-          <h2 class="accordion-header" id="headingOne">
+          <h2 className="accordion-header" id="headingOne">
             <button
-              class="accordion-button accordionHeader text-light"
+              className="accordion-button accordionHeader text-light"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
@@ -25,19 +26,19 @@ const AuditonStarStatus = () => {
           </h2>
           <div
             id="collapseOne"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body bg-dark">
+            <div className="accordion-body bg-dark">
               <Status />
             </div>
           </div>
         </div>
-        <div class="accordion-item" style={{ border: "none", outline: "none" }}>
-          <h2 class="accordion-header" id="headingTwo">
+        <div className="accordion-item" style={{ border: "none", outline: "none" }}>
+          <h2 className="accordion-header" id="headingTwo">
             <button
-              class="accordion-button accordionHeader  collapsed"
+              className="accordion-button accordionHeader  collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
@@ -50,12 +51,13 @@ const AuditonStarStatus = () => {
           </h2>
           <div
             id="collapseTwo"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body bg-dark">
-              <div className="text-warning">Component-2</div>
+            <div className="accordion-body bg-dark">
+              
+              <Status2 />
             </div>
           </div>
         </div>
