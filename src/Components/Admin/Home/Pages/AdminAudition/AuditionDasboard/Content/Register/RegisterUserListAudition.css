@@ -1,0 +1,28 @@
+.completeAudi{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bottomBorderBlack{
+    border-bottom: 2px solid white;
+}
+
+.activeTd{
+    background-color: green !important;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    padding: 8px;
+}
+
+.inactiveTd{
+    background-color: red !important;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    padding: 8px;
+}

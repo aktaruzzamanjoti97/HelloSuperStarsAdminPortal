@@ -67,7 +67,7 @@ return (
                                         <h5 className="text-white text-center">Guitar Competition</h5>
                                         <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing
                                             and typesetting industry. Lorem Ipsum has been. </p>
-                                        <Link to='/audition-admin/audition/event/request-approve-view'>
+                                        <Link to='/superstar-admin/audition/event/request-approve-view'>
                                         <button className='btn PTBDn w-100'>Action</button>
                                         </Link>
                                     </center>

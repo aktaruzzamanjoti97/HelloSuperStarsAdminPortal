@@ -19,6 +19,15 @@ import AuditionAssignedStar from "./AuditionAssignedStar/AuditionAssignedStar";
 import AdminAuditionRoundThree from "./AdminAuditionRoundThree/AdminAuditionRoundThree";
 import AuditionFinalResult from "./AuditionFinalResult/AuditionFinalResult";
 import AuditionRounds from "./AuditonRounds/AuditionRounds";
+import DashboardAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/DashboardAudition";
+import EventsLive from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Event/EventsLive";
+import PendingEventAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Event/PendingEventAudition";
+import EventRequestApproval from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Event/EventRequestApproval";
+import AdminRequestForApproval from "../Admin/Home/Pages/AdminAudition/AdminRequestForApproval/AdminRequestForApproval";
+import CreateEventAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Event/CreateEventAudition";
+import CreateCertificate from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CreateCertificate";
+import RequestCertificate from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/RequestCertificate";
+import RegisterUserListAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Register/RegisterUserListAudition";
 
 
 
@@ -46,10 +55,27 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/round-result', exact: true, name: 'participant-list', component: AdminAuditionRoundThree},
     { path: '/audition-admin/audition/final-result', exact: true, name: 'participant-list', component: AuditionFinalResult},
 
-    { path: '/audition-admin/audition/audition-round', exact: true, name: 'participant-list', component: AuditionRounds},
+    
 
 
-    //@TODO: Superstar Route
+
+    { path: '/audition-admin/audition/dashboard', exact: true, name: 'dashboard', component: DashboardAudition },
+
+    { path: '/audition-admin/audition/event', exact: true, name: 'event', component: EventsLive },
+    { path: '/audition-admin/audition/event/pending', exact: true, name: 'pending', component: PendingEventAudition },
+    { path: '/audition-admin/audition/event/request-approve', exact: true, name: 'pending', component: EventRequestApproval },
+    { path: '/audition-admin/audition/event/request-approve-view', exact: true, name: 'pending', component: AdminRequestForApproval },
+    { path: '/audition-admin/audition/round', exact: true, name: 'participant-list', component: AuditionRounds},
+
+
+    { path: '/audition-admin/audition/event/create-event', exact: true, name: 'create-event', component: CreateEventAudition },
+    
+    { path: '/audition-admin/audition/certificate-create', exact: true, name: 'certificate-create', component: CreateCertificate },
+    { path: '/audition-admin/audition/certificate-request', exact: true, name: 'certificate-request', component: RequestCertificate },
+    { path: '/audition-admin/audition/register-user', exact: true, name: 'certificate-request', component: RegisterUserListAudition },
+    { path: '/audition-admin/audition/register-user-list', exact: true, name: 'certificate-request', component: RegisterUserListAudition },
+
+    //@TODO: audition Route
     
 
 ];
