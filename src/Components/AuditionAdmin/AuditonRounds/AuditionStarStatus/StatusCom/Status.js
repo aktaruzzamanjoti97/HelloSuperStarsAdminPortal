@@ -49,15 +49,16 @@ const Status = () => {
       <Slider {...settings}>
         <div
           className=""
-          style={{ height: "200px", width: "200px", borderRadius: "20px" }}
+          style={{ height: "200px", width: "200px", borderRadius: "20px", }}
         >
           <img src={star} alt="" className="h-100 w-100" />
         </div>
+
         <div
           className="card bg-warning"
           style={{ height: "200px", width: "200px", borderRadius: "20px" }}
         >
-          <div className="card-body">
+          <div className="card-body" style={{ cursor:'pointer' }}>
             <div className="d-flex justify-content-end">
               <small className="text-bold">Submitted</small>
             </div>
@@ -74,7 +75,7 @@ const Status = () => {
           className="card star-cardColor"
           style={{ height: "200px", width: "200px", borderRadius: "20px" }}
         >
-          <div className="card-body">
+          <div className="card-body" style={{ cursor:'pointer' }}>
             <div className="d-flex justify-content-end">
               <small className="text-bold star-pendingColor">Pending*</small>
             </div>
@@ -91,7 +92,7 @@ const Status = () => {
           className="card star-cardColor"
           style={{ height: "200px", width: "200px", borderRadius: "20px" }}
         >
-          <div className="card-body">
+          <div className="card-body" style={{ cursor:'pointer' }}>
             <div className="d-flex justify-content-end">
               <small className="text-bold star-pendingColor">Pending*</small>
             </div>
@@ -108,7 +109,7 @@ const Status = () => {
           className="card star-cardColor"
           style={{ height: "200px", width: "200px", borderRadius: "20px" }}
         >
-          <div className="card-body">
+          <div className="card-body" style={{ cursor:'pointer' }}>
             <div className="d-flex justify-content-end">
               <small className="text-bold star-pendingColor">Pending*</small>
             </div>
@@ -125,7 +126,7 @@ const Status = () => {
           className="card bg-warning"
           style={{ height: "200px", width: "200px", borderRadius: "20px" }}
         >
-          <div className="card-body">
+          <div className="card-body" style={{ cursor:'pointer' }}>
             <div className="d-flex justify-content-end">
               <small className="text-bold star-pendingColor">Pending*</small>
             </div>
