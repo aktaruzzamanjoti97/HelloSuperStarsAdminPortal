@@ -89,11 +89,11 @@ const AuditionRounds = () => {
                 {/*---------- page no 557 -----------*/}
               </Tab.Pane>
               <Tab.Pane eventKey="second">
-                {" "}
+              
                 <div className="text-light">component2</div>
               </Tab.Pane>
               <Tab.Pane eventKey="third">
-                {" "}
+               
                 <div className="text-light">component3</div>
               </Tab.Pane>
             </Tab.Content>
