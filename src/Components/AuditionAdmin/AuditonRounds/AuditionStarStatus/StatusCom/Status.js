@@ -118,12 +118,20 @@ const Status = () => {
             <h5 className="text-warning">Guiter Audition Discription</h5>
             <div className="card star-cardColor2">
               <div className="card-body ">
-                <p className="text-light">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officia unde est quis porro quod, dicta quasi commodi labore
-                  provident cum repudiandae nemo asperiores sunt quae
-                  consequatur enim expedita ea libero?
-                </p>
+              {checkData==='Momotaz'? <p className="text-light">
+                
+                <span className="text-danger">Momotaz</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias recusandae quia accusantium aliquid eligendi aut laborum quidem, voluptas rerum facilis ex, placeat expedita eaque. Blanditiis repellat laborum eius esse id.
+              </p>:null}
+              {checkData=='Protik'? <p className="text-light">
+                
+                <span className="text-danger">Protik</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias recusandae quia accusantium aliquid eligendi aut laborum quidem, voluptas rerum facilis ex, placeat expedita eaque. Blanditiis repellat laborum eius esse id.
+              </p>:null}
+
+              {checkData=='James'? <p className="text-light">
+                
+                <span className="text-danger">James</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias recusandae quia accusantium aliquid eligendi aut laborum quidem, voluptas rerum facilis ex, placeat expedita eaque. Blanditiis repellat laborum eius esse id.
+              </p>:null}
+               
               </div>
             </div>
 
