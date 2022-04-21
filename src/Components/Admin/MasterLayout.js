@@ -1,15 +1,15 @@
 import React from "react";
-import {Switch, Route, Redirect} from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import routes from "./AdminRoute";
-
-
+import './assets/css/styles.css';
 import Navbar from "./Header/Navbar";
-import Footer from "./Header/Footer";
 import Sidebar from "./Header/Sidebar";
 
 
-import './assets/css/styles.css'
+
+
 //import './assets/js/scripts.js'
+
 
 
 
