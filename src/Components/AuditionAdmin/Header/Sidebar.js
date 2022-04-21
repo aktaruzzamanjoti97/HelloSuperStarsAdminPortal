@@ -84,6 +84,12 @@ return (
                     </div>
                     Request For Approval
                     </Link>
+                    <Link className="nav-link" to="/audition-admin/audition/live-audition">
+                    <div className="sb-nav-link-icon">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    Live Audition
+                    </Link>
 
                     <Link className="nav-link" to="/audition-admin/audition/round">
                     <div className="sb-nav-link-icon">

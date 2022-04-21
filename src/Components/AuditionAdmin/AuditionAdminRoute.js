@@ -28,6 +28,7 @@ import CreateEventAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasbo
 import CreateCertificate from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CreateCertificate";
 import RequestCertificate from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/RequestCertificate";
 import RegisterUserListAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Register/RegisterUserListAudition";
+import LiveAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/LiveAudition/LiveAudition";
 
 
 
@@ -67,6 +68,7 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/event/request-approve-view', exact: true, name: 'pending', component: AdminRequestForApproval },
     { path: '/audition-admin/audition/round', exact: true, name: 'participant-list', component: AuditionRounds},
 
+    { path: '/audition-admin/audition/live-audition', exact: true, name: 'live-audition', component: LiveAudition },
 
     { path: '/audition-admin/audition/event/create-event', exact: true, name: 'create-event', component: CreateEventAudition },
     

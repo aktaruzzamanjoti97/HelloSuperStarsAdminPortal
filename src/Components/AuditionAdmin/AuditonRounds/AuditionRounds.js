@@ -1,11 +1,14 @@
 import React from "react";
 import { Tab, Nav } from "react-bootstrap";
+import AuditionRoundDecision from "../Home/Pages/AuditionRoundDecision/AuditionRoundDecision";
 import AuditionAssignJury from "./AuditionAssignJury/AuditionAssignJury";
 import "./AuditionRounds.css";
 import AuditonStarStatus from "./AuditionStarStatus/AuditonStarStatus";
 import AuditonPending from "./AuditonPending/AuditonPending";
 import VideoRound from "./VideoRound/VideoRound";
+
 const AuditionRounds = () => {
+  const [data,setData]=React.useState(0);
   return (
     <div>
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
@@ -73,11 +76,13 @@ const AuditionRounds = () => {
             <Tab.Content>
               <Tab.Pane eventKey="first">
                 {/*--------- page no 448--------- */}
+                {data===1?<VideoRound data={data} setData={setData} />:null}
                 {/* <VideoRound />  */}
                 {/*------------ page no 448--------- */}
 
                 {/*--------- page no 451----------*/}
                 {/* <AuditionAssignJury /> */}
+                {data===2?<AuditionAssignJury data={data} setData={setData} />:null}
                 {/*---------- page no 451 -----------*/}
 
                 {/*--------- page no 452----------*/}
@@ -85,7 +90,10 @@ const AuditionRounds = () => {
                 {/*---------- page no 452 -----------*/}
 
                 {/*--------- page no 557----------*/}
-                <AuditonStarStatus />
+                {data===0? <AuditonStarStatus data={data} setData={setData} />:null}
+
+                {data === 3 ? <AuditionRoundDecision data={data} setData={setData}  /> : null}
+               
                 {/*---------- page no 557 -----------*/}
               </Tab.Pane>
               <Tab.Pane eventKey="second">

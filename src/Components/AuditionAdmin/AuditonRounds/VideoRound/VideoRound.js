@@ -15,7 +15,8 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   <FaArrowRight {...props} />
 );
 // page-no-448
-function VideoRound() {
+function VideoRound(props) {
+const {data,setData}=props;
   var settings = {
     dots: true,
     infinite: true,
@@ -245,7 +246,7 @@ function VideoRound() {
           <div className="col-md-4">
             <div>
               <button className="btn roundBtn px-4 py-2">Filter</button>
-              <button className="btn bg-light text-primary px-4 py-2 mx-4">Next</button>
+              <button className="btn bg-light text-primary px-4 py-2 mx-4"onClick={()=>setData(2)}>Next</button>
             </div>
           </div>
         </div>

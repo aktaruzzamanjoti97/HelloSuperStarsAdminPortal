@@ -14,7 +14,10 @@ const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     <FaArrowRight {...props} />
   );
-const AuditionAssignJury = () => {
+const AuditionAssignJury = (props) => {
+
+  const {data, setData} = props; 
+
     var settings = {
         dots: true,
         infinite: true,
@@ -268,7 +271,7 @@ const AuditionAssignJury = () => {
       </div>
 
       <div className='text-center'>
-        <button className='btn btn-primary'>Auto Assign</button>
+        <button className='btn btn-primary' onClick={() => setData(3)}>Auto Assign</button>
         <button className='btn btn-warning mx-2'>Apply for jury</button>
       </div>
         </section>
