@@ -1,24 +1,27 @@
 
 import AdminAudition2 from "./AdminAudition2";
-import AdminRoundTwoAppeal from "./AdminRoundTwoAppeal/AdminRoundTwoAppeal";
-import AdminRoundOneAppeal from "./AdminRoundOneAppeal/AdminRoundOneAppeal";
-import AdminSelectJury from "./AdminSelectJury/AdminSelectJury";
-import dashboard from "./Dashboard/AdminMainDashboard";
+import AdminAuditionCreateEvent from "./AdminAuditionCreateEvent/AdminAuditionCreateEvent";
+import AdminAuditionLive from "./AdminAuditionLive/AdminAuditionLive";
+import AdminAuditionLiveVideoFilter from "./AdminAuditionLiveVideoFilter/AdminAuditionLiveVideoFilter";
+import AdminAuditionRoundThree from "./AdminAuditionRoundThree/AdminAuditionRoundThree";
+import AdminAuditionVideo from "./AdminAuditionVideo/AdminAuditionVideo";
 import AdminAuditionVideoShow from "./AdminAuditionVideoShow/AdminAuditionVideoShow";
 import AdminAuditionVideoShow2 from "./AdminAuditionVideoShow/AdminAuditionVideoShow2";
-import AdminAuditionVideo from "./AdminAuditionVideo/AdminAuditionVideo";
-import AdminAuditionLive from "./AdminAuditionLive/AdminAuditionLive";
-import PendingAudition from "./PendingAudition/PendingAudition";
-import AdminAuditionCreateEvent from "./AdminAuditionCreateEvent/AdminAuditionCreateEvent";
-import AdminAuditionLiveVideoFilter from "./AdminAuditionLiveVideoFilter/AdminAuditionLiveVideoFilter";
-import GrandFinish from "./Dashboard/Content/Finish/GrandFinish";
-import AuditionsStatus from "./AuditionStatus/AuditionsStatus";
-import ParticipantList from "./ParticipantList/ParticipantList";
-import AuditionSelectionRound from "./AuditionSelectionRound/AuditionSelectionRound";
+import AdminRoundOneAppeal from "./AdminRoundOneAppeal/AdminRoundOneAppeal";
+import AdminRoundTwoAppeal from "./AdminRoundTwoAppeal/AdminRoundTwoAppeal";
+import AdminSelectJury from "./AdminSelectJury/AdminSelectJury";
 import AuditionAssignedStar from "./AuditionAssignedStar/AuditionAssignedStar";
-import AdminAuditionRoundThree from "./AdminAuditionRoundThree/AdminAuditionRoundThree";
 import AuditionFinalResult from "./AuditionFinalResult/AuditionFinalResult";
+import AuditionJuryResultForNextRound from "./AuditionJuryResultForNextRound/AuditionJuryResultForNextRound";
+import AuditionSelectionRound from "./AuditionSelectionRound/AuditionSelectionRound";
+import AuditionsStatus from "./AuditionStatus/AuditionsStatus";
 import AuditionRounds from "./AuditonRounds/AuditionRounds";
+import CreateEventRound from "./CreateEventRound/CreateEventRound";
+import dashboard from "./Dashboard/AdminMainDashboard";
+import GrandFinish from "./Dashboard/Content/Finish/GrandFinish";
+import JuryRoundResult from "./JuryRoundResult/JuryRoundResult";
+import ParticipantList from "./ParticipantList/ParticipantList";
+import PendingAudition from "./PendingAudition/PendingAudition";
 
 
 
@@ -45,12 +48,11 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/assigned-star', exact: true, name: 'participant-list', component: AuditionAssignedStar},
     { path: '/audition-admin/audition/round-result', exact: true, name: 'participant-list', component: AdminAuditionRoundThree},
     { path: '/audition-admin/audition/final-result', exact: true, name: 'participant-list', component: AuditionFinalResult},
-
+    { path: '/audition-admin/audition/final-result', exact: true, name: 'participant-list', component: AuditionFinalResult},
     { path: '/audition-admin/audition/audition-round', exact: true, name: 'participant-list', component: AuditionRounds},
-
-
-    //@TODO: Superstar Route
-    
+    { path: '/audition-admin/audition/create-event-round', exact: true, name: 'participant-list', component: CreateEventRound},
+    { path: '/audition-admin/audition/jury-round-result', exact: true, name: 'participant-list', component: JuryRoundResult},
+    { path: '/audition-admin/audition/jury-next-round-selection', exact: true, name: 'participant-list', component: AuditionJuryResultForNextRound}    
 
 ];
 
