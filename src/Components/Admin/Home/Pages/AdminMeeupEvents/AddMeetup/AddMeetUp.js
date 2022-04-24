@@ -20,6 +20,7 @@ const AddMeetUp = () => {
     const history = useHistory();
     const [starList, setStarList] = useState([]);
     const [imagedata, setImagedata] = useState("");
+    const [videodata, setVideodata] = useState("");
     const [file, setFile] = useState("");
     const [modalShow, setModalShow] = useState("");
 
@@ -44,6 +45,10 @@ const AddMeetUp = () => {
     const handleImageChange = (file) => {
         setFile(URL.createObjectURL(file[0]));
         setImagedata(file[0]);
+      };
+      const handleVideoChange = (file) => {
+          console.log(file[0]);
+        setVideodata(file[0]);
       };
 
     // Editor Funtionalities //
@@ -101,6 +106,7 @@ const AddMeetUp = () => {
         const fData = new FormData();
     
         fData.append("banner", imagedata);
+        fData.append("video", videodata);
         fData.append("title", meetupInput.event_name);
         fData.append("event_link", meetupInput.event_link);
         fData.append("meetup_type", activity);
@@ -339,8 +345,8 @@ const AddMeetUp = () => {
                                                 <p><big>Upload Video</big></p>
                                             </div>
                                             <div className="col-md-10">
-                                                <input type="file" name="file" id="file" className="inputfile" />
-                                                <label for="file"><i class="fas fa-cloud-upload-alt"></i> Upload</label>
+                                                {/* <label for="video"><i class="fas fa-cloud-upload-alt"></i></label> */}
+                                            <input type="file" className="btn" onChange={(e) => handleVideoChange(e.target.files)} id="video" name="video"/>
                                             </div>
                                         </div>
                                     </>
