@@ -15,8 +15,12 @@ import silver from "../../../../../assets/images/AuditionAdmin/silverGift.png";
 import iconStar from "../../../../../assets/images/AuditionAdmin/starIcon.png";
 import decline from "../../../../../assets/images/declined.png";
 import sign from "../../../../../assets/images/sign.png";
+import action from "../../../../../assets/images/AuditionAdmin/action.png";
 
-function AuditionRoundDecision({data,setData}) {
+import avatarImg from "../../../../../assets/images/AuditionAdmin/tableImage.png";
+import { Table } from "react-bootstrap";
+
+function AuditionRoundDecision2({ data, setData }) {
   return (
     <div>
       <div className="my-4">
@@ -29,7 +33,7 @@ function AuditionRoundDecision({data,setData}) {
 
       <div className="d-flex justify-content-between p-3 beginnerRoundTitle">
         <h3 className="text-light">
-          Guitar for the beginners - Round 1 - Final Jury Result
+          Guitar for the beginners - Round 3 - Final Jury Result
         </h3>
 
         <button type="button">
@@ -57,7 +61,7 @@ function AuditionRoundDecision({data,setData}) {
                     <i className="fa-solid fa-video text-warning iconJuryText"></i>
                   </button>
 
-                  <span onClick={() => setData()} className="mx-3">
+                  <span className="mx-3">
                     <span>Total Videos</span>
                     <h5>
                       <big className="text-warning">200</big>
@@ -219,11 +223,24 @@ function AuditionRoundDecision({data,setData}) {
         </div>
       </div>
 
-      {/* <div className="bg-dark my-3">
-          <div className="nameBg p-2 rounded-3">
-            <h5 className="text-black p-1 mx-2">Selection for Next Round</h5>
-          </div>
+      <div className="bg-dark my-3">
+        <div className="nameBg p-2 rounded-3">
+          <h5 className="text-black p-1 mx-2">Selection for Next Round</h5>
+        </div>
 
+        <div className="row p-4">
+          <div className="col-md-8">
+            <input
+              type="text"
+              className="my-2 form-control input-gray border border-warning"
+            />
+          </div>
+          <div className="col-md-4">
+            <button className="btn nameBg my-2 fw-bold">Apply</button>
+          </div>
+        </div>
+
+        <div className="bg-dark my-3">
           <div className="row p-4">
             <div className="col-md-8">
               <input
@@ -232,41 +249,244 @@ function AuditionRoundDecision({data,setData}) {
               />
             </div>
             <div className="col-md-4">
-              <button className="btn nameBg my-2 fw-bold">
-                Send 
+              <button className="btn viewListBtn my-2 fw-bold">
+                View List <img src={singleDownArrow} alt="" />{" "}
               </button>
             </div>
           </div>
 
-        </div> */}
-
-        <div className="bg-dark my-3">
-          <div className="nameBg p-2 rounded-3">
-            <h5 className="text-black p-1 mx-2">Rejected</h5>
-          </div>
-
           <div className="row p-4">
+            <Table striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th className="text-primary">Photo</th>
+                  <th className="text-primary"> Name</th>
+                  <th className="text-primary">Mobile</th>
+                  <th className="text-primary">Email</th>
+                  <th className="text-primary">Mart</th>
+                  <th className="text-primary">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <img
+                      className="photoImgStyle img-fluid"
+                      src={avatarImg}
+                      alt=""
+                    />
+                  </td>
+                  <td>Akhil Hossain</td>
+                  <td>01635431430</td>
+                  <td>joti@gmail.com</td>
+                  <td>86</td>
+                  <td>
+                    <button>
+                      <img src={action} alt="" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
+          </div>
+          {/* <div className="row p-4">
+            <div className="row ">
+              <div className="col-md-8">
+                <input
+                  type="text"
+                  className="my-2 form-control input-gray border border-warning"
+                />
+              </div>
+              <div className="col-md-4">
+                <button className="btn nameBg my-2 fw-bold">View List</button>
+              </div>
+            </div>
+            <p className="text-light">Message for the selected User</p>
             <div className="col-md-12">
-
-              {/* joti will modify here  */}
+             
               <input
                 type="text"
                 className="my-2 form-control input-gray border border-warning"
               />
-                  {/* joti will modify here  */}
+ 
             </div>
-          </div>
+          </div> */}
 
-          
           <center>
-              <button onClick={() => setData(4)} className="btn nameBg my-2 px-5 mb-2 fw-bold">
-                Send
-              </button>
-            </center>
-
+            <button
+              //   onClick={() => setData(4)}
+              onClick={() => setData(6)}
+              className="btn nameBg my-2 px-5 mb-2 fw-bold"
+            >
+              Send
+            </button>
+          </center>
         </div>
+      </div>
     </div>
   );
 }
 
-export default AuditionRoundDecision;
+export default AuditionRoundDecision2;

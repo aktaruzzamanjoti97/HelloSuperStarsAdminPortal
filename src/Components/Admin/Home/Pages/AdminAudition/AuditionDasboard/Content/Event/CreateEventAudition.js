@@ -5,6 +5,7 @@ import { Editor } from "react-draft-wysiwyg";
 import { EditorState } from "draft-js";
 import { convertToHTML } from "draft-convert";
 import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const CreateEventAudition = () => {
 const [file, setFile] = useState("");
@@ -154,7 +155,7 @@ return (
             </div>
 
             <div className="row justify-content-end mb-4">
-              <div className="col-md-3 text-left"><button className="btn btn-warning mx-4">Confirm</button></div>
+              <div className="col-md-3 text-left"><Link to='/audition-admin/audition/event/pending'><button className="btn btn-warning mx-4">Confirm</button></Link></div>
             </div>
             
           </div>

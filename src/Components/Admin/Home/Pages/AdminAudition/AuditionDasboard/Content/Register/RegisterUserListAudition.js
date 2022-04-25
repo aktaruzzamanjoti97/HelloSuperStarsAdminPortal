@@ -52,8 +52,9 @@ function RegisterUserListAudition() {
       </div>
       <div className="">
         <div className=" row p-2">
+          
           <div className="p-3 col-md-3">
-            <div className="card bg-dark completedMeetupBlack BlueBorder">
+            <div className="card bg-dark completedMeetupBlack GoldBorder">
               <img
                 src={EnterImage}
                 className="img-fluid p-2 ImgBlue"
@@ -67,14 +68,14 @@ function RegisterUserListAudition() {
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been.{" "}
                   </p>
-                  <button className="btn BlueBtn w-100">Done</button>
+                  <Link to='/audition-admin/audition/register-user-list'><button className="btn btn-warning PTBDn px-5 py-2 mt-4">Action</button></Link>
                 </center>
               </div>
             </div>
           </div>
 
           <div className="p-3 col-md-3">
-            <div className="card bg-dark completedMeetupBlack BlueBorder">
+            <div className="card bg-dark completedMeetupBlack GoldBorder">
               <img
                 src={EnterImage}
                 className="img-fluid p-2 ImgBlue"
@@ -88,14 +89,14 @@ function RegisterUserListAudition() {
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been.{" "}
                   </p>
-                  <button className="btn BlueBtn w-100">Done</button>
+                  <Link to='/audition-admin/audition/register-user-list'><button className="btn btn-warning PTBDn px-5 py-2 mt-4">Action</button></Link>
                 </center>
               </div>
             </div>
           </div>
 
           <div className="p-3 col-md-3">
-            <div className="card bg-dark completedMeetupBlack BlueBorder">
+            <div className="card bg-dark completedMeetupBlack GoldBorder">
               <img
                 src={EnterImage}
                 className="img-fluid p-2 ImgBlue"
@@ -109,214 +110,15 @@ function RegisterUserListAudition() {
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been.{" "}
                   </p>
-                  <button className="btn BlueBtn w-100">Done</button>
+                  <Link to='/audition-admin/audition/register-user-list'><button className="btn btn-warning PTBDn px-5 py-2 mt-4">Action</button></Link>
                 </center>
               </div>
             </div>
           </div>
         </div>
 
-   
-        <div className="row p-4">
-            <Table striped bordered hover variant="dark">
-              <thead>
-                <tr>
-                  <th className="text-primary">Photo</th>
-                  <th className="text-primary"> Name</th>
-                  <th className="text-primary">Mobile</th>
-                  <th className="text-primary">Email</th>
-                  <th className="text-primary">Status</th>
-                  <th className="text-primary">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='activeTd'>active</span> </td>
-                 
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='activeTd'>active</span> </td>
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className="inactiveTd">inactive</span> </td>
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>Joti@gmail.com</td>
-                  <td> <span className="inactiveTd">inactive</span> </td>
-           
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='activeTd'>active</span> </td>
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='activeTd'>active</span> </td>
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='activeTd'>active</span> </td>
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='activeTd'>active</span> </td>
-                  
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='inactiveTd'>inactive</span> </td>
-                 
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <img
-                      className="photoImgStyle img-fluid"
-                      src={avatarImg}
-                      alt=""
-                    />
-                  </td>
-                  <td>Akhil Hossain</td>
-                  <td>01635431430</td>
-                  <td>joti@gmail.com</td>
-                  <td> <span className='inactiveTd'>inactive</span> </td>
-                  <td>
-                    <button>
-                      <img src={action} alt="" />
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-          </div>
+        
+        
       </div>
     </>
   );

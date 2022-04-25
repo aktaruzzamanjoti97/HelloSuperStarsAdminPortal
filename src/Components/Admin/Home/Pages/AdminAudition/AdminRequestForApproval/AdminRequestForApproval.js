@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import ReactPlayer from "react-player";
+import { Link } from "react-router-dom";
 import pendingBanner from "../../../../../../assets/images/pendingBannerAudio.png";
 import demo from "../../../../../../assets/images/pendingIcons/demo.png";
 import finish from "../../../../../../assets/images/pendingIcons/finish.png";
@@ -443,14 +444,18 @@ const AdminRequestForApproval = () => {
                 </div>
               </div>
 
-              <div className="d-flex justify-content-end my-5">
+              <center>
+              <Link to='/audition-admin/audition/register-user'> <button className="btn btn-warning px-5 py-2 mt-4">Approval Request for Manager Admin</button></Link>
+              </center>
+
+              {/* <div className="d-flex justify-content-end my-5">
                 <button className="text-primary btnAdPending rounded-3 p-2 mx-4">
                   Pending
                 </button>
                 <button className="text-light btnApproved p-2 rounded-3 mx-4">
                   Approved
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

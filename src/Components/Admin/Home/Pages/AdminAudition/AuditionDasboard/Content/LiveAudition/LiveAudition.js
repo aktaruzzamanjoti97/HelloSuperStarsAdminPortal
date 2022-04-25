@@ -63,13 +63,13 @@ const LiveAudition = () => {
           
                               
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
@@ -77,13 +77,13 @@ const LiveAudition = () => {
                               </div>
           
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
@@ -91,13 +91,13 @@ const LiveAudition = () => {
                               </div>
           
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
@@ -105,13 +105,13 @@ const LiveAudition = () => {
                               </div>
           
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
@@ -119,52 +119,52 @@ const LiveAudition = () => {
                               </div>
           
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
                                   </div>
                               </div>
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
                                   </div>
                               </div>
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           
                                   </div>
                               </div>
                               <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
+                                  <div className="card bg-dark completedMeetupBlack GoldBorder">
                                       <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
                                       <div className="p-3">
                                           <center>
                                                   <h5 className="text-white text-center">Guitar Competition</h5>
                                                   <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <Link to='/audition-admin/audition/round'><button className='btn BlueBtn w-100'>Action</button></Link>
+                                                  <Link to='/audition-admin/audition/round'><button className='btn PTBDn w-100'>Action for Round</button></Link>
                                           </center>
                                       </div>
           

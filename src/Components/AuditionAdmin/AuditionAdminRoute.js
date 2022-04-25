@@ -29,6 +29,7 @@ import CreateCertificate from "../Admin/Home/Pages/AdminAudition/AuditionDasboar
 import RequestCertificate from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/RequestCertificate";
 import RegisterUserListAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Register/RegisterUserListAudition";
 import LiveAudition from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/LiveAudition/LiveAudition";
+import RegisterAuditonList from "../Admin/Home/Pages/AdminAudition/AuditionDasboard/Content/Register/RegisterAuditonList";
 
 
 
@@ -59,6 +60,7 @@ const AuditionAdminRoute = [
     
 
 
+    
 
     { path: '/audition-admin/audition/dashboard', exact: true, name: 'dashboard', component: DashboardAudition },
 
@@ -75,7 +77,7 @@ const AuditionAdminRoute = [
     { path: '/audition-admin/audition/certificate-create', exact: true, name: 'certificate-create', component: CreateCertificate },
     { path: '/audition-admin/audition/certificate-request', exact: true, name: 'certificate-request', component: RequestCertificate },
     { path: '/audition-admin/audition/register-user', exact: true, name: 'certificate-request', component: RegisterUserListAudition },
-    { path: '/audition-admin/audition/register-user-list', exact: true, name: 'certificate-request', component: RegisterUserListAudition },
+    { path: '/audition-admin/audition/register-user-list', exact: true, name: 'certificate-request', component: RegisterAuditonList },
 
     //@TODO: audition Route
     

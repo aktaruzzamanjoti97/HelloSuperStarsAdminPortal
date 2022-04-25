@@ -15,7 +15,7 @@ import decline from "../../../assets/images/declined.png";
 import sign from "../../../assets/images/sign.png";
 import "./AdminAuditionRoundThree.css";
 
-const AdminAuditionRoundThree = () => {
+const AdminAuditionRoundThree = ({data, setData}) => {
   const [value, setValue] = React.useState(new Date());
 
   const handleChange = (newValue: Date | null) => {
@@ -83,7 +83,7 @@ const AdminAuditionRoundThree = () => {
 
       <div className="d-flex justify-content-between p-3 beginnerRoundTitle">
         <h3 className="text-light">
-          Guitar for the beginners - Round 3 - Final Jury Result
+          Guitar for the beginners - Round 1 - Final Jury Result
         </h3>
 
         <button type="button">
@@ -111,7 +111,7 @@ const AdminAuditionRoundThree = () => {
                     <i className="fa-solid fa-video text-warning iconJuryText"></i>
                   </button>
 
-                  <span className="mx-3">
+                  <span onClick={() => setData()} className="mx-3">
                     <span>Total Videos</span>
                     <h5>
                       <big className="text-warning">200</big>
