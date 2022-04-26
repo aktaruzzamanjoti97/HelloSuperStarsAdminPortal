@@ -45,7 +45,9 @@ const AdminAuditionNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <NavLink to='/audition-admin/audition/live'>
+                        <NavLink to='/audition-admin/audition/live'   style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Live Audition
@@ -68,7 +70,9 @@ const AdminAuditionNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <NavLink to='/audition-admin/audition/pending'>
+                        <NavLink to='/audition-admin/audition/pending'style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Pending Audition
