@@ -48,6 +48,7 @@ const AdminAuditionNav = () => {
                         <NavLink to='/audition-admin/audition/live'   style={isActive => ({
     backgroundColor: isActive ? "gold" : ""
   })}>
+
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Live Audition
