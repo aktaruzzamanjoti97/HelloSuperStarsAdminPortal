@@ -182,7 +182,7 @@ const AuditionAssignJury = (props) => {
                     <p className="text-muted text-center">Specialist</p>
                   </div>
                   <div className="text-center mb-2">
-                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-primary">25 videos</button>
                     <button className="btn btn-warning mx-2">Done</button>
                   </div>
                 </div>

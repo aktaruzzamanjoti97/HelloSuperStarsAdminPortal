@@ -26,3 +26,31 @@
   background-color: #62ffe9 !important;
   width: 200px !important;
 }
+
+.juryFeaturedBlack {
+  background-color: #000000 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.panelItemColor {
+  background-color: #383838 !important;
+}
+
+.pendingStat {
+  background-color: #151515;
+  padding: 5px;
+  color: #62ffe9;
+  border-radius: 10px;
+}
+
+.approveStat {
+  background-color: #62ffe9;
+  border-radius: 10px;
+  color: black;
+  padding: 5px;
+}
+
+.endBackColor {
+  background: #ffd91080 !important;
+}

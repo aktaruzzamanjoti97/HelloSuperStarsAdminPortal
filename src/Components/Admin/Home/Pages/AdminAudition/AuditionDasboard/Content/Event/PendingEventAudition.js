@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import EnterImage from '../../../../../../../../assets/images/actionBlue.png'
 import EventsNav from './EventsNav';
+import './PendingEventAudition.css'
+
 const PendingEventAudition = () => {
   const [meetupEvents, setMeetupEvents] = useState([]);
 
@@ -51,7 +53,7 @@ const PendingEventAudition = () => {
                 <div className="liveMeetupBorder my-5">
                     <div className="d-flex px-4 pt-3">
                         <div className="faTrophy"> <img src={cup} alt="" /></div>
-                        <h4 className="mx-3 text-white p-2">Pending Event</h4>
+                        <h4 className="mx-3 text-white pendingEventText p-2">Pending Event</h4>
                     </div>
 
                     <div className="pb-3">
