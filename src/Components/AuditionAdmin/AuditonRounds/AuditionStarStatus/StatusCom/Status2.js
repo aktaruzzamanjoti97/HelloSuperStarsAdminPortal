@@ -223,8 +223,8 @@ const Status2 = (props) => {
                   </div>
                 </div>
 
-                <div>
-                  <button className="btn btn-secondary text-light">30</button>
+                <div className=" d-flex justify-content-end">
+                  <input className="form-control bg-warning  w-25 text-light" placeholder="30"/>
                 </div>
               </div>
             </div>
@@ -248,8 +248,8 @@ const Status2 = (props) => {
                   </div>
                 </div>
 
-                <div>
-                  <button className="btn btn-secondary text-light">30</button>
+                <div className=" d-flex justify-content-end">
+                  <input className="form-control bg-warning  w-25 text-light" placeholder="30"/>
                 </div>
               </div>
             </div>
@@ -273,8 +273,8 @@ const Status2 = (props) => {
                   </div>
                 </div>
 
-                <div>
-                  <button className="btn btn-secondary text-light">30</button>
+                <div className=" d-flex justify-content-end">
+                  <input className="form-control bg-warning  w-25 text-light" placeholder="30"/>
                 </div>
               </div>
             </div>
@@ -282,7 +282,7 @@ const Status2 = (props) => {
 
 
           <section>
-              <button className='w-100 btn btn-warning' onClick={()=>setData(1)} >Approval Request for manager Admin</button>
+              <button className='w-100 btn btn-warning fw-bold' onClick={()=>setData(1)} >Approval Request for manager Admin</button>
           </section>
         </div>
       </div>
