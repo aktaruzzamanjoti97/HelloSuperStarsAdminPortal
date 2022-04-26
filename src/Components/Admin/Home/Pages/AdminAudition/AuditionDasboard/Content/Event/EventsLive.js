@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import EnterImage from '../../../../../../../../assets/images/unsplash_hUHzaiAHuUc.png'
 import EventsNav from './EventsNav';
+import ReactPlayer from 'react-player';
 const EventsLive = () => {
   const [meetupEvents, setMeetupEvents] = useState([]);
 
@@ -75,7 +76,8 @@ const EventsLive = () => {
 
                     <div className="p-3">
                         <div className="card bg-dark completedMeetupBlack BlueBorder">
-                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
+                            {/* <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} /> */}
+                            <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' className="img-fluid p-2 ImgBlue" height={200} />
                             <div className="p-3">
                                 <center>
                                         <h5 className="text-white text-center">Guitar Competition</h5>
