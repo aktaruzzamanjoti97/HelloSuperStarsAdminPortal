@@ -77,7 +77,7 @@ const AuditionRounds = () => {
             </div>
           </Nav>
 
-          <div>
+          <div className="my-4">
             <Tab.Content>
               <Tab.Pane eventKey="first">
                 {/* if Round is empty then this two component available */}

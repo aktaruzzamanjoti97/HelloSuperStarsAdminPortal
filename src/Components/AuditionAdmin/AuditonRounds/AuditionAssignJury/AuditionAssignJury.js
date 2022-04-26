@@ -211,8 +211,8 @@ const AuditionAssignJury = (props) => {
                     <p className="text-muted text-center">Specialist</p>
                   </div>
                   <div className="text-center mb-2">
-                    <button className="btn btn-secondary">25 videos</button>
-                    <button className="btn btn-warning mx-2">Done</button>
+                    <button className="btn btn-primary">25 videos</button>
+                    <button className="btn btn-primary mx-2">Done</button>
                   </div>
                 </div>
               </div>
@@ -240,7 +240,7 @@ const AuditionAssignJury = (props) => {
                     <p className="text-muted text-center">Specialist</p>
                   </div>
                   <div className="text-center mb-2">
-                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-primary">25 videos</button>
                     <button className="btn btn-warning mx-2">Done</button>
                   </div>
                 </div>
@@ -262,8 +262,8 @@ const AuditionAssignJury = (props) => {
                     <p className="text-muted text-center">Specialist</p>
                   </div>
                   <div className="text-center mb-2">
-                    <button className="btn btn-secondary">25 videos</button>
-                    <button className="btn btn-warning mx-2">Done</button>
+                    <button className="btn btn-primary">25 videos</button>
+                    <button className="btn btn-primary mx-2">Done</button>
                   </div>
                 </div>
               </div>
@@ -317,10 +317,10 @@ const AuditionAssignJury = (props) => {
       </div>
 
       <div className="text-center">
-        <button className="btn btn-primary" onClick={() => setData(3)}>
+        <button className="btn btn-warning px-5 py-2" onClick={() => setData(3)}>
           Auto Assign
         </button>
-        <button className="btn btn-warning mx-2">Apply for jury</button>
+        <button className="btn btn-light text-primary px-5 py-2 mx-2">Apply for jury</button>
       </div>
     </section>
   );

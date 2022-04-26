@@ -45,7 +45,7 @@ const AdminAuditionNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <NavLink to='/audition-admin/audition/live'>
+                        <NavLink to='/audition-admin/audition/live' >
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Live Audition
