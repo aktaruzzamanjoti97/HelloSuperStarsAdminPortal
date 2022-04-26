@@ -1,16 +1,21 @@
-import React from "react";
-import momotaz from "../../../../../assets/images/Rounds/momotaz.png";
-import james from "../../../../../assets/images/Rounds/james.png";
-import singer from "../../../../../assets/images/Rounds/singer.png";
-import star from "../../../../../assets/images/Rounds/Star.png";
-import topBanner from "../../../../../assets/images/Rounds/statusTopBanner.png";
-import topvideoBanner from "../../../../../assets/images/Rounds/unsplash_IeTLKtzbLNo.png";
-import icon1 from "../../../../../assets/images/Rounds/icons/Group 975.png";
+import React, { useState } from "react";
 import icon2 from "../../../../../assets/images/Rounds/icons/finish 1.png";
 import icon3 from "../../../../../assets/images/Rounds/icons/flag 1.png";
+import icon1 from "../../../../../assets/images/Rounds/icons/Group 975.png";
+import james from "../../../../../assets/images/Rounds/james.png";
+import momotaz from "../../../../../assets/images/Rounds/momotaz.png";
+import singer from "../../../../../assets/images/Rounds/singer.png";
+import topBanner from "../../../../../assets/images/Rounds/statusTopBanner.png";
 
 const Status2 = (props) => {
-  const {data,setData}=props;
+  const { data, setData } = props;
+
+  const [fileImg, setFileImg] = useState("");
+
+  const handleVideoChange = (file) => {
+    setFileImg(URL.createObjectURL(file[0]));
+  };
+
   return (
     <div className="container my-3">
       <div style={{ border: "2px solid gold", borderRadius: "10px" }}>
@@ -74,14 +79,34 @@ const Status2 = (props) => {
           </section>
 
           <section
-            className=" my-3 container star-cardColor d-flex justify-content-between flex-wrap p-2"
+            className=" my-3 container star-cardColor d-flex justify-content-between p-2"
             style={{ borderRadius: "3px" }}
           >
             <div className="d-flex align-items-center">
               <h3 className="text-light">Uploaded Video Instruction</h3>
             </div>
-            <div className="d-flex align-items-center">
-              <input type="file" placeholder="upload Video" />
+            <div className="">
+              <div className="row my-4">
+                <div className="col-md-2 text-white">
+                  <img
+                    src={fileImg}
+                    className="img-fluid avatar-img-src"
+                    alt=""
+                  />
+                </div>
+                <div className="col-md-10">
+                  <input
+                    type="file"
+                    name="file"
+                    id="setFile"
+                    className="inputfile w-25"
+                    onChange={(e) => handleVideoChange(e.target.files)}
+                  />
+                  <label for="setFile">
+                    <i class="fas fa-cloud-upload-alt"></i> Upload Video
+                  </label>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -280,9 +305,10 @@ const Status2 = (props) => {
             </div>
           </section>
 
-
           <section>
+
               <button className='w-100 btn btn-warning fw-bold' onClick={()=>setData(1)} >Approval Request for manager Admin</button>
+
           </section>
         </div>
       </div>
