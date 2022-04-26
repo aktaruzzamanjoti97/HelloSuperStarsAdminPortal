@@ -46,138 +46,151 @@ function DashboardAudition() {
     <>
 
     <div className="AS">
-                
-                
-    <AuditionDashNav/>
-          
-                          <div className="liveMeetupBorder my-5">
-                              <div className="d-flex px-4 pt-3">
-                                  <div className="faTrophy"> <img src={cup} alt="" /></div>
-                                  <h4 className="mx-3 text-white p-2">Completed Auditions</h4>
-                              </div>
-          
-                              <div className="pb-3">
-                              <div className="slick-parent d-flex justify-content-center">
-                          <Slider className="slider-width" {...settings}>
-          
-                              
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-          
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-          
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-          
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-          
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-                              <div className="p-3">
-                                  <div className="card bg-dark completedMeetupBlack BlueBorder">
-                                      <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt="" style={{ height: '200px' }} />
-                                      <div className="p-3">
-                                          <center>
-                                                  <h5 className="text-white text-center">Guitar Competition</h5>
-                                                  <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been. </p>
-                                                  <button className='btn BlueBtn w-100'>Done</button>
-                                          </center>
-                                      </div>
-          
-                                  </div>
-                              </div>
-                          
-          
-                          </Slider>
-                      </div>
-                              </div>
-          
-                          </div>
-          
-                      </div>
+
+    <AuditionDashNav />
+
+    <div className="liveMeetupBorder my-5">
+        <div className="d-flex px-4 pt-3">
+            <div className="faTrophy"> <img src={cup} alt="" /></div>
+            <h4 className="mx-3 text-white p-2">Completed Auditions</h4>
+        </div>
+
+        <div className="pb-3">
+            <div className="slick-parent d-flex justify-content-center">
+                <Slider className="slider-width" {...settings}>
+
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="p-3">
+                        <div className="card bg-dark completedMeetupBlack BlueBorder">
+                            <img src={EnterImage} className="img-fluid p-2 ImgBlue" alt=""
+                                style={{ height: '200px' }} />
+                            <div className="p-3">
+                                <center>
+                                    <h5 className="text-white text-center">Guitar Competition</h5>
+                                    <p className="text-secondary">Lorem Ipsum is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has been. </p>
+                                    <button className='btn BlueBtn w-100'>Done</button>
+                                </center>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </Slider>
+            </div>
+        </div>
+
+    </div>
+
+</div>
     </>
   )
 }

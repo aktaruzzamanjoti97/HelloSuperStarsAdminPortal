@@ -32,7 +32,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <NavLink to='/audition-admin/audition/certificate-request' exact>
+                <NavLink to='/superstar-admin/audition/certificate-request' exact>
                 <button activeClassName='active' className="card-footer Souvenir-button AudioSA w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Request for Certificate
                 </button>
@@ -57,7 +57,7 @@ return (
                     </center>
                 </div>
                 
-                <NavLink to='/audition-admin/audition/certificate-create'>
+                <NavLink to='/superstar-admin/audition/certificate-create'>
                 <button className="card-footer Souvenir-button AudioSAA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Create Certificate
                 </button>

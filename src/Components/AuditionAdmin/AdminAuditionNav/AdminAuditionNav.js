@@ -1,5 +1,5 @@
 import React, { useState, useEffect }from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Live from '../../../assets/images/instagram-live 1.png';
 import Pending from '../../../assets/images/pending 2.png';
 import Add from '../../../assets/images/UpcomingEvent/add 1.png';
@@ -45,12 +45,12 @@ const AdminAuditionNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/audition-admin/audition/live'>
+                        <NavLink to='/audition-admin/audition/live'>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Live Audition
                             </button>
-                        </Link>
+                        </NavLink>
                     </div>
                 </div><br />
 
@@ -68,11 +68,11 @@ const AdminAuditionNav = () => {
                                 </tr>
                             </center>
                         </div>
-                        <Link to='/audition-admin/audition/pending'>
+                        <NavLink to='/audition-admin/audition/pending'>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne"> Pending Audition
-                            </button></Link>
+                            </button></NavLink>
                     </div>
                 </div>
             </div>

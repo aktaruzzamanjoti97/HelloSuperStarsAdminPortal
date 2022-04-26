@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Live from '../../../../../../assets/images/instagram-live 1.png';
-import Pending from '../../../../../../assets/images/pending 2.png';
-import RequestPng from '../../../../../../assets/images/Request.png';
+import Live from '../../../../../../../../assets/images/instagram-live 1.png';
+import Pending from '../../../../../../../../assets/images/pending 2.png';
+import RequestPng from '../../../../../../../../assets/images/Request.png';
 
-const AuditionDashNav = () => {
+const LiveAuditionNav = () => {
 return (
 <>
     <div className=" row ">
@@ -23,7 +23,7 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to=''>
+                <Link to='/audition-admin/audition/live-audition'>
                 <button className="card-footer Souvenir-button AudioSA w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Audition
                 </button>
@@ -48,7 +48,7 @@ return (
                     </center>
                 </div>
                 
-                <Link to='/audition-admin/audition/event'>
+                <Link to='/audition-admin/audition/live-audition'>
                 <button className="card-footer Souvenir-button AudioSAA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Pending Event
                 </button>
@@ -70,12 +70,12 @@ return (
                         </tr>
                     </center>
                 </div>
-                {/*
-                <Link to='/audition-admin/audition/live'> */}
+                
+                <Link to='/audition-admin/audition/live-audition'>
                 <button className="card-footer Souvenir-button AudioSA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Request For Approval
                 </button>
-                {/* </Link> */}
+                </Link>
             </div>
         </div><br />
 
@@ -83,5 +83,4 @@ return (
 </>
 )
 }
-
-export default AuditionDashNav
+export default LiveAuditionNav

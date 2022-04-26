@@ -3,7 +3,8 @@ import "./AuditionStarStatus.css";
 import Status from "./StatusCom/Status";
 import Status2 from "./StatusCom/Status2";
 
-const AuditonStarStatus = () => {
+const AuditonStarStatus = (props) => {
+  const {data,setData}=props;
   return (
     <div classNameName="my-2">
       <div className="accordion" id="accordionExample">
@@ -57,7 +58,7 @@ const AuditonStarStatus = () => {
           >
             <div className="accordion-body bg-dark">
               
-              <Status2 />
+              <Status2 data={data} setData={setData} />
             </div>
           </div>
         </div>

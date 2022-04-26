@@ -1,55 +1,31 @@
-import React, { useState } from "react";
-import EventsNav from "./EventsNav";
-import cup from "../../../../../../../../assets/images/page 1.png";
-import { Editor } from "react-draft-wysiwyg";
-import { EditorState } from "draft-js";
-import { convertToHTML } from "draft-convert";
-import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { convertToHTML } from 'draft-convert';
+import { EditorState } from 'draft-js'
+import React, { useState } from 'react'
+import { Form } from 'react-bootstrap'
+import { Editor } from 'react-draft-wysiwyg'
 
-const CreateEventAudition = () => {
-const [file, setFile] = useState("");
-const [fileVideo, setFileVideo] = useState("");
+function LiveCreateEvent() {
 
-const [convertedContent, setConvertedContent] = useState(null);
+    const [convertedContent, setConvertedContent] = useState(null);
 
-const [editorState, setEditorState] = useState(() =>
-EditorState.createEmpty()
-);
+    const [editorState, setEditorState] = useState(() =>
+      EditorState.createEmpty()
+    );
+  
+    const handleEditorChange = (state) => {
+      setEditorState(state);
+      convertContentToHTML();
+    };
+  
+    const convertContentToHTML = () => {
+      let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
+      setConvertedContent(currentContentAsHTML);
+      //console.log(convertedContent);
+    };
 
-const handleEditorChange = (state) => {
-setEditorState(state);
-convertContentToHTML();
-};
-
-const convertContentToHTML = () => {
-let currentContentAsHTML = convertToHTML(editorState.getCurrentContent());
-setConvertedContent(currentContentAsHTML);
-//console.log(convertedContent);
-};
-
-const handleChange = (file) => {
-setFile(URL.createObjectURL(file[0]));
-};
-const handleVideoChange = (file) => {
-setFileVideo(URL.createObjectURL(file[0]));
-};
-
-return (
-<>
-  <div className="as">
-    <EventsNav />
-
-    <div className="liveMeetupBorder ">
-      <div className="d-flex px-4">
-        <div className="faTrophy">
-          {" "}
-          <img src={cup} alt="" className="mt-1" width={20} />{" "}
-          <span className="text-white p-2 fontBlued">Pending Event</span>
-        </div>
-      </div>
-
-      <div className="my-2">
+  return (
+    <div>
+            <div className="my-2">
         <form>
           <div className="row ms-5">
             <div class="form-group row mt-3">
@@ -66,7 +42,7 @@ return (
                 Description
               </label>
               <div class="col-sm-8">
-                <Editor editorState={editorState} onEditorStateChange={handleEditorChange}
+                <Editor editorState={EditorState} onEditorStateChange={handleEditorChange}
                   wrapperClassName="wrapper-class" editorClassName="editor-class" toolbarClassName="toolbar-class" />
               </div>
             </div>
@@ -155,16 +131,14 @@ return (
             </div>
 
             <div className="row justify-content-end mb-4">
-              <div className="col-md-3 text-left"><Link to='/audition-admin/audition/event/pending'><button className="btn btn-warning mx-4">Confirm</button></Link></div>
+              <div className="col-md-3 text-left"><button className="btn btn-warning mx-4">Confirm</button></div>
             </div>
             
           </div>
         </form>
       </div>
     </div>
-  </div>
-</>
-);
-};
+  )
+}
 
-export default CreateEventAudition;
+export default LiveCreateEvent

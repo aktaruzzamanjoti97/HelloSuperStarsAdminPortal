@@ -9,7 +9,8 @@ import icon1 from "../../../../../assets/images/Rounds/icons/Group 975.png";
 import icon2 from "../../../../../assets/images/Rounds/icons/finish 1.png";
 import icon3 from "../../../../../assets/images/Rounds/icons/flag 1.png";
 
-const Status2 = () => {
+const Status2 = (props) => {
+  const {data,setData}=props;
   return (
     <div className="container my-3">
       <div style={{ border: "2px solid gold", borderRadius: "10px" }}>
@@ -281,7 +282,7 @@ const Status2 = () => {
 
 
           <section>
-              <button className='w-100 btn btn-warning'>Approval Request for manager Admin</button>
+              <button className='w-100 btn btn-warning' onClick={()=>setData(1)} >Approval Request for manager Admin</button>
           </section>
         </div>
       </div>

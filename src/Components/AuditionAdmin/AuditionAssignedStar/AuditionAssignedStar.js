@@ -7,6 +7,7 @@ import Stack from "@mui/material/Stack";
 import React from "react";
 import { Button } from "react-bootstrap";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import ReactPlayer from "react-player";
 import Slider from "react-slick";
 import auditionSelectRoundBanner from "../../../assets/images/AuditionAdmin/audition537.png";
 import downArrow from "../../../assets/images/AuditionAdmin/downArrow.png";
@@ -16,9 +17,14 @@ import oni from "../../../assets/images/AuditionAdmin/oni.png";
 import rafa from "../../../assets/images/AuditionAdmin/rafa.png";
 import decline from "../../../assets/images/declined.png";
 import sign from "../../../assets/images/sign.png";
+import AuditionAssignJury from "../AuditonRounds/AuditionAssignJury/AuditionAssignJury";
 import "./AuditionAssignedStar.css";
+import person1 from "../../../assets/images/Rounds/person-1.png";
+import person2 from "../../../assets/images/Rounds/person-2.png";
+import person3 from "../../../assets/images/Rounds/person-3.png";
+import topvideoBanner from "../../../assets/images/Rounds/unsplash_IeTLKtzbLNo.png";
 
-const AuditionAssignedStar = () => {
+const AuditionAssignedStar = ({data, setData}) => {
   const [value, setValue] = React.useState(new Date());
 
   const handleChange = (newValue: Date | null) => {
@@ -33,6 +39,43 @@ const AuditionAssignedStar = () => {
   const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
     <FaArrowRight {...props} />
   );
+
+  var settings1 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    nextArrow: <SlickArrowRight />,
+    prevArrow: <SlickArrowLeft />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   var settings = {
     dots: true,
@@ -93,7 +136,7 @@ const AuditionAssignedStar = () => {
       </div>
 
       <div className="">
-        <div className="row mb-5">
+        {/* <div className="row mb-5">
           <div className="col-md-4 my-3 d-flex justify-content-center">
             <div className="bg-dark cardBox">
               <div className="px-3 d-flex justify-content-start titleBorderHeader rounded-3">
@@ -280,7 +323,282 @@ const AuditionAssignedStar = () => {
               </div>
             </div>
           </div>
+        </div> */}
+
+
+<section>
+      <div className="my-2">
+        <h5 className="text-muted">Submitted content</h5>
+        <hr
+          style={{
+            color: "white",
+            backgroundColor: "white",
+            height: 2,
+            borderColor: "white",
+          }}
+        />
+      </div>
+
+      <div className="container topBannerVideoRound my-4">
+        <img src={topvideoBanner} alt="" className="img-fluid w-100" />
+      </div>
+
+      <div className="container my-2">
+        <div className="card bg-dark">
+          <div className="card-body d-flex justify-content-between">
+            <h5 className="text-light"> Guiter for the beginners Round-1</h5>
+            <span className="text-light">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </div>
         </div>
+      </div>
+
+      <div className="container">
+        <h5 className="text-muted mt-3 mb-2">Total videos-75</h5>
+        <hr
+          style={{
+            color: "white",
+            backgroundColor: "white",
+            height: 2,
+            borderColor: "white",
+          }}
+        />
+      </div>
+      <div className="container bg-dark my-2">
+        <div className="videoRound">
+          <Slider {...settings1}>
+            <div className="d-flex justify-content-center">
+              <ReactPlayer
+                height={200}
+                width={220}
+                url="https://www.youtube.com/watch?v=qoq8B8ThgEM"
+              />
+            </div>
+            <div className=" d-flex justify-content-center">
+              <ReactPlayer
+                height={200}
+                width={220}
+                url="https://www.youtube.com/watch?v=zWEOx7TSM6I"
+              />
+            </div>
+            <div className=" d-flex justify-content-center">
+              <ReactPlayer
+                height={200}
+                width={220}
+                url="https://www.youtube.com/watch?v=x_elT6zkqN0"
+              />
+            </div>
+            <div className=" d-flex justify-content-center">
+              <ReactPlayer
+                height={200}
+                width={220}
+                url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+              />
+            </div>
+            <div className=" d-flex justify-content-center">
+              <ReactPlayer
+                height={200}
+                width={220}
+                url="https://www.youtube.com/watch?v=x_elT6zkqN0"
+              />
+            </div>
+            <div className="d-flex justify-content-center">
+              <ReactPlayer
+                height={200}
+                width={220}
+                url="https://www.youtube.com/watch?v=qoq8B8ThgEM"
+              />
+            </div>
+          </Slider>
+        </div>
+      </div>
+
+      <div className="my-4">
+        <div className="card bg-dark">
+          <div className="card-body">
+            <div className="d-flex">
+              <div className="w-75">
+                <h5 className="text-light">Assigend Jury</h5>
+              </div>
+              <div className="mx-2">
+                <input type="time" className="form-control" />
+              </div>
+              <div>
+                <input type="date" className="form-control" />
+              </div>
+            </div>
+
+            <Slider {...settings} className="my-3">
+              <div>
+                <div
+                  className="card "
+                  style={{
+                    backgroundColor: "black",
+                    border: "none",
+                    outline: "none",
+                  }}
+                >
+                  <div className="card-body">
+                    <div className="text-center d-flex justify-content-center">
+                      <img
+                        src={person1}
+                        alt=""
+                        height={150}
+                        width={150}
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <h5 className="text-muted text-center">Oni Hasan</h5>
+                    <h6 className="text-muted text-center">Music</h6>
+                    <p className="text-muted text-center">Specialist</p>
+                  </div>
+                  <div className="text-center mb-2">
+                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-warning mx-2">Done</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="card "
+                  style={{
+                    backgroundColor: "black",
+                    border: "none",
+                    outline: "none",
+                  }}
+                >
+                  <div className="card-body">
+                    <div className="text-center d-flex justify-content-center">
+                      <img
+                        src={person2}
+                        alt=""
+                        height={150}
+                        width={150}
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <h5 className="text-muted text-center">Oni Hasan</h5>
+                    <h6 className="text-muted text-center">Music</h6>
+                    <p className="text-muted text-center">Specialist</p>
+                  </div>
+                  <div className="text-center mb-2">
+                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-warning mx-2">Done</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="card "
+                  style={{
+                    backgroundColor: "black",
+                    border: "none",
+                    outline: "none",
+                  }}
+                >
+                  <div className="card-body">
+                    <div className="text-center d-flex justify-content-center">
+                      <img
+                        src={person1}
+                        alt=""
+                        height={150}
+                        width={150}
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <h5 className="text-muted text-center">Oni Hasan</h5>
+                    <h6 className="text-muted text-center">Music</h6>
+                    <p className="text-muted text-center">Specialist</p>
+                  </div>
+                  <div className="text-center mb-2">
+                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-warning mx-2">Done</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="card " style={{ backgroundColor: "black" }}>
+                  <div className="card-body">
+                    <div className="text-center d-flex justify-content-center">
+                      <img
+                        src={person3}
+                        alt=""
+                        height={150}
+                        width={150}
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <h5 className="text-muted text-center">Oni Hasan</h5>
+                    <h6 className="text-muted text-center">Music</h6>
+                    <p className="text-muted text-center">Specialist</p>
+                  </div>
+                  <div className="text-center mb-2">
+                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-warning mx-2">Done</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="card " style={{ backgroundColor: "black" }}>
+                  <div className="card-body">
+                    <div className="text-center d-flex justify-content-center">
+                      <img
+                        src={person2}
+                        alt=""
+                        height={150}
+                        width={150}
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <h5 className="text-muted text-center">Oni Hasan</h5>
+                    <h6 className="text-muted text-center">Music</h6>
+                    <p className="text-muted text-center">Specialist</p>
+                  </div>
+                  <div className="text-center mb-2">
+                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-warning mx-2">Done</button>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="card " style={{ backgroundColor: "black" }}>
+                  <div className="card-body">
+                    <div className="text-center d-flex justify-content-center ">
+                      <img
+                        src={person1}
+                        alt=""
+                        height={150}
+                        width={150}
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <h5 className="text-muted text-center">Oni Hasan</h5>
+                    <h6 className="text-muted text-center">Music</h6>
+                    <p className="text-muted text-center">Specialist</p>
+                  </div>
+                  <div className="text-center mb-2">
+                    <button className="btn btn-secondary">25 videos</button>
+                    <button className="btn btn-warning mx-2">Done</button>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
+        </div>
+      </div>
+
+      <div className="text-center">
+        <button className="btn btn-primary" onClick={() => setData(5)}>
+          Auto Assign
+        </button>
+        <button className="btn btn-warning mx-2">Apply for jury</button>
+      </div>
+    </section>
+
+
+
+        {/* <AuditionAssignJury data={data} setData={setData} /> */}
 
         <div className="bg-dark my-3">
           <div className="nameBg p-2 rounded-3">

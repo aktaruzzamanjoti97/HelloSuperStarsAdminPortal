@@ -1,0 +1,78 @@
+.AudioSA{
+    color: rgb(215, 218, 32) !important;
+}
+
+.AudioSA:hover{
+    color: rgb(0, 0, 0) !important;
+}
+
+.AudioSAA{
+    color: #62FFE9 !important;
+}
+
+.AudioSAA:hover{
+    color: #000000 !important;
+}
+
+.BlueBorder{
+    border: 1px solid #3793EF !important;
+}
+
+.GoldBorder{
+    border: 1px solid #f3d10e !important;
+}
+.BlueBtn{
+    background: linear-gradient(90deg, #22AADD 0%, #3A8FF2 100%);
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    -ms-border-radius: 30px !important;
+    -o-border-radius: 30px !important;
+}
+
+.BlueBtn:hover{
+    background: rgb(0, 199, 235);
+    border-radius: 30px !important;
+}
+
+.ImgBlue{
+    border-radius: 10px;
+}
+
+.fontBlued{
+    font-size: 15px;
+}
+
+.Frombtns{
+    color: gold !important;
+    background: #7C7C7C !important;
+}
+
+.Frombtns::placeholder {
+    color: gold !important;
+  }
+
+  .inputfile + label {
+  font-size: 1em;
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  color: rgb(58, 182, 219);
+  background-color: #f0f0f0;
+  display: inline-block;
+  border-radius: 0.5rem;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: golden;
+}

@@ -59,7 +59,7 @@ const PendingEventAudition = () => {
                 <Slider className="slider-width" {...settings}>
 
                     
-                    <Link to='/audition-admin/audition/event/create-event' className='Link'>
+                    <Link to='/superstar-admin/audition/event/create-event' className='Link'>
                     <div className="p-3">
                         <div className="card bg-dark completedMeetupBlack GoldBorder">
                             <div className="card m-2 BGBlue p-5">
