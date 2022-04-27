@@ -1,13 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import CertificateAudition from './CertificateAudition'
 import { MDBTable} from 'mdbreact';
 import ImgPro from '../../../../../../../../assets/images/Avater.png'
-import { Button } from 'react-bootstrap';
 import CertificateModal from './CertificateModal';
 const RequestCertificate = (props) => {
 const [modalShow, setModalShow] = React.useState(false);
-return (
 
+return (
 <>
     <CertificateAudition />
     <div className="row mx-1">
