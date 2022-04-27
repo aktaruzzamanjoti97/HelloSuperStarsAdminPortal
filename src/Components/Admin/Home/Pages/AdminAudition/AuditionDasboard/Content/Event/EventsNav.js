@@ -46,7 +46,9 @@ return (
                         </tr>
                     </center>
                 </div>
-                <NavLink to='/audition-admin/audition/event' exact>
+                <NavLink to='/audition-admin/audition/event' exact style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                 <button activeClassName='active' className="card-footer Souvenir-button AudioSA w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Audition
                 </button>
@@ -71,7 +73,9 @@ return (
                     </center>
                 </div>
                 
-                <NavLink to='/audition-admin/audition/event/pending'>
+                <NavLink to='/audition-admin/audition/event/pending' style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                 <button className="card-footer Souvenir-button AudioSAA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Pending Event
                 </button>
@@ -94,7 +98,9 @@ return (
                     </center>
                 </div>
                 
-                <NavLink to='/audition-admin/audition/event/request-approve'>
+                <NavLink to='/audition-admin/audition/event/request-approve' style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                 <button className="card-footer Souvenir-button AudioSA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Request For Approval
                 </button>

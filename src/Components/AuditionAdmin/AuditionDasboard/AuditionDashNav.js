@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Nav, NavLink } from 'react-router-dom';
 import Live from '../../../../../../assets/images/instagram-live 1.png';
 import Pending from '../../../../../../assets/images/pending 2.png';
 import RequestPng from '../../../../../../assets/images/Request.png';
@@ -23,11 +23,13 @@ return (
                         </tr>
                     </center>
                 </div>
-                <Link to=''>
+                <NavLink to=''style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                 <button className="card-footer Souvenir-button AudioSA w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Live Audition
                 </button>
-                </Link>
+                </NavLink>
             </div>
         </div><br />
 
@@ -48,11 +50,13 @@ return (
                     </center>
                 </div>
                 
-                <Link to='/audition-admin/audition/event'>
+                <NavLink to='/audition-admin/audition/event'style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                 <button className="card-footer Souvenir-button AudioSAA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Pending Event
                 </button>
-                </Link>
+                </NavLink>
             </div>
         </div> <br/>
 
@@ -70,12 +74,14 @@ return (
                         </tr>
                     </center>
                 </div>
-                {/*
-                <Link to='/audition-admin/audition/live'> */}
+                
+                <NavLink to='/audition-admin/audition/live'style={isActive => ({
+    backgroundColor: isActive ? "gold" : ""
+  })}>
                 <button className="card-footer Souvenir-button AudioSA  w-100 " data-bs-toggle="collapse"
                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Request For Approval
                 </button>
-                {/* </Link> */}
+                </NavLink>
             </div>
         </div><br />
 
