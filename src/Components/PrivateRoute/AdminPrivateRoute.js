@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { Route, Redirect, useHistory} from 'react-router-dom';
 import swal from 'sweetalert';
-import AdminRegistration from '../Admin/Home/Pages/AdminRegistration/AdminRegistration';
 // import MasterLayout from './layouts/admin/MasterLayout';
 // import HomePage from "../Pages/Home/HomePages";
 
@@ -64,7 +63,6 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
         }
     );
 
-
     if(loading)
     {
         return <h1>Loading...</h1>
@@ -76,7 +74,6 @@ const AdminPrivateRoute = ({ component: Component, ...rest })=> {
                 Authenticated ?
                 ( <MasterLayout {...props} /> ) : 
                 ( <Redirect to= {{pathname: "/superstar-admin/dashboard", state: {from: location} }} /> )
-                
             } 
         /> 
     );

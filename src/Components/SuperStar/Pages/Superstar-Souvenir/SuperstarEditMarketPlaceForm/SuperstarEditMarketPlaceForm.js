@@ -2,8 +2,7 @@ import axios from 'axios';
 import { convertToHTML } from 'draft-convert';
 import { EditorState } from 'draft-js';
 import React, { useEffect, useState } from 'react';
-import { Editor } from 'react-draft-wysiwyg';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import swal from 'sweetalert';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -22,8 +21,6 @@ const SuperstarEditMarketPlaceForm = () => {
     const [sellingItems, setSellingItems] = useState("")
     const [image, setImage] = useState()
     const [description, setDescription] = useState("")
-
-    console.log("Partha Title ", image);
 
     const [editorState, setEditorState] = useState(() =>
         EditorState.createEmpty()

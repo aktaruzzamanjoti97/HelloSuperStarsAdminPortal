@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useState} from "react";
-import { Dropdown,Collapse } from "react-bootstrap";
+import { Collapse } from "react-bootstrap";
 import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import './Sidebar.css';
@@ -20,16 +20,12 @@ localStorage.removeItem('auth_name');
 localStorage.removeItem('auth_otp');
 localStorage.removeItem('auth_id');
 localStorage.removeItem('auth_phone');
-
 swal("Success",res.data.message,"success");
 history.push('/');
-//browserHistory.push("/path-to-link");
-//window.location.href = "/";
 }
 else
 {
 swal("Warning",res.data.message,"Warning");
-//history.push('/');
 }
 });
 }
@@ -44,11 +40,13 @@ return (
             Dashboard
             </Link>
 
-            <Link className="nav-link" to="/audition-admin/audition">
+            {/* <Link className="nav-link" to="/audition-admin/audition">
             <div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
             Audition
-            </Link>
-            <div className="nav-link" onClick={()=> setOpen(!open)}
+            </Link> */}
+
+
+            <div className="nav-link cursor-pointer" onClick={()=> setOpen(!open)}
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
                 >

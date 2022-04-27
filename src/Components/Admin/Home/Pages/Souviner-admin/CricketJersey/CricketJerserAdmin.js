@@ -54,7 +54,6 @@ const openModal = (data) => {
           setPendingBidding(res.data.bidding);
    
         }
-        
       });
 
 
@@ -150,8 +149,6 @@ const openModal = (data) => {
                             </h5>
                             <h6 className="mx-0 p-0  text-light fw-bold">
                               {bidder.user[0].first_name} {bidder.user[0].last_name}
-                              
-                             
                             </h6>
                             <small className="m-0 p-0  text-light">
                               {moment(bidder.created_at).format('YYYY MM DD')} | {moment(bidder.created_at).format('HH:mm a')} 

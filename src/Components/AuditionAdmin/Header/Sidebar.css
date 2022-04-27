@@ -6,6 +6,11 @@
     
 }
 
+.cursor-pointer
+{
+    cursor: pointer;
+}
+
 .marktePlaceOrderTxt{
     text-decoration: none !important;
 }

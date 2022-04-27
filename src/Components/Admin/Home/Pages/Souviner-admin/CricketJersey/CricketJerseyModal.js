@@ -11,22 +11,33 @@ import './CricketJerseryAdmin.css';
 const CricketJerseyModal = (props) => {
   let history = useHistory();
 
-  
-
-
   const [topper,setTopper] = useState([]);
 
+
   useEffect(() => {
-
-    //console.log('data show on modal', props.data)
     setTopper(props.data)
-
-
   },[props.data]);
 
 
   function handleClick() {
     history.push('/superstar-admin/souvenir/live-biddings-checkout/')
+  }
+
+  const notify = (id, auction_id) => {
+
+    axios.get(`/api/admin/topBidder/auction/notify/${id}`).then((res) => {
+      if (res.status === 200) {
+      //  alert('notified')
+      }
+    });
+
+
+    axios.get(`/api/admin/topBidder/auction/${auction_id}`).then((res) => {
+      if (res.status === 200) {
+        
+       setTopper(res.data.bidding)
+      }
+    });
   }
 
   return (
@@ -48,11 +59,22 @@ const CricketJerseyModal = (props) => {
               <div className="person-name-admin">
                 <p className="">{bidder.user[0].first_name} {bidder.user[0].last_name}</p>
               </div>
-              <Link to={`/superstar-admin/souvenir/live-biddings-checkout/${bidder.auction_id}`}>
-              <button  type="button" class="btn btn-warning my-3 btn-sm">
-                <i class="fa fa-bell mx-1" aria-hidden="true"></i> notify
-              </button>
-              </Link>
+              {/* <Link to={`/superstar-admin/souvenir/live-biddings-checkout/${bidder.auction_id}`}></Link> */}
+
+              {bidder.notify_status === 1 ? (
+                <button  type="button" class="btn btn-warning my-3 btn-sm" disablednotifyun>
+                  <i class="fa fa-bell mx-1" aria-hidden="true"></i> Already notified
+                </button>
+              ) : (
+                <button  type="button" class="btn btn-warning my-3 btn-sm" onClick={(e) => notify(bidder.id, bidder.auction_id)}>
+                  <i class="fa fa-bell mx-1" aria-hidden="true"></i> notify
+                </button>
+              )}
+
+              
+
+
+              
             </div>
           </div>
           ))}

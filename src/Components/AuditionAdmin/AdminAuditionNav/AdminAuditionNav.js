@@ -15,17 +15,17 @@ const AdminAuditionNav = () => {
           if (res.data.status === 200) {
             setLive(res.data.live);
             setPending(res.data.pending);
-    
-            console.log(res.data.pending)
+            console.log(res.data.pending);
           }
         });
-    
         console.log();
-      }, []);
+    }, []);
 
       function pad(d) {
         return (d < 10) ? '0' + d.toString() : d.toString();
       }
+
+      
 
     return (
         <>

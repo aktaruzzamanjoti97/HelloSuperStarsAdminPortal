@@ -59,11 +59,7 @@ const AuditionAdminRoute = [
 
     
 
-
-    
-
     { path: '/audition-admin/audition/dashboard', exact: true, name: 'dashboard', component: DashboardAudition },
-
     { path: '/audition-admin/audition/event', exact: true, name: 'event', component: EventsLive },
     { path: '/audition-admin/audition/event/pending', exact: true, name: 'pending', component: PendingEventAudition },
     { path: '/audition-admin/audition/event/request-approve', exact: true, name: 'pending', component: EventRequestApproval },
@@ -72,7 +68,7 @@ const AuditionAdminRoute = [
 
     { path: '/audition-admin/audition/live-audition', exact: true, name: 'live-audition', component: LiveAudition },
 
-    { path: '/audition-admin/audition/event/create-event', exact: true, name: 'create-event', component: CreateEventAudition },
+    { path: '/audition-admin/audition/event/create-event/:slug', exact: true, name: 'create-event', component: CreateEventAudition },
     
     { path: '/audition-admin/audition/certificate-create', exact: true, name: 'certificate-create', component: CreateCertificate },
     { path: '/audition-admin/audition/certificate-request', exact: true, name: 'certificate-request', component: RequestCertificate },
