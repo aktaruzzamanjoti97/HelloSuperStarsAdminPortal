@@ -73,34 +73,13 @@ const LiveAuditionSliderStar = () => {
             <Slider className="slider-width" {...settings}>
 
 
-            <div className="p-3">
-                <div className="sliderCardBorder">
-                  <img
-                    src={guitarCompetition}
-                    className="img-fluid"
-                    alt=""
-                    style={{ height: "200px" }}
-                  />
-                  <div className="p-3">
-                    {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
-                    <h5 className="text-white text-center">
-                      Guitar Competition
-                    </h5>
-                    {/* </Link> */}
-
-                    <p className="text-secondary">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat ullam fugit nemo laudantium odio in.
-                    </p>
-
-                    <button className="btn btn-warning auctionButton w-100 fw-bold">Auction</button>
-                  </div>
-                </div>
-              </div>
+          {/* pendig aution list */}
+     
+            {liveAuditions?.map((audition) => (
               <div className="p-3">
                 <div className="sliderCardBorder">
                   <img
-                    src={swimmingCompetition}
+                    src={audition.banner !=null ? `http://localhost:8000/${audition.banner}` : swimmingCompetition}
                     className="img-fluid"
                     alt=""
                     style={{ height: "200px" }}
@@ -108,70 +87,20 @@ const LiveAuditionSliderStar = () => {
                   <div className="p-3">
                     {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
                     <h5 className="text-white text-center">
-                      Swimming Competition
+                      {audition.title}
                     </h5>
                     {/* </Link> */}
 
                     <p className="text-secondary">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat ullam fugit nemo laudantium odio in.
+                    <Markup content={audition.description} />
                     </p>
 
-                    <button className="btn btn-done w-100 fw-bold">Running</button>
+                    <button className="btn btn-done w-100 fw-bold">{audition.status === 1 ? 'Running' : 'Done'}</button>
                   </div>
                 </div>
               </div>
-              <div className="p-3">
-                <div className="sliderCardBorder">
-                  <img
-                    src={footballCompetition}
-                    className="img-fluid"
-                    alt=""
-                    style={{ height: "200px" }}
-                  />
-                  <div className="p-3">
-                    {/* <Link to={`/audition-admin/meetup-event-slot/${event.id}`} style={{ textDecoration: 'none' }}> */}
-                    <h5 className="text-white text-center">
-                      Football Competition
-                    </h5>
-                    {/* </Link> */}
-
-                    <p className="text-secondary">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat ullam fugit nemo laudantium odio in.
-                    </p>
-
-                    <button className="btn btn-done w-100 fw-bold">Done</button>
-                  </div>
-                </div>
-              </div>
-
-
-              {/* Kaiyum vai er Kaj */}
-              {/* {liveAuditions?.map((audition) => (
-                <div className="p-3">
-                  <div className="completedMeetupBlack">
-                    <img
-                      src={`http://localhost:8000/${audition.banner}`}
-                      className="img-fluid w-100"
-                      alt=""
-                      style={{ height: "200px" }}
-                    />
-                    <div onClick={handlePending} className="p-3">
-                      <div className="d-flex justify-content-between">
-                        <Link to="" style={{ textDecoration: "none" }}>
-                          <h5 className="text-white">{audition.title}</h5>
-                        </Link>
-                        <img className="img-fluid" src={EnterImage} alt="" />
-                      </div>
-
-                      <p className="text-secondary">
-                        <Markup content={audition.description} />
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))} */}
+              ))} 
+            
             </Slider>
           </div>
         </div>

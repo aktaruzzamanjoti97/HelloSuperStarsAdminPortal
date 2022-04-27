@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
-import cup from "../../../../../../../../assets/images/pending 3.png";
+import cup from "../../../../../../../../assets/images/pending3.png";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import EnterImage from "../../../../../../../../assets/images/actionBlue.png";
 import EventsNav from "./EventsNav";
 import axios from "axios";
-import cup from '../../../../../../../../assets/images/pending 3.png'
-import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
-import EnterImage from '../../../../../../../../assets/images/actionBlue.png'
-import EventsNav from './EventsNav';
 import './PendingEventAudition.css'
 
 

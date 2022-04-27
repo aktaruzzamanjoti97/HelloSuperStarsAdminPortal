@@ -148,10 +148,11 @@ const SuperstarRoute = [
     { path: '/superstar/audition/pending', exact: true, name: 'auditions', component:SuperstarAuditionPending},
     { path: '/superstar/audition/pending', exact: true, name: 'auditions', component:SuperstarAuditionPending},
     { path: '/superstar/audition/live', exact: true, name: 'auditions', component:SuperstarAuditionLive},
-    { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
+    // { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: AuditionsStar },
+    { path: '/superstar/auditions/pending/:id', exact: true, name: 'auditions', component: StarAudioVideoPending },
     // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarPendingAudition },
     // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarVideoPendingAudition },
-    { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarAudioVideoPending },
+    // { path: '/superstar/pending-audition', exact: true, name: 'auditions', component: StarAudioVideoPending },
     { path: '/superstar/auditions/videos/:id', exact: true, name: 'auditions', component: StarMarkingVideo },
 
     // Learning Session

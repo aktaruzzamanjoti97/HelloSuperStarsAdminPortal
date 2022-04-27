@@ -152,6 +152,7 @@ import CertificateAudition from "./Home/Pages/AdminAudition/AuditionDasboard/Con
 import CreateCertificate from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/CreateCertificate";
 import RequestCertificate from "./Home/Pages/AdminAudition/AuditionDasboard/Content/Certificate/RequestCertificate";
 import AuditionRounds from "../AuditionAdmin/AuditonRounds/AuditionRounds";
+import AdminPendingAudition from "./Home/Pages/AdminAudition/AdminPendingAudition/AdminPendingAudition";
 
 
 
@@ -229,7 +230,9 @@ const AdminRoute = [
     
 
     // @FIXME: Auditions Route
+   
     { path: '/superstar-admin/auditions/round2-appeal', exact: true, name: 'grand-final', component: AdminRoundTwoAppeal },
+    { path: '/superstar-admin/audition/pending', exact: true, name: 'grand-final', component: AdminPendingAudition },
     { path: '/superstar-admin/auditions/round1-appeal', exact: true, name: 'grand-final', component: AdminRoundOneAppeal },
     { path: '/superstar-admin/auditions/jury-select', exact: true, name: 'grand-final', component: AdminSelectJury },
     { path: '/superstar-admin/auditions/finish', exact: true, name: 'grand-final', component: GrandFinish },
@@ -240,7 +243,10 @@ const AdminRoute = [
     { path: '/superstar-admin/audition/create-event/:id', exact: true, name: 'create-event', component: AdminAuditionCreateEvent },
     { path: '/superstar-admin/audition/pending', exact: true, name: 'audition-pending', component: PendingAudition},
     { path: '/superstar-admin/audition/live', exact: true, name: 'audition-pending', component: AdminAuditionLive},
-    { path: '/superstar-admin/audition/details/:id', exact: true, name: 'audition-pending', component: AuditionsAdminStar},
+
+    // { path: '/superstar-admin/audition/details/:id', exact: true, name: 'audition-pending', component: AuditionsAdminStar},
+    { path: '/superstar-admin/audition/details/:id', exact: true, name: 'audition-pending', component: AdminPendingAudition},
+    
     { path: '/superstar-admin/audition/audition-video', exact: true, name: 'audition-video', component: AdminAuditionVideo },
     { path: '/superstar-admin/audition/audition-video-show', exact: true, name: 'audition-video-show', component: AdminAuditionVideoShow },
     { path: '/superstar-admin/audition/audition-video-show2', exact: true, name: 'audition-video-show2', component: AdminAuditionVideoShow2 },
