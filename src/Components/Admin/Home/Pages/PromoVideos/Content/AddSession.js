@@ -13,6 +13,7 @@ export default function AddSession() {
   const history = useHistory();
 
   const [videoData, setVideoData] = useState("");
+  const [thumbnailData, setThumbnailData] = useState("");
   const [starList, setStarList] = useState([]);
 
 
@@ -52,9 +53,14 @@ export default function AddSession() {
 
 
   const handleVideoChange = (file) => {
-    console.log('Video File',file[0]);
+    // console.log('Video File',file[0]);
     setVideoData(file[0]);
   };
+  const handleVideoThumbnailChange = (file) => {
+    // console.log('Video File',file[0]);
+    setThumbnailData(file[0]);
+  };
+  
   
 
 
@@ -69,6 +75,7 @@ export default function AddSession() {
 
     fData.append('title', registerInput.title);
     fData.append('video_url',videoData );
+    fData.append('thumbnail',thumbnailData );
     fData.append('star_id', registerInput.star_id);
 
 
@@ -156,7 +163,22 @@ export default function AddSession() {
                         placeholder="Enter title here...!"
                         onChange={(e) => handleVideoChange(e.target.files)}
                         name="video_url"
-                        value={registerInput.video_url}
+                        value={videoData.video_url}
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group row my-4">
+                    <label for="thumbnail" className="col-sm-2 col-form-label col-form-label-sm input-text-lv-ch ">
+                      Upload Video Thumbnail
+                    </label>
+                    <div className="col-sm-7">
+                      <input
+                        type="file"
+                        className="form-control form-control-sm input-in-lv-ch"
+                        placeholder="Enter title here...!"
+                        onChange={(e) => handleVideoThumbnailChange(e.target.files)}
+                        name="thumbnail"
+                        value={thumbnailData.thumbnail}
                       />
                     </div>
                   </div>
