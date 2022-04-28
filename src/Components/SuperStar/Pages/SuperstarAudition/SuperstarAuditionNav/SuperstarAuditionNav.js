@@ -75,7 +75,7 @@ const SuperstarAuditionNav = () => {
                         <Link to={`/superstar/audition/pending`}>
                             <button className="card-footer Souvenir-button  w-100 "
                                 data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne"> Pending Audition
+                                aria-controls="collapseOne"> Pending Audition 
                             </button></Link>
                     </div>
                 </div>

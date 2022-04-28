@@ -1,53 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, ListGroup } from "react-bootstrap";
 import ReactPlayer from "react-player";
-import pendingBanner from "../../../../../assets/images/pendingBannerAudio.png";
-import demo from "../../../../../assets/images/pendingIcons/demo.png";
-import finish from "../../../../../assets/images/pendingIcons/finish.png";
-import jury from "../../../../../assets/images/pendingIcons/jury.png";
-import star from "../../../../../assets/images/pendingIcons/star.png";
-import start from "../../../../../assets/images/pendingIcons/start.png";
+import pendingBanner from "../../../../../../assets/images/pendingBannerAudio.png";
+import demo from "../../../../../../assets/images/pendingIcons/demo.png";
+import finish from "../../../../../../assets/images/pendingIcons/finish.png";
+import jury from "../../../../../../assets/images/pendingIcons/jury.png";
+import star from "../../../../../../assets/images/pendingIcons/star.png";
+import start from "../../../../../../assets/images/pendingIcons/start.png";
+import JuryJudgePanel from '../../../../../Reuseable/JuryJudgePanel'
 import { Link, useHistory, useParams } from "react-router-dom";
 import axios from "axios";
 import { Markup } from "interweave";
 import moment from "moment";
-import JuryJudgePanel from "../../../../Reuseable/JuryJudgePanel";
 
-const StarAudioVideoPending = () => {
+
+const AdminPendingAudition = () => {
   const history = useHistory();
 
   const { id } = useParams();
 
-  const audio = false;
-  const video = true;
-
   const [pending_audition, setPendingAudition] = useState([]);
 
   useEffect(() => {
-    axios.get(`/api/star/audition/${id}`).then((res) => {
+    axios.get(`/api/admin/audition/details/${id}`).then((res) => {
       if (res.data.status === 200) {
+        console.log("pending details", res.data.pending_audition);
         setPendingAudition(res.data.pending_audition);
-
-        console.log("star single pending audition", res.data.pending_audition);
       }
     });
   }, []);
-
-    const approved = () => {
-      axios.put(`/api/star/approved/audition/${id}`).then((res) => {
-        if (res.status === 200) {
-          history.push(`/superstar/audition`);
-        }
-      });
-    };
-    
-    const decline = () => {
-      axios.put(`/api/star/decline/audition/${id}`).then((res) => {
-        if (res.status === 200) {
-          history.push(`/superstar/audition`);
-        }
-      });
-    };
 
   return (
     <>
@@ -149,20 +130,10 @@ const StarAudioVideoPending = () => {
               </div>
             </div>
 
-            <div className="d-flex justify-content-evenly my-5">
-              <button
-                onClick={decline}
-                className="text-primary btnPending rounded-3 p-2"
-              >
-                Rejected
-              </button>
-              <button
-                onClick={approved}
-                className="text-light btnApproved p-2 rounded-3"
-              >
-                Approved
-              </button>
+            <div className="d-flex justify-content-end">
+              <button className="p-2 btn btn-warning fw-bold">Pending</button>
             </div>
+            
           </div>
         </div>
       ))}
@@ -170,4 +141,4 @@ const StarAudioVideoPending = () => {
   );
 };
 
-export default StarAudioVideoPending;
+export default AdminPendingAudition;

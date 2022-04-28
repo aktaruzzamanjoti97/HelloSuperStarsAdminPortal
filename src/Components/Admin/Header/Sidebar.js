@@ -99,23 +99,23 @@ return (
           </div>
           Dashboard
           </Link>
-          <Link className="nav-link" to="/superstar-admin/audition/event">
+          <Link className="nav-link" to="/superstar-admin/audition/live">
             <div className="sb-nav-link-icon">
             <i class="fa-solid fa-circle"></i>
             </div>
-            Events
+            Live Audition
           </Link>
-          <Link className="nav-link" to="/superstar-admin/audition/event/create-event">
+          <Link className="nav-link" to="/superstar-admin/audition/pending">
             <div className="sb-nav-link-icon">
             <i class="fa-solid fa-circle"></i>
             </div>
-            Create events
+            Pending Audition
           </Link>
           <Link className="nav-link" to="/superstar-admin/audition/event/request-approve-view">
             <div className="sb-nav-link-icon">
             <i class="fa-solid fa-circle"></i>
             </div>
-            Request For Approval
+            Result
           </Link>
           
           <Link className="Link text-light" to="/superstar-admin/audition/round">

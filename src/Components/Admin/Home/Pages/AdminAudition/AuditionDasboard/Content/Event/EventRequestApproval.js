@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import cup from "../../../../../../../../assets/images/pending 3.png";
+import cup from "../../../../../../../../assets/images/pending3.png";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import EnterImage from "../../../../../../../../assets/images/unsplash_hUHzaiAHuUc.png";
